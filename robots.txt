@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dripthecup.com/sitemap.xml
