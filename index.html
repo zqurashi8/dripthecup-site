@@ -180,17 +180,11 @@
   .shop-cta{margin-top:20px;text-align:center;}
 
   /* ---------- watch ---------- */
-  .ep{display:grid;grid-template-columns:minmax(260px,420px) 1fr;gap:36px;align-items:center;}
-  @media (max-width:760px){.ep{grid-template-columns:1fr;gap:24px;}}
-  .ep-thumb{position:relative;aspect-ratio:16/9;max-width:100%;background:var(--mustard);
-            border:1px solid var(--line);display:flex;align-items:flex-end;justify-content:center;
-            overflow:hidden;text-decoration:none;}
-  .ep-thumb img{height:92%;width:auto;display:block;}
-  .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
-  .play span{width:64px;height:64px;border-radius:50%;background:var(--paper);
-             border:1.5px solid var(--ink);display:flex;align-items:center;justify-content:center;
-             font-size:20px;padding-left:4px;}
-  .ep-thumb:hover .play span{background:var(--red);color:var(--paper);border-color:var(--red);}
+  .ep{display:grid;grid-template-columns:1.45fr 1fr;gap:40px;align-items:center;}
+  @media (max-width:860px){.ep{grid-template-columns:1fr;gap:26px;}}
+  .ep-video{position:relative;aspect-ratio:16/9;width:100%;max-width:100%;
+            border:3px solid var(--ink);background:var(--dark);box-shadow:6px 6px 0 var(--ink);}
+  .ep-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;}
   .ep h3{font-family:var(--display);font-weight:600;font-size:clamp(24px,3vw,32px);
          margin:10px 0 10px;line-height:1.1;}
   .ep p{margin:0 0 20px;max-width:46ch;color:var(--muted);}
@@ -375,16 +369,19 @@
       </div>
     </div>
     <div class="ep">
-      <a class="ep-thumb" href="https://www.youtube.com/@dripthecup" target="_blank" rel="noopener" aria-label="Watch on YouTube">
-        <img src="assets/drip2-curious-a.png" loading="lazy" alt="">
-        <span class="play" aria-hidden="true"><span>&#9654;</span></span>
-      </a>
+      <div class="ep-video">
+        <iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=UULFNFtdwfAZfaweRLAAPJf4CQ"
+                title="The latest Drip the Cup episode"
+                loading="lazy"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen></iframe>
+      </div>
       <div>
-        <div class="ep-tags"><span class="tag">Episode 01</span><span class="tag">18 min</span></div>
-        <h3>how voice-to-text works</h3>
-        <p>your phone hears you talk and the words show up. i wanted to know how. it took eighteen minutes and i understood all of it, which surprised us both.</p>
-        <a class="btn btn-primary" href="https://www.youtube.com/@dripthecup" target="_blank" rel="noopener">Watch on YouTube</a>
-        <p class="note" style="margin-top:16px">Episode 02 &middot; how mcps work &middot; still brewing</p>
+        <div class="ep-tags"><span class="tag">Latest episode</span></div>
+        <h3>The latest one.</h3>
+        <p>I put them up when they're ready. It's usually about a.i., and it usually takes a minute.</p>
+        <a class="btn btn-primary" href="https://www.youtube.com/@dripthecup/videos" target="_blank" rel="noopener">All episodes</a>
       </div>
     </div>
   </div>
