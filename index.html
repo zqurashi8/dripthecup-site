@@ -76,20 +76,33 @@
   @media (max-width:760px){.nav{display:none;}}
 
   /* ---------- hero ---------- */
-  .hero{display:grid;grid-template-columns:1fr 1.1fr;border-bottom:1px solid var(--line);}
+  .hero{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line);}
   .hero-copy{padding:72px 48px 72px max(20px, calc((100vw - 1200px)/2 + 20px));
              display:flex;flex-direction:column;justify-content:center;}
   .hero h1{font-family:var(--display);font-weight:900;font-size:clamp(38px,5.2vw,68px);
            line-height:1.0;letter-spacing:-.025em;margin:14px 0 0;}
   .hero p.sub{max-width:42ch;margin:22px 0 0;font-size:17px;color:var(--muted);}
   .hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px;}
-  .hero-img{position:relative;min-height:540px;}
-  .hero-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-                object-position:60% 50%;display:block;}
+  /* Drip lives on the mustard stage -- characters never sit on paper. */
+  .hero-stage{background:var(--mustard);display:flex;align-items:flex-end;justify-content:center;
+              min-height:560px;padding:56px 20px 0;overflow:hidden;}
+  .hello{display:flex;flex-direction:column;align-items:center;}
+  .hello img{width:min(280px,58vw);height:auto;display:block;}
+  .bubble{position:relative;margin:0 0 22px;background:var(--paper);border:3px solid var(--ink);
+          border-radius:20px;padding:12px 24px 14px;box-shadow:5px 5px 0 var(--ink);
+          font-family:var(--display);font-weight:900;font-size:clamp(24px,2.8vw,34px);
+          line-height:1;letter-spacing:-.01em;white-space:nowrap;}
+  /* outlined tail: an ink triangle with a smaller paper triangle inside it */
+  .bubble::before,.bubble::after{content:'';position:absolute;left:50%;border-style:solid;
+          border-color:transparent;}
+  .bubble::before{bottom:-19px;margin-left:-13px;border-width:19px 13px 0 13px;border-top-color:var(--ink);}
+  .bubble::after{bottom:-13px;margin-left:-9px;border-width:14px 9px 0 9px;border-top-color:var(--paper);}
   @media (max-width:900px){
     .hero{grid-template-columns:1fr;}
-    .hero-copy{padding:48px 20px 40px;}
-    .hero-img{min-height:0;aspect-ratio:3/2;}
+    /* on a phone Drip comes FIRST: most visitors arrive from a social bio */
+    .hero-stage{order:-1;min-height:0;padding-top:40px;}
+    .hello img{width:min(210px,52vw);}
+    .hero-copy{padding:36px 20px 44px;}
   }
 
   /* ---------- sections ---------- */
@@ -223,15 +236,18 @@
 <section class="hero">
   <div class="hero-copy">
     <p class="eyebrow">Drip the Cup</p>
-    <h1>just a cup of coffee learning about a.i.</h1>
+    <h1>Just a cup of coffee learning about a.i.</h1>
     <p class="sub">turns out i'm also a.i. nobody mentioned it. new episodes when they're ready, and merch when it's ready after that.</p>
     <div class="ctas">
       <a class="btn btn-primary" href="https://www.instagram.com/dripthecup/" target="_blank" rel="noopener">Follow on Instagram</a>
       <a class="btn btn-outline" href="#shop">See the merch</a>
     </div>
   </div>
-  <div class="hero-img">
-    <img src="assets/hero.jpg" width="1800" height="1207" alt="Hands holding a white ceramic mug printed with Drip and the words Bean There, on a sunlit cafe table beside a black bag of Slow Roast coffee.">
+  <div class="hero-stage">
+    <div class="hello">
+      <p class="bubble">hey there.</p>
+      <img src="assets/drip2-idle.png" width="420" height="720" alt="Drip, a tall white paper cup of black coffee with two dot eyes and a flat line mouth, standing on thin black legs in brown boots, saying hey there.">
+    </div>
   </div>
 </section>
 
@@ -314,7 +330,7 @@
     </div>
     <div class="ep">
       <a class="ep-thumb" href="https://www.youtube.com/@dripthecup" target="_blank" rel="noopener" aria-label="Watch on YouTube">
-        <img src="assets/drip-surprised.png" loading="lazy" alt="">
+        <img src="assets/drip2-curious-a.png" loading="lazy" alt="">
         <span class="play" aria-hidden="true"><span>&#9654;</span></span>
       </a>
       <div>
@@ -356,7 +372,7 @@
         <a class="btn btn-outline" href="https://www.tiktok.com/@dripthecup" target="_blank" rel="noopener">TikTok</a>
       </div>
     </div>
-    <img src="assets/drip-idle.png" width="400" height="590" alt="Drip: a tall white paper cup of black coffee with two dot eyes, a flat line mouth, thin black arms and legs, white gloves and brown boots.">
+    <img src="assets/drip2-smile.png" width="420" height="720" alt="Drip: a tall white paper cup of black coffee with two dot eyes, a flat line mouth, thin black arms and legs, white gloves and brown boots.">
   </div>
 </section>
 
