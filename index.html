@@ -105,6 +105,45 @@
     .hero-copy{padding:36px 20px 44px;}
   }
 
+  /* ---------- the social row: he mentions it, he doesn't ask ---------- */
+  .also{display:flex;flex-direction:column;gap:10px;}
+  .also-label{font-family:var(--display);font-weight:600;font-size:19px;margin:0;line-height:1.2;}
+  .social-lg{gap:10px;}
+  .social-lg a{width:52px;height:52px;}
+  .social-lg svg{width:22px;height:22px;}
+  .hero .ctas{align-items:flex-end;gap:18px 22px;}
+
+  /* ---------- walk in, stop, beat, THEN speak (he never walks and talks) ---------- */
+  .walker{animation:walkIn 1.5s cubic-bezier(.2,.7,.3,1) both;}
+  .walker img{transform-origin:50% 100%;animation:waddle .375s ease-in-out 4;}
+  .bubble{transform-origin:50% 100%;animation:pop .42s cubic-bezier(.2,.9,.3,1.35) 2.15s both;}
+  @keyframes walkIn{from{transform:translateX(125%);}to{transform:translateX(0);}}
+  @keyframes waddle{
+    0%,100%{transform:rotate(0) translateY(0);}
+    25%{transform:rotate(-3deg) translateY(-7px);}
+    50%{transform:rotate(0) translateY(0);}
+    75%{transform:rotate(3deg) translateY(-7px);}
+  }
+  @keyframes pop{0%{transform:scale(0);}70%{transform:scale(1.08);}100%{transform:scale(1);}}
+
+  /* ---------- the peek: he notices a section, late, then ducks out ---------- */
+  .peek{position:fixed;right:0;bottom:16%;width:96px;z-index:15;pointer-events:none;
+        transform:translateX(110%);}
+  .peek img{width:100%;height:auto;display:block;}
+  .peek.on{animation:peek 2.6s cubic-bezier(.3,.8,.3,1) both;}
+  @keyframes peek{
+    0%{transform:translateX(110%) rotate(0);}
+    20%{transform:translateX(34%) rotate(-7deg);}
+    80%{transform:translateX(34%) rotate(-7deg);}
+    100%{transform:translateX(110%) rotate(0);}
+  }
+  @media (max-width:900px){.peek{width:78px;bottom:14%;}}
+
+  @media (prefers-reduced-motion: reduce){
+    .walker,.walker img,.bubble,.peek.on{animation:none !important;}
+    .peek{display:none;}
+  }
+
   /* ---------- sections ---------- */
   .sec{padding-block:72px;border-bottom:1px solid var(--line);}
   .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;
@@ -239,14 +278,21 @@
     <h1>Just a cup of coffee learning about a.i.</h1>
     <p class="sub">turns out i'm also a.i. nobody mentioned it. new episodes when they're ready, and merch when it's ready after that.</p>
     <div class="ctas">
-      <a class="btn btn-primary" href="https://www.instagram.com/dripthecup/" target="_blank" rel="noopener">Follow on Instagram</a>
+      <div class="also">
+        <p class="also-label">i also post here.</p>
+        <div class="social social-lg">
+          <a href="https://www.instagram.com/dripthecup/" target="_blank" rel="noopener" aria-label="Drip on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.13 1.38C1.35 2.68.93 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.13-1.38.66-.67 1.08-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.38-2.13C21.32 1.35 20.65.93 19.86.63 19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0z"/><path d="M12 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zM12 16a4 4 0 110-8 4 4 0 010 8z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></a>
+          <a href="https://www.tiktok.com/@dripthecup" target="_blank" rel="noopener" aria-label="Drip on TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82A4.28 4.28 0 0115.54 3h-3.09v12.4a2.59 2.59 0 01-2.59 2.5 2.59 2.59 0 110-5.18c.27 0 .53.04.77.12v-3.2a5.86 5.86 0 00-.77-.05 5.79 5.79 0 105.79 5.79V9.01a7.35 7.35 0 004.31 1.38V7.3a4.28 4.28 0 01-3.36-1.48z"/></svg></a>
+          <a href="https://www.youtube.com/@dripthecup" target="_blank" rel="noopener" aria-label="Drip on YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.19a3.02 3.02 0 00-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 00.5 6.19C0 8.08 0 12 0 12s0 3.92.5 5.81a3.02 3.02 0 002.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 002.12-2.14C24 15.92 24 12 24 12s0-3.92-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg></a>
+        </div>
+      </div>
       <a class="btn btn-outline" href="#shop">See the merch</a>
     </div>
   </div>
   <div class="hero-stage">
     <div class="hello">
       <p class="bubble">hey there.</p>
-      <img src="assets/drip2-idle.png" width="420" height="720" alt="Drip, a tall white paper cup of black coffee with two dot eyes and a flat line mouth, standing on thin black legs in brown boots, saying hey there.">
+      <div class="walker"><img src="assets/drip2-idle.png" width="420" height="720" alt="Drip, a tall white paper cup of black coffee with two dot eyes and a flat line mouth, standing on thin black legs in brown boots, saying hey there."></div>
     </div>
   </div>
 </section>
@@ -367,9 +413,13 @@
       <p class="eyebrow" style="color:var(--ink)">The character</p>
       <h2>This is Drip.</h2>
       <p>i'm a cup of coffee. no filter. medium roast, medium everything. i find out how things work, and it takes a minute. still percolating.</p>
-      <div class="ctas">
-        <a class="btn btn-primary" href="https://www.instagram.com/dripthecup/" target="_blank" rel="noopener">Instagram</a>
-        <a class="btn btn-outline" href="https://www.tiktok.com/@dripthecup" target="_blank" rel="noopener">TikTok</a>
+      <div class="also">
+        <p class="also-label">i also post here.</p>
+        <div class="social social-lg">
+          <a href="https://www.instagram.com/dripthecup/" target="_blank" rel="noopener" aria-label="Drip on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.13 1.38C1.35 2.68.93 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.66 1.34 1.08 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.13-1.38.66-.67 1.08-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.38-2.13C21.32 1.35 20.65.93 19.86.63 19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0z"/><path d="M12 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zM12 16a4 4 0 110-8 4 4 0 010 8z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg></a>
+          <a href="https://www.tiktok.com/@dripthecup" target="_blank" rel="noopener" aria-label="Drip on TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.82A4.28 4.28 0 0115.54 3h-3.09v12.4a2.59 2.59 0 01-2.59 2.5 2.59 2.59 0 110-5.18c.27 0 .53.04.77.12v-3.2a5.86 5.86 0 00-.77-.05 5.79 5.79 0 105.79 5.79V9.01a7.35 7.35 0 004.31 1.38V7.3a4.28 4.28 0 01-3.36-1.48z"/></svg></a>
+          <a href="https://www.youtube.com/@dripthecup" target="_blank" rel="noopener" aria-label="Drip on YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.19a3.02 3.02 0 00-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 00.5 6.19C0 8.08 0 12 0 12s0 3.92.5 5.81a3.02 3.02 0 002.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 002.12-2.14C24 15.92 24 12 24 12s0-3.92-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg></a>
+        </div>
       </div>
     </div>
     <img src="assets/drip2-smile.png" width="420" height="720" alt="Drip: a tall white paper cup of black coffee with two dot eyes, a flat line mouth, thin black arms and legs, white gloves and brown boots.">
@@ -418,6 +468,39 @@
       cards.forEach(function (c) { c.hidden = !(f === 'all' || c.getAttribute('data-cat') === f); });
     });
   });
+</script>
+
+<div class="peek" aria-hidden="true"><img src="assets/drip2-curious-a.png" alt=""></div>
+
+<script>
+  // Drip notices sections as you reach them -- a beat late, because reacting
+  // late is his defining trait. Each section gets one peek per visit.
+  (function () {
+    if (!('IntersectionObserver' in window)) return;
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var peek = document.querySelector('.peek');
+    var LATE = 700, SHOW = 2600, busy = false, seen = {};
+    function fire() {
+      if (busy) return;
+      busy = true;
+      peek.classList.remove('on');
+      void peek.offsetWidth;
+      peek.classList.add('on');
+      setTimeout(function () { busy = false; }, SHOW);
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting && !seen[e.target.id]) {
+          seen[e.target.id] = true;
+          setTimeout(fire, LATE);
+        }
+      });
+    }, { threshold: 0.35 });
+    ['shop', 'watch', 'book'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) io.observe(el);
+    });
+  })();
 </script>
 </body>
 </html>
