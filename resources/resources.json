@@ -1,0 +1,66 @@
+{
+ "updated": "Sep 22, 2026",
+ "categories": [
+  {"id": "chat", "name": "Chat assistants", "blurb": "The big general-purpose AIs you talk to. Most are free to start.", "items": [
+   {"name": "Claude", "url": "https://claude.ai", "by": "Anthropic", "what": "Strong at writing, reasoning and long documents. The one Capp would pick.", "good": "writing, analysis, long files", "use": true},
+   {"name": "ChatGPT", "url": "https://chatgpt.com", "by": "OpenAI", "what": "The most widely used chat assistant, with image generation and voice built in.", "good": "everyday questions, images, voice chat"},
+   {"name": "Gemini", "url": "https://gemini.google.com", "by": "Google", "what": "Google's assistant, tied into Search, Gmail, Docs and YouTube.", "good": "Google Workspace, research"},
+   {"name": "Grok", "url": "https://grok.com", "by": "xAI", "what": "xAI's assistant, with live access to posts on X.", "good": "what people are saying right now"},
+   {"name": "DeepSeek", "url": "https://chat.deepseek.com", "by": "DeepSeek", "what": "Open-weight models that are cheap to run, popular with developers.", "good": "low-cost coding and reasoning"},
+   {"name": "Perplexity", "url": "https://www.perplexity.ai", "by": "Perplexity", "what": "An AI search engine that answers with sources you can click.", "good": "research with citations"}
+  ]},
+  {"id": "coding", "name": "Coding with AI", "blurb": "Tools that write, edit and run code with you.", "items": [
+   {"name": "Claude Code", "url": "https://claude.com/claude-code", "by": "Anthropic", "what": "An AI coding agent that works in your terminal, desktop app or IDE and edits real projects. Every Drip video is built with it.", "good": "building whole apps and tools", "use": true},
+   {"name": "Cursor", "url": "https://cursor.com", "by": "Anysphere", "what": "A code editor with AI built into every step.", "good": "coding inside an editor"},
+   {"name": "Codex", "url": "https://openai.com/codex", "by": "OpenAI", "what": "OpenAI's coding agent, in the terminal, IDE and cloud.", "good": "delegating coding tasks"},
+   {"name": "GitHub Copilot", "url": "https://github.com/features/copilot", "by": "GitHub", "what": "AI suggestions and an agent inside the editors and GitHub itself.", "good": "autocomplete, pull requests"}
+  ]},
+  {"id": "skills", "name": "Claude Code skills and plugins", "blurb": "Free add-ons that change how Claude Code works. A plugin installs with /plugin install; a skill is a folder of instructions Claude reads when it's relevant.", "items": [
+   {"name": "Superpowers", "url": "https://github.com/obra/superpowers", "by": "obra", "kind": "plugin", "stars": "290K", "what": "Asks what you're building, writes a plan, then works through it with tests at every step.", "good": "bigger builds that need a plan", "install": "/plugin install superpowers@claude-plugins-official", "seen": "claude-code-repos"},
+   {"name": "Context7", "url": "https://github.com/upstash/context7", "by": "Upstash", "kind": "plugin · MCP", "stars": "62K", "what": "Gives Claude current, version-specific docs so it uses functions that still exist.", "good": "fast-moving libraries", "install": "/plugin install context7@claude-plugins-official", "seen": "claude-code-repos"},
+   {"name": "Graphify", "url": "https://github.com/Graphify-Labs/graphify", "by": "Graphify Labs", "kind": "skill + CLI", "stars": "120K", "what": "Turns a codebase into a knowledge graph Claude looks things up in, instead of rereading files.", "good": "large codebases, fewer tokens", "install": "uv tool install graphifyy\ngraphify claude install", "seen": "claude-code-repos"},
+   {"name": "Ponytail", "url": "https://github.com/DietrichGebert/ponytail", "by": "Dietrich Gebert", "kind": "plugin", "stars": "144K", "what": "Makes Claude work like a lazy senior dev: reuse, use the platform, write the minimum. On the author's benchmark, 54% less code and 22% fewer tokens.", "good": "cutting code and token use", "install": "/plugin marketplace add DietrichGebert/ponytail\n/plugin install ponytail@ponytail", "seen": "claude-code-repos"},
+   {"name": "Frontend Design", "url": "https://github.com/anthropics/claude-plugins-official", "by": "Anthropic", "kind": "plugin", "what": "Anthropic's official plugin for distinctive, non-generic web design.", "good": "sites that don't look AI-made", "install": "/plugin install frontend-design@claude-plugins-official"}
+  ]},
+  {"id": "models", "name": "AI models for your own apps", "blurb": "For when you want AI inside something you're building, not a chat window.", "items": [
+   {"name": "Claude API", "url": "https://www.anthropic.com/api", "by": "Anthropic", "what": "Claude's models for your own software, plus tools for agents.", "good": "writing, agents, long context"},
+   {"name": "OpenAI API", "url": "https://platform.openai.com", "by": "OpenAI", "what": "GPT models, image and voice models through one API.", "good": "general-purpose apps"},
+   {"name": "Jev", "url": "https://typesafe.ai", "by": "TypeSafe", "kind": "early access", "what": "Doesn't write back. You declare the allowed answers; it returns them with probabilities. Priced on what it reads.", "good": "sorting, routing, yes/no decisions at scale", "seen": "jev-vs-chatgpt"},
+   {"name": "OpenRouter", "url": "https://openrouter.ai", "by": "OpenRouter", "what": "One API key for hundreds of models from different labs.", "good": "trying many models, fallbacks"}
+  ]},
+  {"id": "voice", "name": "Voice and audio", "blurb": "Voiceover, music and turning speech into text.", "items": [
+   {"name": "ElevenLabs", "url": "https://elevenlabs.io", "by": "ElevenLabs", "what": "Realistic AI voices, voice design, dubbing and sound effects. Drip's and Capp's voices are made here.", "good": "voiceover, character voices", "use": true},
+   {"name": "whisper.cpp", "url": "https://github.com/ggml-org/whisper.cpp", "by": "open source", "what": "OpenAI's Whisper speech-to-text, running locally and fast on your own computer. Free.", "good": "transcripts, word-level timing", "use": true},
+   {"name": "Suno", "url": "https://suno.com", "by": "Suno", "what": "Makes full songs, vocals included, from a text prompt.", "good": "music beds, jingles"}
+  ]},
+  {"id": "image", "name": "Image generation", "blurb": "Pictures from a prompt, or edits to pictures you already have.", "items": [
+   {"name": "Nano Banana", "url": "https://gemini.google.com", "by": "Google (Gemini)", "what": "Gemini's image model, very good at keeping a character consistent across edits. We use it through Higgsfield for Drip.", "good": "consistent characters, edits", "use": true},
+   {"name": "Midjourney", "url": "https://www.midjourney.com", "by": "Midjourney", "what": "Known for striking, artistic images.", "good": "art direction, mood boards"},
+   {"name": "ChatGPT images", "url": "https://chatgpt.com", "by": "OpenAI", "what": "Image generation inside ChatGPT, strong with text in images.", "good": "posters, text in images"},
+   {"name": "FLUX", "url": "https://bfl.ai", "by": "Black Forest Labs", "what": "Detailed image models that follow prompts closely.", "good": "precise, detailed images"},
+   {"name": "Ideogram", "url": "https://ideogram.ai", "by": "Ideogram", "what": "Image generation with reliable typography.", "good": "logos, text-heavy designs"}
+  ]},
+  {"id": "video", "name": "Video generation", "blurb": "Clips from text or from a still image.", "items": [
+   {"name": "Higgsfield", "url": "https://higgsfield.ai", "by": "Higgsfield", "what": "One place for many top image and video models, with presets for camera moves and effects.", "good": "trying many video models in one app", "use": true},
+   {"name": "Veo", "url": "https://deepmind.google/models/veo/", "by": "Google DeepMind", "what": "Google's video model, with sound and dialogue generated together.", "good": "cinematic clips with audio"},
+   {"name": "Sora", "url": "https://openai.com/sora", "by": "OpenAI", "what": "OpenAI's video model and app.", "good": "story-driven clips"},
+   {"name": "Runway", "url": "https://runwayml.com", "by": "Runway", "what": "Video generation plus tools for editing footage you already shot.", "good": "editing and extending real footage"},
+   {"name": "Kling", "url": "https://klingai.com", "by": "Kuaishou", "what": "Popular for realistic motion from an image.", "good": "image-to-video"}
+  ]},
+  {"id": "editing", "name": "Editing", "blurb": "Putting the pieces together.", "items": [
+   {"name": "Remotion", "url": "https://www.remotion.dev", "by": "open source", "what": "Make videos with code (React). Every Drip short is animated this way, which is why every sound lands on a word.", "good": "repeatable animated videos", "use": true},
+   {"name": "CapCut", "url": "https://www.capcut.com", "by": "ByteDance", "what": "Fast phone and desktop editor with auto-captions and templates.", "good": "short-form, captions"},
+   {"name": "Descript", "url": "https://www.descript.com", "by": "Descript", "what": "Edit video by editing its transcript like a document.", "good": "talking-head and podcast edits"},
+   {"name": "DaVinci Resolve", "url": "https://www.blackmagicdesign.com/products/davinciresolve", "by": "Blackmagic Design", "what": "A professional editor and color tool with a generous free version.", "good": "long-form, color grading"}
+  ]},
+  {"id": "design", "name": "Design and diagrams", "blurb": "Thumbnails, slides and explaining things with drawings.", "items": [
+   {"name": "Excalidraw", "url": "https://excalidraw.com", "by": "open source", "what": "Hand-drawn style whiteboard. Great for explaining how something works.", "good": "diagrams, explainers", "use": true},
+   {"name": "Canva", "url": "https://www.canva.com", "by": "Canva", "what": "Templates for posts, thumbnails and slides, with AI tools built in.", "good": "quick social graphics"},
+   {"name": "Figma", "url": "https://www.figma.com", "by": "Figma", "what": "The standard tool for designing apps and websites.", "good": "UI and web design"}
+  ]},
+  {"id": "posting", "name": "Posting and growth", "blurb": "Getting it out there on a schedule.", "items": [
+   {"name": "Buffer", "url": "https://buffer.com", "by": "Buffer", "what": "Schedule posts across Instagram, TikTok, YouTube and more from one queue.", "good": "posting on a schedule", "use": true},
+   {"name": "ManyChat", "url": "https://manychat.com", "by": "ManyChat", "what": "Auto-DMs people who comment a keyword. Behind most 'comment LINK and I'll send it' posts.", "good": "comment-to-DM links"}
+  ]}
+ ]
+}

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI resources · Drip the Cup</title>
+<meta name="description" content="The AI tools Drip the Cup talks about and uses: chat assistants, coding agents, Claude Code skills, voice, image and video generation, editing and more. 41 tools, sorted and linked.">
+<link rel="canonical" href="https://dripthecup.com/resources/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dripthecup.com/resources/">
+<meta property="og:title" content="AI resources · Drip the Cup">
+<meta property="og:description" content="41 AI tools, sorted by what you're trying to do. The ones we actually use are marked.">
+<meta property="og:image" content="https://dripthecup.com/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#E3AC2A">
+<link rel="icon" href="../assets/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&display=swap">
+<style>
+  :root{
+    --mustard:#E3AC2A; --paper:#F6EFE0; --cup:#F5F1E8; --ink:#1A1A1A; --muted:#6B6155;
+    --red:#D63F2A; --dark:#100D09; --line:#D9CFBC;
+    --display:'Fraunces', Georgia, 'Times New Roman', serif;
+    --body:Georgia, 'Times New Roman', serif;
+    --mono:ui-monospace, 'Cascadia Mono', 'Courier New', monospace;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1200px;margin:0 auto;padding-inline:20px;}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid var(--red);outline-offset:2px;}
+  h1,h2,h3{text-wrap:balance;margin:0;}
+  .eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0;}
+  .hdr{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top, 0px);z-index:20;}
+  .hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-block:14px;}
+  .brand{font-family:var(--display);font-weight:900;font-size:24px;letter-spacing:-.02em;text-decoration:none;line-height:1;}
+  .hnav{display:flex;gap:2px;flex-wrap:wrap;}
+  .hnav a{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:8px 11px;}
+  .hnav a:hover,.hnav a[aria-current]{background:var(--mustard);}
+
+  .intro{display:grid;grid-template-columns:1.4fr 1fr;border-bottom:1px solid var(--line);}
+  .intro-copy{padding:56px 40px 48px max(20px, calc((100vw - 1200px)/2 + 20px));display:flex;flex-direction:column;justify-content:center;}
+  .intro h1{font-family:var(--display);font-weight:900;font-size:clamp(34px,4.8vw,62px);line-height:1.02;letter-spacing:-.025em;margin-top:12px;}
+  .intro p.sub{max-width:48ch;margin:16px 0 0;font-size:17px;color:var(--muted);}
+  .search{margin-top:24px;display:flex;max-width:460px;border:2px solid var(--ink);background:var(--cup);}
+  .search input{flex:1;min-width:0;border:0;background:transparent;font:16px var(--mono);padding:13px 14px;color:var(--ink);}
+  .search input:focus{outline:none;}
+  .search:focus-within{box-shadow:4px 4px 0 var(--ink);}
+  .stage{background:var(--mustard);display:flex;align-items:flex-end;justify-content:center;min-height:300px;padding:30px 20px 0;overflow:hidden;}
+  .stage img{width:min(190px,44vw);height:auto;display:block;}
+  @media (max-width:820px){.intro{grid-template-columns:minmax(0,1fr);} .stage{order:-1;min-height:0;padding-top:26px;} .stage img{width:min(150px,38vw);} .intro-copy{padding:28px 20px 34px;}}
+
+  .index{display:flex;flex-wrap:wrap;gap:8px;padding-block:20px;border-bottom:1px solid var(--line);}
+  .index a{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-decoration:none;border:1.5px solid var(--ink);padding:8px 12px;background:var(--paper);}
+  .index a span{color:var(--muted);margin-left:4px;}
+  .index a:hover{background:var(--ink);color:var(--paper);}
+  .index a:hover span{color:var(--mustard);}
+
+  .cat{padding-block:44px 8px;scroll-margin-top:72px;}
+  .cat-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 20px;margin-bottom:20px;}
+  .cat-head h2{font-family:var(--display);font-weight:900;font-size:clamp(26px,3vw,36px);letter-spacing:-.02em;}
+  .cat-head p{margin:0;color:var(--muted);max-width:70ch;}
+  .grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,270px),1fr));gap:14px;}
+  .card{background:var(--cup);border:1.5px solid var(--ink);padding:18px 18px 16px;display:flex;flex-direction:column;min-width:0;}
+  .card:hover{box-shadow:5px 5px 0 var(--ink);}
+  .top{display:flex;align-items:baseline;gap:10px;}
+  .card h3{font-family:var(--display);font-weight:900;font-size:23px;letter-spacing:-.01em;}
+  .card h3 a{text-decoration:none;border-bottom:2px solid var(--mustard);}
+  .card h3 a:hover{background:var(--mustard);}
+  .stars{font-family:var(--mono);font-size:12.5px;margin-left:auto;white-space:nowrap;}
+  .by{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin:2px 0 0;letter-spacing:.04em;}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+  .tags:empty{display:none;}
+  .kind{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:3px 7px;}
+  .we{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;background:var(--mustard);padding:3px 7px;border:1px solid var(--ink);}
+  .card p{margin:10px 0 0;}
+  .card .good{font-size:14.5px;color:var(--muted);margin-top:auto;padding-top:10px;}
+  .card .good b{color:var(--ink);font-weight:600;}
+  .card pre{margin:12px 0 0;background:var(--dark);color:#EDE6D8;padding:10px 12px;overflow-x:auto;font:12.5px/1.5 var(--mono);white-space:pre;}
+  .seen{display:inline-block;margin-top:12px;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border-bottom:1.5px solid var(--ink);align-self:flex-start;}
+  .seen:hover{background:var(--mustard);}
+  .empty{font-family:var(--mono);color:var(--muted);padding:40px 0;}
+  .fine{font-family:var(--mono);font-size:12px;color:var(--muted);padding-block:34px 44px;border-top:1px solid var(--line);margin-top:30px;max-width:80ch;}
+  .foot{background:var(--dark);color:#CFC4B0;padding-block:30px;font-family:var(--mono);font-size:12px;}
+  .foot a{color:var(--mustard);}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="wrap">
+    <a class="brand" href="/">DRIP.</a>
+    <nav class="hnav" aria-label="Main">
+      <a href="/">Home</a>
+      <a href="/resources/" aria-current="page">Resources</a>
+      <a href="/links/">From the videos</a>
+    </nav>
+  </div>
+</header>
+
+<section class="intro">
+  <div class="intro-copy">
+    <p class="eyebrow">Resources · 41 tools</p>
+    <h1>The AI tools we talk about, sorted.</h1>
+    <p class="sub">Pick what you're trying to do and start there. The ones we actually use to make Drip are marked <b>we use this</b>.</p>
+    <label class="search" for="q"><input id="q" type="search" placeholder="Search: voice, video, free, Claude..." autocomplete="off" aria-label="Search the resources"></label>
+  </div>
+  <div class="stage"><img src="../assets/drip2-curious-a.png" width="420" height="720" alt="Drip, a white paper cup of black coffee, looking curious on the mustard stage."></div>
+</section>
+
+<div class="wrap">
+  <nav class="index" aria-label="Categories">
+    <a href="#chat">Chat assistants <span>6</span></a>
+    <a href="#coding">Coding with AI <span>4</span></a>
+    <a href="#skills">Claude Code skills and plugins <span>5</span></a>
+    <a href="#models">AI models for your own apps <span>4</span></a>
+    <a href="#voice">Voice and audio <span>3</span></a>
+    <a href="#image">Image generation <span>5</span></a>
+    <a href="#video">Video generation <span>5</span></a>
+    <a href="#editing">Editing <span>4</span></a>
+    <a href="#design">Design and diagrams <span>3</span></a>
+    <a href="#posting">Posting and growth <span>2</span></a>
+  </nav>
+
+  <section class="cat" id="chat">
+    <div class="cat-head"><h2>Chat assistants</h2><p>The big general-purpose AIs you talk to. Most are free to start.</p></div>
+    <ul class="grid">
+      <li class="card" data-q="claude anthropic strong at writing, reasoning and long documents. the one capp would pick. writing, analysis, long files ">
+        <div class="top"><h3><a href="https://claude.ai" target="_blank" rel="noopener">Claude</a></h3></div>
+        <p class="by">Anthropic</p>
+        <div class="tags"><span class="we">we use this</span></div>
+        <p>Strong at writing, reasoning and long documents. The one Capp would pick.</p>
+        <p class="good"><b>Good for:</b> writing, analysis, long files</p>
+      </li>
+      <li class="card" data-q="chatgpt openai the most widely used chat assistant, with image generation and voice built in. everyday questions, images, voice chat ">
+        <div class="top"><h3><a href="https://chatgpt.com" target="_blank" rel="noopener">ChatGPT</a></h3></div>
+        <p class="by">OpenAI</p>
+        <div class="tags"></div>
+        <p>The most widely used chat assistant, with image generation and voice built in.</p>
+        <p class="good"><b>Good for:</b> everyday questions, images, voice chat</p>
+      </li>
+      <li class="card" data-q="gemini google google&#x27;s assistant, tied into search, gmail, docs and youtube. google workspace, research ">
+        <div class="top"><h3><a href="https://gemini.google.com" target="_blank" rel="noopener">Gemini</a></h3></div>
+        <p class="by">Google</p>
+        <div class="tags"></div>
+        <p>Google&#x27;s assistant, tied into Search, Gmail, Docs and YouTube.</p>
+        <p class="good"><b>Good for:</b> Google Workspace, research</p>
+      </li>
+      <li class="card" data-q="grok xai xai&#x27;s assistant, with live access to posts on x. what people are saying right now ">
+        <div class="top"><h3><a href="https://grok.com" target="_blank" rel="noopener">Grok</a></h3></div>
+        <p class="by">xAI</p>
+        <div class="tags"></div>
+        <p>xAI&#x27;s assistant, with live access to posts on X.</p>
+        <p class="good"><b>Good for:</b> what people are saying right now</p>
+      </li>
+      <li class="card" data-q="deepseek deepseek open-weight models that are cheap to run, popular with developers. low-cost coding and reasoning ">
+        <div class="top"><h3><a href="https://chat.deepseek.com" target="_blank" rel="noopener">DeepSeek</a></h3></div>
+        <p class="by">DeepSeek</p>
+        <div class="tags"></div>
+        <p>Open-weight models that are cheap to run, popular with developers.</p>
+        <p class="good"><b>Good for:</b> low-cost coding and reasoning</p>
+      </li>
+      <li class="card" data-q="perplexity perplexity an ai search engine that answers with sources you can click. research with citations ">
+        <div class="top"><h3><a href="https://www.perplexity.ai" target="_blank" rel="noopener">Perplexity</a></h3></div>
+        <p class="by">Perplexity</p>
+        <div class="tags"></div>
+        <p>An AI search engine that answers with sources you can click.</p>
+        <p class="good"><b>Good for:</b> research with citations</p>
+      </li>
+    </ul>
+  </section>
+  <section class="cat" id="coding">
+    <div class="cat-head"><h2>Coding with AI</h2><p>Tools that write, edit and run code with you.</p></div>
+    <ul class="grid">
+      <li class="card" data-q="claude code anthropic an ai coding agent that works in your terminal, desktop app or ide and edits real projects. every drip video is built with it. building whole apps and tools ">
+        <div class="top"><h3><a href="https://claude.com/claude-code" target="_blank" rel="noopener">Claude Code</a></h3></div>
+        <p class="by">Anthropic</p>
+        <div class="tags"><span class="we">we use this</span></div>
+        <p>An AI coding agent that works in your terminal, desktop app or IDE and edits real projects. Every Drip video is built with it.</p>
+        <p class="good"><b>Good for:</b> building whole apps and tools</p>
+      </li>
+      <li class="card" data-q="cursor anysphere a code editor with ai built into every step. coding inside an editor ">
+        <div class="top"><h3><a href="https://cursor.com" target="_blank" rel="noopener">Cursor</a></h3></div>
+        <p class="by">Anysphere</p>
+        <div class="tags"></div>
+        <p>A code editor with AI built into every step.</p>
+        <p class="good"><b>Good for:</b> coding inside an editor</p>
+      </li>
+      <li class="card" data-q="codex openai openai&#x27;s coding agent, in the terminal, ide and cloud. delegating coding tasks ">
+        <div class="top"><h3><a href="https://openai.com/codex" target="_blank" rel="noopener">Codex</a></h3></div>
+        <p class="by">OpenAI</p>
+        <div class="tags"></div>
+        <p>OpenAI&#x27;s coding agent, in the terminal, IDE and cloud.</p>
+        <p class="good"><b>Good for:</b> delegating coding tasks</p>
+      </li>
+      <li class="card" data-q="github copilot github ai suggestions and an agent inside the editors and github itself. autocomplete, pull requests ">
+        <div class="top"><h3><a href="https://github.com/features/copilot" target="_blank" rel="noopener">GitHub Copilot</a></h3></div>
+        <p class="by">GitHub</p>
+        <div class="tags"></div>
+        <p>AI suggestions and an agent inside the editors and GitHub itself.</p>
+        <p class="good"><b>Good for:</b> autocomplete, pull requests</p>
+      </li>
+    </ul>
+  </section>
+  <section class="cat" id="skills">
+    <div class="cat-head"><h2>Claude Code skills and plugins</h2><p>Free add-ons that change how Claude Code works. A plugin installs with /plugin install; a skill is a folder of instructions Claude reads when it&#x27;s relevant.</p></div>
+    <ul class="grid">
+      <li class="card" data-q="superpowers obra asks what you&#x27;re building, writes a plan, then works through it with tests at every step. bigger builds that need a plan plugin">
+        <div class="top"><h3><a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">Superpowers</a></h3><span class="stars">★ 290K</span></div>
+        <p class="by">obra</p>
+        <div class="tags"><span class="kind">plugin</span></div>
+        <p>Asks what you&#x27;re building, writes a plan, then works through it with tests at every step.</p>
+        <p class="good"><b>Good for:</b> bigger builds that need a plan</p><pre>/plugin install superpowers@claude-plugins-official</pre><a class="seen" href="/links/#claude-code-repos">seen in: 4 free repos for Claude Code</a>
+      </li>
+      <li class="card" data-q="context7 upstash gives claude current, version-specific docs so it uses functions that still exist. fast-moving libraries plugin · mcp">
+        <div class="top"><h3><a href="https://github.com/upstash/context7" target="_blank" rel="noopener">Context7</a></h3><span class="stars">★ 62K</span></div>
+        <p class="by">Upstash</p>
+        <div class="tags"><span class="kind">plugin · MCP</span></div>
+        <p>Gives Claude current, version-specific docs so it uses functions that still exist.</p>
+        <p class="good"><b>Good for:</b> fast-moving libraries</p><pre>/plugin install context7@claude-plugins-official</pre><a class="seen" href="/links/#claude-code-repos">seen in: 4 free repos for Claude Code</a>
+      </li>
+      <li class="card" data-q="graphify graphify labs turns a codebase into a knowledge graph claude looks things up in, instead of rereading files. large codebases, fewer tokens skill + cli">
+        <div class="top"><h3><a href="https://github.com/Graphify-Labs/graphify" target="_blank" rel="noopener">Graphify</a></h3><span class="stars">★ 120K</span></div>
+        <p class="by">Graphify Labs</p>
+        <div class="tags"><span class="kind">skill + CLI</span></div>
+        <p>Turns a codebase into a knowledge graph Claude looks things up in, instead of rereading files.</p>
+        <p class="good"><b>Good for:</b> large codebases, fewer tokens</p><pre>uv tool install graphifyy
+graphify claude install</pre><a class="seen" href="/links/#claude-code-repos">seen in: 4 free repos for Claude Code</a>
+      </li>
+      <li class="card" data-q="ponytail dietrich gebert makes claude work like a lazy senior dev: reuse, use the platform, write the minimum. on the author&#x27;s benchmark, 54% less code and 22% fewer tokens. cutting code and token use plugin">
+        <div class="top"><h3><a href="https://github.com/DietrichGebert/ponytail" target="_blank" rel="noopener">Ponytail</a></h3><span class="stars">★ 144K</span></div>
+        <p class="by">Dietrich Gebert</p>
+        <div class="tags"><span class="kind">plugin</span></div>
+        <p>Makes Claude work like a lazy senior dev: reuse, use the platform, write the minimum. On the author&#x27;s benchmark, 54% less code and 22% fewer tokens.</p>
+        <p class="good"><b>Good for:</b> cutting code and token use</p><pre>/plugin marketplace add DietrichGebert/ponytail
+/plugin install ponytail@ponytail</pre><a class="seen" href="/links/#claude-code-repos">seen in: 4 free repos for Claude Code</a>
+      </li>
+      <li class="card" data-q="frontend design anthropic anthropic&#x27;s official plugin for distinctive, non-generic web design. sites that don&#x27;t look ai-made plugin">
+        <div class="top"><h3><a href="https://github.com/anthropics/claude-plugins-official" target="_blank" rel="noopener">Frontend Design</a></h3></div>
+        <p class="by">Anthropic</p>
+        <div class="tags"><span class="kind">plugin</span></div>
+        <p>Anthropic&#x27;s official plugin for distinctive, non-generic web design.</p>
+        <p class="good"><b>Good for:</b> sites that don&#x27;t look AI-made</p><pre>/plugin install frontend-design@claude-plugins-official</pre>
+      </li>
+    </ul>
+  </section>
+  <section class="cat" id="models">
+    <div class="cat-head"><h2>AI models for your own apps</h2><p>For when you want AI inside something you&#x27;re building, not a chat window.</p></div>
+    <ul class="grid">
+      <li class="card" data-q="claude api anthropic claude&#x27;s models for your own software, plus tools for agents. writing, agents, long context ">
+        <div class="top"><h3><a href="https://www.anthropic.com/api" target="_blank" rel="noopener">Claude API</a></h3></div>
+        <p class="by">Anthropic</p>
+        <div class="tags"></div>
+        <p>Claude&#x27;s models for your own software, plus tools for agents.</p>
+        <p class="good"><b>Good for:</b> writing, agents, long context</p>
+      </li>
+      <li class="card" data-q="openai api openai gpt models, image and voice models through one api. general-purpose apps ">
+        <div class="top"><h3><a href="https://platform.openai.com" target="_blank" rel="noopener">OpenAI API</a></h3></div>
+        <p class="by">OpenAI</p>
+        <div class="tags"></div>
+        <p>GPT models, image and voice models through one API.</p>
+        <p class="good"><b>Good for:</b> general-purpose apps</p>
+      </li>
+      <li class="card" data-q="jev typesafe doesn&#x27;t write back. you declare the allowed answers; it returns them with probabilities. priced on what it reads. sorting, routing, yes/no decisions at scale early access">
+        <div class="top"><h3><a href="https://typesafe.ai" target="_blank" rel="noopener">Jev</a></h3></div>
+        <p class="by">TypeSafe</p>
+        <div class="tags"><span class="kind">early access</span></div>
+        <p>Doesn&#x27;t write back. You declare the allowed answers; it returns them with probabilities. Priced on what it reads.</p>
+        <p class="good"><b>Good for:</b> sorting, routing, yes/no decisions at scale</p><a class="seen" href="/links/#jev-vs-chatgpt">seen in: Jev vs ChatGPT</a>
+      </li>
+      <li class="card" data-q="openrouter openrouter one api key for hundreds of models from different labs. trying many models, fallbacks ">
+        <div class="top"><h3><a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a></h3></div>
+        <p class="by">OpenRouter</p>
+        <div class="tags"></div>
+        <p>One API key for hundreds of models from different labs.</p>
+        <p class="good"><b>Good for:</b> trying many models, fallbacks</p>
+      </li>
+    </ul>
+  </section>
+  <section class="cat" id="voice">
+    <div class="cat-head"><h2>Voice and audio</h2><p>Voiceover, music and turning speech into text.</p></div>
+    <ul class="grid">
+      <li class="card" data-q="elevenlabs elevenlabs realistic ai voices, voice design, dubbing and sound effects. drip&#x27;s and capp&#x27;s voices are made here. voiceover, character voices ">
+        <div class="top"><h3><a href="https://elevenlabs.io" target="_blank" rel="noopener">ElevenLabs</a></h3></div>
+        <p class="by">ElevenLabs</p>
+        <div class="tags"><span class="we">we use this</span></div>
+        <p>Realistic AI voices, voice design, dubbing and sound effects. Drip&#x27;s and Capp&#x27;s voices are made here.</p>
+        <p class="good"><b>Good for:</b> voiceover, character voices</p>
+      </li>
+      <li class="card" data-q="whisper.cpp open source openai&#x27;s whisper speech-to-text, running locally and fast on your own computer. free. transcripts, word-level timing ">
+        <div class="top"><h3><a href="https://github.com/ggml-org/whisper.cpp" target="_blank" rel="noopener">whisper.cpp</a></h3></div>
+        <p class="by">open source</p>
+        <div class="tags"><span class="we">we use this</span></div>
+        <p>OpenAI&#x27;s Whisper speech-to-text, running locally and fast on your own computer. Free.</p>
+        <p class="good"><b>Good for:</b> transcripts, word-level timing</p>
+      </li>
+      <li class="card" data-q="suno suno makes full songs, vocals included, from a text prompt. music beds, jingles ">
+        <div class="top"><h3><a href="https://suno.com" target="_blank" rel="noopener">Suno</a></h3></div>
+        <p class="by">Suno</p>
+        <div class="tags"></div>
+        <p>Makes full songs, vocals included, from a text prompt.</p>
+        <p class="good"><b>Good for:</b> music beds, jingles</p>
+      </li>
+    </ul>
+  </section>
+  <section class="cat" id="image">
+    <div class="cat-head"><h2>Image generation</h2><p>Pictures from a prompt, or edits to pictures you already have.</p></div>
+    <ul class="grid">
+      <li class="card" data-q="nano banana google (gemini) gemini&#x27;s image model, very good at keeping a character consistent across edits. we use it through higgsfield for drip. consistent characters, edits ">
+        <div class="top"><h3><a href="https://gemini.google.com" target="_blank" rel="noopener">Nano Banana</a></h3></div>
+        <p class="by">Google (Gemini)</p>
+        <div class="tags"><span class="we">we use this</span></div>
+        <p>Gemini&#x27;s image model, very good at keeping a character consistent across edits. We use it through Higgsfield for Drip.</p>
+        <p class="good"><b>Good for:</b> consistent characters, edits</p>
+      </li>
+      <li class="card" data-q="midjourney midjourney known for striking, artistic images. art direction, mood boards ">
+        <div class="top"><h3><a href="https://www.midjourney.com" target="_blank" rel="noopener">Midjourney</a></h3></div>
+        <p class="by">Midjourney</p>
+        <div class="tags"></div>
+        <p>Known for striking, artistic images.</p>
+        <p class="good"><b>Good for:</b> art direction, mood boards</p>
+      </li>
+      <li class="card" data-q="chatgpt images openai image generation inside chatgpt, strong with text in images. posters, text in images ">
+        <div class="top"><h3><a href="https://chatgpt.com" target="_blank" rel="noopener">ChatGPT images</a></h3></div>
+        <p class="by">OpenAI</p>
+        <div class="tags"></div>
+        <p>Image generation inside ChatGPT, strong with text in images.</p>
+        <p class="good"><b>Good for:</b> posters, text in images</p>
+      </li>
+      <li class="card" data-q="flux black forest labs detailed image models that follow prompts closely. precise, detailed images ">
+        <div class="top"><h3><a href="https://bfl.ai" target="_blank" rel="noopener">FLUX</a></h3></div>
+        <p class="by">Black Forest Labs</p>
+        <div class="tags"></div>
+        <p>Detailed image models that follow prompts closely.</p>
+        <p class="good"><b>Good for:</b> precise, detailed images</p>
+      </li>
+      <li class="card" data-q="ideogram ideogram image generation with reliable typography. logos, text-heavy designs ">
+        <div class="top"><h3><a href="https://ideogram.ai" target="_blank" rel="noopener">Ideogram</a></h3></div>
+        <p class="by">Ideogram</p>
+        <div class="tags"></div>
+        <p>Image generation with reliable typography.</p>
+        <p class="good"><b>Good for:</b> logos, text-heavy designs</p>
+      </li>
+    </ul>
+  </section>
+  <section class="cat" id="video">
+    <div class="cat-head"><h2>Video generation</h2><p>Clips from text or from a still image.</p></div>
+    <ul class="grid">
+      <li class="card" data-q="higgsfield higgsfield one place for many top image and video models, with presets for camera moves and effects. trying many video models in one app ">
+        <div class="top"><h3><a href="https://higgsfield.ai" target="_blank" rel="noopener">Higgsfield</a></h3></div>
+        <p class="by">Higgsfield</p>
+        <div class="tags"><span class="we">we use this</span></div>
+        <p>One place for many top image and video models, with presets for camera moves and effects.</p>
+        <p class="good"><b>Good for:</b> trying many video models in one app</p>
+      </li>
+      <li class="card" data-q="veo google deepmind google&#x27;s video model, with sound and dialogue generated together. cinematic clips with audio ">
+        <div class="top"><h3><a href="https://deepmind.google/models/veo/" target="_blank" rel="noopener">Veo</a></h3></div>
+        <p class="by">Google DeepMind</p>
+        <div class="tags"></div>
+        <p>Google&#x27;s video model, with sound and dialogue generated together.</p>
+        <p class="good"><b>Good for:</b> cinematic clips with audio</p>
+      </li>
+      <li class="card" data-q="sora openai openai&#x27;s video model and app. story-driven clips ">
+        <div class="top"><h3><a href="https://openai.com/sora" target="_blank" rel="noopener">Sora</a></h3></div>
+        <p class="by">OpenAI</p>
+        <div class="tags"></div>
+        <p>OpenAI&#x27;s video model and app.</p>
+        <p class="good"><b>Good for:</b> story-driven clips</p>
+      </li>
+      <li class="card" data-q="runway runway video generation plus tools for editing footage you already shot. editing and extending real footage ">
+        <div class="top"><h3><a href="https://runwayml.com" target="_blank" rel="noopener">Runway</a></h3></div>
+        <p class="by">Runway</p>
+        <div class="tags"></div>
+        <p>Video generation plus tools for editing footage you already shot.</p>
+        <p class="good"><b>Good for:</b> editing and extending real footage</p>
+      </li>
+      <li class="card" data-q="kling kuaishou popular for realistic motion from an image. image-to-video ">
+        <div class="top"><h3><a href="https://klingai.com" target="_blank" rel="noopener">Kling</a></h3></div>
+        <p class="by">Kuaishou</p>
+        <div class="tags"></div>
+        <p>Popular for realistic motion from an image.</p>
+        <p class="good"><b>Good for:</b> image-to-video</p>
+      </li>
+    </ul>
+  </section>
+  <section class="cat" id="editing">
+    <div class="cat-head"><h2>Editing</h2><p>Putting the pieces together.</p></div>
+    <ul class="grid">
+      <li class="card" data-q="remotion open source make videos with code (react). every drip short is animated this way, which is why every sound lands on a word. repeatable animated videos ">
+        <div class="top"><h3><a href="https://www.remotion.dev" target="_blank" rel="noopener">Remotion</a></h3></div>
+        <p class="by">open source</p>
+        <div class="tags"><span class="we">we use this</span></div>
+        <p>Make videos with code (React). Every Drip short is animated this way, which is why every sound lands on a word.</p>
+        <p class="good"><b>Good for:</b> repeatable animated videos</p>
+      </li>
+      <li class="card" data-q="capcut bytedance fast phone and desktop editor with auto-captions and templates. short-form, captions ">
+        <div class="top"><h3><a href="https://www.capcut.com" target="_blank" rel="noopener">CapCut</a></h3></div>
+        <p class="by">ByteDance</p>
+        <div class="tags"></div>
+        <p>Fast phone and desktop editor with auto-captions and templates.</p>
+        <p class="good"><b>Good for:</b> short-form, captions</p>
+      </li>
+      <li class="card" data-q="descript descript edit video by editing its transcript like a document. talking-head and podcast edits ">
+        <div class="top"><h3><a href="https://www.descript.com" target="_blank" rel="noopener">Descript</a></h3></div>
+        <p class="by">Descript</p>
+        <div class="tags"></div>
+        <p>Edit video by editing its transcript like a document.</p>
+        <p class="good"><b>Good for:</b> talking-head and podcast edits</p>
+      </li>
+      <li class="card" data-q="davinci resolve blackmagic design a professional editor and color tool with a generous free version. long-form, color grading ">
+        <div class="top"><h3><a href="https://www.blackmagicdesign.com/products/davinciresolve" target="_blank" rel="noopener">DaVinci Resolve</a></h3></div>
+        <p class="by">Blackmagic Design</p>
+        <div class="tags"></div>
+        <p>A professional editor and color tool with a generous free version.</p>
+        <p class="good"><b>Good for:</b> long-form, color grading</p>
+      </li>
+    </ul>
+  </section>
+  <section class="cat" id="design">
+    <div class="cat-head"><h2>Design and diagrams</h2><p>Thumbnails, slides and explaining things with drawings.</p></div>
+    <ul class="grid">
+      <li class="card" data-q="excalidraw open source hand-drawn style whiteboard. great for explaining how something works. diagrams, explainers ">
+        <div class="top"><h3><a href="https://excalidraw.com" target="_blank" rel="noopener">Excalidraw</a></h3></div>
+        <p class="by">open source</p>
+        <div class="tags"><span class="we">we use this</span></div>
+        <p>Hand-drawn style whiteboard. Great for explaining how something works.</p>
+        <p class="good"><b>Good for:</b> diagrams, explainers</p>
+      </li>
+      <li class="card" data-q="canva canva templates for posts, thumbnails and slides, with ai tools built in. quick social graphics ">
+        <div class="top"><h3><a href="https://www.canva.com" target="_blank" rel="noopener">Canva</a></h3></div>
+        <p class="by">Canva</p>
+        <div class="tags"></div>
+        <p>Templates for posts, thumbnails and slides, with AI tools built in.</p>
+        <p class="good"><b>Good for:</b> quick social graphics</p>
+      </li>
+      <li class="card" data-q="figma figma the standard tool for designing apps and websites. ui and web design ">
+        <div class="top"><h3><a href="https://www.figma.com" target="_blank" rel="noopener">Figma</a></h3></div>
+        <p class="by">Figma</p>
+        <div class="tags"></div>
+        <p>The standard tool for designing apps and websites.</p>
+        <p class="good"><b>Good for:</b> UI and web design</p>
+      </li>
+    </ul>
+  </section>
+  <section class="cat" id="posting">
+    <div class="cat-head"><h2>Posting and growth</h2><p>Getting it out there on a schedule.</p></div>
+    <ul class="grid">
+      <li class="card" data-q="buffer buffer schedule posts across instagram, tiktok, youtube and more from one queue. posting on a schedule ">
+        <div class="top"><h3><a href="https://buffer.com" target="_blank" rel="noopener">Buffer</a></h3></div>
+        <p class="by">Buffer</p>
+        <div class="tags"><span class="we">we use this</span></div>
+        <p>Schedule posts across Instagram, TikTok, YouTube and more from one queue.</p>
+        <p class="good"><b>Good for:</b> posting on a schedule</p>
+      </li>
+      <li class="card" data-q="manychat manychat auto-dms people who comment a keyword. behind most &#x27;comment link and i&#x27;ll send it&#x27; posts. comment-to-dm links ">
+        <div class="top"><h3><a href="https://manychat.com" target="_blank" rel="noopener">ManyChat</a></h3></div>
+        <p class="by">ManyChat</p>
+        <div class="tags"></div>
+        <p>Auto-DMs people who comment a keyword. Behind most &#x27;comment LINK and I&#x27;ll send it&#x27; posts.</p>
+        <p class="good"><b>Good for:</b> comment-to-DM links</p>
+      </li>
+    </ul>
+  </section>
+
+  <p class="empty" id="empty" hidden>Nothing matches that yet. Drip is still learning.</p>
+
+  <p class="fine">Last checked Sep 22, 2026. Star counts are GitHub's on that day. We're not paid by any of these companies; if that ever changes, it'll say so right here. Tools change fast, so check each site for current pricing.</p>
+</div>
+
+<footer class="foot">
+  <div class="wrap">drip the cup · <a href="/">dripthecup.com</a> · a cup of coffee learning about a.i.</div>
+</footer>
+
+<script>
+  // search: hide cards that don't match, and categories with nothing left
+  const q = document.getElementById('q'), empty = document.getElementById('empty');
+  q.addEventListener('input', () => {
+    const terms = q.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
+    let shown = 0;
+    document.querySelectorAll('.cat').forEach(cat => {
+      let n = 0;
+      cat.querySelectorAll('.card').forEach(c => {
+        const hit = terms.every(t => c.dataset.q.includes(t) || cat.id.includes(t) || cat.querySelector('h2').textContent.toLowerCase().includes(t));
+        c.hidden = !hit; if (hit) n++;
+      });
+      cat.hidden = n === 0; shown += n;
+    });
+    empty.hidden = shown > 0;
+  });
+</script>
+</body>
+</html>
