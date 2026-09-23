@@ -260,8 +260,9 @@ page = f'''<!DOCTYPE html>
   <a class="brand" href="/">DRIP.</a>
   <nav class="hnav" aria-label="Main">
     <a href="/">Home</a>
+    <a href="/links/">Videos</a>
     <a href="/resources/" aria-current="page">AI tools</a>
-    <a href="/links/">From the videos</a>
+    <a href="/#shop">Shop</a>
   </nav>
 </div></header>
 

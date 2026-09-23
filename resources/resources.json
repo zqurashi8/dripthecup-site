@@ -75,6 +75,12 @@
      "url": "https://www.kimi.com",
      "by": "Moonshot AI",
      "best": "Long documents and agent tasks"
+    },
+    {
+     "name": "Poe",
+     "url": "https://poe.com",
+     "by": "Quora",
+     "best": "Many chatbots and models in one app"
     }
    ]
   },
@@ -180,10 +186,10 @@
      "best": "Suggestions and an agent inside GitHub and your editor"
     },
     {
-     "name": "Windsurf",
-     "url": "https://windsurf.com",
-     "by": "Windsurf",
-     "best": "An AI editor with an agent built in"
+     "name": "Devin",
+     "url": "https://devin.ai",
+     "by": "Cognition",
+     "best": "An autonomous coding engineer, plus the editor formerly called Windsurf"
     },
     {
      "name": "OpenCode",
@@ -223,6 +229,43 @@
      "kind": "open source",
      "stars": "135K",
      "best": "One desktop app to manage Claude Code, Codex, OpenCode, OpenClaw and Hermes"
+    },
+    {
+     "name": "Antigravity",
+     "url": "https://antigravity.google",
+     "by": "Google",
+     "best": "Google's agent-first coding app, CLI and SDK"
+    },
+    {
+     "name": "Kiro",
+     "url": "https://kiro.dev",
+     "by": "AWS",
+     "best": "Spec-driven coding: plan the feature, then let agents build it"
+    },
+    {
+     "name": "Cline",
+     "url": "https://cline.bot",
+     "by": "open source",
+     "kind": "open source",
+     "best": "An open-source coding agent inside VS Code"
+    },
+    {
+     "name": "Warp",
+     "url": "https://www.warp.dev",
+     "by": "Warp",
+     "best": "A terminal with AI agents built into the shell"
+    },
+    {
+     "name": "Zed",
+     "url": "https://zed.dev",
+     "by": "Zed Industries",
+     "best": "A very fast code editor with AI built in"
+    },
+    {
+     "name": "Trae",
+     "url": "https://www.trae.ai",
+     "by": "ByteDance",
+     "best": "A free AI code editor with an agent mode"
     }
    ]
   },
@@ -506,6 +549,25 @@
      "by": "open source",
      "kind": "free",
      "best": "Free, private speech-to-text on your own computer"
+    },
+    {
+     "name": "Willow",
+     "url": "https://willowvoice.com",
+     "by": "Willow",
+     "best": "Polished dictation on Mac, Windows and iPhone"
+    },
+    {
+     "name": "Monologue",
+     "url": "https://www.monologue.to",
+     "by": "Every",
+     "best": "Dictation that adapts to email, notes, chat or code"
+    },
+    {
+     "name": "VoiceInk",
+     "url": "https://tryvoiceink.com",
+     "by": "open source",
+     "kind": "open source",
+     "best": "Dictation that runs fully on your Mac"
     }
    ]
   },
@@ -545,6 +607,18 @@
      "url": "https://tldv.io",
      "by": "tl;dv",
      "best": "Clips and summaries from recorded calls"
+    },
+    {
+     "name": "Fellow",
+     "url": "https://fellow.ai",
+     "by": "Fellow",
+     "best": "Agendas, notes and follow-ups for team meetings"
+    },
+    {
+     "name": "Laxis",
+     "url": "https://www.laxis.com",
+     "by": "Laxis",
+     "best": "Bot-free notes that sync to HubSpot and Salesforce"
     }
    ]
   },
@@ -935,7 +1009,7 @@
      "name": "ElevenLabs",
      "url": "https://elevenlabs.io",
      "by": "ElevenLabs",
-     "best": "Realistic voiceover and character voices",
+     "best": "Realistic voiceover, voice design, dubbing and music",
      "top": true
     },
     {
@@ -955,6 +1029,37 @@
      "url": "https://podcast.adobe.com",
      "by": "Adobe",
      "best": "Making a bad mic recording sound studio-clean"
+    },
+    {
+     "name": "Fish Audio",
+     "url": "https://fish.audio",
+     "by": "Fish Audio",
+     "best": "Expressive voices in 80+ languages with emotion control"
+    },
+    {
+     "name": "Speechify",
+     "url": "https://speechify.com",
+     "by": "Speechify",
+     "best": "Listen to anything read aloud in natural voices"
+    },
+    {
+     "name": "Murf",
+     "url": "https://murf.ai",
+     "by": "Murf",
+     "best": "Studio voiceovers for training and marketing videos"
+    },
+    {
+     "name": "Stable Audio",
+     "url": "https://stableaudio.com",
+     "by": "Stability AI",
+     "best": "Music and sound effects from a prompt"
+    },
+    {
+     "name": "Chatterbox",
+     "url": "https://github.com/resemble-ai/chatterbox",
+     "by": "Resemble AI",
+     "kind": "open source",
+     "best": "Free open-source text-to-speech you can run yourself"
     }
    ]
   },
@@ -962,10 +1067,16 @@
    "id": "image",
    "name": "Image generation",
    "icon": "🎨",
-   "blurb": "Pictures from a prompt, or edits to ones you have.",
+   "blurb": "Pictures from a prompt, or edits to ones you have. The leaders by blind-vote rankings come first.",
    "items": [
     {
-     "name": "Nano Banana",
+     "name": "GPT Image 2",
+     "url": "https://chatgpt.com",
+     "by": "OpenAI",
+     "best": "Top of the blind-vote image leaderboards; great with text in images"
+    },
+    {
+     "name": "Nano Banana Pro",
      "url": "https://gemini.google.com",
      "by": "Google",
      "best": "Keeping a character consistent across edits"
@@ -977,22 +1088,34 @@
      "best": "Striking, artistic images"
     },
     {
-     "name": "ChatGPT images",
-     "url": "https://chatgpt.com",
-     "by": "OpenAI",
-     "best": "Posters and images with readable text"
-    },
-    {
-     "name": "FLUX",
+     "name": "FLUX.2",
      "url": "https://bfl.ai",
      "by": "Black Forest Labs",
      "best": "Detailed images that follow the prompt closely"
+    },
+    {
+     "name": "Seedream 5.0",
+     "url": "https://seed.bytedance.com/en/seedream5_0_pro",
+     "by": "ByteDance",
+     "best": "Dense, editable images that split into layers for Figma or Photoshop"
+    },
+    {
+     "name": "Grok Imagine",
+     "url": "https://grok.com/imagine",
+     "by": "xAI",
+     "best": "Fast images and short clips inside Grok"
     },
     {
      "name": "Ideogram",
      "url": "https://ideogram.ai",
      "by": "Ideogram",
      "best": "Logos and text-heavy designs"
+    },
+    {
+     "name": "Recraft",
+     "url": "https://www.recraft.ai",
+     "by": "Recraft",
+     "best": "Vector art, icons and on-brand illustrations"
     },
     {
      "name": "Adobe Firefly",

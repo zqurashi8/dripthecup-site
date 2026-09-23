@@ -1,0 +1,86 @@
+{
+ "videos": [
+  {
+   "id": "claude-code-repos",
+   "title": "4 free GitHub repos that make Claude Code way better",
+   "kind": "Short",
+   "date": "Sep 2026",
+   "length": "65s",
+   "topic": "Claude Code",
+   "youtube": null,
+   "mp4": "videos/claude-code-repos.mp4",
+   "poster": "videos/claude-code-repos.jpg",
+   "summary": "Drip's Claude Code keeps forgetting what they were building. Capp shows him four free repos that change how it works: Superpowers plans and tests before it codes, Context7 hands it current docs, Graphify maps the codebase so it rereads less, and Ponytail makes it write less code and spend fewer tokens. Three are plugins; Graphify is a skill with its own command-line tool.",
+   "links": [
+    {"name": "Superpowers", "url": "https://github.com/obra/superpowers", "kind": "plugin", "stars": "290K", "what": "Asks what you're building, writes a plan, then works through it with tests at every step.", "install": "/plugin install superpowers@claude-plugins-official"},
+    {"name": "Context7", "url": "https://github.com/upstash/context7", "kind": "plugin · MCP", "stars": "62K", "what": "Current, version-specific docs so Claude uses functions that still exist.", "install": "/plugin install context7@claude-plugins-official"},
+    {"name": "Graphify", "url": "https://github.com/Graphify-Labs/graphify", "kind": "skill + CLI", "stars": "120K", "what": "Turns your codebase into a knowledge graph Claude looks things up in. Building the graph uses no LLM credits.", "install": "uv tool install graphifyy\ngraphify claude install"},
+    {"name": "Ponytail", "url": "https://github.com/DietrichGebert/ponytail", "kind": "plugin", "stars": "144K", "what": "Makes Claude work like a lazy senior developer. On the author's benchmark (12 real tasks): 54% less code, 22% fewer tokens, 20% lower cost.", "install": "/plugin marketplace add DietrichGebert/ponytail\n/plugin install ponytail@ponytail", "source": {"label": "Read the benchmark", "url": "https://github.com/DietrichGebert/ponytail/blob/main/benchmarks/results/2026-06-18-agentic.md"}}
+   ],
+   "more": {"label": "More skills and plugins", "url": "/resources/#skills"}
+  },
+  {
+   "id": "jev-vs-chatgpt",
+   "title": "Jev vs ChatGPT: this AI doesn't write back",
+   "kind": "Short",
+   "date": "Sep 2026",
+   "length": "56s",
+   "topic": "Jev",
+   "youtube": "vHwyV_mdbcA",
+   "summary": "Ask a chatbot which of 200 customer emails are frustrated and it writes you a paragraph your code then has to turn back into yes or no. Jev, TypeSafe's new model, reads the same emails and hands back one answer per email with how sure it is, so your code can act on it. It's priced on what it reads, and it can't answer outside your options, though it can still pick the wrong one.",
+   "links": [
+    {"name": "Jev by TypeSafe", "url": "https://typesafe.ai", "kind": "early access", "what": "Declare the allowed answers; Jev returns them with probabilities. $0.042 per million input tokens, output not charged."},
+    {"name": "TypeSafe docs", "url": "https://docs.typesafe.ai", "kind": "docs", "what": "The three question types (Choice, Score, Noul), confidence, and worked cookbooks."},
+    {"name": "TypeSafe skills", "url": "https://github.com/typesafe-ai/skills", "kind": "skill pack", "stars": "1.9K", "what": "Agent skills for building apps on Jev."},
+    {"name": "724 ads for 9 cents", "url": "https://x.com/TheMattBerman", "kind": "source", "what": "Matthew Berman's post: 724 live ads from 37 brands broken down in 40 seconds."}
+   ],
+   "more": {"label": "Try it: our AI tools finder runs on Jev", "url": "/resources/"}
+  },
+  {
+   "id": "what-is-jev",
+   "title": "What is Jev? A decision model, not a chatbot",
+   "kind": "Short",
+   "date": "Sep 2026",
+   "length": "74s",
+   "topic": "Jev",
+   "youtube": "qIsNeQUlzPg",
+   "summary": "Capp explains Jev to Drip, who reads his notes out loud. Chat models write paragraphs; Jev picks an answer and says how sure it is. It has three answer shapes (pick one, score it, yes or no), its 'System One' name comes from the fast, intuitive thinking in Thinking, Fast and Slow, and your code stays in charge of what happens next.",
+   "links": [
+    {"name": "Jev by TypeSafe", "url": "https://typesafe.ai", "kind": "early access", "what": "The model itself, in early access."},
+    {"name": "The three question types", "url": "https://docs.typesafe.ai/primitives", "kind": "docs", "what": "Choice (pick one), Score (a scale) and Noul (yes or no, as a probability)."},
+    {"name": "Thinking, Fast and Slow", "url": "https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow", "kind": "book", "what": "Daniel Kahneman's book, where 'System One' fast thinking comes from."}
+   ]
+  },
+  {
+   "id": "what-is-mcp",
+   "title": "What is MCP? The one plug between your AI and your apps",
+   "kind": "Short",
+   "date": "Sep 2026",
+   "length": "67s",
+   "topic": "MCP",
+   "youtube": "dQ22kVD-FdU",
+   "summary": "Capp explains MCP to Drip with a phone charger. The Model Context Protocol is one standard plug between an AI and your apps: each app builds its connector once, and any AI that speaks MCP can use it, instead of every AI needing its own custom connection to every app.",
+   "links": [
+    {"name": "Model Context Protocol", "url": "https://modelcontextprotocol.io", "kind": "docs", "what": "The official site: what MCP is and how to use it."},
+    {"name": "Introducing MCP", "url": "https://www.anthropic.com/news/model-context-protocol", "kind": "source", "what": "Anthropic's announcement of the open standard."},
+    {"name": "MCP servers", "url": "https://github.com/modelcontextprotocol/servers", "kind": "repo", "what": "Reference connectors for common apps and tools."}
+   ]
+  },
+  {
+   "id": "voice-to-text",
+   "title": "Four words. 25,000 numbers. Zero letters. How voice to text works",
+   "kind": "Episode",
+   "date": "Sep 2026",
+   "length": "9:51",
+   "topic": "Voice to text",
+   "youtube": "ULNCs0t2Obk",
+   "summary": "What happens between you talking and words appearing on screen. Your voice reaches the computer as a stream of numbers, around 25,000 of them for four words and not a single letter. Drip and Capp follow those numbers as they're turned into a picture of sound, how a speech model guesses the words, and how today's dictation apps clean up what you actually meant.",
+   "links": [
+    {"name": "Whisper", "url": "https://github.com/openai/whisper", "kind": "repo", "what": "OpenAI's open speech-recognition model."},
+    {"name": "whisper.cpp", "url": "https://github.com/ggml-org/whisper.cpp", "kind": "repo", "what": "Whisper running fast and privately on your own computer."},
+    {"name": "Speech recognition", "url": "https://en.wikipedia.org/wiki/Speech_recognition", "kind": "background", "what": "The history, from 1950s digit recognizers to today's models."}
+   ],
+   "more": {"label": "Dictation apps in our AI tools directory", "url": "/resources/#dictation"}
+  }
+ ]
+}
