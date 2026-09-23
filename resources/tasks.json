@@ -1,0 +1,874 @@
+{
+ "model": "jev-latest",
+ "threshold": 0.6,
+ "made": "2026-09-23",
+ "tasks": [
+  {
+   "task": "Edit a video",
+   "tools": [
+    {
+     "id": "t-davinci-resolve",
+     "p": 0.99
+    },
+    {
+     "id": "t-capcut",
+     "p": 0.98
+    },
+    {
+     "id": "t-descript",
+     "p": 0.97
+    },
+    {
+     "id": "t-runway",
+     "p": 0.91
+    },
+    {
+     "id": "t-captions",
+     "p": 0.91
+    },
+    {
+     "id": "t-opus-clip",
+     "p": 0.71
+    },
+    {
+     "id": "t-remotion",
+     "p": 0.61
+    },
+    {
+     "id": "t-submagic",
+     "p": 0.61
+    }
+   ]
+  },
+  {
+   "task": "Make short clips for TikTok or Reels",
+   "tools": [
+    {
+     "id": "t-capcut",
+     "p": 0.98
+    },
+    {
+     "id": "t-opus-clip",
+     "p": 0.98
+    },
+    {
+     "id": "t-captions",
+     "p": 0.87
+    },
+    {
+     "id": "t-higgsfield",
+     "p": 0.81
+    },
+    {
+     "id": "t-submagic",
+     "p": 0.74
+    },
+    {
+     "id": "t-sora",
+     "p": 0.7
+    },
+    {
+     "id": "t-kling",
+     "p": 0.7
+    },
+    {
+     "id": "t-davinci-resolve",
+     "p": 0.7
+    },
+    {
+     "id": "t-descript",
+     "p": 0.62
+    },
+    {
+     "id": "t-hailuo",
+     "p": 0.6
+    }
+   ]
+  },
+  {
+   "task": "Generate a video from text or a photo",
+   "tools": [
+    {
+     "id": "t-higgsfield",
+     "p": 0.95
+    },
+    {
+     "id": "t-veo",
+     "p": 0.95
+    },
+    {
+     "id": "t-sora",
+     "p": 0.94
+    },
+    {
+     "id": "t-kling",
+     "p": 0.94
+    },
+    {
+     "id": "t-hailuo",
+     "p": 0.89
+    },
+    {
+     "id": "t-synthesia",
+     "p": 0.87
+    },
+    {
+     "id": "t-luma",
+     "p": 0.86
+    },
+    {
+     "id": "t-anything2explainer",
+     "p": 0.84
+    },
+    {
+     "id": "t-heygen",
+     "p": 0.78
+    },
+    {
+     "id": "t-vox-director",
+     "p": 0.65
+    }
+   ]
+  },
+  {
+   "task": "Make a voiceover",
+   "tools": [
+    {
+     "id": "t-elevenlabs",
+     "p": 0.98
+    },
+    {
+     "id": "t-adobe-podcast",
+     "p": 0.77
+    },
+    {
+     "id": "t-openai-api",
+     "p": 0.76
+    }
+   ]
+  },
+  {
+   "task": "Make music",
+   "tools": [
+    {
+     "id": "t-suno",
+     "p": 0.98
+    },
+    {
+     "id": "t-udio",
+     "p": 0.98
+    }
+   ]
+  },
+  {
+   "task": "Transcribe audio or meetings",
+   "tools": [
+    {
+     "id": "t-otter",
+     "p": 0.99
+    },
+    {
+     "id": "t-whisper-cpp",
+     "p": 0.97
+    },
+    {
+     "id": "t-fireflies",
+     "p": 0.96
+    },
+    {
+     "id": "t-fathom",
+     "p": 0.87
+    },
+    {
+     "id": "t-tl-dv",
+     "p": 0.69
+    },
+    {
+     "id": "t-openai-api",
+     "p": 0.64
+    }
+   ]
+  },
+  {
+   "task": "Type faster by talking",
+   "tools": [
+    {
+     "id": "t-wispr-flow",
+     "p": 0.97
+    },
+    {
+     "id": "t-superwhisper",
+     "p": 0.97
+    },
+    {
+     "id": "t-aqua-voice",
+     "p": 0.96
+    },
+    {
+     "id": "t-whisper-cpp",
+     "p": 0.85
+    },
+    {
+     "id": "t-typeless",
+     "p": 0.84
+    }
+   ]
+  },
+  {
+   "task": "Generate images",
+   "tools": [
+    {
+     "id": "t-midjourney",
+     "p": 0.99
+    },
+    {
+     "id": "t-flux",
+     "p": 0.99
+    },
+    {
+     "id": "t-ideogram",
+     "p": 0.98
+    },
+    {
+     "id": "t-adobe-firefly",
+     "p": 0.98
+    },
+    {
+     "id": "t-krea",
+     "p": 0.98
+    },
+    {
+     "id": "t-leonardo",
+     "p": 0.98
+    },
+    {
+     "id": "t-chatgpt-images",
+     "p": 0.97
+    },
+    {
+     "id": "t-openai-api",
+     "p": 0.9
+    },
+    {
+     "id": "t-nano-banana",
+     "p": 0.81
+    },
+    {
+     "id": "t-higgsfield",
+     "p": 0.66
+    }
+   ]
+  },
+  {
+   "task": "Design a thumbnail, logo or social post",
+   "tools": [
+    {
+     "id": "t-canva",
+     "p": 0.98
+    },
+    {
+     "id": "t-ideogram",
+     "p": 0.92
+    },
+    {
+     "id": "t-adobe-firefly",
+     "p": 0.8
+    },
+    {
+     "id": "t-ip-as-logo",
+     "p": 0.75
+    },
+    {
+     "id": "t-chatgpt-images",
+     "p": 0.73
+    },
+    {
+     "id": "t-anthropic-skills",
+     "p": 0.68
+    },
+    {
+     "id": "t-flux",
+     "p": 0.61
+    }
+   ]
+  },
+  {
+   "task": "Make slides",
+   "tools": [
+    {
+     "id": "t-gamma",
+     "p": 0.98
+    },
+    {
+     "id": "t-genspark",
+     "p": 0.95
+    },
+    {
+     "id": "t-anthropic-skills",
+     "p": 0.88
+    },
+    {
+     "id": "t-canva",
+     "p": 0.83
+    }
+   ]
+  },
+  {
+   "task": "Build an app or website without coding",
+   "tools": [
+    {
+     "id": "t-lovable",
+     "p": 0.94
+    },
+    {
+     "id": "t-framer",
+     "p": 0.93
+    },
+    {
+     "id": "t-v0",
+     "p": 0.82
+    }
+   ]
+  },
+  {
+   "task": "Write code faster",
+   "tools": [
+    {
+     "id": "t-github-copilot",
+     "p": 0.97
+    },
+    {
+     "id": "t-cursor",
+     "p": 0.95
+    },
+    {
+     "id": "t-windsurf",
+     "p": 0.94
+    },
+    {
+     "id": "t-bolt",
+     "p": 0.92
+    },
+    {
+     "id": "t-codex",
+     "p": 0.9
+    },
+    {
+     "id": "t-graft",
+     "p": 0.9
+    },
+    {
+     "id": "t-opencode",
+     "p": 0.89
+    },
+    {
+     "id": "t-claude-code",
+     "p": 0.87
+    },
+    {
+     "id": "t-lovable",
+     "p": 0.81
+    },
+    {
+     "id": "t-v0",
+     "p": 0.75
+    },
+    {
+     "id": "t-replit",
+     "p": 0.71
+    },
+    {
+     "id": "t-deepseek",
+     "p": 0.69
+    },
+    {
+     "id": "t-typesafe-skills",
+     "p": 0.69
+    },
+    {
+     "id": "t-ponytail",
+     "p": 0.66
+    }
+   ]
+  },
+  {
+   "task": "Save tokens and cost in a coding agent",
+   "tools": [
+    {
+     "id": "t-ponytail",
+     "p": 0.91
+    },
+    {
+     "id": "t-graft",
+     "p": 0.91
+    },
+    {
+     "id": "t-fast-jev-compaction",
+     "p": 0.85
+    },
+    {
+     "id": "t-graphify",
+     "p": 0.83
+    },
+    {
+     "id": "t-deepseek",
+     "p": 0.77
+    },
+    {
+     "id": "t-ollama",
+     "p": 0.65
+    },
+    {
+     "id": "t-superpowers",
+     "p": 0.6
+    }
+   ]
+  },
+  {
+   "task": "Research a topic with sources",
+   "tools": [
+    {
+     "id": "t-perplexity",
+     "p": 0.98
+    },
+    {
+     "id": "t-elicit",
+     "p": 0.98
+    },
+    {
+     "id": "t-consensus",
+     "p": 0.97
+    },
+    {
+     "id": "t-comet",
+     "p": 0.92
+    },
+    {
+     "id": "t-manus",
+     "p": 0.83
+    },
+    {
+     "id": "t-notion",
+     "p": 0.77
+    },
+    {
+     "id": "t-obsidian",
+     "p": 0.74
+    },
+    {
+     "id": "t-microsoft-copilot",
+     "p": 0.73
+    },
+    {
+     "id": "t-notebooklm",
+     "p": 0.71
+    },
+    {
+     "id": "t-gemini",
+     "p": 0.69
+    },
+    {
+     "id": "t-chatgpt-atlas",
+     "p": 0.63
+    }
+   ]
+  },
+  {
+   "task": "Write or improve text",
+   "tools": [
+    {
+     "id": "t-grammarly",
+     "p": 0.99
+    },
+    {
+     "id": "t-claude",
+     "p": 0.97
+    },
+    {
+     "id": "t-openai-api",
+     "p": 0.97
+    },
+    {
+     "id": "t-claude-api",
+     "p": 0.96
+    },
+    {
+     "id": "t-simple-english",
+     "p": 0.93
+    },
+    {
+     "id": "t-sepia",
+     "p": 0.93
+    },
+    {
+     "id": "t-qwen",
+     "p": 0.92
+    },
+    {
+     "id": "t-gemini",
+     "p": 0.91
+    },
+    {
+     "id": "t-microsoft-copilot",
+     "p": 0.91
+    },
+    {
+     "id": "t-fyxer",
+     "p": 0.91
+    },
+    {
+     "id": "t-chatgpt",
+     "p": 0.89
+    },
+    {
+     "id": "t-deepseek",
+     "p": 0.89
+    },
+    {
+     "id": "t-chatgpt-atlas",
+     "p": 0.86
+    },
+    {
+     "id": "t-typeless",
+     "p": 0.83
+    }
+   ]
+  },
+  {
+   "task": "Take meeting notes automatically",
+   "tools": [
+    {
+     "id": "t-otter",
+     "p": 0.97
+    },
+    {
+     "id": "t-fireflies",
+     "p": 0.94
+    },
+    {
+     "id": "t-fathom",
+     "p": 0.94
+    },
+    {
+     "id": "t-tl-dv",
+     "p": 0.76
+    },
+    {
+     "id": "t-whisper-cpp",
+     "p": 0.68
+    },
+    {
+     "id": "t-granola",
+     "p": 0.63
+    }
+   ]
+  },
+  {
+   "task": "Clear my inbox faster",
+   "tools": [
+    {
+     "id": "t-superhuman",
+     "p": 0.95
+    },
+    {
+     "id": "t-spark",
+     "p": 0.89
+    },
+    {
+     "id": "t-shortwave",
+     "p": 0.8
+    },
+    {
+     "id": "t-fyxer",
+     "p": 0.66
+    },
+    {
+     "id": "t-gemini",
+     "p": 0.62
+    }
+   ]
+  },
+  {
+   "task": "Plan my day and schedule tasks",
+   "tools": [
+    {
+     "id": "t-motion",
+     "p": 0.97
+    },
+    {
+     "id": "t-sunsama",
+     "p": 0.97
+    },
+    {
+     "id": "t-akiflow",
+     "p": 0.95
+    },
+    {
+     "id": "t-clickup",
+     "p": 0.86
+    }
+   ]
+  },
+  {
+   "task": "Manage a team project",
+   "tools": [
+    {
+     "id": "t-clickup",
+     "p": 0.98
+    },
+    {
+     "id": "t-asana",
+     "p": 0.98
+    },
+    {
+     "id": "t-monday-com",
+     "p": 0.98
+    },
+    {
+     "id": "t-linear",
+     "p": 0.9
+    },
+    {
+     "id": "t-notion",
+     "p": 0.62
+    }
+   ]
+  },
+  {
+   "task": "Manage customers and sales leads",
+   "tools": [
+    {
+     "id": "t-attio",
+     "p": 0.98
+    },
+    {
+     "id": "t-hubspot",
+     "p": 0.98
+    },
+    {
+     "id": "t-folk",
+     "p": 0.96
+    },
+    {
+     "id": "t-clay",
+     "p": 0.66
+    }
+   ]
+  },
+  {
+   "task": "Track business expenses",
+   "tools": [
+    {
+     "id": "t-expensify",
+     "p": 0.98
+    },
+    {
+     "id": "t-quickbooks",
+     "p": 0.97
+    },
+    {
+     "id": "t-ramp",
+     "p": 0.96
+    },
+    {
+     "id": "t-brex",
+     "p": 0.88
+    },
+    {
+     "id": "t-mercury",
+     "p": 0.78
+    }
+   ]
+  },
+  {
+   "task": "Automate repetitive work between apps",
+   "tools": [
+    {
+     "id": "t-zapier",
+     "p": 0.99
+    },
+    {
+     "id": "t-workato",
+     "p": 0.98
+    },
+    {
+     "id": "t-n8n",
+     "p": 0.97
+    },
+    {
+     "id": "t-make",
+     "p": 0.95
+    },
+    {
+     "id": "t-lindy",
+     "p": 0.73
+    },
+    {
+     "id": "t-skill-recorder",
+     "p": 0.73
+    }
+   ]
+  },
+  {
+   "task": "Schedule social media posts",
+   "tools": [
+    {
+     "id": "t-buffer",
+     "p": 0.99
+    },
+    {
+     "id": "t-metricool",
+     "p": 0.98
+    }
+   ]
+  },
+  {
+   "task": "Run AI privately on my own computer",
+   "tools": [
+    {
+     "id": "t-ollama",
+     "p": 0.98
+    },
+    {
+     "id": "t-lm-studio",
+     "p": 0.97
+    },
+    {
+     "id": "t-whisper-cpp",
+     "p": 0.85
+    },
+    {
+     "id": "t-deepseek",
+     "p": 0.6
+    }
+   ]
+  },
+  {
+   "task": "Put AI inside my own app",
+   "tools": [
+    {
+     "id": "t-claude-api",
+     "p": 0.97
+    },
+    {
+     "id": "t-openai-api",
+     "p": 0.96
+    },
+    {
+     "id": "t-openrouter",
+     "p": 0.95
+    },
+    {
+     "id": "t-google-ai-studio",
+     "p": 0.92
+    },
+    {
+     "id": "t-jev",
+     "p": 0.9
+    },
+    {
+     "id": "t-hugging-face",
+     "p": 0.87
+    },
+    {
+     "id": "t-ollama",
+     "p": 0.77
+    }
+   ]
+  },
+  {
+   "task": "Have an AI agent do tasks for me",
+   "tools": [
+    {
+     "id": "t-manus",
+     "p": 0.95
+    },
+    {
+     "id": "t-comet",
+     "p": 0.93
+    },
+    {
+     "id": "t-lindy",
+     "p": 0.92
+    },
+    {
+     "id": "t-windsurf",
+     "p": 0.92
+    },
+    {
+     "id": "t-openclaw",
+     "p": 0.91
+    },
+    {
+     "id": "t-codex",
+     "p": 0.9
+    },
+    {
+     "id": "t-opencode",
+     "p": 0.89
+    },
+    {
+     "id": "t-claude-api",
+     "p": 0.89
+    },
+    {
+     "id": "t-kimi",
+     "p": 0.88
+    },
+    {
+     "id": "t-claude-code",
+     "p": 0.87
+    },
+    {
+     "id": "t-hermes-agent",
+     "p": 0.86
+    },
+    {
+     "id": "t-skill-recorder",
+     "p": 0.77
+    },
+    {
+     "id": "t-graft",
+     "p": 0.76
+    },
+    {
+     "id": "t-shortwave",
+     "p": 0.75
+    }
+   ]
+  },
+  {
+   "task": "Record a tutorial or demo",
+   "tools": [
+    {
+     "id": "t-tella",
+     "p": 0.98
+    },
+    {
+     "id": "t-obs-studio",
+     "p": 0.98
+    },
+    {
+     "id": "t-screen-studio",
+     "p": 0.97
+    },
+    {
+     "id": "t-synthesia",
+     "p": 0.82
+    },
+    {
+     "id": "t-loom",
+     "p": 0.81
+    },
+    {
+     "id": "t-skill-recorder",
+     "p": 0.63
+    },
+    {
+     "id": "t-typeless",
+     "p": 0.6
+    }
+   ]
+  }
+ ]
+}
