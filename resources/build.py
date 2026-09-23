@@ -241,7 +241,11 @@ page = f'''<!DOCTYPE html>
   .tasks button{{font:13px var(--body);border:1.5px solid var(--ink);background:var(--cup);padding:7px 11px;cursor:pointer;color:var(--ink);}}
   .tasks button:hover{{background:var(--hover);}}
   .tasks button[aria-pressed="true"]{{background:var(--ink);color:var(--paper);}}
-  .jev-out{{font-family:var(--mono);font-size:12px;margin-top:10px;color:var(--muted);}}
+  .jev-out{{font-family:var(--mono);font-size:12px;margin-top:12px;color:var(--muted);display:flex;flex-direction:column;gap:8px;align-items:flex-start;}}
+  .jev-out .rank{{display:flex;flex-wrap:wrap;gap:6px;}}
+  .jev-out .rank a{{text-decoration:none;border:1.5px solid var(--ink);background:var(--cup);color:var(--ink);padding:5px 9px;font-size:12.5px;}}
+  .jev-out .rank a:hover{{background:var(--mustard);}}
+  .jev-out .rank b{{color:#2F6B4F;}}
   .jev-out button{{font:inherit;border:0;background:none;text-decoration:underline;cursor:pointer;color:var(--ink);}}
   .r .fit{{font-family:var(--mono);font-size:10px;background:#2F6B4F;color:#fff;padding:2px 6px;letter-spacing:.06em;}}
   .empty{{font-family:var(--mono);color:var(--muted);padding:40px 0;}}
@@ -339,9 +343,12 @@ page = f'''<!DOCTYPE html>
       cat.hidden = n === 0;
     }});
     out.hidden = false;
-    out.innerHTML = `Jev picked ${{t.tools.length}} tools for “${{t.task}}”. <button type="button">show everything</button>`;
+    // ranked by Jev's score, best fit first
+    const ranked = t.tools.map((x, i) => {{ const r = document.getElementById(x.id); const nm = r ? r.querySelector('.nm a').textContent : x.id;
+      return `<a href="#${{x.id}}">${{i + 1}}. ${{nm}} <b>${{Math.round(x.p * 100)}}%</b></a>`; }}).join('');
+    out.innerHTML = `<span>Jev's best fits for “${{t.task}}”, highest first:</span><span class="rank">${{ranked}}</span><button type="button">show everything</button>`;
     out.querySelector('button').onclick = () => btn.click();
-    document.querySelector('.layout').scrollIntoView({{behavior: 'smooth'}});
+
   }}));
   document.getElementById('jump').addEventListener('change', ev => {{ if (ev.target.value) location.hash = ev.target.value; }});
   // highlight the category you're reading in the sidebar

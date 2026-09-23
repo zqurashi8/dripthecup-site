@@ -1034,20 +1034,44 @@
    "id": "video",
    "name": "Video generation",
    "icon": "🎬",
-   "blurb": "Clips from text or a still image, and AI presenters.",
+   "blurb": "Clips from text or a still image, and AI presenters. Models change fast; these are the ones leading blind-vote leaderboards now.",
    "items": [
     {
      "name": "Higgsfield",
      "url": "https://higgsfield.ai",
      "by": "Higgsfield",
-     "best": "Many top video and image models in one app, with camera-move presets",
+     "best": "One app for the top video and image models (Kling, Veo, Seedance, Nano Banana and more), with camera-move presets",
      "top": true
+    },
+    {
+     "name": "Kling 3.0",
+     "url": "https://klingai.com",
+     "by": "Kuaishou",
+     "best": "Top of the blind-vote text-to-video leaderboards; realistic motion"
     },
     {
      "name": "Veo",
      "url": "https://deepmind.google/models/veo/",
      "by": "Google DeepMind",
-     "best": "Cinematic clips with sound and dialogue"
+     "best": "Google's cinematic video model, with sound and dialogue"
+    },
+    {
+     "name": "Seedance 2.5",
+     "url": "https://seed.bytedance.com/en/seedance2_5",
+     "by": "ByteDance",
+     "best": "Up to 30-second videos with audio and multi-shot storytelling"
+    },
+    {
+     "name": "Happy Horse",
+     "url": "https://fal.ai/happyhorse-1.0",
+     "by": "Alibaba",
+     "best": "Top-ranked open model for text- and image-to-video, with audio"
+    },
+    {
+     "name": "Gemini Omni Flash",
+     "url": "https://deepmind.google/models/gemini-omni/",
+     "by": "Google",
+     "best": "Fast video generation you can edit by chatting; top for image-to-video"
     },
     {
      "name": "Sora",
@@ -1056,16 +1080,17 @@
      "best": "Story-driven clips and remixes"
     },
     {
-     "name": "Kling",
-     "url": "https://klingai.com",
-     "by": "Kuaishou",
-     "best": "Realistic motion from a single image"
+     "name": "Wan",
+     "url": "https://wan.video",
+     "by": "Alibaba",
+     "kind": "open weights",
+     "best": "Open-weight video generation with native audio"
     },
     {
      "name": "Runway",
      "url": "https://runwayml.com",
      "by": "Runway",
-     "best": "Editing and extending real footage"
+     "best": "Video generation, plus editing and extending real footage"
     },
     {
      "name": "Luma",
@@ -1078,6 +1103,12 @@
      "url": "https://hailuoai.video",
      "by": "MiniMax",
      "best": "Expressive character motion"
+    },
+    {
+     "name": "PixVerse",
+     "url": "https://pixverse.ai",
+     "by": "PixVerse",
+     "best": "Quick stylized clips and effects for social"
     },
     {
      "name": "HeyGen",

@@ -12,10 +12,10 @@ import json, os, sys, time, urllib.error, urllib.request
 HERE = os.path.dirname(os.path.abspath(__file__))
 API = 'https://api.typesafe.ai/v1/systemone'
 THRESHOLD = 0.6
-MAX_PER_TASK = 14
+MAX_PER_TASK = 20
 
 TASKS = [
-    'Edit a video', 'Make short clips for TikTok or Reels', 'Generate a video from text or a photo',
+    'Edit a video', 'Cut a long video into short clips for TikTok or Reels', 'Generate a video from text or a photo',
     'Make a voiceover', 'Make music', 'Transcribe audio or meetings', 'Type faster by talking',
     'Generate images', 'Design a thumbnail, logo or social post', 'Make slides',
     'Build an app or website without coding', 'Write code faster', 'Save tokens and cost in a coding agent',
@@ -35,7 +35,10 @@ def ask(key, tool, cat):
     body = {
         'model': 'jev-latest',
         'state': {'tool': tool['name'], 'made_by': tool.get('by', ''), 'what_it_is_best_for': tool['best'],
-                  'type': tool.get('kind', ''), 'category': cat['name']},
+                  'type': tool.get('kind', ''), 'category': cat['name'],
+                  # the category description adds context a one-line summary lacks (e.g. that a
+                  # video platform also makes images)
+                  'category_description': cat['blurb']},
         'questions': {f'q{i}': {'type': 'noul', 'instructions':
                                 f'Would this tool be a strong, directly useful choice for someone who wants to: "{t}"? '
                                 'Answer yes only if helping with that is one of the main things this tool does.'}
