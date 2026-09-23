@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Drip the Cup</title>
-<meta name="description" content="Just a cup of coffee learning about a.i. Animated explainers, and merch that is coming soon.">
+<meta name="description" content="Just a cup of coffee learning about a.i. Animated explainers, and merch you can reserve before it is made.">
 <link rel="canonical" href="https://dripthecup.com/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dripthecup.com/">
 <meta property="og:title" content="Drip the Cup">
-<meta property="og:description" content="Just a cup of coffee learning about a.i. Turns out he's also a.i. Nobody mentioned it.">
+<meta property="og:description" content="Just a cup of coffee learning about a.i. New episodes when they are ready, and merch you can reserve.">
 <meta property="og:image" content="https://dripthecup.com/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -178,6 +178,41 @@
   .shop-note{margin-top:36px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;
              color:var(--muted);text-align:center;}
   .shop-cta{margin-top:20px;text-align:center;}
+
+  .reserve{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
+           border:1.5px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;
+           width:100%;padding:12px 14px;line-height:1;margin-top:2px;}
+  .reserve:hover{background:var(--ink);color:var(--paper);}
+  .reserve[data-in="1"]{background:var(--mustard);border-color:var(--mustard);cursor:default;}
+  .shop-lede{max-width:56ch;color:var(--muted);margin:-10px 0 26px;}
+
+  /* ---------- pre-order dialog ---------- */
+  .pre{border:3px solid var(--ink);background:var(--paper);color:var(--ink);padding:0;
+       width:min(430px,calc(100vw - 28px));box-shadow:8px 8px 0 var(--ink);}
+  .pre::backdrop{background:rgba(16,13,9,.62);}
+  .pre-wrap{position:relative;}
+  .pre-in{padding:26px 26px 24px;}
+  .pre h3{font-family:var(--display);font-weight:600;font-size:25px;line-height:1.08;margin:8px 0 4px;}
+  .pre-what{font-family:var(--mono);font-size:11.5px;letter-spacing:.07em;color:var(--muted);margin:0 0 20px;}
+  .pre label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;
+             text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+  .pre input[type=email],.pre select{width:100%;font:16px/1.4 var(--body);color:var(--ink);
+       background:var(--cup);border:1.5px solid var(--ink);border-radius:0;padding:12px;
+       margin-bottom:16px;appearance:none;-webkit-appearance:none;}
+  .pre select{font-family:var(--mono);font-size:13.5px;letter-spacing:.06em;}
+  .pre .btn{width:100%;padding:15px 18px;}
+  .pre .btn[disabled]{opacity:.55;cursor:default;}
+  .pre-fine{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;line-height:1.8;
+            color:var(--muted);margin:16px 0 0;}
+  .pre-err{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;color:var(--red);
+           margin:0 0 14px;line-height:1.5;}
+  .pre-x{position:absolute;top:6px;right:6px;}
+  .pre-x button{border:0;background:transparent;font:20px/1 var(--mono);color:var(--ink);
+                cursor:pointer;padding:9px 11px;}
+  .pre-done{display:flex;gap:14px;align-items:flex-start;}
+  .pre-done img{width:72px;height:auto;flex:none;}
+  .pre-done h3{margin-top:0;}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;}
 
   /* ---------- watch ---------- */
   .ep{display:grid;grid-template-columns:1.45fr 1fr;gap:40px;align-items:center;}
@@ -412,8 +447,10 @@
         <p class="eyebrow">Still percolating</p>
         <h2>Bean there, bought that</h2>
       </div>
-      <span class="tag">Opening soon</span>
+      <span class="tag">Pre-orders open</span>
     </div>
+    <p class="shop-lede">reserve anything you want. no card, no charge, nothing to cancel. i am counting
+       who wants what, and when enough people want a thing i will have it made and email you.</p>
     <div class="pills" role="group" aria-label="Filter products">
       <button class="pill" type="button" data-filter="all" aria-pressed="true">All</button>
       <button class="pill" type="button" data-filter="apparel" aria-pressed="false">Apparel</button>
@@ -424,53 +461,62 @@
 
     <div class="grid" id="grid">
       <article class="card" data-cat="drinkware">
-        <div class="tile"><img src="assets/p-mug.jpg" loading="lazy" alt="White ceramic diner mug printed with Drip above the words Bean There."><span class="badge">Coming soon</span></div>
+        <div class="tile"><img src="assets/p-mug.jpg" loading="lazy" alt="White ceramic diner mug printed with Drip above the words Bean There."><span class="badge">Pre-order</span></div>
         <div class="card-top"><span class="name">Bean There diner mug</span><span class="price">$24</span></div>
         <span class="note">11 oz stoneware &middot; for when you've bean through it</span>
+        <button class="reserve" type="button" data-p="mug" data-n="Bean There diner mug" data-price="$24">Put me in line</button>
       </article>
       <article class="card" data-cat="apparel">
-        <div class="tile"><img src="assets/p-tee.jpg" loading="lazy" alt="Cream heavyweight t-shirt printed with Drip above the words Slow Drip."><span class="badge">Coming soon</span></div>
+        <div class="tile"><img src="assets/p-tee.jpg" loading="lazy" alt="Cream heavyweight t-shirt printed with Drip above the words Slow Drip."><span class="badge">Pre-order</span></div>
         <div class="card-top"><span class="name">Slow Drip boxy tee</span><span class="price">$38</span></div>
         <span class="note">heavyweight cotton &middot; one colorway, more would be rushing</span>
+        <button class="reserve" type="button" data-p="tee" data-n="Slow Drip boxy tee" data-price="$38" data-sizes="S,M,L,XL,2XL,3XL">Put me in line</button>
       </article>
       <article class="card" data-cat="apparel">
-        <div class="tile"><img src="assets/p-hoodie.jpg" loading="lazy" alt="Mustard heavyweight hoodie with a small embroidered Drip on the left chest."><span class="badge">Coming soon</span></div>
+        <div class="tile"><img src="assets/p-hoodie.jpg" loading="lazy" alt="Mustard heavyweight hoodie with a small embroidered Drip on the left chest."><span class="badge">Pre-order</span></div>
         <div class="card-top"><span class="name">Brewed, Not Rushed hoodie</span><span class="price">$78</span></div>
         <span class="note">embroidered, not printed &middot; Drip is a detail, not a billboard</span>
+        <button class="reserve" type="button" data-p="hoodie" data-n="Brewed, Not Rushed hoodie" data-price="$78" data-sizes="S,M,L,XL,2XL,3XL">Put me in line</button>
       </article>
       <article class="card" data-cat="coffee">
-        <div class="tile"><img src="assets/p-bag.jpg" loading="lazy" alt="Matte black coffee bag with a cream label showing Drip and the words Slow Roast."><span class="badge">Coming soon</span></div>
+        <div class="tile"><img src="assets/p-bag.jpg" loading="lazy" alt="Matte black coffee bag with a cream label showing Drip and the words Slow Roast."><span class="badge">Pre-order</span></div>
         <div class="card-top"><span class="name">Slow Roast whole bean</span><span class="price">$22</span></div>
         <span class="note">roasted by our partner, not by a cartoon</span>
+        <button class="reserve" type="button" data-p="beans" data-n="Slow Roast whole bean" data-price="$22">Put me in line</button>
       </article>
       <article class="card" data-cat="small">
-        <div class="tile"><img src="assets/p-tote.jpg" loading="lazy" alt="Natural canvas tote printed with Drip above the words A Latte To Carry."><span class="badge">Coming soon</span></div>
+        <div class="tile"><img src="assets/p-tote.jpg" loading="lazy" alt="Natural canvas tote printed with Drip above the words A Latte To Carry."><span class="badge">Pre-order</span></div>
         <div class="card-top"><span class="name">A Latte to Carry tote</span><span class="price">$28</span></div>
         <span class="note">heavy canvas &middot; holds a laptop and a bag of beans</span>
+        <button class="reserve" type="button" data-p="tote" data-n="A Latte to Carry tote" data-price="$28">Put me in line</button>
       </article>
       <article class="card" data-cat="apparel">
-        <div class="tile"><img src="assets/p-cap.jpg" loading="lazy" alt="Dark brown unstructured dad cap with a small embroidered Drip on the front."><span class="badge">Coming soon</span></div>
+        <div class="tile"><img src="assets/p-cap.jpg" loading="lazy" alt="Dark brown unstructured dad cap with a small embroidered Drip on the front."><span class="badge">Pre-order</span></div>
         <div class="card-top"><span class="name">Boot Brown dad cap</span><span class="price">$34</span></div>
         <span class="note">unstructured &middot; the exact brown of his shoes</span>
+        <button class="reserve" type="button" data-p="cap" data-n="Boot Brown dad cap" data-price="$34">Put me in line</button>
       </article>
       <article class="card" data-cat="apparel">
-        <div class="tile"><img src="assets/p-socks.jpg" loading="lazy" alt="Cream crew socks with mustard toes, knitted with a repeating pattern of Drip."><span class="badge">Coming soon</span></div>
+        <div class="tile"><img src="assets/p-socks.jpg" loading="lazy" alt="Cream crew socks with mustard toes, knitted with a repeating pattern of Drip."><span class="badge">Pre-order</span></div>
         <div class="card-top"><span class="name">All-over Drip socks</span><span class="price">$16</span></div>
         <span class="note">combed cotton &middot; a latte of him</span>
+        <button class="reserve" type="button" data-p="socks" data-n="All-over Drip socks" data-price="$16" data-sizes="S/M,L/XL">Put me in line</button>
       </article>
       <article class="card" data-cat="small">
-        <div class="tile"><img src="assets/p-pin.jpg" loading="lazy" alt="Hard enamel pin shaped like Drip on a cream card reading Bean There."><span class="badge">Coming soon</span></div>
+        <div class="tile"><img src="assets/p-pin.jpg" loading="lazy" alt="Hard enamel pin shaped like Drip on a cream card reading Bean There."><span class="badge">Pre-order</span></div>
         <div class="card-top"><span class="name">Bean There enamel pin</span><span class="price">$12</span></div>
         <span class="note">hard enamel &middot; earns permanent tote placement</span>
+        <button class="reserve" type="button" data-p="pin" data-n="Bean There enamel pin" data-price="$12">Put me in line</button>
       </article>
       <article class="card" data-cat="small">
-        <div class="tile"><img src="assets/p-stickers.jpg" loading="lazy" alt="Three die-cut vinyl stickers of Drip: neutral, surprised and smiling."><span class="badge">Coming soon</span></div>
+        <div class="tile"><img src="assets/p-stickers.jpg" loading="lazy" alt="Three die-cut vinyl stickers of Drip: neutral, surprised and smiling."><span class="badge">Pre-order</span></div>
         <div class="card-top"><span class="name">Late Reaction sticker pack</span><span class="price">$8</span></div>
         <span class="note">3 die-cut vinyl &middot; the surprised one ships late. on purpose.</span>
+        <button class="reserve" type="button" data-p="stickers" data-n="Late Reaction sticker pack" data-price="$8">Put me in line</button>
       </article>
     </div>
-    <p class="shop-note">the shop isn't open yet. no countdowns, no waitlist, nothing is almost gone.</p>
-    <p class="shop-cta"><a class="btn btn-primary" href="https://www.instagram.com/dripthecup/" target="_blank" rel="noopener">Follow to hear when it opens</a></p>
+    <p class="shop-note">none of this is made yet, and nothing is almost gone. no countdown, no limited drop.
+       reserving costs nothing and only tells me you want one.</p>
   </div>
 </section>
 
@@ -557,6 +603,39 @@
   });
 </script>
 
+<dialog class="pre" id="pre" aria-labelledby="pre-name">
+  <div class="pre-wrap">
+    <form method="dialog" class="pre-x"><button aria-label="Close">&times;</button></form>
+    <div class="pre-in">
+      <form id="pre-form" novalidate>
+        <p class="eyebrow">Pre-order &middot; nothing is charged</p>
+        <h3 id="pre-name">&nbsp;</h3>
+        <p class="pre-what" id="pre-what">&nbsp;</p>
+        <p class="pre-err" id="pre-err" hidden></p>
+        <div id="pre-size-row" hidden>
+          <label for="pre-size">Size</label>
+          <select id="pre-size"></select>
+        </div>
+        <label for="pre-email">Your email</label>
+        <input id="pre-email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required>
+        <input class="hp" id="pre-hp" tabindex="-1" autocomplete="off" aria-hidden="true" placeholder="leave this empty">
+        <button class="btn btn-primary" type="submit" id="pre-go">Put me in line</button>
+        <p class="pre-fine">no card, no charge, nothing to cancel. if enough people want this one
+          i will have it made, and email you once when it is actually buyable. that is the only
+          thing your address gets used for.</p>
+      </form>
+      <div class="pre-done" id="pre-done" hidden>
+        <img src="assets/drip2-smile.png" alt="" width="72" height="123">
+        <div>
+          <h3>you are in line.</h3>
+          <p class="pre-what" id="pre-done-what">&nbsp;</p>
+          <p class="pre-fine">i will email you when it is real. no rush. you can close this.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>
+
 <div class="peek" aria-hidden="true"><img src="assets/drip2-curious-a.png" alt=""></div>
 
 <script>
@@ -586,6 +665,99 @@
     ['shop', 'watch', 'book'].forEach(function (id) {
       var el = document.getElementById(id);
       if (el) io.observe(el);
+    });
+  })();
+</script>
+<script>
+  // The pre-order desk. A reservation is an email and a product name, nothing more:
+  // no cart, no card, no total. Anyone already in line sees the button say so, which
+  // is why the browser remembers -- it is a convenience, the real list is server side.
+  (function () {
+    var dlg = document.getElementById('pre');
+    if (!dlg || !dlg.showModal) return;
+    var form = document.getElementById('pre-form'),
+        done = document.getElementById('pre-done'),
+        err = document.getElementById('pre-err'),
+        sizeRow = document.getElementById('pre-size-row'),
+        size = document.getElementById('pre-size'),
+        email = document.getElementById('pre-email'),
+        go = document.getElementById('pre-go'),
+        buttons = document.querySelectorAll('.reserve'),
+        KEY = 'drip-in-line',
+        current = null;
+
+    function mine() {
+      try { return JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) { return {}; }
+    }
+    function paint() {
+      var m = mine();
+      buttons.forEach(function (b) {
+        if (m[b.dataset.p]) {
+          b.dataset.in = '1';
+          b.textContent = 'you are in line';
+          b.disabled = true;
+        }
+      });
+    }
+    paint();
+
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () {
+        current = b;
+        form.hidden = false;
+        done.hidden = true;
+        err.hidden = true;
+        go.disabled = false;
+        go.textContent = 'Put me in line';
+        document.getElementById('pre-name').textContent = b.dataset.n;
+        document.getElementById('pre-what').textContent = b.dataset.price + ' when it opens';
+        var list = (b.dataset.sizes || '').split(',').filter(Boolean);
+        sizeRow.hidden = !list.length;
+        size.innerHTML = '';
+        list.forEach(function (s) {
+          var o = document.createElement('option');
+          o.value = s;
+          o.textContent = s;
+          size.appendChild(o);
+        });
+        dlg.showModal();
+        email.focus();
+      });
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      err.hidden = true;
+      go.disabled = true;
+      go.textContent = 'one sec';
+      fetch('/api/reserve', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          email: email.value,
+          product: current.dataset.p,
+          size: sizeRow.hidden ? '' : size.value,
+          cream: document.getElementById('pre-hp').value
+        })
+      }).then(function (r) {
+        return r.json().catch(function () { return {}; }).then(function (j) {
+          if (!r.ok || !j.ok) throw new Error(j.error || 'that did not go through. try again?');
+        });
+      }).then(function () {
+        document.getElementById('pre-done-what').textContent =
+          current.dataset.n + (sizeRow.hidden ? '' : ' \u00b7 size ' + size.value);
+        form.hidden = true;
+        done.hidden = false;
+        var m = mine();
+        m[current.dataset.p] = 1;
+        try { localStorage.setItem(KEY, JSON.stringify(m)); } catch (e2) {}
+        paint();
+      }).catch(function (e3) {
+        err.textContent = e3.message;
+        err.hidden = false;
+        go.disabled = false;
+        go.textContent = 'Put me in line';
+      });
     });
   })();
 </script>

@@ -1,10 +1,23 @@
 {
-  // Static-only Worker: no server code, Cloudflare just serves these files.
+  // The site is plain static files. The one piece of server code is the pre-order
+  // desk in worker/index.js, and only /api/* is routed to it -- everything else is
+  // served straight off disk, exactly as before.
   // "name" must match the Project name in the Cloudflare deploy screen.
   "name": "dripthecup-site",
   "compatibility_date": "2026-09-18",
+  "main": "worker/index.js",
   "assets": {
     "directory": ".",
-    "not_found_handling": "404-page"
-  }
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*"]
+  },
+  "d1_databases": [
+    {
+      // Reservations. Schema and the reason each column exists: worker/schema.sql
+      "binding": "DB",
+      "database_name": "dripthecup",
+      "database_id": "841a7fb6-457d-4d70-a1a5-e8f4f6578f80"
+    }
+  ]
 }
