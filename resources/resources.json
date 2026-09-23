@@ -1519,5 +1519,14 @@
     }
    ]
   }
+ ],
+ "trending": [
+  "Claude",
+  "ChatGPT",
+  "Claude Code",
+  "Gemini",
+  "Jev",
+  "Higgsfield",
+  "ElevenLabs"
  ]
 }

@@ -1,7 +1,7 @@
 """Build resources/index.html from resources.json.
 
 Add or edit a tool in resources.json, then run:  python resources/build.py
-Layout (after efficient.app's pattern, denser): a category sidebar, a "starting picks" strip,
+Layout (after efficient.app's pattern, denser): a category sidebar, a "trending now" strip,
 and one compact row per tool that expands for details. Plain HTML works without JavaScript;
 a small script adds search and the phone category picker."""
 import html, json, os, time, urllib.error, urllib.request
@@ -91,7 +91,9 @@ cats = D['categories']
 total = sum(len(c['items']) for c in cats)
 side = '\n'.join(f'      <a href="#{c["id"]}"><span class="ic">{c["icon"]}</span>{e(c["name"])}<span class="n">{len(c["items"])}</span></a>' for c in cats)
 opts = '\n'.join(f'        <a href="#{c["id"]}"><span class="ic">{c["icon"]}</span>{e(c["name"])}<span class="n">{len(c["items"])}</span></a>' for c in cats)
-tops = [(it, c) for c in cats for it in c['items'] if it.get('top')]
+# "Trending now": the short list in resources.json's `trending`, in that order (keep it to 6-7)
+BYNAME = {it['name']: (it, c) for c in cats for it in c['items']}
+tops = [BYNAME[n] for n in D.get('trending', [])]
 picks = '\n'.join(f'''      <a class="pk" href="{e(it["url"])}" target="_blank" rel="noopener"><img src="{icon(it["url"])}" alt="" width="24" height="24" loading="lazy"><span><b>{e(it["name"])}</b><small>{e(c["name"])}</small></span></a>''' for it, c in tops)
 sections = '\n'.join(f'''    <section class="cat" id="{c["id"]}">
       <h2><span class="ic">{c["icon"]}</span>{e(c["name"])} <span class="n">{len(c["items"])}</span></h2>
@@ -321,8 +323,8 @@ page = f'''<!DOCTYPE html>
   <div class="drip" aria-hidden="true"><img src="../assets/drip2-idle.png" alt=""></div>
 </div>
 
-<section class="picks" aria-label="Starting picks">
-  <h2>Where we'd start</h2>
+<section class="picks" aria-label="Trending now">
+  <h2>Trending now</h2>
   <div class="pks">
 {picks}
   </div>
@@ -421,4 +423,4 @@ page = f'''<!DOCTYPE html>
 </html>
 '''
 open(os.path.join(HERE, 'index.html'), 'w', encoding='utf8').write(page)
-print(f'resources/index.html: {len(cats)} categories, {total} tools, {len(tops)} starting picks')
+print(f'resources/index.html: {len(cats)} categories, {total} tools, {len(tops)} trending')
