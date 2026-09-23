@@ -55,6 +55,10 @@ def icon(url):
     return f'icons/{key}.png'
 
 
+def slug(name):
+    return 't-' + ''.join(ch if ch.isalnum() else '-' for ch in name.lower()).strip('-')
+
+
 def row(it, cat):
     badges = ''
     if it.get('kind'):
@@ -75,10 +79,13 @@ def row(it, cat):
           <span class="bf">{e(it["best"])}</span>
           <span class="bs">{badges}</span>'''
     if extra:
-        return f'''      <li class="r" data-q="{e(q)}"><details><summary>{head}<span class="more" aria-hidden="true">+</span></summary><div class="ex">{extra}</div></details></li>'''
-    return f'''      <li class="r" data-q="{e(q)}"><div class="rw">{head}<a class="go" href="{e(it["url"])}" target="_blank" rel="noopener" aria-label="Open {e(it["name"])}">↗</a></div></li>'''
+        return f'''      <li class="r" id="{slug(it['name'])}" data-q="{e(q)}"><details><summary>{head}<span class="more" aria-hidden="true">+</span></summary><div class="ex">{extra}</div></details></li>'''
+    return f'''      <li class="r" id="{slug(it['name'])}" data-q="{e(q)}"><div class="rw">{head}<a class="go" href="{e(it["url"])}" target="_blank" rel="noopener" aria-label="Open {e(it["name"])}">↗</a></div></li>'''
 
 
+LONG = 8  # a category longer than this scrolls inside its own box
+TASKS_PATH = os.path.join(HERE, 'tasks.json')
+TASKS = json.load(open(TASKS_PATH, encoding='utf8')) if os.path.exists(TASKS_PATH) else None
 cats = D['categories']
 total = sum(len(c['items']) for c in cats)
 side = '\n'.join(f'      <a href="#{c["id"]}"><span class="ic">{c["icon"]}</span>{e(c["name"])}<span class="n">{len(c["items"])}</span></a>' for c in cats)
@@ -88,10 +95,23 @@ picks = '\n'.join(f'''      <a class="pk" href="{e(it["url"])}" target="_blank" 
 sections = '\n'.join(f'''    <section class="cat" id="{c["id"]}">
       <h2><span class="ic">{c["icon"]}</span>{e(c["name"])} <span class="n">{len(c["items"])}</span></h2>
       <p class="blurb">{e(c["blurb"])}</p>
-      <ul class="rows">
+      <ul class="rows{' long' if len(c['items']) > LONG else ''}">
 {chr(10).join(row(it, c) for it in c["items"])}
-      </ul>
+      </ul>{f'<p class="more-note">Showing {LONG} of {len(c["items"])}. Scroll the list for the rest.</p>' if len(c['items']) > LONG else ''}
     </section>''' for c in cats)
+
+if TASKS:
+    btns = '\n'.join(f'    <button type="button" data-task="{i}" aria-pressed="false">{e(t["task"])}</button>' for i, t in enumerate(TASKS['tasks']))
+    jev_block = f'''<section class="jev" aria-label="Find a tool by task">
+  <h2>What do you want to do?<small>tools matched by Jev</small></h2>
+  <div class="tasks">
+{btns}
+  </div>
+  <p class="jev-out" id="jevout" hidden></p>
+  <script type="application/json" id="taskdata">{json.dumps(TASKS["tasks"])}</script>
+</section>'''
+else:
+    jev_block = ''
 
 page = f'''<!DOCTYPE html>
 <html lang="en">
@@ -208,6 +228,22 @@ page = f'''<!DOCTYPE html>
     .bs{{grid-area:b;justify-content:flex-start;}} .bs:empty{{display:none;}} .go,.more{{grid-area:g;}}
     .ex{{padding-left:6px;}}
   }}
+  .rows.long{{max-height:470px;overflow-y:auto;overscroll-behavior:contain;border-bottom:1.5px solid var(--ink);}}
+  @media (max-width:640px){{.rows.long{{max-height:640px;}}}}
+  body.searching .rows.long, body.tasking .rows.long{{max-height:none;border-bottom:0;}}
+  body.searching .more-note, body.tasking .more-note{{display:none;}}
+  .more-note{{font-family:var(--mono);font-size:11px;color:var(--muted);margin:6px 0 0;}}
+  /* Jev task finder */
+  .jev{{max-width:1240px;margin:0 auto;padding:4px 20px 20px;}}
+  .jev h2{{font-family:var(--display);font-weight:900;font-size:22px;letter-spacing:-.01em;}}
+  .jev h2 small{{font-family:var(--mono);font-size:11px;font-weight:400;color:var(--muted);letter-spacing:.08em;margin-left:8px;}}
+  .tasks{{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px;}}
+  .tasks button{{font:13px var(--body);border:1.5px solid var(--ink);background:var(--cup);padding:7px 11px;cursor:pointer;color:var(--ink);}}
+  .tasks button:hover{{background:var(--hover);}}
+  .tasks button[aria-pressed="true"]{{background:var(--ink);color:var(--paper);}}
+  .jev-out{{font-family:var(--mono);font-size:12px;margin-top:10px;color:var(--muted);}}
+  .jev-out button{{font:inherit;border:0;background:none;text-decoration:underline;cursor:pointer;color:var(--ink);}}
+  .r .fit{{font-family:var(--mono);font-size:10px;background:#2F6B4F;color:#fff;padding:2px 6px;letter-spacing:.06em;}}
   .empty{{font-family:var(--mono);color:var(--muted);padding:40px 0;}}
   .fine{{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding-top:28px;margin-top:28px;border-top:1px solid var(--line);max-width:80ch;}}
   .foot{{background:var(--dark);color:#CFC4B0;padding:26px 20px;font-family:var(--mono);font-size:12px;text-align:center;}}
@@ -232,7 +268,7 @@ page = f'''<!DOCTYPE html>
     <p>One line each on what it's best for. Click a row with a <b>+</b> for install commands and notes.</p>
     <label class="search" for="q"><span>⌕</span><input id="q" type="search" placeholder="Try: dictation, email, free, video, agent..." autocomplete="off" aria-label="Search {total} AI tools"></label>
   </div>
-  <div class="drip" aria-hidden="true"><img src="../assets/drip2-curious-a.png" alt=""></div>
+  <div class="drip" aria-hidden="true"><img src="../assets/drip2-idle.png" alt=""></div>
 </div>
 
 <section class="picks" aria-label="Starting picks">
@@ -242,6 +278,7 @@ page = f'''<!DOCTYPE html>
   </div>
 </section>
 
+{jev_block}
 <div class="layout">
   <nav class="side" aria-label="Categories">
 {side}
@@ -262,6 +299,8 @@ page = f'''<!DOCTYPE html>
 <script>
   const q = document.getElementById('q'), empty = document.getElementById('empty');
   q.addEventListener('input', () => {{
+    document.body.classList.toggle('searching', q.value.trim() !== '');
+    clearTask();
     const terms = q.value.toLowerCase().trim().split(/\\s+/).filter(Boolean);
     let shown = 0;
     document.querySelectorAll('.cat').forEach(cat => {{
@@ -271,6 +310,39 @@ page = f'''<!DOCTYPE html>
     }});
     empty.hidden = shown > 0;
   }});
+  // Jev task finder: each task lists the tools Jev judged a strong fit (probability kept per tool)
+  const td = document.getElementById('taskdata');
+  const TASKS = td ? JSON.parse(td.textContent) : [];
+  const out = document.getElementById('jevout');
+  function clearTask() {{
+    document.body.classList.remove('tasking');
+    document.querySelectorAll('.tasks button').forEach(b => b.setAttribute('aria-pressed', 'false'));
+    document.querySelectorAll('.r .fit').forEach(x => x.remove());
+    if (out) out.hidden = true;
+  }}
+  document.querySelectorAll('.tasks button').forEach(btn => btn.addEventListener('click', () => {{
+    const on = btn.getAttribute('aria-pressed') === 'true';
+    q.value = ''; document.body.classList.remove('searching');
+    clearTask();
+    document.querySelectorAll('.r').forEach(r => r.hidden = false);
+    document.querySelectorAll('.cat').forEach(c => c.hidden = false);
+    empty.hidden = true;
+    if (on) return;
+    const t = TASKS[+btn.dataset.task], pick = new Map(t.tools.map(x => [x.id, x.p]));
+    btn.setAttribute('aria-pressed', 'true'); document.body.classList.add('tasking');
+    document.querySelectorAll('.cat').forEach(cat => {{
+      let n = 0;
+      cat.querySelectorAll('.r').forEach(r => {{
+        const p = pick.get(r.id); r.hidden = p === undefined;
+        if (p !== undefined) {{ n++; const s = document.createElement('span'); s.className = 'fit'; s.textContent = Math.round(p * 100) + '% fit'; r.querySelector('.bs').prepend(s); }}
+      }});
+      cat.hidden = n === 0;
+    }});
+    out.hidden = false;
+    out.innerHTML = `Jev picked ${{t.tools.length}} tools for “${{t.task}}”. <button type="button">show everything</button>`;
+    out.querySelector('button').onclick = () => btn.click();
+    document.querySelector('.layout').scrollIntoView({{behavior: 'smooth'}});
+  }}));
   document.getElementById('jump').addEventListener('change', ev => {{ if (ev.target.value) location.hash = ev.target.value; }});
   // highlight the category you're reading in the sidebar
   const links = [...document.querySelectorAll('.side a')];
