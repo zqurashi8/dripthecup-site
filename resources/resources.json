@@ -291,7 +291,8 @@
      "by": "Matt Pocock",
      "kind": "skill pack",
      "stars": "268K",
-     "best": "Matt Pocock's engineering skills, straight from his agent setup"
+     "best": "Matt Pocock's engineering skills, straight from his agent setup",
+     "install": "claude plugins install mattpocock-skills"
     },
     {
      "name": "ECC",
@@ -299,7 +300,8 @@
      "by": "affaan-m",
      "kind": "skill pack",
      "stars": "266K",
-     "best": "Skills, memory, security and research-first habits for coding agents"
+     "best": "Skills, memory, security and research-first habits for coding agents",
+     "install": "/plugin marketplace add https://github.com/affaan-m/ECC\n/plugin install ecc@ecc"
     },
     {
      "name": "Karpathy skills",
@@ -307,7 +309,8 @@
      "by": "multica-ai",
      "kind": "skill",
      "stars": "215K",
-     "best": "One CLAUDE.md that avoids common AI coding mistakes, based on Andrej Karpathy's notes"
+     "best": "One CLAUDE.md that avoids common AI coding mistakes, based on Andrej Karpathy's notes",
+     "install": "/plugin marketplace add forrestchang/andrej-karpathy-skills\n/plugin install andrej-karpathy-skills@karpathy-skills"
     },
     {
      "name": "Anthropic Skills",
@@ -334,7 +337,8 @@
      "by": "Garry Tan",
      "kind": "skill pack",
      "stars": "134K",
-     "best": "Garry Tan's Claude Code setup: 23 tools acting as CEO, designer, QA and more"
+     "best": "Garry Tan's Claude Code setup: 23 tools acting as CEO, designer, QA and more",
+     "install": "git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git ~/.claude/skills/gstack && cd ~/.claude/skills/gstack && ./setup"
     },
     {
      "name": "UI UX Pro Max",
@@ -342,7 +346,8 @@
      "by": "nextlevelbuilder",
      "kind": "skill",
      "stars": "130K",
-     "best": "Design know-how for professional UI on any platform"
+     "best": "Design know-how for professional UI on any platform",
+     "install": "/plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill\n/plugin install ui-ux-pro-max@ui-ux-pro-max-skill"
     },
     {
      "name": "Graphify",
@@ -369,8 +374,9 @@
      "url": "https://github.com/oso95/scroll-world",
      "by": "oso95",
      "kind": "skill",
-     "stars": "9.4K",
-     "best": "Turns any brand into a scrollable 3D landing page"
+     "stars": "9.5K",
+     "best": "Turns any brand into a scrollable 3D landing page",
+     "install": "/plugin marketplace add oso95/scroll-world\n/plugin install scroll-world@scroll-world"
     },
     {
      "name": "Video Shotcraft",
@@ -378,48 +384,54 @@
      "by": "Vincent Wei",
      "kind": "skill",
      "stars": "9.3K",
-     "best": "Cinematic product videos in Remotion, with 150+ shot recipes"
+     "best": "Cinematic product videos in Remotion, with 150+ shot recipes",
+     "install": "npx skills add Vincentwei1021/video-shotcraft"
     },
     {
      "name": "Graft",
      "url": "https://github.com/trailhq/Graft",
      "by": "Trail",
      "kind": "skill",
-     "stars": "9.0K",
-     "best": "Codebase-specific context so coding agents work faster and cheaper"
+     "stars": "9.1K",
+     "best": "Codebase-specific context so coding agents work faster and cheaper",
+     "install": "npm install -g @nanonets/graft\ngraft init"
     },
     {
      "name": "Interface skills",
      "url": "https://github.com/jakubkrehel/skills",
      "by": "Jakub Krehel",
      "kind": "skill pack",
-     "stars": "7.0K",
-     "best": "A collection of skills for building great interfaces"
+     "stars": "7.1K",
+     "best": "A collection of skills for building great interfaces",
+     "install": "/plugin marketplace add jakubkrehel/skills\n/plugin install interfaces@interfaces"
     },
     {
      "name": "Fast Jev Compaction",
      "url": "https://github.com/tamaratran/fast-jev-compaction",
      "by": "Tamara Tran",
      "kind": "plugin",
-     "stars": "6.4K",
+     "stars": "6.5K",
      "best": "Uses Jev to drop stale context instead of summarizing it",
-     "seen": "jev-vs-chatgpt"
+     "seen": "jev-vs-chatgpt",
+     "install": "claude plugin marketplace add tamaratran/fast-jev-compaction\nclaude plugin install fast-jev-compaction@fast-jev-compaction"
     },
     {
      "name": "Lieflat Charts",
      "url": "https://github.com/larashero3-dotcom/lieflat-charts",
      "by": "larashero3",
      "kind": "skill",
-     "stars": "5.6K",
-     "best": "Turns data into polished, interactive HTML charts"
+     "stars": "5.7K",
+     "best": "Turns data into polished, interactive HTML charts",
+     "install": "npx skills add https://github.com/larashero3-dotcom/lieflat-charts --skill lieflat-charts"
     },
     {
      "name": "IP as Logo",
      "url": "https://github.com/s1dashu/ip-as-logo-skill",
      "by": "s1dashu",
      "kind": "skill",
-     "stars": "5.4K",
-     "best": "Simple, rounded mascot-style logos"
+     "stars": "5.5K",
+     "best": "Simple, rounded mascot-style logos",
+     "install": "npx skills@latest add s1dashu/ip-as-logo-skill --global"
     },
     {
      "name": "Skill Recorder",
@@ -427,7 +439,8 @@
      "by": "Microsoft",
      "kind": "app",
      "stars": "4.1K",
-     "best": "Records you doing a task on screen and turns it into a reusable skill"
+     "best": "Records you doing a task on screen and turns it into a reusable skill",
+     "note": "A desktop app, not a skill: install it from the command on its latest GitHub release page."
     },
     {
      "name": "David Ondrej's skills",
@@ -443,7 +456,8 @@
      "by": "AminBlg",
      "kind": "skill",
      "stars": "3.5K",
-     "best": "Makes the AI write docs in plain, simplified technical English"
+     "best": "Makes the AI write docs in plain, simplified technical English",
+     "install": "claude plugin marketplace add AminBlg/SimpleEnglish && claude plugin install simple-english@simple-english"
     },
     {
      "name": "Unlazy",
@@ -451,7 +465,8 @@
      "by": "Leonxlnx",
      "kind": "skill",
      "stars": "3.5K",
-     "best": "Stops agents cutting corners by splitting work into deeper steps"
+     "best": "Stops agents cutting corners by splitting work into deeper steps",
+     "install": "npx skills add Leonxlnx/unlazy"
     },
     {
      "name": "Sepia",
@@ -459,7 +474,8 @@
      "by": "Nanako0129",
      "kind": "skill",
      "stars": "2.8K",
-     "best": "Rewrites text so it stops sounding AI-written"
+     "best": "Rewrites text so it stops sounding AI-written",
+     "install": "claude plugin marketplace add Nanako0129/sepia\nclaude plugin install sepia@sepia --scope user"
     },
     {
      "name": "Scroll Craft",
@@ -467,32 +483,36 @@
      "by": "Nate Herk",
      "kind": "skill",
      "stars": "2.7K",
-     "best": "Premium, scroll-driven websites"
+     "best": "Premium, scroll-driven websites",
+     "install": "/plugin marketplace add nateherkai/scroll-craft\n/plugin install nateherk-design"
     },
     {
      "name": "Vox Director",
      "url": "https://github.com/Alisa0808/vox-director",
      "by": "Alisa0808",
      "kind": "skill",
-     "stars": "2.0K",
-     "best": "One topic in, a Vox-style paper-collage explainer out"
+     "stars": "2K",
+     "best": "One topic in, a Vox-style paper-collage explainer out",
+     "install": "git clone https://github.com/Alisa0808/vox-director.git ~/.claude/skills/vox-director"
     },
     {
      "name": "Anything2Explainer",
      "url": "https://github.com/Vincentwei1021/anything2explainer",
      "by": "Vincent Wei",
      "kind": "skill",
-     "stars": "2.0K",
-     "best": "Topic in, narrated motion-graphics explainer out"
+     "stars": "2K",
+     "best": "Topic in, narrated motion-graphics explainer out",
+     "install": "git clone https://github.com/Vincentwei1021/anything2explainer.git\nln -s \"$PWD/anything2explainer\" ~/.claude/skills/anything2explainer"
     },
     {
      "name": "TypeSafe skills",
      "url": "https://github.com/typesafe-ai/skills",
      "by": "TypeSafe",
      "kind": "skill pack",
-     "stars": "1.9K",
+     "stars": "2K",
      "best": "Build apps on Jev with the agent guiding you",
-     "seen": "jev-vs-chatgpt"
+     "seen": "jev-vs-chatgpt",
+     "install": "claude plugin marketplace add typesafe-ai/skills\nclaude plugin install typesafe@typesafe-ai"
     },
     {
      "name": "Headcount",
@@ -500,7 +520,8 @@
      "by": "cbrock84",
      "kind": "skill pack",
      "stars": "1.7K",
-     "best": "125+ skills organised like the departments of a company"
+     "best": "125+ skills organised like the departments of a company",
+     "install": "/plugin marketplace add cbrock84/headcount\n/plugin install security@headcount"
     },
     {
      "name": "Frontend Design",
@@ -837,6 +858,12 @@
      "url": "https://www.copilot.money",
      "by": "Copilot",
      "best": "Personal budgeting and spending tracking"
+    },
+    {
+     "name": "Stripe",
+     "url": "https://stripe.com",
+     "by": "Stripe",
+     "best": "Online payments and invoices; its official MCP server lets an AI agent create payment links, invoices and refunds"
     }
    ]
   },
@@ -996,6 +1023,13 @@
      "kind": "open source",
      "stars": "129K",
      "best": "Runs language models fast on ordinary hardware"
+    },
+    {
+     "name": "Plaid",
+     "url": "https://plaid.com",
+     "by": "Plaid",
+     "kind": "for developers",
+     "best": "Connects your own app to people's bank accounts; its MCP server helps you debug that connection with AI"
     }
    ]
   },
@@ -1424,6 +1458,12 @@
      "url": "https://buffer.com",
      "by": "Buffer",
      "best": "Scheduling posts across every platform from one queue"
+    },
+    {
+     "name": "Blotato",
+     "url": "https://www.blotato.com",
+     "by": "Blotato",
+     "best": "Posts to 9 platforms from one place; an MCP server lets Claude schedule them, plus n8n and Make nodes"
     },
     {
      "name": "ManyChat",

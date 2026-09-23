@@ -31,6 +31,11 @@
   .eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0;}
   .hdr{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);z-index:20;}
   @media (max-width:900px){.hdr{position:static;} html{scroll-padding-top:12px;}} /* phones: header scrolls away */
+  @media (hover:hover) and (pointer:fine){ /* Drip is the cursor on desktop */
+    html{cursor:url(../assets/cursor-drip.png) 3 5, auto;cursor:-webkit-image-set(url(../assets/cursor-drip.png) 1x, url(../assets/cursor-drip@2x.png) 2x) 3 5, auto;}
+    a, button, summary, label{cursor:url(../assets/cursor-drip-tap.png) 7 4, pointer;cursor:-webkit-image-set(url(../assets/cursor-drip-tap.png) 1x, url(../assets/cursor-drip-tap@2x.png) 2x) 7 4, pointer;}
+    input, textarea{cursor:text;}
+  }
   .hdr .in{max-width:1120px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
   .brand{font-family:var(--display);font-weight:900;font-size:22px;letter-spacing:-.02em;text-decoration:none;line-height:1;}
   .hnav{display:flex;gap:2px;flex-wrap:wrap;}

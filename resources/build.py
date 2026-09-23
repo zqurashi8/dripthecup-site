@@ -90,7 +90,7 @@ TASKS = json.load(open(TASKS_PATH, encoding='utf8')) if os.path.exists(TASKS_PAT
 cats = D['categories']
 total = sum(len(c['items']) for c in cats)
 side = '\n'.join(f'      <a href="#{c["id"]}"><span class="ic">{c["icon"]}</span>{e(c["name"])}<span class="n">{len(c["items"])}</span></a>' for c in cats)
-opts = '\n'.join(f'      <option value="{c["id"]}">{c["icon"]} {e(c["name"])} ({len(c["items"])})</option>' for c in cats)
+opts = '\n'.join(f'        <a href="#{c["id"]}"><span class="ic">{c["icon"]}</span>{e(c["name"])}<span class="n">{len(c["items"])}</span></a>' for c in cats)
 tops = [(it, c) for c in cats for it in c['items'] if it.get('top')]
 picks = '\n'.join(f'''      <a class="pk" href="{e(it["url"])}" target="_blank" rel="noopener"><img src="{icon(it["url"])}" alt="" width="24" height="24" loading="lazy"><span><b>{e(it["name"])}</b><small>{e(c["name"])}</small></span></a>''' for it, c in tops)
 sections = '\n'.join(f'''    <section class="cat" id="{c["id"]}">
@@ -153,6 +153,11 @@ page = f'''<!DOCTYPE html>
   body{{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.45;-webkit-font-smoothing:antialiased;}}
   a{{color:inherit;}}
   :focus-visible{{outline:3px solid var(--red);outline-offset:2px;}}
+  @media (hover:hover) and (pointer:fine){{
+    html{{cursor:url(../assets/cursor-drip.png) 3 5, auto;cursor:-webkit-image-set(url(../assets/cursor-drip.png) 1x, url(../assets/cursor-drip@2x.png) 2x) 3 5, auto;}}
+    a, button, summary, label, .rw{{cursor:url(../assets/cursor-drip-tap.png) 7 4, pointer;cursor:-webkit-image-set(url(../assets/cursor-drip-tap.png) 1x, url(../assets/cursor-drip-tap@2x.png) 2x) 7 4, pointer;}}
+    input{{cursor:text;}}
+  }}
   h1,h2{{text-wrap:balance;margin:0;}}
   .hdr{{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top, 0px);z-index:20;}}
   .hdr .in{{max-width:1240px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;}}
@@ -186,6 +191,14 @@ page = f'''<!DOCTYPE html>
   .pk img{{border-radius:5px;}}
   .pk b{{display:block;font-family:var(--display);font-size:15px;line-height:1.1;}}
   .pk small{{display:block;font-family:var(--mono);font-size:10.5px;color:var(--muted);}}
+  @media (max-width:640px){{
+    .pks{{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;overflow:visible;padding-bottom:0;}}
+    .pk{{padding:6px 7px;gap:6px;min-width:0;}}
+    .pk img{{width:18px;height:18px;}}
+    .pk b{{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}}
+    .pk small{{display:none;}}
+    .pk span{{min-width:0;}}
+  }}
 
   /* layout: sidebar + list */
   .layout{{max-width:1240px;margin:0 auto;padding:0 20px 40px;display:grid;grid-template-columns:250px minmax(0,1fr);gap:32px;border-top:1px solid var(--line);}}
@@ -203,7 +216,15 @@ page = f'''<!DOCTYPE html>
     .layout{{grid-template-columns:minmax(0,1fr);gap:0;}}
     .side{{display:none;}}
     .pick{{display:block;background:var(--paper);padding:10px 0;border-bottom:1px solid var(--line);}}
-    .pick select{{width:100%;font:14px var(--mono);padding:10px;border:2px solid var(--ink);background:var(--cup);color:var(--ink);}}
+    .pick summary{{list-style:none;cursor:pointer;font:13px var(--mono);letter-spacing:.06em;text-transform:uppercase;border:2px solid var(--ink);background:var(--cup);padding:12px 14px;display:flex;justify-content:space-between;}}
+    .pick summary::-webkit-details-marker{{display:none;}}
+    .pick[open] summary{{background:var(--ink);color:var(--paper);}}
+    .pick[open] summary span{{transform:rotate(180deg);}}
+    .jumps{{display:grid;grid-template-columns:1fr 1fr;border:2px solid var(--ink);border-top:0;background:var(--cup);}}
+    .jumps a{{display:flex;align-items:center;gap:6px;text-decoration:none;font-size:13.5px;line-height:1.2;padding:10px 8px;border-bottom:1px solid var(--line);}}
+    .jumps a:nth-child(odd){{border-right:1px solid var(--line);}}
+    .jumps a:active, .jumps a:hover{{background:var(--mustard);}}
+    .jumps .n{{margin-left:auto;font-family:var(--mono);font-size:10.5px;color:var(--muted);}}
   }}
 
   .cat{{padding-top:24px;}}
@@ -227,6 +248,10 @@ page = f'''<!DOCTYPE html>
   .b.we{{background:var(--mustard);}}
   .b.st{{background:var(--ink);color:var(--paper);}}
   .go, .more{{font-family:var(--mono);text-decoration:none;text-align:center;color:var(--muted);}}
+  /* rows with nothing to expand: the whole row opens the tool */
+  .rw{{position:relative;cursor:pointer;}}
+  .go::after{{content:'';position:absolute;inset:0;}}
+  .nm a{{position:relative;z-index:1;}}
   .go:hover{{color:var(--ink);}}
   details[open] .more{{transform:rotate(45deg);}}
   .ex{{padding:0 6px 12px 46px;}}
@@ -243,9 +268,10 @@ page = f'''<!DOCTYPE html>
   body.searching .rows.clip .r:nth-child(n+{LONG + 1}), body.tasking .rows.clip .r:nth-child(n+{LONG + 1}){{display:block;}}
   body.searching .rows.clip .r[hidden], body.tasking .rows.clip .r[hidden]{{display:none;}}
   body.searching .showall, body.tasking .showall{{display:none;}}
-  .showall, .moretasks{{font:12px var(--mono);letter-spacing:.06em;border:1.5px solid var(--ink);background:var(--cup);color:var(--ink);padding:10px 14px;margin-top:10px;cursor:pointer;}}
+  .showall, .moretasks{{font:600 12.5px var(--mono);letter-spacing:.08em;text-transform:uppercase;border:2px solid var(--ink);background:var(--mustard);color:var(--ink);padding:11px 16px;margin-top:12px;cursor:pointer;box-shadow:3px 3px 0 var(--ink);}}
+  .showall:active, .moretasks:active{{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink);}}
   .showall{{width:100%;}}
-  .showall:hover, .moretasks:hover{{background:var(--mustard);}}
+  .showall:hover, .moretasks:hover{{background:#EDBB45;}}
   /* Jev task finder */
   .jev{{max-width:1240px;margin:0 auto;padding:4px 20px 20px;}}
   .jev h2{{font-family:var(--display);font-weight:900;font-size:22px;letter-spacing:-.01em;}}
@@ -308,10 +334,11 @@ page = f'''<!DOCTYPE html>
 {side}
   </nav>
   <main>
-    <div class="pick"><select id="jump" aria-label="Jump to a category">
-      <option value="">Jump to a category...</option>
+    <details class="pick" id="jump"><summary>Jump to a category <span aria-hidden="true">↓</span></summary>
+      <nav class="jumps" aria-label="Categories">
 {opts}
-    </select></div>
+      </nav>
+    </details>
 {sections}
     <p class="empty" id="empty" hidden>Nothing matches that yet. Drip is still learning.</p>
     <p class="fine">Last checked {e(D["updated"])}. Star counts are GitHub's on that day. We're not paid by any of these companies; if that ever changes, it will say so here. Tools change fast, so check each site for current pricing and features. Icons are each site's own favicon.</p>
@@ -382,7 +409,7 @@ page = f'''<!DOCTYPE html>
     mt.setAttribute('aria-expanded', String(!open));
     mt.textContent = open ? `More tasks (${{tk.children.length - 6}}) ↓` : 'Fewer tasks ↑';
   }});
-  document.getElementById('jump').addEventListener('change', ev => {{ if (ev.target.value) location.hash = ev.target.value; }});
+  document.querySelectorAll('.jumps a').forEach(a => a.addEventListener('click', () => document.getElementById('jump').open = false));
   // highlight the category you're reading in the sidebar
   const links = [...document.querySelectorAll('.side a')];
   const io = new IntersectionObserver(es => es.forEach(en => {{

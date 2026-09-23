@@ -868,6 +868,10 @@
      "p": 0.63
     },
     {
+     "id": "t-blotato",
+     "p": 0.63
+    },
+    {
      "id": "t-deepseek-harness",
      "p": 0.61
     }
@@ -883,6 +887,10 @@
     {
      "id": "t-metricool",
      "p": 0.98
+    },
+    {
+     "id": "t-blotato",
+     "p": 0.97
     }
    ]
   },
@@ -1005,6 +1013,10 @@
     {
      "id": "t-awesome-llm-apps",
      "p": 0.68
+    },
+    {
+     "id": "t-plaid",
+     "p": 0.62
     }
    ]
   },

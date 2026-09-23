@@ -61,6 +61,11 @@
   .hdr{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;
        top:env(safe-area-inset-top, 0px);z-index:20;}
   @media (max-width:900px){.hdr{position:static;}} /* phones: header scrolls away */
+  @media (hover:hover) and (pointer:fine){ /* Drip is the cursor on desktop */
+    html{cursor:url(assets/cursor-drip.png) 3 5, auto;cursor:-webkit-image-set(url(assets/cursor-drip.png) 1x, url(assets/cursor-drip@2x.png) 2x) 3 5, auto;}
+    a, button, summary, label{cursor:url(assets/cursor-drip-tap.png) 7 4, pointer;cursor:-webkit-image-set(url(assets/cursor-drip-tap.png) 1x, url(assets/cursor-drip-tap@2x.png) 2x) 7 4, pointer;}
+    input, textarea{cursor:text;}
+  }
   .hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-block:14px;}
   .brand{font-family:var(--display);font-weight:900;font-size:24px;letter-spacing:-.02em;
          text-decoration:none;line-height:1;}
@@ -359,7 +364,7 @@
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <p class="eyebrow">Free directory · 191 tools · 24 categories</p>
+        <p class="eyebrow">Free directory · 194 tools · 24 categories</p>
         <h2>Find the right AI tool, fast</h2>
       </div>
       <a class="btn btn-primary" href="/resources/">Open the AI tools directory</a>

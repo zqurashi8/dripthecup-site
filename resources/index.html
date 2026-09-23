@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>AI tools directory · Drip the Cup</title>
-<meta name="description" content="191 AI tools sorted by what you want to do: chat, agents, coding, dictation, note takers, email, CRM, finance, video, voice and more.">
+<meta name="description" content="194 AI tools sorted by what you want to do: chat, agents, coding, dictation, note takers, email, CRM, finance, video, voice and more.">
 <link rel="canonical" href="https://dripthecup.com/resources/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dripthecup.com/resources/">
 <meta property="og:title" content="AI tools directory · Drip the Cup">
-<meta property="og:description" content="191 AI tools in 24 categories. One line each on what they're best for.">
+<meta property="og:description" content="194 AI tools in 24 categories. One line each on what they're best for.">
 <meta property="og:image" content="https://dripthecup.com/assets/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#E3AC2A">
@@ -31,6 +31,11 @@
   body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.45;-webkit-font-smoothing:antialiased;}
   a{color:inherit;}
   :focus-visible{outline:3px solid var(--red);outline-offset:2px;}
+  @media (hover:hover) and (pointer:fine){
+    html{cursor:url(../assets/cursor-drip.png) 3 5, auto;cursor:-webkit-image-set(url(../assets/cursor-drip.png) 1x, url(../assets/cursor-drip@2x.png) 2x) 3 5, auto;}
+    a, button, summary, label, .rw{cursor:url(../assets/cursor-drip-tap.png) 7 4, pointer;cursor:-webkit-image-set(url(../assets/cursor-drip-tap.png) 1x, url(../assets/cursor-drip-tap@2x.png) 2x) 7 4, pointer;}
+    input{cursor:text;}
+  }
   h1,h2{text-wrap:balance;margin:0;}
   .hdr{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top, 0px);z-index:20;}
   .hdr .in{max-width:1240px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
@@ -64,6 +69,14 @@
   .pk img{border-radius:5px;}
   .pk b{display:block;font-family:var(--display);font-size:15px;line-height:1.1;}
   .pk small{display:block;font-family:var(--mono);font-size:10.5px;color:var(--muted);}
+  @media (max-width:640px){
+    .pks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;overflow:visible;padding-bottom:0;}
+    .pk{padding:6px 7px;gap:6px;min-width:0;}
+    .pk img{width:18px;height:18px;}
+    .pk b{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .pk small{display:none;}
+    .pk span{min-width:0;}
+  }
 
   /* layout: sidebar + list */
   .layout{max-width:1240px;margin:0 auto;padding:0 20px 40px;display:grid;grid-template-columns:250px minmax(0,1fr);gap:32px;border-top:1px solid var(--line);}
@@ -81,7 +94,15 @@
     .layout{grid-template-columns:minmax(0,1fr);gap:0;}
     .side{display:none;}
     .pick{display:block;background:var(--paper);padding:10px 0;border-bottom:1px solid var(--line);}
-    .pick select{width:100%;font:14px var(--mono);padding:10px;border:2px solid var(--ink);background:var(--cup);color:var(--ink);}
+    .pick summary{list-style:none;cursor:pointer;font:13px var(--mono);letter-spacing:.06em;text-transform:uppercase;border:2px solid var(--ink);background:var(--cup);padding:12px 14px;display:flex;justify-content:space-between;}
+    .pick summary::-webkit-details-marker{display:none;}
+    .pick[open] summary{background:var(--ink);color:var(--paper);}
+    .pick[open] summary span{transform:rotate(180deg);}
+    .jumps{display:grid;grid-template-columns:1fr 1fr;border:2px solid var(--ink);border-top:0;background:var(--cup);}
+    .jumps a{display:flex;align-items:center;gap:6px;text-decoration:none;font-size:13.5px;line-height:1.2;padding:10px 8px;border-bottom:1px solid var(--line);}
+    .jumps a:nth-child(odd){border-right:1px solid var(--line);}
+    .jumps a:active, .jumps a:hover{background:var(--mustard);}
+    .jumps .n{margin-left:auto;font-family:var(--mono);font-size:10.5px;color:var(--muted);}
   }
 
   .cat{padding-top:24px;}
@@ -105,6 +126,10 @@
   .b.we{background:var(--mustard);}
   .b.st{background:var(--ink);color:var(--paper);}
   .go, .more{font-family:var(--mono);text-decoration:none;text-align:center;color:var(--muted);}
+  /* rows with nothing to expand: the whole row opens the tool */
+  .rw{position:relative;cursor:pointer;}
+  .go::after{content:'';position:absolute;inset:0;}
+  .nm a{position:relative;z-index:1;}
   .go:hover{color:var(--ink);}
   details[open] .more{transform:rotate(45deg);}
   .ex{padding:0 6px 12px 46px;}
@@ -121,9 +146,10 @@
   body.searching .rows.clip .r:nth-child(n+9), body.tasking .rows.clip .r:nth-child(n+9){display:block;}
   body.searching .rows.clip .r[hidden], body.tasking .rows.clip .r[hidden]{display:none;}
   body.searching .showall, body.tasking .showall{display:none;}
-  .showall, .moretasks{font:12px var(--mono);letter-spacing:.06em;border:1.5px solid var(--ink);background:var(--cup);color:var(--ink);padding:10px 14px;margin-top:10px;cursor:pointer;}
+  .showall, .moretasks{font:600 12.5px var(--mono);letter-spacing:.08em;text-transform:uppercase;border:2px solid var(--ink);background:var(--mustard);color:var(--ink);padding:11px 16px;margin-top:12px;cursor:pointer;box-shadow:3px 3px 0 var(--ink);}
+  .showall:active, .moretasks:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink);}
   .showall{width:100%;}
-  .showall:hover, .moretasks:hover{background:var(--mustard);}
+  .showall:hover, .moretasks:hover{background:#EDBB45;}
   /* Jev task finder */
   .jev{max-width:1240px;margin:0 auto;padding:4px 20px 20px;}
   .jev h2{font-family:var(--display);font-weight:900;font-size:22px;letter-spacing:-.01em;}
@@ -165,10 +191,10 @@
 
 <div class="intro">
   <div class="t">
-    <p class="eyebrow">AI tools directory · 191 tools · 24 categories</p>
+    <p class="eyebrow">AI tools directory · 194 tools · 24 categories</p>
     <h1>Find the right AI tool, fast.</h1>
     <p>One line each on what it's best for. Click a row with a <b>+</b> for install commands and notes.</p>
-    <label class="search" for="q"><span>⌕</span><input id="q" type="search" placeholder="Try: dictation, email, free, video, agent..." autocomplete="off" aria-label="Search 191 AI tools"></label>
+    <label class="search" for="q"><span>⌕</span><input id="q" type="search" placeholder="Try: dictation, email, free, video, agent..." autocomplete="off" aria-label="Search 194 AI tools"></label>
   </div>
   <div class="drip" aria-hidden="true"><img src="../assets/drip2-idle.png" alt=""></div>
 </div>
@@ -223,7 +249,7 @@
   </div>
   <button type="button" class="moretasks" aria-expanded="false">More tasks (21) ↓</button>
   <p class="jev-out" id="jevout" hidden></p>
-  <script type="application/json" id="taskdata">[{"task": "Edit a video", "tools": [{"id": "t-davinci-resolve", "p": 0.99}, {"id": "t-capcut", "p": 0.98}, {"id": "t-descript", "p": 0.97}, {"id": "t-captions", "p": 0.94}, {"id": "t-runway", "p": 0.85}, {"id": "t-opus-clip", "p": 0.79}, {"id": "t-gemini-omni-flash", "p": 0.67}, {"id": "t-submagic", "p": 0.62}]}, {"task": "Cut a long video into short clips for TikTok or Reels", "tools": [{"id": "t-opus-clip", "p": 0.98}, {"id": "t-capcut", "p": 0.97}, {"id": "t-davinci-resolve", "p": 0.93}, {"id": "t-descript", "p": 0.84}, {"id": "t-captions", "p": 0.76}]}, {"task": "Generate a video from text or a photo", "tools": [{"id": "t-higgsfield", "p": 0.98}, {"id": "t-kling-3-0", "p": 0.98}, {"id": "t-wan", "p": 0.98}, {"id": "t-runway", "p": 0.98}, {"id": "t-veo", "p": 0.97}, {"id": "t-seedance-2-5", "p": 0.97}, {"id": "t-happy-horse", "p": 0.97}, {"id": "t-gemini-omni-flash", "p": 0.97}, {"id": "t-pixverse", "p": 0.97}, {"id": "t-sora", "p": 0.96}, {"id": "t-luma", "p": 0.96}, {"id": "t-moneyprinterturbo", "p": 0.96}, {"id": "t-hailuo", "p": 0.95}, {"id": "t-heygen", "p": 0.92}, {"id": "t-synthesia", "p": 0.92}, {"id": "t-anything2explainer", "p": 0.85}, {"id": "t-comfyui", "p": 0.85}]}, {"task": "Make a voiceover", "tools": [{"id": "t-elevenlabs", "p": 0.98}, {"id": "t-murf", "p": 0.98}, {"id": "t-fish-audio", "p": 0.95}, {"id": "t-chatterbox", "p": 0.92}, {"id": "t-adobe-podcast", "p": 0.8}, {"id": "t-openai-api", "p": 0.71}]}, {"task": "Make music", "tools": [{"id": "t-udio", "p": 0.98}, {"id": "t-suno", "p": 0.97}, {"id": "t-stable-audio", "p": 0.97}]}, {"task": "Transcribe audio or meetings", "tools": [{"id": "t-otter", "p": 0.99}, {"id": "t-fireflies", "p": 0.98}, {"id": "t-fathom", "p": 0.96}, {"id": "t-whisper-cpp", "p": 0.94}, {"id": "t-tl-dv", "p": 0.94}, {"id": "t-laxis", "p": 0.83}, {"id": "t-granola", "p": 0.8}, {"id": "t-fellow", "p": 0.68}, {"id": "t-openai-api", "p": 0.64}]}, {"task": "Type faster by talking", "tools": [{"id": "t-wispr-flow", "p": 0.97}, {"id": "t-superwhisper", "p": 0.97}, {"id": "t-aqua-voice", "p": 0.97}, {"id": "t-willow", "p": 0.97}, {"id": "t-monologue", "p": 0.97}, {"id": "t-voiceink", "p": 0.97}, {"id": "t-typeless", "p": 0.93}, {"id": "t-whisper-cpp", "p": 0.92}]}, {"task": "Generate images", "tools": [{"id": "t-midjourney", "p": 0.99}, {"id": "t-flux-2", "p": 0.99}, {"id": "t-stable-diffusion-web-ui", "p": 0.99}, {"id": "t-gpt-image-2", "p": 0.98}, {"id": "t-ideogram", "p": 0.98}, {"id": "t-adobe-firefly", "p": 0.98}, {"id": "t-krea", "p": 0.98}, {"id": "t-leonardo", "p": 0.98}, {"id": "t-comfyui", "p": 0.98}, {"id": "t-grok-imagine", "p": 0.97}, {"id": "t-seedream-5-0", "p": 0.96}, {"id": "t-recraft", "p": 0.96}, {"id": "t-openai-api", "p": 0.9}, {"id": "t-nano-banana-pro", "p": 0.87}, {"id": "t-higgsfield", "p": 0.63}]}, {"task": "Design a thumbnail, logo or social post", "tools": [{"id": "t-canva", "p": 0.98}, {"id": "t-ideogram", "p": 0.93}, {"id": "t-recraft", "p": 0.87}, {"id": "t-gpt-image-2", "p": 0.85}, {"id": "t-adobe-firefly", "p": 0.84}, {"id": "t-ip-as-logo", "p": 0.77}, {"id": "t-grok-imagine", "p": 0.72}, {"id": "t-anthropic-skills", "p": 0.71}, {"id": "t-flux-2", "p": 0.69}, {"id": "t-stable-diffusion-web-ui", "p": 0.69}, {"id": "t-krea", "p": 0.67}, {"id": "t-midjourney", "p": 0.64}, {"id": "t-figma", "p": 0.62}, {"id": "t-seedream-5-0", "p": 0.61}]}, {"task": "Make slides", "tools": [{"id": "t-gamma", "p": 0.98}, {"id": "t-genspark", "p": 0.95}, {"id": "t-anthropic-skills", "p": 0.91}, {"id": "t-canva", "p": 0.9}]}, {"task": "Build an app or website without coding", "tools": [{"id": "t-framer", "p": 0.92}, {"id": "t-lovable", "p": 0.88}, {"id": "t-v0", "p": 0.82}]}, {"task": "Write code faster", "tools": [{"id": "t-github-copilot", "p": 0.97}, {"id": "t-cursor", "p": 0.96}, {"id": "t-cline", "p": 0.95}, {"id": "t-codex", "p": 0.94}, {"id": "t-devin", "p": 0.94}, {"id": "t-zed", "p": 0.94}, {"id": "t-trae", "p": 0.94}, {"id": "t-bolt", "p": 0.93}, {"id": "t-claude-code", "p": 0.92}, {"id": "t-opencode", "p": 0.91}, {"id": "t-graft", "p": 0.89}, {"id": "t-lovable", "p": 0.88}, {"id": "t-kiro", "p": 0.88}, {"id": "t-warp", "p": 0.88}, {"id": "t-antigravity", "p": 0.85}, {"id": "t-v0", "p": 0.83}, {"id": "t-cc-switch", "p": 0.82}, {"id": "t-replit", "p": 0.8}, {"id": "t-typesafe-skills", "p": 0.74}, {"id": "t-monologue", "p": 0.73}]}, {"task": "Save tokens and cost in a coding agent", "tools": [{"id": "t-ponytail", "p": 0.91}, {"id": "t-graft", "p": 0.91}, {"id": "t-fast-jev-compaction", "p": 0.88}, {"id": "t-graphify", "p": 0.8}, {"id": "t-deepseek", "p": 0.71}, {"id": "t-ollama", "p": 0.61}]}, {"task": "Research a topic with sources", "tools": [{"id": "t-perplexity", "p": 0.98}, {"id": "t-elicit", "p": 0.98}, {"id": "t-consensus", "p": 0.97}, {"id": "t-comet", "p": 0.92}, {"id": "t-manus", "p": 0.84}, {"id": "t-notion", "p": 0.82}, {"id": "t-ecc", "p": 0.78}, {"id": "t-obsidian", "p": 0.77}, {"id": "t-gemini", "p": 0.76}, {"id": "t-microsoft-copilot", "p": 0.76}, {"id": "t-browser-use", "p": 0.76}, {"id": "t-notebooklm", "p": 0.69}, {"id": "t-chatgpt-atlas", "p": 0.69}, {"id": "t-dify", "p": 0.6}]}, {"task": "Write or improve text", "tools": [{"id": "t-grammarly", "p": 0.99}, {"id": "t-claude", "p": 0.97}, {"id": "t-openai-api", "p": 0.97}, {"id": "t-claude-api", "p": 0.96}, {"id": "t-simple-english", "p": 0.94}, {"id": "t-sepia", "p": 0.93}, {"id": "t-gemini", "p": 0.92}, {"id": "t-qwen", "p": 0.92}, {"id": "t-chatgpt", "p": 0.91}, {"id": "t-microsoft-copilot", "p": 0.91}, {"id": "t-deepseek", "p": 0.9}, {"id": "t-fyxer", "p": 0.89}, {"id": "t-poe", "p": 0.83}, {"id": "t-le-chat", "p": 0.82}, {"id": "t-typeless", "p": 0.8}, {"id": "t-notion", "p": 0.8}, {"id": "t-kimi", "p": 0.77}, {"id": "t-willow", "p": 0.76}, {"id": "t-open-webui", "p": 0.76}, {"id": "t-meta-ai", "p": 0.74}]}, {"task": "Take meeting notes automatically", "tools": [{"id": "t-otter", "p": 0.98}, {"id": "t-fireflies", "p": 0.97}, {"id": "t-fathom", "p": 0.96}, {"id": "t-tl-dv", "p": 0.91}, {"id": "t-fellow", "p": 0.81}, {"id": "t-granola", "p": 0.71}, {"id": "t-laxis", "p": 0.68}]}, {"task": "Clear my inbox faster", "tools": [{"id": "t-superhuman", "p": 0.95}, {"id": "t-spark", "p": 0.92}, {"id": "t-shortwave", "p": 0.89}, {"id": "t-gemini", "p": 0.66}, {"id": "t-monologue", "p": 0.6}]}, {"task": "Plan my day and schedule tasks", "tools": [{"id": "t-motion", "p": 0.98}, {"id": "t-sunsama", "p": 0.98}, {"id": "t-akiflow", "p": 0.97}, {"id": "t-reclaim", "p": 0.88}, {"id": "t-clickup", "p": 0.85}]}, {"task": "Manage a team project", "tools": [{"id": "t-clickup", "p": 0.98}, {"id": "t-asana", "p": 0.98}, {"id": "t-monday-com", "p": 0.98}, {"id": "t-linear", "p": 0.94}]}, {"task": "Manage customers and sales leads", "tools": [{"id": "t-hubspot", "p": 0.99}, {"id": "t-attio", "p": 0.98}, {"id": "t-folk", "p": 0.98}, {"id": "t-clay", "p": 0.75}]}, {"task": "Track business expenses", "tools": [{"id": "t-expensify", "p": 0.98}, {"id": "t-ramp", "p": 0.97}, {"id": "t-quickbooks", "p": 0.97}, {"id": "t-brex", "p": 0.9}, {"id": "t-mercury", "p": 0.87}]}, {"task": "Automate repetitive work between apps", "tools": [{"id": "t-zapier", "p": 0.99}, {"id": "t-workato", "p": 0.99}, {"id": "t-make", "p": 0.98}, {"id": "t-n8n", "p": 0.98}, {"id": "t-lindy", "p": 0.76}, {"id": "t-skill-recorder", "p": 0.72}, {"id": "t-openclaw", "p": 0.63}, {"id": "t-deepseek-harness", "p": 0.61}]}, {"task": "Schedule social media posts", "tools": [{"id": "t-buffer", "p": 0.99}, {"id": "t-metricool", "p": 0.98}]}, {"task": "Run AI privately on my own computer", "tools": [{"id": "t-ollama", "p": 0.98}, {"id": "t-lm-studio", "p": 0.97}, {"id": "t-llama-cpp", "p": 0.96}, {"id": "t-stable-diffusion-web-ui", "p": 0.95}, {"id": "t-open-webui", "p": 0.93}, {"id": "t-comfyui", "p": 0.93}, {"id": "t-whisper-cpp", "p": 0.81}, {"id": "t-chatterbox", "p": 0.81}, {"id": "t-dify", "p": 0.69}, {"id": "t-transformers", "p": 0.68}, {"id": "t-hugging-face", "p": 0.65}, {"id": "t-wan", "p": 0.61}]}, {"task": "Put AI inside my own app", "tools": [{"id": "t-claude-api", "p": 0.97}, {"id": "t-openai-api", "p": 0.97}, {"id": "t-openrouter", "p": 0.96}, {"id": "t-langchain", "p": 0.96}, {"id": "t-google-ai-studio", "p": 0.93}, {"id": "t-hugging-face", "p": 0.93}, {"id": "t-transformers", "p": 0.92}, {"id": "t-jev", "p": 0.9}, {"id": "t-deepseek-harness", "p": 0.88}, {"id": "t-dify", "p": 0.85}, {"id": "t-langflow", "p": 0.84}, {"id": "t-ollama", "p": 0.83}, {"id": "t-llama-cpp", "p": 0.83}, {"id": "t-firecrawl", "p": 0.72}, {"id": "t-generative-ai-for-beginners", "p": 0.72}, {"id": "t-awesome-llm-apps", "p": 0.68}]}, {"task": "Have an AI agent do tasks for me", "tools": [{"id": "t-manus", "p": 0.97}, {"id": "t-autogpt", "p": 0.97}, {"id": "t-browser-use", "p": 0.97}, {"id": "t-openclaw", "p": 0.95}, {"id": "t-hermes-agent", "p": 0.95}, {"id": "t-comet", "p": 0.95}, {"id": "t-langchain", "p": 0.95}, {"id": "t-lindy", "p": 0.94}, {"id": "t-agency-agents", "p": 0.94}, {"id": "t-codex", "p": 0.93}, {"id": "t-devin", "p": 0.92}, {"id": "t-cline", "p": 0.92}, {"id": "t-trae", "p": 0.92}, {"id": "t-dify", "p": 0.92}, {"id": "t-genspark", "p": 0.91}, {"id": "t-gstack", "p": 0.91}, {"id": "t-anthropic-skills", "p": 0.9}, {"id": "t-warp", "p": 0.89}, {"id": "t-langflow", "p": 0.89}, {"id": "t-opencode", "p": 0.88}]}, {"task": "Record a tutorial or demo", "tools": [{"id": "t-screen-studio", "p": 0.98}, {"id": "t-tella", "p": 0.98}, {"id": "t-obs-studio", "p": 0.98}, {"id": "t-loom", "p": 0.93}, {"id": "t-synthesia", "p": 0.85}, {"id": "t-skill-recorder", "p": 0.69}, {"id": "t-murf", "p": 0.64}, {"id": "t-adobe-podcast", "p": 0.6}]}]</script>
+  <script type="application/json" id="taskdata">[{"task": "Edit a video", "tools": [{"id": "t-davinci-resolve", "p": 0.99}, {"id": "t-capcut", "p": 0.98}, {"id": "t-descript", "p": 0.97}, {"id": "t-captions", "p": 0.94}, {"id": "t-runway", "p": 0.85}, {"id": "t-opus-clip", "p": 0.79}, {"id": "t-gemini-omni-flash", "p": 0.67}, {"id": "t-submagic", "p": 0.62}]}, {"task": "Cut a long video into short clips for TikTok or Reels", "tools": [{"id": "t-opus-clip", "p": 0.98}, {"id": "t-capcut", "p": 0.97}, {"id": "t-davinci-resolve", "p": 0.93}, {"id": "t-descript", "p": 0.84}, {"id": "t-captions", "p": 0.76}]}, {"task": "Generate a video from text or a photo", "tools": [{"id": "t-higgsfield", "p": 0.98}, {"id": "t-kling-3-0", "p": 0.98}, {"id": "t-wan", "p": 0.98}, {"id": "t-runway", "p": 0.98}, {"id": "t-veo", "p": 0.97}, {"id": "t-seedance-2-5", "p": 0.97}, {"id": "t-happy-horse", "p": 0.97}, {"id": "t-gemini-omni-flash", "p": 0.97}, {"id": "t-pixverse", "p": 0.97}, {"id": "t-sora", "p": 0.96}, {"id": "t-luma", "p": 0.96}, {"id": "t-moneyprinterturbo", "p": 0.96}, {"id": "t-hailuo", "p": 0.95}, {"id": "t-heygen", "p": 0.92}, {"id": "t-synthesia", "p": 0.92}, {"id": "t-anything2explainer", "p": 0.85}, {"id": "t-comfyui", "p": 0.85}]}, {"task": "Make a voiceover", "tools": [{"id": "t-elevenlabs", "p": 0.98}, {"id": "t-murf", "p": 0.98}, {"id": "t-fish-audio", "p": 0.95}, {"id": "t-chatterbox", "p": 0.92}, {"id": "t-adobe-podcast", "p": 0.8}, {"id": "t-openai-api", "p": 0.71}]}, {"task": "Make music", "tools": [{"id": "t-udio", "p": 0.98}, {"id": "t-suno", "p": 0.97}, {"id": "t-stable-audio", "p": 0.97}]}, {"task": "Transcribe audio or meetings", "tools": [{"id": "t-otter", "p": 0.99}, {"id": "t-fireflies", "p": 0.98}, {"id": "t-fathom", "p": 0.96}, {"id": "t-whisper-cpp", "p": 0.94}, {"id": "t-tl-dv", "p": 0.94}, {"id": "t-laxis", "p": 0.83}, {"id": "t-granola", "p": 0.8}, {"id": "t-fellow", "p": 0.68}, {"id": "t-openai-api", "p": 0.64}]}, {"task": "Type faster by talking", "tools": [{"id": "t-wispr-flow", "p": 0.97}, {"id": "t-superwhisper", "p": 0.97}, {"id": "t-aqua-voice", "p": 0.97}, {"id": "t-willow", "p": 0.97}, {"id": "t-monologue", "p": 0.97}, {"id": "t-voiceink", "p": 0.97}, {"id": "t-typeless", "p": 0.93}, {"id": "t-whisper-cpp", "p": 0.92}]}, {"task": "Generate images", "tools": [{"id": "t-midjourney", "p": 0.99}, {"id": "t-flux-2", "p": 0.99}, {"id": "t-stable-diffusion-web-ui", "p": 0.99}, {"id": "t-gpt-image-2", "p": 0.98}, {"id": "t-ideogram", "p": 0.98}, {"id": "t-adobe-firefly", "p": 0.98}, {"id": "t-krea", "p": 0.98}, {"id": "t-leonardo", "p": 0.98}, {"id": "t-comfyui", "p": 0.98}, {"id": "t-grok-imagine", "p": 0.97}, {"id": "t-seedream-5-0", "p": 0.96}, {"id": "t-recraft", "p": 0.96}, {"id": "t-openai-api", "p": 0.9}, {"id": "t-nano-banana-pro", "p": 0.87}, {"id": "t-higgsfield", "p": 0.63}]}, {"task": "Design a thumbnail, logo or social post", "tools": [{"id": "t-canva", "p": 0.98}, {"id": "t-ideogram", "p": 0.93}, {"id": "t-recraft", "p": 0.87}, {"id": "t-gpt-image-2", "p": 0.85}, {"id": "t-adobe-firefly", "p": 0.84}, {"id": "t-ip-as-logo", "p": 0.77}, {"id": "t-grok-imagine", "p": 0.72}, {"id": "t-anthropic-skills", "p": 0.71}, {"id": "t-flux-2", "p": 0.69}, {"id": "t-stable-diffusion-web-ui", "p": 0.69}, {"id": "t-krea", "p": 0.67}, {"id": "t-midjourney", "p": 0.64}, {"id": "t-figma", "p": 0.62}, {"id": "t-seedream-5-0", "p": 0.61}]}, {"task": "Make slides", "tools": [{"id": "t-gamma", "p": 0.98}, {"id": "t-genspark", "p": 0.95}, {"id": "t-anthropic-skills", "p": 0.91}, {"id": "t-canva", "p": 0.9}]}, {"task": "Build an app or website without coding", "tools": [{"id": "t-framer", "p": 0.92}, {"id": "t-lovable", "p": 0.88}, {"id": "t-v0", "p": 0.82}]}, {"task": "Write code faster", "tools": [{"id": "t-github-copilot", "p": 0.97}, {"id": "t-cursor", "p": 0.96}, {"id": "t-cline", "p": 0.95}, {"id": "t-codex", "p": 0.94}, {"id": "t-devin", "p": 0.94}, {"id": "t-zed", "p": 0.94}, {"id": "t-trae", "p": 0.94}, {"id": "t-bolt", "p": 0.93}, {"id": "t-claude-code", "p": 0.92}, {"id": "t-opencode", "p": 0.91}, {"id": "t-graft", "p": 0.89}, {"id": "t-lovable", "p": 0.88}, {"id": "t-kiro", "p": 0.88}, {"id": "t-warp", "p": 0.88}, {"id": "t-antigravity", "p": 0.85}, {"id": "t-v0", "p": 0.83}, {"id": "t-cc-switch", "p": 0.82}, {"id": "t-replit", "p": 0.8}, {"id": "t-typesafe-skills", "p": 0.74}, {"id": "t-monologue", "p": 0.73}]}, {"task": "Save tokens and cost in a coding agent", "tools": [{"id": "t-ponytail", "p": 0.91}, {"id": "t-graft", "p": 0.91}, {"id": "t-fast-jev-compaction", "p": 0.88}, {"id": "t-graphify", "p": 0.8}, {"id": "t-deepseek", "p": 0.71}, {"id": "t-ollama", "p": 0.61}]}, {"task": "Research a topic with sources", "tools": [{"id": "t-perplexity", "p": 0.98}, {"id": "t-elicit", "p": 0.98}, {"id": "t-consensus", "p": 0.97}, {"id": "t-comet", "p": 0.92}, {"id": "t-manus", "p": 0.84}, {"id": "t-notion", "p": 0.82}, {"id": "t-ecc", "p": 0.78}, {"id": "t-obsidian", "p": 0.77}, {"id": "t-gemini", "p": 0.76}, {"id": "t-microsoft-copilot", "p": 0.76}, {"id": "t-browser-use", "p": 0.76}, {"id": "t-notebooklm", "p": 0.69}, {"id": "t-chatgpt-atlas", "p": 0.69}, {"id": "t-dify", "p": 0.6}]}, {"task": "Write or improve text", "tools": [{"id": "t-grammarly", "p": 0.99}, {"id": "t-claude", "p": 0.97}, {"id": "t-openai-api", "p": 0.97}, {"id": "t-claude-api", "p": 0.96}, {"id": "t-simple-english", "p": 0.94}, {"id": "t-sepia", "p": 0.93}, {"id": "t-gemini", "p": 0.92}, {"id": "t-qwen", "p": 0.92}, {"id": "t-chatgpt", "p": 0.91}, {"id": "t-microsoft-copilot", "p": 0.91}, {"id": "t-deepseek", "p": 0.9}, {"id": "t-fyxer", "p": 0.89}, {"id": "t-poe", "p": 0.83}, {"id": "t-le-chat", "p": 0.82}, {"id": "t-typeless", "p": 0.8}, {"id": "t-notion", "p": 0.8}, {"id": "t-kimi", "p": 0.77}, {"id": "t-willow", "p": 0.76}, {"id": "t-open-webui", "p": 0.76}, {"id": "t-meta-ai", "p": 0.74}]}, {"task": "Take meeting notes automatically", "tools": [{"id": "t-otter", "p": 0.98}, {"id": "t-fireflies", "p": 0.97}, {"id": "t-fathom", "p": 0.96}, {"id": "t-tl-dv", "p": 0.91}, {"id": "t-fellow", "p": 0.81}, {"id": "t-granola", "p": 0.71}, {"id": "t-laxis", "p": 0.68}]}, {"task": "Clear my inbox faster", "tools": [{"id": "t-superhuman", "p": 0.95}, {"id": "t-spark", "p": 0.92}, {"id": "t-shortwave", "p": 0.89}, {"id": "t-gemini", "p": 0.66}, {"id": "t-monologue", "p": 0.6}]}, {"task": "Plan my day and schedule tasks", "tools": [{"id": "t-motion", "p": 0.98}, {"id": "t-sunsama", "p": 0.98}, {"id": "t-akiflow", "p": 0.97}, {"id": "t-reclaim", "p": 0.88}, {"id": "t-clickup", "p": 0.85}]}, {"task": "Manage a team project", "tools": [{"id": "t-clickup", "p": 0.98}, {"id": "t-asana", "p": 0.98}, {"id": "t-monday-com", "p": 0.98}, {"id": "t-linear", "p": 0.94}]}, {"task": "Manage customers and sales leads", "tools": [{"id": "t-hubspot", "p": 0.99}, {"id": "t-attio", "p": 0.98}, {"id": "t-folk", "p": 0.98}, {"id": "t-clay", "p": 0.75}]}, {"task": "Track business expenses", "tools": [{"id": "t-expensify", "p": 0.98}, {"id": "t-ramp", "p": 0.97}, {"id": "t-quickbooks", "p": 0.97}, {"id": "t-brex", "p": 0.9}, {"id": "t-mercury", "p": 0.87}]}, {"task": "Automate repetitive work between apps", "tools": [{"id": "t-zapier", "p": 0.99}, {"id": "t-workato", "p": 0.99}, {"id": "t-make", "p": 0.98}, {"id": "t-n8n", "p": 0.98}, {"id": "t-lindy", "p": 0.76}, {"id": "t-skill-recorder", "p": 0.72}, {"id": "t-openclaw", "p": 0.63}, {"id": "t-blotato", "p": 0.63}, {"id": "t-deepseek-harness", "p": 0.61}]}, {"task": "Schedule social media posts", "tools": [{"id": "t-buffer", "p": 0.99}, {"id": "t-metricool", "p": 0.98}, {"id": "t-blotato", "p": 0.97}]}, {"task": "Run AI privately on my own computer", "tools": [{"id": "t-ollama", "p": 0.98}, {"id": "t-lm-studio", "p": 0.97}, {"id": "t-llama-cpp", "p": 0.96}, {"id": "t-stable-diffusion-web-ui", "p": 0.95}, {"id": "t-open-webui", "p": 0.93}, {"id": "t-comfyui", "p": 0.93}, {"id": "t-whisper-cpp", "p": 0.81}, {"id": "t-chatterbox", "p": 0.81}, {"id": "t-dify", "p": 0.69}, {"id": "t-transformers", "p": 0.68}, {"id": "t-hugging-face", "p": 0.65}, {"id": "t-wan", "p": 0.61}]}, {"task": "Put AI inside my own app", "tools": [{"id": "t-claude-api", "p": 0.97}, {"id": "t-openai-api", "p": 0.97}, {"id": "t-openrouter", "p": 0.96}, {"id": "t-langchain", "p": 0.96}, {"id": "t-google-ai-studio", "p": 0.93}, {"id": "t-hugging-face", "p": 0.93}, {"id": "t-transformers", "p": 0.92}, {"id": "t-jev", "p": 0.9}, {"id": "t-deepseek-harness", "p": 0.88}, {"id": "t-dify", "p": 0.85}, {"id": "t-langflow", "p": 0.84}, {"id": "t-ollama", "p": 0.83}, {"id": "t-llama-cpp", "p": 0.83}, {"id": "t-firecrawl", "p": 0.72}, {"id": "t-generative-ai-for-beginners", "p": 0.72}, {"id": "t-awesome-llm-apps", "p": 0.68}, {"id": "t-plaid", "p": 0.62}]}, {"task": "Have an AI agent do tasks for me", "tools": [{"id": "t-manus", "p": 0.97}, {"id": "t-autogpt", "p": 0.97}, {"id": "t-browser-use", "p": 0.97}, {"id": "t-openclaw", "p": 0.95}, {"id": "t-hermes-agent", "p": 0.95}, {"id": "t-comet", "p": 0.95}, {"id": "t-langchain", "p": 0.95}, {"id": "t-lindy", "p": 0.94}, {"id": "t-agency-agents", "p": 0.94}, {"id": "t-codex", "p": 0.93}, {"id": "t-devin", "p": 0.92}, {"id": "t-cline", "p": 0.92}, {"id": "t-trae", "p": 0.92}, {"id": "t-dify", "p": 0.92}, {"id": "t-genspark", "p": 0.91}, {"id": "t-gstack", "p": 0.91}, {"id": "t-anthropic-skills", "p": 0.9}, {"id": "t-warp", "p": 0.89}, {"id": "t-langflow", "p": 0.89}, {"id": "t-opencode", "p": 0.88}]}, {"task": "Record a tutorial or demo", "tools": [{"id": "t-screen-studio", "p": 0.98}, {"id": "t-tella", "p": 0.98}, {"id": "t-obs-studio", "p": 0.98}, {"id": "t-loom", "p": 0.93}, {"id": "t-synthesia", "p": 0.85}, {"id": "t-skill-recorder", "p": 0.69}, {"id": "t-murf", "p": 0.64}, {"id": "t-adobe-podcast", "p": 0.6}]}]</script>
 </section>
 <div class="layout">
   <nav class="side" aria-label="Categories">
@@ -238,10 +264,10 @@
       <a href="#planning"><span class="ic">📅</span>Calendar &amp; daily planning<span class="n">4</span></a>
       <a href="#projects"><span class="ic">✅</span>Project management<span class="n">4</span></a>
       <a href="#crm"><span class="ic">🤝</span>CRM &amp; sales<span class="n">4</span></a>
-      <a href="#money"><span class="ic">💳</span>Finance, expenses &amp; banking<span class="n">6</span></a>
+      <a href="#money"><span class="ic">💳</span>Finance, expenses &amp; banking<span class="n">7</span></a>
       <a href="#browsers"><span class="ic">🌐</span>AI browsers<span class="n">3</span></a>
       <a href="#models"><span class="ic">🔌</span>AI models for your apps<span class="n">8</span></a>
-      <a href="#build"><span class="ic">🛠️</span>Build with AI<span class="n">8</span></a>
+      <a href="#build"><span class="ic">🛠️</span>Build with AI<span class="n">9</span></a>
       <a href="#voice"><span class="ic">🔊</span>Voice, music &amp; audio<span class="n">9</span></a>
       <a href="#image"><span class="ic">🎨</span>Image generation<span class="n">13</span></a>
       <a href="#video"><span class="ic">🎬</span>Video generation<span class="n">15</span></a>
@@ -249,37 +275,38 @@
       <a href="#screen"><span class="ic">🖥️</span>Screen recording<span class="n">4</span></a>
       <a href="#design"><span class="ic">📐</span>Design, slides &amp; sites<span class="n">5</span></a>
       <a href="#automation"><span class="ic">⚙️</span>Automation<span class="n">4</span></a>
-      <a href="#posting"><span class="ic">📈</span>Posting &amp; growth<span class="n">3</span></a>
+      <a href="#posting"><span class="ic">📈</span>Posting &amp; growth<span class="n">4</span></a>
       <a href="#learn"><span class="ic">🎓</span>Learn AI<span class="n">4</span></a>
   </nav>
   <main>
-    <div class="pick"><select id="jump" aria-label="Jump to a category">
-      <option value="">Jump to a category...</option>
-      <option value="chat">💬 Chat assistants (12)</option>
-      <option value="agents">🤖 AI agents (8)</option>
-      <option value="coding">⌨️ Coding with AI (17)</option>
-      <option value="skills">🧩 Skills &amp; plugins (28)</option>
-      <option value="dictation">🎙️ Dictation &amp; voice typing (8)</option>
-      <option value="notetakers">📝 Meeting note takers (7)</option>
-      <option value="writing">📚 Writing, notes &amp; research (6)</option>
-      <option value="email">✉️ Email (4)</option>
-      <option value="planning">📅 Calendar &amp; daily planning (4)</option>
-      <option value="projects">✅ Project management (4)</option>
-      <option value="crm">🤝 CRM &amp; sales (4)</option>
-      <option value="money">💳 Finance, expenses &amp; banking (6)</option>
-      <option value="browsers">🌐 AI browsers (3)</option>
-      <option value="models">🔌 AI models for your apps (8)</option>
-      <option value="build">🛠️ Build with AI (8)</option>
-      <option value="voice">🔊 Voice, music &amp; audio (9)</option>
-      <option value="image">🎨 Image generation (13)</option>
-      <option value="video">🎬 Video generation (15)</option>
-      <option value="editing">✂️ Video editing &amp; clipping (7)</option>
-      <option value="screen">🖥️ Screen recording (4)</option>
-      <option value="design">📐 Design, slides &amp; sites (5)</option>
-      <option value="automation">⚙️ Automation (4)</option>
-      <option value="posting">📈 Posting &amp; growth (3)</option>
-      <option value="learn">🎓 Learn AI (4)</option>
-    </select></div>
+    <details class="pick" id="jump"><summary>Jump to a category <span aria-hidden="true">↓</span></summary>
+      <nav class="jumps" aria-label="Categories">
+        <a href="#chat"><span class="ic">💬</span>Chat assistants<span class="n">12</span></a>
+        <a href="#agents"><span class="ic">🤖</span>AI agents<span class="n">8</span></a>
+        <a href="#coding"><span class="ic">⌨️</span>Coding with AI<span class="n">17</span></a>
+        <a href="#skills"><span class="ic">🧩</span>Skills &amp; plugins<span class="n">28</span></a>
+        <a href="#dictation"><span class="ic">🎙️</span>Dictation &amp; voice typing<span class="n">8</span></a>
+        <a href="#notetakers"><span class="ic">📝</span>Meeting note takers<span class="n">7</span></a>
+        <a href="#writing"><span class="ic">📚</span>Writing, notes &amp; research<span class="n">6</span></a>
+        <a href="#email"><span class="ic">✉️</span>Email<span class="n">4</span></a>
+        <a href="#planning"><span class="ic">📅</span>Calendar &amp; daily planning<span class="n">4</span></a>
+        <a href="#projects"><span class="ic">✅</span>Project management<span class="n">4</span></a>
+        <a href="#crm"><span class="ic">🤝</span>CRM &amp; sales<span class="n">4</span></a>
+        <a href="#money"><span class="ic">💳</span>Finance, expenses &amp; banking<span class="n">7</span></a>
+        <a href="#browsers"><span class="ic">🌐</span>AI browsers<span class="n">3</span></a>
+        <a href="#models"><span class="ic">🔌</span>AI models for your apps<span class="n">8</span></a>
+        <a href="#build"><span class="ic">🛠️</span>Build with AI<span class="n">9</span></a>
+        <a href="#voice"><span class="ic">🔊</span>Voice, music &amp; audio<span class="n">9</span></a>
+        <a href="#image"><span class="ic">🎨</span>Image generation<span class="n">13</span></a>
+        <a href="#video"><span class="ic">🎬</span>Video generation<span class="n">15</span></a>
+        <a href="#editing"><span class="ic">✂️</span>Video editing &amp; clipping<span class="n">7</span></a>
+        <a href="#screen"><span class="ic">🖥️</span>Screen recording<span class="n">4</span></a>
+        <a href="#design"><span class="ic">📐</span>Design, slides &amp; sites<span class="n">5</span></a>
+        <a href="#automation"><span class="ic">⚙️</span>Automation<span class="n">4</span></a>
+        <a href="#posting"><span class="ic">📈</span>Posting &amp; growth<span class="n">4</span></a>
+        <a href="#learn"><span class="ic">🎓</span>Learn AI<span class="n">4</span></a>
+      </nav>
+    </details>
     <section class="cat" id="chat">
       <h2><span class="ic">💬</span>Chat assistants <span class="n">12</span></h2>
       <p class="blurb">General-purpose AIs you talk to. Most are free to start.</p>
@@ -455,18 +482,20 @@
           <span class="bf">Plans and tests before it writes code</span>
           <span class="bs"><span class="b">plugin</span><span class="b st">★ 290K</span></span><span class="more" aria-hidden="true">+</span></summary><div class="ex"><pre># in Claude Code
 /plugin install superpowers@claude-plugins-official</pre><a class="seen" href="/links/#claude-code-repos">seen in our video: 4 free repos for Claude Code →</a></div></details></li>
-      <li class="r" id="t-skills-for-real-engineers" data-q="skills for real engineers matt pocock matt pocock&#x27;s engineering skills, straight from his agent setup skill pack skills &amp; plugins "><div class="rw"><img src="icons/gh-mattpocock.png" alt="" width="28" height="28" loading="lazy">
+      <li class="r" id="t-skills-for-real-engineers" data-q="skills for real engineers matt pocock matt pocock&#x27;s engineering skills, straight from his agent setup skill pack skills &amp; plugins "><details><summary><img src="icons/gh-mattpocock.png" alt="" width="28" height="28" loading="lazy">
           <span class="nm"><a href="https://github.com/mattpocock/skills" target="_blank" rel="noopener">Skills for Real Engineers</a><small>Matt Pocock</small></span>
           <span class="bf">Matt Pocock&#x27;s engineering skills, straight from his agent setup</span>
-          <span class="bs"><span class="b">skill pack</span><span class="b st">★ 268K</span></span><a class="go" href="https://github.com/mattpocock/skills" target="_blank" rel="noopener" aria-label="Open Skills for Real Engineers">↗</a></div></li>
-      <li class="r" id="t-ecc" data-q="ecc affaan-m skills, memory, security and research-first habits for coding agents skill pack skills &amp; plugins "><div class="rw"><img src="icons/gh-affaan-m.png" alt="" width="28" height="28" loading="lazy">
+          <span class="bs"><span class="b">skill pack</span><span class="b st">★ 268K</span></span><span class="more" aria-hidden="true">+</span></summary><div class="ex"><pre>claude plugins install mattpocock-skills</pre></div></details></li>
+      <li class="r" id="t-ecc" data-q="ecc affaan-m skills, memory, security and research-first habits for coding agents skill pack skills &amp; plugins "><details><summary><img src="icons/gh-affaan-m.png" alt="" width="28" height="28" loading="lazy">
           <span class="nm"><a href="https://github.com/affaan-m/ECC" target="_blank" rel="noopener">ECC</a><small>affaan-m</small></span>
           <span class="bf">Skills, memory, security and research-first habits for coding agents</span>
-          <span class="bs"><span class="b">skill pack</span><span class="b st">★ 266K</span></span><a class="go" href="https://github.com/affaan-m/ECC" target="_blank" rel="noopener" aria-label="Open ECC">↗</a></div></li>
-      <li class="r" id="t-karpathy-skills" data-q="karpathy skills multica-ai one claude.md that avoids common ai coding mistakes, based on andrej karpathy&#x27;s notes skill skills &amp; plugins "><div class="rw"><img src="icons/gh-multica-ai.png" alt="" width="28" height="28" loading="lazy">
+          <span class="bs"><span class="b">skill pack</span><span class="b st">★ 266K</span></span><span class="more" aria-hidden="true">+</span></summary><div class="ex"><pre>/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin install ecc@ecc</pre></div></details></li>
+      <li class="r" id="t-karpathy-skills" data-q="karpathy skills multica-ai one claude.md that avoids common ai coding mistakes, based on andrej karpathy&#x27;s notes skill skills &amp; plugins "><details><summary><img src="icons/gh-multica-ai.png" alt="" width="28" height="28" loading="lazy">
           <span class="nm"><a href="https://github.com/multica-ai/andrej-karpathy-skills" target="_blank" rel="noopener">Karpathy skills</a><small>multica-ai</small></span>
           <span class="bf">One CLAUDE.md that avoids common AI coding mistakes, based on Andrej Karpathy&#x27;s notes</span>
-          <span class="bs"><span class="b">skill</span><span class="b st">★ 215K</span></span><a class="go" href="https://github.com/multica-ai/andrej-karpathy-skills" target="_blank" rel="noopener" aria-label="Open Karpathy skills">↗</a></div></li>
+          <span class="bs"><span class="b">skill</span><span class="b st">★ 215K</span></span><span class="more" aria-hidden="true">+</span></summary><div class="ex"><pre>/plugin marketplace add forrestchang/andrej-karpathy-skills
+/plugin install andrej-karpathy-skills@karpathy-skills</pre></div></details></li>
       <li class="r" id="t-anthropic-skills" data-q="anthropic skills anthropic anthropic&#x27;s official skills: word, excel, powerpoint, pdf, design and more skill pack skills &amp; plugins "><details><summary><img src="icons/gh-anthropics.png" alt="" width="28" height="28" loading="lazy">
           <span class="nm"><a href="https://github.com/anthropics/skills" target="_blank" rel="noopener">Anthropic Skills</a><small>Anthropic</small></span>
           <span class="bf">Anthropic&#x27;s official skills: Word, Excel, PowerPoint, PDF, design and more</span>
@@ -479,14 +508,15 @@
           <span class="bs"><span class="b">plugin</span><span class="b st">★ 144K</span></span><span class="more" aria-hidden="true">+</span></summary><div class="ex"><pre># in Claude Code
 /plugin marketplace add DietrichGebert/ponytail
 /plugin install ponytail@ponytail</pre><a class="seen" href="/links/#claude-code-repos">seen in our video: 4 free repos for Claude Code →</a></div></details></li>
-      <li class="r" id="t-gstack" data-q="gstack garry tan garry tan&#x27;s claude code setup: 23 tools acting as ceo, designer, qa and more skill pack skills &amp; plugins "><div class="rw"><img src="icons/gh-garrytan.png" alt="" width="28" height="28" loading="lazy">
+      <li class="r" id="t-gstack" data-q="gstack garry tan garry tan&#x27;s claude code setup: 23 tools acting as ceo, designer, qa and more skill pack skills &amp; plugins "><details><summary><img src="icons/gh-garrytan.png" alt="" width="28" height="28" loading="lazy">
           <span class="nm"><a href="https://github.com/garrytan/gstack" target="_blank" rel="noopener">gstack</a><small>Garry Tan</small></span>
           <span class="bf">Garry Tan&#x27;s Claude Code setup: 23 tools acting as CEO, designer, QA and more</span>
-          <span class="bs"><span class="b">skill pack</span><span class="b st">★ 134K</span></span><a class="go" href="https://github.com/garrytan/gstack" target="_blank" rel="noopener" aria-label="Open gstack">↗</a></div></li>
-      <li class="r" id="t-ui-ux-pro-max" data-q="ui ux pro max nextlevelbuilder design know-how for professional ui on any platform skill skills &amp; plugins "><div class="rw"><img src="icons/gh-nextlevelbuilder.png" alt="" width="28" height="28" loading="lazy">
+          <span class="bs"><span class="b">skill pack</span><span class="b st">★ 134K</span></span><span class="more" aria-hidden="true">+</span></summary><div class="ex"><pre>git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git ~/.claude/skills/gstack &amp;&amp; cd ~/.claude/skills/gstack &amp;&amp; ./setup</pre></div></details></li>
+      <li class="r" id="t-ui-ux-pro-max" data-q="ui ux pro max nextlevelbuilder design know-how for professional ui on any platform skill skills &amp; plugins "><details><summary><img src="icons/gh-nextlevelbuilder.png" alt="" width="28" height="28" loading="lazy">
           <span class="nm"><a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener">UI UX Pro Max</a><small>nextlevelbuilder</small></span>
           <span class="bf">Design know-how for professional UI on any platform</span>
-          <span class="bs"><span class="b">skill</span><span class="b st">★ 130K</span></span><a class="go" href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener" aria-label="Open UI UX Pro Max">↗</a></div></li>
+          <span class="bs"><span class="b">skill</span><span class="b st">★ 130K</span></span><span class="more" aria-hidden="true">+</span></summary><div class="ex"><pre>/plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill
+/plugin install ui-ux-pro-max@ui-ux-pro-max-skill</pre></div></details></li>
       <li class="r" id="t-graphify" data-q="graphify graphify labs a map of your codebase so the agent rereads less skill + cli skills &amp; plugins "><details><summary><img src="icons/gh-graphify-labs.png" alt="" width="28" height="28" loading="lazy">
           <span class="nm"><a href="https://github.com/Graphify-Labs/graphify" target="_blank" rel="noopener">Graphify</a><small>Graphify Labs</small></span>
           <span class="bf">A map of your codebase so the agent rereads less</span>
@@ -497,74 +527,83 @@ graphify claude install</pre><a class="seen" href="/links/#claude-code-repos">se
           <span class="bf">Current library docs, fewer made-up functions</span>
           <span class="bs"><span class="b">plugin · MCP</span><span class="b st">★ 62K</span></span><span class="more" aria-hidden="true">+</span></summary><div class="ex"><pre># in Claude Code
 /plugin install context7@claude-plugins-official</pre><a class="seen" href="/links/#claude-code-repos">seen in our video: 4 free repos for Claude Code →</a></div></details></li>
-      <li class="r" id="t-scroll-world" data-q="scroll world oso95 turns any brand into a scrollable 3d landing page skill skills &amp; plugins "><div class="rw"><img src="icons/gh-oso95.png" alt="" width="28" height="28" loading="lazy">
+      <li class="r" id="t-scroll-world" data-q="scroll world oso95 turns any brand into a scrollable 3d landing page skill skills &amp; plugins "><details><summary><img src="icons/gh-oso95.png" alt="" width="28" height="28" loading="lazy">
           <span class="nm"><a href="https://github.com/oso95/scroll-world" target="_blank" rel="noopener">Scroll World</a><small>oso95</small></span>
           <span class="bf">Turns any brand into a scrollable 3D landing page</span>
-          <span class="bs"><span class="b">skill</span><span class="b st">★ 9.4K</span></span><a class="go" href="https://github.com/oso95/scroll-world" target="_blank" rel="noopener" aria-label="Open Scroll World">↗</a></div></li>
-      <li class="r" id="t-video-shotcraft" data-q="video shotcraft vincent wei cinematic product videos in remotion, with 150+ shot recipes skill skills &amp; plugins "><div class="rw"><img src="icons/gh-vincentwei1021.png" alt="" width="28" height="28" loading="lazy">
+          <span class="bs"><span class="b">skill</span><span class="b st">★ 9.5K</span></span><span class="more" aria-hidden="true">+</span></summary><div class="ex"><pre>/plugin marketplace add oso95/scroll-world
+/plugin install scroll-world@scroll-world</pre></div></details></li>
+      <li class="r" id="t-video-shotcraft" data-q="video shotcraft vincent wei cinematic product videos in remotion, with 150+ shot recipes skill skills &amp; plugins "><details><summary><img src="icons/gh-vincentwei1021.png" alt="" width="28" height="28" loading="lazy">
           <span class="nm"><a href="https://github.com/Vincentwei1021/video-shotcraft" target="_blank" rel="noopener">Video Shotcraft</a><small>Vincent Wei</small></span>
           <span class="bf">Cinematic product videos in Remotion, with 150+ shot recipes</span>
-          <span class="bs"><span class="b">skill</span><span class="b st">★ 9.3K</span></span><a class="go" href="https://github.com/Vincentwei1021/video-shotcraft" target="_blank" rel="noopener" aria-label="Open Video Shotcraft">↗</a></div></li>
-      <li class="r" id="t-graft" data-q="graft trail codebase-specific context so coding agents work faster and cheaper skill skills &amp; plugins "><div class="rw"><img src="icons/gh-trailhq.png" alt="" width="28" height="28" loading="lazy">
+          <span class="bs"><span class="b">skill</span><span class="b st">★ 9.3K</span></span><span class="more" aria-hidden="true">+</span></summary><div class="ex"><pre>npx skills add Vincentwei1021/video-shotcraft</pre></div></details></li>
+      <li class="r" id="t-graft" data-q="graft trail codebase-specific context so coding agents work faster and cheaper skill skills &amp; plugins "><details><summary><img src="icons/gh-trailhq.png" alt="" width="28" height="28" loading="lazy">
           <span class="nm"><a href="https://github.com/trailhq/Graft" target="_blank" rel="noopener">Graft</a><small>Trail</small></span>
           <span class="bf">Codebase-specific context so coding agents work faster and cheaper</span>
-          <span class="bs"><span class="b">skill</span><span class="b st">★ 9.0K</span></span><a class="go" href="https://github.com/trailhq/Graft" target="_blank" rel="noopener" aria-label="Open Graft">↗</a></div></li>
-      <li class="r" id="t-interface-skills" data-q="interface skills jakub krehel a collection of skills for building great interfaces skill pack skills &amp; plugins "><div class="rw"><img src="icons/gh-jakubkrehel.png" alt="" width="28" height="28" loading="lazy">
+          <span class="bs"><span class="b">skill</span><span class="b st">★ 9.1K</span></span><span class="more" aria-hidden="true">+</span></summary><div class="ex"><pre>npm install -g @nanonets/graft
+graft init</pre></div></details></li>
+      <li class="r" id="t-interface-skills" data-q="interface skills jakub krehel a collection of skills for building great interfaces skill pack skills &amp; plugins "><details><summary><img src="icons/gh-jakubkrehel.png" alt="" width="28" height="28" loading="lazy">
           <span class="nm"><a href="https://github.com/jakubkrehel/skills" target="_blank" rel="noopener">Interface skills</a><small>Jakub Krehel</small></span>
           <span class="bf">A collection of skills for building great interfaces</span>
-          <span class="bs"><span class="b">skill pack</span><span class="b st">★ 7.0K</span></span><a class="go" href="https://github.com/jakubkrehel/skills" target="_blank" rel="noopener" aria-label="Open Interface skills">↗</a></div></li>
+          <span class="bs"><span class="b">skill pack</span><span class="b st">★ 7.1K</span></span><span class="more" aria-hidden="true">+</span></summary><div class="ex"><pre>/plugin marketplace add jakubkrehel/skills
+/plugin install interfaces@interfaces</pre></div></details></li>
       <li class="r" id="t-fast-jev-compaction" data-q="fast jev compaction tamara tran uses jev to drop stale context instead of summarizing it plugin skills &amp; plugins "><details><summary><img src="icons/gh-tamaratran.png" alt="" width="28" height="28" loading="lazy">
           <span class="nm"><a href="https://github.com/tamaratran/fast-jev-compaction" target="_blank" rel="noopener">Fast Jev Compaction</a><small>Tamara Tran</small></span>
           <span class="bf">Uses Jev to drop stale context instead of summarizing it</span>
-          <span class="bs"><span class="b">plugin</span><span class="b st">★ 6.4K</span></span><span class="more" aria-hidden="true">+</span></summary><div class="ex"><a class="seen" href="/links/#jev-vs-chatgpt">seen in our video: Jev vs ChatGPT →</a></div></details></li>
-      <li class="r" id="t-lieflat-charts" data-q="lieflat charts larashero3 turns data into polished, interactive html charts skill skills &amp; plugins "><div class="rw"><img src="icons/gh-larashero3-dotcom.png" alt="" width="28" height="28" loading="lazy">
+          <span class="bs"><span class="b">plugin</span><span class="b st">★ 6.5K</span></span><span class="more" aria-hidden="true">+</span></summary><div class="ex"><pre>claude plugin marketplace add tamaratran/fast-jev-compaction
+claude plugin install fast-jev-compaction@fast-jev-compaction</pre><a class="seen" href="/links/#jev-vs-chatgpt">seen in our video: Jev vs ChatGPT →</a></div></details></li>
+      <li class="r" id="t-lieflat-charts" data-q="lieflat charts larashero3 turns data into polished, interactive html charts skill skills &amp; plugins "><details><summary><img src="icons/gh-larashero3-dotcom.png" alt="" width="28" height="28" loading="lazy">
           <span class="nm"><a href="https://github.com/larashero3-dotcom/lieflat-charts" target="_blank" rel="noopener">Lieflat Charts</a><small>larashero3</small></span>
           <span class="bf">Turns data into polished, interactive HTML charts</span>
-          <span class="bs"><span class="b">skill</span><span class="b st">★ 5.6K</span></span><a class="go" href="https://github.com/larashero3-dotcom/lieflat-charts" target="_blank" rel="noopener" aria-label="Open Lieflat Charts">↗</a></div></li>
-      <li class="r" id="t-ip-as-logo" data-q="ip as logo s1dashu simple, rounded mascot-style logos skill skills &amp; plugins "><div class="rw"><img src="icons/gh-s1dashu.png" alt="" width="28" height="28" loading="lazy">
+          <span class="bs"><span class="b">skill</span><span class="b st">★ 5.7K</span></span><span class="more" aria-hidden="true">+</span></summary><div class="ex"><pre>npx skills add https://github.com/larashero3-dotcom/lieflat-charts --skill lieflat-charts</pre></div></details></li>
+      <li class="r" id="t-ip-as-logo" data-q="ip as logo s1dashu simple, rounded mascot-style logos skill skills &amp; plugins "><details><summary><img src="icons/gh-s1dashu.png" alt="" width="28" height="28" loading="lazy">
           <span class="nm"><a href="https://github.com/s1dashu/ip-as-logo-skill" target="_blank" rel="noopener">IP as Logo</a><small>s1dashu</small></span>
           <span class="bf">Simple, rounded mascot-style logos</span>
-          <span class="bs"><span class="b">skill</span><span class="b st">★ 5.4K</span></span><a class="go" href="https://github.com/s1dashu/ip-as-logo-skill" target="_blank" rel="noopener" aria-label="Open IP as Logo">↗</a></div></li>
-      <li class="r" id="t-skill-recorder" data-q="skill recorder microsoft records you doing a task on screen and turns it into a reusable skill app skills &amp; plugins "><div class="rw"><img src="icons/gh-microsoft.png" alt="" width="28" height="28" loading="lazy">
+          <span class="bs"><span class="b">skill</span><span class="b st">★ 5.5K</span></span><span class="more" aria-hidden="true">+</span></summary><div class="ex"><pre>npx skills@latest add s1dashu/ip-as-logo-skill --global</pre></div></details></li>
+      <li class="r" id="t-skill-recorder" data-q="skill recorder microsoft records you doing a task on screen and turns it into a reusable skill app skills &amp; plugins "><details><summary><img src="icons/gh-microsoft.png" alt="" width="28" height="28" loading="lazy">
           <span class="nm"><a href="https://github.com/microsoft/skill-recorder" target="_blank" rel="noopener">Skill Recorder</a><small>Microsoft</small></span>
           <span class="bf">Records you doing a task on screen and turns it into a reusable skill</span>
-          <span class="bs"><span class="b">app</span><span class="b st">★ 4.1K</span></span><a class="go" href="https://github.com/microsoft/skill-recorder" target="_blank" rel="noopener" aria-label="Open Skill Recorder">↗</a></div></li>
+          <span class="bs"><span class="b">app</span><span class="b st">★ 4.1K</span></span><span class="more" aria-hidden="true">+</span></summary><div class="ex"><p class="warn">A desktop app, not a skill: install it from the command on its latest GitHub release page.</p></div></details></li>
       <li class="r" id="t-david-ondrej-s-skills" data-q="david ondrej&#x27;s skills david ondrej a popular creator&#x27;s personal skill set skill pack skills &amp; plugins "><div class="rw"><img src="icons/gh-davidondrej.png" alt="" width="28" height="28" loading="lazy">
           <span class="nm"><a href="https://github.com/davidondrej/skills" target="_blank" rel="noopener">David Ondrej&#x27;s skills</a><small>David Ondrej</small></span>
           <span class="bf">A popular creator&#x27;s personal skill set</span>
           <span class="bs"><span class="b">skill pack</span><span class="b st">★ 4.1K</span></span><a class="go" href="https://github.com/davidondrej/skills" target="_blank" rel="noopener" aria-label="Open David Ondrej&#x27;s skills">↗</a></div></li>
-      <li class="r" id="t-simple-english" data-q="simple english aminblg makes the ai write docs in plain, simplified technical english skill skills &amp; plugins "><div class="rw"><img src="icons/gh-aminblg.png" alt="" width="28" height="28" loading="lazy">
+      <li class="r" id="t-simple-english" data-q="simple english aminblg makes the ai write docs in plain, simplified technical english skill skills &amp; plugins "><details><summary><img src="icons/gh-aminblg.png" alt="" width="28" height="28" loading="lazy">
           <span class="nm"><a href="https://github.com/AminBlg/SimpleEnglish" target="_blank" rel="noopener">Simple English</a><small>AminBlg</small></span>
           <span class="bf">Makes the AI write docs in plain, simplified technical English</span>
-          <span class="bs"><span class="b">skill</span><span class="b st">★ 3.5K</span></span><a class="go" href="https://github.com/AminBlg/SimpleEnglish" target="_blank" rel="noopener" aria-label="Open Simple English">↗</a></div></li>
-      <li class="r" id="t-unlazy" data-q="unlazy leonxlnx stops agents cutting corners by splitting work into deeper steps skill skills &amp; plugins "><div class="rw"><img src="icons/gh-leonxlnx.png" alt="" width="28" height="28" loading="lazy">
+          <span class="bs"><span class="b">skill</span><span class="b st">★ 3.5K</span></span><span class="more" aria-hidden="true">+</span></summary><div class="ex"><pre>claude plugin marketplace add AminBlg/SimpleEnglish &amp;&amp; claude plugin install simple-english@simple-english</pre></div></details></li>
+      <li class="r" id="t-unlazy" data-q="unlazy leonxlnx stops agents cutting corners by splitting work into deeper steps skill skills &amp; plugins "><details><summary><img src="icons/gh-leonxlnx.png" alt="" width="28" height="28" loading="lazy">
           <span class="nm"><a href="https://github.com/Leonxlnx/unlazy" target="_blank" rel="noopener">Unlazy</a><small>Leonxlnx</small></span>
           <span class="bf">Stops agents cutting corners by splitting work into deeper steps</span>
-          <span class="bs"><span class="b">skill</span><span class="b st">★ 3.5K</span></span><a class="go" href="https://github.com/Leonxlnx/unlazy" target="_blank" rel="noopener" aria-label="Open Unlazy">↗</a></div></li>
-      <li class="r" id="t-sepia" data-q="sepia nanako0129 rewrites text so it stops sounding ai-written skill skills &amp; plugins "><div class="rw"><img src="icons/gh-nanako0129.png" alt="" width="28" height="28" loading="lazy">
+          <span class="bs"><span class="b">skill</span><span class="b st">★ 3.5K</span></span><span class="more" aria-hidden="true">+</span></summary><div class="ex"><pre>npx skills add Leonxlnx/unlazy</pre></div></details></li>
+      <li class="r" id="t-sepia" data-q="sepia nanako0129 rewrites text so it stops sounding ai-written skill skills &amp; plugins "><details><summary><img src="icons/gh-nanako0129.png" alt="" width="28" height="28" loading="lazy">
           <span class="nm"><a href="https://github.com/Nanako0129/sepia" target="_blank" rel="noopener">Sepia</a><small>Nanako0129</small></span>
           <span class="bf">Rewrites text so it stops sounding AI-written</span>
-          <span class="bs"><span class="b">skill</span><span class="b st">★ 2.8K</span></span><a class="go" href="https://github.com/Nanako0129/sepia" target="_blank" rel="noopener" aria-label="Open Sepia">↗</a></div></li>
-      <li class="r" id="t-scroll-craft" data-q="scroll craft nate herk premium, scroll-driven websites skill skills &amp; plugins "><div class="rw"><img src="icons/gh-nateherkai.png" alt="" width="28" height="28" loading="lazy">
+          <span class="bs"><span class="b">skill</span><span class="b st">★ 2.8K</span></span><span class="more" aria-hidden="true">+</span></summary><div class="ex"><pre>claude plugin marketplace add Nanako0129/sepia
+claude plugin install sepia@sepia --scope user</pre></div></details></li>
+      <li class="r" id="t-scroll-craft" data-q="scroll craft nate herk premium, scroll-driven websites skill skills &amp; plugins "><details><summary><img src="icons/gh-nateherkai.png" alt="" width="28" height="28" loading="lazy">
           <span class="nm"><a href="https://github.com/nateherkai/scroll-craft" target="_blank" rel="noopener">Scroll Craft</a><small>Nate Herk</small></span>
           <span class="bf">Premium, scroll-driven websites</span>
-          <span class="bs"><span class="b">skill</span><span class="b st">★ 2.7K</span></span><a class="go" href="https://github.com/nateherkai/scroll-craft" target="_blank" rel="noopener" aria-label="Open Scroll Craft">↗</a></div></li>
-      <li class="r" id="t-vox-director" data-q="vox director alisa0808 one topic in, a vox-style paper-collage explainer out skill skills &amp; plugins "><div class="rw"><img src="icons/gh-alisa0808.png" alt="" width="28" height="28" loading="lazy">
+          <span class="bs"><span class="b">skill</span><span class="b st">★ 2.7K</span></span><span class="more" aria-hidden="true">+</span></summary><div class="ex"><pre>/plugin marketplace add nateherkai/scroll-craft
+/plugin install nateherk-design</pre></div></details></li>
+      <li class="r" id="t-vox-director" data-q="vox director alisa0808 one topic in, a vox-style paper-collage explainer out skill skills &amp; plugins "><details><summary><img src="icons/gh-alisa0808.png" alt="" width="28" height="28" loading="lazy">
           <span class="nm"><a href="https://github.com/Alisa0808/vox-director" target="_blank" rel="noopener">Vox Director</a><small>Alisa0808</small></span>
           <span class="bf">One topic in, a Vox-style paper-collage explainer out</span>
-          <span class="bs"><span class="b">skill</span><span class="b st">★ 2.0K</span></span><a class="go" href="https://github.com/Alisa0808/vox-director" target="_blank" rel="noopener" aria-label="Open Vox Director">↗</a></div></li>
-      <li class="r" id="t-anything2explainer" data-q="anything2explainer vincent wei topic in, narrated motion-graphics explainer out skill skills &amp; plugins "><div class="rw"><img src="icons/gh-vincentwei1021.png" alt="" width="28" height="28" loading="lazy">
+          <span class="bs"><span class="b">skill</span><span class="b st">★ 2K</span></span><span class="more" aria-hidden="true">+</span></summary><div class="ex"><pre>git clone https://github.com/Alisa0808/vox-director.git ~/.claude/skills/vox-director</pre></div></details></li>
+      <li class="r" id="t-anything2explainer" data-q="anything2explainer vincent wei topic in, narrated motion-graphics explainer out skill skills &amp; plugins "><details><summary><img src="icons/gh-vincentwei1021.png" alt="" width="28" height="28" loading="lazy">
           <span class="nm"><a href="https://github.com/Vincentwei1021/anything2explainer" target="_blank" rel="noopener">Anything2Explainer</a><small>Vincent Wei</small></span>
           <span class="bf">Topic in, narrated motion-graphics explainer out</span>
-          <span class="bs"><span class="b">skill</span><span class="b st">★ 2.0K</span></span><a class="go" href="https://github.com/Vincentwei1021/anything2explainer" target="_blank" rel="noopener" aria-label="Open Anything2Explainer">↗</a></div></li>
+          <span class="bs"><span class="b">skill</span><span class="b st">★ 2K</span></span><span class="more" aria-hidden="true">+</span></summary><div class="ex"><pre>git clone https://github.com/Vincentwei1021/anything2explainer.git
+ln -s &quot;$PWD/anything2explainer&quot; ~/.claude/skills/anything2explainer</pre></div></details></li>
       <li class="r" id="t-typesafe-skills" data-q="typesafe skills typesafe build apps on jev with the agent guiding you skill pack skills &amp; plugins "><details><summary><img src="icons/gh-typesafe-ai.png" alt="" width="28" height="28" loading="lazy">
           <span class="nm"><a href="https://github.com/typesafe-ai/skills" target="_blank" rel="noopener">TypeSafe skills</a><small>TypeSafe</small></span>
           <span class="bf">Build apps on Jev with the agent guiding you</span>
-          <span class="bs"><span class="b">skill pack</span><span class="b st">★ 1.9K</span></span><span class="more" aria-hidden="true">+</span></summary><div class="ex"><a class="seen" href="/links/#jev-vs-chatgpt">seen in our video: Jev vs ChatGPT →</a></div></details></li>
-      <li class="r" id="t-headcount" data-q="headcount cbrock84 125+ skills organised like the departments of a company skill pack skills &amp; plugins "><div class="rw"><img src="icons/gh-cbrock84.png" alt="" width="28" height="28" loading="lazy">
+          <span class="bs"><span class="b">skill pack</span><span class="b st">★ 2K</span></span><span class="more" aria-hidden="true">+</span></summary><div class="ex"><pre>claude plugin marketplace add typesafe-ai/skills
+claude plugin install typesafe@typesafe-ai</pre><a class="seen" href="/links/#jev-vs-chatgpt">seen in our video: Jev vs ChatGPT →</a></div></details></li>
+      <li class="r" id="t-headcount" data-q="headcount cbrock84 125+ skills organised like the departments of a company skill pack skills &amp; plugins "><details><summary><img src="icons/gh-cbrock84.png" alt="" width="28" height="28" loading="lazy">
           <span class="nm"><a href="https://github.com/cbrock84/headcount" target="_blank" rel="noopener">Headcount</a><small>cbrock84</small></span>
           <span class="bf">125+ skills organised like the departments of a company</span>
-          <span class="bs"><span class="b">skill pack</span><span class="b st">★ 1.7K</span></span><a class="go" href="https://github.com/cbrock84/headcount" target="_blank" rel="noopener" aria-label="Open Headcount">↗</a></div></li>
+          <span class="bs"><span class="b">skill pack</span><span class="b st">★ 1.7K</span></span><span class="more" aria-hidden="true">+</span></summary><div class="ex"><pre>/plugin marketplace add cbrock84/headcount
+/plugin install security@headcount</pre></div></details></li>
       <li class="r" id="t-frontend-design" data-q="frontend design anthropic websites that don&#x27;t look ai-made plugin skills &amp; plugins "><details><summary><img src="icons/gh-anthropics.png" alt="" width="28" height="28" loading="lazy">
           <span class="nm"><a href="https://github.com/anthropics/claude-plugins-official" target="_blank" rel="noopener">Frontend Design</a><small>Anthropic</small></span>
           <span class="bf">Websites that don&#x27;t look AI-made</span>
@@ -763,7 +802,7 @@ graphify claude install</pre><a class="seen" href="/links/#claude-code-repos">se
       </ul>
     </section>
     <section class="cat" id="money">
-      <h2><span class="ic">💳</span>Finance, expenses &amp; banking <span class="n">6</span></h2>
+      <h2><span class="ic">💳</span>Finance, expenses &amp; banking <span class="n">7</span></h2>
       <p class="blurb">Business banking, spending and bookkeeping.</p>
       <ul class="rows">
       <li class="r" id="t-ramp" data-q="ramp ramp company cards with expenses sorted automatically  finance, expenses &amp; banking "><div class="rw"><img src="icons/ramp.com.png" alt="" width="28" height="28" loading="lazy">
@@ -790,6 +829,10 @@ graphify claude install</pre><a class="seen" href="/links/#claude-code-repos">se
           <span class="nm"><a href="https://www.copilot.money" target="_blank" rel="noopener">Copilot Money</a><small>Copilot</small></span>
           <span class="bf">Personal budgeting and spending tracking</span>
           <span class="bs"></span><a class="go" href="https://www.copilot.money" target="_blank" rel="noopener" aria-label="Open Copilot Money">↗</a></div></li>
+      <li class="r" id="t-stripe" data-q="stripe stripe online payments and invoices; its official mcp server lets an ai agent create payment links, invoices and refunds  finance, expenses &amp; banking "><div class="rw"><img src="icons/stripe.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://stripe.com" target="_blank" rel="noopener">Stripe</a><small>Stripe</small></span>
+          <span class="bf">Online payments and invoices; its official MCP server lets an AI agent create payment links, invoices and refunds</span>
+          <span class="bs"></span><a class="go" href="https://stripe.com" target="_blank" rel="noopener" aria-label="Open Stripe">↗</a></div></li>
       </ul>
     </section>
     <section class="cat" id="browsers">
@@ -849,9 +892,9 @@ graphify claude install</pre><a class="seen" href="/links/#claude-code-repos">se
       </ul>
     </section>
     <section class="cat" id="build">
-      <h2><span class="ic">🛠️</span>Build with AI <span class="n">8</span></h2>
+      <h2><span class="ic">🛠️</span>Build with AI <span class="n">9</span></h2>
       <p class="blurb">Open-source building blocks developers use to make AI apps, agents and pipelines.</p>
-      <ul class="rows">
+      <ul class="rows long clip">
       <li class="r" id="t-deepseek-harness" data-q="deepseek harness deepseek deepseek&#x27;s open agent harness, built so everything is a plugin open source build with ai free"><div class="rw"><img src="icons/gh-deepseek-ai.png" alt="" width="28" height="28" loading="lazy">
           <span class="nm"><a href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" rel="noopener">DeepSeek Harness</a><small>DeepSeek</small></span>
           <span class="bf">DeepSeek&#x27;s open agent harness, built so everything is a plugin</span>
@@ -884,7 +927,11 @@ graphify claude install</pre><a class="seen" href="/links/#claude-code-repos">se
           <span class="nm"><a href="https://github.com/ggml-org/llama.cpp" target="_blank" rel="noopener">llama.cpp</a><small>ggml</small></span>
           <span class="bf">Runs language models fast on ordinary hardware</span>
           <span class="bs"><span class="b">open source</span><span class="b st">★ 129K</span></span><a class="go" href="https://github.com/ggml-org/llama.cpp" target="_blank" rel="noopener" aria-label="Open llama.cpp">↗</a></div></li>
-      </ul>
+      <li class="r" id="t-plaid" data-q="plaid plaid connects your own app to people&#x27;s bank accounts; its mcp server helps you debug that connection with ai for developers build with ai "><div class="rw"><img src="icons/plaid.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://plaid.com" target="_blank" rel="noopener">Plaid</a><small>Plaid</small></span>
+          <span class="bf">Connects your own app to people&#x27;s bank accounts; its MCP server helps you debug that connection with AI</span>
+          <span class="bs"><span class="b">for developers</span></span><a class="go" href="https://plaid.com" target="_blank" rel="noopener" aria-label="Open Plaid">↗</a></div></li>
+      </ul><button type="button" class="showall" data-n="9" aria-expanded="false">Show all 9 ↓</button>
     </section>
     <section class="cat" id="voice">
       <h2><span class="ic">🔊</span>Voice, music &amp; audio <span class="n">9</span></h2>
@@ -1157,13 +1204,17 @@ graphify claude install</pre><a class="seen" href="/links/#claude-code-repos">se
       </ul>
     </section>
     <section class="cat" id="posting">
-      <h2><span class="ic">📈</span>Posting &amp; growth <span class="n">3</span></h2>
+      <h2><span class="ic">📈</span>Posting &amp; growth <span class="n">4</span></h2>
       <p class="blurb">Getting it out there on a schedule.</p>
       <ul class="rows">
       <li class="r" id="t-buffer" data-q="buffer buffer scheduling posts across every platform from one queue  posting &amp; growth "><div class="rw"><img src="icons/buffer.com.png" alt="" width="28" height="28" loading="lazy">
           <span class="nm"><a href="https://buffer.com" target="_blank" rel="noopener">Buffer</a><small>Buffer</small></span>
           <span class="bf">Scheduling posts across every platform from one queue</span>
           <span class="bs"></span><a class="go" href="https://buffer.com" target="_blank" rel="noopener" aria-label="Open Buffer">↗</a></div></li>
+      <li class="r" id="t-blotato" data-q="blotato blotato posts to 9 platforms from one place; an mcp server lets claude schedule them, plus n8n and make nodes  posting &amp; growth "><div class="rw"><img src="icons/blotato.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.blotato.com" target="_blank" rel="noopener">Blotato</a><small>Blotato</small></span>
+          <span class="bf">Posts to 9 platforms from one place; an MCP server lets Claude schedule them, plus n8n and Make nodes</span>
+          <span class="bs"></span><a class="go" href="https://www.blotato.com" target="_blank" rel="noopener" aria-label="Open Blotato">↗</a></div></li>
       <li class="r" id="t-manychat" data-q="manychat manychat auto-dms for &#x27;comment link and i&#x27;ll send it&#x27; posts  posting &amp; growth "><div class="rw"><img src="icons/manychat.com.png" alt="" width="28" height="28" loading="lazy">
           <span class="nm"><a href="https://manychat.com" target="_blank" rel="noopener">ManyChat</a><small>ManyChat</small></span>
           <span class="bf">Auto-DMs for &#x27;comment LINK and I&#x27;ll send it&#x27; posts</span>
@@ -1265,7 +1316,7 @@ graphify claude install</pre><a class="seen" href="/links/#claude-code-repos">se
     mt.setAttribute('aria-expanded', String(!open));
     mt.textContent = open ? `More tasks (${tk.children.length - 6}) ↓` : 'Fewer tasks ↑';
   });
-  document.getElementById('jump').addEventListener('change', ev => { if (ev.target.value) location.hash = ev.target.value; });
+  document.querySelectorAll('.jumps a').forEach(a => a.addEventListener('click', () => document.getElementById('jump').open = false));
   // highlight the category you're reading in the sidebar
   const links = [...document.querySelectorAll('.side a')];
   const io = new IntersectionObserver(es => es.forEach(en => {
