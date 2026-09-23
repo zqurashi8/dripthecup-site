@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>AI resources · Drip the Cup</title>
-<meta name="description" content="The AI tools Drip the Cup talks about and uses: chat assistants, coding agents, Claude Code skills, voice, image and video generation, editing and more. 41 tools, sorted and linked.">
+<title>AI tools directory · Drip the Cup</title>
+<meta name="description" content="123 AI tools sorted by what you want to do: chat, agents, coding, dictation, note takers, email, CRM, finance, video, voice and more. The ones Drip the Cup uses are marked.">
 <link rel="canonical" href="https://dripthecup.com/resources/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dripthecup.com/resources/">
-<meta property="og:title" content="AI resources · Drip the Cup">
-<meta property="og:description" content="41 AI tools, sorted by what you're trying to do. The ones we actually use are marked.">
+<meta property="og:title" content="AI tools directory · Drip the Cup">
+<meta property="og:description" content="123 AI tools in 22 categories. One line each on what they're best for.">
 <meta property="og:image" content="https://dripthecup.com/assets/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#E3AC2A">
@@ -21,474 +21,845 @@
 <style>
   :root{
     --mustard:#E3AC2A; --paper:#F6EFE0; --cup:#F5F1E8; --ink:#1A1A1A; --muted:#6B6155;
-    --red:#D63F2A; --dark:#100D09; --line:#D9CFBC;
+    --red:#D63F2A; --dark:#100D09; --line:#D9CFBC; --hover:#EFE6D2;
     --display:'Fraunces', Georgia, 'Times New Roman', serif;
     --body:Georgia, 'Times New Roman', serif;
     --mono:ui-monospace, 'Cascadia Mono', 'Courier New', monospace;
   }
   *{box-sizing:border-box;}
-  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;}
-  .wrap{max-width:1200px;margin:0 auto;padding-inline:20px;}
+  html{scroll-padding-top:70px;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.45;-webkit-font-smoothing:antialiased;}
   a{color:inherit;}
   :focus-visible{outline:3px solid var(--red);outline-offset:2px;}
-  h1,h2,h3{text-wrap:balance;margin:0;}
-  .eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0;}
+  h1,h2{text-wrap:balance;margin:0;}
   .hdr{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top, 0px);z-index:20;}
-  .hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-block:14px;}
-  .brand{font-family:var(--display);font-weight:900;font-size:24px;letter-spacing:-.02em;text-decoration:none;line-height:1;}
+  .hdr .in{max-width:1240px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+  .brand{font-family:var(--display);font-weight:900;font-size:22px;letter-spacing:-.02em;text-decoration:none;line-height:1;}
   .hnav{display:flex;gap:2px;flex-wrap:wrap;}
-  .hnav a{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:8px 11px;}
+  .hnav a{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:7px 10px;}
   .hnav a:hover,.hnav a[aria-current]{background:var(--mustard);}
 
-  .intro{display:grid;grid-template-columns:1.4fr 1fr;border-bottom:1px solid var(--line);}
-  .intro-copy{padding:56px 40px 48px max(20px, calc((100vw - 1200px)/2 + 20px));display:flex;flex-direction:column;justify-content:center;}
-  .intro h1{font-family:var(--display);font-weight:900;font-size:clamp(34px,4.8vw,62px);line-height:1.02;letter-spacing:-.025em;margin-top:12px;}
-  .intro p.sub{max-width:48ch;margin:16px 0 0;font-size:17px;color:var(--muted);}
-  .search{margin-top:24px;display:flex;max-width:460px;border:2px solid var(--ink);background:var(--cup);}
-  .search input{flex:1;min-width:0;border:0;background:transparent;font:16px var(--mono);padding:13px 14px;color:var(--ink);}
+  /* compact intro: title, search, Drip small on mustard */
+  .intro{max-width:1240px;margin:0 auto;padding:30px 20px 18px;display:flex;align-items:flex-end;gap:24px;}
+  .intro .t{flex:1;min-width:0;}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0;}
+  .intro h1{font-family:var(--display);font-weight:900;font-size:clamp(30px,4vw,48px);line-height:1.02;letter-spacing:-.025em;margin-top:8px;}
+  .intro p{margin:10px 0 0;color:var(--muted);max-width:60ch;}
+  .search{margin-top:16px;display:flex;align-items:center;max-width:520px;border:2px solid var(--ink);background:var(--cup);}
+  .search span{padding-left:12px;font-family:var(--mono);color:var(--muted);}
+  .search input{flex:1;min-width:0;border:0;background:transparent;font:15px var(--mono);padding:11px 12px;color:var(--ink);}
   .search input:focus{outline:none;}
   .search:focus-within{box-shadow:4px 4px 0 var(--ink);}
-  .stage{background:var(--mustard);display:flex;align-items:flex-end;justify-content:center;min-height:300px;padding:30px 20px 0;overflow:hidden;}
-  .stage img{width:min(190px,44vw);height:auto;display:block;}
-  @media (max-width:820px){.intro{grid-template-columns:minmax(0,1fr);} .stage{order:-1;min-height:0;padding-top:26px;} .stage img{width:min(150px,38vw);} .intro-copy{padding:28px 20px 34px;}}
+  .drip{background:var(--mustard);border:2px solid var(--ink);width:150px;height:150px;flex:none;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;box-shadow:5px 5px 0 var(--ink);}
+  .drip img{width:88px;display:block;}
+  @media (max-width:700px){.drip{display:none;}}
 
-  .index{display:flex;flex-wrap:wrap;gap:8px;padding-block:20px;border-bottom:1px solid var(--line);}
-  .index a{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-decoration:none;border:1.5px solid var(--ink);padding:8px 12px;background:var(--paper);}
-  .index a span{color:var(--muted);margin-left:4px;}
-  .index a:hover{background:var(--ink);color:var(--paper);}
-  .index a:hover span{color:var(--mustard);}
+  /* starting picks strip */
+  .picks{max-width:1240px;margin:0 auto;padding:6px 20px 18px;}
+  .picks h2{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:400;margin-bottom:8px;}
+  .pks{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin;}
+  .pk{flex:none;display:flex;align-items:center;gap:9px;text-decoration:none;border:1.5px solid var(--ink);background:var(--cup);padding:7px 12px 7px 9px;}
+  .pk:hover{background:var(--mustard);}
+  .pk img{border-radius:5px;}
+  .pk b{display:block;font-family:var(--display);font-size:15px;line-height:1.1;}
+  .pk small{display:block;font-family:var(--mono);font-size:10.5px;color:var(--muted);}
 
-  .cat{padding-block:44px 8px;scroll-margin-top:72px;}
-  .cat-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 20px;margin-bottom:20px;}
-  .cat-head h2{font-family:var(--display);font-weight:900;font-size:clamp(26px,3vw,36px);letter-spacing:-.02em;}
-  .cat-head p{margin:0;color:var(--muted);max-width:70ch;}
-  .grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,270px),1fr));gap:14px;}
-  .card{background:var(--cup);border:1.5px solid var(--ink);padding:18px 18px 16px;display:flex;flex-direction:column;min-width:0;}
-  .card:hover{box-shadow:5px 5px 0 var(--ink);}
-  .top{display:flex;align-items:baseline;gap:10px;}
-  .card h3{font-family:var(--display);font-weight:900;font-size:23px;letter-spacing:-.01em;}
-  .card h3 a{text-decoration:none;border-bottom:2px solid var(--mustard);}
-  .card h3 a:hover{background:var(--mustard);}
-  .stars{font-family:var(--mono);font-size:12.5px;margin-left:auto;white-space:nowrap;}
-  .by{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin:2px 0 0;letter-spacing:.04em;}
-  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
-  .tags:empty{display:none;}
-  .kind{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:3px 7px;}
-  .we{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;background:var(--mustard);padding:3px 7px;border:1px solid var(--ink);}
-  .card p{margin:10px 0 0;}
-  .card .good{font-size:14.5px;color:var(--muted);margin-top:auto;padding-top:10px;}
-  .card .good b{color:var(--ink);font-weight:600;}
-  .card pre{margin:12px 0 0;background:var(--dark);color:#EDE6D8;padding:10px 12px;overflow-x:auto;font:12.5px/1.5 var(--mono);white-space:pre;}
-  .seen{display:inline-block;margin-top:12px;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border-bottom:1.5px solid var(--ink);align-self:flex-start;}
-  .seen:hover{background:var(--mustard);}
+  /* layout: sidebar + list */
+  .layout{max-width:1240px;margin:0 auto;padding:0 20px 40px;display:grid;grid-template-columns:250px minmax(0,1fr);gap:32px;border-top:1px solid var(--line);}
+  .side{position:sticky;top:64px;align-self:start;max-height:calc(100vh - 80px);overflow:auto;padding:18px 4px 18px 0;}
+  .side a{display:flex;align-items:center;gap:8px;text-decoration:none;font-size:14px;padding:6px 8px;border-radius:0;}
+  .side a:hover{background:var(--hover);}
+  .side a.on{background:var(--mustard);}
+  .side .n{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted);}
+  .ic{width:20px;text-align:center;flex:none;}
+  .pick{display:none;}
+  @media (max-width:900px){
+    .layout{grid-template-columns:minmax(0,1fr);gap:0;}
+    .side{display:none;}
+    .pick{display:block;position:sticky;top:56px;z-index:10;background:var(--paper);padding:10px 0;border-bottom:1px solid var(--line);}
+    .pick select{width:100%;font:14px var(--mono);padding:10px;border:2px solid var(--ink);background:var(--cup);color:var(--ink);}
+  }
+
+  .cat{padding-top:24px;}
+  .cat h2{font-family:var(--display);font-weight:900;font-size:24px;letter-spacing:-.015em;display:flex;align-items:center;gap:8px;}
+  .cat h2 .n{font-family:var(--mono);font-size:12px;font-weight:400;color:var(--muted);}
+  .blurb{margin:4px 0 10px;color:var(--muted);font-size:14px;max-width:80ch;}
+  .rows{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--ink);}
+  .r{border-bottom:1px solid var(--line);}
+  .rw, .r summary{display:grid;grid-template-columns:28px minmax(120px,190px) minmax(0,1fr) auto 22px;align-items:center;gap:12px;padding:9px 6px;}
+  .r summary{cursor:pointer;list-style:none;}
+  .r summary::-webkit-details-marker{display:none;}
+  .rw:hover, .r summary:hover{background:var(--hover);}
+  .r img{border-radius:6px;background:#fff;}
+  .nm{min-width:0;}
+  .nm a{font-family:var(--display);font-weight:600;font-size:16px;text-decoration:none;}
+  .nm a:hover{background:var(--mustard);}
+  .nm small{display:block;font-family:var(--mono);font-size:10.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .bf{font-size:14.5px;}
+  .bs{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end;}
+  .b{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--ink);padding:2px 6px;white-space:nowrap;}
+  .b.we{background:var(--mustard);}
+  .b.st{background:var(--ink);color:var(--paper);}
+  .go, .more{font-family:var(--mono);text-decoration:none;text-align:center;color:var(--muted);}
+  .go:hover{color:var(--ink);}
+  details[open] .more{transform:rotate(45deg);}
+  .ex{padding:0 6px 12px 46px;}
+  .ex pre{margin:6px 0 0;background:var(--dark);color:#EDE6D8;padding:9px 12px;overflow-x:auto;font:12.5px/1.5 var(--mono);white-space:pre;}
+  .warn{margin:6px 0 0;font-size:13.5px;border-left:3px solid var(--red);padding-left:10px;}
+  .seen{display:inline-block;margin-top:8px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;}
+  @media (max-width:640px){
+    .rw, .r summary{grid-template-columns:28px minmax(0,1fr) 22px;grid-template-areas:"i n g" "i f f" "i b b";row-gap:3px;}
+    .r img{grid-area:i;align-self:start;margin-top:3px;} .nm{grid-area:n;} .bf{grid-area:f;font-size:14px;color:var(--muted);}
+    .bs{grid-area:b;justify-content:flex-start;} .bs:empty{display:none;} .go,.more{grid-area:g;}
+    .ex{padding-left:6px;}
+  }
   .empty{font-family:var(--mono);color:var(--muted);padding:40px 0;}
-  .fine{font-family:var(--mono);font-size:12px;color:var(--muted);padding-block:34px 44px;border-top:1px solid var(--line);margin-top:30px;max-width:80ch;}
-  .foot{background:var(--dark);color:#CFC4B0;padding-block:30px;font-family:var(--mono);font-size:12px;}
+  .fine{font-family:var(--mono);font-size:11.5px;color:var(--muted);padding-top:28px;margin-top:28px;border-top:1px solid var(--line);max-width:80ch;}
+  .foot{background:var(--dark);color:#CFC4B0;padding:26px 20px;font-family:var(--mono);font-size:12px;text-align:center;}
   .foot a{color:var(--mustard);}
 </style>
 </head>
 <body>
 
-<header class="hdr">
-  <div class="wrap">
-    <a class="brand" href="/">DRIP.</a>
-    <nav class="hnav" aria-label="Main">
-      <a href="/">Home</a>
-      <a href="/resources/" aria-current="page">Resources</a>
-      <a href="/links/">From the videos</a>
-    </nav>
-  </div>
-</header>
-
-<section class="intro">
-  <div class="intro-copy">
-    <p class="eyebrow">Resources · 41 tools</p>
-    <h1>The AI tools we talk about, sorted.</h1>
-    <p class="sub">Pick what you're trying to do and start there. The ones we actually use to make Drip are marked <b>we use this</b>.</p>
-    <label class="search" for="q"><input id="q" type="search" placeholder="Search: voice, video, free, Claude..." autocomplete="off" aria-label="Search the resources"></label>
-  </div>
-  <div class="stage"><img src="../assets/drip2-curious-a.png" width="420" height="720" alt="Drip, a white paper cup of black coffee, looking curious on the mustard stage."></div>
-</section>
-
-<div class="wrap">
-  <nav class="index" aria-label="Categories">
-    <a href="#chat">Chat assistants <span>6</span></a>
-    <a href="#coding">Coding with AI <span>4</span></a>
-    <a href="#skills">Claude Code skills and plugins <span>5</span></a>
-    <a href="#models">AI models for your own apps <span>4</span></a>
-    <a href="#voice">Voice and audio <span>3</span></a>
-    <a href="#image">Image generation <span>5</span></a>
-    <a href="#video">Video generation <span>5</span></a>
-    <a href="#editing">Editing <span>4</span></a>
-    <a href="#design">Design and diagrams <span>3</span></a>
-    <a href="#posting">Posting and growth <span>2</span></a>
+<header class="hdr"><div class="in">
+  <a class="brand" href="/">DRIP.</a>
+  <nav class="hnav" aria-label="Main">
+    <a href="/">Home</a>
+    <a href="/resources/" aria-current="page">AI tools</a>
+    <a href="/links/">From the videos</a>
   </nav>
+</div></header>
 
-  <section class="cat" id="chat">
-    <div class="cat-head"><h2>Chat assistants</h2><p>The big general-purpose AIs you talk to. Most are free to start.</p></div>
-    <ul class="grid">
-      <li class="card" data-q="claude anthropic strong at writing, reasoning and long documents. the one capp would pick. writing, analysis, long files ">
-        <div class="top"><h3><a href="https://claude.ai" target="_blank" rel="noopener">Claude</a></h3></div>
-        <p class="by">Anthropic</p>
-        <div class="tags"><span class="we">we use this</span></div>
-        <p>Strong at writing, reasoning and long documents. The one Capp would pick.</p>
-        <p class="good"><b>Good for:</b> writing, analysis, long files</p>
-      </li>
-      <li class="card" data-q="chatgpt openai the most widely used chat assistant, with image generation and voice built in. everyday questions, images, voice chat ">
-        <div class="top"><h3><a href="https://chatgpt.com" target="_blank" rel="noopener">ChatGPT</a></h3></div>
-        <p class="by">OpenAI</p>
-        <div class="tags"></div>
-        <p>The most widely used chat assistant, with image generation and voice built in.</p>
-        <p class="good"><b>Good for:</b> everyday questions, images, voice chat</p>
-      </li>
-      <li class="card" data-q="gemini google google&#x27;s assistant, tied into search, gmail, docs and youtube. google workspace, research ">
-        <div class="top"><h3><a href="https://gemini.google.com" target="_blank" rel="noopener">Gemini</a></h3></div>
-        <p class="by">Google</p>
-        <div class="tags"></div>
-        <p>Google&#x27;s assistant, tied into Search, Gmail, Docs and YouTube.</p>
-        <p class="good"><b>Good for:</b> Google Workspace, research</p>
-      </li>
-      <li class="card" data-q="grok xai xai&#x27;s assistant, with live access to posts on x. what people are saying right now ">
-        <div class="top"><h3><a href="https://grok.com" target="_blank" rel="noopener">Grok</a></h3></div>
-        <p class="by">xAI</p>
-        <div class="tags"></div>
-        <p>xAI&#x27;s assistant, with live access to posts on X.</p>
-        <p class="good"><b>Good for:</b> what people are saying right now</p>
-      </li>
-      <li class="card" data-q="deepseek deepseek open-weight models that are cheap to run, popular with developers. low-cost coding and reasoning ">
-        <div class="top"><h3><a href="https://chat.deepseek.com" target="_blank" rel="noopener">DeepSeek</a></h3></div>
-        <p class="by">DeepSeek</p>
-        <div class="tags"></div>
-        <p>Open-weight models that are cheap to run, popular with developers.</p>
-        <p class="good"><b>Good for:</b> low-cost coding and reasoning</p>
-      </li>
-      <li class="card" data-q="perplexity perplexity an ai search engine that answers with sources you can click. research with citations ">
-        <div class="top"><h3><a href="https://www.perplexity.ai" target="_blank" rel="noopener">Perplexity</a></h3></div>
-        <p class="by">Perplexity</p>
-        <div class="tags"></div>
-        <p>An AI search engine that answers with sources you can click.</p>
-        <p class="good"><b>Good for:</b> research with citations</p>
-      </li>
-    </ul>
-  </section>
-  <section class="cat" id="coding">
-    <div class="cat-head"><h2>Coding with AI</h2><p>Tools that write, edit and run code with you.</p></div>
-    <ul class="grid">
-      <li class="card" data-q="claude code anthropic an ai coding agent that works in your terminal, desktop app or ide and edits real projects. every drip video is built with it. building whole apps and tools ">
-        <div class="top"><h3><a href="https://claude.com/claude-code" target="_blank" rel="noopener">Claude Code</a></h3></div>
-        <p class="by">Anthropic</p>
-        <div class="tags"><span class="we">we use this</span></div>
-        <p>An AI coding agent that works in your terminal, desktop app or IDE and edits real projects. Every Drip video is built with it.</p>
-        <p class="good"><b>Good for:</b> building whole apps and tools</p>
-      </li>
-      <li class="card" data-q="cursor anysphere a code editor with ai built into every step. coding inside an editor ">
-        <div class="top"><h3><a href="https://cursor.com" target="_blank" rel="noopener">Cursor</a></h3></div>
-        <p class="by">Anysphere</p>
-        <div class="tags"></div>
-        <p>A code editor with AI built into every step.</p>
-        <p class="good"><b>Good for:</b> coding inside an editor</p>
-      </li>
-      <li class="card" data-q="codex openai openai&#x27;s coding agent, in the terminal, ide and cloud. delegating coding tasks ">
-        <div class="top"><h3><a href="https://openai.com/codex" target="_blank" rel="noopener">Codex</a></h3></div>
-        <p class="by">OpenAI</p>
-        <div class="tags"></div>
-        <p>OpenAI&#x27;s coding agent, in the terminal, IDE and cloud.</p>
-        <p class="good"><b>Good for:</b> delegating coding tasks</p>
-      </li>
-      <li class="card" data-q="github copilot github ai suggestions and an agent inside the editors and github itself. autocomplete, pull requests ">
-        <div class="top"><h3><a href="https://github.com/features/copilot" target="_blank" rel="noopener">GitHub Copilot</a></h3></div>
-        <p class="by">GitHub</p>
-        <div class="tags"></div>
-        <p>AI suggestions and an agent inside the editors and GitHub itself.</p>
-        <p class="good"><b>Good for:</b> autocomplete, pull requests</p>
-      </li>
-    </ul>
-  </section>
-  <section class="cat" id="skills">
-    <div class="cat-head"><h2>Claude Code skills and plugins</h2><p>Free add-ons that change how Claude Code works. A plugin installs with /plugin install; a skill is a folder of instructions Claude reads when it&#x27;s relevant.</p></div>
-    <ul class="grid">
-      <li class="card" data-q="superpowers obra asks what you&#x27;re building, writes a plan, then works through it with tests at every step. bigger builds that need a plan plugin">
-        <div class="top"><h3><a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">Superpowers</a></h3><span class="stars">★ 290K</span></div>
-        <p class="by">obra</p>
-        <div class="tags"><span class="kind">plugin</span></div>
-        <p>Asks what you&#x27;re building, writes a plan, then works through it with tests at every step.</p>
-        <p class="good"><b>Good for:</b> bigger builds that need a plan</p><pre>/plugin install superpowers@claude-plugins-official</pre><a class="seen" href="/links/#claude-code-repos">seen in: 4 free repos for Claude Code</a>
-      </li>
-      <li class="card" data-q="context7 upstash gives claude current, version-specific docs so it uses functions that still exist. fast-moving libraries plugin · mcp">
-        <div class="top"><h3><a href="https://github.com/upstash/context7" target="_blank" rel="noopener">Context7</a></h3><span class="stars">★ 62K</span></div>
-        <p class="by">Upstash</p>
-        <div class="tags"><span class="kind">plugin · MCP</span></div>
-        <p>Gives Claude current, version-specific docs so it uses functions that still exist.</p>
-        <p class="good"><b>Good for:</b> fast-moving libraries</p><pre>/plugin install context7@claude-plugins-official</pre><a class="seen" href="/links/#claude-code-repos">seen in: 4 free repos for Claude Code</a>
-      </li>
-      <li class="card" data-q="graphify graphify labs turns a codebase into a knowledge graph claude looks things up in, instead of rereading files. large codebases, fewer tokens skill + cli">
-        <div class="top"><h3><a href="https://github.com/Graphify-Labs/graphify" target="_blank" rel="noopener">Graphify</a></h3><span class="stars">★ 120K</span></div>
-        <p class="by">Graphify Labs</p>
-        <div class="tags"><span class="kind">skill + CLI</span></div>
-        <p>Turns a codebase into a knowledge graph Claude looks things up in, instead of rereading files.</p>
-        <p class="good"><b>Good for:</b> large codebases, fewer tokens</p><pre>uv tool install graphifyy
-graphify claude install</pre><a class="seen" href="/links/#claude-code-repos">seen in: 4 free repos for Claude Code</a>
-      </li>
-      <li class="card" data-q="ponytail dietrich gebert makes claude work like a lazy senior dev: reuse, use the platform, write the minimum. on the author&#x27;s benchmark, 54% less code and 22% fewer tokens. cutting code and token use plugin">
-        <div class="top"><h3><a href="https://github.com/DietrichGebert/ponytail" target="_blank" rel="noopener">Ponytail</a></h3><span class="stars">★ 144K</span></div>
-        <p class="by">Dietrich Gebert</p>
-        <div class="tags"><span class="kind">plugin</span></div>
-        <p>Makes Claude work like a lazy senior dev: reuse, use the platform, write the minimum. On the author&#x27;s benchmark, 54% less code and 22% fewer tokens.</p>
-        <p class="good"><b>Good for:</b> cutting code and token use</p><pre>/plugin marketplace add DietrichGebert/ponytail
-/plugin install ponytail@ponytail</pre><a class="seen" href="/links/#claude-code-repos">seen in: 4 free repos for Claude Code</a>
-      </li>
-      <li class="card" data-q="frontend design anthropic anthropic&#x27;s official plugin for distinctive, non-generic web design. sites that don&#x27;t look ai-made plugin">
-        <div class="top"><h3><a href="https://github.com/anthropics/claude-plugins-official" target="_blank" rel="noopener">Frontend Design</a></h3></div>
-        <p class="by">Anthropic</p>
-        <div class="tags"><span class="kind">plugin</span></div>
-        <p>Anthropic&#x27;s official plugin for distinctive, non-generic web design.</p>
-        <p class="good"><b>Good for:</b> sites that don&#x27;t look AI-made</p><pre>/plugin install frontend-design@claude-plugins-official</pre>
-      </li>
-    </ul>
-  </section>
-  <section class="cat" id="models">
-    <div class="cat-head"><h2>AI models for your own apps</h2><p>For when you want AI inside something you&#x27;re building, not a chat window.</p></div>
-    <ul class="grid">
-      <li class="card" data-q="claude api anthropic claude&#x27;s models for your own software, plus tools for agents. writing, agents, long context ">
-        <div class="top"><h3><a href="https://www.anthropic.com/api" target="_blank" rel="noopener">Claude API</a></h3></div>
-        <p class="by">Anthropic</p>
-        <div class="tags"></div>
-        <p>Claude&#x27;s models for your own software, plus tools for agents.</p>
-        <p class="good"><b>Good for:</b> writing, agents, long context</p>
-      </li>
-      <li class="card" data-q="openai api openai gpt models, image and voice models through one api. general-purpose apps ">
-        <div class="top"><h3><a href="https://platform.openai.com" target="_blank" rel="noopener">OpenAI API</a></h3></div>
-        <p class="by">OpenAI</p>
-        <div class="tags"></div>
-        <p>GPT models, image and voice models through one API.</p>
-        <p class="good"><b>Good for:</b> general-purpose apps</p>
-      </li>
-      <li class="card" data-q="jev typesafe doesn&#x27;t write back. you declare the allowed answers; it returns them with probabilities. priced on what it reads. sorting, routing, yes/no decisions at scale early access">
-        <div class="top"><h3><a href="https://typesafe.ai" target="_blank" rel="noopener">Jev</a></h3></div>
-        <p class="by">TypeSafe</p>
-        <div class="tags"><span class="kind">early access</span></div>
-        <p>Doesn&#x27;t write back. You declare the allowed answers; it returns them with probabilities. Priced on what it reads.</p>
-        <p class="good"><b>Good for:</b> sorting, routing, yes/no decisions at scale</p><a class="seen" href="/links/#jev-vs-chatgpt">seen in: Jev vs ChatGPT</a>
-      </li>
-      <li class="card" data-q="openrouter openrouter one api key for hundreds of models from different labs. trying many models, fallbacks ">
-        <div class="top"><h3><a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a></h3></div>
-        <p class="by">OpenRouter</p>
-        <div class="tags"></div>
-        <p>One API key for hundreds of models from different labs.</p>
-        <p class="good"><b>Good for:</b> trying many models, fallbacks</p>
-      </li>
-    </ul>
-  </section>
-  <section class="cat" id="voice">
-    <div class="cat-head"><h2>Voice and audio</h2><p>Voiceover, music and turning speech into text.</p></div>
-    <ul class="grid">
-      <li class="card" data-q="elevenlabs elevenlabs realistic ai voices, voice design, dubbing and sound effects. drip&#x27;s and capp&#x27;s voices are made here. voiceover, character voices ">
-        <div class="top"><h3><a href="https://elevenlabs.io" target="_blank" rel="noopener">ElevenLabs</a></h3></div>
-        <p class="by">ElevenLabs</p>
-        <div class="tags"><span class="we">we use this</span></div>
-        <p>Realistic AI voices, voice design, dubbing and sound effects. Drip&#x27;s and Capp&#x27;s voices are made here.</p>
-        <p class="good"><b>Good for:</b> voiceover, character voices</p>
-      </li>
-      <li class="card" data-q="whisper.cpp open source openai&#x27;s whisper speech-to-text, running locally and fast on your own computer. free. transcripts, word-level timing ">
-        <div class="top"><h3><a href="https://github.com/ggml-org/whisper.cpp" target="_blank" rel="noopener">whisper.cpp</a></h3></div>
-        <p class="by">open source</p>
-        <div class="tags"><span class="we">we use this</span></div>
-        <p>OpenAI&#x27;s Whisper speech-to-text, running locally and fast on your own computer. Free.</p>
-        <p class="good"><b>Good for:</b> transcripts, word-level timing</p>
-      </li>
-      <li class="card" data-q="suno suno makes full songs, vocals included, from a text prompt. music beds, jingles ">
-        <div class="top"><h3><a href="https://suno.com" target="_blank" rel="noopener">Suno</a></h3></div>
-        <p class="by">Suno</p>
-        <div class="tags"></div>
-        <p>Makes full songs, vocals included, from a text prompt.</p>
-        <p class="good"><b>Good for:</b> music beds, jingles</p>
-      </li>
-    </ul>
-  </section>
-  <section class="cat" id="image">
-    <div class="cat-head"><h2>Image generation</h2><p>Pictures from a prompt, or edits to pictures you already have.</p></div>
-    <ul class="grid">
-      <li class="card" data-q="nano banana google (gemini) gemini&#x27;s image model, very good at keeping a character consistent across edits. we use it through higgsfield for drip. consistent characters, edits ">
-        <div class="top"><h3><a href="https://gemini.google.com" target="_blank" rel="noopener">Nano Banana</a></h3></div>
-        <p class="by">Google (Gemini)</p>
-        <div class="tags"><span class="we">we use this</span></div>
-        <p>Gemini&#x27;s image model, very good at keeping a character consistent across edits. We use it through Higgsfield for Drip.</p>
-        <p class="good"><b>Good for:</b> consistent characters, edits</p>
-      </li>
-      <li class="card" data-q="midjourney midjourney known for striking, artistic images. art direction, mood boards ">
-        <div class="top"><h3><a href="https://www.midjourney.com" target="_blank" rel="noopener">Midjourney</a></h3></div>
-        <p class="by">Midjourney</p>
-        <div class="tags"></div>
-        <p>Known for striking, artistic images.</p>
-        <p class="good"><b>Good for:</b> art direction, mood boards</p>
-      </li>
-      <li class="card" data-q="chatgpt images openai image generation inside chatgpt, strong with text in images. posters, text in images ">
-        <div class="top"><h3><a href="https://chatgpt.com" target="_blank" rel="noopener">ChatGPT images</a></h3></div>
-        <p class="by">OpenAI</p>
-        <div class="tags"></div>
-        <p>Image generation inside ChatGPT, strong with text in images.</p>
-        <p class="good"><b>Good for:</b> posters, text in images</p>
-      </li>
-      <li class="card" data-q="flux black forest labs detailed image models that follow prompts closely. precise, detailed images ">
-        <div class="top"><h3><a href="https://bfl.ai" target="_blank" rel="noopener">FLUX</a></h3></div>
-        <p class="by">Black Forest Labs</p>
-        <div class="tags"></div>
-        <p>Detailed image models that follow prompts closely.</p>
-        <p class="good"><b>Good for:</b> precise, detailed images</p>
-      </li>
-      <li class="card" data-q="ideogram ideogram image generation with reliable typography. logos, text-heavy designs ">
-        <div class="top"><h3><a href="https://ideogram.ai" target="_blank" rel="noopener">Ideogram</a></h3></div>
-        <p class="by">Ideogram</p>
-        <div class="tags"></div>
-        <p>Image generation with reliable typography.</p>
-        <p class="good"><b>Good for:</b> logos, text-heavy designs</p>
-      </li>
-    </ul>
-  </section>
-  <section class="cat" id="video">
-    <div class="cat-head"><h2>Video generation</h2><p>Clips from text or from a still image.</p></div>
-    <ul class="grid">
-      <li class="card" data-q="higgsfield higgsfield one place for many top image and video models, with presets for camera moves and effects. trying many video models in one app ">
-        <div class="top"><h3><a href="https://higgsfield.ai" target="_blank" rel="noopener">Higgsfield</a></h3></div>
-        <p class="by">Higgsfield</p>
-        <div class="tags"><span class="we">we use this</span></div>
-        <p>One place for many top image and video models, with presets for camera moves and effects.</p>
-        <p class="good"><b>Good for:</b> trying many video models in one app</p>
-      </li>
-      <li class="card" data-q="veo google deepmind google&#x27;s video model, with sound and dialogue generated together. cinematic clips with audio ">
-        <div class="top"><h3><a href="https://deepmind.google/models/veo/" target="_blank" rel="noopener">Veo</a></h3></div>
-        <p class="by">Google DeepMind</p>
-        <div class="tags"></div>
-        <p>Google&#x27;s video model, with sound and dialogue generated together.</p>
-        <p class="good"><b>Good for:</b> cinematic clips with audio</p>
-      </li>
-      <li class="card" data-q="sora openai openai&#x27;s video model and app. story-driven clips ">
-        <div class="top"><h3><a href="https://openai.com/sora" target="_blank" rel="noopener">Sora</a></h3></div>
-        <p class="by">OpenAI</p>
-        <div class="tags"></div>
-        <p>OpenAI&#x27;s video model and app.</p>
-        <p class="good"><b>Good for:</b> story-driven clips</p>
-      </li>
-      <li class="card" data-q="runway runway video generation plus tools for editing footage you already shot. editing and extending real footage ">
-        <div class="top"><h3><a href="https://runwayml.com" target="_blank" rel="noopener">Runway</a></h3></div>
-        <p class="by">Runway</p>
-        <div class="tags"></div>
-        <p>Video generation plus tools for editing footage you already shot.</p>
-        <p class="good"><b>Good for:</b> editing and extending real footage</p>
-      </li>
-      <li class="card" data-q="kling kuaishou popular for realistic motion from an image. image-to-video ">
-        <div class="top"><h3><a href="https://klingai.com" target="_blank" rel="noopener">Kling</a></h3></div>
-        <p class="by">Kuaishou</p>
-        <div class="tags"></div>
-        <p>Popular for realistic motion from an image.</p>
-        <p class="good"><b>Good for:</b> image-to-video</p>
-      </li>
-    </ul>
-  </section>
-  <section class="cat" id="editing">
-    <div class="cat-head"><h2>Editing</h2><p>Putting the pieces together.</p></div>
-    <ul class="grid">
-      <li class="card" data-q="remotion open source make videos with code (react). every drip short is animated this way, which is why every sound lands on a word. repeatable animated videos ">
-        <div class="top"><h3><a href="https://www.remotion.dev" target="_blank" rel="noopener">Remotion</a></h3></div>
-        <p class="by">open source</p>
-        <div class="tags"><span class="we">we use this</span></div>
-        <p>Make videos with code (React). Every Drip short is animated this way, which is why every sound lands on a word.</p>
-        <p class="good"><b>Good for:</b> repeatable animated videos</p>
-      </li>
-      <li class="card" data-q="capcut bytedance fast phone and desktop editor with auto-captions and templates. short-form, captions ">
-        <div class="top"><h3><a href="https://www.capcut.com" target="_blank" rel="noopener">CapCut</a></h3></div>
-        <p class="by">ByteDance</p>
-        <div class="tags"></div>
-        <p>Fast phone and desktop editor with auto-captions and templates.</p>
-        <p class="good"><b>Good for:</b> short-form, captions</p>
-      </li>
-      <li class="card" data-q="descript descript edit video by editing its transcript like a document. talking-head and podcast edits ">
-        <div class="top"><h3><a href="https://www.descript.com" target="_blank" rel="noopener">Descript</a></h3></div>
-        <p class="by">Descript</p>
-        <div class="tags"></div>
-        <p>Edit video by editing its transcript like a document.</p>
-        <p class="good"><b>Good for:</b> talking-head and podcast edits</p>
-      </li>
-      <li class="card" data-q="davinci resolve blackmagic design a professional editor and color tool with a generous free version. long-form, color grading ">
-        <div class="top"><h3><a href="https://www.blackmagicdesign.com/products/davinciresolve" target="_blank" rel="noopener">DaVinci Resolve</a></h3></div>
-        <p class="by">Blackmagic Design</p>
-        <div class="tags"></div>
-        <p>A professional editor and color tool with a generous free version.</p>
-        <p class="good"><b>Good for:</b> long-form, color grading</p>
-      </li>
-    </ul>
-  </section>
-  <section class="cat" id="design">
-    <div class="cat-head"><h2>Design and diagrams</h2><p>Thumbnails, slides and explaining things with drawings.</p></div>
-    <ul class="grid">
-      <li class="card" data-q="excalidraw open source hand-drawn style whiteboard. great for explaining how something works. diagrams, explainers ">
-        <div class="top"><h3><a href="https://excalidraw.com" target="_blank" rel="noopener">Excalidraw</a></h3></div>
-        <p class="by">open source</p>
-        <div class="tags"><span class="we">we use this</span></div>
-        <p>Hand-drawn style whiteboard. Great for explaining how something works.</p>
-        <p class="good"><b>Good for:</b> diagrams, explainers</p>
-      </li>
-      <li class="card" data-q="canva canva templates for posts, thumbnails and slides, with ai tools built in. quick social graphics ">
-        <div class="top"><h3><a href="https://www.canva.com" target="_blank" rel="noopener">Canva</a></h3></div>
-        <p class="by">Canva</p>
-        <div class="tags"></div>
-        <p>Templates for posts, thumbnails and slides, with AI tools built in.</p>
-        <p class="good"><b>Good for:</b> quick social graphics</p>
-      </li>
-      <li class="card" data-q="figma figma the standard tool for designing apps and websites. ui and web design ">
-        <div class="top"><h3><a href="https://www.figma.com" target="_blank" rel="noopener">Figma</a></h3></div>
-        <p class="by">Figma</p>
-        <div class="tags"></div>
-        <p>The standard tool for designing apps and websites.</p>
-        <p class="good"><b>Good for:</b> UI and web design</p>
-      </li>
-    </ul>
-  </section>
-  <section class="cat" id="posting">
-    <div class="cat-head"><h2>Posting and growth</h2><p>Getting it out there on a schedule.</p></div>
-    <ul class="grid">
-      <li class="card" data-q="buffer buffer schedule posts across instagram, tiktok, youtube and more from one queue. posting on a schedule ">
-        <div class="top"><h3><a href="https://buffer.com" target="_blank" rel="noopener">Buffer</a></h3></div>
-        <p class="by">Buffer</p>
-        <div class="tags"><span class="we">we use this</span></div>
-        <p>Schedule posts across Instagram, TikTok, YouTube and more from one queue.</p>
-        <p class="good"><b>Good for:</b> posting on a schedule</p>
-      </li>
-      <li class="card" data-q="manychat manychat auto-dms people who comment a keyword. behind most &#x27;comment link and i&#x27;ll send it&#x27; posts. comment-to-dm links ">
-        <div class="top"><h3><a href="https://manychat.com" target="_blank" rel="noopener">ManyChat</a></h3></div>
-        <p class="by">ManyChat</p>
-        <div class="tags"></div>
-        <p>Auto-DMs people who comment a keyword. Behind most &#x27;comment LINK and I&#x27;ll send it&#x27; posts.</p>
-        <p class="good"><b>Good for:</b> comment-to-DM links</p>
-      </li>
-    </ul>
-  </section>
-
-  <p class="empty" id="empty" hidden>Nothing matches that yet. Drip is still learning.</p>
-
-  <p class="fine">Last checked Sep 22, 2026. Star counts are GitHub's on that day. We're not paid by any of these companies; if that ever changes, it'll say so right here. Tools change fast, so check each site for current pricing.</p>
+<div class="intro">
+  <div class="t">
+    <p class="eyebrow">AI tools directory · 123 tools · 22 categories</p>
+    <h1>Find the right AI tool, fast.</h1>
+    <p>One line each on what it's best for. The ones we use to make Drip are marked <b>we use</b>. Click a row with a <b>+</b> for install commands and notes.</p>
+    <label class="search" for="q"><span>⌕</span><input id="q" type="search" placeholder="Try: dictation, email, free, video, agent..." autocomplete="off" aria-label="Search 123 AI tools"></label>
+  </div>
+  <div class="drip" aria-hidden="true"><img src="../assets/drip2-curious-a.png" alt=""></div>
 </div>
 
-<footer class="foot">
-  <div class="wrap">drip the cup · <a href="/">dripthecup.com</a> · a cup of coffee learning about a.i.</div>
-</footer>
+<section class="picks" aria-label="Starting picks">
+  <h2>Where we'd start</h2>
+  <div class="pks">
+      <a class="pk" href="https://chatgpt.com" target="_blank" rel="noopener"><img src="icons/chatgpt.com.png" alt="" width="24" height="24" loading="lazy"><span><b>ChatGPT</b><small>Chat assistants</small></span></a>
+      <a class="pk" href="https://claude.ai" target="_blank" rel="noopener"><img src="icons/claude.ai.png" alt="" width="24" height="24" loading="lazy"><span><b>Claude</b><small>Chat assistants</small></span></a>
+      <a class="pk" href="https://www.perplexity.ai" target="_blank" rel="noopener"><img src="icons/perplexity.ai.png" alt="" width="24" height="24" loading="lazy"><span><b>Perplexity</b><small>Chat assistants</small></span></a>
+      <a class="pk" href="https://github.com/openclaw/openclaw" target="_blank" rel="noopener"><img src="icons/gh-openclaw.png" alt="" width="24" height="24" loading="lazy"><span><b>OpenClaw</b><small>AI agents</small></span></a>
+      <a class="pk" href="https://claude.com/claude-code" target="_blank" rel="noopener"><img src="icons/claude.com.png" alt="" width="24" height="24" loading="lazy"><span><b>Claude Code</b><small>Coding with AI</small></span></a>
+      <a class="pk" href="https://wisprflow.ai" target="_blank" rel="noopener"><img src="icons/wisprflow.ai.png" alt="" width="24" height="24" loading="lazy"><span><b>Wispr Flow</b><small>Dictation &amp; voice typing</small></span></a>
+      <a class="pk" href="https://www.granola.ai" target="_blank" rel="noopener"><img src="icons/granola.ai.png" alt="" width="24" height="24" loading="lazy"><span><b>Granola</b><small>Meeting note takers</small></span></a>
+      <a class="pk" href="https://notebooklm.google.com" target="_blank" rel="noopener"><img src="icons/notebooklm.google.com.png" alt="" width="24" height="24" loading="lazy"><span><b>NotebookLM</b><small>Writing, notes &amp; research</small></span></a>
+      <a class="pk" href="https://superhuman.com" target="_blank" rel="noopener"><img src="icons/superhuman.com.png" alt="" width="24" height="24" loading="lazy"><span><b>Superhuman</b><small>Email</small></span></a>
+      <a class="pk" href="https://elevenlabs.io" target="_blank" rel="noopener"><img src="icons/elevenlabs.io.png" alt="" width="24" height="24" loading="lazy"><span><b>ElevenLabs</b><small>Voice, music &amp; audio</small></span></a>
+      <a class="pk" href="https://higgsfield.ai" target="_blank" rel="noopener"><img src="icons/higgsfield.ai.png" alt="" width="24" height="24" loading="lazy"><span><b>Higgsfield</b><small>Video generation</small></span></a>
+  </div>
+</section>
+
+<div class="layout">
+  <nav class="side" aria-label="Categories">
+      <a href="#chat"><span class="ic">💬</span>Chat assistants<span class="n">11</span></a>
+      <a href="#agents"><span class="ic">🤖</span>AI agents<span class="n">5</span></a>
+      <a href="#coding"><span class="ic">⌨️</span>Coding with AI<span class="n">10</span></a>
+      <a href="#skills"><span class="ic">🧩</span>Claude Code skills &amp; plugins<span class="n">5</span></a>
+      <a href="#dictation"><span class="ic">🎙️</span>Dictation &amp; voice typing<span class="n">5</span></a>
+      <a href="#notetakers"><span class="ic">📝</span>Meeting note takers<span class="n">5</span></a>
+      <a href="#writing"><span class="ic">📚</span>Writing, notes &amp; research<span class="n">6</span></a>
+      <a href="#email"><span class="ic">✉️</span>Email<span class="n">4</span></a>
+      <a href="#planning"><span class="ic">📅</span>Calendar &amp; daily planning<span class="n">4</span></a>
+      <a href="#projects"><span class="ic">✅</span>Project management<span class="n">4</span></a>
+      <a href="#crm"><span class="ic">🤝</span>CRM &amp; sales<span class="n">4</span></a>
+      <a href="#money"><span class="ic">💳</span>Finance, expenses &amp; banking<span class="n">6</span></a>
+      <a href="#browsers"><span class="ic">🌐</span>AI browsers<span class="n">3</span></a>
+      <a href="#models"><span class="ic">🔌</span>AI models for your apps<span class="n">8</span></a>
+      <a href="#voice"><span class="ic">🔊</span>Voice, music &amp; audio<span class="n">4</span></a>
+      <a href="#image"><span class="ic">🎨</span>Image generation<span class="n">8</span></a>
+      <a href="#video"><span class="ic">🎬</span>Video generation<span class="n">9</span></a>
+      <a href="#editing"><span class="ic">✂️</span>Video editing &amp; clipping<span class="n">7</span></a>
+      <a href="#screen"><span class="ic">🖥️</span>Screen recording<span class="n">4</span></a>
+      <a href="#design"><span class="ic">📐</span>Design, slides &amp; sites<span class="n">5</span></a>
+      <a href="#automation"><span class="ic">⚙️</span>Automation<span class="n">3</span></a>
+      <a href="#posting"><span class="ic">📈</span>Posting &amp; growth<span class="n">3</span></a>
+  </nav>
+  <main>
+    <div class="pick"><select id="jump" aria-label="Jump to a category">
+      <option value="">Jump to a category...</option>
+      <option value="chat">💬 Chat assistants (11)</option>
+      <option value="agents">🤖 AI agents (5)</option>
+      <option value="coding">⌨️ Coding with AI (10)</option>
+      <option value="skills">🧩 Claude Code skills &amp; plugins (5)</option>
+      <option value="dictation">🎙️ Dictation &amp; voice typing (5)</option>
+      <option value="notetakers">📝 Meeting note takers (5)</option>
+      <option value="writing">📚 Writing, notes &amp; research (6)</option>
+      <option value="email">✉️ Email (4)</option>
+      <option value="planning">📅 Calendar &amp; daily planning (4)</option>
+      <option value="projects">✅ Project management (4)</option>
+      <option value="crm">🤝 CRM &amp; sales (4)</option>
+      <option value="money">💳 Finance, expenses &amp; banking (6)</option>
+      <option value="browsers">🌐 AI browsers (3)</option>
+      <option value="models">🔌 AI models for your apps (8)</option>
+      <option value="voice">🔊 Voice, music &amp; audio (4)</option>
+      <option value="image">🎨 Image generation (8)</option>
+      <option value="video">🎬 Video generation (9)</option>
+      <option value="editing">✂️ Video editing &amp; clipping (7)</option>
+      <option value="screen">🖥️ Screen recording (4)</option>
+      <option value="design">📐 Design, slides &amp; sites (5)</option>
+      <option value="automation">⚙️ Automation (3)</option>
+      <option value="posting">📈 Posting &amp; growth (3)</option>
+    </select></div>
+    <section class="cat" id="chat">
+      <h2><span class="ic">💬</span>Chat assistants <span class="n">11</span></h2>
+      <p class="blurb">General-purpose AIs you talk to. Most are free to start.</p>
+      <ul class="rows">
+      <li class="r" data-q="chatgpt openai everyday questions, images and voice chat in one app  chat assistants  "><div class="rw"><img src="icons/chatgpt.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://chatgpt.com" target="_blank" rel="noopener">ChatGPT</a><small>OpenAI</small></span>
+          <span class="bf">Everyday questions, images and voice chat in one app</span>
+          <span class="bs"></span><a class="go" href="https://chatgpt.com" target="_blank" rel="noopener" aria-label="Open ChatGPT">↗</a></div></li>
+      <li class="r" data-q="claude anthropic careful writing, reasoning and long documents  chat assistants we use "><div class="rw"><img src="icons/claude.ai.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://claude.ai" target="_blank" rel="noopener">Claude</a><small>Anthropic</small></span>
+          <span class="bf">Careful writing, reasoning and long documents</span>
+          <span class="bs"><span class="b we">we use</span></span><a class="go" href="https://claude.ai" target="_blank" rel="noopener" aria-label="Open Claude">↗</a></div></li>
+      <li class="r" data-q="gemini google working inside gmail, docs, search and youtube  chat assistants  "><div class="rw"><img src="icons/gemini.google.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://gemini.google.com" target="_blank" rel="noopener">Gemini</a><small>Google</small></span>
+          <span class="bf">Working inside Gmail, Docs, Search and YouTube</span>
+          <span class="bs"></span><a class="go" href="https://gemini.google.com" target="_blank" rel="noopener" aria-label="Open Gemini">↗</a></div></li>
+      <li class="r" data-q="grok xai what people on x are saying right now  chat assistants  "><div class="rw"><img src="icons/grok.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://grok.com" target="_blank" rel="noopener">Grok</a><small>xAI</small></span>
+          <span class="bf">What people on X are saying right now</span>
+          <span class="bs"></span><a class="go" href="https://grok.com" target="_blank" rel="noopener" aria-label="Open Grok">↗</a></div></li>
+      <li class="r" data-q="perplexity perplexity answers with sources you can click  chat assistants  "><div class="rw"><img src="icons/perplexity.ai.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.perplexity.ai" target="_blank" rel="noopener">Perplexity</a><small>Perplexity</small></span>
+          <span class="bf">Answers with sources you can click</span>
+          <span class="bs"></span><a class="go" href="https://www.perplexity.ai" target="_blank" rel="noopener" aria-label="Open Perplexity">↗</a></div></li>
+      <li class="r" data-q="microsoft copilot microsoft windows and microsoft 365 users  chat assistants  "><div class="rw"><img src="icons/copilot.microsoft.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://copilot.microsoft.com" target="_blank" rel="noopener">Microsoft Copilot</a><small>Microsoft</small></span>
+          <span class="bf">Windows and Microsoft 365 users</span>
+          <span class="bs"></span><a class="go" href="https://copilot.microsoft.com" target="_blank" rel="noopener" aria-label="Open Microsoft Copilot">↗</a></div></li>
+      <li class="r" data-q="meta ai meta inside whatsapp, instagram and messenger  chat assistants  "><div class="rw"><img src="icons/meta.ai.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.meta.ai" target="_blank" rel="noopener">Meta AI</a><small>Meta</small></span>
+          <span class="bf">Inside WhatsApp, Instagram and Messenger</span>
+          <span class="bs"></span><a class="go" href="https://www.meta.ai" target="_blank" rel="noopener" aria-label="Open Meta AI">↗</a></div></li>
+      <li class="r" data-q="deepseek deepseek cheap, capable open-weight models  chat assistants  "><div class="rw"><img src="icons/chat.deepseek.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://chat.deepseek.com" target="_blank" rel="noopener">DeepSeek</a><small>DeepSeek</small></span>
+          <span class="bf">Cheap, capable open-weight models</span>
+          <span class="bs"></span><a class="go" href="https://chat.deepseek.com" target="_blank" rel="noopener" aria-label="Open DeepSeek">↗</a></div></li>
+      <li class="r" data-q="le chat mistral a fast european alternative  chat assistants  "><div class="rw"><img src="icons/chat.mistral.ai.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://chat.mistral.ai" target="_blank" rel="noopener">Le Chat</a><small>Mistral</small></span>
+          <span class="bf">A fast European alternative</span>
+          <span class="bs"></span><a class="go" href="https://chat.mistral.ai" target="_blank" rel="noopener" aria-label="Open Le Chat">↗</a></div></li>
+      <li class="r" data-q="qwen alibaba strong open models, multilingual  chat assistants  "><div class="rw"><img src="icons/chat.qwen.ai.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://chat.qwen.ai" target="_blank" rel="noopener">Qwen</a><small>Alibaba</small></span>
+          <span class="bf">Strong open models, multilingual</span>
+          <span class="bs"></span><a class="go" href="https://chat.qwen.ai" target="_blank" rel="noopener" aria-label="Open Qwen">↗</a></div></li>
+      <li class="r" data-q="kimi moonshot ai long documents and agent tasks  chat assistants  "><div class="rw"><img src="icons/kimi.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.kimi.com" target="_blank" rel="noopener">Kimi</a><small>Moonshot AI</small></span>
+          <span class="bf">Long documents and agent tasks</span>
+          <span class="bs"></span><a class="go" href="https://www.kimi.com" target="_blank" rel="noopener" aria-label="Open Kimi">↗</a></div></li>
+      </ul>
+    </section>
+    <section class="cat" id="agents">
+      <h2><span class="ic">🤖</span>AI agents <span class="n">5</span></h2>
+      <p class="blurb">AIs that do tasks for you, not just answer. Give them access carefully: an agent that can act can also act wrongly.</p>
+      <ul class="rows">
+      <li class="r" data-q="openclaw open source a personal assistant that works through whatsapp, telegram and discord open source ai agents  free"><details><summary><img src="icons/gh-openclaw.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://github.com/openclaw/openclaw" target="_blank" rel="noopener">OpenClaw</a><small>open source</small></span>
+          <span class="bf">A personal assistant that works through WhatsApp, Telegram and Discord</span>
+          <span class="bs"><span class="b">open source</span><span class="b st">★ 390K</span></span><span class="more" aria-hidden="true">+</span></summary><div class="ex"><p class="warn">Runs with broad access to your computer and accounts. Read its security guidance before connecting real accounts.</p></div></details></li>
+      <li class="r" data-q="hermes agent nous research an open agent that builds up skills and memory as you use it open source ai agents  free"><div class="rw"><img src="icons/gh-nousresearch.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://github.com/NousResearch/hermes-agent" target="_blank" rel="noopener">Hermes Agent</a><small>Nous Research</small></span>
+          <span class="bf">An open agent that builds up skills and memory as you use it</span>
+          <span class="bs"><span class="b">open source</span><span class="b st">★ 248K</span></span><a class="go" href="https://github.com/NousResearch/hermes-agent" target="_blank" rel="noopener" aria-label="Open Hermes Agent">↗</a></div></li>
+      <li class="r" data-q="manus manus hand off a whole research or build task  ai agents  "><div class="rw"><img src="icons/manus.im.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://manus.im" target="_blank" rel="noopener">Manus</a><small>Manus</small></span>
+          <span class="bf">Hand off a whole research or build task</span>
+          <span class="bs"></span><a class="go" href="https://manus.im" target="_blank" rel="noopener" aria-label="Open Manus">↗</a></div></li>
+      <li class="r" data-q="genspark genspark agents that make slides, sheets and reports  ai agents  "><div class="rw"><img src="icons/genspark.ai.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.genspark.ai" target="_blank" rel="noopener">Genspark</a><small>Genspark</small></span>
+          <span class="bf">Agents that make slides, sheets and reports</span>
+          <span class="bs"></span><a class="go" href="https://www.genspark.ai" target="_blank" rel="noopener" aria-label="Open Genspark">↗</a></div></li>
+      <li class="r" data-q="lindy lindy building your own work assistants without code  ai agents  "><div class="rw"><img src="icons/lindy.ai.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.lindy.ai" target="_blank" rel="noopener">Lindy</a><small>Lindy</small></span>
+          <span class="bf">Building your own work assistants without code</span>
+          <span class="bs"></span><a class="go" href="https://www.lindy.ai" target="_blank" rel="noopener" aria-label="Open Lindy">↗</a></div></li>
+      </ul>
+    </section>
+    <section class="cat" id="coding">
+      <h2><span class="ic">⌨️</span>Coding with AI <span class="n">10</span></h2>
+      <p class="blurb">Tools that write, edit and run code with you.</p>
+      <ul class="rows">
+      <li class="r" data-q="claude code anthropic an agent that builds and edits whole projects. every drip video is made with it  coding with ai we use "><div class="rw"><img src="icons/claude.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://claude.com/claude-code" target="_blank" rel="noopener">Claude Code</a><small>Anthropic</small></span>
+          <span class="bf">An agent that builds and edits whole projects. Every Drip video is made with it</span>
+          <span class="bs"><span class="b we">we use</span></span><a class="go" href="https://claude.com/claude-code" target="_blank" rel="noopener" aria-label="Open Claude Code">↗</a></div></li>
+      <li class="r" data-q="cursor anysphere coding inside an ai-first editor  coding with ai  "><div class="rw"><img src="icons/cursor.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://cursor.com" target="_blank" rel="noopener">Cursor</a><small>Anysphere</small></span>
+          <span class="bf">Coding inside an AI-first editor</span>
+          <span class="bs"></span><a class="go" href="https://cursor.com" target="_blank" rel="noopener" aria-label="Open Cursor">↗</a></div></li>
+      <li class="r" data-q="codex openai delegating coding tasks to an agent  coding with ai  "><div class="rw"><img src="icons/openai.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://openai.com/codex" target="_blank" rel="noopener">Codex</a><small>OpenAI</small></span>
+          <span class="bf">Delegating coding tasks to an agent</span>
+          <span class="bs"></span><a class="go" href="https://openai.com/codex" target="_blank" rel="noopener" aria-label="Open Codex">↗</a></div></li>
+      <li class="r" data-q="github copilot github suggestions and an agent inside github and your editor  coding with ai  "><div class="rw"><img src="icons/github.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://github.com/features/copilot" target="_blank" rel="noopener">GitHub Copilot</a><small>GitHub</small></span>
+          <span class="bf">Suggestions and an agent inside GitHub and your editor</span>
+          <span class="bs"></span><a class="go" href="https://github.com/features/copilot" target="_blank" rel="noopener" aria-label="Open GitHub Copilot">↗</a></div></li>
+      <li class="r" data-q="windsurf windsurf an ai editor with an agent built in  coding with ai  "><div class="rw"><img src="icons/windsurf.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://windsurf.com" target="_blank" rel="noopener">Windsurf</a><small>Windsurf</small></span>
+          <span class="bf">An AI editor with an agent built in</span>
+          <span class="bs"></span><a class="go" href="https://windsurf.com" target="_blank" rel="noopener" aria-label="Open Windsurf">↗</a></div></li>
+      <li class="r" data-q="opencode open source an open-source coding agent for the terminal  coding with ai  "><div class="rw"><img src="icons/opencode.ai.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://opencode.ai" target="_blank" rel="noopener">OpenCode</a><small>open source</small></span>
+          <span class="bf">An open-source coding agent for the terminal</span>
+          <span class="bs"></span><a class="go" href="https://opencode.ai" target="_blank" rel="noopener" aria-label="Open OpenCode">↗</a></div></li>
+      <li class="r" data-q="lovable lovable describe an app, get a working web app  coding with ai  "><div class="rw"><img src="icons/lovable.dev.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://lovable.dev" target="_blank" rel="noopener">Lovable</a><small>Lovable</small></span>
+          <span class="bf">Describe an app, get a working web app</span>
+          <span class="bs"></span><a class="go" href="https://lovable.dev" target="_blank" rel="noopener" aria-label="Open Lovable">↗</a></div></li>
+      <li class="r" data-q="bolt stackblitz full-stack apps from a prompt, in the browser  coding with ai  "><div class="rw"><img src="icons/bolt.new.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://bolt.new" target="_blank" rel="noopener">Bolt</a><small>StackBlitz</small></span>
+          <span class="bf">Full-stack apps from a prompt, in the browser</span>
+          <span class="bs"></span><a class="go" href="https://bolt.new" target="_blank" rel="noopener" aria-label="Open Bolt">↗</a></div></li>
+      <li class="r" data-q="replit replit build and host an app without setting anything up  coding with ai  "><div class="rw"><img src="icons/replit.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://replit.com" target="_blank" rel="noopener">Replit</a><small>Replit</small></span>
+          <span class="bf">Build and host an app without setting anything up</span>
+          <span class="bs"></span><a class="go" href="https://replit.com" target="_blank" rel="noopener" aria-label="Open Replit">↗</a></div></li>
+      <li class="r" data-q="v0 vercel web interfaces and sites from a prompt  coding with ai  "><div class="rw"><img src="icons/v0.app.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://v0.app" target="_blank" rel="noopener">v0</a><small>Vercel</small></span>
+          <span class="bf">Web interfaces and sites from a prompt</span>
+          <span class="bs"></span><a class="go" href="https://v0.app" target="_blank" rel="noopener" aria-label="Open v0">↗</a></div></li>
+      </ul>
+    </section>
+    <section class="cat" id="skills">
+      <h2><span class="ic">🧩</span>Claude Code skills &amp; plugins <span class="n">5</span></h2>
+      <p class="blurb">Free add-ons for Claude Code. A plugin installs with /plugin install; a skill is a folder of instructions Claude reads when relevant.</p>
+      <ul class="rows">
+      <li class="r" data-q="superpowers obra plans and tests before it writes code plugin claude code skills &amp; plugins  "><details><summary><img src="icons/gh-obra.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">Superpowers</a><small>obra</small></span>
+          <span class="bf">Plans and tests before it writes code</span>
+          <span class="bs"><span class="b">plugin</span><span class="b st">★ 290K</span></span><span class="more" aria-hidden="true">+</span></summary><div class="ex"><pre>/plugin install superpowers@claude-plugins-official</pre><a class="seen" href="/links/#claude-code-repos">seen in our video: 4 free repos for Claude Code →</a></div></details></li>
+      <li class="r" data-q="ponytail dietrich gebert less code and fewer tokens (54% and 22% on the author&#x27;s benchmark) plugin claude code skills &amp; plugins  "><details><summary><img src="icons/gh-dietrichgebert.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://github.com/DietrichGebert/ponytail" target="_blank" rel="noopener">Ponytail</a><small>Dietrich Gebert</small></span>
+          <span class="bf">Less code and fewer tokens (54% and 22% on the author&#x27;s benchmark)</span>
+          <span class="bs"><span class="b">plugin</span><span class="b st">★ 144K</span></span><span class="more" aria-hidden="true">+</span></summary><div class="ex"><pre>/plugin marketplace add DietrichGebert/ponytail
+/plugin install ponytail@ponytail</pre><a class="seen" href="/links/#claude-code-repos">seen in our video: 4 free repos for Claude Code →</a></div></details></li>
+      <li class="r" data-q="graphify graphify labs a map of your codebase so claude rereads less skill + cli claude code skills &amp; plugins we use "><details><summary><img src="icons/gh-graphify-labs.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://github.com/Graphify-Labs/graphify" target="_blank" rel="noopener">Graphify</a><small>Graphify Labs</small></span>
+          <span class="bf">A map of your codebase so Claude rereads less</span>
+          <span class="bs"><span class="b we">we use</span><span class="b">skill + CLI</span><span class="b st">★ 120K</span></span><span class="more" aria-hidden="true">+</span></summary><div class="ex"><pre>uv tool install graphifyy
+graphify claude install</pre><a class="seen" href="/links/#claude-code-repos">seen in our video: 4 free repos for Claude Code →</a></div></details></li>
+      <li class="r" data-q="context7 upstash current library docs, fewer made-up functions plugin · mcp claude code skills &amp; plugins  "><details><summary><img src="icons/gh-upstash.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://github.com/upstash/context7" target="_blank" rel="noopener">Context7</a><small>Upstash</small></span>
+          <span class="bf">Current library docs, fewer made-up functions</span>
+          <span class="bs"><span class="b">plugin · MCP</span><span class="b st">★ 62K</span></span><span class="more" aria-hidden="true">+</span></summary><div class="ex"><pre>/plugin install context7@claude-plugins-official</pre><a class="seen" href="/links/#claude-code-repos">seen in our video: 4 free repos for Claude Code →</a></div></details></li>
+      <li class="r" data-q="frontend design anthropic websites that don&#x27;t look ai-made plugin claude code skills &amp; plugins  "><details><summary><img src="icons/gh-anthropics.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://github.com/anthropics/claude-plugins-official" target="_blank" rel="noopener">Frontend Design</a><small>Anthropic</small></span>
+          <span class="bf">Websites that don&#x27;t look AI-made</span>
+          <span class="bs"><span class="b">plugin</span></span><span class="more" aria-hidden="true">+</span></summary><div class="ex"><pre>/plugin install frontend-design@claude-plugins-official</pre></div></details></li>
+      </ul>
+    </section>
+    <section class="cat" id="dictation">
+      <h2><span class="ic">🎙️</span>Dictation &amp; voice typing <span class="n">5</span></h2>
+      <p class="blurb">Talk instead of type, in any app. For most people speaking is faster than typing.</p>
+      <ul class="rows">
+      <li class="r" data-q="wispr flow wispr dictation in every app, cleaned up as you speak  dictation &amp; voice typing  "><div class="rw"><img src="icons/wisprflow.ai.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://wisprflow.ai" target="_blank" rel="noopener">Wispr Flow</a><small>Wispr</small></span>
+          <span class="bf">Dictation in every app, cleaned up as you speak</span>
+          <span class="bs"></span><a class="go" href="https://wisprflow.ai" target="_blank" rel="noopener" aria-label="Open Wispr Flow">↗</a></div></li>
+      <li class="r" data-q="typeless typeless voice typing that removes filler words and fixes phrasing  dictation &amp; voice typing  "><div class="rw"><img src="icons/typeless.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.typeless.com" target="_blank" rel="noopener">Typeless</a><small>Typeless</small></span>
+          <span class="bf">Voice typing that removes filler words and fixes phrasing</span>
+          <span class="bs"></span><a class="go" href="https://www.typeless.com" target="_blank" rel="noopener" aria-label="Open Typeless">↗</a></div></li>
+      <li class="r" data-q="superwhisper superwhisper dictation with custom modes, can run offline  dictation &amp; voice typing  "><div class="rw"><img src="icons/superwhisper.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://superwhisper.com" target="_blank" rel="noopener">Superwhisper</a><small>Superwhisper</small></span>
+          <span class="bf">Dictation with custom modes, can run offline</span>
+          <span class="bs"></span><a class="go" href="https://superwhisper.com" target="_blank" rel="noopener" aria-label="Open Superwhisper">↗</a></div></li>
+      <li class="r" data-q="aqua voice aqua fast dictation with voice editing commands  dictation &amp; voice typing  "><div class="rw"><img src="icons/aquavoice.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://aquavoice.com" target="_blank" rel="noopener">Aqua Voice</a><small>Aqua</small></span>
+          <span class="bf">Fast dictation with voice editing commands</span>
+          <span class="bs"></span><a class="go" href="https://aquavoice.com" target="_blank" rel="noopener" aria-label="Open Aqua Voice">↗</a></div></li>
+      <li class="r" data-q="whisper.cpp open source free, private speech-to-text on your own computer free dictation &amp; voice typing we use free"><div class="rw"><img src="icons/gh-ggml-org.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://github.com/ggml-org/whisper.cpp" target="_blank" rel="noopener">whisper.cpp</a><small>open source</small></span>
+          <span class="bf">Free, private speech-to-text on your own computer</span>
+          <span class="bs"><span class="b we">we use</span><span class="b">free</span></span><a class="go" href="https://github.com/ggml-org/whisper.cpp" target="_blank" rel="noopener" aria-label="Open whisper.cpp">↗</a></div></li>
+      </ul>
+    </section>
+    <section class="cat" id="notetakers">
+      <h2><span class="ic">📝</span>Meeting note takers <span class="n">5</span></h2>
+      <p class="blurb">Record, transcribe and summarize meetings.</p>
+      <ul class="rows">
+      <li class="r" data-q="granola granola notes that build on yours, with no bot joining the call  meeting note takers  "><div class="rw"><img src="icons/granola.ai.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.granola.ai" target="_blank" rel="noopener">Granola</a><small>Granola</small></span>
+          <span class="bf">Notes that build on yours, with no bot joining the call</span>
+          <span class="bs"></span><a class="go" href="https://www.granola.ai" target="_blank" rel="noopener" aria-label="Open Granola">↗</a></div></li>
+      <li class="r" data-q="otter otter.ai live transcripts for meetings and lectures  meeting note takers  "><div class="rw"><img src="icons/otter.ai.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://otter.ai" target="_blank" rel="noopener">Otter</a><small>Otter.ai</small></span>
+          <span class="bf">Live transcripts for meetings and lectures</span>
+          <span class="bs"></span><a class="go" href="https://otter.ai" target="_blank" rel="noopener" aria-label="Open Otter">↗</a></div></li>
+      <li class="r" data-q="fireflies fireflies searchable records of every team call  meeting note takers  "><div class="rw"><img src="icons/fireflies.ai.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://fireflies.ai" target="_blank" rel="noopener">Fireflies</a><small>Fireflies</small></span>
+          <span class="bf">Searchable records of every team call</span>
+          <span class="bs"></span><a class="go" href="https://fireflies.ai" target="_blank" rel="noopener" aria-label="Open Fireflies">↗</a></div></li>
+      <li class="r" data-q="fathom fathom free call summaries for zoom, meet and teams  meeting note takers  "><div class="rw"><img src="icons/fathom.video.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.fathom.video" target="_blank" rel="noopener">Fathom</a><small>Fathom</small></span>
+          <span class="bf">Free call summaries for Zoom, Meet and Teams</span>
+          <span class="bs"></span><a class="go" href="https://www.fathom.video" target="_blank" rel="noopener" aria-label="Open Fathom">↗</a></div></li>
+      <li class="r" data-q="tl;dv tl;dv clips and summaries from recorded calls  meeting note takers  "><div class="rw"><img src="icons/tldv.io.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://tldv.io" target="_blank" rel="noopener">tl;dv</a><small>tl;dv</small></span>
+          <span class="bf">Clips and summaries from recorded calls</span>
+          <span class="bs"></span><a class="go" href="https://tldv.io" target="_blank" rel="noopener" aria-label="Open tl;dv">↗</a></div></li>
+      </ul>
+    </section>
+    <section class="cat" id="writing">
+      <h2><span class="ic">📚</span>Writing, notes &amp; research <span class="n">6</span></h2>
+      <p class="blurb">Thinking, studying and writing things down.</p>
+      <ul class="rows">
+      <li class="r" data-q="notebooklm google ask questions of your own documents, even as a podcast  writing, notes &amp; research  "><div class="rw"><img src="icons/notebooklm.google.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://notebooklm.google.com" target="_blank" rel="noopener">NotebookLM</a><small>Google</small></span>
+          <span class="bf">Ask questions of your own documents, even as a podcast</span>
+          <span class="bs"></span><a class="go" href="https://notebooklm.google.com" target="_blank" rel="noopener" aria-label="Open NotebookLM">↗</a></div></li>
+      <li class="r" data-q="notion notion docs, wikis and databases with ai built in  writing, notes &amp; research  "><div class="rw"><img src="icons/notion.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.notion.com" target="_blank" rel="noopener">Notion</a><small>Notion</small></span>
+          <span class="bf">Docs, wikis and databases with AI built in</span>
+          <span class="bs"></span><a class="go" href="https://www.notion.com" target="_blank" rel="noopener" aria-label="Open Notion">↗</a></div></li>
+      <li class="r" data-q="obsidian obsidian private notes stored as files you own  writing, notes &amp; research  "><div class="rw"><img src="icons/obsidian.md.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://obsidian.md" target="_blank" rel="noopener">Obsidian</a><small>Obsidian</small></span>
+          <span class="bf">Private notes stored as files you own</span>
+          <span class="bs"></span><a class="go" href="https://obsidian.md" target="_blank" rel="noopener" aria-label="Open Obsidian">↗</a></div></li>
+      <li class="r" data-q="grammarly grammarly fixing writing everywhere you type  writing, notes &amp; research  "><div class="rw"><img src="icons/grammarly.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.grammarly.com" target="_blank" rel="noopener">Grammarly</a><small>Grammarly</small></span>
+          <span class="bf">Fixing writing everywhere you type</span>
+          <span class="bs"></span><a class="go" href="https://www.grammarly.com" target="_blank" rel="noopener" aria-label="Open Grammarly">↗</a></div></li>
+      <li class="r" data-q="consensus consensus answers drawn from research papers  writing, notes &amp; research  "><div class="rw"><img src="icons/consensus.app.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://consensus.app" target="_blank" rel="noopener">Consensus</a><small>Consensus</small></span>
+          <span class="bf">Answers drawn from research papers</span>
+          <span class="bs"></span><a class="go" href="https://consensus.app" target="_blank" rel="noopener" aria-label="Open Consensus">↗</a></div></li>
+      <li class="r" data-q="elicit elicit finding and summarizing academic studies  writing, notes &amp; research  "><div class="rw"><img src="icons/elicit.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://elicit.com" target="_blank" rel="noopener">Elicit</a><small>Elicit</small></span>
+          <span class="bf">Finding and summarizing academic studies</span>
+          <span class="bs"></span><a class="go" href="https://elicit.com" target="_blank" rel="noopener" aria-label="Open Elicit">↗</a></div></li>
+      </ul>
+    </section>
+    <section class="cat" id="email">
+      <h2><span class="ic">✉️</span>Email <span class="n">4</span></h2>
+      <p class="blurb">Inboxes that sort, draft and follow up for you.</p>
+      <ul class="rows">
+      <li class="r" data-q="superhuman superhuman the fastest inbox for people who live in email  email  "><div class="rw"><img src="icons/superhuman.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://superhuman.com" target="_blank" rel="noopener">Superhuman</a><small>Superhuman</small></span>
+          <span class="bf">The fastest inbox for people who live in email</span>
+          <span class="bs"></span><a class="go" href="https://superhuman.com" target="_blank" rel="noopener" aria-label="Open Superhuman">↗</a></div></li>
+      <li class="r" data-q="shortwave shortwave an ai assistant on top of gmail  email  "><div class="rw"><img src="icons/shortwave.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.shortwave.com" target="_blank" rel="noopener">Shortwave</a><small>Shortwave</small></span>
+          <span class="bf">An AI assistant on top of Gmail</span>
+          <span class="bs"></span><a class="go" href="https://www.shortwave.com" target="_blank" rel="noopener" aria-label="Open Shortwave">↗</a></div></li>
+      <li class="r" data-q="fyxer fyxer drafts replies in your voice, inside gmail or outlook  email  "><div class="rw"><img src="icons/fyxer.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.fyxer.com" target="_blank" rel="noopener">Fyxer</a><small>Fyxer</small></span>
+          <span class="bf">Drafts replies in your voice, inside Gmail or Outlook</span>
+          <span class="bs"></span><a class="go" href="https://www.fyxer.com" target="_blank" rel="noopener" aria-label="Open Fyxer">↗</a></div></li>
+      <li class="r" data-q="spark readdle a tidy, free email app with ai help  email  "><div class="rw"><img src="icons/sparkmailapp.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://sparkmailapp.com" target="_blank" rel="noopener">Spark</a><small>Readdle</small></span>
+          <span class="bf">A tidy, free email app with AI help</span>
+          <span class="bs"></span><a class="go" href="https://sparkmailapp.com" target="_blank" rel="noopener" aria-label="Open Spark">↗</a></div></li>
+      </ul>
+    </section>
+    <section class="cat" id="planning">
+      <h2><span class="ic">📅</span>Calendar &amp; daily planning <span class="n">4</span></h2>
+      <p class="blurb">Let AI fit your tasks into your day.</p>
+      <ul class="rows">
+      <li class="r" data-q="motion motion auto-scheduling tasks and projects into your calendar  calendar &amp; daily planning  "><div class="rw"><img src="icons/usemotion.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.usemotion.com" target="_blank" rel="noopener">Motion</a><small>Motion</small></span>
+          <span class="bf">Auto-scheduling tasks and projects into your calendar</span>
+          <span class="bs"></span><a class="go" href="https://www.usemotion.com" target="_blank" rel="noopener" aria-label="Open Motion">↗</a></div></li>
+      <li class="r" data-q="reclaim reclaim protecting focus time and habits in google calendar  calendar &amp; daily planning  "><div class="rw"><img src="icons/reclaim.ai.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://reclaim.ai" target="_blank" rel="noopener">Reclaim</a><small>Reclaim</small></span>
+          <span class="bf">Protecting focus time and habits in Google Calendar</span>
+          <span class="bs"></span><a class="go" href="https://reclaim.ai" target="_blank" rel="noopener" aria-label="Open Reclaim">↗</a></div></li>
+      <li class="r" data-q="sunsama sunsama a calm daily plan from all your task lists  calendar &amp; daily planning  "><div class="rw"><img src="icons/sunsama.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.sunsama.com" target="_blank" rel="noopener">Sunsama</a><small>Sunsama</small></span>
+          <span class="bf">A calm daily plan from all your task lists</span>
+          <span class="bs"></span><a class="go" href="https://www.sunsama.com" target="_blank" rel="noopener" aria-label="Open Sunsama">↗</a></div></li>
+      <li class="r" data-q="akiflow akiflow one inbox for tasks from every app  calendar &amp; daily planning  "><div class="rw"><img src="icons/akiflow.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://akiflow.com" target="_blank" rel="noopener">Akiflow</a><small>Akiflow</small></span>
+          <span class="bf">One inbox for tasks from every app</span>
+          <span class="bs"></span><a class="go" href="https://akiflow.com" target="_blank" rel="noopener" aria-label="Open Akiflow">↗</a></div></li>
+      </ul>
+    </section>
+    <section class="cat" id="projects">
+      <h2><span class="ic">✅</span>Project management <span class="n">4</span></h2>
+      <p class="blurb">Tracking work across a team.</p>
+      <ul class="rows">
+      <li class="r" data-q="linear linear fast issue tracking for product teams  project management  "><div class="rw"><img src="icons/linear.app.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://linear.app" target="_blank" rel="noopener">Linear</a><small>Linear</small></span>
+          <span class="bf">Fast issue tracking for product teams</span>
+          <span class="bs"></span><a class="go" href="https://linear.app" target="_blank" rel="noopener" aria-label="Open Linear">↗</a></div></li>
+      <li class="r" data-q="clickup clickup tasks, docs and goals in one place  project management  "><div class="rw"><img src="icons/clickup.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://clickup.com" target="_blank" rel="noopener">ClickUp</a><small>ClickUp</small></span>
+          <span class="bf">Tasks, docs and goals in one place</span>
+          <span class="bs"></span><a class="go" href="https://clickup.com" target="_blank" rel="noopener" aria-label="Open ClickUp">↗</a></div></li>
+      <li class="r" data-q="asana asana cross-team projects and timelines  project management  "><div class="rw"><img src="icons/asana.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://asana.com" target="_blank" rel="noopener">Asana</a><small>Asana</small></span>
+          <span class="bf">Cross-team projects and timelines</span>
+          <span class="bs"></span><a class="go" href="https://asana.com" target="_blank" rel="noopener" aria-label="Open Asana">↗</a></div></li>
+      <li class="r" data-q="monday.com monday.com visual boards for any kind of workflow  project management  "><div class="rw"><img src="icons/monday.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://monday.com" target="_blank" rel="noopener">monday.com</a><small>monday.com</small></span>
+          <span class="bf">Visual boards for any kind of workflow</span>
+          <span class="bs"></span><a class="go" href="https://monday.com" target="_blank" rel="noopener" aria-label="Open monday.com">↗</a></div></li>
+      </ul>
+    </section>
+    <section class="cat" id="crm">
+      <h2><span class="ic">🤝</span>CRM &amp; sales <span class="n">4</span></h2>
+      <p class="blurb">Keeping track of customers, leads and deals.</p>
+      <ul class="rows">
+      <li class="r" data-q="attio attio a flexible crm that fills itself in from email and calendar  crm &amp; sales  "><div class="rw"><img src="icons/attio.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://attio.com" target="_blank" rel="noopener">Attio</a><small>Attio</small></span>
+          <span class="bf">A flexible CRM that fills itself in from email and calendar</span>
+          <span class="bs"></span><a class="go" href="https://attio.com" target="_blank" rel="noopener" aria-label="Open Attio">↗</a></div></li>
+      <li class="r" data-q="hubspot hubspot all-in-one marketing, sales and support  crm &amp; sales  "><div class="rw"><img src="icons/hubspot.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.hubspot.com" target="_blank" rel="noopener">HubSpot</a><small>HubSpot</small></span>
+          <span class="bf">All-in-one marketing, sales and support</span>
+          <span class="bs"></span><a class="go" href="https://www.hubspot.com" target="_blank" rel="noopener" aria-label="Open HubSpot">↗</a></div></li>
+      <li class="r" data-q="folk folk a simple crm for small teams and creators  crm &amp; sales  "><div class="rw"><img src="icons/folk.app.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.folk.app" target="_blank" rel="noopener">folk</a><small>folk</small></span>
+          <span class="bf">A simple CRM for small teams and creators</span>
+          <span class="bs"></span><a class="go" href="https://www.folk.app" target="_blank" rel="noopener" aria-label="Open folk">↗</a></div></li>
+      <li class="r" data-q="clay clay researching and enriching lead lists with ai  crm &amp; sales  "><div class="rw"><img src="icons/clay.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.clay.com" target="_blank" rel="noopener">Clay</a><small>Clay</small></span>
+          <span class="bf">Researching and enriching lead lists with AI</span>
+          <span class="bs"></span><a class="go" href="https://www.clay.com" target="_blank" rel="noopener" aria-label="Open Clay">↗</a></div></li>
+      </ul>
+    </section>
+    <section class="cat" id="money">
+      <h2><span class="ic">💳</span>Finance, expenses &amp; banking <span class="n">6</span></h2>
+      <p class="blurb">Business banking, spending and bookkeeping.</p>
+      <ul class="rows">
+      <li class="r" data-q="ramp ramp company cards with expenses sorted automatically  finance, expenses &amp; banking  "><div class="rw"><img src="icons/ramp.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://ramp.com" target="_blank" rel="noopener">Ramp</a><small>Ramp</small></span>
+          <span class="bf">Company cards with expenses sorted automatically</span>
+          <span class="bs"></span><a class="go" href="https://ramp.com" target="_blank" rel="noopener" aria-label="Open Ramp">↗</a></div></li>
+      <li class="r" data-q="brex brex cards and spend control for startups  finance, expenses &amp; banking  "><div class="rw"><img src="icons/brex.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.brex.com" target="_blank" rel="noopener">Brex</a><small>Brex</small></span>
+          <span class="bf">Cards and spend control for startups</span>
+          <span class="bs"></span><a class="go" href="https://www.brex.com" target="_blank" rel="noopener" aria-label="Open Brex">↗</a></div></li>
+      <li class="r" data-q="mercury mercury business banking built for startups  finance, expenses &amp; banking  "><div class="rw"><img src="icons/mercury.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://mercury.com" target="_blank" rel="noopener">Mercury</a><small>Mercury</small></span>
+          <span class="bf">Business banking built for startups</span>
+          <span class="bs"></span><a class="go" href="https://mercury.com" target="_blank" rel="noopener" aria-label="Open Mercury">↗</a></div></li>
+      <li class="r" data-q="expensify expensify snap a receipt, get an expense report  finance, expenses &amp; banking  "><div class="rw"><img src="icons/expensify.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.expensify.com" target="_blank" rel="noopener">Expensify</a><small>Expensify</small></span>
+          <span class="bf">Snap a receipt, get an expense report</span>
+          <span class="bs"></span><a class="go" href="https://www.expensify.com" target="_blank" rel="noopener" aria-label="Open Expensify">↗</a></div></li>
+      <li class="r" data-q="quickbooks intuit small-business accounting with ai help  finance, expenses &amp; banking  "><div class="rw"><img src="icons/quickbooks.intuit.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://quickbooks.intuit.com" target="_blank" rel="noopener">QuickBooks</a><small>Intuit</small></span>
+          <span class="bf">Small-business accounting with AI help</span>
+          <span class="bs"></span><a class="go" href="https://quickbooks.intuit.com" target="_blank" rel="noopener" aria-label="Open QuickBooks">↗</a></div></li>
+      <li class="r" data-q="copilot money copilot personal budgeting and spending tracking  finance, expenses &amp; banking  "><div class="rw"><img src="icons/copilot.money.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.copilot.money" target="_blank" rel="noopener">Copilot Money</a><small>Copilot</small></span>
+          <span class="bf">Personal budgeting and spending tracking</span>
+          <span class="bs"></span><a class="go" href="https://www.copilot.money" target="_blank" rel="noopener" aria-label="Open Copilot Money">↗</a></div></li>
+      </ul>
+    </section>
+    <section class="cat" id="browsers">
+      <h2><span class="ic">🌐</span>AI browsers <span class="n">3</span></h2>
+      <p class="blurb">Browsers with an assistant that can read and act on the page.</p>
+      <ul class="rows">
+      <li class="r" data-q="comet perplexity a browser that researches and does tasks for you  ai browsers  "><div class="rw"><img src="icons/perplexity.ai.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.perplexity.ai/comet" target="_blank" rel="noopener">Comet</a><small>Perplexity</small></span>
+          <span class="bf">A browser that researches and does tasks for you</span>
+          <span class="bs"></span><a class="go" href="https://www.perplexity.ai/comet" target="_blank" rel="noopener" aria-label="Open Comet">↗</a></div></li>
+      <li class="r" data-q="chatgpt atlas openai chatgpt built into the browser  ai browsers  "><div class="rw"><img src="icons/chatgpt.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://chatgpt.com/atlas" target="_blank" rel="noopener">ChatGPT Atlas</a><small>OpenAI</small></span>
+          <span class="bf">ChatGPT built into the browser</span>
+          <span class="bs"></span><a class="go" href="https://chatgpt.com/atlas" target="_blank" rel="noopener" aria-label="Open ChatGPT Atlas">↗</a></div></li>
+      <li class="r" data-q="dia the browser company chatting with your open tabs  ai browsers  "><div class="rw"><img src="icons/diabrowser.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.diabrowser.com" target="_blank" rel="noopener">Dia</a><small>The Browser Company</small></span>
+          <span class="bf">Chatting with your open tabs</span>
+          <span class="bs"></span><a class="go" href="https://www.diabrowser.com" target="_blank" rel="noopener" aria-label="Open Dia">↗</a></div></li>
+      </ul>
+    </section>
+    <section class="cat" id="models">
+      <h2><span class="ic">🔌</span>AI models for your apps <span class="n">8</span></h2>
+      <p class="blurb">Putting AI inside something you&#x27;re building, or running it yourself.</p>
+      <ul class="rows">
+      <li class="r" data-q="claude api anthropic writing, agents and long context in your own software  ai models for your apps  "><div class="rw"><img src="icons/anthropic.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.anthropic.com/api" target="_blank" rel="noopener">Claude API</a><small>Anthropic</small></span>
+          <span class="bf">Writing, agents and long context in your own software</span>
+          <span class="bs"></span><a class="go" href="https://www.anthropic.com/api" target="_blank" rel="noopener" aria-label="Open Claude API">↗</a></div></li>
+      <li class="r" data-q="openai api openai general-purpose text, image and voice models  ai models for your apps  "><div class="rw"><img src="icons/platform.openai.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://platform.openai.com" target="_blank" rel="noopener">OpenAI API</a><small>OpenAI</small></span>
+          <span class="bf">General-purpose text, image and voice models</span>
+          <span class="bs"></span><a class="go" href="https://platform.openai.com" target="_blank" rel="noopener" aria-label="Open OpenAI API">↗</a></div></li>
+      <li class="r" data-q="google ai studio google trying gemini models for free, then building  ai models for your apps  "><div class="rw"><img src="icons/aistudio.google.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://aistudio.google.com" target="_blank" rel="noopener">Google AI Studio</a><small>Google</small></span>
+          <span class="bf">Trying Gemini models for free, then building</span>
+          <span class="bs"></span><a class="go" href="https://aistudio.google.com" target="_blank" rel="noopener" aria-label="Open Google AI Studio">↗</a></div></li>
+      <li class="r" data-q="jev typesafe fast yes/no and pick-one decisions, priced on input only early access ai models for your apps  "><details><summary><img src="icons/typesafe.ai.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://typesafe.ai" target="_blank" rel="noopener">Jev</a><small>TypeSafe</small></span>
+          <span class="bf">Fast yes/no and pick-one decisions, priced on input only</span>
+          <span class="bs"><span class="b">early access</span></span><span class="more" aria-hidden="true">+</span></summary><div class="ex"><a class="seen" href="/links/#jev-vs-chatgpt">seen in our video: Jev vs ChatGPT →</a></div></details></li>
+      <li class="r" data-q="openrouter openrouter one api key for hundreds of models  ai models for your apps  "><div class="rw"><img src="icons/openrouter.ai.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a><small>OpenRouter</small></span>
+          <span class="bf">One API key for hundreds of models</span>
+          <span class="bs"></span><a class="go" href="https://openrouter.ai" target="_blank" rel="noopener" aria-label="Open OpenRouter">↗</a></div></li>
+      <li class="r" data-q="hugging face hugging face finding and trying open models  ai models for your apps  "><div class="rw"><img src="icons/huggingface.co.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://huggingface.co" target="_blank" rel="noopener">Hugging Face</a><small>Hugging Face</small></span>
+          <span class="bf">Finding and trying open models</span>
+          <span class="bs"></span><a class="go" href="https://huggingface.co" target="_blank" rel="noopener" aria-label="Open Hugging Face">↗</a></div></li>
+      <li class="r" data-q="ollama open source running open models on your own computer free ai models for your apps  free"><div class="rw"><img src="icons/ollama.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://ollama.com" target="_blank" rel="noopener">Ollama</a><small>open source</small></span>
+          <span class="bf">Running open models on your own computer</span>
+          <span class="bs"><span class="b">free</span></span><a class="go" href="https://ollama.com" target="_blank" rel="noopener" aria-label="Open Ollama">↗</a></div></li>
+      <li class="r" data-q="lm studio lm studio local models with a friendly desktop app free ai models for your apps  free"><div class="rw"><img src="icons/lmstudio.ai.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://lmstudio.ai" target="_blank" rel="noopener">LM Studio</a><small>LM Studio</small></span>
+          <span class="bf">Local models with a friendly desktop app</span>
+          <span class="bs"><span class="b">free</span></span><a class="go" href="https://lmstudio.ai" target="_blank" rel="noopener" aria-label="Open LM Studio">↗</a></div></li>
+      </ul>
+    </section>
+    <section class="cat" id="voice">
+      <h2><span class="ic">🔊</span>Voice, music &amp; audio <span class="n">4</span></h2>
+      <p class="blurb">Voiceover, music and cleaning up recordings.</p>
+      <ul class="rows">
+      <li class="r" data-q="elevenlabs elevenlabs realistic voiceover and character voices. drip and capp&#x27;s voices  voice, music &amp; audio we use "><div class="rw"><img src="icons/elevenlabs.io.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://elevenlabs.io" target="_blank" rel="noopener">ElevenLabs</a><small>ElevenLabs</small></span>
+          <span class="bf">Realistic voiceover and character voices. Drip and Capp&#x27;s voices</span>
+          <span class="bs"><span class="b we">we use</span></span><a class="go" href="https://elevenlabs.io" target="_blank" rel="noopener" aria-label="Open ElevenLabs">↗</a></div></li>
+      <li class="r" data-q="suno suno full songs with vocals from a prompt  voice, music &amp; audio  "><div class="rw"><img src="icons/suno.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://suno.com" target="_blank" rel="noopener">Suno</a><small>Suno</small></span>
+          <span class="bf">Full songs with vocals from a prompt</span>
+          <span class="bs"></span><a class="go" href="https://suno.com" target="_blank" rel="noopener" aria-label="Open Suno">↗</a></div></li>
+      <li class="r" data-q="udio udio music generation with fine control  voice, music &amp; audio  "><div class="rw"><img src="icons/udio.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.udio.com" target="_blank" rel="noopener">Udio</a><small>Udio</small></span>
+          <span class="bf">Music generation with fine control</span>
+          <span class="bs"></span><a class="go" href="https://www.udio.com" target="_blank" rel="noopener" aria-label="Open Udio">↗</a></div></li>
+      <li class="r" data-q="adobe podcast adobe making a bad mic recording sound studio-clean  voice, music &amp; audio  "><div class="rw"><img src="icons/podcast.adobe.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://podcast.adobe.com" target="_blank" rel="noopener">Adobe Podcast</a><small>Adobe</small></span>
+          <span class="bf">Making a bad mic recording sound studio-clean</span>
+          <span class="bs"></span><a class="go" href="https://podcast.adobe.com" target="_blank" rel="noopener" aria-label="Open Adobe Podcast">↗</a></div></li>
+      </ul>
+    </section>
+    <section class="cat" id="image">
+      <h2><span class="ic">🎨</span>Image generation <span class="n">8</span></h2>
+      <p class="blurb">Pictures from a prompt, or edits to ones you have.</p>
+      <ul class="rows">
+      <li class="r" data-q="nano banana google keeping a character consistent across edits. we use it for drip  image generation we use "><div class="rw"><img src="icons/gemini.google.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://gemini.google.com" target="_blank" rel="noopener">Nano Banana</a><small>Google</small></span>
+          <span class="bf">Keeping a character consistent across edits. We use it for Drip</span>
+          <span class="bs"><span class="b we">we use</span></span><a class="go" href="https://gemini.google.com" target="_blank" rel="noopener" aria-label="Open Nano Banana">↗</a></div></li>
+      <li class="r" data-q="midjourney midjourney striking, artistic images  image generation  "><div class="rw"><img src="icons/midjourney.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.midjourney.com" target="_blank" rel="noopener">Midjourney</a><small>Midjourney</small></span>
+          <span class="bf">Striking, artistic images</span>
+          <span class="bs"></span><a class="go" href="https://www.midjourney.com" target="_blank" rel="noopener" aria-label="Open Midjourney">↗</a></div></li>
+      <li class="r" data-q="chatgpt images openai posters and images with readable text  image generation  "><div class="rw"><img src="icons/chatgpt.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://chatgpt.com" target="_blank" rel="noopener">ChatGPT images</a><small>OpenAI</small></span>
+          <span class="bf">Posters and images with readable text</span>
+          <span class="bs"></span><a class="go" href="https://chatgpt.com" target="_blank" rel="noopener" aria-label="Open ChatGPT images">↗</a></div></li>
+      <li class="r" data-q="flux black forest labs detailed images that follow the prompt closely  image generation  "><div class="rw"><img src="icons/bfl.ai.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://bfl.ai" target="_blank" rel="noopener">FLUX</a><small>Black Forest Labs</small></span>
+          <span class="bf">Detailed images that follow the prompt closely</span>
+          <span class="bs"></span><a class="go" href="https://bfl.ai" target="_blank" rel="noopener" aria-label="Open FLUX">↗</a></div></li>
+      <li class="r" data-q="ideogram ideogram logos and text-heavy designs  image generation  "><div class="rw"><img src="icons/ideogram.ai.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://ideogram.ai" target="_blank" rel="noopener">Ideogram</a><small>Ideogram</small></span>
+          <span class="bf">Logos and text-heavy designs</span>
+          <span class="bs"></span><a class="go" href="https://ideogram.ai" target="_blank" rel="noopener" aria-label="Open Ideogram">↗</a></div></li>
+      <li class="r" data-q="adobe firefly adobe commercially safe images inside adobe apps  image generation  "><div class="rw"><img src="icons/firefly.adobe.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://firefly.adobe.com" target="_blank" rel="noopener">Adobe Firefly</a><small>Adobe</small></span>
+          <span class="bf">Commercially safe images inside Adobe apps</span>
+          <span class="bs"></span><a class="go" href="https://firefly.adobe.com" target="_blank" rel="noopener" aria-label="Open Adobe Firefly">↗</a></div></li>
+      <li class="r" data-q="krea krea real-time image generation and upscaling  image generation  "><div class="rw"><img src="icons/krea.ai.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.krea.ai" target="_blank" rel="noopener">Krea</a><small>Krea</small></span>
+          <span class="bf">Real-time image generation and upscaling</span>
+          <span class="bs"></span><a class="go" href="https://www.krea.ai" target="_blank" rel="noopener" aria-label="Open Krea">↗</a></div></li>
+      <li class="r" data-q="leonardo leonardo game art, characters and product shots  image generation  "><div class="rw"><img src="icons/leonardo.ai.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://leonardo.ai" target="_blank" rel="noopener">Leonardo</a><small>Leonardo</small></span>
+          <span class="bf">Game art, characters and product shots</span>
+          <span class="bs"></span><a class="go" href="https://leonardo.ai" target="_blank" rel="noopener" aria-label="Open Leonardo">↗</a></div></li>
+      </ul>
+    </section>
+    <section class="cat" id="video">
+      <h2><span class="ic">🎬</span>Video generation <span class="n">9</span></h2>
+      <p class="blurb">Clips from text or a still image, and AI presenters.</p>
+      <ul class="rows">
+      <li class="r" data-q="higgsfield higgsfield many top video and image models in one app, with camera-move presets  video generation we use "><div class="rw"><img src="icons/higgsfield.ai.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://higgsfield.ai" target="_blank" rel="noopener">Higgsfield</a><small>Higgsfield</small></span>
+          <span class="bf">Many top video and image models in one app, with camera-move presets</span>
+          <span class="bs"><span class="b we">we use</span></span><a class="go" href="https://higgsfield.ai" target="_blank" rel="noopener" aria-label="Open Higgsfield">↗</a></div></li>
+      <li class="r" data-q="veo google deepmind cinematic clips with sound and dialogue  video generation  "><div class="rw"><img src="icons/deepmind.google.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://deepmind.google/models/veo/" target="_blank" rel="noopener">Veo</a><small>Google DeepMind</small></span>
+          <span class="bf">Cinematic clips with sound and dialogue</span>
+          <span class="bs"></span><a class="go" href="https://deepmind.google/models/veo/" target="_blank" rel="noopener" aria-label="Open Veo">↗</a></div></li>
+      <li class="r" data-q="sora openai story-driven clips and remixes  video generation  "><div class="rw"><img src="icons/openai.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://openai.com/sora" target="_blank" rel="noopener">Sora</a><small>OpenAI</small></span>
+          <span class="bf">Story-driven clips and remixes</span>
+          <span class="bs"></span><a class="go" href="https://openai.com/sora" target="_blank" rel="noopener" aria-label="Open Sora">↗</a></div></li>
+      <li class="r" data-q="kling kuaishou realistic motion from a single image  video generation  "><div class="rw"><img src="icons/klingai.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://klingai.com" target="_blank" rel="noopener">Kling</a><small>Kuaishou</small></span>
+          <span class="bf">Realistic motion from a single image</span>
+          <span class="bs"></span><a class="go" href="https://klingai.com" target="_blank" rel="noopener" aria-label="Open Kling">↗</a></div></li>
+      <li class="r" data-q="runway runway editing and extending real footage  video generation  "><div class="rw"><img src="icons/runwayml.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://runwayml.com" target="_blank" rel="noopener">Runway</a><small>Runway</small></span>
+          <span class="bf">Editing and extending real footage</span>
+          <span class="bs"></span><a class="go" href="https://runwayml.com" target="_blank" rel="noopener" aria-label="Open Runway">↗</a></div></li>
+      <li class="r" data-q="luma luma ai smooth camera moves and 3d-feeling shots  video generation  "><div class="rw"><img src="icons/lumalabs.ai.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://lumalabs.ai" target="_blank" rel="noopener">Luma</a><small>Luma AI</small></span>
+          <span class="bf">Smooth camera moves and 3D-feeling shots</span>
+          <span class="bs"></span><a class="go" href="https://lumalabs.ai" target="_blank" rel="noopener" aria-label="Open Luma">↗</a></div></li>
+      <li class="r" data-q="hailuo minimax expressive character motion  video generation  "><div class="rw"><img src="icons/hailuoai.video.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://hailuoai.video" target="_blank" rel="noopener">Hailuo</a><small>MiniMax</small></span>
+          <span class="bf">Expressive character motion</span>
+          <span class="bs"></span><a class="go" href="https://hailuoai.video" target="_blank" rel="noopener" aria-label="Open Hailuo">↗</a></div></li>
+      <li class="r" data-q="heygen heygen talking ai avatars and video translation  video generation  "><div class="rw"><img src="icons/heygen.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.heygen.com" target="_blank" rel="noopener">HeyGen</a><small>HeyGen</small></span>
+          <span class="bf">Talking AI avatars and video translation</span>
+          <span class="bs"></span><a class="go" href="https://www.heygen.com" target="_blank" rel="noopener" aria-label="Open HeyGen">↗</a></div></li>
+      <li class="r" data-q="synthesia synthesia training and explainer videos with ai presenters  video generation  "><div class="rw"><img src="icons/synthesia.io.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.synthesia.io" target="_blank" rel="noopener">Synthesia</a><small>Synthesia</small></span>
+          <span class="bf">Training and explainer videos with AI presenters</span>
+          <span class="bs"></span><a class="go" href="https://www.synthesia.io" target="_blank" rel="noopener" aria-label="Open Synthesia">↗</a></div></li>
+      </ul>
+    </section>
+    <section class="cat" id="editing">
+      <h2><span class="ic">✂️</span>Video editing &amp; clipping <span class="n">7</span></h2>
+      <p class="blurb">Putting it together, and cutting long videos into shorts.</p>
+      <ul class="rows">
+      <li class="r" data-q="remotion open source making videos with code. every drip short is animated this way  video editing &amp; clipping we use "><div class="rw"><img src="icons/remotion.dev.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.remotion.dev" target="_blank" rel="noopener">Remotion</a><small>open source</small></span>
+          <span class="bf">Making videos with code. Every Drip short is animated this way</span>
+          <span class="bs"><span class="b we">we use</span></span><a class="go" href="https://www.remotion.dev" target="_blank" rel="noopener" aria-label="Open Remotion">↗</a></div></li>
+      <li class="r" data-q="capcut bytedance quick short-form edits with auto captions  video editing &amp; clipping  "><div class="rw"><img src="icons/capcut.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.capcut.com" target="_blank" rel="noopener">CapCut</a><small>ByteDance</small></span>
+          <span class="bf">Quick short-form edits with auto captions</span>
+          <span class="bs"></span><a class="go" href="https://www.capcut.com" target="_blank" rel="noopener" aria-label="Open CapCut">↗</a></div></li>
+      <li class="r" data-q="descript descript edit a video by editing its transcript  video editing &amp; clipping  "><div class="rw"><img src="icons/descript.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.descript.com" target="_blank" rel="noopener">Descript</a><small>Descript</small></span>
+          <span class="bf">Edit a video by editing its transcript</span>
+          <span class="bs"></span><a class="go" href="https://www.descript.com" target="_blank" rel="noopener" aria-label="Open Descript">↗</a></div></li>
+      <li class="r" data-q="davinci resolve blackmagic design pro editing and color, generous free version free video editing &amp; clipping  free"><div class="rw"><img src="icons/blackmagicdesign.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.blackmagicdesign.com/products/davinciresolve" target="_blank" rel="noopener">DaVinci Resolve</a><small>Blackmagic Design</small></span>
+          <span class="bf">Pro editing and color, generous free version</span>
+          <span class="bs"><span class="b">free</span></span><a class="go" href="https://www.blackmagicdesign.com/products/davinciresolve" target="_blank" rel="noopener" aria-label="Open DaVinci Resolve">↗</a></div></li>
+      <li class="r" data-q="opus clip opus turning a long video into ready-to-post shorts  video editing &amp; clipping  "><div class="rw"><img src="icons/opus.pro.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.opus.pro" target="_blank" rel="noopener">Opus Clip</a><small>Opus</small></span>
+          <span class="bf">Turning a long video into ready-to-post shorts</span>
+          <span class="bs"></span><a class="go" href="https://www.opus.pro" target="_blank" rel="noopener" aria-label="Open Opus Clip">↗</a></div></li>
+      <li class="r" data-q="submagic submagic animated captions for shorts  video editing &amp; clipping  "><div class="rw"><img src="icons/submagic.co.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.submagic.co" target="_blank" rel="noopener">Submagic</a><small>Submagic</small></span>
+          <span class="bf">Animated captions for shorts</span>
+          <span class="bs"></span><a class="go" href="https://www.submagic.co" target="_blank" rel="noopener" aria-label="Open Submagic">↗</a></div></li>
+      <li class="r" data-q="captions captions talking-head edits and captions on your phone  video editing &amp; clipping  "><div class="rw"><img src="icons/captions.ai.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.captions.ai" target="_blank" rel="noopener">Captions</a><small>Captions</small></span>
+          <span class="bf">Talking-head edits and captions on your phone</span>
+          <span class="bs"></span><a class="go" href="https://www.captions.ai" target="_blank" rel="noopener" aria-label="Open Captions">↗</a></div></li>
+      </ul>
+    </section>
+    <section class="cat" id="screen">
+      <h2><span class="ic">🖥️</span>Screen recording <span class="n">4</span></h2>
+      <p class="blurb">Demos, tutorials and walkthroughs.</p>
+      <ul class="rows">
+      <li class="r" data-q="loom atlassian quick async video messages for work  screen recording  "><div class="rw"><img src="icons/loom.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.loom.com" target="_blank" rel="noopener">Loom</a><small>Atlassian</small></span>
+          <span class="bf">Quick async video messages for work</span>
+          <span class="bs"></span><a class="go" href="https://www.loom.com" target="_blank" rel="noopener" aria-label="Open Loom">↗</a></div></li>
+      <li class="r" data-q="screen studio screen studio polished demos with automatic zooms (mac)  screen recording  "><div class="rw"><img src="icons/screen.studio.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://screen.studio" target="_blank" rel="noopener">Screen Studio</a><small>Screen Studio</small></span>
+          <span class="bf">Polished demos with automatic zooms (Mac)</span>
+          <span class="bs"></span><a class="go" href="https://screen.studio" target="_blank" rel="noopener" aria-label="Open Screen Studio">↗</a></div></li>
+      <li class="r" data-q="tella tella recording tutorials and courses  screen recording  "><div class="rw"><img src="icons/tella.tv.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.tella.tv" target="_blank" rel="noopener">Tella</a><small>Tella</small></span>
+          <span class="bf">Recording tutorials and courses</span>
+          <span class="bs"></span><a class="go" href="https://www.tella.tv" target="_blank" rel="noopener" aria-label="Open Tella">↗</a></div></li>
+      <li class="r" data-q="obs studio open source free recording and live streaming free screen recording  free"><div class="rw"><img src="icons/obsproject.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://obsproject.com" target="_blank" rel="noopener">OBS Studio</a><small>open source</small></span>
+          <span class="bf">Free recording and live streaming</span>
+          <span class="bs"><span class="b">free</span></span><a class="go" href="https://obsproject.com" target="_blank" rel="noopener" aria-label="Open OBS Studio">↗</a></div></li>
+      </ul>
+    </section>
+    <section class="cat" id="design">
+      <h2><span class="ic">📐</span>Design, slides &amp; sites <span class="n">5</span></h2>
+      <p class="blurb">Thumbnails, decks, diagrams and websites.</p>
+      <ul class="rows">
+      <li class="r" data-q="excalidraw open source hand-drawn diagrams for explaining things free design, slides &amp; sites we use free"><div class="rw"><img src="icons/excalidraw.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://excalidraw.com" target="_blank" rel="noopener">Excalidraw</a><small>open source</small></span>
+          <span class="bf">Hand-drawn diagrams for explaining things</span>
+          <span class="bs"><span class="b we">we use</span><span class="b">free</span></span><a class="go" href="https://excalidraw.com" target="_blank" rel="noopener" aria-label="Open Excalidraw">↗</a></div></li>
+      <li class="r" data-q="canva canva social graphics and thumbnails from templates  design, slides &amp; sites  "><div class="rw"><img src="icons/canva.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.canva.com" target="_blank" rel="noopener">Canva</a><small>Canva</small></span>
+          <span class="bf">Social graphics and thumbnails from templates</span>
+          <span class="bs"></span><a class="go" href="https://www.canva.com" target="_blank" rel="noopener" aria-label="Open Canva">↗</a></div></li>
+      <li class="r" data-q="gamma gamma slide decks and docs from a prompt  design, slides &amp; sites  "><div class="rw"><img src="icons/gamma.app.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://gamma.app" target="_blank" rel="noopener">Gamma</a><small>Gamma</small></span>
+          <span class="bf">Slide decks and docs from a prompt</span>
+          <span class="bs"></span><a class="go" href="https://gamma.app" target="_blank" rel="noopener" aria-label="Open Gamma">↗</a></div></li>
+      <li class="r" data-q="figma figma designing apps and websites  design, slides &amp; sites  "><div class="rw"><img src="icons/figma.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.figma.com" target="_blank" rel="noopener">Figma</a><small>Figma</small></span>
+          <span class="bf">Designing apps and websites</span>
+          <span class="bs"></span><a class="go" href="https://www.figma.com" target="_blank" rel="noopener" aria-label="Open Figma">↗</a></div></li>
+      <li class="r" data-q="framer framer publishing a designed website without code  design, slides &amp; sites  "><div class="rw"><img src="icons/framer.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.framer.com" target="_blank" rel="noopener">Framer</a><small>Framer</small></span>
+          <span class="bf">Publishing a designed website without code</span>
+          <span class="bs"></span><a class="go" href="https://www.framer.com" target="_blank" rel="noopener" aria-label="Open Framer">↗</a></div></li>
+      </ul>
+    </section>
+    <section class="cat" id="automation">
+      <h2><span class="ic">⚙️</span>Automation <span class="n">3</span></h2>
+      <p class="blurb">Connecting apps so work happens on its own.</p>
+      <ul class="rows">
+      <li class="r" data-q="zapier zapier connecting thousands of apps, no code  automation  "><div class="rw"><img src="icons/zapier.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://zapier.com" target="_blank" rel="noopener">Zapier</a><small>Zapier</small></span>
+          <span class="bf">Connecting thousands of apps, no code</span>
+          <span class="bs"></span><a class="go" href="https://zapier.com" target="_blank" rel="noopener" aria-label="Open Zapier">↗</a></div></li>
+      <li class="r" data-q="make make visual automations with branching logic  automation  "><div class="rw"><img src="icons/make.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://www.make.com" target="_blank" rel="noopener">Make</a><small>Make</small></span>
+          <span class="bf">Visual automations with branching logic</span>
+          <span class="bs"></span><a class="go" href="https://www.make.com" target="_blank" rel="noopener" aria-label="Open Make">↗</a></div></li>
+      <li class="r" data-q="n8n open source self-hostable automations with ai steps  automation  "><div class="rw"><img src="icons/n8n.io.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://n8n.io" target="_blank" rel="noopener">n8n</a><small>open source</small></span>
+          <span class="bf">Self-hostable automations with AI steps</span>
+          <span class="bs"></span><a class="go" href="https://n8n.io" target="_blank" rel="noopener" aria-label="Open n8n">↗</a></div></li>
+      </ul>
+    </section>
+    <section class="cat" id="posting">
+      <h2><span class="ic">📈</span>Posting &amp; growth <span class="n">3</span></h2>
+      <p class="blurb">Getting it out there on a schedule.</p>
+      <ul class="rows">
+      <li class="r" data-q="buffer buffer scheduling posts across every platform from one queue  posting &amp; growth we use "><div class="rw"><img src="icons/buffer.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://buffer.com" target="_blank" rel="noopener">Buffer</a><small>Buffer</small></span>
+          <span class="bf">Scheduling posts across every platform from one queue</span>
+          <span class="bs"><span class="b we">we use</span></span><a class="go" href="https://buffer.com" target="_blank" rel="noopener" aria-label="Open Buffer">↗</a></div></li>
+      <li class="r" data-q="manychat manychat auto-dms for &#x27;comment link and i&#x27;ll send it&#x27; posts  posting &amp; growth  "><div class="rw"><img src="icons/manychat.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://manychat.com" target="_blank" rel="noopener">ManyChat</a><small>ManyChat</small></span>
+          <span class="bf">Auto-DMs for &#x27;comment LINK and I&#x27;ll send it&#x27; posts</span>
+          <span class="bs"></span><a class="go" href="https://manychat.com" target="_blank" rel="noopener" aria-label="Open ManyChat">↗</a></div></li>
+      <li class="r" data-q="metricool metricool scheduling plus analytics for creators  posting &amp; growth  "><div class="rw"><img src="icons/metricool.com.png" alt="" width="28" height="28" loading="lazy">
+          <span class="nm"><a href="https://metricool.com" target="_blank" rel="noopener">Metricool</a><small>Metricool</small></span>
+          <span class="bf">Scheduling plus analytics for creators</span>
+          <span class="bs"></span><a class="go" href="https://metricool.com" target="_blank" rel="noopener" aria-label="Open Metricool">↗</a></div></li>
+      </ul>
+    </section>
+    <p class="empty" id="empty" hidden>Nothing matches that yet. Drip is still learning.</p>
+    <p class="fine">Last checked Sep 22, 2026. Star counts are GitHub's on that day. We're not paid by any of these companies; if that ever changes, it will say so here. Tools change fast, so check each site for current pricing and features. Icons are each site's own favicon.</p>
+  </main>
+</div>
+
+<footer class="foot">drip the cup · <a href="/">dripthecup.com</a> · a cup of coffee learning about a.i.</footer>
 
 <script>
-  // search: hide cards that don't match, and categories with nothing left
   const q = document.getElementById('q'), empty = document.getElementById('empty');
   q.addEventListener('input', () => {
     const terms = q.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
     let shown = 0;
     document.querySelectorAll('.cat').forEach(cat => {
       let n = 0;
-      cat.querySelectorAll('.card').forEach(c => {
-        const hit = terms.every(t => c.dataset.q.includes(t) || cat.id.includes(t) || cat.querySelector('h2').textContent.toLowerCase().includes(t));
-        c.hidden = !hit; if (hit) n++;
-      });
+      cat.querySelectorAll('.r').forEach(r => { const hit = terms.every(t => r.dataset.q.includes(t)); r.hidden = !hit; if (hit) n++; });
       cat.hidden = n === 0; shown += n;
     });
     empty.hidden = shown > 0;
   });
+  document.getElementById('jump').addEventListener('change', ev => { if (ev.target.value) location.hash = ev.target.value; });
+  // highlight the category you're reading in the sidebar
+  const links = [...document.querySelectorAll('.side a')];
+  const io = new IntersectionObserver(es => es.forEach(en => {
+    if (en.isIntersecting) links.forEach(a => a.classList.toggle('on', a.hash === '#' + en.target.id));
+  }), {rootMargin: '-70px 0px -70% 0px'});
+  document.querySelectorAll('.cat').forEach(c => io.observe(c));
 </script>
 </body>
 </html>
