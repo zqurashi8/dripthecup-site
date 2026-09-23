@@ -101,7 +101,7 @@ page = f'''<!DOCTYPE html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>AI tools directory · Drip the Cup</title>
-<meta name="description" content="{total} AI tools sorted by what you want to do: chat, agents, coding, dictation, note takers, email, CRM, finance, video, voice and more. The ones Drip the Cup uses are marked.">
+<meta name="description" content="{total} AI tools sorted by what you want to do: chat, agents, coding, dictation, note takers, email, CRM, finance, video, voice and more.">
 <link rel="canonical" href="https://dripthecup.com/resources/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dripthecup.com/resources/">
@@ -231,7 +231,7 @@ page = f'''<!DOCTYPE html>
   <div class="t">
     <p class="eyebrow">AI tools directory · {total} tools · {len(cats)} categories</p>
     <h1>Find the right AI tool, fast.</h1>
-    <p>One line each on what it's best for. The ones we use to make Drip are marked <b>we use</b>. Click a row with a <b>+</b> for install commands and notes.</p>
+    <p>One line each on what it's best for. Click a row with a <b>+</b> for install commands and notes.</p>
     <label class="search" for="q"><span>⌕</span><input id="q" type="search" placeholder="Try: dictation, email, free, video, agent..." autocomplete="off" aria-label="Search {total} AI tools"></label>
   </div>
   <div class="drip" aria-hidden="true"><img src="../assets/drip2-curious-a.png" alt=""></div>
