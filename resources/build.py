@@ -57,8 +57,6 @@ def icon(url):
 
 def row(it, cat):
     badges = ''
-    if it.get('use'):
-        badges += '<span class="b we">we use</span>'
     if it.get('kind'):
         badges += f'<span class="b">{e(it["kind"])}</span>'
     if it.get('stars'):
@@ -71,7 +69,7 @@ def row(it, cat):
     if it.get('seen'):
         extra += f'<a class="seen" href="/links/#{it["seen"]}">seen in our video: {e(SEEN[it["seen"]])} →</a>'
     q = ' '.join([it['name'], it.get('by', ''), it['best'], it.get('kind', ''), cat['name'],
-                  'we use' if it.get('use') else '', 'free' if it.get('kind') in ('free', 'open source') else '']).lower()
+                  'free' if it.get('kind') in ('free', 'open source') else '']).lower()
     head = f'''<img src="{icon(it["url"])}" alt="" width="28" height="28" loading="lazy">
           <span class="nm"><a href="{e(it["url"])}" target="_blank" rel="noopener">{e(it["name"])}</a><small>{e(it.get("by", ""))}</small></span>
           <span class="bf">{e(it["best"])}</span>
