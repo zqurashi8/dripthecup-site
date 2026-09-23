@@ -27,7 +27,7 @@ const PRODUCTS = {
 };
 
 /** Deliberately loose. The only real test of an address is mail arriving at it. */
-const EMAIL = /^[^\s@,;:<>"'\]{1,64}@[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?(\.[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?)+$/i;
+const EMAIL = /^[^\s@]{1,64}@[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?(\.[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?)+$/i;
 
 const json = (body, status = 200) =>
   new Response(JSON.stringify(body), {
