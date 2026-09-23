@@ -3,7 +3,7 @@
  "categories": [
   {"id": "chat", "name": "Chat assistants", "icon": "💬", "blurb": "General-purpose AIs you talk to. Most are free to start.", "items": [
    {"name": "ChatGPT", "url": "https://chatgpt.com", "by": "OpenAI", "best": "Everyday questions, images and voice chat in one app", "top": true},
-   {"name": "Claude", "url": "https://claude.ai", "by": "Anthropic", "best": "Careful writing, reasoning and long documents", "use": true, "top": true},
+   {"name": "Claude", "url": "https://claude.ai", "by": "Anthropic", "best": "Careful writing, reasoning and long documents", "top": true},
    {"name": "Gemini", "url": "https://gemini.google.com", "by": "Google", "best": "Working inside Gmail, Docs, Search and YouTube"},
    {"name": "Grok", "url": "https://grok.com", "by": "xAI", "best": "What people on X are saying right now"},
    {"name": "Perplexity", "url": "https://www.perplexity.ai", "by": "Perplexity", "best": "Answers with sources you can click", "top": true},
