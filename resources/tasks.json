@@ -52,35 +52,43 @@
      "p": 0.98
     },
     {
+     "id": "t-moneyprinterturbo",
+     "p": 0.87
+    },
+    {
      "id": "t-captions",
      "p": 0.87
     },
     {
      "id": "t-higgsfield",
-     "p": 0.81
+     "p": 0.82
     },
     {
      "id": "t-submagic",
-     "p": 0.74
+     "p": 0.77
     },
     {
      "id": "t-sora",
-     "p": 0.7
+     "p": 0.72
     },
     {
      "id": "t-kling",
-     "p": 0.7
+     "p": 0.71
     },
     {
      "id": "t-davinci-resolve",
-     "p": 0.7
+     "p": 0.69
     },
     {
      "id": "t-descript",
-     "p": 0.62
+     "p": 0.65
     },
     {
      "id": "t-hailuo",
+     "p": 0.61
+    },
+    {
+     "id": "t-luma",
      "p": 0.6
     }
    ]
@@ -93,11 +101,11 @@
      "p": 0.95
     },
     {
-     "id": "t-veo",
+     "id": "t-sora",
      "p": 0.95
     },
     {
-     "id": "t-sora",
+     "id": "t-veo",
      "p": 0.94
     },
     {
@@ -105,16 +113,24 @@
      "p": 0.94
     },
     {
+     "id": "t-luma",
+     "p": 0.88
+    },
+    {
      "id": "t-hailuo",
-     "p": 0.89
+     "p": 0.88
+    },
+    {
+     "id": "t-moneyprinterturbo",
+     "p": 0.88
+    },
+    {
+     "id": "t-comfyui",
+     "p": 0.87
     },
     {
      "id": "t-synthesia",
      "p": 0.87
-    },
-    {
-     "id": "t-luma",
-     "p": 0.86
     },
     {
      "id": "t-anything2explainer",
@@ -122,7 +138,7 @@
     },
     {
      "id": "t-heygen",
-     "p": 0.78
+     "p": 0.75
     },
     {
      "id": "t-vox-director",
@@ -139,11 +155,11 @@
     },
     {
      "id": "t-adobe-podcast",
-     "p": 0.77
+     "p": 0.79
     },
     {
      "id": "t-openai-api",
-     "p": 0.76
+     "p": 0.75
     }
    ]
   },
@@ -177,11 +193,11 @@
     },
     {
      "id": "t-fathom",
-     "p": 0.87
+     "p": 0.88
     },
     {
      "id": "t-tl-dv",
-     "p": 0.69
+     "p": 0.74
     },
     {
      "id": "t-openai-api",
@@ -202,7 +218,7 @@
     },
     {
      "id": "t-aqua-voice",
-     "p": 0.96
+     "p": 0.97
     },
     {
      "id": "t-whisper-cpp",
@@ -210,7 +226,7 @@
     },
     {
      "id": "t-typeless",
-     "p": 0.84
+     "p": 0.82
     }
    ]
   },
@@ -226,6 +242,14 @@
      "p": 0.99
     },
     {
+     "id": "t-leonardo",
+     "p": 0.99
+    },
+    {
+     "id": "t-stable-diffusion-web-ui",
+     "p": 0.99
+    },
+    {
      "id": "t-ideogram",
      "p": 0.98
     },
@@ -238,7 +262,7 @@
      "p": 0.98
     },
     {
-     "id": "t-leonardo",
+     "id": "t-comfyui",
      "p": 0.98
     },
     {
@@ -251,11 +275,11 @@
     },
     {
      "id": "t-nano-banana",
-     "p": 0.81
+     "p": 0.8
     },
     {
      "id": "t-higgsfield",
-     "p": 0.66
+     "p": 0.64
     }
    ]
   },
@@ -272,7 +296,7 @@
     },
     {
      "id": "t-adobe-firefly",
-     "p": 0.8
+     "p": 0.82
     },
     {
      "id": "t-ip-as-logo",
@@ -280,15 +304,27 @@
     },
     {
      "id": "t-chatgpt-images",
-     "p": 0.73
+     "p": 0.74
     },
     {
      "id": "t-anthropic-skills",
-     "p": 0.68
+     "p": 0.69
     },
     {
      "id": "t-flux",
      "p": 0.61
+    },
+    {
+     "id": "t-stable-diffusion-web-ui",
+     "p": 0.61
+    },
+    {
+     "id": "t-krea",
+     "p": 0.6
+    },
+    {
+     "id": "t-figma",
+     "p": 0.6
     }
    ]
   },
@@ -301,7 +337,7 @@
     },
     {
      "id": "t-genspark",
-     "p": 0.95
+     "p": 0.96
     },
     {
      "id": "t-anthropic-skills",
@@ -309,7 +345,7 @@
     },
     {
      "id": "t-canva",
-     "p": 0.83
+     "p": 0.8
     }
    ]
   },
@@ -339,7 +375,7 @@
     },
     {
      "id": "t-cursor",
-     "p": 0.95
+     "p": 0.94
     },
     {
      "id": "t-windsurf",
@@ -363,7 +399,7 @@
     },
     {
      "id": "t-claude-code",
-     "p": 0.87
+     "p": 0.86
     },
     {
      "id": "t-lovable",
@@ -371,15 +407,15 @@
     },
     {
      "id": "t-v0",
+     "p": 0.77
+    },
+    {
+     "id": "t-cc-switch",
      "p": 0.75
     },
     {
      "id": "t-replit",
      "p": 0.71
-    },
-    {
-     "id": "t-deepseek",
-     "p": 0.69
     },
     {
      "id": "t-typesafe-skills",
@@ -395,20 +431,20 @@
    "task": "Save tokens and cost in a coding agent",
    "tools": [
     {
+     "id": "t-graft",
+     "p": 0.92
+    },
+    {
      "id": "t-ponytail",
      "p": 0.91
     },
     {
-     "id": "t-graft",
-     "p": 0.91
+     "id": "t-graphify",
+     "p": 0.86
     },
     {
      "id": "t-fast-jev-compaction",
-     "p": 0.85
-    },
-    {
-     "id": "t-graphify",
-     "p": 0.83
+     "p": 0.86
     },
     {
      "id": "t-deepseek",
@@ -417,10 +453,6 @@
     {
      "id": "t-ollama",
      "p": 0.65
-    },
-    {
-     "id": "t-superpowers",
-     "p": 0.6
     }
    ]
   },
@@ -448,28 +480,40 @@
      "p": 0.83
     },
     {
-     "id": "t-notion",
-     "p": 0.77
+     "id": "t-browser-use",
+     "p": 0.82
     },
     {
-     "id": "t-obsidian",
-     "p": 0.74
+     "id": "t-notion",
+     "p": 0.79
     },
     {
      "id": "t-microsoft-copilot",
-     "p": 0.73
+     "p": 0.75
     },
     {
      "id": "t-notebooklm",
-     "p": 0.71
+     "p": 0.75
+    },
+    {
+     "id": "t-ecc",
+     "p": 0.73
+    },
+    {
+     "id": "t-obsidian",
+     "p": 0.73
     },
     {
      "id": "t-gemini",
-     "p": 0.69
+     "p": 0.71
     },
     {
      "id": "t-chatgpt-atlas",
-     "p": 0.63
+     "p": 0.65
+    },
+    {
+     "id": "t-dify",
+     "p": 0.62
     }
    ]
   },
@@ -485,52 +529,52 @@
      "p": 0.97
     },
     {
+     "id": "t-claude-api",
+     "p": 0.97
+    },
+    {
      "id": "t-openai-api",
      "p": 0.97
     },
     {
-     "id": "t-claude-api",
-     "p": 0.96
+     "id": "t-sepia",
+     "p": 0.94
     },
     {
      "id": "t-simple-english",
      "p": 0.93
     },
     {
-     "id": "t-sepia",
-     "p": 0.93
+     "id": "t-gemini",
+     "p": 0.92
     },
     {
      "id": "t-qwen",
      "p": 0.92
     },
     {
-     "id": "t-gemini",
-     "p": 0.91
-    },
-    {
      "id": "t-microsoft-copilot",
      "p": 0.91
     },
     {
+     "id": "t-deepseek",
+     "p": 0.9
+    },
+    {
      "id": "t-fyxer",
-     "p": 0.91
+     "p": 0.9
     },
     {
      "id": "t-chatgpt",
      "p": 0.89
     },
     {
-     "id": "t-deepseek",
-     "p": 0.89
-    },
-    {
      "id": "t-chatgpt-atlas",
-     "p": 0.86
+     "p": 0.84
     },
     {
-     "id": "t-typeless",
-     "p": 0.83
+     "id": "t-open-webui",
+     "p": 0.84
     }
    ]
   },
@@ -539,23 +583,23 @@
    "tools": [
     {
      "id": "t-otter",
-     "p": 0.97
+     "p": 0.98
     },
     {
      "id": "t-fireflies",
-     "p": 0.94
+     "p": 0.93
     },
     {
      "id": "t-fathom",
-     "p": 0.94
+     "p": 0.93
     },
     {
      "id": "t-tl-dv",
-     "p": 0.76
+     "p": 0.77
     },
     {
      "id": "t-whisper-cpp",
-     "p": 0.68
+     "p": 0.66
     },
     {
      "id": "t-granola",
@@ -568,7 +612,7 @@
    "tools": [
     {
      "id": "t-superhuman",
-     "p": 0.95
+     "p": 0.96
     },
     {
      "id": "t-spark",
@@ -576,15 +620,15 @@
     },
     {
      "id": "t-shortwave",
-     "p": 0.8
+     "p": 0.79
     },
     {
      "id": "t-fyxer",
-     "p": 0.66
+     "p": 0.67
     },
     {
      "id": "t-gemini",
-     "p": 0.62
+     "p": 0.65
     }
    ]
   },
@@ -592,11 +636,11 @@
    "task": "Plan my day and schedule tasks",
    "tools": [
     {
-     "id": "t-motion",
-     "p": 0.97
+     "id": "t-sunsama",
+     "p": 0.98
     },
     {
-     "id": "t-sunsama",
+     "id": "t-motion",
      "p": 0.97
     },
     {
@@ -626,11 +670,11 @@
     },
     {
      "id": "t-linear",
-     "p": 0.9
+     "p": 0.89
     },
     {
      "id": "t-notion",
-     "p": 0.62
+     "p": 0.61
     }
    ]
   },
@@ -651,7 +695,7 @@
     },
     {
      "id": "t-clay",
-     "p": 0.66
+     "p": 0.65
     }
    ]
   },
@@ -672,11 +716,11 @@
     },
     {
      "id": "t-brex",
-     "p": 0.88
+     "p": 0.89
     },
     {
      "id": "t-mercury",
-     "p": 0.78
+     "p": 0.81
     }
    ]
   },
@@ -705,7 +749,11 @@
     },
     {
      "id": "t-skill-recorder",
-     "p": 0.73
+     "p": 0.71
+    },
+    {
+     "id": "t-deepseek-harness",
+     "p": 0.61
     }
    ]
   },
@@ -731,15 +779,35 @@
     },
     {
      "id": "t-lm-studio",
-     "p": 0.97
+     "p": 0.96
+    },
+    {
+     "id": "t-stable-diffusion-web-ui",
+     "p": 0.96
+    },
+    {
+     "id": "t-llama-cpp",
+     "p": 0.95
+    },
+    {
+     "id": "t-open-webui",
+     "p": 0.94
+    },
+    {
+     "id": "t-comfyui",
+     "p": 0.94
     },
     {
      "id": "t-whisper-cpp",
-     "p": 0.85
+     "p": 0.86
     },
     {
-     "id": "t-deepseek",
-     "p": 0.6
+     "id": "t-dify",
+     "p": 0.72
+    },
+    {
+     "id": "t-transformers",
+     "p": 0.69
     }
    ]
   },
@@ -752,11 +820,15 @@
     },
     {
      "id": "t-openai-api",
-     "p": 0.96
+     "p": 0.95
     },
     {
      "id": "t-openrouter",
      "p": 0.95
+    },
+    {
+     "id": "t-langchain",
+     "p": 0.94
     },
     {
      "id": "t-google-ai-studio",
@@ -764,15 +836,39 @@
     },
     {
      "id": "t-jev",
-     "p": 0.9
+     "p": 0.89
     },
     {
      "id": "t-hugging-face",
-     "p": 0.87
+     "p": 0.88
+    },
+    {
+     "id": "t-transformers",
+     "p": 0.84
+    },
+    {
+     "id": "t-dify",
+     "p": 0.84
+    },
+    {
+     "id": "t-deepseek-harness",
+     "p": 0.8
     },
     {
      "id": "t-ollama",
      "p": 0.77
+    },
+    {
+     "id": "t-langflow",
+     "p": 0.71
+    },
+    {
+     "id": "t-llama-cpp",
+     "p": 0.7
+    },
+    {
+     "id": "t-generative-ai-for-beginners",
+     "p": 0.65
     }
    ]
   },
@@ -780,8 +876,20 @@
    "task": "Have an AI agent do tasks for me",
    "tools": [
     {
-     "id": "t-manus",
+     "id": "t-autogpt",
      "p": 0.95
+    },
+    {
+     "id": "t-langchain",
+     "p": 0.95
+    },
+    {
+     "id": "t-manus",
+     "p": 0.94
+    },
+    {
+     "id": "t-browser-use",
+     "p": 0.94
     },
     {
      "id": "t-comet",
@@ -792,7 +900,7 @@
      "p": 0.92
     },
     {
-     "id": "t-windsurf",
+     "id": "t-dify",
      "p": 0.92
     },
     {
@@ -800,40 +908,28 @@
      "p": 0.91
     },
     {
-     "id": "t-codex",
-     "p": 0.9
+     "id": "t-windsurf",
+     "p": 0.91
+    },
+    {
+     "id": "t-langflow",
+     "p": 0.91
     },
     {
      "id": "t-opencode",
-     "p": 0.89
+     "p": 0.9
     },
     {
      "id": "t-claude-api",
+     "p": 0.9
+    },
+    {
+     "id": "t-codex",
      "p": 0.89
     },
     {
      "id": "t-kimi",
      "p": 0.88
-    },
-    {
-     "id": "t-claude-code",
-     "p": 0.87
-    },
-    {
-     "id": "t-hermes-agent",
-     "p": 0.86
-    },
-    {
-     "id": "t-skill-recorder",
-     "p": 0.77
-    },
-    {
-     "id": "t-graft",
-     "p": 0.76
-    },
-    {
-     "id": "t-shortwave",
-     "p": 0.75
     }
    ]
   },
@@ -845,28 +941,24 @@
      "p": 0.98
     },
     {
-     "id": "t-obs-studio",
-     "p": 0.98
-    },
-    {
      "id": "t-screen-studio",
      "p": 0.97
     },
     {
+     "id": "t-obs-studio",
+     "p": 0.97
+    },
+    {
      "id": "t-synthesia",
-     "p": 0.82
+     "p": 0.83
     },
     {
      "id": "t-loom",
-     "p": 0.81
+     "p": 0.8
     },
     {
      "id": "t-skill-recorder",
-     "p": 0.63
-    },
-    {
-     "id": "t-typeless",
-     "p": 0.6
+     "p": 0.67
     }
    ]
   }

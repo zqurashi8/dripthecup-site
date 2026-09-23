@@ -119,6 +119,30 @@
      "url": "https://www.lindy.ai",
      "by": "Lindy",
      "best": "Building your own work assistants without code"
+    },
+    {
+     "name": "AutoGPT",
+     "url": "https://github.com/Significant-Gravitas/AutoGPT",
+     "by": "Significant Gravitas",
+     "kind": "open source",
+     "stars": "188K",
+     "best": "A platform for building and running autonomous agents"
+    },
+    {
+     "name": "Agency Agents",
+     "url": "https://github.com/msitarzewski/agency-agents",
+     "by": "msitarzewski",
+     "kind": "open source",
+     "stars": "154K",
+     "best": "A whole team of specialist agents, each with a role and a process"
+    },
+    {
+     "name": "browser-use",
+     "url": "https://github.com/browser-use/browser-use",
+     "by": "Browser Use",
+     "kind": "open source",
+     "stars": "116K",
+     "best": "Lets AI agents use a web browser like a person"
     }
    ]
   },
@@ -133,7 +157,8 @@
      "url": "https://claude.com/claude-code",
      "by": "Anthropic",
      "best": "An agent that builds and edits whole projects",
-     "top": true
+     "top": true,
+     "stars": "148K"
     },
     {
      "name": "Cursor",
@@ -145,7 +170,8 @@
      "name": "Codex",
      "url": "https://openai.com/codex",
      "by": "OpenAI",
-     "best": "Delegating coding tasks to an agent"
+     "best": "Delegating coding tasks to an agent",
+     "stars": "126K"
     },
     {
      "name": "GitHub Copilot",
@@ -163,7 +189,8 @@
      "name": "OpenCode",
      "url": "https://opencode.ai",
      "by": "open source",
-     "best": "An open-source coding agent for the terminal"
+     "best": "An open-source coding agent for the terminal",
+     "stars": "209K"
     },
     {
      "name": "Lovable",
@@ -188,6 +215,14 @@
      "url": "https://v0.app",
      "by": "Vercel",
      "best": "Web interfaces and sites from a prompt"
+    },
+    {
+     "name": "cc-switch",
+     "url": "https://github.com/farion1231/cc-switch",
+     "by": "farion1231",
+     "kind": "open source",
+     "stars": "135K",
+     "best": "One desktop app to manage Claude Code, Codex, OpenCode, OpenClaw and Hermes"
     }
    ]
   },
@@ -208,6 +243,30 @@
      "seen": "claude-code-repos"
     },
     {
+     "name": "Skills for Real Engineers",
+     "url": "https://github.com/mattpocock/skills",
+     "by": "Matt Pocock",
+     "kind": "skill pack",
+     "stars": "268K",
+     "best": "Matt Pocock's engineering skills, straight from his agent setup"
+    },
+    {
+     "name": "ECC",
+     "url": "https://github.com/affaan-m/ECC",
+     "by": "affaan-m",
+     "kind": "skill pack",
+     "stars": "266K",
+     "best": "Skills, memory, security and research-first habits for coding agents"
+    },
+    {
+     "name": "Karpathy skills",
+     "url": "https://github.com/multica-ai/andrej-karpathy-skills",
+     "by": "multica-ai",
+     "kind": "skill",
+     "stars": "215K",
+     "best": "One CLAUDE.md that avoids common AI coding mistakes, based on Andrej Karpathy's notes"
+    },
+    {
      "name": "Anthropic Skills",
      "url": "https://github.com/anthropics/skills",
      "by": "Anthropic",
@@ -225,6 +284,22 @@
      "best": "Less code and fewer tokens (54% and 22% on the author's benchmark)",
      "install": "# in Claude Code\n/plugin marketplace add DietrichGebert/ponytail\n/plugin install ponytail@ponytail",
      "seen": "claude-code-repos"
+    },
+    {
+     "name": "gstack",
+     "url": "https://github.com/garrytan/gstack",
+     "by": "Garry Tan",
+     "kind": "skill pack",
+     "stars": "134K",
+     "best": "Garry Tan's Claude Code setup: 23 tools acting as CEO, designer, QA and more"
+    },
+    {
+     "name": "UI UX Pro Max",
+     "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+     "by": "nextlevelbuilder",
+     "kind": "skill",
+     "stars": "130K",
+     "best": "Design know-how for professional UI on any platform"
     },
     {
      "name": "Graphify",
@@ -766,7 +841,8 @@
      "url": "https://ollama.com",
      "by": "open source",
      "kind": "free",
-     "best": "Running open models on your own computer"
+     "best": "Running open models on your own computer",
+     "stars": "182K"
     },
     {
      "name": "LM Studio",
@@ -774,6 +850,78 @@
      "by": "LM Studio",
      "kind": "free",
      "best": "Local models with a friendly desktop app"
+    }
+   ]
+  },
+  {
+   "id": "build",
+   "name": "Build with AI",
+   "icon": "🛠️",
+   "blurb": "Open-source building blocks developers use to make AI apps, agents and pipelines.",
+   "items": [
+    {
+     "name": "DeepSeek Harness",
+     "url": "https://github.com/deepseek-ai/deepseek-harness",
+     "by": "DeepSeek",
+     "kind": "open source",
+     "stars": "234K",
+     "best": "DeepSeek's open agent harness, built so everything is a plugin"
+    },
+    {
+     "name": "Firecrawl",
+     "url": "https://github.com/firecrawl/firecrawl",
+     "by": "Firecrawl",
+     "kind": "open source",
+     "stars": "184K",
+     "best": "Turns websites into clean data for AI"
+    },
+    {
+     "name": "Transformers",
+     "url": "https://github.com/huggingface/transformers",
+     "by": "Hugging Face",
+     "kind": "open source",
+     "stars": "167K",
+     "best": "The library for running and training open models"
+    },
+    {
+     "name": "Dify",
+     "url": "https://github.com/langgenius/dify",
+     "by": "LangGenius",
+     "kind": "open source",
+     "stars": "157K",
+     "best": "Build agent workflows and RAG apps visually, cloud or self-hosted"
+    },
+    {
+     "name": "Langflow",
+     "url": "https://github.com/langflow-ai/langflow",
+     "by": "Langflow",
+     "kind": "open source",
+     "stars": "155K",
+     "best": "A drag-and-drop builder for AI agents and workflows"
+    },
+    {
+     "name": "Open WebUI",
+     "url": "https://github.com/open-webui/open-webui",
+     "by": "Open WebUI",
+     "kind": "open source",
+     "stars": "153K",
+     "best": "A ChatGPT-style interface for local or your own models"
+    },
+    {
+     "name": "LangChain",
+     "url": "https://github.com/langchain-ai/langchain",
+     "by": "LangChain",
+     "kind": "open source",
+     "stars": "147K",
+     "best": "The widely used framework for building agents in code"
+    },
+    {
+     "name": "llama.cpp",
+     "url": "https://github.com/ggml-org/llama.cpp",
+     "by": "ggml",
+     "kind": "open source",
+     "stars": "129K",
+     "best": "Runs language models fast on ordinary hardware"
     }
    ]
   },
@@ -863,6 +1011,22 @@
      "url": "https://leonardo.ai",
      "by": "Leonardo",
      "best": "Game art, characters and product shots"
+    },
+    {
+     "name": "ComfyUI",
+     "url": "https://github.com/Comfy-Org/ComfyUI",
+     "by": "Comfy Org",
+     "kind": "open source",
+     "stars": "135K",
+     "best": "Node-based image and video generation you run yourself"
+    },
+    {
+     "name": "Stable Diffusion web UI",
+     "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+     "by": "AUTOMATIC1111",
+     "kind": "open source",
+     "stars": "165K",
+     "best": "The classic self-hosted Stable Diffusion interface"
     }
    ]
   },
@@ -926,6 +1090,14 @@
      "url": "https://www.synthesia.io",
      "by": "Synthesia",
      "best": "Training and explainer videos with AI presenters"
+    },
+    {
+     "name": "MoneyPrinterTurbo",
+     "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+     "by": "harry0703",
+     "kind": "open source",
+     "stars": "125K",
+     "best": "Makes a short video from a topic or keyword, end to end"
     }
    ]
   },
@@ -1024,7 +1196,8 @@
      "url": "https://excalidraw.com",
      "by": "open source",
      "kind": "free",
-     "best": "Hand-drawn diagrams for explaining things"
+     "best": "Hand-drawn diagrams for explaining things",
+     "stars": "133K"
     },
     {
      "name": "Canva",
@@ -1081,7 +1254,8 @@
      "name": "n8n",
      "url": "https://n8n.io",
      "by": "open source",
-     "best": "Self-hostable automations with AI steps"
+     "best": "Self-hostable automations with AI steps",
+     "stars": "206K"
     }
    ]
   },
@@ -1108,6 +1282,46 @@
      "url": "https://metricool.com",
      "by": "Metricool",
      "best": "Scheduling plus analytics for creators"
+    }
+   ]
+  },
+  {
+   "id": "learn",
+   "name": "Learn AI",
+   "icon": "🎓",
+   "blurb": "Free courses, prompt libraries, example apps and roadmaps.",
+   "items": [
+    {
+     "name": "prompts.chat",
+     "url": "https://github.com/f/prompts.chat",
+     "by": "f",
+     "kind": "open source",
+     "stars": "171K",
+     "best": "A community prompt library (formerly Awesome ChatGPT Prompts)"
+    },
+    {
+     "name": "Generative AI for Beginners",
+     "url": "https://github.com/microsoft/generative-ai-for-beginners",
+     "by": "Microsoft",
+     "kind": "free course",
+     "stars": "120K",
+     "best": "Microsoft's free 21-lesson course on building with generative AI"
+    },
+    {
+     "name": "Awesome LLM Apps",
+     "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+     "by": "Shubham Saboo",
+     "kind": "open source",
+     "stars": "139K",
+     "best": "100+ open-source agent and RAG app examples to learn from"
+    },
+    {
+     "name": "Developer Roadmap",
+     "url": "https://github.com/nilbuild/developer-roadmap",
+     "by": "roadmap.sh",
+     "kind": "free",
+     "stars": "368K",
+     "best": "Step-by-step roadmaps for developer careers, AI included"
     }
    ]
   }
