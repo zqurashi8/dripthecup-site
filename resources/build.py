@@ -83,7 +83,8 @@ def row(it, cat):
     return f'''      <li class="r" id="{slug(it['name'])}" data-q="{e(q)}"><div class="rw">{head}<a class="go" href="{e(it["url"])}" target="_blank" rel="noopener" aria-label="Open {e(it["name"])}">↗</a></div></li>'''
 
 
-LONG = 8  # a category longer than this scrolls inside its own box
+LONG = 8  # a category longer than this shows its first LONG rows and a 'Show all' button
+           # (it used to scroll inside its own box, which trapped the page scroll on phones)
 TASKS_PATH = os.path.join(HERE, 'tasks.json')
 TASKS = json.load(open(TASKS_PATH, encoding='utf8')) if os.path.exists(TASKS_PATH) else None
 cats = D['categories']
@@ -95,18 +96,24 @@ picks = '\n'.join(f'''      <a class="pk" href="{e(it["url"])}" target="_blank" 
 sections = '\n'.join(f'''    <section class="cat" id="{c["id"]}">
       <h2><span class="ic">{c["icon"]}</span>{e(c["name"])} <span class="n">{len(c["items"])}</span></h2>
       <p class="blurb">{e(c["blurb"])}</p>
-      <ul class="rows{' long' if len(c['items']) > LONG else ''}">
+      <ul class="rows{' long clip' if len(c['items']) > LONG else ''}">
 {chr(10).join(row(it, c) for it in c["items"])}
-      </ul>{f'<p class="more-note">Showing {LONG} of {len(c["items"])}. Scroll the list for the rest.</p>' if len(c['items']) > LONG else ''}
+      </ul>{f'<button type="button" class="showall" data-n="{len(c["items"])}" aria-expanded="false">Show all {len(c["items"])} ↓</button>' if len(c['items']) > LONG else ''}
     </section>''' for c in cats)
 
 if TASKS:
-    btns = '\n'.join(f'    <button type="button" data-task="{i}" aria-pressed="false">{e(t["task"])}</button>' for i, t in enumerate(TASKS['tasks']))
+    # the first six show on phones (the rest sit behind "More tasks"), so lead with the broad ones
+    FIRST = ['Write or improve text', 'Generate images', 'Generate a video from text or a photo', 'Type faster by talking',
+             'Take meeting notes automatically', 'Have an AI agent do tasks for me']
+    tl = TASKS['tasks']
+    order = sorted(range(len(tl)), key=lambda i: (FIRST.index(tl[i]['task']) if tl[i]['task'] in FIRST else len(FIRST), i))
+    btns = '\n'.join(f'    <button type="button" data-task="{i}" aria-pressed="false">{e(tl[i]["task"])}</button>' for i in order)
     jev_block = f'''<section class="jev" aria-label="Find a tool by task">
   <h2>What do you want to do?<small>tools matched by Jev</small></h2>
-  <div class="tasks">
+  <div class="tasks clip">
 {btns}
   </div>
+  <button type="button" class="moretasks" aria-expanded="false">More tasks ({len(TASKS['tasks']) - 6}) ↓</button>
   <p class="jev-out" id="jevout" hidden></p>
   <script type="application/json" id="taskdata">{json.dumps(TASKS["tasks"])}</script>
 </section>'''
@@ -153,6 +160,7 @@ page = f'''<!DOCTYPE html>
   .hnav{{display:flex;gap:2px;flex-wrap:wrap;}}
   .hnav a{{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:7px 10px;}}
   .hnav a:hover,.hnav a[aria-current]{{background:var(--mustard);}}
+  @media (max-width:420px){{.hnav a{{padding:7px 6px;letter-spacing:.06em;font-size:11px;}} .hdr .in{{padding:12px 16px;}}}}
 
   /* compact intro: title, search, Drip small on mustard */
   .intro{{max-width:1240px;margin:0 auto;padding:30px 20px 18px;display:flex;align-items:flex-end;gap:24px;}}
@@ -189,9 +197,12 @@ page = f'''<!DOCTYPE html>
   .ic{{width:20px;text-align:center;flex:none;}}
   .pick{{display:none;}}
   @media (max-width:900px){{
+    /* phones: nothing pinned to the top, the whole screen is for the list */
+    .hdr{{position:static;}}
+    html{{scroll-padding-top:12px;}}
     .layout{{grid-template-columns:minmax(0,1fr);gap:0;}}
     .side{{display:none;}}
-    .pick{{display:block;position:sticky;top:56px;z-index:10;background:var(--paper);padding:10px 0;border-bottom:1px solid var(--line);}}
+    .pick{{display:block;background:var(--paper);padding:10px 0;border-bottom:1px solid var(--line);}}
     .pick select{{width:100%;font:14px var(--mono);padding:10px;border:2px solid var(--ink);background:var(--cup);color:var(--ink);}}
   }}
 
@@ -228,11 +239,13 @@ page = f'''<!DOCTYPE html>
     .bs{{grid-area:b;justify-content:flex-start;}} .bs:empty{{display:none;}} .go,.more{{grid-area:g;}}
     .ex{{padding-left:6px;}}
   }}
-  .rows.long{{max-height:470px;overflow-y:auto;overscroll-behavior:contain;border-bottom:1.5px solid var(--ink);}}
-  @media (max-width:640px){{.rows.long{{max-height:640px;}}}}
-  body.searching .rows.long, body.tasking .rows.long{{max-height:none;border-bottom:0;}}
-  body.searching .more-note, body.tasking .more-note{{display:none;}}
-  .more-note{{font-family:var(--mono);font-size:11px;color:var(--muted);margin:6px 0 0;}}
+  .rows.clip .r:nth-child(n+{LONG + 1}){{display:none;}}
+  body.searching .rows.clip .r:nth-child(n+{LONG + 1}), body.tasking .rows.clip .r:nth-child(n+{LONG + 1}){{display:block;}}
+  body.searching .rows.clip .r[hidden], body.tasking .rows.clip .r[hidden]{{display:none;}}
+  body.searching .showall, body.tasking .showall{{display:none;}}
+  .showall, .moretasks{{font:12px var(--mono);letter-spacing:.06em;border:1.5px solid var(--ink);background:var(--cup);color:var(--ink);padding:10px 14px;margin-top:10px;cursor:pointer;}}
+  .showall{{width:100%;}}
+  .showall:hover, .moretasks:hover{{background:var(--mustard);}}
   /* Jev task finder */
   .jev{{max-width:1240px;margin:0 auto;padding:4px 20px 20px;}}
   .jev h2{{font-family:var(--display);font-weight:900;font-size:22px;letter-spacing:-.01em;}}
@@ -241,6 +254,12 @@ page = f'''<!DOCTYPE html>
   .tasks button{{font:13px var(--body);border:1.5px solid var(--ink);background:var(--cup);padding:7px 11px;cursor:pointer;color:var(--ink);}}
   .tasks button:hover{{background:var(--hover);}}
   .tasks button[aria-pressed="true"]{{background:var(--ink);color:var(--paper);}}
+  .moretasks{{display:none;}}
+  @media (max-width:640px){{
+    .tasks.clip button:nth-child(n+7){{display:none;}}
+    .moretasks{{display:inline-block;}}
+    .tasks button{{font-size:14px;padding:9px 12px;}}
+  }}
   .jev-out{{font-family:var(--mono);font-size:12px;margin-top:12px;color:var(--muted);display:flex;flex-direction:column;gap:8px;align-items:flex-start;}}
   .jev-out .rank{{display:flex;flex-wrap:wrap;gap:6px;}}
   .jev-out .rank a{{text-decoration:none;border:1.5px solid var(--ink);background:var(--cup);color:var(--ink);padding:5px 9px;font-size:12.5px;}}
@@ -351,6 +370,18 @@ page = f'''<!DOCTYPE html>
     out.querySelector('button').onclick = () => btn.click();
 
   }}));
+  document.querySelectorAll('.showall').forEach(b => b.addEventListener('click', () => {{
+    const ul = b.previousElementSibling, open = ul.classList.toggle('clip');
+    b.setAttribute('aria-expanded', String(!open));
+    b.textContent = open ? `Show all ${{b.dataset.n}} ↓` : 'Show fewer ↑';
+    if (open) b.closest('.cat').scrollIntoView({{block: 'start'}});
+  }}));
+  const mt = document.querySelector('.moretasks');
+  if (mt) mt.addEventListener('click', () => {{
+    const tk = document.querySelector('.tasks'), open = tk.classList.toggle('clip');
+    mt.setAttribute('aria-expanded', String(!open));
+    mt.textContent = open ? `More tasks (${{tk.children.length - 6}}) ↓` : 'Fewer tasks ↑';
+  }});
   document.getElementById('jump').addEventListener('change', ev => {{ if (ev.target.value) location.hash = ev.target.value; }});
   // highlight the category you're reading in the sidebar
   const links = [...document.querySelectorAll('.side a')];

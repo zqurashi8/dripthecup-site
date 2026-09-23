@@ -30,6 +30,7 @@
   .wrap{max-width:1120px;margin:0 auto;padding-inline:20px;}
   .eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0;}
   .hdr{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);z-index:20;}
+  @media (max-width:900px){.hdr{position:static;} html{scroll-padding-top:12px;}} /* phones: header scrolls away */
   .hdr .in{max-width:1120px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
   .brand{font-family:var(--display);font-weight:900;font-size:22px;letter-spacing:-.02em;text-decoration:none;line-height:1;}
   .hnav{display:flex;gap:2px;flex-wrap:wrap;}

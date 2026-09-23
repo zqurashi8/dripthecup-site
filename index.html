@@ -60,6 +60,7 @@
   .bar b{color:var(--mustard);font-weight:400;}
   .hdr{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;
        top:env(safe-area-inset-top, 0px);z-index:20;}
+  @media (max-width:900px){.hdr{position:static;}} /* phones: header scrolls away */
   .hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-block:14px;}
   .brand{font-family:var(--display);font-weight:900;font-size:24px;letter-spacing:-.02em;
          text-decoration:none;line-height:1;}
