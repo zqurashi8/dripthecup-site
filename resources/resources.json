@@ -1,5 +1,5 @@
 {
- "updated": "Sep 23, 2026",
+ "updated": "2026-09-24",
  "categories": [
   {
    "id": "chat",
@@ -347,7 +347,57 @@
      "kind": "skill",
      "stars": "130K",
      "best": "Design know-how for professional UI on any platform",
-     "install": "/plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill\n/plugin install ui-ux-pro-max@ui-ux-pro-max-skill"
+     "install": "/plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill\n/plugin install ui-ux-pro-max@ui-ux-pro-max-skill",
+     "seen": "frontend-skills"
+    },
+    {
+     "name": "Taste",
+     "url": "https://github.com/Leonxlnx/taste-skill",
+     "by": "Leonxlnx",
+     "kind": "skill",
+     "stars": "90K",
+     "best": "Stops the AI's default look in UI: bans the usual AI palettes and layouts",
+     "install": "npx skills add https://github.com/Leonxlnx/taste-skill",
+     "seen": "frontend-skills"
+    },
+    {
+     "name": "Impeccable",
+     "url": "https://github.com/pbakaus/impeccable",
+     "by": "pbakaus",
+     "kind": "skill + CLI",
+     "stars": "71K",
+     "best": "Picks a design direction, then flags AI design tells in your page",
+     "install": "npx impeccable install",
+     "seen": "frontend-skills"
+    },
+    {
+     "name": "Open Design",
+     "url": "https://github.com/nexu-io/open-design",
+     "by": "nexu-io",
+     "kind": "desktop app + MCP",
+     "stars": "98K",
+     "best": "Ready-made design systems your coding agent can build from",
+     "seen": "frontend-skills"
+    },
+    {
+     "name": "Web Design Guidelines",
+     "url": "https://github.com/vercel-labs/agent-skills",
+     "by": "Vercel",
+     "kind": "skill",
+     "stars": "31K",
+     "best": "Reviews your UI code against Vercel's web interface guidelines",
+     "install": "npx skills add https://github.com/vercel-labs/agent-skills --skill web-design-guidelines",
+     "seen": "frontend-skills"
+    },
+    {
+     "name": "Playwright MCP",
+     "url": "https://github.com/microsoft/playwright-mcp",
+     "by": "Microsoft",
+     "kind": "MCP",
+     "stars": "38K",
+     "best": "Lets the agent open your site in a real browser and check it",
+     "install": "claude mcp add playwright npx @playwright/mcp@latest",
+     "seen": "frontend-skills"
     },
     {
      "name": "Graphify",

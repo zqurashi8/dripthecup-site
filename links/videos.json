@@ -1,6 +1,60 @@
 {
  "videos": [
   {
+   "id": "frontend-skills",
+   "title": "Same request, five websites: design skills for Claude",
+   "kind": "Short",
+   "date": "Sep 2026",
+   "length": "77s",
+   "topic": "Design",
+   "youtube": null,
+   "mp4": "videos/frontend-skills.mp4",
+   "poster": "videos/frontend-skills.jpg",
+   "summary": "Drip asks Claude for a site for his coffee club and gets a familiar look: cream background, fancy serif, brown cup. So he gives the same request to five copies of Claude, one with no skill and one per design skill: Taste, Impeccable, UI UX Pro Max and Open Design. Every page in the video is a real build of the same brief. Impeccable's checker flagged 9 AI tells on the no-skill page and 0 on its own. Playwright then opened every page in a real browser at phone and laptop sizes: no sideways scroll on any of them.",
+   "links": [
+    {
+     "name": "Taste",
+     "url": "https://github.com/Leonxlnx/taste-skill",
+     "kind": "skill",
+     "what": "npx skills add https://github.com/Leonxlnx/taste-skill"
+    },
+    {
+     "name": "Impeccable",
+     "url": "https://github.com/pbakaus/impeccable",
+     "kind": "skill + CLI",
+     "what": "npx impeccable install. Its checker: npx impeccable detect"
+    },
+    {
+     "name": "UI UX Pro Max",
+     "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+     "kind": "skill",
+     "what": "npx skills add https://github.com/nextlevelbuilder/ui-ux-pro-max-skill --skill ui-ux-pro-max"
+    },
+    {
+     "name": "Open Design",
+     "url": "https://github.com/nexu-io/open-design",
+     "kind": "design systems",
+     "what": "Ready-made design systems (we used its cafe one). The full app is a desktop install, see its README."
+    },
+    {
+     "name": "Playwright MCP",
+     "url": "https://github.com/microsoft/playwright-mcp",
+     "kind": "MCP",
+     "what": "Lets Claude open and screenshot your page in a real browser."
+    },
+    {
+     "name": "Web Design Guidelines (Vercel)",
+     "url": "https://github.com/vercel-labs/agent-skills",
+     "kind": "skill",
+     "what": "npx skills add https://github.com/vercel-labs/agent-skills --skill web-design-guidelines"
+    }
+   ],
+   "more": {
+    "label": "Browse all AI tools",
+    "url": "/resources/"
+   }
+  },
+  {
    "id": "whatsapp-number",
    "title": "Create your own WhatsApp agent for your business",
    "kind": "Carousel",

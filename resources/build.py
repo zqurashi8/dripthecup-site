@@ -9,7 +9,7 @@ from urllib.parse import urlparse
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 D = json.load(open(os.path.join(HERE, 'resources.json'), encoding='utf8'))
-SEEN = {'claude-code-repos': '4 free repos for Claude Code', 'jev-vs-chatgpt': 'Jev vs ChatGPT'}
+SEEN = {'claude-code-repos': '4 free repos for Claude Code', 'jev-vs-chatgpt': 'Jev vs ChatGPT', 'frontend-skills': 'Same request, five websites'}
 e = html.escape
 
 
