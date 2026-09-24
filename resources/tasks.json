@@ -20,23 +20,23 @@
     },
     {
      "id": "t-captions",
-     "p": 0.92
+     "p": 0.93
     },
     {
      "id": "t-runway",
-     "p": 0.84
+     "p": 0.85
     },
     {
      "id": "t-opus-clip",
-     "p": 0.81
+     "p": 0.79
     },
     {
      "id": "t-gemini-omni-flash",
-     "p": 0.66
+     "p": 0.65
     },
     {
      "id": "t-submagic",
-     "p": 0.63
+     "p": 0.61
     },
     {
      "id": "t-remotion",
@@ -57,7 +57,7 @@
     },
     {
      "id": "t-davinci-resolve",
-     "p": 0.93
+     "p": 0.92
     },
     {
      "id": "t-descript",
@@ -65,7 +65,7 @@
     },
     {
      "id": "t-captions",
-     "p": 0.77
+     "p": 0.76
     }
    ]
   },
@@ -130,15 +130,15 @@
     },
     {
      "id": "t-heygen",
-     "p": 0.91
-    },
-    {
-     "id": "t-comfyui",
-     "p": 0.85
+     "p": 0.9
     },
     {
      "id": "t-anything2explainer",
      "p": 0.84
+    },
+    {
+     "id": "t-comfyui",
+     "p": 0.83
     }
    ]
   },
@@ -159,15 +159,15 @@
     },
     {
      "id": "t-chatterbox",
-     "p": 0.92
+     "p": 0.93
     },
     {
      "id": "t-adobe-podcast",
-     "p": 0.77
+     "p": 0.78
     },
     {
      "id": "t-openai-api",
-     "p": 0.74
+     "p": 0.73
     }
    ]
   },
@@ -185,6 +185,10 @@
     {
      "id": "t-stable-audio",
      "p": 0.97
+    },
+    {
+     "id": "t-elevenlabs",
+     "p": 0.62
     }
    ]
   },
@@ -205,27 +209,27 @@
     },
     {
      "id": "t-tl-dv",
-     "p": 0.95
+     "p": 0.94
     },
     {
      "id": "t-whisper-cpp",
-     "p": 0.92
+     "p": 0.93
+    },
+    {
+     "id": "t-laxis",
+     "p": 0.82
     },
     {
      "id": "t-granola",
      "p": 0.8
     },
     {
-     "id": "t-laxis",
-     "p": 0.79
-    },
-    {
      "id": "t-fellow",
-     "p": 0.7
+     "p": 0.71
     },
     {
      "id": "t-openai-api",
-     "p": 0.63
+     "p": 0.64
     }
    ]
   },
@@ -233,7 +237,7 @@
    "task": "Type faster by talking",
    "tools": [
     {
-     "id": "t-superwhisper",
+     "id": "t-aqua-voice",
      "p": 0.98
     },
     {
@@ -241,7 +245,7 @@
      "p": 0.97
     },
     {
-     "id": "t-aqua-voice",
+     "id": "t-superwhisper",
      "p": 0.97
     },
     {
@@ -262,7 +266,7 @@
     },
     {
      "id": "t-whisper-cpp",
-     "p": 0.92
+     "p": 0.9
     }
    ]
   },
@@ -275,6 +279,10 @@
     },
     {
      "id": "t-flux-2",
+     "p": 0.99
+    },
+    {
+     "id": "t-leonardo",
      "p": 0.99
     },
     {
@@ -295,10 +303,6 @@
     },
     {
      "id": "t-krea",
-     "p": 0.98
-    },
-    {
-     "id": "t-leonardo",
      "p": 0.98
     },
     {
@@ -319,11 +323,11 @@
     },
     {
      "id": "t-openai-api",
-     "p": 0.9
+     "p": 0.89
     },
     {
      "id": "t-nano-banana-pro",
-     "p": 0.87
+     "p": 0.86
     },
     {
      "id": "t-higgsfield",
@@ -340,15 +344,15 @@
     },
     {
      "id": "t-ideogram",
-     "p": 0.92
-    },
-    {
-     "id": "t-gpt-image-2",
-     "p": 0.87
+     "p": 0.93
     },
     {
      "id": "t-recraft",
      "p": 0.87
+    },
+    {
+     "id": "t-gpt-image-2",
+     "p": 0.85
     },
     {
      "id": "t-adobe-firefly",
@@ -356,19 +360,19 @@
     },
     {
      "id": "t-ip-as-logo",
-     "p": 0.77
+     "p": 0.78
+    },
+    {
+     "id": "t-anthropic-skills",
+     "p": 0.73
     },
     {
      "id": "t-grok-imagine",
      "p": 0.72
     },
     {
-     "id": "t-anthropic-skills",
-     "p": 0.7
-    },
-    {
      "id": "t-stable-diffusion-web-ui",
-     "p": 0.7
+     "p": 0.69
     },
     {
      "id": "t-flux-2",
@@ -376,19 +380,19 @@
     },
     {
      "id": "t-krea",
-     "p": 0.68
-    },
-    {
-     "id": "t-midjourney",
-     "p": 0.65
+     "p": 0.66
     },
     {
      "id": "t-seedream-5-0",
+     "p": 0.65
+    },
+    {
+     "id": "t-midjourney",
      "p": 0.64
     },
     {
      "id": "t-figma",
-     "p": 0.64
+     "p": 0.63
     }
    ]
   },
@@ -405,11 +409,11 @@
     },
     {
      "id": "t-anthropic-skills",
-     "p": 0.89
+     "p": 0.9
     },
     {
      "id": "t-canva",
-     "p": 0.88
+     "p": 0.89
     }
    ]
   },
@@ -417,12 +421,12 @@
    "task": "Build an app or website without coding",
    "tools": [
     {
-     "id": "t-framer",
-     "p": 0.93
+     "id": "t-lovable",
+     "p": 0.92
     },
     {
-     "id": "t-lovable",
-     "p": 0.91
+     "id": "t-framer",
+     "p": 0.92
     },
     {
      "id": "t-v0",
@@ -442,6 +446,10 @@
      "p": 0.96
     },
     {
+     "id": "t-devin",
+     "p": 0.95
+    },
+    {
      "id": "t-cline",
      "p": 0.95
     },
@@ -450,7 +458,7 @@
      "p": 0.94
     },
     {
-     "id": "t-devin",
+     "id": "t-bolt",
      "p": 0.94
     },
     {
@@ -459,10 +467,6 @@
     },
     {
      "id": "t-trae",
-     "p": 0.94
-    },
-    {
-     "id": "t-bolt",
      "p": 0.93
     },
     {
@@ -474,8 +478,8 @@
      "p": 0.91
     },
     {
-     "id": "t-lovable",
-     "p": 0.88
+     "id": "t-graft",
+     "p": 0.9
     },
     {
      "id": "t-kiro",
@@ -486,32 +490,32 @@
      "p": 0.88
     },
     {
-     "id": "t-graft",
-     "p": 0.88
+     "id": "t-lovable",
+     "p": 0.86
     },
     {
      "id": "t-antigravity",
-     "p": 0.87
+     "p": 0.86
     },
     {
      "id": "t-v0",
      "p": 0.82
     },
     {
-     "id": "t-cc-switch",
-     "p": 0.81
-    },
-    {
      "id": "t-replit",
      "p": 0.8
     },
     {
+     "id": "t-cc-switch",
+     "p": 0.8
+    },
+    {
      "id": "t-typesafe-skills",
-     "p": 0.75
+     "p": 0.76
     },
     {
      "id": "t-monologue",
-     "p": 0.71
+     "p": 0.73
     }
    ]
   },
@@ -520,11 +524,11 @@
    "tools": [
     {
      "id": "t-ponytail",
-     "p": 0.92
+     "p": 0.93
     },
     {
      "id": "t-graft",
-     "p": 0.9
+     "p": 0.91
     },
     {
      "id": "t-fast-jev-compaction",
@@ -532,15 +536,15 @@
     },
     {
      "id": "t-graphify",
-     "p": 0.83
+     "p": 0.82
     },
     {
      "id": "t-deepseek",
-     "p": 0.7
+     "p": 0.71
     },
     {
      "id": "t-ollama",
-     "p": 0.63
+     "p": 0.61
     }
    ]
   },
@@ -561,7 +565,7 @@
     },
     {
      "id": "t-comet",
-     "p": 0.91
+     "p": 0.92
     },
     {
      "id": "t-manus",
@@ -576,28 +580,32 @@
      "p": 0.78
     },
     {
-     "id": "t-microsoft-copilot",
+     "id": "t-obsidian",
      "p": 0.77
+    },
+    {
+     "id": "t-microsoft-copilot",
+     "p": 0.76
     },
     {
      "id": "t-browser-use",
-     "p": 0.77
-    },
-    {
-     "id": "t-obsidian",
      "p": 0.76
     },
     {
      "id": "t-gemini",
-     "p": 0.75
-    },
-    {
-     "id": "t-chatgpt-atlas",
-     "p": 0.71
+     "p": 0.74
     },
     {
      "id": "t-notebooklm",
+     "p": 0.7
+    },
+    {
+     "id": "t-chatgpt-atlas",
      "p": 0.68
+    },
+    {
+     "id": "t-dify",
+     "p": 0.61
     }
    ]
   },
@@ -613,19 +621,19 @@
      "p": 0.97
     },
     {
-     "id": "t-claude-api",
-     "p": 0.97
-    },
-    {
      "id": "t-openai-api",
      "p": 0.97
     },
     {
-     "id": "t-simple-english",
-     "p": 0.93
+     "id": "t-claude-api",
+     "p": 0.96
     },
     {
      "id": "t-sepia",
+     "p": 0.94
+    },
+    {
+     "id": "t-simple-english",
      "p": 0.93
     },
     {
@@ -633,16 +641,16 @@
      "p": 0.92
     },
     {
-     "id": "t-chatgpt",
-     "p": 0.91
+     "id": "t-qwen",
+     "p": 0.92
     },
     {
      "id": "t-microsoft-copilot",
      "p": 0.91
     },
     {
-     "id": "t-qwen",
-     "p": 0.91
+     "id": "t-chatgpt",
+     "p": 0.9
     },
     {
      "id": "t-deepseek",
@@ -650,7 +658,7 @@
     },
     {
      "id": "t-fyxer",
-     "p": 0.87
+     "p": 0.86
     },
     {
      "id": "t-le-chat",
@@ -666,22 +674,22 @@
     },
     {
      "id": "t-notion",
-     "p": 0.81
+     "p": 0.82
     },
     {
      "id": "t-willow",
-     "p": 0.79
+     "p": 0.8
     },
     {
      "id": "t-kimi",
-     "p": 0.77
+     "p": 0.75
     },
     {
      "id": "t-open-webui",
-     "p": 0.76
+     "p": 0.75
     },
     {
-     "id": "t-chatgpt-atlas",
+     "id": "t-meta-ai",
      "p": 0.74
     }
    ]
@@ -703,7 +711,7 @@
     },
     {
      "id": "t-tl-dv",
-     "p": 0.92
+     "p": 0.9
     },
     {
      "id": "t-fellow",
@@ -711,11 +719,11 @@
     },
     {
      "id": "t-granola",
-     "p": 0.74
+     "p": 0.72
     },
     {
      "id": "t-laxis",
-     "p": 0.65
+     "p": 0.68
     }
    ]
   },
@@ -724,23 +732,19 @@
    "tools": [
     {
      "id": "t-superhuman",
-     "p": 0.94
+     "p": 0.95
     },
     {
      "id": "t-spark",
-     "p": 0.93
+     "p": 0.92
     },
     {
      "id": "t-shortwave",
      "p": 0.89
     },
     {
-     "id": "t-monologue",
-     "p": 0.64
-    },
-    {
      "id": "t-gemini",
-     "p": 0.63
+     "p": 0.66
     },
     {
      "id": "t-fyxer",
@@ -765,7 +769,7 @@
     },
     {
      "id": "t-reclaim",
-     "p": 0.89
+     "p": 0.9
     },
     {
      "id": "t-clickup",
@@ -811,7 +815,7 @@
     },
     {
      "id": "t-clay",
-     "p": 0.75
+     "p": 0.79
     }
    ]
   },
@@ -823,20 +827,20 @@
      "p": 0.98
     },
     {
-     "id": "t-quickbooks",
-     "p": 0.98
-    },
-    {
      "id": "t-ramp",
      "p": 0.97
     },
     {
+     "id": "t-quickbooks",
+     "p": 0.97
+    },
+    {
      "id": "t-brex",
-     "p": 0.91
+     "p": 0.9
     },
     {
      "id": "t-mercury",
-     "p": 0.88
+     "p": 0.86
     }
    ]
   },
@@ -849,7 +853,7 @@
     },
     {
      "id": "t-workato",
-     "p": 0.99
+     "p": 0.98
     },
     {
      "id": "t-make",
@@ -861,15 +865,11 @@
     },
     {
      "id": "t-lindy",
-     "p": 0.76
+     "p": 0.78
     },
     {
      "id": "t-skill-recorder",
-     "p": 0.72
-    },
-    {
-     "id": "t-openclaw",
-     "p": 0.63
+     "p": 0.69
     },
     {
      "id": "t-blotato",
@@ -915,7 +915,7 @@
     },
     {
      "id": "t-stable-diffusion-web-ui",
-     "p": 0.94
+     "p": 0.95
     },
     {
      "id": "t-comfyui",
@@ -927,7 +927,7 @@
     },
     {
      "id": "t-chatterbox",
-     "p": 0.84
+     "p": 0.82
     },
     {
      "id": "t-whisper-cpp",
@@ -938,12 +938,12 @@
      "p": 0.7
     },
     {
-     "id": "t-dify",
-     "p": 0.68
+     "id": "t-hugging-face",
+     "p": 0.67
     },
     {
-     "id": "t-hugging-face",
-     "p": 0.66
+     "id": "t-dify",
+     "p": 0.67
     }
    ]
   },
@@ -952,11 +952,11 @@
    "tools": [
     {
      "id": "t-claude-api",
-     "p": 0.97
+     "p": 0.98
     },
     {
      "id": "t-openai-api",
-     "p": 0.96
+     "p": 0.97
     },
     {
      "id": "t-openrouter",
@@ -964,23 +964,23 @@
     },
     {
      "id": "t-langchain",
-     "p": 0.96
+     "p": 0.95
     },
     {
      "id": "t-google-ai-studio",
-     "p": 0.94
-    },
-    {
-     "id": "t-transformers",
      "p": 0.93
     },
     {
      "id": "t-hugging-face",
+     "p": 0.93
+    },
+    {
+     "id": "t-transformers",
      "p": 0.92
     },
     {
      "id": "t-jev",
-     "p": 0.9
+     "p": 0.89
     },
     {
      "id": "t-deepseek-harness",
@@ -988,19 +988,19 @@
     },
     {
      "id": "t-dify",
-     "p": 0.85
+     "p": 0.86
+    },
+    {
+     "id": "t-ollama",
+     "p": 0.84
     },
     {
      "id": "t-langflow",
-     "p": 0.85
+     "p": 0.84
     },
     {
      "id": "t-llama-cpp",
      "p": 0.84
-    },
-    {
-     "id": "t-ollama",
-     "p": 0.82
     },
     {
      "id": "t-firecrawl",
@@ -1008,7 +1008,7 @@
     },
     {
      "id": "t-generative-ai-for-beginners",
-     "p": 0.71
+     "p": 0.72
     },
     {
      "id": "t-awesome-llm-apps",
@@ -1016,6 +1016,10 @@
     },
     {
      "id": "t-plaid",
+     "p": 0.65
+    },
+    {
+     "id": "t-kapso",
      "p": 0.62
     }
    ]
@@ -1044,10 +1048,6 @@
      "p": 0.95
     },
     {
-     "id": "t-agency-agents",
-     "p": 0.95
-    },
-    {
      "id": "t-comet",
      "p": 0.95
     },
@@ -1056,11 +1056,11 @@
      "p": 0.95
     },
     {
-     "id": "t-lindy",
-     "p": 0.93
+     "id": "t-agency-agents",
+     "p": 0.94
     },
     {
-     "id": "t-codex",
+     "id": "t-lindy",
      "p": 0.92
     },
     {
@@ -1068,11 +1068,19 @@
      "p": 0.92
     },
     {
+     "id": "t-cline",
+     "p": 0.92
+    },
+    {
+     "id": "t-dify",
+     "p": 0.92
+    },
+    {
      "id": "t-genspark",
      "p": 0.91
     },
     {
-     "id": "t-cline",
+     "id": "t-codex",
      "p": 0.91
     },
     {
@@ -1084,23 +1092,19 @@
      "p": 0.91
     },
     {
-     "id": "t-dify",
-     "p": 0.91
-    },
-    {
      "id": "t-anthropic-skills",
      "p": 0.9
     },
     {
-     "id": "t-skill-recorder",
-     "p": 0.89
-    },
-    {
      "id": "t-langflow",
+     "p": 0.9
+    },
+    {
+     "id": "t-opencode",
      "p": 0.89
     },
     {
-     "id": "t-claude-code",
+     "id": "t-warp",
      "p": 0.88
     }
    ]
@@ -1126,19 +1130,19 @@
     },
     {
      "id": "t-synthesia",
-     "p": 0.84
-    },
-    {
-     "id": "t-murf",
-     "p": 0.64
+     "p": 0.83
     },
     {
      "id": "t-skill-recorder",
+     "p": 0.66
+    },
+    {
+     "id": "t-murf",
      "p": 0.63
     },
     {
      "id": "t-adobe-podcast",
-     "p": 0.63
+     "p": 0.6
     },
     {
      "id": "t-heygen",

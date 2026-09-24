@@ -1,6 +1,85 @@
 {
  "videos": [
   {
+   "id": "whatsapp-number",
+   "title": "Your AI can have its own WhatsApp number",
+   "kind": "Carousel",
+   "date": "Sep 2026",
+   "length": "10 slides",
+   "topic": "AI agents",
+   "youtube": null,
+   "mp4": null,
+   "poster": "carousels/whatsapp-number/01.jpg",
+   "slides": [
+    "carousels/whatsapp-number/01.jpg",
+    "carousels/whatsapp-number/02.jpg",
+    "carousels/whatsapp-number/03.jpg",
+    "carousels/whatsapp-number/04.jpg",
+    "carousels/whatsapp-number/05.jpg",
+    "carousels/whatsapp-number/06.jpg",
+    "carousels/whatsapp-number/07.jpg",
+    "carousels/whatsapp-number/08.jpg",
+    "carousels/whatsapp-number/09.jpg",
+    "carousels/whatsapp-number/10.jpg"
+   ],
+   "summary": "Capp shows Drip how an AI agent can answer a business's WhatsApp through Meta's official Cloud API: messages arrive at your code as a webhook, your code asks Claude what to say, and the reply goes back through the API. Plus the fine print: the 24-hour window, opt-in before messaging anyone, Meta's rule against general-purpose AI assistants, and per-message pricing (replies inside the window are charged from October 1, 2026). Facts checked September 23, 2026.",
+   "links": [
+    {
+     "name": "WhatsApp Cloud API",
+     "url": "https://developers.facebook.com/docs/whatsapp/cloud-api",
+     "kind": "docs",
+     "what": "Meta's official API for sending and receiving WhatsApp messages from your own code."
+    },
+    {
+     "name": "Webhooks (receiving messages)",
+     "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/guides/set-up-webhooks",
+     "kind": "docs",
+     "what": "How new messages reach your code."
+    },
+    {
+     "name": "The 24-hour window",
+     "url": "https://developers.facebook.com/docs/whatsapp/cloud-api/guides/send-messages",
+     "kind": "docs",
+     "what": "Free-form replies only within 24 hours of the customer's last message; after that, approved templates."
+    },
+    {
+     "name": "WhatsApp Business policy (opt-in)",
+     "url": "https://whatsappbusiness.com/policy/",
+     "kind": "policy",
+     "what": "Get people's opt-in permission before you message them."
+    },
+    {
+     "name": "Meta terms: AI providers",
+     "url": "https://www.facebook.com/legal/Meta-Terms-for-WhatsApp-Business-Platform",
+     "kind": "policy",
+     "what": "General-purpose AI assistants are not allowed; AI that's incidental to a business is."
+    },
+    {
+     "name": "WhatsApp pricing",
+     "url": "https://developers.facebook.com/docs/whatsapp/pricing",
+     "kind": "docs",
+     "what": "Per-message pricing; non-template messages are charged from October 1, 2026."
+    },
+    {
+     "name": "Kapso",
+     "url": "https://kapso.com",
+     "kind": "tool",
+     "what": "One way in: a WhatsApp number on the official Cloud API, with a sandbox, webhooks and logs. Free plan: 2,000 messages a month plus Meta's fees (Sep 2026)."
+    },
+    {
+     "name": "Kapso agent skills",
+     "url": "https://github.com/gokapso/agent-skills",
+     "kind": "skill pack",
+     "what": "3 skills (integrate, automate, observe) that teach Claude Code Kapso's WhatsApp API. Labeled alpha.",
+     "install": "npx skills add gokapso/agent-skills"
+    }
+   ],
+   "more": {
+    "label": "More AI agent tools",
+    "url": "/resources/#agents"
+   }
+  },
+  {
    "id": "ai-tools-directory",
    "title": "191 AI tools, and Jev picks the right one for you",
    "kind": "Short",

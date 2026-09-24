@@ -51,6 +51,9 @@ NAV = '''<header class="hdr"><div class="in">
 
 
 def player(v):
+    if v.get('slides'):  # a carousel: swipe through its slides sideways (sideways, so it never traps the page scroll)
+        imgs = ''.join(f'<img src="{src}" alt="slide {i + 1} of {len(v["slides"])}" loading="lazy" width="720" height="900">' for i, src in enumerate(v['slides']))
+        return f'<div class="slides">{imgs}</div><p class="yt soon">Swipe through the slides →</p>'
     if v.get('youtube'):
         ratio = 'short' if v['kind'] == 'Short' else 'wide'
         return (f'<div class="player {ratio}"><iframe src="https://www.youtube-nocookie.com/embed/{v["youtube"]}" title="{e(v["title"])}" loading="lazy" '
@@ -140,6 +143,8 @@ page = f'''<!DOCTYPE html>
   .player{{border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);background:var(--dark);}}
   .player.short{{aspect-ratio:9/16;max-width:300px;}}
   .player.wide{{aspect-ratio:16/9;}}
+  .slides{{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;max-width:340px;}}
+  .slides img{{flex:none;width:100%;height:auto;scroll-snap-align:start;border:3px solid var(--ink);}}
   .player iframe,.player video{{width:100%;height:100%;border:0;display:block;}}
   @media (max-width:820px){{.player.short{{max-width:260px;margin-inline:auto;}}}}
   .yt{{display:inline-block;margin-top:14px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;}}
@@ -188,7 +193,7 @@ page = f'''<!DOCTYPE html>
 open(os.path.join(HERE, 'index.html'), 'w', encoding='utf8').write(page)
 
 # ---------- homepage blocks ----------
-cards = '\n'.join(f'''        <a class="vcard {'wide' if v['kind'] != 'Short' else ''}" href="/links/#{v["id"]}">
+cards = '\n'.join(f'''        <a class="vcard {'wide' if v['kind'] not in ('Short', 'Carousel') else ''}" href="/links/#{v["id"]}">
           <img src="links/{thumb(v)}" alt="" loading="lazy">
           <span class="vmeta"><span class="vtag">{e(v["kind"])} · {e(v["topic"])}</span><b>{e(v["title"])}</b><small>Summary + links →</small></span>
         </a>''' for v in V)

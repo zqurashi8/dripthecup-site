@@ -55,6 +55,8 @@
   .player{border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);background:var(--dark);}
   .player.short{aspect-ratio:9/16;max-width:300px;}
   .player.wide{aspect-ratio:16/9;}
+  .slides{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;max-width:340px;}
+  .slides img{flex:none;width:100%;height:auto;scroll-snap-align:start;border:3px solid var(--ink);}
   .player iframe,.player video{width:100%;height:100%;border:0;display:block;}
   @media (max-width:820px){.player.short{max-width:260px;margin-inline:auto;}}
   .yt{display:inline-block;margin-top:14px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;}
@@ -93,11 +95,12 @@
 
 <div class="wrap">
   <section class="intro">
-    <p class="eyebrow">Videos · 6 so far</p>
+    <p class="eyebrow">Videos · 7 so far</p>
     <h1>Every video, and everything we mentioned in it.</h1>
     <p>A short summary of each one, the video itself, and a link to every tool, repo and source. Newest first.</p>
   </section>
   <nav class="jump" aria-label="Jump to a video">
+    <a href="#whatsapp-number"><img src="carousels/whatsapp-number/01.jpg" alt="" loading="lazy"><span>Your AI can have its own WhatsApp number</span></a>
     <a href="#ai-tools-directory"><img src="videos/ai-tools-directory.jpg" alt="" loading="lazy"><span>191 AI tools, and Jev picks the right one for you</span></a>
     <a href="#claude-code-repos"><img src="videos/claude-code-repos.jpg" alt="" loading="lazy"><span>4 free GitHub repos that make Claude Code way better</span></a>
     <a href="#jev-vs-chatgpt"><img src="thumbs/jev-vs-chatgpt.jpg" alt="" loading="lazy"><span>Jev vs ChatGPT: this AI doesn&#x27;t write back</span></a>
@@ -105,6 +108,34 @@
     <a href="#what-is-mcp"><img src="thumbs/what-is-mcp.jpg" alt="" loading="lazy"><span>What is MCP? The one plug between your AI and your apps</span></a>
     <a href="#voice-to-text"><img src="thumbs/voice-to-text.jpg" alt="" loading="lazy"><span>Four words. 25,000 numbers. Zero letters. How voice to text works</span></a>
   </nav>
+  <article class="ep" id="whatsapp-number">
+    <div class="clip"><div class="slides"><img src="carousels/whatsapp-number/01.jpg" alt="slide 1 of 10" loading="lazy" width="720" height="900"><img src="carousels/whatsapp-number/02.jpg" alt="slide 2 of 10" loading="lazy" width="720" height="900"><img src="carousels/whatsapp-number/03.jpg" alt="slide 3 of 10" loading="lazy" width="720" height="900"><img src="carousels/whatsapp-number/04.jpg" alt="slide 4 of 10" loading="lazy" width="720" height="900"><img src="carousels/whatsapp-number/05.jpg" alt="slide 5 of 10" loading="lazy" width="720" height="900"><img src="carousels/whatsapp-number/06.jpg" alt="slide 6 of 10" loading="lazy" width="720" height="900"><img src="carousels/whatsapp-number/07.jpg" alt="slide 7 of 10" loading="lazy" width="720" height="900"><img src="carousels/whatsapp-number/08.jpg" alt="slide 8 of 10" loading="lazy" width="720" height="900"><img src="carousels/whatsapp-number/09.jpg" alt="slide 9 of 10" loading="lazy" width="720" height="900"><img src="carousels/whatsapp-number/10.jpg" alt="slide 10 of 10" loading="lazy" width="720" height="900"></div><p class="yt soon">Swipe through the slides →</p><p class="date">Carousel · Sep 2026 · 10 slides</p></div>
+    <div class="body">
+      <p class="eyebrow">AI agents</p>
+      <h2>Your AI can have its own WhatsApp number</h2>
+      <h3 class="sumh">What it covers</h3>
+      <p class="lede">Capp shows Drip how an AI agent can answer a business&#x27;s WhatsApp through Meta&#x27;s official Cloud API: messages arrive at your code as a webhook, your code asks Claude what to say, and the reply goes back through the API. Plus the fine print: the 24-hour window, opt-in before messaging anyone, Meta&#x27;s rule against general-purpose AI assistants, and per-message pricing (replies inside the window are charged from October 1, 2026). Facts checked September 23, 2026.</p>
+      <h3 class="sumh">Everything we mentioned</h3>
+      <ul class="tools">
+        <li class="tool"><div class="tool-top"><h3><a href="https://developers.facebook.com/docs/whatsapp/cloud-api" target="_blank" rel="noopener">WhatsApp Cloud API</a></h3><span class="kind">docs</span></div>
+          <p>Meta&#x27;s official API for sending and receiving WhatsApp messages from your own code.</p></li>
+        <li class="tool"><div class="tool-top"><h3><a href="https://developers.facebook.com/docs/whatsapp/cloud-api/guides/set-up-webhooks" target="_blank" rel="noopener">Webhooks (receiving messages)</a></h3><span class="kind">docs</span></div>
+          <p>How new messages reach your code.</p></li>
+        <li class="tool"><div class="tool-top"><h3><a href="https://developers.facebook.com/docs/whatsapp/cloud-api/guides/send-messages" target="_blank" rel="noopener">The 24-hour window</a></h3><span class="kind">docs</span></div>
+          <p>Free-form replies only within 24 hours of the customer&#x27;s last message; after that, approved templates.</p></li>
+        <li class="tool"><div class="tool-top"><h3><a href="https://whatsappbusiness.com/policy/" target="_blank" rel="noopener">WhatsApp Business policy (opt-in)</a></h3><span class="kind">policy</span></div>
+          <p>Get people&#x27;s opt-in permission before you message them.</p></li>
+        <li class="tool"><div class="tool-top"><h3><a href="https://www.facebook.com/legal/Meta-Terms-for-WhatsApp-Business-Platform" target="_blank" rel="noopener">Meta terms: AI providers</a></h3><span class="kind">policy</span></div>
+          <p>General-purpose AI assistants are not allowed; AI that&#x27;s incidental to a business is.</p></li>
+        <li class="tool"><div class="tool-top"><h3><a href="https://developers.facebook.com/docs/whatsapp/pricing" target="_blank" rel="noopener">WhatsApp pricing</a></h3><span class="kind">docs</span></div>
+          <p>Per-message pricing; non-template messages are charged from October 1, 2026.</p></li>
+        <li class="tool"><div class="tool-top"><h3><a href="https://kapso.com" target="_blank" rel="noopener">Kapso</a></h3><span class="kind">tool</span></div>
+          <p>One way in: a WhatsApp number on the official Cloud API, with a sandbox, webhooks and logs. Free plan: 2,000 messages a month plus Meta&#x27;s fees (Sep 2026).</p></li>
+        <li class="tool"><div class="tool-top"><h3><a href="https://github.com/gokapso/agent-skills" target="_blank" rel="noopener">Kapso agent skills</a></h3><span class="kind">skill pack</span></div>
+          <p>3 skills (integrate, automate, observe) that teach Claude Code Kapso&#x27;s WhatsApp API. Labeled alpha.</p><pre>npx skills add gokapso/agent-skills</pre></li>
+      </ul><a class="more" href="/resources/#agents">More AI agent tools →</a>
+    </div>
+  </article>
   <article class="ep" id="ai-tools-directory">
     <div class="clip"><div class="player short"><video src="videos/ai-tools-directory.mp4" poster="videos/ai-tools-directory.jpg" controls playsinline preload="none"></video></div><p class="yt soon">On YouTube soon</p><p class="date">Short · Sep 2026 · 56s</p></div>
     <div class="body">

@@ -1030,6 +1030,20 @@
      "by": "Plaid",
      "kind": "for developers",
      "best": "Connects your own app to people's bank accounts; its MCP server helps you debug that connection with AI"
+    },
+    {
+     "name": "WhatsApp Cloud API",
+     "url": "https://developers.facebook.com/docs/whatsapp/cloud-api",
+     "by": "Meta",
+     "best": "Meta's official way to send and receive WhatsApp messages from your own code, like an AI agent"
+    },
+    {
+     "name": "Kapso",
+     "url": "https://kapso.com",
+     "by": "Kapso",
+     "best": "Gives an AI agent its own WhatsApp number on the official Cloud API, with Claude Code skills to build it",
+     "install": "npx skills add gokapso/agent-skills",
+     "note": "The skills are labeled alpha. Meta's 24-hour window, opt-in and AI rules still apply."
     }
    ]
   },
