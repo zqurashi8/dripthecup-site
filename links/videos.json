@@ -2,10 +2,10 @@
  "videos": [
   {
    "id": "whatsapp-number",
-   "title": "Your AI can have its own WhatsApp number",
+   "title": "Create your own WhatsApp agent for your business",
    "kind": "Carousel",
    "date": "Sep 2026",
-   "length": "10 slides",
+   "length": "9 slides",
    "topic": "AI agents",
    "youtube": null,
    "mp4": null,
@@ -19,10 +19,9 @@
     "carousels/whatsapp-number/06.jpg",
     "carousels/whatsapp-number/07.jpg",
     "carousels/whatsapp-number/08.jpg",
-    "carousels/whatsapp-number/09.jpg",
-    "carousels/whatsapp-number/10.jpg"
+    "carousels/whatsapp-number/09.jpg"
    ],
-   "summary": "Capp shows Drip how an AI agent can answer a business's WhatsApp through Meta's official Cloud API: messages arrive at your code as a webhook, your code asks Claude what to say, and the reply goes back through the API. Plus the fine print: the 24-hour window, opt-in before messaging anyone, Meta's rule against general-purpose AI assistants, and per-message pricing (replies inside the window are charged from October 1, 2026). Facts checked September 23, 2026.",
+   "summary": "Give Claude a WhatsApp number and your business gets its own agent: a help desk that answers customers on WhatsApp. Kapso (which calls itself an official Meta Business Partner) gives you the number and Claude Code sets it up with Kapso's skills. Plus WhatsApp forms in the chat and the fine print: the 24-hour window, opt-in, Meta's rule against general-purpose AI assistants, and per-message pricing (replies inside the window are charged from October 1, 2026). Facts checked September 23, 2026.",
    "links": [
     {
      "name": "WhatsApp Cloud API",
