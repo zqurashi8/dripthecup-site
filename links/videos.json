@@ -1,6 +1,258 @@
 {
  "videos": [
   {
+   "id": "claude-connectors",
+   "title": "Claude connectors explained: how Claude reaches your apps",
+   "kind": "Short",
+   "date": "Sep 2026",
+   "length": "2:01",
+   "topic": "Claude",
+   "youtube": null,
+   "mp4": "videos/claude-connectors.mp4",
+   "poster": "videos/claude-connectors.jpg",
+   "summary": "Claude can't see inside your calendar or inbox until you connect them. A connector is a key to one app: you sign in yourself, Claude gets the same access your account has, and it asks before it sends, replies or forwards an email. Under the hood connectors run on MCP, an open standard Anthropic created. Every claim in the video comes from Anthropic's own help pages, linked below.",
+   "links": [
+    {
+     "name": "Use connectors",
+     "url": "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities",
+     "kind": "help article",
+     "what": "What connectors are, how to add one, and the per-tool approval settings."
+    },
+    {
+     "name": "Google Workspace connectors",
+     "url": "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors",
+     "kind": "help article",
+     "what": "Gmail, Calendar and Drive: what Claude can do, and that it asks before sending."
+    },
+    {
+     "name": "Connector directory",
+     "url": "https://claude.com/marketplace/connectors-plugins",
+     "kind": "directory",
+     "what": "Browse the apps you can connect."
+    },
+    {
+     "name": "Model Context Protocol",
+     "url": "https://modelcontextprotocol.io/docs/getting-started/intro",
+     "kind": "docs",
+     "what": "The open standard connectors are built on."
+    }
+   ],
+   "more": {
+    "label": "Claude in our AI tools directory",
+    "url": "/resources/#chat"
+   }
+  },
+  {
+   "id": "claude-cowork",
+   "title": "Claude Cowork explained: hand it the work, get it back done",
+   "kind": "Short",
+   "date": "Sep 2026",
+   "length": "2:02",
+   "topic": "Claude",
+   "youtube": null,
+   "mp4": "videos/claude-cowork.mp4",
+   "poster": "videos/claude-cowork.jpg",
+   "summary": "Chat answers you. Cowork does the work: put your meeting notes in a folder, ask for a ten-slide deck, and it comes back finished. It only touches the folders you connect and asks before permanently deleting anything. Since September 16, 2026, Cowork has been merging into regular chat on Pro and Max, so you might not see a Cowork button at all. All from Anthropic's own pages.",
+   "links": [
+    {
+     "name": "Get started with Claude Cowork",
+     "url": "https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork",
+     "kind": "help article",
+     "what": "What it can do, where it runs, and which plans have it."
+    },
+    {
+     "name": "Cowork and chat are now one Claude",
+     "url": "https://claude.com/blog/cowork-is-now-claude",
+     "kind": "announcement",
+     "what": "The September 16, 2026 merge, and Claude Docs and Slides."
+    },
+    {
+     "name": "Use Claude Cowork safely",
+     "url": "https://support.claude.com/en/articles/13364135-use-claude-cowork-safely",
+     "kind": "help article",
+     "what": "Anthropic's advice: its own folder, backups, build trust slowly."
+    },
+    {
+     "name": "Claude Cowork",
+     "url": "https://claude.com/product/cowork",
+     "kind": "product page",
+     "what": "Overview and plan pricing."
+    }
+   ],
+   "more": {
+    "label": "Claude in our AI tools directory",
+    "url": "/resources/#chat"
+   }
+  },
+  {
+   "id": "claude-desktop",
+   "title": "Claude Desktop explained: what it does that the website can't",
+   "kind": "Short",
+   "date": "Sep 2026",
+   "length": "1:40",
+   "topic": "Claude",
+   "youtube": null,
+   "mp4": "videos/claude-desktop.mp4",
+   "poster": "videos/claude-desktop.jpg",
+   "summary": "Your chats are the same on the web, your phone and the desktop app. What the app adds is reach into your computer, and you decide how far: a one-shortcut window on a Mac, your folders, a built-in browser, and on Pro and Max (in beta) your screen itself. It asks before it touches each app. Free to download on Mac and Windows, with Linux in beta.",
+   "links": [
+    {
+     "name": "Download Claude",
+     "url": "https://claude.com/download",
+     "kind": "download",
+     "what": "Mac, Windows and Linux (beta)."
+    },
+    {
+     "name": "Install Claude Desktop",
+     "url": "https://support.claude.com/en/articles/10065433-install-claude-desktop",
+     "kind": "help article",
+     "what": "Requirements and what the app can do."
+    },
+    {
+     "name": "Quick entry on Mac",
+     "url": "https://support.claude.com/en/articles/12626668-use-quick-entry-with-claude-desktop-on-mac",
+     "kind": "help article",
+     "what": "Double-tap Option to open Claude over any app."
+    },
+    {
+     "name": "Let Claude use your computer",
+     "url": "https://support.claude.com/en/articles/14128542-let-claude-use-your-computer-in-cowork",
+     "kind": "help article",
+     "what": "Computer use, and what Anthropic says about keeping it safe."
+    }
+   ],
+   "more": {
+    "label": "Claude in our AI tools directory",
+    "url": "/resources/#chat"
+   }
+  },
+  {
+   "id": "claude-code",
+   "title": "Claude Code explained: it works inside your project",
+   "kind": "Short",
+   "date": "Sep 2026",
+   "length": "2:07",
+   "topic": "Claude",
+   "youtube": null,
+   "mp4": "videos/claude-code.mp4",
+   "poster": "videos/claude-code.jpg",
+   "summary": "Not copy and paste. Claude Code reads your codebase, edits files, runs commands and tests, and checks its own work: gather context, take action, verify results. It runs in your terminal, VS Code, JetBrains, the desktop app, the browser and even Slack and GitHub. Permission modes decide what it can do without asking, and pressing Escape twice rewinds a change. Included with every paid Claude plan.",
+   "links": [
+    {
+     "name": "Claude Code overview",
+     "url": "https://code.claude.com/docs/en/overview",
+     "kind": "docs",
+     "what": "What it is and every place you can use it."
+    },
+    {
+     "name": "Permission modes",
+     "url": "https://code.claude.com/docs/en/permission-modes",
+     "kind": "docs",
+     "what": "Manual, auto and plan mode, and what each one asks first."
+    },
+    {
+     "name": "Checkpointing",
+     "url": "https://code.claude.com/docs/en/checkpointing",
+     "kind": "docs",
+     "what": "Rewinding changes with Escape twice."
+    },
+    {
+     "name": "Claude Code",
+     "url": "https://claude.com/product/claude-code",
+     "kind": "product page",
+     "what": "Overview and plans."
+    }
+   ],
+   "more": {
+    "label": "Claude Code in our AI tools directory",
+    "url": "/resources/#coding"
+   }
+  },
+  {
+   "id": "which-claude",
+   "title": "Chat vs Cowork vs Claude Code: which Claude to use",
+   "kind": "Short",
+   "date": "Sep 2026",
+   "length": "2:02",
+   "topic": "Claude",
+   "youtube": null,
+   "mp4": "videos/which-claude.mp4",
+   "poster": "videos/which-claude.jpg",
+   "summary": "It isn't six products. It's one Claude on one account, and three questions. What do you want back: an answer (chat), the finished thing (Cowork), or software (Claude Code)? Where are you: your phone, a browser, or your computer? What does it need to reach: another app (a connector), something on your computer, or a web page (Claude in Chrome)? Plus what each plan includes, and the one usage pool.",
+   "links": [
+    {
+     "name": "Plans and pricing",
+     "url": "https://claude.com/pricing",
+     "kind": "pricing",
+     "what": "What Free, Pro, Max, Team and Enterprise include."
+    },
+    {
+     "name": "Cowork and chat are now one Claude",
+     "url": "https://claude.com/blog/cowork-is-now-claude",
+     "kind": "announcement",
+     "what": "Why you may not have to pick between chat and Cowork."
+    },
+    {
+     "name": "Claude in Chrome",
+     "url": "https://claude.com/claude-in-chrome",
+     "kind": "product page",
+     "what": "Claude in your browser side panel."
+    },
+    {
+     "name": "Download Claude",
+     "url": "https://claude.com/download",
+     "kind": "download",
+     "what": "The desktop and phone apps."
+    }
+   ],
+   "more": {
+    "label": "Claude in our AI tools directory",
+    "url": "/resources/#chat"
+   }
+  },
+  {
+   "id": "voice-to-text-short",
+   "title": "How voice to text works: it hears numbers, not words",
+   "kind": "Short",
+   "date": "Sep 2026",
+   "length": "65s",
+   "topic": "Voice to text",
+   "youtube": null,
+   "mp4": "videos/voice-to-text-short.mp4",
+   "poster": "videos/voice-to-text-short.jpg",
+   "summary": "Drip asks how voice to text knows what he's saying. It doesn't get words: his one question arrives as 45,600 numbers (2.85 seconds at 16,000 a second), gets chopped into slices and stacked into a grid of how loud each note is, and a model guesses the words that most likely made it. Every number and grid in the video is measured from the video's own audio. Then the part newer AI dictation apps add: punctuation, and cutting the slip when you correct yourself.",
+   "links": [
+    {
+     "name": "The full film",
+     "url": "https://youtu.be/ULNCs0t2Obk",
+     "kind": "video",
+     "what": "How voice to text works, the 9:51 episode this short comes from."
+    },
+    {
+     "name": "Whisper paper",
+     "url": "https://arxiv.org/abs/2212.04356",
+     "kind": "paper",
+     "what": "OpenAI, 2022. Source for 680,000 hours of training audio and the 16,000-a-second, 80-band setup."
+    },
+    {
+     "name": "Whisper",
+     "url": "https://github.com/openai/whisper",
+     "kind": "repo",
+     "what": "OpenAI's open speech-recognition model."
+    },
+    {
+     "name": "Wispr Flow",
+     "url": "https://wisprflow.ai",
+     "kind": "app",
+     "what": "An AI dictation app that removes filler words and fixes mid-sentence corrections."
+    }
+   ],
+   "more": {
+    "label": "Dictation apps in our AI tools directory",
+    "url": "/resources/#dictation"
+   }
+  },
+  {
    "id": "frontend-skills",
    "title": "Same request, five websites: design skills for Claude",
    "kind": "Short",
