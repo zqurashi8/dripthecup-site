@@ -1,6 +1,72 @@
 {
  "videos": [
   {
+   "id": "opus-motion",
+   "title": "Did Claude make that in one prompt? How the Opus 5.5 animation videos are made",
+   "kind": "Short",
+   "date": "Sep 2026",
+   "length": "2:06",
+   "topic": "Claude Code",
+   "youtube": null,
+   "mp4": "videos/opus-motion.mp4",
+   "poster": "videos/opus-motion.jpg",
+   "summary": "It opens on a 9-second reel where every frame is code, then explains it. Claude takes in text and images and puts out text, so to get a video it writes a program that draws any frame on demand, a browser draws every frame, and ffmpeg stitches them together. Some viral clips really came from one prompt; the famous ones had 10,000-character briefs, API keys and hours of work, and the good setups make Claude check stills of its own frames. We make Drip & Capp the same way: this video is 3,776 frames from 919 lines of code, and took 330+ model calls, research included. Every claim is sourced below.",
+   "links": [
+    {
+     "name": "Claude models overview",
+     "url": "https://platform.claude.com/docs/en/about-claude/models/overview",
+     "kind": "docs",
+     "what": "Anthropic: text and images in, text out."
+    },
+    {
+     "name": "Prompting Claude Opus 5.5",
+     "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5",
+     "kind": "docs",
+     "what": "Why undirected designs fall back on a few default styles."
+    },
+    {
+     "name": "Thariq's post: the post vs the prompt",
+     "url": "https://x.com/trq212/status/2102870353781641416",
+     "kind": "post",
+     "what": "The Claude Code team on the \"one prompt\" framing."
+    },
+    {
+     "name": "donald's music video and prompt",
+     "url": "https://x.com/donaldjewkes/status/2102801274173587569",
+     "kind": "post",
+     "what": "5 minutes of talking, 12 hours of Claude."
+    },
+    {
+     "name": "Mable Joseph's 45-second short",
+     "url": "https://x.com/mablesjoseph/status/2103465246014746943",
+     "kind": "post",
+     "what": "163 model calls, about 6¾ hours."
+    },
+    {
+     "name": "Stephan Livera's one-line showreel",
+     "url": "https://x.com/stephanlivera/status/2103315922098470926",
+     "kind": "post",
+     "what": "The one-sentence prompt that started the trend."
+    },
+    {
+     "name": "Remotion: how rendering works",
+     "url": "https://www.remotion.dev/docs/flickering",
+     "kind": "docs",
+     "what": "Every frame drawn by a browser, the same every time."
+    },
+    {
+     "name": "The full course this video is based on",
+     "url": "https://x.com/0xMovez/status/2104216919033192746",
+     "kind": "article",
+     "what": "@0xMovez's 12-step motion studio course."
+    }
+   ],
+   "more": {
+    "label": "Claude Code in our AI tools directory",
+    "url": "/resources/#coding"
+   }
+  },
+  {
    "id": "claude-connectors",
    "title": "Claude connectors explained: how Claude reaches your apps",
    "kind": "Short",
