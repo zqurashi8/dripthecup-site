@@ -1,6 +1,112 @@
 {
  "videos": [
   {
+   "id": "ai-dont-know",
+   "title": "Why doesn't AI just say \"I don't know\"?",
+   "kind": "Short",
+   "date": "Sep 2026",
+   "length": "1:51",
+   "topic": "How AI works",
+   "youtube": null,
+   "mp4": "videos/ai-dont-know.mp4",
+   "poster": "videos/ai-dont-know.jpg",
+   "summary": "We made up an award and asked a small AI on our own computer who won: three times, three different winners. Why it guesses: it learns by predicting text, and a fact it saw once has no pattern to lean on. Then it gets graded like a multiple-choice test, and 9 of the 10 popular AI tests OpenAI's researchers checked give zero points for \"I don't know\". On OpenAI's own quiz, a model that almost never abstained got 24% right and 75% wrong; a newer one that said \"I don't know\" about half the time got 22% right and 26% wrong. Inside a Claude model, \"I can't answer\" is the default, and a familiar-feeling name can switch it off. In 2023 a lawyer asked ChatGPT if a case was real; it said yes; it wasn't. What helps: tests that take points off for wrong guesses, telling the AI \"I don't know\" is allowed, and handing it the source.",
+   "links": [
+    {
+     "name": "Why Language Models Hallucinate (2025)",
+     "url": "https://arxiv.org/abs/2509.04664",
+     "kind": "paper",
+     "what": "OpenAI researchers: guessing is rewarded; 9 of 10 benchmarks give no credit for \"I don't know\"."
+    },
+    {
+     "name": "OpenAI: Why language models hallucinate",
+     "url": "https://openai.com/index/why-language-models-hallucinate/",
+     "kind": "post",
+     "what": "The exam analogy and the SimpleQA table."
+    },
+    {
+     "name": "GPT-5 System Card",
+     "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+     "kind": "docs",
+     "what": "SimpleQA without web search, Table 8."
+    },
+    {
+     "name": "Anthropic: Tracing the thoughts of a large language model",
+     "url": "https://www.anthropic.com/research/tracing-thoughts-language-model",
+     "kind": "research",
+     "what": "The default \"can't answer\" circuit inside Claude."
+    },
+    {
+     "name": "Anthropic: Reduce hallucinations",
+     "url": "https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-hallucinations",
+     "kind": "docs",
+     "what": "Let it say \"I don't know\", give it the source."
+    },
+    {
+     "name": "Mata v. Avianca sanctions order (2023)",
+     "url": "https://www.nhd.uscourts.gov/sites/default/files/pdf/Mata-v-Avianca-sanctions-order.PDF",
+     "kind": "court",
+     "what": "The lawyer, ChatGPT and the case that didn't exist."
+    }
+   ]
+  },
+  {
+   "id": "ai-data-centers",
+   "title": "Why is AI building data centers the size of cities?",
+   "kind": "Short",
+   "date": "Sep 2026",
+   "length": "1:39",
+   "topic": "How AI works",
+   "youtube": null,
+   "mp4": "videos/ai-data-centers.mp4",
+   "poster": "videos/ai-data-centers.jpg",
+   "summary": "A zoom out from one AI chip: 72 of them fill a rack that uses as much electricity as about 100 homes; a campus in Texas is built to use as much as about a million homes; Meta has bought land in Louisiana about a quarter the size of Manhattan (drawn to scale). Is it our questions? The \"bottle of water per question\" came from a 2023 study, since updated, and covered 10 to 50 answers, mostly water at the power plant. Google says a typical Gemini text question uses about five drops at the data center. The International Energy Agency's math: even 10 billion questions a day would be under 1% of the electricity the world's data centers use, so the buildings are most likely for training, video and agents; Amazon, Google, Microsoft and Meta plan to spend over $700 billion this year. Where it lands: by 2024 Google used about a third of the water in The Dalles, Oregon, and US data centers are forecast to go from about 5% of US electricity in 2024 to maybe 12% by 2030.",
+   "links": [
+    {
+     "name": "IEA: Key Questions on Energy and AI (2026)",
+     "url": "https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary",
+     "kind": "report",
+     "what": "Chat questions under 1%; the capacity is for other work."
+    },
+    {
+     "name": "Google: environmental impact of AI at Google scale",
+     "url": "https://arxiv.org/abs/2508.15734",
+     "kind": "paper",
+     "what": "About five drops per typical Gemini text prompt, on site."
+    },
+    {
+     "name": "Making AI Less \"Thirsty\"",
+     "url": "https://arxiv.org/abs/2304.03271",
+     "kind": "paper",
+     "what": "Where the bottle came from (updated 2025)."
+    },
+    {
+     "name": "LBNL: US data center energy report",
+     "url": "https://eta.lbl.gov/publications/2024-lbnl-data-center-energy-usage-report",
+     "kind": "report",
+     "what": "US data center electricity, now and forecast."
+    },
+    {
+     "name": "Crusoe: Abilene campus, 1.2 GW",
+     "url": "https://www.crusoe.ai/resources/newsroom/crusoe-expands-ai-data-center-campus-in-abilene-to-1-2-gigawatts",
+     "kind": "post",
+     "what": "The Texas campus in the zoom."
+    },
+    {
+     "name": "NVIDIA GB200 NVL72",
+     "url": "https://www.nvidia.com/en-us/data-center/gb200-nvl72/",
+     "kind": "docs",
+     "what": "The 72-chip, liquid-cooled rack."
+    },
+    {
+     "name": "OPB: The Dalles and Google's water (Jan 2026)",
+     "url": "https://www.opb.org/article/2026/01/15/as-googles-water-demands-grow-the-dalles-aims-to-pull-more-from-mount-hood-forest/",
+     "kind": "article",
+     "what": "About a third of a town's water."
+    }
+   ]
+  },
+  {
    "id": "opus-motion",
    "title": "Did Claude make that in one prompt? How the Opus 5.5 animations are made",
    "kind": "Short",
