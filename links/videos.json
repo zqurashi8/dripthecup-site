@@ -1,6 +1,109 @@
 {
  "videos": [
   {
+   "id": "opus-motion-graphics",
+   "title": "Claude can animate now: 12 motion graphics, all code",
+   "kind": "Carousel",
+   "date": "Sep 2026",
+   "length": "14 slides",
+   "topic": "Claude Code",
+   "youtube": null,
+   "mp4": null,
+   "poster": "carousels/opus-motion/01.jpg",
+   "slides": [
+    "carousels/opus-motion/01.jpg",
+    "carousels/opus-motion/02.jpg",
+    "carousels/opus-motion/03.jpg",
+    "carousels/opus-motion/04.jpg",
+    "carousels/opus-motion/05.jpg",
+    "carousels/opus-motion/06.jpg",
+    "carousels/opus-motion/07.jpg",
+    "carousels/opus-motion/08.jpg",
+    "carousels/opus-motion/09.jpg",
+    "carousels/opus-motion/10.jpg",
+    "carousels/opus-motion/11.jpg",
+    "carousels/opus-motion/12.jpg",
+    "carousels/opus-motion/13.jpg",
+    "carousels/opus-motion/14.jpg"
+   ],
+   "summary": "12 motion graphics, each one playing on its own slide: words that slam in on the beat, 608 dots that turn into Drip, one shape that becomes a dashboard, goo that bounces, a word tunnel, a coverflow, a chat that gets stamped, a bar chart race, a shelf where books vanish, a balance scale, a data center that draws itself, and a zoom from a chip to Manhattan. Claude Opus 5.5 built all of them in code in Claude Code, and each took a few rounds of fixes. The prompts below describe each motion so you can make your own.",
+   "prompts_note": "Prompts to try. They describe each motion (every state, the springs, the loop) the way we asked Claude for them; expect a few rounds of fixes, the way we needed them.",
+   "prompts": [
+    {
+     "name": "01 Words → slam",
+     "prompt": "Make a 6-second looping motion graphic in code (HTML/SVG or Remotion, 30 fps, every frame a pure function of time). Dark background. Four words stacked: EVERY / FRAME / IS / CODE. They slam in one per beat, every 0.32 s: each word starts at 3x scale and a 12° tilt and springs to 1x with a little overshoot, with a quick orange glow on impact and a ring that pulses out from the centre. Last word orange, the rest cream. After the last word, the whole stack punches once and an orange underline sweeps in. Fade out in the last half second so it loops cleanly."
+    },
+    {
+     "name": "02 Dots → Drip",
+     "prompt": "Make a 6-second looping particle animation in SVG. About 600 dots start scattered and drifting. Give every dot a target point on the outline of a simple character (a coffee cup with two dot eyes, a small mouth and wavy steam above it). From 0.45 s each dot springs to its target with a small random delay, so the character assembles in a wave; hold it breathing slightly; at 4.5 s every dot springs back to where it started. Use one spring function (damped, closed form) for every move. Dark background, cream dots, orange steam."
+    },
+    {
+     "name": "03 Button → dashboard",
+     "prompt": "Make a 6-second looping 'one shape, never cut' animation. A single rounded rectangle changes state on springs, never swapping for a new element: a dot, then an orange 'Render ▶' button, a drawn cursor clicks it, it shrinks into a cream circle with a spinning loader ring, turns orange with a check mark drawing in, then grows into a white dashboard card with a number counting up to 12,480 and six bars growing in. Then it shrinks back to a dot and disappears. Name every state with its size, radius and colour, and animate position, size, corner radius and colour on springs."
+    },
+    {
+     "name": "04 Blobs → bounce",
+     "prompt": "Make a 6-second looping SVG animation using a gooey filter (Gaussian blur plus a color matrix alpha threshold). Seven orange blobs orbit the centre, then spring inward and melt into one ball. The ball drops and bounces three or four times with decaying height, squashing on each landing and stretching as it rises, with a soft shadow that grows as it lands. At 4.5 s it splits back into the seven orbiting blobs. Light paper background, a small caption: SQUASH · STRETCH · SPRINGS."
+    },
+    {
+     "name": "05 Words → tunnel",
+     "prompt": "Make a 6-second seamless loop: a z-tunnel. Streaks of light fly outward from the centre (speeds chosen so the loop is seamless), cream with every fifth one orange. Every 1.5 s a word flies from far away straight at the camera, scaling up exponentially and fading as it passes: SPRINGS, SEEK(t), BEATS, CODE. (last one orange). Dark background."
+    },
+    {
+     "name": "06 Cards → coverflow",
+     "prompt": "Make a 6-second looping coverflow of 7 portrait cards (use your own screenshots or frames). The centre card faces the camera; the others rotate away in 3D (rotateY about 44°) and shrink as they move out. Every 6/7 s the row springs one card to the left, wrapping around so the loop is seamless. Light paper background, soft shadows, a small caption under it."
+    },
+    {
+     "name": "07 Chat → stamp",
+     "prompt": "Make a 6-second looping chat animation. A user's orange bubble types out 'Is this book real?' next to a small avatar. Three typing dots pulse on the left, then a grey reply types out 'Yes! It's a bestseller.' A red rubber stamp slams down on top, reading IT ISN'T., starting at 2.5x scale and springing to 1x, while the whole card shakes briefly. Fade out and loop. Dark background, label it MADE-UP EXAMPLE."
+    },
+    {
+     "name": "08 Bars → race",
+     "prompt": "Make a 6-second looping bar chart race with four racers (a round avatar or initial, a name, a bar and a number). Each racer's value moves between keyframes on springs, and the bars re-order smoothly by value (use a soft rank so they slide past each other instead of jumping). The leader gets a small '▲ 1ST' tag. At the end all bars shrink to zero and the loop restarts. Dark background, bars in four warm colours, label it ILLUSTRATION."
+    },
+    {
+     "name": "09 Shelf → vanish",
+     "prompt": "Make a 6-second looping animation of a bookshelf. Fifteen book spines in warm colours drop onto the shelf one after another with a springy landing; a headline reads 15 BOOKS. Then ten of them vanish one by one, each tilting, lifting and breaking into a few flying specks, while the headline counts up 1 OF 15 GONE ... 10 OF 15 GONE in red. At the end the rest drop off the shelf and it loops."
+    },
+    {
+     "name": "10 Scale → tilt",
+     "prompt": "Make a 6-second looping balance scale. A beam on a post with a pan hanging from each end (the pans stay level while the beam tilts). A character stands in each pan. Four small weights drop in one at a time, alternating sides; after each landing the beam springs to its new angle with an underdamped wobble. After the fourth weight it settles level and LEVEL. pops in. Then the weights lift away and it loops. Dark background, cream scale, orange pivot."
+    },
+    {
+     "name": "11 Blueprint → live",
+     "prompt": "Make a 6-second looping 'blueprint comes alive' animation of a building in plan view on a faint grid. The outline draws itself with a stroke-dashoffset sweep. Then, in stages with a label popping in for each: racks light up in a diagonal wave and flicker (COMPUTE), dashed cable trays start flowing over each row (NETWORK), two power lines pulse into a substation box and battery cells glow (POWER), rooftop fans spin and a cool pipe and a hot pipe start flowing through the rows (COOLING). Fade out and loop. Label it ILLUSTRATION."
+    },
+    {
+     "name": "12 Chip → city",
+     "prompt": "Make a 6-second 'powers of ten' zoom in one continuous camera, with the world drawn in real metres. Start on one chip, then pull out to the rack it sits in (drawn as its 72 chips), the hall of racks, the building, the campus, and finally a city outline drawn to its real land area with the campus inside it. Animate the camera as a view width in metres, eased in log space on springs, and only draw each layer while it's big enough on screen to read. A label names each level. At the end, rewind fast back to the chip so it loops."
+    }
+   ],
+   "links": [
+    {
+     "name": "Claude Code",
+     "url": "https://www.anthropic.com/claude-code",
+     "kind": "tool",
+     "what": "Where Claude built all 12, as code."
+    },
+    {
+     "name": "Remotion",
+     "url": "https://www.remotion.dev/",
+     "kind": "tool",
+     "what": "Turns the code into video, one frame at a time."
+    },
+    {
+     "name": "Our video on how these get made",
+     "url": "https://dripthecup.com/links/#opus-motion",
+     "kind": "video",
+     "what": "Why every frame is a program, and why it takes more than one prompt."
+    }
+   ],
+   "more": {
+    "label": "Claude Code in our AI tools directory",
+    "url": "/resources/#coding"
+   }
+  },
+  {
    "id": "ai-dont-know",
    "title": "Why doesn't AI just say \"I don't know\"?",
    "kind": "Short",

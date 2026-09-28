@@ -71,6 +71,13 @@ def link(l):
           <p>{e(l["what"])}{src}</p>{inst}</li>'''
 
 
+def prompts(v):  # a carousel of motion graphics: the prompt to try for each one
+    if not v.get('prompts'):
+        return ''
+    items = ''.join(f'<li class="tool"><div class="tool-top"><h3>{e(p["name"])}</h3><span class="kind">prompt</span></div><pre class="wrap">{e(p["prompt"])}</pre></li>' for p in v['prompts'])
+    return f'<h3 class="sumh">The prompt for each one</h3><p class="lede">{e(v.get("prompts_note", ""))}</p><ul class="tools">{items}</ul>'
+
+
 sections = '\n'.join(f'''  <article class="ep" id="{v["id"]}">
     <div class="clip">{player(v)}<p class="date">{e(v["kind"])} · {e(v["date"])} · {e(v["length"])}</p></div>
     <div class="body">
@@ -81,7 +88,7 @@ sections = '\n'.join(f'''  <article class="ep" id="{v["id"]}">
       <h3 class="sumh">Everything we mentioned</h3>
       <ul class="tools">
 {chr(10).join(link(l) for l in v["links"])}
-      </ul>{f'<a class="more" href="{e(v["more"]["url"])}">{e(v["more"]["label"])} →</a>' if v.get("more") else ''}
+      </ul>{prompts(v)}{f'<a class="more" href="{e(v["more"]["url"])}">{e(v["more"]["label"])} →</a>' if v.get("more") else ''}
     </div>
   </article>''' for v in V)
 jump = '\n'.join(f'    <a href="#{v["id"]}"><img src="{thumb(v)}" alt="" loading="lazy"><span>{e(v["title"])}</span></a>' for v in V)
@@ -163,6 +170,7 @@ page = f'''<!DOCTYPE html>
   .stars{{font-family:var(--mono);font-size:12.5px;margin-left:auto;}}
   .tool p{{margin:6px 0 0;font-size:15px;}}
   .tool pre{{margin:10px 0 0;background:var(--dark);color:#EDE6D8;padding:10px 12px;overflow-x:auto;font:12.5px/1.5 var(--mono);white-space:pre;}}
+  .tool pre.wrap{{white-space:pre-wrap;word-break:break-word;}}
   .more{{display:inline-block;margin-top:16px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;border-bottom:1.5px solid var(--ink);text-decoration:none;}}
   .more:hover{{background:var(--mustard);}}
   .foot{{background:var(--dark);color:#CFC4B0;padding:28px 20px;font-family:var(--mono);font-size:12px;text-align:center;}}
