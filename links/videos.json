@@ -5,12 +5,12 @@
    "title": "Did Claude make that in one prompt? How the Opus 5.5 animation videos are made",
    "kind": "Short",
    "date": "Sep 2026",
-   "length": "2:06",
+   "length": "2:14",
    "topic": "Claude Code",
    "youtube": null,
    "mp4": "videos/opus-motion.mp4",
    "poster": "videos/opus-motion.jpg",
-   "summary": "It opens on a 9-second reel where every frame is code, then explains it. Claude takes in text and images and puts out text, so to get a video it writes a program that draws any frame on demand, a browser draws every frame, and ffmpeg stitches them together. Some viral clips really came from one prompt; the famous ones had 10,000-character briefs, API keys and hours of work, and the good setups make Claude check stills of its own frames. We make Drip & Capp the same way: this video is 3,776 frames from 919 lines of code, and took 330+ model calls, research included. Every claim is sourced below.",
+   "summary": "It opens on a 9-second reel where every frame is code, then explains it. Claude takes in text and images and puts out text, so to get a video it writes a program that draws any frame on demand, a browser draws every frame, and ffmpeg stitches them together. Some viral clips really came from one prompt; the famous ones had 10,000-character briefs, API keys and hours of work, and the good setups make Claude check stills of its own frames. We make Drip & Capp the same way: this whole video took about two hours of Claude's working time and 359 model calls, research included, and one full build took about half an hour. Every claim is sourced below.",
    "links": [
     {
      "name": "Claude models overview",
