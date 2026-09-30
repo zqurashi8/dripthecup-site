@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Learn AI with Zain · Drip the Cup</title>
+<meta name="description" content="Every company is racing to plug AI into its systems. Zain, the engineer behind Drip the Cup, teaches the actual job: connecting AI to real tools, safely. Free videos, a nine-level path, and a small founding cohort.">
+<link rel="canonical" href="https://dripthecup.com/learn/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dripthecup.com/learn/">
+<meta property="og:title" content="Learn AI with Zain · Drip the Cup">
+<meta property="og:description" content="The engineer behind Drip teaches the actual job: connecting AI to real tools, safely. Free path on YouTube, nine levels, founding cohort of 30.">
+<meta property="og:image" content="https://dripthecup.com/learn/og-learn.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Learn AI with Zain · Drip the Cup">
+<meta name="twitter:description" content="The engineer behind Drip teaches the actual job: connecting AI to real tools, safely.">
+<meta name="twitter:image" content="https://dripthecup.com/learn/og-learn.jpg">
+<meta name="theme-color" content="#100D09">
+<link rel="icon" href="../assets/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Press+Start+2P&display=swap">
+<style>
+  :root{
+    --mustard:#E3AC2A; --paper:#F6EFE0; --cup:#F5F1E8; --tile:#EDE6D8;
+    --ink:#1A1A1A; --muted:#6B6155; --red:#D63F2A;
+    --dark:#100D09; --dim:#CFC4B0; --line:#D9CFBC; --line-dark:#33291F; --dark2:#1B1611;
+    --display:'Fraunces', Georgia, 'Times New Roman', serif;
+    --body:Georgia, 'Times New Roman', serif;
+    --mono:ui-monospace, 'Cascadia Mono', 'Courier New', monospace;
+    --pixel:'Press Start 2P', ui-monospace, monospace;
+  }
+  /* Same world as the rest of the site: paper, ink, mustard, with the dark stage
+     the homepage already uses for its "book" band. The game feel comes from the
+     HUD chrome (pixel labels, level badges, an XP bar), not from a new palette. */
+  *{box-sizing:border-box;}
+  html{scroll-padding-top:70px;scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);
+       font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  img{max-width:100%;}
+  :focus-visible{outline:3px solid var(--red);outline-offset:2px;}
+  h1,h2,h3{text-wrap:balance;margin:0;}
+  .wrap{max-width:1160px;margin:0 auto;padding-inline:20px;}
+  .eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0;}
+  .hud{font-family:var(--pixel);font-size:10px;letter-spacing:.04em;line-height:1.8;text-transform:uppercase;}
+  .btn{font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;
+       padding:15px 22px;border:1.5px solid var(--ink);text-decoration:none;display:inline-block;
+       background:transparent;color:var(--ink);cursor:pointer;line-height:1;}
+  .btn-primary{background:var(--ink);color:var(--paper);}
+  .btn-primary:hover{background:var(--mustard);color:var(--ink);border-color:var(--mustard);}
+  .btn-outline:hover{background:var(--ink);color:var(--paper);}
+  .btn-mustard{background:var(--mustard);border-color:var(--mustard);color:var(--ink);}
+  .btn-mustard:hover{background:var(--paper);border-color:var(--paper);}
+  .btn-ghost{border-color:var(--dim);color:var(--paper);}
+  .btn-ghost:hover{background:var(--paper);color:var(--ink);border-color:var(--paper);}
+
+  /* ---------- bar + header (site chrome) ---------- */
+  .bar{background:var(--dark);color:var(--dim);font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;
+       text-transform:uppercase;text-align:center;padding:9px 20px;line-height:1.6;}
+  .bar b{color:var(--mustard);font-weight:400;}
+  .hdr{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);z-index:20;}
+  @media (max-width:900px){.hdr{position:static;} html{scroll-padding-top:12px;}}
+  @media (hover:hover) and (pointer:fine){
+    html{cursor:url(../assets/cursor-drip.png) 3 5, auto;cursor:-webkit-image-set(url(../assets/cursor-drip.png) 1x, url(../assets/cursor-drip@2x.png) 2x) 3 5, auto;}
+    a, button, summary, label{cursor:url(../assets/cursor-drip-tap.png) 7 4, pointer;cursor:-webkit-image-set(url(../assets/cursor-drip-tap.png) 1x, url(../assets/cursor-drip-tap@2x.png) 2x) 7 4, pointer;}
+    input, textarea{cursor:text;}
+  }
+  .hdr .in{max-width:1160px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+  .brand{font-family:var(--display);font-weight:900;font-size:22px;letter-spacing:-.02em;text-decoration:none;line-height:1;}
+  .hnav{display:flex;gap:2px;flex-wrap:wrap;}
+  .hnav a{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:7px 10px;}
+  .hnav a:hover,.hnav a[aria-current]{background:var(--mustard);}
+  @media (max-width:640px){.hnav a{padding:7px 7px;font-size:10.5px;}}
+  @media (max-width:400px){.hnav a{padding:6px 5px;font-size:10px;letter-spacing:.08em;}}
+
+  /* ---------- hero: the dark stage ---------- */
+  .hero{background:var(--dark);color:var(--dim);border-bottom:1px solid var(--line-dark);overflow:hidden;}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding-block:56px 48px;}
+  .hero .hud{color:var(--mustard);}
+  .hero h1{font-family:var(--display);font-weight:900;font-size:clamp(36px,4.6vw,62px);line-height:1.0;letter-spacing:-.025em;
+           color:var(--paper);margin:18px 0 0;}
+  .hero h1 em{font-style:italic;font-weight:600;color:var(--mustard);}
+  .hero p.sub{max-width:50ch;margin:22px 0 0;font-size:17px;}
+  .hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px;}
+  .hero .fine{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--dim);margin:18px 0 0;opacity:.8;}
+  .stage{position:relative;background:var(--mustard);border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);
+         min-height:520px;display:flex;align-items:flex-end;justify-content:center;padding:54px 20px 0;
+         background-image:linear-gradient(rgba(26,26,26,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(26,26,26,.09) 1px,transparent 1px);
+         background-size:32px 32px;}
+  .stage .fig{display:block;height:min(470px,62vw);width:auto;position:relative;z-index:2;}
+  .stage .buddy{position:absolute;bottom:0;z-index:1;height:auto;}
+  .stage .drip{left:18px;width:78px;}
+  .stage .capp{right:18px;width:92px;}
+  .chip{position:absolute;top:12px;left:12px;background:var(--ink);color:var(--paper);padding:8px 10px;z-index:3;}
+  .chip.r{left:auto;right:12px;background:var(--paper);color:var(--ink);}
+  .bubble{position:absolute;left:96px;bottom:118px;z-index:3;background:var(--paper);border:2.5px solid var(--ink);border-radius:16px;
+          padding:8px 12px 9px;box-shadow:4px 4px 0 var(--ink);font-family:var(--display);font-weight:900;font-size:17px;line-height:1;white-space:nowrap;}
+  .bubble::before,.bubble::after{content:'';position:absolute;left:14px;border-style:solid;border-color:transparent;}
+  .bubble::before{bottom:-14px;border-width:14px 9px 0 9px;border-top-color:var(--ink);}
+  .bubble::after{bottom:-9px;margin-left:2px;border-width:10px 7px 0 7px;border-top-color:var(--paper);}
+  .xp{margin-top:18px;}
+  .xp .row{display:flex;justify-content:space-between;color:var(--dim);}
+  .xp .track{height:14px;border:2px solid var(--dim);margin-top:8px;padding:2px;}
+  .xp .fill{height:100%;width:11%;background:var(--mustard);}
+  .start{display:inline-block;margin-top:14px;color:var(--paper);text-decoration:none;}
+  .start:hover{color:var(--mustard);}
+  .start .cur{display:inline-block;animation:blink 1s steps(2,start) infinite;}
+  @keyframes blink{to{visibility:hidden;}}
+  @media (max-width:900px){
+    .hero .wrap{grid-template-columns:1fr;gap:28px;padding-block:32px 40px;}
+    .stage{order:-1;min-height:0;padding-top:48px;}
+    .stage .fig{height:min(360px,74vw);}
+    .stage .drip{width:58px;left:10px;} .stage .capp{width:68px;right:10px;}
+    .bubble{left:70px;bottom:92px;font-size:15px;}
+  }
+  @media (prefers-reduced-motion:reduce){.start .cur{animation:none;} html{scroll-behavior:auto;}}
+
+  /* ---------- sections ---------- */
+  .sec{padding-block:72px;border-bottom:1px solid var(--line);}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:28px;}
+  .sec-head h2{font-family:var(--display);font-weight:600;font-size:clamp(28px,3.6vw,42px);line-height:1.05;letter-spacing:-.01em;}
+  .sec-head .eyebrow{margin-bottom:8px;}
+  .lede{max-width:60ch;color:var(--muted);margin:-8px 0 28px;font-size:17px;}
+  .dark{background:var(--dark);color:var(--dim);border-color:var(--line-dark);}
+  .dark .eyebrow{color:var(--mustard);}
+  .dark .sec-head h2{color:var(--paper);}
+  .dark .lede{color:var(--dim);}
+  .mustard{background:var(--mustard);border-color:var(--mustard);}
+  .mustard .eyebrow{color:var(--ink);}
+
+  /* ---------- player select ---------- */
+  .select{display:grid;grid-template-columns:1fr 1.2fr;gap:36px;align-items:stretch;}
+  @media (max-width:860px){.select{grid-template-columns:1fr;}}
+  .preview{background:var(--mustard);border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);position:relative;
+           display:flex;align-items:flex-end;justify-content:center;min-height:440px;padding:56px 20px 0;
+           background-image:linear-gradient(rgba(26,26,26,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(26,26,26,.09) 1px,transparent 1px);background-size:32px 32px;}
+  .preview img{height:min(400px,70vw);width:auto;display:block;}
+  .preview .chip{background:var(--paper);color:var(--ink);}
+  .tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  @media (max-width:480px){.tiles{grid-template-columns:1fr 1fr;gap:8px;}}
+  .tile{border:2px solid var(--ink);background:var(--cup);padding:14px 14px 12px;text-align:left;font:inherit;color:inherit;
+        display:flex;flex-direction:column;align-items:center;gap:8px;}
+  .tile img{height:150px;width:auto;}
+  .tile .hud{font-size:9px;}
+  .tile b{font-family:var(--display);font-weight:600;font-size:17px;}
+  .tile span{font-size:13px;color:var(--muted);text-align:center;line-height:1.4;}
+  .tile:hover{background:var(--mustard);}
+  .tile[aria-pressed="true"]{background:var(--ink);color:var(--paper);}
+  .tile[aria-pressed="true"] span{color:var(--dim);}
+  .select-note{grid-column:1/-1;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--muted);margin:0;line-height:1.7;}
+
+  /* ---------- proof ---------- */
+  .proof{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+  @media (max-width:860px){.proof{grid-template-columns:1fr;gap:26px;}}
+  .proof h2{font-family:var(--display);font-weight:600;font-size:clamp(28px,3.4vw,40px);line-height:1.08;margin:10px 0 18px;}
+  .proof p{margin:0 0 16px;max-width:52ch;}
+  .proof .desk{background:var(--mustard);border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);padding:36px 24px 0;display:flex;align-items:flex-end;justify-content:center;
+               background-image:linear-gradient(rgba(26,26,26,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(26,26,26,.09) 1px,transparent 1px);background-size:32px 32px;}
+  .proof .desk img{width:100%;max-width:520px;height:auto;display:block;}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:28px;}
+  @media (max-width:860px){.stats{grid-template-columns:repeat(2,1fr);}}
+  .stat{border:2px solid var(--ink);background:var(--cup);padding:14px 14px 12px;}
+  .stat b{display:block;font-family:var(--display);font-weight:900;font-size:30px;line-height:1;letter-spacing:-.02em;}
+  .stat span{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:8px;line-height:1.5;}
+
+  /* ---------- the path ---------- */
+  .pathbar{position:sticky;top:0;z-index:5;background:var(--dark);padding:12px 0 14px;margin-bottom:24px;border-bottom:1px solid var(--line-dark);}
+  .pathbar .row{display:flex;justify-content:space-between;color:var(--dim);}
+  .pathbar .track{height:14px;border:2px solid var(--dim);margin-top:8px;padding:2px;}
+  .pathbar .fill{height:100%;width:0;background:var(--mustard);transition:width .5s steps(6);}
+  @media (prefers-reduced-motion:reduce){.pathbar .fill{transition:none;}}
+  .levels{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media (max-width:820px){.levels{grid-template-columns:1fr;}}
+  .lv{border:2px solid var(--line-dark);background:var(--dark2);padding:20px 20px 18px;display:grid;grid-template-columns:auto 1fr;gap:6px 18px;align-items:start;}
+  .lv.seen{border-color:var(--mustard);}
+  .lv .num{font-family:var(--pixel);font-size:22px;color:var(--mustard);line-height:1;padding-top:4px;grid-row:span 3;}
+  .lv .num small{display:block;font-size:8px;color:var(--dim);margin-bottom:8px;}
+  .lv h3{font-family:var(--display);font-weight:600;font-size:22px;color:var(--paper);line-height:1.15;}
+  .lv .tag{justify-self:start;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--dim);padding:3px 8px;color:var(--dim);}
+  .lv .tag.lab{background:var(--mustard);border-color:var(--mustard);color:var(--ink);}
+  .lv p{margin:0;font-size:15px;line-height:1.55;}
+  .lv p b{color:var(--paper);font-weight:400;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:2px;}
+  .lv .two{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  @media (max-width:520px){.lv .two{grid-template-columns:1fr;}}
+  .legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:22px;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:var(--dim);}
+  .legend .tag{border:1px solid var(--dim);padding:3px 8px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;margin-right:8px;}
+  .legend .tag.lab{background:var(--mustard);border-color:var(--mustard);color:var(--ink);}
+
+  /* ---------- first build + forms ---------- */
+  .quest{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;}
+  @media (max-width:860px){.quest{grid-template-columns:1fr;gap:26px;}}
+  .quest h2{font-family:var(--display);font-weight:900;font-size:clamp(32px,4.4vw,56px);line-height:1.0;letter-spacing:-.02em;margin:12px 0 0;}
+  .quest p{max-width:48ch;margin:18px 0 0;font-size:17px;}
+  .quest .figs{display:flex;align-items:flex-end;justify-content:center;gap:0;}
+  .quest .figs img.z{height:min(420px,70vw);width:auto;}
+  .quest .figs img.d{height:min(190px,32vw);width:auto;margin-left:-30px;position:relative;z-index:2;}
+  .form{background:var(--paper);border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);padding:24px;margin-top:28px;max-width:560px;}
+  .form label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 6px;}
+  .form input,.form textarea{width:100%;font:16px/1.4 var(--body);color:var(--ink);background:var(--cup);border:1.5px solid var(--ink);
+       border-radius:0;padding:12px;margin-bottom:14px;appearance:none;-webkit-appearance:none;}
+  .form textarea{min-height:64px;resize:vertical;}
+  .form .btn{width:100%;padding:16px 18px;}
+  .form .btn[disabled]{opacity:.55;cursor:default;}
+  .form .fine{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;line-height:1.8;color:var(--muted);margin:14px 0 0;}
+  .form .err{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;color:var(--red);margin:0 0 12px;line-height:1.5;}
+  .form .err[hidden]{display:none;}
+  .form .done{display:flex;gap:14px;align-items:flex-start;}
+  .form .done[hidden]{display:none;}
+  .form .done img{width:64px;height:auto;flex:none;}
+  .form .done h3{font-family:var(--display);font-weight:600;font-size:24px;line-height:1.1;margin:0 0 6px;}
+  .form .done p{margin:0;font-size:15px;}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;}
+
+  /* ---------- free path ---------- */
+  .free{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  @media (max-width:900px){.free{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.free{grid-template-columns:1fr;}}
+  .fcard{border:2px solid var(--ink);background:var(--cup);padding:20px 20px 18px;text-decoration:none;display:flex;flex-direction:column;gap:8px;min-height:190px;}
+  .fcard:hover{background:var(--mustard);}
+  .fcard .hud{font-size:9px;color:var(--muted);}
+  .fcard b{font-family:var(--display);font-weight:600;font-size:22px;line-height:1.15;}
+  .fcard span{font-size:14.5px;color:var(--muted);line-height:1.5;flex:1;}
+  .fcard i{font-style:normal;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;}
+  .fcard:hover span{color:var(--ink);}
+
+  /* ---------- the lab ---------- */
+  .lab{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  @media (max-width:820px){.lab{grid-template-columns:1fr;}}
+  .lcard{border:2px solid var(--line-dark);background:var(--dark2);padding:22px 20px 20px;}
+  .lcard .hud{color:var(--mustard);}
+  .lcard h3{font-family:var(--display);font-weight:600;font-size:23px;color:var(--paper);margin:8px 0 12px;line-height:1.15;}
+  .lcard ul{margin:0;padding-left:18px;font-size:15px;line-height:1.6;}
+  .lcard li{margin:4px 0;}
+  .founding{margin-top:18px;border:3px solid var(--mustard);padding:26px 24px;display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;background:var(--dark2);}
+  @media (max-width:820px){.founding{grid-template-columns:1fr;}}
+  .founding h3{font-family:var(--display);font-weight:900;font-size:clamp(28px,3.6vw,44px);color:var(--paper);line-height:1.02;letter-spacing:-.02em;}
+  .founding .price{font-family:var(--display);font-weight:900;font-size:clamp(40px,5vw,64px);color:var(--mustard);line-height:1;letter-spacing:-.03em;margin:12px 0 4px;}
+  .founding .price small{font-family:var(--mono);font-size:13px;letter-spacing:.08em;color:var(--dim);font-weight:400;display:block;margin-top:8px;}
+  .founding p{margin:12px 0 0;max-width:52ch;font-size:15.5px;}
+  .founding .side{display:flex;flex-direction:column;gap:12px;}
+  .founding .seats{display:grid;grid-template-columns:repeat(10,1fr);gap:4px;}
+  .founding .seats i{display:block;aspect-ratio:1;border:1.5px solid var(--mustard);}
+  .founding .seats i.on{background:var(--mustard);}
+  .founding .seats-label{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);}
+  .founding .btn{text-align:center;}
+
+  /* ---------- faq ---------- */
+  .faq details{border-top:1px solid var(--line);padding:16px 0;}
+  .faq details:last-child{border-bottom:1px solid var(--line);}
+  .faq summary{font-family:var(--display);font-weight:600;font-size:20px;line-height:1.25;list-style:none;display:flex;justify-content:space-between;gap:16px;}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::after{content:'+';font-family:var(--mono);font-size:22px;flex:none;color:var(--muted);}
+  .faq details[open] summary::after{content:'-';}
+  .faq p{margin:12px 0 0;max-width:68ch;color:var(--muted);}
+
+  /* ---------- bottom ---------- */
+  .bottom .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;padding-block:56px 0;}
+  @media (max-width:860px){.bottom .wrap{grid-template-columns:1fr;}}
+  .bottom h2{font-family:var(--display);font-weight:900;font-size:clamp(32px,4.4vw,56px);line-height:1.0;letter-spacing:-.02em;margin:12px 0 0;}
+  .bottom .copy{padding-bottom:56px;}
+  .bottom .form{margin-top:24px;}
+  .bottom .figs{display:flex;align-items:flex-end;justify-content:center;}
+  .bottom .figs img.z{height:min(440px,72vw);width:auto;display:block;}
+  .bottom .figs .drip{position:relative;margin-left:-24px;}
+  .bottom .figs .drip img{height:min(200px,34vw);width:auto;display:block;}
+  .bottom{overflow:hidden;}
+  .bottom .say{position:absolute;right:0;top:-58px;background:var(--paper);border:2.5px solid var(--ink);border-radius:16px;padding:8px 12px 9px;
+               box-shadow:4px 4px 0 var(--ink);font-family:var(--display);font-weight:900;font-size:16px;line-height:1;white-space:nowrap;}
+  .bottom .say::before{content:'';position:absolute;right:18px;bottom:-12px;border-style:solid;border-color:transparent;border-width:12px 8px 0 8px;border-top-color:var(--ink);}
+  .bottom .say::after{content:'';position:absolute;right:20px;bottom:-8px;border-style:solid;border-color:transparent;border-width:9px 6px 0 6px;border-top-color:var(--paper);}
+  @media (max-width:520px){.bottom .say{white-space:normal;width:max-content;max-width:190px;font-size:14px;line-height:1.15;top:-62px;}}
+
+  /* ---------- footer ---------- */
+  .foot{background:var(--dark);color:var(--dim);}
+  .foot .wrap{padding-block:56px 40px;}
+  .cols{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:28px;}
+  @media (max-width:900px){.cols{grid-template-columns:1fr 1fr;}}
+  @media (max-width:480px){.cols{grid-template-columns:1fr;}}
+  .foot .brand{color:var(--paper);font-size:26px;}
+  .foot .about{margin:12px 0 18px;font-size:14.5px;max-width:32ch;}
+  .col h4{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mustard);margin:0 0 12px;font-weight:400;}
+  .col a{display:block;color:var(--dim);text-decoration:none;font-size:14.5px;margin:6px 0;}
+  .col a:hover{color:var(--paper);}
+  .legal{border-top:1px solid var(--line-dark);margin-top:40px;padding-top:18px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;line-height:1.9;
+         display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+</style>
+</head>
+<body>
+
+<div class="bar">Learn AI with Zain &nbsp;·&nbsp; <b>Founding cohort: 30 seats</b> &nbsp;·&nbsp; Opens soon</div>
+
+<header class="hdr"><div class="in">
+  <a class="brand" href="/">DRIP.</a>
+  <nav class="hnav" aria-label="Main">
+    <a href="/">Home</a>
+    <a href="/learn/" aria-current="page">Learn</a>
+    <a href="/links/">Videos</a>
+    <a href="/resources/">AI tools</a>
+    <a href="/#shop">Shop</a>
+  </nav>
+</div></header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="hud">Player 1 &nbsp;·&nbsp; Zain Qurashi &nbsp;·&nbsp; integrations &amp; automations engineer</p>
+      <h1>Every company is racing to plug AI into its systems. <em>Learn to be the one who does it.</em></h1>
+      <p class="sub">I'm Zain. Ten years in tech, all of it making systems talk to each other. I built Drip, the coffee cup that explains AI, with an AI pipeline I run every week. This is where I teach the actual job: hooking AI up to real tools, safely, so it can take actions and not just talk.</p>
+      <div class="ctas">
+        <a class="btn btn-mustard" href="#first">Start free: the first build</a>
+        <a class="btn btn-ghost" href="#path">See the nine levels</a>
+      </div>
+      <p class="fine">Level 0 assumes nothing. Working engineers, skip to level 5.</p>
+    </div>
+    <div>
+      <div class="stage">
+        <span class="chip hud" id="heroChip">LV 1 &nbsp;Curious</span>
+        <span class="chip r hud" id="heroStyle">3D</span>
+        <span class="bubble">hey, i know him.</span>
+        <img class="buddy drip" src="../assets/drip2-idle.png" width="422" height="720" alt="Drip, a tall paper cup of coffee with dot eyes.">
+        <img class="fig" id="heroFig" src="art/zain-3d.webp" alt="A 3D character version of Zain: curly black hair, full beard, green shirt, arms crossed.">
+        <img class="buddy capp" src="../assets/capp3-point.png" width="500" height="720" alt="Capp, a latte cup with round glasses, pointing up.">
+      </div>
+      <div class="xp">
+        <div class="row hud"><span>XP</span><span>LV 1 &rarr; LV 9 Legend</span></div>
+        <div class="track"><div class="fill"></div></div>
+        <a class="start hud" href="#first"><span class="cur">&#9654;</span> press start</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLAYER SELECT ============ -->
+<section class="sec" id="select">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Choose your character</p>
+        <h2>Same guy, four builds.</h2>
+      </div>
+    </div>
+    <p class="lede">All four were made with the pipeline the Lab teaches: one reference photo in, a reusable character out, then any style you want. Tap one. It changes the hero above too.</p>
+    <div class="select">
+      <div class="preview">
+        <span class="chip hud" id="selChip">3D &nbsp;·&nbsp; selected</span>
+        <img id="selFig" src="art/zain-3d.webp" alt="Zain as a 3D character, arms crossed.">
+      </div>
+      <div class="tiles" role="group" aria-label="Pick a version of Zain">
+        <button class="tile" type="button" data-src="art/zain-3d.webp" data-name="3D" data-alt="Zain as a 3D character, arms crossed." aria-pressed="true">
+          <img src="art/zain-3d.webp" alt="" loading="lazy">
+          <span class="hud">01 &nbsp;·&nbsp; 3D</span><b>The animated one</b><span>Feature-film shading, arms crossed.</span>
+        </button>
+        <button class="tile" type="button" data-src="art/zain-pixel.webp" data-name="PIXEL" data-alt="Zain as a 16-bit pixel sprite, giving a thumbs up." aria-pressed="false">
+          <img src="art/zain-pixel.webp" alt="" loading="lazy">
+          <span class="hud">02 &nbsp;·&nbsp; Pixel</span><b>The 16-bit one</b><span>Thumbs up, no anti-aliasing.</span>
+        </button>
+        <button class="tile" type="button" data-src="art/zain-brick.webp" data-name="BRICK" data-alt="Zain as a plastic brick minifigure holding a tiny laptop." aria-pressed="false">
+          <img src="art/zain-brick.webp" alt="" loading="lazy">
+          <span class="hud">03 &nbsp;·&nbsp; Brick</span><b>The minifig one</b><span>Tiny laptop included.</span>
+        </button>
+        <button class="tile" type="button" data-src="art/zain-vinyl.webp" data-name="VINYL" data-alt="Zain as a big-head vinyl collectible figure holding a coffee." aria-pressed="false">
+          <img src="art/zain-vinyl.webp" alt="" loading="lazy">
+          <span class="hud">04 &nbsp;·&nbsp; Vinyl</span><b>The big-head one</b><span>Coffee in hand, obviously.</span>
+        </button>
+        <p class="select-note">Level 8 is the case study on exactly this: a character you can regenerate on demand, and the legal side of owning one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROOF ============ -->
+<section class="sec" id="zain">
+  <div class="wrap">
+    <div class="proof">
+      <div class="desk"><img src="art/zain-desk.webp" alt="Zain as a 3D character at a desk, typing on a laptop next to a coffee cup, grinning at the camera."></div>
+      <div>
+        <p class="eyebrow">Who's teaching</p>
+        <h2>AI didn't take my job. It got me promoted.</h2>
+        <p>I'm an integrations and automations engineer. For ten years my job has been making systems talk to each other. In the last two, every request that lands on my desk starts the same way: can we put AI on this?</p>
+        <p>So on my own time I built proofs of concept, demoed them, and they became the projects I was told to focus on. That's the whole method, and it's what I teach: be curious, build small things that work, show results.</p>
+        <p>Drip is the same method pointed at a hobby. A cup of coffee that explains AI, scripted, voiced, animated and posted by a pipeline I built. You'll see all of it.</p>
+        <div class="stats">
+          <div class="stat"><b>10 yrs</b><span>in tech, all of it integrations and automations</span></div>
+          <div class="stat"><b>Daily</b><span>still doing the job, not just teaching it</span></div>
+          <div class="stat"><b>160+</b><span>AI tools tested and ranked on this site</span></div>
+          <div class="stat"><b>1 cup</b><span>Drip: script, voice, animation, posting, automated</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE PATH ============ -->
+<section class="sec dark" id="path">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">The path</p>
+        <h2>Nine levels. One build at a time.</h2>
+      </div>
+    </div>
+    <p class="lede">This is the roadmap. Every level is a real thing you build, not a quiz. The videos are free on YouTube; the builds, projects and people are in the Lab.</p>
+    <div class="pathbar">
+      <div class="row hud"><span>Progress</span><span id="pathCount">LV 0 / 9</span></div>
+      <div class="track"><div class="fill" id="pathFill"></div></div>
+    </div>
+    <div class="levels" id="levels">
+      <article class="lv"><div class="num"><small>Level</small>0</div><h3>Start here</h3><span class="tag">Free</span>
+        <div class="two"><p><b>You learn</b>Set up your computer: VS Code, Python, a terminal, keys kept in a .env file.</p><p><b>You build</b>Your first automation, finished within 24 hours of joining.</p></div></article>
+      <article class="lv"><div class="num"><small>Level</small>1</div><h3>Curious: how AI talks to software</h3><span class="tag">Free</span>
+        <div class="two"><p><b>You learn</b>What an API is. A prompt is not a question. Keeping keys safe. Tokens, cost, and model vs effort.</p><p><b>You build</b>A script that calls a model, with every line explained.</p></div></article>
+      <article class="lv"><div class="num"><small>Level</small>2</div><h3>Connected: AI that decides</h3><span class="tag">Free</span>
+        <div class="two"><p><b>You learn</b>Decision models: yes or no, pick one, score it. Why context changes the answer.</p><p><b>You build</b>A tool finder that ranks 200 AI tools for a typed task. It runs this site's directory.</p></div></article>
+      <article class="lv"><div class="num"><small>Level</small>3</div><h3>Builder: connect AI to your apps</h3><span class="tag lab">Lab build</span>
+        <div class="two"><p><b>You learn</b>APIs, MCP and connectors. What an AI can and can't touch once it's plugged in.</p><p><b>You build</b>Your first MCP server, so an AI can use an app of your choosing.</p></div></article>
+      <article class="lv"><div class="num"><small>Level</small>4</div><h3>Integrator: voice and media pipelines</h3><span class="tag">Free</span>
+        <div class="two"><p><b>You learn</b>How voice to text works, end to end, and where it breaks.</p><p><b>You build</b>Your own transcription service, running on your machine.</p></div></article>
+      <article class="lv"><div class="num"><small>Level</small>5</div><h3>Automator: automations and agents</h3><span class="tag lab">Lab build</span>
+        <div class="two"><p><b>You learn</b>Which AI product for which job. Skills, plugins, schedules and webhooks. When an agent is worth it.</p><p><b>You build</b>An automation that sorts and answers a queue while you sleep.</p></div></article>
+      <article class="lv"><div class="num"><small>Level</small>6</div><h3>Shipper: AI at the enterprise level</h3><span class="tag lab">Lab</span>
+        <div class="two"><p><b>You learn</b>Why a chat license is not an AI strategy. Identity and access, logging every agent action, cost limits, reliability, governance.</p><p><b>You build</b>A locked-down integration: the AI sees only what that user is allowed to see.</p></div></article>
+      <article class="lv"><div class="num"><small>Level</small>7</div><h3>Engineer: portfolio projects</h3><span class="tag lab">Lab</span>
+        <div class="two"><p><b>You learn</b>How to scope, ship and write up a project someone else can run.</p><p><b>You build</b>Four projects to show an employer or a client: tool finder, comment triage, transcription service, an MCP server for your own app.</p></div></article>
+      <article class="lv"><div class="num"><small>Level</small>8</div><h3>Architect: automating a character</h3><span class="tag lab">Case study</span>
+        <div class="two"><p><b>You learn</b>The Drip pipeline: script, voice, animation, posting. And the legal side: AI disclosure rules, who owns an AI character, voice and likeness rights, sponsorship rules.</p><p><b>You build</b>The same pipeline, productionized the way a company would run it.</p></div></article>
+      <article class="lv"><div class="num"><small>Level</small>9</div><h3>Legend: the career</h3><span class="tag lab">Lab</span>
+        <div class="two"><p><b>You learn</b>What the job is day to day. Portfolio, resume, interviews. Your first freelance automation client.</p><p><b>You build</b>A plan for your next twelve months, reviewed live.</p></div></article>
+    </div>
+    <div class="legend"><span><span class="tag">Free</span>on YouTube and this site</span><span><span class="tag lab">Lab</span>inside the founding cohort</span></div>
+  </div>
+</section>
+
+<!-- ============ FIRST BUILD (email) ============ -->
+<section class="sec mustard" id="first">
+  <div class="wrap">
+    <div class="quest">
+      <div>
+        <p class="eyebrow">Quest 1 &nbsp;·&nbsp; free</p>
+        <h2>Ship one automation in the next 24 hours.</h2>
+        <p>Level 0 is a small build you can finish in an evening, with the code and a written walkthrough. It's the first thing every member gets, and it's the first thing I'll send you when the Lab opens.</p>
+        <form class="form" data-source="learn-hero" novalidate>
+          <p class="err" hidden></p>
+          <label>Your email</label>
+          <input type="email" name="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required>
+          <label>One thing you'd love to automate <span style="text-transform:none;letter-spacing:0">(optional)</span></label>
+          <textarea name="interest" maxlength="200" placeholder="e.g. sorting my inbox, posting to three platforms at once, a bot that answers our FAQ"></textarea>
+          <input class="hp" name="cream" tabindex="-1" autocomplete="off" aria-hidden="true" placeholder="leave this empty">
+          <button class="btn btn-primary" type="submit">Put me on the founding list</button>
+          <p class="fine">one email when the lab opens, with the first build and this roadmap. that's it. no drip campaign, and you can leave from that first email.</p>
+          <div class="done" hidden>
+            <img src="../assets/drip2-smile.png" alt="" width="64" height="109">
+            <div><h3>you're on the list.</h3><p>I'll email you once, when the doors open. Until then, the free path below is enough to start tonight.</p></div>
+          </div>
+        </form>
+      </div>
+      <div class="figs">
+        <img class="z" src="art/zain-point.webp" alt="Zain as a 3D character, holding a laptop and pointing at you.">
+        <img class="d" src="../assets/drip2-curious-a.png" alt="Drip, looking curious.">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FREE PATH ============ -->
+<section class="sec" id="free">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Start free, tonight</p>
+        <h2>The free path is real.</h2>
+      </div>
+    </div>
+    <p class="lede">Everything I've published is free and it stays free. Levels 0 to 6 are built from these videos; the Lab adds the builds, the projects and the people.</p>
+    <div class="free">
+      <a class="fcard" href="https://www.youtube.com/@dripthecup" target="_blank" rel="noopener">
+        <span class="hud">Drip on YouTube</span><b>The explainers</b>
+        <span>How MCPs work. How voice to text works. What is Jev. One idea per episode, no pipeline tours.</span><i>youtube.com/@dripthecup &rarr;</i>
+      </a>
+      <a class="fcard" href="/links/">
+        <span class="hud">This site</span><b>Every video, every link</b>
+        <span>A summary of each video and every tool, repo and source we mentioned, with install commands.</span><i>/links &rarr;</i>
+      </a>
+      <a class="fcard" href="/resources/">
+        <span class="hud">This site</span><b>The AI tools directory</b>
+        <span>160+ tools in 24 categories, ranked for the task you type in. Level 2 shows you how it's built.</span><i>/resources &rarr;</i>
+      </a>
+      <a class="fcard" href="https://www.tiktok.com/@zain_qurashi" target="_blank" rel="noopener">
+        <span class="hud">Zain on camera</span><b>The career videos</b>
+        <span>How AI saved my job. Getting a job in tech in 2026. Why every company needs an AI integrations engineer.</span><i>tiktok.com/@zain_qurashi &rarr;</i>
+      </a>
+      <a class="fcard" href="https://www.instagram.com/dripthecup/" target="_blank" rel="noopener">
+        <span class="hud">Drip on Instagram</span><b>Drip's Notes</b>
+        <span>The notes Drip took while Capp explained: APIs, prompts, secret keys, effort, MCP. Swipe posts.</span><i>instagram.com/dripthecup &rarr;</i>
+      </a>
+      <a class="fcard" href="https://x.com/Zain_qurashi_" target="_blank" rel="noopener">
+        <span class="hud">Zain on X</span><b>What I'm building this week</b>
+        <span>Short posts on what worked, what broke, and which tool just came out.</span><i>x.com/Zain_qurashi_ &rarr;</i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE LAB ============ -->
+<section class="sec dark" id="lab">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Level up with people</p>
+        <h2>Drip the Cup Lab, taught by Zain.</h2>
+      </div>
+    </div>
+    <p class="lede">One paid group on Skool. No free tier, on purpose: a small room of people who are actually building beats a big room of people who are watching.</p>
+    <div class="lab">
+      <div class="lcard"><span class="hud">Classroom</span><h3>The nine levels, unlocked over time</h3>
+        <ul><li>Your first build within 24 hours of joining</li><li>Then fundamentals, enterprise tools, projects, and the Drip case study</li><li>Every lesson: video, walkthrough, code, a thing to try, a place to post it</li></ul></div>
+      <div class="lcard"><span class="hud">Live</span><h3>Two calls a week, one guest a month</h3>
+        <ul><li>A weekly build-along: we ship something together</li><li>A weekly Q&amp;A: bring the error, we read it out loud</li><li>A monthly guest engineer who does this for a living somewhere else</li></ul></div>
+      <div class="lcard"><span class="hud">Feed</span><h3>Start here, Build help, Portfolio reviews, Wins, Tool news</h3>
+        <ul><li>Post the build, get it reviewed</li><li>I'm seeding the founding cohort with working engineers so questions get real answers</li><li>Levels and points: the more you help, the more unlocks</li></ul></div>
+    </div>
+    <div class="founding">
+      <div>
+        <p class="eyebrow">Founding rate</p>
+        <h3>Thirty seats. The price you join at is the price you keep.</h3>
+        <div class="price">$49<small>a month, or $490 a year. Locked for founding members for as long as they stay.</small></div>
+        <p>The rate goes up as the curriculum fills in. Founding members are the ones I build the first ninety days with, so I'd rather have thirty people who show up than three hundred who don't.</p>
+      </div>
+      <div class="side">
+        <span class="seats-label">Founding seats</span>
+        <div class="seats" aria-hidden="true">
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
+        <a class="btn btn-mustard skool-link" href="#first">Reserve a founding seat</a>
+        <span class="seats-label skool-note">Opens on Skool. The founding list gets the link first.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec faq" id="faq">
+  <div class="wrap">
+    <div class="sec-head"><div><p class="eyebrow">Before you ask</p><h2>Straight answers.</h2></div></div>
+    <details><summary>Do I need to know how to code?</summary><p>Level 0 assumes nothing. By level 1 you'll be running small Python scripts, with every line explained in plain English. If you already code, skip ahead: the enterprise level and the portfolio projects are where you'll spend your time.</p></details>
+    <details><summary>What's free and what's paid?</summary><p>Every video is free on YouTube and summarized on this site, with every link. The Lab adds the builds, the four portfolio projects, the enterprise level, the case study, two live calls a week, and the people. Nothing free gets taken away.</p></details>
+    <details><summary>Is this a course on making Drip videos?</summary><p>No. Drip is one level inside the Lab, taught as a case study: how a one-person AI pipeline scripts, voices, animates and posts a character, what the law says about disclosure, ownership, voices and sponsorships, and how a company would run the same thing. The rest of the Lab is enterprise AI and automation.</p></details>
+    <details><summary>Will this get me a job?</summary><p>I can't promise that and I won't. I can show you what the job actually is, what I built to get ahead in mine, and how to put together a portfolio that proves you can do it. What you do with that is yours.</p></details>
+    <details><summary>Is any of this from your employer?</summary><p>No. Everything here is built on my own time, with my own tools, on public data and my own projects. Nothing from work is in it and nothing from work ever will be.</p></details>
+    <details><summary>When does the Lab open?</summary><p>When the founding thirty are in. Put your email in above and you'll hear first, once, with the first build attached.</p></details>
+    <details><summary>Why Skool?</summary><p>One place for the classroom, the feed and the calendar, with levels built in. You'll get a link when it opens; there's nothing to install.</p></details>
+  </div>
+</section>
+
+<!-- ============ BOTTOM ============ -->
+<section class="mustard bottom" id="join">
+  <div class="wrap">
+    <div class="copy">
+      <p class="eyebrow">Last call, no rush</p>
+      <h2>Start at level 0. I'll be there.</h2>
+      <form class="form" data-source="learn-bottom" novalidate>
+        <p class="err" hidden></p>
+        <label>Your email</label>
+        <input type="email" name="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required>
+        <input class="hp" name="cream" tabindex="-1" autocomplete="off" aria-hidden="true" placeholder="leave this empty">
+        <button class="btn btn-primary" type="submit">Put me on the founding list</button>
+        <p class="fine">one email when the lab opens. leave from that email if it's not for you.</p>
+        <div class="done" hidden>
+          <img src="../assets/drip2-smile.png" alt="" width="64" height="109">
+          <div><h3>you're on the list.</h3><p>One email, when the doors open.</p></div>
+        </div>
+      </form>
+    </div>
+    <div class="figs">
+      <img class="z" src="art/zain-coffee.webp" alt="Zain as a 3D character, holding a coffee, one hand in his pocket.">
+      <div class="drip"><span class="say">i'll be there too. mostly listening.</span><img src="../assets/drip2-smile.png" width="422" height="720" alt="Drip, smiling."></div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <span class="brand">drip the cup</span>
+        <p class="about">a cup of coffee who takes his time. with capp, who explains, and zain, who built them both.</p>
+      </div>
+      <div class="col"><h4>Learn</h4>
+        <a href="#path">The nine levels</a><a href="#first">The first build</a><a href="#lab">The Lab</a><a href="#faq">Questions</a>
+      </div>
+      <div class="col"><h4>Free</h4>
+        <a href="https://www.youtube.com/@dripthecup" target="_blank" rel="noopener">Drip on YouTube</a>
+        <a href="/links/">Videos + links</a><a href="/resources/">AI tools directory</a>
+        <a href="https://www.tiktok.com/@zain_qurashi" target="_blank" rel="noopener">Zain on TikTok</a>
+      </div>
+      <div class="col"><h4>Company</h4>
+        <a href="/#about">About Drip</a><a href="/#book">Book Drip</a><a href="/#shop">Shop</a>
+        <a href="mailto:hello@dripthecup.com">Contact</a>
+      </div>
+    </div>
+    <div class="legal">
+      <span>&copy; 2026 Drip the Cup &middot; Drip, Capp and Matcha are characters of Drip the Cup</span>
+      <span>dripthecup.com/learn &middot; built on my own time</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ---- Skool: paste the group URL here when it exists and every "reserve" button
+  // becomes a real join link. Until then they scroll to the founding list.
+  var SKOOL_URL = '';
+  if (SKOOL_URL) {
+    document.querySelectorAll('.skool-link').forEach(function (a) {
+      a.href = SKOOL_URL; a.target = '_blank'; a.rel = 'noopener'; a.textContent = 'Join the founding cohort';
+    });
+    document.querySelectorAll('.skool-note').forEach(function (n) { n.textContent = 'Opens in Skool. Founding rate, locked.'; });
+  }
+
+  // ---- Player select: one figure, four builds. Changes the hero too.
+  var tiles = document.querySelectorAll('.tile');
+  var selFig = document.getElementById('selFig'), selChip = document.getElementById('selChip');
+  var heroFig = document.getElementById('heroFig'), heroStyle = document.getElementById('heroStyle');
+  tiles.forEach(function (t) {
+    t.addEventListener('click', function () {
+      tiles.forEach(function (q) { q.setAttribute('aria-pressed', q === t ? 'true' : 'false'); });
+      var src = t.getAttribute('data-src'), name = t.getAttribute('data-name'), alt = t.getAttribute('data-alt');
+      selFig.src = src; selFig.alt = alt; selChip.innerHTML = name + ' &nbsp;·&nbsp; selected';
+      heroFig.src = src; heroFig.alt = alt; heroStyle.textContent = name;
+    });
+  });
+
+  // ---- The path: the XP bar fills as levels scroll into view (steps, no easing).
+  var lvs = document.querySelectorAll('.lv'), fill = document.getElementById('pathFill'), count = document.getElementById('pathCount');
+  var seen = 0;
+  function paint() {
+    var n = document.querySelectorAll('.lv.seen').length;
+    if (n === seen) return; seen = n;
+    fill.style.width = Math.round(n / lvs.length * 100) + '%';
+    count.textContent = 'LV ' + Math.max(0, n - 1) + ' / 9';
+  }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('seen'); paint(); } });
+    }, { threshold: 0.4 });
+    lvs.forEach(function (l) { io.observe(l); });
+  } else { lvs.forEach(function (l) { l.classList.add('seen'); }); paint(); }
+
+  // ---- The founding list. POST /api/subscribe, same desk as the shop's pre-orders.
+  document.querySelectorAll('form.form').forEach(function (f) {
+    var err = f.querySelector('.err'), btn = f.querySelector('button[type=submit]'), done = f.querySelector('.done');
+    f.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      err.hidden = true;
+      var email = (f.elements.email.value || '').trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err.textContent = "that email doesn't look right"; err.hidden = false; return; }
+      btn.disabled = true; btn.textContent = 'one sec';
+      var body = { email: email, source: f.getAttribute('data-source'), cream: f.elements.cream.value || '' };
+      if (f.elements.interest) body.interest = f.elements.interest.value || '';
+      fetch('/api/subscribe', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) })
+        .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+        .then(function (x) {
+          if (!x.ok || !x.j.ok) throw new Error(x.j.error || 'something went wrong');
+          Array.prototype.forEach.call(f.children, function (c) { if (c !== done) c.hidden = true; });
+          done.hidden = false;
+        })
+        .catch(function (e) {
+          err.textContent = e.message === 'Failed to fetch' ? 'no connection. try again in a minute.' : e.message;
+          err.hidden = false; btn.disabled = false; btn.textContent = 'Put me on the founding list';
+        });
+    });
+  });
+</script>
+</body>
+</html>

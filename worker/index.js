@@ -96,10 +96,57 @@ async function reserve(request, env) {
   return json({ ok: true });
 }
 
+/**
+ * The /learn list. One row per address: someone asked to hear when the Lab opens
+ * (or wants the first build by email). Signing up twice just refreshes the row.
+ * "source" is which form on the site (learn-hero, learn-bottom, ...), "interest"
+ * is the one thing they said they want to build, both optional and short.
+ */
+const SOURCES = new Set(['learn-hero', 'learn-founding', 'learn-bottom', 'learn']);
+
+async function subscribe(request, env) {
+  if (request.method !== 'POST') return json({ error: 'post only' }, 405);
+
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return json({ error: 'bad request' }, 400);
+  }
+  if (body.cream) return json({ ok: true }); // honeypot, same trick as reserve()
+
+  const email = String(body.email || '').trim().toLowerCase();
+  if (email.length > 254 || !EMAIL.test(email)) {
+    return json({ error: "that email doesn't look right" }, 400);
+  }
+  const source = SOURCES.has(body.source) ? body.source : 'learn';
+  const interest = String(body.interest || '').replace(/\s+/g, ' ').trim().slice(0, 200);
+
+  const who = await caller(request);
+  const recent = await env.DB
+    .prepare("select count(*) as n from throttle where who = ?1 and ts > datetime('now', '-1 hour')")
+    .bind(who)
+    .first();
+  if (recent && recent.n >= 40) return json({ error: 'too many for one hour' }, 429);
+
+  await env.DB.batch([
+    env.DB.prepare("delete from throttle where ts < datetime('now', '-1 day')"),
+    env.DB.prepare("insert into throttle (who, ts) values (?1, datetime('now'))").bind(who),
+    env.DB.prepare(
+      'insert into subscribers (created, email, source, interest, country) values (?1, ?2, ?3, ?4, ?5) ' +
+      'on conflict (email) do update set source = excluded.source, ' +
+      "interest = case when excluded.interest = '' then subscribers.interest else excluded.interest end"
+    ).bind(new Date().toISOString(), email, source, interest, (request.cf && request.cf.country) || ''),
+  ]);
+
+  return json({ ok: true });
+}
+
 export default {
   async fetch(request, env) {
     const { pathname } = new URL(request.url);
     if (pathname === '/api/reserve') return reserve(request, env);
+    if (pathname === '/api/subscribe') return subscribe(request, env);
     if (pathname.startsWith('/api/')) return json({ error: 'not found' }, 404);
     return env.ASSETS.fetch(request);
   },

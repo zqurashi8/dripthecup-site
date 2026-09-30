@@ -304,16 +304,28 @@
   .vmeta b{font-family:var(--display);font-weight:600;font-size:17px;line-height:1.2;}
   .vmeta small{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;}
   @media (max-width:640px){.vbtn{display:none;} .vcard{width:170px;} .vcard.wide{width:300px;} .vcard img{height:250px;}}
+
+  /* ---------- learn band (links to /learn) ---------- */
+  .learn-band{background:var(--dark);color:var(--dim);border-bottom:1px solid var(--line-dark);}
+  .learn-band .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:end;padding-block:56px 0;}
+  @media (max-width:760px){.learn-band .wrap{grid-template-columns:1fr;gap:20px;}}
+  .learn-band .lb-copy{padding-bottom:56px;}
+  .learn-band .eyebrow{color:var(--mustard);}
+  .learn-band h2{font-family:var(--display);font-weight:600;font-size:clamp(28px,3.6vw,40px);color:var(--paper);line-height:1.05;margin-top:8px;}
+  .learn-band p{margin:14px 0 24px;max-width:50ch;}
+  .learn-band .lb-stage{display:flex;justify-content:center;align-items:flex-end;}
+  .learn-band .lb-stage img{height:min(340px,60vw);width:auto;display:block;}
 </style>
 </head>
 <body>
 
-<div class="bar">New episodes on YouTube &nbsp;·&nbsp; <b>Pre-orders open</b> &nbsp;·&nbsp; Nothing is almost gone</div>
+<div class="bar">New episodes on YouTube &nbsp;·&nbsp; <b>Learn AI with Zain: founding cohort</b> &nbsp;·&nbsp; Pre-orders open</div>
 
 <header class="hdr" id="top">
   <div class="wrap">
     <a class="brand" href="#top">DRIP.</a>
     <nav class="nav" aria-label="Main">
+      <a href="/learn/">Learn</a>
       <a href="/resources/">AI tools</a>
       <a href="/links/">Videos</a>
       <a href="#shop">Shop</a>
@@ -498,6 +510,18 @@
 </section>
 <!-- VIDEOS:END -->
 
+<section class="learn-band" id="learn">
+  <div class="wrap">
+    <div class="lb-copy">
+      <p class="eyebrow">New</p>
+      <h2>Learn AI with the guy who built Drip.</h2>
+      <p>Zain is an integrations and automations engineer. He teaches the actual job: connecting AI to real tools, safely. Free videos, a nine-level path, and a founding cohort of thirty.</p>
+      <a class="btn btn-mustard" href="/learn/">See the nine levels</a>
+    </div>
+    <div class="lb-stage"><img src="learn/art/zain-3d.webp" alt="Zain as a 3D character, arms crossed." loading="lazy"></div>
+  </div>
+</section>
+
 <section class="sec" id="shop">
   <div class="wrap">
     <div class="sec-head">
@@ -638,6 +662,7 @@
       </div>
       <div class="col"><h4>Company</h4>
         <a href="#about">About</a><a href="#book">Book Drip</a>
+        <a href="/learn/">Learn AI with Zain</a>
         <a href="/resources/">AI tools directory</a><a href="/links/">Videos + links</a>
         <a href="mailto:hello@dripthecup.com">Contact</a>
       </div>

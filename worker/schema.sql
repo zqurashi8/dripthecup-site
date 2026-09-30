@@ -26,3 +26,17 @@ create table if not exists throttle (
   ts  text not null
 );
 create index if not exists throttle_who on throttle (who, ts);
+
+-- The /learn email list (added 2026-09-30). One row per address. A row means one
+-- person asked to hear when the Lab opens. No double opt-in yet: the first mail
+-- they get should say how to leave. "source" is the form on the site that sent
+-- it; "interest" is the one thing they said they want to build (optional).
+create table if not exists subscribers (
+  id       integer primary key autoincrement,
+  created  text not null,          -- ISO 8601, UTC
+  email    text not null,
+  source   text not null default '',
+  interest text not null default '',
+  country  text not null default ''
+);
+create unique index if not exists subscribers_email on subscribers (email);
