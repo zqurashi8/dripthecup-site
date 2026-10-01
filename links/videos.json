@@ -1,6 +1,42 @@
 {
  "videos": [
   {
+   "id": "mcp-explained",
+   "title": "MCP Explained in 5 Minutes (How Your AI Talks to Your Apps)",
+   "kind": "Episode",
+   "date": "Oct 2026",
+   "length": "4:55",
+   "topic": "MCP",
+   "youtube": "5H_K8_dgAqQ",
+   "summary": "Your AI says \"I don't have access to your email.\" Drip and Capp explain MCP with a restaurant called Gmail: the waiter is the MCP server, the menu is the tools, the kitchen window is the API, and the key you allow at sign-in is what lets it all happen. Then the code that's really sent, why the standard exists, and what you're trusting when you click Allow.",
+   "links": [
+    {
+     "name": "Model Context Protocol",
+     "url": "https://modelcontextprotocol.io",
+     "kind": "docs",
+     "what": "The official site: what MCP is and how to use it."
+    },
+    {
+     "name": "MCP specification",
+     "url": "https://modelcontextprotocol.io/specification",
+     "kind": "docs",
+     "what": "The exact messages an AI app and an MCP server send each other."
+    },
+    {
+     "name": "Introducing MCP",
+     "url": "https://www.anthropic.com/news/model-context-protocol",
+     "kind": "source",
+     "what": "Anthropic's announcement of the open standard (Nov 2024)."
+    },
+    {
+     "name": "Gmail API",
+     "url": "https://developers.google.com/gmail/api",
+     "kind": "docs",
+     "what": "The kitchen in our restaurant: what a Gmail MCP server calls behind the scenes."
+    }
+   ]
+  },
+  {
    "id": "opus-motion-graphics",
    "title": "Claude can animate now: 12 motion graphics, all code",
    "kind": "Carousel",
