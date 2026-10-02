@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Build your own dictation tool · Learn AI with Zain Qurashi</title>
-<meta name="description" content="The free day-one lab: build your own dictation tool in about an hour with an AI, the kind people pay $12 to $30 a month for. Try the finished first version here, build yours, measure it, and see where it ends up.">
+<meta name="description" content="The free day-one lab: build your own dictation tool tonight, the kind people pay $12 to $30 a month for. See what it looks like a month in, learn what to layer on top (the models, your own computer, styles per app, your phone), and measure your own.">
 <link rel="canonical" href="https://dripthecup.com/learn/dictation/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dripthecup.com/learn/dictation/">
 <meta property="og:title" content="Build your own dictation tool tonight · Drip the Cup">
-<meta property="og:description" content="A free one-hour lab from Zain Qurashi. Hold a key, talk, get text. Build it with an AI, measure it, see where it ends up.">
+<meta property="og:description" content="A free lab from Zain Qurashi. Version 1 tonight in about an hour. Then the layers that make it worth $15 a month: the right models, your own computer, styles per app, your phone, your own notes.">
 <meta property="og:image" content="https://dripthecup.com/learn/og-learn.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#100D09">
@@ -22,7 +22,7 @@
   :root{
     --mustard:#E3AC2A; --paper:#F6EFE0; --cup:#F5F1E8; --tile:#EDE6D8;
     --ink:#1A1A1A; --muted:#6B6155; --red:#D63F2A;
-    --dark:#100D09; --dim:#CFC4B0; --line:#D9CFBC; --line-dark:#33291F; --dark2:#1B1611;
+    --dark:#100D09; --dim:#CFC4B0; --line:#D9CFBC; --line-dark:#33291F; --dark2:#1B1611; --dark3:#221B13;
     --display:'Fraunces', Georgia, 'Times New Roman', serif;
     --body:Georgia, 'Times New Roman', serif;
     --mono:ui-monospace, 'Cascadia Mono', 'Courier New', monospace;
@@ -48,6 +48,9 @@
   .btn-ghost:hover{background:var(--paper);color:var(--ink);border-color:var(--paper);}
   .btn-small{padding:9px 12px;font-size:11px;}
   .btn[disabled]{opacity:.5;cursor:default;}
+  .ic-lock{display:inline-block;width:11px;height:12px;background:currentColor;vertical-align:-1px;margin-right:8px;
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 17'%3E%3Cpath d='M4 7V5a4 4 0 0 1 8 0v2h1.5v9.5h-11V7H4zm2 0h4V5a2 2 0 0 0-4 0v2z'/%3E%3C/svg%3E") center/contain no-repeat;
+            mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 17'%3E%3Cpath d='M4 7V5a4 4 0 0 1 8 0v2h1.5v9.5h-11V7H4zm2 0h4V5a2 2 0 0 0-4 0v2z'/%3E%3C/svg%3E") center/contain no-repeat;}
 
   .bar{background:var(--dark);color:var(--dim);font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;text-align:center;padding:9px 20px;line-height:1.6;}
   .bar b{color:var(--mustard);font-weight:400;}
@@ -62,19 +65,19 @@
 
   /* hero */
   .hero{background:var(--dark);color:var(--dim);border-bottom:1px solid var(--line-dark);}
-  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-block:52px 48px;}
+  .hero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px;align-items:center;padding-block:52px 48px;}
   @media (max-width:900px){.hero .wrap{grid-template-columns:minmax(0,1fr);gap:26px;padding-block:32px 36px;}}
   .hero .hud{color:var(--mustard);}
   .hero h1{font-family:var(--display);font-weight:900;font-size:clamp(34px,4.6vw,60px);line-height:1;letter-spacing:-.025em;color:var(--paper);margin:14px 0 0;}
   .hero h1 em{font-style:italic;font-weight:600;color:var(--mustard);}
-  .hero p.sub{max-width:52ch;margin:20px 0 0;font-size:17px;}
+  .hero p.sub{max-width:54ch;margin:20px 0 0;font-size:17px;}
   .hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px;}
   .hero .fine{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;margin:18px 0 0;opacity:.8;}
   .price{border:2px solid var(--line-dark);background:var(--dark2);padding:20px 22px;}
   .price .hud{color:var(--mustard);margin-bottom:10px;}
   .price table{width:100%;border-collapse:collapse;font-size:15px;}
   .price td{padding:9px 0;border-top:1px solid var(--line-dark);vertical-align:top;}
-  .price td:last-child{text-align:right;font-family:var(--display);font-weight:900;font-size:22px;color:var(--paper);white-space:nowrap;}
+  .price td:last-child{text-align:right;font-family:var(--display);font-weight:900;font-size:22px;color:var(--paper);white-space:nowrap;padding-left:12px;}
   .price tr.you td{color:var(--paper);}
   .price tr.you td:last-child{color:var(--mustard);}
   .price small{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--dim);margin-top:10px;opacity:.8;line-height:1.6;}
@@ -82,7 +85,7 @@
   .sec{padding-block:64px;border-bottom:1px solid var(--line);}
   .sec-head{margin-bottom:22px;}
   .sec-head h2{font-family:var(--display);font-weight:600;font-size:clamp(28px,3.6vw,42px);line-height:1.05;letter-spacing:-.01em;margin-top:8px;}
-  .lede{max-width:64ch;color:var(--muted);margin:-6px 0 24px;font-size:17px;}
+  .lede{max-width:66ch;color:var(--muted);margin:-6px 0 24px;font-size:17px;}
   .dark{background:var(--dark);color:var(--dim);border-color:var(--line-dark);}
   .dark .eyebrow{color:var(--mustard);}
   .dark .sec-head h2{color:var(--paper);}
@@ -90,43 +93,132 @@
   .mustard{background:var(--mustard);border-color:var(--mustard);}
   .mustard .eyebrow{color:var(--ink);}
 
-  /* the tool */
-  .tool{border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);background:var(--dark);color:var(--dim);display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);}
-  @media (max-width:860px){.tool{grid-template-columns:minmax(0,1fr);}}
-  .tool .main{padding:22px;border-right:1px solid var(--line-dark);min-width:0;}
-  @media (max-width:860px){.tool .main{border-right:0;border-bottom:1px solid var(--line-dark);}}
-  .tool .side{padding:22px;display:flex;flex-direction:column;gap:16px;min-width:0;}
-  .tool .hud{color:var(--mustard);}
-  .mode{display:flex;gap:4px;margin:0 0 14px;border:1px solid var(--line-dark);padding:3px;width:max-content;max-width:100%;overflow-x:auto;}
-  .mode button{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:none;border:0;color:var(--dim);padding:8px 12px;cursor:pointer;}
-  .mode button[aria-pressed="true"]{background:var(--mustard);color:var(--ink);}
-  .holdbtn{width:100%;border:3px solid var(--mustard);background:var(--dark2);color:var(--paper);font-family:var(--display);font-weight:900;font-size:clamp(22px,3vw,30px);padding:30px 18px;cursor:pointer;user-select:none;-webkit-user-select:none;touch-action:none;line-height:1.1;}
-  .holdbtn small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-top:8px;font-weight:400;}
-  .holdbtn.on{background:var(--mustard);color:var(--ink);}
-  .holdbtn.on small{color:var(--ink);}
-  .holdbtn.busy{border-color:var(--dim);color:var(--dim);}
-  .out{margin-top:14px;}
-  .out textarea{width:100%;min-height:150px;font:16px/1.5 var(--body);color:var(--paper);background:var(--dark2);border:1.5px solid var(--line-dark);padding:12px;resize:vertical;}
-  .interim{font-family:var(--mono);font-size:12px;color:var(--mustard);min-height:18px;margin:8px 0 0;letter-spacing:.02em;}
-  .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
-  .tool .btn{border-color:var(--dim);color:var(--paper);}
-  .tool .btn:hover{background:var(--paper);color:var(--ink);border-color:var(--paper);}
-  .tool .btn-mustard{background:var(--mustard);border-color:var(--mustard);color:var(--ink);}
-  .tool .btn-mustard:hover{background:var(--paper);border-color:var(--paper);}
-  .stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}
-  .stat{border:1px solid var(--line-dark);background:var(--dark2);padding:10px 12px;}
-  .stat b{display:block;font-family:var(--display);font-weight:900;font-size:26px;color:var(--paper);line-height:1;}
-  .stat span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-top:6px;line-height:1.5;}
-  .keybox label{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin:0 0 6px;}
-  .keybox input,.keybox select{width:100%;font:14px var(--mono);color:var(--paper);background:var(--dark2);border:1.5px solid var(--line-dark);padding:10px;margin-bottom:8px;}
-  .keybox .note{font-family:var(--mono);font-size:10.5px;letter-spacing:.03em;line-height:1.7;color:var(--dim);opacity:.85;margin:0;}
-  .keybox .note b{color:var(--mustard);font-weight:400;}
-  .hist{list-style:none;padding:0;margin:0;max-height:220px;overflow:auto;border:1px solid var(--line-dark);}
-  .hist li{padding:8px 10px;border-bottom:1px solid var(--line-dark);font-size:13.5px;line-height:1.45;}
-  .hist li time{display:block;font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:.06em;margin-bottom:2px;}
-  .hist li:last-child{border-bottom:0;}
-  .msg{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:var(--mustard);margin:10px 0 0;line-height:1.6;min-height:18px;}
-  .msg.err{color:#ff8a76;}
+  /* ---------- the month-in animation ---------- */
+  .sim{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.9fr);gap:16px;align-items:stretch;}
+  @media (max-width:900px){.sim{grid-template-columns:minmax(0,1fr);}}
+  .win{border:2px solid var(--line-dark);background:#0c0a07;display:flex;flex-direction:column;min-width:0;}
+  .win-bar{display:flex;align-items:center;gap:6px;padding:10px 12px;border-bottom:1px solid var(--line-dark);font-family:var(--mono);font-size:11px;color:var(--dim);}
+  .win-bar i{width:10px;height:10px;border-radius:50%;background:#3a3027;flex:none;}
+  .win-bar .t{flex:1;text-align:center;letter-spacing:.06em;}
+  .win-bar .d{color:var(--mustard);letter-spacing:.1em;text-transform:uppercase;}
+  .stage{position:relative;flex:1;min-height:430px;padding:18px;}
+  .scene{position:absolute;inset:18px;display:flex;flex-direction:column;gap:12px;opacity:1;transition:opacity .25s ease .25s;}
+  .scene.off{opacity:0;pointer-events:none;transition:opacity .25s ease 0s;}
+  .app-head{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12.5px;color:var(--paper);}
+  .app-ic{width:28px;height:28px;display:grid;place-items:center;background:var(--dark3);border:1px solid var(--line-dark);color:var(--mustard);font-weight:700;flex:none;}
+  .style-tag{margin-left:auto;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--mustard);color:var(--mustard);padding:3px 8px;white-space:nowrap;}
+  .ctx{font-size:14px;color:var(--dim);border-left:3px solid var(--line-dark);padding:4px 0 4px 12px;min-height:30px;}
+  .ctx b{color:var(--paper);font-weight:600;margin-right:6px;}
+  .field{flex:0 0 auto;border:1.5px solid var(--line-dark);background:var(--dark2);padding:14px 16px;position:relative;min-height:128px;}
+  .recent{flex:1;min-height:0;overflow:hidden;border-top:1px solid var(--line-dark);padding-top:10px;display:flex;flex-direction:column;}
+  .recent .lab{margin-bottom:4px;}
+  .recent ul{list-style:none;padding:0;margin:0;}
+  .recent li{display:grid;grid-template-columns:74px minmax(0,1fr);gap:10px;font-size:13.5px;line-height:1.45;padding:6px 0;border-bottom:1px solid #221b13;color:var(--paper);animation:slide .45s ease-out;}
+  .recent li time{font-family:var(--mono);font-size:10.5px;color:var(--dim);letter-spacing:.04em;padding-top:2px;}
+  .recent li em{font-style:normal;font-family:var(--mono);font-size:10px;color:var(--mustard);margin-left:6px;}
+  @keyframes slide{0%{opacity:0;transform:translateY(-6px);}100%{opacity:1;transform:none;}}
+  .raw{margin:0;font-family:var(--mono);font-size:14px;line-height:1.7;color:#a99c86;font-style:italic;transition:opacity .4s;}
+  .raw .f{color:#7d6d58;text-decoration:line-through;text-decoration-color:transparent;transition:text-decoration-color .3s;}
+  .raw.strike .f{text-decoration-color:var(--mustard);}
+  .raw.gone{opacity:0;}
+  .clean{margin:0;position:absolute;left:16px;right:16px;top:14px;font-size:clamp(17px,1.8vw,21px);line-height:1.5;color:var(--paper);opacity:0;transform:translateY(6px);transition:opacity .45s,transform .45s;}
+  .clean.on{opacity:1;transform:none;}
+  .clean.code{font-family:var(--mono);font-size:15px;}
+  .status{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+  .key{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;border:1.5px solid var(--line-dark);padding:5px 9px;color:var(--dim);transition:all .15s;}
+  .key.on{background:var(--mustard);border-color:var(--mustard);color:var(--ink);}
+  .wave{display:flex;align-items:center;gap:3px;height:26px;flex:1;min-width:80px;max-width:220px;}
+  .wave i{flex:1;height:4px;background:#3a3027;border-radius:2px;transition:background .2s;}
+  .wave.on i{background:var(--mustard);animation:wv .7s ease-in-out infinite alternate;}
+  @keyframes wv{0%{height:4px;}100%{height:24px;}}
+  .badge{margin-left:auto;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--mustard);opacity:0;transition:opacity .3s;white-space:nowrap;}
+  .badge.on{opacity:1;}
+  .thinking{font-family:var(--mono);font-size:11px;color:var(--dim);opacity:0;transition:opacity .2s;}
+  .thinking.on{opacity:1;}
+
+  /* phone scene */
+  .phone-row{display:flex;align-items:center;gap:18px;height:100%;}
+  .phone{width:150px;flex:none;border:2px solid var(--line-dark);border-radius:22px;background:var(--dark2);padding:14px 10px;display:flex;flex-direction:column;gap:10px;height:100%;max-height:300px;}
+  .phone .notch{width:46px;height:6px;border-radius:3px;background:#3a3027;margin:0 auto 4px;}
+  .phone .bub{font-size:12.5px;line-height:1.45;color:var(--paper);background:var(--dark3);border:1px solid var(--line-dark);padding:8px;min-height:64px;}
+  .phone .bub .r{font-family:var(--mono);font-style:italic;color:#a99c86;font-size:11.5px;}
+  .phone .mic{margin-top:auto;align-self:center;width:44px;height:44px;border-radius:50%;border:2px solid var(--mustard);display:grid;place-items:center;}
+  .phone .mic::after{content:'';width:14px;height:14px;border-radius:50%;background:var(--mustard);}
+  .phone .mic.on{box-shadow:0 0 0 6px rgba(227,172,42,.25),0 0 0 12px rgba(227,172,42,.12);}
+  .path{flex:1;min-width:0;display:flex;flex-direction:column;gap:12px;}
+  .path svg{width:100%;height:auto;display:block;}
+  .path .dot{fill:var(--mustard);opacity:0;}
+  .path.go .dot{opacity:1;animation:hop 1.3s ease-in-out forwards;}
+  @keyframes hop{0%{transform:translateX(0);}50%{transform:translateX(var(--hop));}100%{transform:translateX(0);}}
+  .path .note{font-family:var(--mono);font-size:11.5px;color:var(--dim);line-height:1.7;margin:0;}
+  .path .note b{color:var(--mustard);font-weight:400;}
+  @media (max-width:560px){.stage{min-height:480px;} .phone-row{flex-direction:column;align-items:stretch;} .phone{width:100%;max-height:none;height:auto;} .phone .mic{margin-top:6px;}}
+
+  .steps-bar{display:flex;align-items:center;gap:4px;padding:10px 12px;border-top:1px solid var(--line-dark);flex-wrap:wrap;}
+  .steps-bar button{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;background:none;border:1px solid transparent;color:var(--dim);padding:6px 9px;cursor:pointer;}
+  .steps-bar button[aria-current="true"]{border-color:var(--mustard);color:var(--mustard);}
+  .steps-bar .prog{flex:1;min-width:60px;height:3px;background:var(--line-dark);margin-left:8px;}
+  .steps-bar .prog i{display:block;height:100%;width:0;background:var(--mustard);}
+
+  /* insights panel */
+  .ins{border:2px solid var(--mustard);background:var(--dark2);padding:16px 16px 14px;display:flex;flex-direction:column;gap:14px;min-width:0;}
+  .ins-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;}
+  .ins-h .hud{color:var(--mustard);}
+  .ins-h span:last-child{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);}
+  .ins-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}
+  .ins-stats div{border:1px solid var(--line-dark);background:#0c0a07;padding:9px 10px;}
+  .ins-stats b{display:block;font-family:var(--display);font-weight:900;font-size:24px;line-height:1;color:var(--paper);}
+  .ins-stats span{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-top:5px;}
+  .lab{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin:0 0 7px;}
+  .chips{display:flex;flex-wrap:wrap;gap:5px;}
+  .chips span{font-size:12.5px;border:1px solid var(--line-dark);padding:2px 8px;color:var(--paper);background:#0c0a07;transition:background .3s,color .3s,border-color .3s;}
+  .chips span.hot{background:var(--mustard);color:var(--ink);border-color:var(--mustard);}
+  .chips span small{font-family:var(--mono);font-size:10px;color:var(--dim);margin-left:4px;}
+  .chips span.hot small{color:var(--ink);}
+  .phr{list-style:none;padding:0;margin:0;}
+  .phr li{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;padding:4px 0;border-top:1px solid var(--line-dark);color:var(--paper);}
+  .phr li b{font-family:var(--mono);font-weight:400;font-size:12px;color:var(--mustard);}
+  .spark{display:flex;align-items:center;gap:10px;}
+  .spark svg{flex:1;height:34px;}
+  .spark span{font-family:var(--mono);font-size:11px;color:var(--mustard);white-space:nowrap;}
+  .bars{display:grid;gap:5px;}
+  .bars div{display:grid;grid-template-columns:86px minmax(0,1fr) 34px;align-items:center;gap:8px;font-size:12px;color:var(--dim);}
+  .bars i{display:block;height:6px;background:var(--mustard);width:0;transition:width 1.2s ease-out;}
+  .bars em{font-style:normal;font-family:var(--mono);font-size:10.5px;text-align:right;}
+  .topics span{animation:pop .4s ease-out;}
+  @keyframes pop{0%{transform:scale(.6);opacity:0;}100%{transform:none;opacity:1;}}
+  .simnote{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--dim);opacity:.8;margin:14px 0 0;line-height:1.7;}
+  @media (prefers-reduced-motion:reduce){.recent li{animation:none;} .wave.on i{animation:none;height:14px;} .path.go .dot{animation:none;} .topics span{animation:none;} .bars i{transition:none;}}
+
+  /* ---------- layers ---------- */
+  .layers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
+  @media (max-width:820px){.layers{grid-template-columns:minmax(0,1fr);}}
+  .layer{border:2px solid var(--ink);background:var(--cup);padding:16px 18px;display:grid;grid-template-columns:44px minmax(0,1fr);gap:4px 14px;}
+  .layer .n{grid-row:span 3;font-family:var(--pixel);font-size:16px;color:var(--ink);background:var(--mustard);border:2px solid var(--ink);width:44px;height:44px;display:grid;place-items:center;}
+  .layer h3{font-family:var(--display);font-weight:600;font-size:21px;line-height:1.15;}
+  .layer p{margin:0;font-size:15px;color:var(--muted);}
+  .vtag{justify-self:start;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:2px 7px;border:1px solid var(--ink);margin:2px 0 4px;}
+  .vtag.v1{background:var(--paper);}
+  .vtag.v2{background:var(--tile);}
+  .vtag.v3{background:var(--ink);color:var(--mustard);border-color:var(--ink);}
+  .models{margin-top:16px;border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);background:var(--paper);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));}
+  @media (max-width:820px){.models{grid-template-columns:minmax(0,1fr);}}
+  .models > div{padding:20px;}
+  .models > div:first-child{border-right:2px solid var(--ink);}
+  @media (max-width:820px){.models > div:first-child{border-right:0;border-bottom:2px solid var(--ink);}}
+  .models h3{font-family:var(--display);font-weight:900;font-size:24px;line-height:1.1;margin-bottom:4px;}
+  .models .sub{font-size:14.5px;color:var(--muted);margin:0 0 14px;}
+  .mrow{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) minmax(0,1fr);gap:8px 12px;align-items:center;padding:8px 0;border-top:1px solid var(--line);font-size:14px;}
+  .mrow.h{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border-top:0;padding-top:0;}
+  .mrow b{font-weight:600;}
+  .mrow small{display:block;font-size:12px;color:var(--muted);}
+  .meter{height:8px;background:var(--tile);border:1px solid var(--line);}
+  .meter i{display:block;height:100%;background:var(--ink);}
+  .mlist{list-style:none;padding:0;margin:0;}
+  .mlist li{padding:9px 0;border-top:1px solid var(--line);font-size:14.5px;}
+  .mlist li b{display:block;font-family:var(--display);font-weight:600;font-size:17px;}
+  .mlist li span{color:var(--muted);}
+  .models .foot{grid-column:1/-1;border-top:2px solid var(--ink);padding:12px 20px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--muted);background:var(--tile);}
 
   /* steps */
   .steps{display:grid;gap:14px;}
@@ -139,7 +231,8 @@
   .step p{margin:0 0 10px;}
   .step p:last-child{margin:0;}
   .prompt{position:relative;overflow-wrap:anywhere;background:var(--dark);color:var(--dim);font-family:var(--mono);font-size:13px;line-height:1.65;padding:16px 16px 44px;margin:10px 0 0;white-space:pre-wrap;border:2px solid var(--ink);}
-  .prompt .copy{position:absolute;right:10px;bottom:10px;}
+  .prompt .copy{position:absolute;right:10px;bottom:10px;border-color:var(--dim);color:var(--paper);}
+  .prompt .copy:hover{background:var(--paper);color:var(--ink);}
   .step ul{margin:6px 0 0;padding-left:20px;}
   .step li{margin:4px 0;}
   .bad{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;margin-top:22px;}
@@ -159,30 +252,25 @@
   .card td.h{font-size:13.5px;color:var(--muted);max-width:30ch;}
   .card input,.card select{width:100%;max-width:150px;font:15px var(--body);color:var(--ink);background:var(--cup);border:1.5px solid var(--ink);padding:8px 10px;}
   .card td.z{font-family:var(--mono);font-size:13px;}
-  .card td.z b{font-family:var(--display);font-weight:900;font-size:20px;font-family:var(--display);}
+  .card td.z b{font-family:var(--display);font-weight:900;font-size:20px;}
   .para{border:2px solid var(--ink);background:var(--cup);padding:18px 20px;margin:0 0 20px;font-size:17px;line-height:1.65;}
   .para .eyebrow{margin-bottom:8px;}
   .ctrl{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;align-items:center;}
   .ctrl .fine{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;color:var(--muted);}
 
-  /* rungs */
-  .rungs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:2px solid var(--line-dark);}
-  @media (max-width:820px){.rungs{grid-template-columns:minmax(0,1fr);}}
-  .rung{padding:20px;border-right:1px solid var(--line-dark);background:var(--dark2);position:relative;}
-  .rung:last-child{border-right:0;}
-  @media (max-width:820px){.rung{border-right:0;border-bottom:1px solid var(--line-dark);} .rung:last-child{border-bottom:0;}}
-  .rung .hud{color:var(--mustard);}
-  .rung h3{font-family:var(--display);font-weight:900;font-size:26px;color:var(--paper);line-height:1.05;margin:6px 0 10px;}
-  .rung ul{margin:0;padding-left:18px;font-size:14.5px;}
-  .rung li{margin:4px 0;}
-  .rung .tag{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--dim);padding:3px 8px;color:var(--dim);margin-bottom:10px;}
-  .rung .tag.lab{background:var(--mustard);border-color:var(--mustard);color:var(--ink);}
-  .rung .tag.now{background:var(--paper);border-color:var(--paper);color:var(--ink);}
-  .rung .btn{margin-top:14px;}
-  .rung.lock{background:var(--dark);}
-  .ic-lock{display:inline-block;width:11px;height:12px;background:currentColor;vertical-align:-1px;margin-right:8px;
-    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 17'%3E%3Cpath d='M4 7V5a4 4 0 0 1 8 0v2h1.5v9.5h-11V7H4zm2 0h4V5a2 2 0 0 0-4 0v2z'/%3E%3C/svg%3E") center/contain no-repeat;
-            mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 17'%3E%3Cpath d='M4 7V5a4 4 0 0 1 8 0v2h1.5v9.5h-11V7H4zm2 0h4V5a2 2 0 0 0-4 0v2z'/%3E%3C/svg%3E") center/contain no-repeat;}
+  /* versions */
+  .vers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:2px solid var(--line-dark);}
+  @media (max-width:820px){.vers{grid-template-columns:minmax(0,1fr);}}
+  .ver{padding:20px;border-right:1px solid var(--line-dark);background:var(--dark2);}
+  .ver:last-child{border-right:0;background:var(--dark);}
+  @media (max-width:820px){.ver{border-right:0;border-bottom:1px solid var(--line-dark);} .ver:last-child{border-bottom:0;}}
+  .ver h3{font-family:var(--display);font-weight:900;font-size:26px;color:var(--paper);line-height:1.05;margin:6px 0 10px;}
+  .ver ul{margin:0;padding-left:18px;font-size:14.5px;}
+  .ver li{margin:4px 0;}
+  .ver .tag{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--dim);padding:3px 8px;color:var(--dim);}
+  .ver .tag.lab{background:var(--mustard);border-color:var(--mustard);color:var(--ink);}
+  .ver .tag.now{background:var(--paper);border-color:var(--paper);color:var(--ink);}
+  .ver .btn{margin-top:14px;}
 
   /* yours */
   .yours{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center;}
@@ -216,7 +304,7 @@
 </head>
 <body>
 
-<div class="bar">Learn AI with Zain Qurashi &nbsp;·&nbsp; <b>Day one lab, free</b> &nbsp;·&nbsp; About an hour</div>
+<div class="bar">Learn AI with Zain Qurashi &nbsp;·&nbsp; <b>Day one lab, free</b> &nbsp;·&nbsp; Version 1 tonight</div>
 
 <header class="hdr"><div class="in">
   <a class="brand" href="/">DRIP.</a>
@@ -234,90 +322,139 @@
   <div class="wrap">
     <div>
       <p class="hud">Day one lab &nbsp;·&nbsp; Level 0 &nbsp;·&nbsp; free</p>
-      <h1>Build your own dictation tool <em>tonight.</em></h1>
-      <p class="sub">Hold a key, talk, get text. People pay $12 to $30 a month for this. You'll build the first version in about an hour by describing it to an AI, measure it honestly, and see exactly where it ends up. No Python, no setup, nothing to install.</p>
+      <h1>Build your own dictation tool. <em>Then make it worth $15 a month.</em></h1>
+      <p class="sub">Hold a key, talk, get text. The first version takes about an hour, and honestly, anyone can ask an AI for one. What people pay for is everything stacked on top: the right models, running on your own computer, a style for every app, your phone, and a record of everything you've said. That's what you learn here, one layer at a time.</p>
       <div class="ctas">
-        <a class="btn btn-mustard" href="#try">Try the finished first version</a>
-        <a class="btn btn-ghost" href="#build">Build yours</a>
+        <a class="btn btn-mustard" href="#month">See it a month in</a>
+        <a class="btn btn-ghost" href="#build">Build version 1 tonight</a>
       </div>
-      <p class="fine">works in Chrome or Edge on a laptop. a free key makes it work everywhere, step 2.</p>
+      <p class="fine">version 1 runs in Chrome or Edge. no install, no python.</p>
     </div>
     <div class="price">
       <p class="hud">What the shops charge</p>
       <table>
         <tr><td>Wispr Flow</td><td>$15 / mo</td></tr>
         <tr><td>Typeless</td><td>$30 / mo</td></tr>
-        <tr class="you"><td>The one you build tonight</td><td>$0</td></tr>
-        <tr class="you"><td>The one you build in the Lab (Scribe)</td><td>$0, forever</td></tr>
+        <tr class="you"><td>Version 1, tonight</td><td>$0</td></tr>
+        <tr class="you"><td>Version 3, Scribe, in the Lab</td><td>$0, forever</td></tr>
       </table>
       <small>List prices on Oct 2, 2026; both drop to $12 on annual plans. They're good tools. The point is that you can build one, and learn how it works on the way.</small>
     </div>
   </div>
 </section>
 
-<!-- ============ TRY IT ============ -->
-<section class="sec dark" id="try">
+<!-- ============ A MONTH IN ============ -->
+<section class="sec dark" id="month">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Rung 0, finished &nbsp;·&nbsp; this is what you're about to build</p>
-      <h2>Try it. Hold the button and talk.</h2>
+      <p class="eyebrow">Where it ends up &nbsp;·&nbsp; an illustration</p>
+      <h2>What it looks like a month in.</h2>
     </div>
-    <p class="lede">This is my version of the first rung, built the same way you will: by describing it to an AI. Everything you say stays in this browser; the history below is yours. With no key it uses your browser's built-in recognition (Chrome or Edge). With a free key from Groq it works in any browser and can clean up the text.</p>
+    <p class="lede">Not the bare version: the one you end up with. It hears you in any app, writes the way that app needs, works from your phone, and keeps a record of everything you've said, so you can see how you actually talk.</p>
 
-    <div class="tool" id="tool">
-      <div class="main">
-        <div class="mode" role="group" aria-label="Mode">
-          <button type="button" id="modeBrowser" aria-pressed="true">Browser, no key</button>
-          <button type="button" id="modeKey" aria-pressed="false">Free key (any browser)</button>
-        </div>
-        <button type="button" class="holdbtn" id="hold">Hold to talk<small>mouse, touch, or hold the space bar</small></button>
-        <p class="interim" id="interim"></p>
-        <div class="out">
-          <textarea id="text" placeholder="your words land here"></textarea>
-          <div class="row">
-            <button type="button" class="btn btn-small" id="copy">Copy</button>
-            <button type="button" class="btn btn-small" id="clear">Clear</button>
-            <button type="button" class="btn btn-small btn-mustard" id="clean" hidden>Clean it up (uses the key)</button>
+    <div class="sim" id="sim" aria-label="Animated illustration of a dictation app after a month of use">
+      <div class="win">
+        <div class="win-bar"><i></i><i></i><i></i><span class="t" id="winTitle">team chat</span><span class="d">day 31</span></div>
+        <div class="stage">
+          <div class="scene" id="scApp">
+            <div class="app-head"><span class="app-ic" id="appIc">#</span><span id="appName">team chat</span><span class="style-tag" id="styleTag">style: casual</span></div>
+            <div class="ctx" id="ctx"></div>
+            <div class="field"><p class="raw" id="raw"></p><p class="clean" id="clean"></p></div>
+            <div class="status"><span class="key" id="key">hold right ctrl</span><div class="wave" id="wave"></div><span class="thinking" id="thinking">cleaning up...</span><span class="badge" id="badge"></span></div>
+            <div class="recent"><p class="lab">Your notes, saved on this computer</p><ul id="recent"><li><time>9:12 am</time><span>Outline for the voice video: one model hears you, another one understands you.<em>notes</em></span></li><li><time>yesterday</time><span>Follow up with the client on the onboarding checklist.<em>email</em></span></li><li><time>yesterday</time><span>Split the sync job into a nightly batch and a webhook for new rows.<em>code</em></span></li></ul></div>
           </div>
-          <p class="msg" id="msg"></p>
-        </div>
-      </div>
-      <div class="side">
-        <div>
-          <p class="hud">This session</p>
-          <div class="stats">
-            <div class="stat"><b id="sWords">0</b><span>words</span></div>
-            <div class="stat"><b id="sLat">0.0 s</b><span>last latency, release to text</span></div>
-            <div class="stat"><b id="sSpeak">0:00</b><span>time speaking</span></div>
-            <div class="stat"><b id="sSaved">0 min</b><span>saved vs typing at 40 wpm</span></div>
-            <div class="stat"><b id="sTok">0</b><span>clean-up tokens</span></div>
-            <div class="stat"><b id="sWhere">this browser</b><span>where your voice went</span></div>
+          <div class="scene off" id="scPhone">
+            <div class="app-head"><span class="app-ic">&#9679;</span><span>your phone</span><span class="style-tag">style: notes</span></div>
+            <div class="phone-row">
+              <div class="phone"><div class="notch"></div><div class="bub" id="pBub"></div><div class="mic" id="pMic"></div></div>
+              <div class="path" id="pPath">
+                <svg viewBox="0 0 300 80" aria-hidden="true">
+                  <rect x="2" y="22" width="56" height="36" fill="none" stroke="#5a4c3a" stroke-width="2"/>
+                  <text x="30" y="44" fill="#CFC4B0" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">phone</text>
+                  <line x1="60" y1="40" x2="236" y2="40" stroke="#5a4c3a" stroke-width="2" stroke-dasharray="5 5"/>
+                  <text x="148" y="30" fill="#E3AC2A" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">tailscale: your own private network</text>
+                  <rect x="238" y="18" width="60" height="44" fill="none" stroke="#E3AC2A" stroke-width="2"/>
+                  <text x="268" y="38" fill="#F6EFE0" font-family="ui-monospace,monospace" font-size="10" text-anchor="middle">your PC</text>
+                  <text x="268" y="52" fill="#CFC4B0" font-family="ui-monospace,monospace" font-size="8" text-anchor="middle">model on the GPU</text>
+                  <circle class="dot" cx="66" cy="40" r="5" style="--hop:166px"/>
+                </svg>
+                <p class="note">Talk into your phone. Your own computer at home does the work and sends the text back. <b>No subscription, no cloud.</b></p>
+                <span class="badge" id="pBadge"></span>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="keybox" id="keybox" hidden>
-          <label for="key">Groq API key (free, no card)</label>
-          <input id="key" type="password" autocomplete="off" placeholder="gsk_...">
-          <label for="model">Clean-up model</label>
-          <select id="model"><option value="">add a key to load models</option></select>
-          <p class="note"><b>Honest note:</b> the key is kept in this browser's local storage. Fine for a tool only you use on your own computer. Never how a shipped product stores a key; that's a Lab lesson. Get a key at console.groq.com.</p>
-        </div>
-        <div>
-          <p class="hud">Your notes, yours</p>
-          <ul class="hist" id="hist"><li><time>nothing yet</time>Your last 20 dictations will show here, saved only in this browser.</li></ul>
-          <div class="row"><button type="button" class="btn btn-small" id="histClear">Clear history</button></div>
-        </div>
+        <div class="steps-bar" id="stepsBar"><button type="button" data-s="0" aria-current="true">Chat</button><button type="button" data-s="1">Email</button><button type="button" data-s="2">Code</button><button type="button" data-s="3">Phone</button><span class="prog"><i id="prog"></i></span></div>
       </div>
+
+      <aside class="ins">
+        <div class="ins-h"><span class="hud">Your voice · 30 days</span><span>insights</span></div>
+        <div class="ins-stats">
+          <div><b id="iWords">77,214</b><span>words dictated</span></div>
+          <div><b>160</b><span>words a minute</span></div>
+          <div><b>10.4 h</b><span>saved vs typing</span></div>
+          <div><b id="iSess">342</b><span>sessions</span></div>
+        </div>
+        <div><p class="lab">Words you use most</p><div class="chips" id="iWordsTop"><span data-w="automation">automation<small>412</small></span><span data-w="client">client<small>356</small></span><span data-w="workflow">workflow<small>301</small></span><span data-w="claude">Claude<small>288</small></span><span data-w="sync">sync<small>174</small></span><span data-w="numbers">numbers<small>151</small></span><span data-w="video">video<small>139</small></span></div></div>
+        <div><p class="lab">Phrases you repeat</p><ul class="phr"><li>"go ahead and"<b>x 517</b></li><li>"right?"<b>x 433</b></li><li>"essentially"<b>x 268</b></li></ul></div>
+        <div><p class="lab">Filler words, week by week</p><div class="spark"><svg viewBox="0 0 120 34" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,6 30,12 60,19 90,24 120,27" fill="none" stroke="#E3AC2A" stroke-width="2.5"/><g fill="#E3AC2A"><circle cx="0" cy="6" r="2.5"/><circle cx="30" cy="12" r="2.5"/><circle cx="60" cy="19" r="2.5"/><circle cx="90" cy="24" r="2.5"/><circle cx="120" cy="27" r="2.5"/></g></svg><span>9% &rarr; 4%</span></div></div>
+        <div><p class="lab">Where your words went</p><div class="bars" id="iBars"><div>code editor<i data-w="41"></i><em>41%</em></div><div>AI chats<i data-w="32"></i><em>32%</em></div><div>browser<i data-w="13"></i><em>13%</em></div><div>terminal<i data-w="9"></i><em>9%</em></div><div>phone<i data-w="5"></i><em>5%</em></div></div></div>
+        <div><p class="lab">This week you talked about</p><div class="chips topics" id="iTopics"><span>Skool course</span><span>voice models</span></div></div>
+      </aside>
     </div>
-    <p class="msg" id="support"></p>
+    <p class="simnote">An illustration, not a live demo. Words dictated, pace, hours saved and sessions are my real numbers from Scribe; the words, phrases and topics are examples of what the insights look like. Yes, "go ahead and" is mine.</p>
+  </div>
+</section>
+
+<!-- ============ LAYERS ============ -->
+<section class="sec" id="layers">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">How it gets better &nbsp;·&nbsp; layer by layer</p>
+      <h2>Anyone can make version 1. Here's what you stack on top.</h2>
+    </div>
+    <p class="lede">Ask any AI for a voice-to-text tool and you'll have one in minutes. It works, and it's bare. Each layer below is a lesson, and each one makes the same tool better. That's the difference between a toy and something you'd pay for.</p>
+    <div class="layers">
+      <div class="layer"><span class="n">1</span><h3>Talk, get text</h3><span class="vtag v1">Version 1 · tonight</span><p>A button, your microphone, a speech service. Works in an hour. Your voice goes to someone else's server, and it's copy and paste from there.</p></div>
+      <div class="layer"><span class="n">2</span><h3>Choose the model that hears you</h3><span class="vtag v2">Version 2 · free</span><p>Speech models come in sizes. Small ones are instant and miss names; big ones catch accents and jargon but want a graphics card. You'll test three on the same paragraph and pick yours.</p></div>
+      <div class="layer"><span class="n">3</span><h3>Run it on your own computer</h3><span class="vtag v2">Version 2 · free</span><p>Download the model once and your voice never leaves the machine. Free to run, works offline, and a hotkey types straight into any app.</p></div>
+      <div class="layer"><span class="n">4</span><h3>Add a model that understands you</h3><span class="vtag v2">Version 2 · free</span><p>Hearing words isn't understanding them. A language model fixes punctuation, drops the ums, turns "ten thirty" into 10:30 and keeps your meaning.</p></div>
+      <div class="layer"><span class="n">5</span><h3>A style for every app</h3><span class="vtag v3">Version 3 · the Lab</span><p>Casual in chat, professional in email, word for word in your code editor. Plus shorthand: say a short phrase, get the full thing typed out.</p></div>
+      <div class="layer"><span class="n">6</span><h3>Never lose the first word</h3><span class="vtag v3">Version 3 · the Lab</span><p>The mic stays open into a short memory buffer, so it rewinds a third of a second when you press the key. A small detail, and the one people notice most.</p></div>
+      <div class="layer"><span class="n">7</span><h3>Your notes, your insights</h3><span class="vtag v3">Version 3 · the Lab</span><p>Every dictation saved on your computer and searchable. Then the fun part: your pace, the words you lean on, the phrases you repeat, what you talked about this week.</p></div>
+      <div class="layer"><span class="n">8</span><h3>Your phone, too</h3><span class="vtag v3">Version 3 · the Lab</span><p>Put your phone and your computer on one private network with Tailscale. Talk into your phone; your computer at home does the work and sends the text back.</p></div>
+    </div>
+
+    <div class="models">
+      <div>
+        <h3>Models that hear</h3>
+        <p class="sub">Speech to text. Bigger usually means more accurate and slower. Some are English only and very fast.</p>
+        <div class="mrow h"><span>Example</span><span>Speed</span><span>Accuracy</span></div>
+        <div class="mrow"><span><b>Whisper tiny</b><small>runs on almost anything</small></span><span class="meter"><i style="width:95%"></i></span><span class="meter"><i style="width:40%"></i></span></div>
+        <div class="mrow"><span><b>Whisper large-v3-turbo</b><small>the usual sweet spot</small></span><span class="meter"><i style="width:70%"></i></span><span class="meter"><i style="width:82%"></i></span></div>
+        <div class="mrow"><span><b>Whisper large-v3</b><small>wants a graphics card</small></span><span class="meter"><i style="width:40%"></i></span><span class="meter"><i style="width:88%"></i></span></div>
+        <div class="mrow"><span><b>Parakeet</b><small>English only, very fast</small></span><span class="meter"><i style="width:92%"></i></span><span class="meter"><i style="width:85%"></i></span></div>
+      </div>
+      <div>
+        <h3>Models that understand</h3>
+        <p class="sub">The clean-up step. Same text in, very different results, costs and privacy.</p>
+        <ul class="mlist">
+          <li><b>A small model on your computer</b><span>Free, private and quick. Great at punctuation and filler words, weaker at tricky rewrites.</span></li>
+          <li><b>A fast hosted open model</b><span>Very fast and cheap per word. Your text leaves the machine.</span></li>
+          <li><b>A big cloud model</b><span>Best at tone and hard edits. Costs tokens on every dictation, and your text leaves the machine.</span></li>
+        </ul>
+      </div>
+      <p class="foot">The bars are rough, to show the trade-off. In the lab you measure your own, on your own computer, with the same 100-word paragraph.</p>
+    </div>
   </div>
 </section>
 
 <!-- ============ BUILD ============ -->
-<section class="sec" id="build">
+<section class="sec" id="build" style="background:var(--tile)">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">The build &nbsp;·&nbsp; about an hour</p>
-      <h2>Now build yours. The way everyone builds their first one.</h2>
+      <p class="eyebrow">Version 1 &nbsp;·&nbsp; tonight &nbsp;·&nbsp; about an hour</p>
+      <h2>Build version 1. The way everyone builds their first one.</h2>
     </div>
     <p class="lede">You don't write code tonight. You describe the tool to an AI, save what it gives you as a file, open it, and paste any error back. That loop is the lesson. Use Claude, ChatGPT or Gemini; it doesn't matter which.</p>
     <div class="steps">
@@ -328,24 +465,24 @@
         <p>If it doesn't work, paste the error message (or "the button does nothing") back to the AI and try again. Two or three rounds is normal.</p>
       </div></div>
       <div class="step"><div class="n">2</div><div class="b">
-        <h3>Add a free key, so it works everywhere and can clean up.</h3>
-        <p>Make a free account at <b>console.groq.com</b> (no card) and create an API key. Then paste this to your AI:</p>
+        <h3>Add a free key: a better model, and a clean-up step.</h3>
+        <p>Make a free account at <b>console.groq.com</b> (no card) and create an API key. Then paste this to your AI. This is layers 2 and 4 in miniature: a better model to hear you, and a second model to understand you.</p>
         <div class="prompt" id="p2">Add an optional key mode to dictate.html. A settings area where I paste a Groq API key, stored in localStorage, with a visible warning that this is only okay for a personal tool on my own computer. When a key is present: record audio with MediaRecorder while I hold the button, and on release send it as multipart form data (fields: file, model=whisper-large-v3-turbo) to https://api.groq.com/openai/v1/audio/transcriptions with the key as a Bearer token, then show the text. Add a "Clean up" button that sends the text to https://api.groq.com/openai/v1/chat/completions with a model chosen from a dropdown filled from GET https://api.groq.com/openai/v1/models (skip models whose id contains whisper or tts), asking it to fix punctuation and capitalization, remove filler words, keep my meaning, and return only the text. Show the tokens used from the response's usage field and keep a running total.<button type="button" class="btn btn-small copy" data-copy="p2">Copy</button></div>
         <p>Now it works in any browser, the accuracy goes up, and you can see what clean-up costs in tokens.</p>
       </div></div>
       <div class="step"><div class="n">3</div><div class="b">
         <h3>Measure it. Keep the receipts.</h3>
-        <p>Read the test paragraph below into your tool, count the wrong words, note the latency, and fill in the scorecard. You'll fill in the same scorecard again at rung 1 and rung 2, and the gap will be yours.</p>
-        <ul><li>Post your numbers under the lab on YouTube or in the Lab when it opens.</li><li>Keep the file. Rung 1 starts from it.</li></ul>
+        <p>Read the test paragraph below into your tool, count the wrong words, note the latency, and fill in the scorecard. You'll fill in the same scorecard for version 2 and version 3, and the difference will be yours.</p>
+        <ul><li>Post your numbers under the lab video on YouTube, or in the Lab when it opens.</li><li>Keep the file. Version 2 starts from it.</li></ul>
       </div></div>
     </div>
 
     <div class="bad">
-      <div><h3>What yours will be bad at</h3>
+      <div><h3>What version 1 will be bad at</h3>
         <ul><li>Browser mode needs Chrome or Edge, and sends your voice to Google's servers.</li><li>It clips the first word if you talk the instant you press.</li><li>No clean-up without a key: every "um" stays.</li><li>It's a web page, so the text doesn't land in other apps. You copy and paste.</li><li>Key mode is better, and still cloud: your voice goes to Groq.</li></ul>
       </div>
       <div><h3>What that's teaching you</h3>
-        <ul><li>What an API key is and why it must never ship inside a product.</li><li>Why a memory buffer exists (so the first word survives).</li><li>Where your data goes, and what "runs on your computer" is worth.</li><li>What a clean-up model costs per thousand words.</li><li>That the first version always works and is always bad. Engineering is the rest.</li></ul>
+        <ul><li>What an API key is, and why it must never ship inside a product.</li><li>Why a memory buffer exists (so the first word survives).</li><li>Where your data goes, and what "runs on your computer" is worth.</li><li>What a clean-up model costs per thousand words.</li><li>That the first version always works and is always bare. The layers are the rest.</li></ul>
       </div>
     </div>
   </div>
@@ -364,16 +501,16 @@
     </div>
     <div class="card">
       <table id="sc">
-        <thead><tr><th>Measure</th><th>How</th><th class="you">Rung 0, yours</th><th>Rung 2, Scribe (mine, measured)</th></tr></thead>
+        <thead><tr><th>Measure</th><th>How</th><th class="you">Your version 1</th><th>Version 3: Scribe (mine, measured)</th></tr></thead>
         <tbody>
           <tr><td class="k">Wrong words</td><td class="h">out of the 100 in the paragraph</td><td><input type="number" min="0" max="100" data-f="wrong" placeholder="e.g. 6"></td><td class="z">measured in the Lab, on the same paragraph</td></tr>
-          <tr><td class="k">Latency</td><td class="h">seconds from release to text; the tool shows it</td><td><input type="number" step="0.1" min="0" data-f="latency" placeholder="e.g. 2.4"></td><td class="z"><b>0.92 s</b> median</td></tr>
+          <tr><td class="k">Latency</td><td class="h">seconds from release to text; your tool shows it</td><td><input type="number" step="0.1" min="0" data-f="latency" placeholder="e.g. 2.4"></td><td class="z"><b>0.92 s</b> median</td></tr>
           <tr><td class="k">Cost to run</td><td class="h">per 1,000 words: the speech API's price plus clean-up tokens. Free tier = $0 today; write the list price</td><td><input type="text" data-f="cost" placeholder="e.g. $0.02"></td><td class="z"><b>$0</b>, runs on your computer</td></tr>
           <tr><td class="k">Cost to build</td><td class="h">tokens or dollars your AI used, from its usage screen</td><td><input type="text" data-f="build" placeholder="e.g. 40k tokens"></td><td class="z">about 25,000 lines, with tests</td></tr>
           <tr><td class="k">Where the voice went</td><td class="h">cloud, or your computer</td><td><select data-f="where"><option value="">pick</option><option>Google's servers</option><option>Groq's servers</option><option>my computer</option></select></td><td class="z"><b>your computer</b>, nothing leaves it</td></tr>
           <tr><td class="k">First word survived?</td><td class="h">did "Hi" come through</td><td><select data-f="first"><option value="">pick</option><option>yes</option><option>no</option></select></td><td class="z"><b>yes</b>: the mic rewinds a third of a second</td></tr>
-          <tr><td class="k">Pace</td><td class="h">words a minute while speaking; the tool's counters give it to you</td><td><input type="number" min="0" data-f="pace" placeholder="e.g. 120"></td><td class="z"><b>160 wpm</b> average, best session 245</td></tr>
-          <tr><td class="k">Time saved so far</td><td class="h">the tool's "saved vs typing" counter</td><td><input type="text" data-f="saved" placeholder="e.g. 4 min"></td><td class="z"><b>10.4 hours</b> over 342 sessions</td></tr>
+          <tr><td class="k">Pace</td><td class="h">words a minute while speaking</td><td><input type="number" min="0" data-f="pace" placeholder="e.g. 120"></td><td class="z"><b>160 wpm</b> average, best session 245</td></tr>
+          <tr><td class="k">Time saved so far</td><td class="h">words spoken vs typing them at 40 wpm</td><td><input type="text" data-f="saved" placeholder="e.g. 4 min"></td><td class="z"><b>10.4 hours</b> over 342 sessions</td></tr>
         </tbody>
       </table>
     </div>
@@ -385,30 +522,30 @@
   </div>
 </section>
 
-<!-- ============ WHERE IT ENDS UP ============ -->
-<section class="sec dark" id="rungs">
+<!-- ============ VERSIONS ============ -->
+<section class="sec dark" id="versions">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Where it ends up</p>
-      <h2>Here's yours. Here's rung 2.</h2>
+      <p class="eyebrow">Three versions of the same tool</p>
+      <h2>Version 1 tonight. Version 3 is the one from the animation.</h2>
     </div>
-    <p class="lede">Same tool, three times. Each rung fills in the same scorecard, so you watch your own numbers move. Rung 1 is free. Rung 2 is the app I use every day, and the Lab builds it with you.</p>
-    <div class="rungs">
-      <div class="rung">
-        <span class="tag now">Rung 0 · tonight · free</span>
+    <p class="lede">Each version fills in the same scorecard, so you watch your own numbers move. Version 2 is free. Version 3 is the app I use every day, and the Lab builds it with you.</p>
+    <div class="vers">
+      <div class="ver">
+        <span class="tag now">Version 1 · tonight · free</span>
         <h3>The web page</h3>
         <ul><li>One HTML file, built by describing it</li><li>Browser recognition, or Whisper on a free key</li><li>Your voice goes to the cloud</li><li>Clips the first word</li><li>Copy and paste into other apps</li></ul>
       </div>
-      <div class="rung">
-        <span class="tag">Rung 1 · next · free</span>
+      <div class="ver">
+        <span class="tag">Version 2 · next · free</span>
         <h3>On your own computer</h3>
-        <ul><li>About 300 lines of Python</li><li>Speech to text runs locally (whisper.cpp)</li><li>A hotkey that works in any app</li><li>Clean-up through a model, tokens measured</li><li>A lesson that shows your voice becoming numbers, then a spectrogram, then words</li></ul>
-        <a class="btn btn-ghost" href="#join">Send me rung 1</a>
+        <ul><li>Layers 2 to 4: the model you picked, running locally, plus clean-up</li><li>About 300 lines of Python</li><li>A hotkey that types into any app</li><li>A lesson that shows your voice becoming numbers, then a spectrogram, then words</li></ul>
+        <a class="btn btn-ghost" href="#join">Send me version 2</a>
       </div>
-      <div class="rung lock">
-        <span class="tag lab">Rung 2 · the Lab</span>
+      <div class="ver">
+        <span class="tag lab">Version 3 · the Lab</span>
         <h3>Scribe</h3>
-        <ul><li>Speech to text on your GPU, a local model for clean-up: nothing leaves the computer</li><li>The mic rewinds a third of a second, so the first word never clips</li><li>A writing style per app: chat, email, code</li><li>Notes, history and stats: everything you've said, searchable, yours</li><li>Members get the finished app the day they join, then build it</li></ul>
+        <ul><li>Layers 5 to 8: styles per app, shorthand, the memory buffer, notes and insights, your phone</li><li>Speech to text on your GPU, a local model for clean-up: nothing leaves the computer</li><li>Members get the finished app the day they join, then build it</li></ul>
         <a class="btn btn-mustard" href="/learn/#lab"><span class="ic-lock"></span>Unlock in the Lab</a>
       </div>
     </div>
@@ -422,8 +559,8 @@
       <div>
         <p class="eyebrow">Why I built mine</p>
         <h2>Everything you say is data. It should be yours.</h2>
-        <p>When you talk to a chatbot, your ideas live inside its history, on its servers, in its format. Dictation is different: you're producing your own notes all day, in your own words. Kept on your computer, they're searchable, they show you what you keep coming back to, and you get better at saying it.</p>
-        <p>That's what Scribe's stats page is: 77,000 words in a month, which apps they went to, how fast I talk, how much time it saved. Mine, measured, on my machine. You start that tonight with the history list in the tool above.</p>
+        <p>When you talk to a chatbot, your ideas live in its history, on its servers, in its format. Dictation is different: you're producing your own notes all day, in your own words. Kept on your computer, they're searchable, they show you what you keep coming back to, and you get better at saying it.</p>
+        <p>That's what my stats page is: 77,000 words in a month, which apps they went to, how fast I talk, how much time it saved. Mine, measured, on my machine. Version 1 starts that tonight: the prompt in step 1 keeps your last 20 dictations.</p>
       </div>
       <div class="shot"><img src="../art/builds/scribe.webp" width="900" height="563" loading="lazy" alt="Scribe's stats screen: 77k words, 160 words a minute, 10.4 hours saved, a words-per-day chart."></div>
     </div>
@@ -436,19 +573,19 @@
     <div class="join">
       <div>
         <p class="eyebrow">Keep going &nbsp;·&nbsp; free</p>
-        <h2>Rung 1 is free. I'll send it when it's ready.</h2>
-        <p>Leave your email and you'll get rung 1 (the version on your own computer), the nine-level roadmap, and a note when the Lab opens. You don't have to buy anything to keep building this. Run wild with it.</p>
+        <h2>Version 2 is free. I'll send it when it's ready.</h2>
+        <p>Leave your email and you'll get version 2 (the one that runs on your own computer), the nine-level roadmap, and a note when the Lab opens. You don't have to buy anything to keep building this. Run wild with it.</p>
       </div>
       <form class="form" data-source="learn-lab" novalidate>
         <p class="err" hidden></p>
         <label>Your email</label>
         <input type="email" name="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required>
         <input class="hp" name="cream" tabindex="-1" autocomplete="off" aria-hidden="true" placeholder="leave this empty">
-        <button class="btn btn-primary" type="submit">Send me rung 1</button>
-        <p class="fine">free. rung 1, the roadmap, then the odd next step. no spam, and you can leave from any email.</p>
+        <button class="btn btn-primary" type="submit">Send me version 2</button>
+        <p class="fine">free. version 2, the roadmap, then the odd next step. no spam, and you can leave from any email.</p>
         <div class="done" hidden>
           <img src="../../assets/drip2-smile.png" alt="" width="64" height="109">
-          <div><h3>you're in.</h3><p>Rung 1 and the roadmap are on their way. Until then, finish the scorecard and keep the file.</p></div>
+          <div><h3>you're in.</h3><p>Version 2 and the roadmap are on their way. Until then, finish the scorecard and keep the file.</p></div>
         </div>
       </form>
     </div>
@@ -464,175 +601,115 @@
 
 <script>
 (function () {
-  // ---------- state ----------
   var $ = function (id) { return document.getElementById(id); };
-  var mode = 'browser', words = 0, speakMs = 0, tokens = 0, pressT = 0, releaseT = 0;
-  var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-  var hasSR = !!SR, hasRec = typeof MediaRecorder !== 'undefined' && !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia);
-  var hold = $('hold'), text = $('text'), interim = $('interim'), msg = $('msg'), support = $('support');
   var store = function (k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } };
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  function say(m, err) { msg.textContent = m || ''; msg.className = 'msg' + (err ? ' err' : ''); }
-  function paint() {
-    $('sWords').textContent = words;
-    $('sSpeak').textContent = Math.floor(speakMs / 60000) + ':' + ('0' + Math.floor(speakMs / 1000 % 60)).slice(-2);
-    var saved = Math.max(0, words / 40 - speakMs / 60000);
-    $('sSaved').textContent = (saved < 1 ? Math.round(saved * 60) + ' s' : Math.round(saved) + ' min');
-    $('sTok').textContent = tokens;
-    $('sWhere').textContent = mode === 'browser' ? (hasSR ? "Google's servers" : 'nowhere yet') : "Groq's servers";
+  // ---------- the month-in animation (an illustration; nothing is recorded) ----------
+  var SCENES = [
+    { title: 'team chat', ic: '#', name: 'team chat', style: 'style: casual',
+      ctx: '<b>Priya</b>are we still doing standup at 10?',
+      raw: 'um so i think we should uh move standup to like ten thirty tomorrow',
+      clean: 'I think we should move standup to 10:30 tomorrow.',
+      badge: '0.9 s · on this computer', words: 9, hot: [], topic: 'standup time', tag: 'chat' },
+    { title: 'email', ic: '@', name: 'email to a client', style: 'style: professional',
+      ctx: '<b>To</b>client &nbsp;·&nbsp; Subject: Q3 numbers',
+      raw: 'hey uh can you send over the q3 numbers by friday thanks so much',
+      clean: 'Hi, could you send over the Q3 numbers by Friday? Thank you.',
+      badge: '1.1 s · on this computer', words: 12, hot: ['numbers', 'client'], topic: 'Q3 numbers', tag: 'email' },
+    { title: 'code editor', ic: '&gt;', name: 'code editor · claude', style: 'style: word for word',
+      ctx: '<b>~/sync-service</b>asking Claude for a change',
+      raw: 'add a retry with backoff to the sync function and log every failure',
+      clean: 'add a retry with backoff to the sync function and log every failure',
+      code: true, badge: '0.8 s · nothing changed, on purpose', words: 13, hot: ['sync', 'claude'], topic: 'sync retries', tag: 'code' },
+    { phone: true, title: 'phone', raw: 'remind me to call the venue about the deposit',
+      clean: 'Remind me to call the venue about the deposit.', badge: '1.4 s · phone to your PC and back', words: 9, hot: [], topic: 'venue deposit', tag: 'phone' }
+  ];
+  var FILL = /^(um|uh|like|so)$/i;
+  var sim = $('sim'), bars = $('stepsBar'), prog = $('prog');
+  var wave = $('wave');
+  for (var w = 0; w < 26; w++) { var bar = document.createElement('i'); bar.style.animationDelay = (Math.random() * .7).toFixed(2) + 's'; bar.style.animationDuration = (.45 + Math.random() * .5).toFixed(2) + 's'; wave.appendChild(bar); }
+  var words = 77214, sess = 342, token = 0, idx = 0;
+  var sleep = function (ms) { return new Promise(function (r) { setTimeout(r, ms); }); };
+  function fmt(n) { return n.toLocaleString('en-US'); }
+  function rawHTML(text, upto) {
+    return text.split(' ').slice(0, upto).map(function (t) { return FILL.test(t) ? '<span class="f">' + t + '</span>' : t; }).join(' ');
   }
-  function addWords(t) {
-    var n = (t.trim().match(/\S+/g) || []).length; words += n;
-    text.value = (text.value ? text.value.replace(/\s+$/, '') + ' ' : '') + t.trim();
-    remember(t.trim());
-    paint();
+  function markStep(i, ms) {
+    bars.querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-current', +b.dataset.s === i ? 'true' : 'false'); });
+    prog.style.transition = 'none'; prog.style.width = '0';
+    void prog.offsetWidth;
+    prog.style.transition = 'width ' + ms + 'ms linear'; prog.style.width = '100%';
   }
-  function lat() { releaseT = releaseT || Date.now(); var s = (Date.now() - releaseT) / 1000; $('sLat').textContent = s.toFixed(1) + ' s'; }
-
-  // ---------- history: yours, in this browser ----------
-  var hist = [];
-  try { hist = JSON.parse(store('drip-lab-hist') || '[]') || []; } catch (e) { hist = []; }
-  function paintHist() {
-    var ul = $('hist'); ul.innerHTML = '';
-    if (!hist.length) { ul.innerHTML = '<li><time>nothing yet</time>Your last 20 dictations will show here, saved only in this browser.</li>'; return; }
-    hist.slice().reverse().forEach(function (h) {
-      var li = document.createElement('li'), t = document.createElement('time');
-      t.textContent = new Date(h.t).toLocaleString(); li.appendChild(t); li.appendChild(document.createTextNode(h.s)); ul.appendChild(li);
-    });
+  function tick(s) {
+    words += s.words; sess += 1; $('iWords').textContent = fmt(words); $('iSess').textContent = fmt(sess);
+    $('iWordsTop').querySelectorAll('span').forEach(function (c) { c.classList.toggle('hot', s.hot.indexOf(c.dataset.w) > -1); });
+    var t = $('iTopics'), chip = document.createElement('span'); chip.textContent = s.topic; t.appendChild(chip);
+    while (t.children.length > 5) t.removeChild(t.firstChild);
+    var ul = $('recent'), li = document.createElement('li');
+    li.innerHTML = '<time>just now</time><span></span>'; li.lastChild.textContent = s.clean; var tag = document.createElement('em'); tag.textContent = s.tag; li.lastChild.appendChild(tag);
+    ul.querySelectorAll('time').forEach(function (x) { if (x.textContent === 'just now') x.textContent = 'a minute ago'; });
+    ul.insertBefore(li, ul.firstChild); while (ul.children.length > 4) ul.removeChild(ul.lastChild);
   }
-  function remember(s) { if (!s) return; hist.push({ t: Date.now(), s: s }); hist = hist.slice(-20); store('drip-lab-hist', JSON.stringify(hist)); paintHist(); }
-  $('histClear').addEventListener('click', function () { hist = []; store('drip-lab-hist', '[]'); paintHist(); });
-  paintHist();
-
-  // ---------- browser mode ----------
-  var rec = null, listening = false;
-  function startSR() {
-    if (!hasSR) { say('this browser has no built-in speech recognition. use Chrome or Edge, or switch to the key mode.', true); return; }
-    rec = new SR(); rec.continuous = true; rec.interimResults = true; rec.lang = navigator.language || 'en-US';
-    var finals = '';
-    rec.onresult = function (e) {
-      var inter = '';
-      for (var i = e.resultIndex; i < e.results.length; i++) {
-        if (e.results[i].isFinal) finals += e.results[i][0].transcript + ' '; else inter += e.results[i][0].transcript;
-      }
-      interim.textContent = inter;
-    };
-    rec.onerror = function (e) { say('recognition error: ' + e.error + (e.error === 'not-allowed' ? ' (allow the microphone)' : ''), true); };
-    rec.onend = function () {
-      listening = false; hold.classList.remove('on', 'busy'); interim.textContent = '';
-      if (finals.trim()) { addWords(finals); lat(); say('done. that went to the browser\'s speech service.'); }
-      else if (releaseT) say('nothing came back. hold a little longer before you talk, and check the mic.');
-    };
-    try { rec.start(); listening = true; say('listening...'); } catch (e) { say('could not start: ' + e.message, true); }
+  async function play(i, my) {
+    var s = SCENES[i], alive = function () { return my === token; };
+    var perWord = reduce ? 0 : 120, total = s.raw.split(' ').length * perWord + 3600;
+    markStep(i, total);
+    $('winTitle').textContent = s.title;
+    $('scApp').classList.toggle('off', !!s.phone); $('scPhone').classList.toggle('off', !s.phone);
+    var parts = s.raw.split(' ');
+    if (!s.phone) {
+      $('appIc').innerHTML = s.ic; $('appName').textContent = s.name; $('styleTag').textContent = s.style; $('ctx').innerHTML = s.ctx;
+      var raw = $('raw'), clean = $('clean');
+      raw.className = 'raw'; raw.innerHTML = ''; clean.className = 'clean' + (s.code ? ' code' : ''); clean.textContent = s.clean;
+      $('badge').classList.remove('on'); $('badge').textContent = s.badge;
+      await sleep(reduce ? 0 : 450); if (!alive()) return;
+      $('key').classList.add('on'); wave.classList.add('on');
+      for (var k = 1; k <= parts.length; k++) { raw.innerHTML = rawHTML(s.raw, k); if (perWord) { await sleep(perWord); if (!alive()) return; } }
+      $('key').classList.remove('on'); wave.classList.remove('on');
+      if (!s.code) { await sleep(reduce ? 0 : 250); if (!alive()) return; raw.classList.add('strike'); }
+      $('thinking').classList.add('on');
+      await sleep(reduce ? 0 : 650); if (!alive()) return;
+      $('thinking').classList.remove('on'); raw.classList.add('gone'); clean.classList.add('on'); $('badge').classList.add('on');
+    } else {
+      var bub = $('pBub'), mic = $('pMic'), path = $('pPath'), pb = $('pBadge');
+      bub.innerHTML = ''; pb.classList.remove('on'); pb.textContent = s.badge; path.classList.remove('go');
+      await sleep(reduce ? 0 : 450); if (!alive()) return;
+      mic.classList.add('on');
+      for (var j = 1; j <= parts.length; j++) { bub.innerHTML = '<span class="r">' + parts.slice(0, j).join(' ') + '</span>'; if (perWord) { await sleep(perWord); if (!alive()) return; } }
+      mic.classList.remove('on'); void path.offsetWidth; path.classList.add('go');
+      await sleep(reduce ? 0 : 1300); if (!alive()) return;
+      bub.textContent = s.clean; pb.classList.add('on');
+    }
+    tick(s);
+    await sleep(reduce ? 0 : 2400);
   }
-  function stopSR() { if (rec && listening) { hold.classList.add('busy'); rec.stop(); } }
-
-  // ---------- key mode: MediaRecorder + Groq Whisper ----------
-  var mr = null, chunks = [], stream = null;
-  function key() { return ($('key').value || '').trim(); }
-  function startRec() {
-    if (!hasRec) { say('this browser cannot record audio.', true); return; }
-    if (!key()) { say('paste a Groq key first (console.groq.com, free).', true); return; }
-    var go = function () {
-      chunks = []; mr = new MediaRecorder(stream); mr.ondataavailable = function (e) { if (e.data.size) chunks.push(e.data); };
-      mr.onstop = transcribe; mr.start(); say('recording...');
-    };
-    if (stream) go(); else navigator.mediaDevices.getUserMedia({ audio: true }).then(function (s) { stream = s; go(); }).catch(function (e) { say('microphone: ' + e.message, true); hold.classList.remove('on'); });
+  var running = false, shown = false;
+  async function loop() {
+    var my = ++token; running = true;
+    while (my === token) {
+      await play(idx, my);
+      if (my !== token || reduce) break;
+      idx = (idx + 1) % SCENES.length;
+    }
+    if (my === token) running = false;
   }
-  function stopRec() { if (mr && mr.state === 'recording') { hold.classList.add('busy'); mr.stop(); } }
-  function transcribe() {
-    var blob = new Blob(chunks, { type: chunks[0] && chunks[0].type || 'audio/webm' });
-    if (blob.size < 1000) { hold.classList.remove('on', 'busy'); say('too short.'); return; }
-    var fd = new FormData(); fd.append('file', blob, 'audio.webm'); fd.append('model', 'whisper-large-v3-turbo'); fd.append('response_format', 'json');
-    say('sending ' + Math.round(blob.size / 1024) + ' KB to Groq...');
-    fetch('https://api.groq.com/openai/v1/audio/transcriptions', { method: 'POST', headers: { Authorization: 'Bearer ' + key() }, body: fd })
-      .then(function (r) { return r.json().then(function (j) { if (!r.ok) throw new Error((j.error && j.error.message) || ('HTTP ' + r.status)); return j; }); })
-      .then(function (j) { hold.classList.remove('on', 'busy'); if (j.text && j.text.trim()) { addWords(j.text); lat(); say('done. that went to Groq.'); } else say('nothing came back.'); })
-      .catch(function (e) { hold.classList.remove('on', 'busy'); say('transcription failed: ' + e.message, true); });
+  bars.querySelectorAll('button').forEach(function (b) { b.addEventListener('click', function () { idx = +b.dataset.s; loop(); }); });
+  // Play only while the window is on screen; checked every second, which survives
+  // embedded previews and in-app browsers better than an observer does.
+  function inView() { var r = sim.getBoundingClientRect(), h = window.innerHeight || document.documentElement.clientHeight; return h > 0 && r.height > 0 && r.top < h * 0.85 && r.bottom > h * 0.15; }
+  function watch() {
+    var on = inView();
+    if (on && !shown) { shown = true; $('iBars').querySelectorAll('i').forEach(function (i) { i.style.width = i.dataset.w * 2 + '%'; }); }
+    if (on && !running) loop();
+    else if (!on && running) { token++; running = false; }
   }
-  function loadModels() {
-    if (!key()) return;
-    fetch('https://api.groq.com/openai/v1/models', { headers: { Authorization: 'Bearer ' + key() } })
-      .then(function (r) { return r.json(); })
-      .then(function (j) {
-        var sel = $('model'); sel.innerHTML = '';
-        (j.data || []).map(function (m) { return m.id; }).filter(function (id) { return !/whisper|tts|guard|orpheus/i.test(id); }).sort()
-          .forEach(function (id) { var o = document.createElement('option'); o.value = id; o.textContent = id; sel.appendChild(o); });
-        if (!sel.options.length) sel.innerHTML = '<option value="">no text models on this key</option>';
-        var saved = store('drip-lab-model'); if (saved) sel.value = saved;
-        say('key works. ' + sel.options.length + ' text models loaded.');
-      })
-      .catch(function (e) { say('could not load models: ' + e.message, true); });
-  }
-  $('clean').addEventListener('click', function () {
-    var model = $('model').value, t = text.value.trim();
-    if (!key() || !model) { say('add a key and pick a model first.', true); return; }
-    if (!t) { say('nothing to clean up yet.'); return; }
-    say('cleaning up with ' + model + '...');
-    fetch('https://api.groq.com/openai/v1/chat/completions', {
-      method: 'POST', headers: { Authorization: 'Bearer ' + key(), 'content-type': 'application/json' },
-      body: JSON.stringify({ model: model, temperature: 0, messages: [
-        { role: 'system', content: 'You clean up dictated text. Fix punctuation and capitalization, remove filler words like um and uh, keep the meaning and the words otherwise. Return only the cleaned text, nothing else.' },
-        { role: 'user', content: t }] })
-    }).then(function (r) { return r.json().then(function (j) { if (!r.ok) throw new Error((j.error && j.error.message) || ('HTTP ' + r.status)); return j; }); })
-      .then(function (j) {
-        var out = j.choices && j.choices[0] && j.choices[0].message && j.choices[0].message.content;
-        if (out) text.value = out.trim();
-        var u = (j.usage && j.usage.total_tokens) || 0; tokens += u; paint();
-        say('cleaned. ' + u + ' tokens this time.');
-      }).catch(function (e) { say('clean-up failed: ' + e.message, true); });
-  });
-  $('key').addEventListener('change', function () { store('drip-lab-key', key()); loadModels(); });
-  $('model').addEventListener('change', function () { store('drip-lab-model', $('model').value); });
-  var savedKey = store('drip-lab-key'); if (savedKey) { $('key').value = savedKey; }
-
-  // ---------- mode switch ----------
-  function setMode(m) {
-    mode = m;
-    $('modeBrowser').setAttribute('aria-pressed', m === 'browser'); $('modeKey').setAttribute('aria-pressed', m === 'key');
-    $('keybox').hidden = m !== 'key'; $('clean').hidden = m !== 'key';
-    if (m === 'key' && key()) loadModels();
-    paint(); say('');
-  }
-  $('modeBrowser').addEventListener('click', function () { setMode('browser'); });
-  $('modeKey').addEventListener('click', function () { setMode('key'); });
-
-  // ---------- the hold button ----------
-  var down = false;
-  function press(e) {
-    if (e && e.preventDefault) e.preventDefault();
-    if (down) return; down = true; pressT = Date.now(); releaseT = 0;
-    hold.classList.add('on');
-    if (mode === 'browser') startSR(); else startRec();
-  }
-  function release(e) {
-    if (e && e.preventDefault) e.preventDefault();
-    if (!down) return; down = false; releaseT = Date.now(); speakMs += releaseT - pressT;
-    if (mode === 'browser') stopSR(); else stopRec();
-    if (!(mode === 'browser' ? listening : (mr && mr.state === 'recording'))) hold.classList.remove('on');
-    paint();
-  }
-  hold.addEventListener('mousedown', press); hold.addEventListener('touchstart', press, { passive: false });
-  window.addEventListener('mouseup', function () { if (down) release(); });
-  hold.addEventListener('touchend', release, { passive: false }); hold.addEventListener('touchcancel', release, { passive: false });
-  window.addEventListener('keydown', function (e) {
-    if (e.code !== 'Space' || e.repeat) return;
-    var t = e.target.tagName; if (t === 'INPUT' || t === 'TEXTAREA' || t === 'SELECT' || t === 'BUTTON' && e.target !== hold) return;
-    press(e);
-  });
-  window.addEventListener('keyup', function (e) { if (e.code === 'Space' && down) release(e); });
-
-  $('copy').addEventListener('click', function () { navigator.clipboard.writeText(text.value).then(function () { say('copied.'); }, function () { text.select(); say('select and copy by hand.'); }); });
-  $('clear').addEventListener('click', function () { text.value = ''; say(''); });
-
-  if (!hasSR && !hasRec) support.textContent = 'This browser has neither speech recognition nor audio recording. Try Chrome or Edge on a laptop.';
-  else if (!hasSR) { support.textContent = 'No built-in recognition in this browser; the free key mode works here.'; setMode('key'); }
-  paint();
+  setInterval(watch, 1000); window.addEventListener('scroll', watch, { passive: true }); watch();
 
   // ---------- copy buttons for the prompts ----------
   document.querySelectorAll('.copy[data-copy]').forEach(function (b) {
     b.addEventListener('click', function () {
-      var el = $(b.getAttribute('data-copy')), t = el.childNodes[0].textContent;
+      var t = $(b.getAttribute('data-copy')).childNodes[0].textContent;
       navigator.clipboard.writeText(t).then(function () { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1500); });
     });
   });
@@ -640,12 +717,11 @@
   // ---------- scorecard, saved in this browser ----------
   var sc = {}; try { sc = JSON.parse(store('drip-lab-score') || '{}') || {}; } catch (e) { sc = {}; }
   var fields = document.querySelectorAll('#sc [data-f]');
-  fields.forEach(function (f) { if (sc[f.dataset.f] !== undefined) f.value = sc[f.dataset.f]; f.addEventListener('input', function () { sc[f.dataset.f] = f.value; store('drip-lab-score', JSON.stringify(sc)); }); f.addEventListener('change', function () { sc[f.dataset.f] = f.value; store('drip-lab-score', JSON.stringify(sc)); }); });
+  var save = function (f) { sc[f.dataset.f] = f.value; store('drip-lab-score', JSON.stringify(sc)); };
+  fields.forEach(function (f) { if (sc[f.dataset.f] !== undefined) f.value = sc[f.dataset.f]; f.addEventListener('input', function () { save(f); }); f.addEventListener('change', function () { save(f); }); });
   $('scCopy').addEventListener('click', function () {
-    var rows = []; document.querySelectorAll('#sc tbody tr').forEach(function (tr) {
-      var k = tr.querySelector('.k').textContent, f = tr.querySelector('[data-f]'); rows.push(k + ': ' + (f.value || '(blank)'));
-    });
-    var out = 'My dictation tool, rung 0 (' + new Date().toLocaleDateString() + ')\n' + rows.join('\n') + '\n\nBuilt in the free day-one lab at dripthecup.com/learn/dictation/';
+    var rows = []; document.querySelectorAll('#sc tbody tr').forEach(function (tr) { rows.push(tr.querySelector('.k').textContent + ': ' + (tr.querySelector('[data-f]').value || '(blank)')); });
+    var out = 'My dictation tool, version 1 (' + new Date().toLocaleDateString() + ')\n' + rows.join('\n') + '\n\nBuilt in the free day-one lab at dripthecup.com/learn/dictation/';
     navigator.clipboard.writeText(out).then(function () { $('scCopy').textContent = 'Copied'; setTimeout(function () { $('scCopy').textContent = 'Copy my scorecard'; }, 1500); });
   });
   $('scClear').addEventListener('click', function () { sc = {}; store('drip-lab-score', '{}'); fields.forEach(function (f) { f.value = ''; }); });
@@ -661,7 +737,7 @@
       fetch('/api/subscribe', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ email: email, source: f.getAttribute('data-source'), interest: 'dictation lab', cream: f.elements.cream.value || '' }) })
         .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
         .then(function (x) { if (!x.ok || !x.j.ok) throw new Error(x.j.error || 'something went wrong'); Array.prototype.forEach.call(f.children, function (c) { if (c !== done) c.hidden = true; }); done.hidden = false; })
-        .catch(function (e) { err.textContent = e.message === 'Failed to fetch' ? 'no connection. try again in a minute.' : e.message; err.hidden = false; btn.disabled = false; btn.textContent = 'Send me rung 1'; });
+        .catch(function (e) { err.textContent = e.message === 'Failed to fetch' ? 'no connection. try again in a minute.' : e.message; err.hidden = false; btn.disabled = false; btn.textContent = 'Send me version 2'; });
     });
   });
 })();
