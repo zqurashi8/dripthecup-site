@@ -423,6 +423,63 @@
   .col a:hover{color:var(--paper);}
   .legal{border-top:1px solid var(--line-dark);margin-top:40px;padding-top:18px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;line-height:1.9;
          display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+
+  /* ---------- three paths (condensed, Oct 2) ---------- */
+  .choose{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:26px;max-width:640px;}
+  @media (max-width:520px){.choose{grid-template-columns:minmax(0,1fr);}}
+  .choose button{text-align:left;background:var(--dark2);border:2px solid var(--line-dark);color:var(--dim);padding:14px 14px 12px;cursor:pointer;font:inherit;display:flex;flex-direction:column;gap:4px;}
+  .choose button b{font-family:var(--display);font-weight:900;font-size:20px;line-height:1.05;color:var(--paper);}
+  .choose button span{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;}
+  .choose button:hover{border-color:var(--mustard);}
+  .choose button[aria-selected="true"]{background:var(--mustard);border-color:var(--mustard);color:var(--ink);}
+  .choose button[aria-selected="true"] b{color:var(--ink);}
+  .choose-note{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--dim);opacity:.8;margin:12px 0 0;}
+  @media (max-width:900px){.hero .wrap > div:last-child{order:-1;} .hero .stage{padding:16px 16px 0;} .hero .stage .fig{max-height:240px;width:auto;margin:0 auto;}}
+  .panel{border-bottom:1px solid var(--line);}
+  .panel.dark{border-color:var(--line-dark);}
+  .panel .sec-head{margin-bottom:18px;}
+  .lgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;}
+  @media (max-width:1100px){.lgrid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+  @media (max-width:580px){.lgrid{grid-template-columns:minmax(0,1fr);}}
+  .lgrid .bcard h3{font-size:20px;}
+  .lgrid .bcard .one{font-size:14px;}
+  #seat{margin-top:22px;}
+  .labgrid .founding .form{margin-top:4px;max-width:none;box-shadow:6px 6px 0 var(--mustard);}
+  .labgrid .founding .form .btn{padding:15px 16px;}
+  .freegrid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:22px;align-items:start;}
+  @media (max-width:860px){.freegrid{grid-template-columns:minmax(0,1fr);}}
+  .lablink{display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:16px;align-items:center;background:var(--mustard);border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);padding:20px;text-decoration:none;color:var(--ink);}
+  @media (max-width:520px){.lablink{grid-template-columns:minmax(0,1fr);}}
+  .lablink .hud{font-size:9px;}
+  .lablink b{display:block;font-family:var(--display);font-weight:900;font-size:clamp(24px,2.6vw,32px);line-height:1.02;letter-spacing:-.01em;margin:8px 0;}
+  .lablink span.d{display:block;font-size:15.5px;}
+  .lablink i{display:inline-block;margin-top:12px;font-style:normal;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;border-bottom:2px solid var(--ink);}
+  .lablink img{width:100%;height:auto;display:block;border:2px solid var(--ink);}
+  .lablink:hover{background:var(--paper);}
+  .freelist{border:2px solid var(--ink);background:var(--cup);}
+  .freelist .hud{font-size:9px;color:var(--muted);padding:14px 16px 6px;margin:0;}
+  .freelist a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;padding:11px 16px;border-top:1px solid var(--line);text-decoration:none;}
+  .freelist a b{font-family:var(--display);font-weight:600;font-size:17px;line-height:1.2;}
+  .freelist a span{grid-column:1;font-size:13.5px;color:var(--muted);}
+  .freelist a em{grid-row:1/span 2;grid-column:2;align-self:center;font-style:normal;font-family:var(--mono);font-size:14px;}
+  .freelist a:hover{background:var(--mustard);}
+  .freelist a:hover span{color:var(--ink);}
+  .freeform{margin-top:22px;}
+  .freeform .form{margin-top:0;}
+  .panel.hire .wrap{padding-block:0;}
+  /* the nine levels, compact */
+  .lvl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px;}
+  @media (max-width:820px){.lvl{grid-template-columns:minmax(0,1fr);}}
+  .lvr{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:2px 12px;align-items:center;border:2px solid var(--line-dark);background:var(--dark2);padding:10px 12px;}
+  .lvr.seen{border-color:var(--mustard);}
+  .lvr .n{grid-row:span 2;font-family:var(--pixel);font-size:16px;color:var(--mustard);text-align:center;}
+  .lvr b{font-family:var(--display);font-weight:600;font-size:17px;color:var(--paper);line-height:1.2;}
+  .lvr span.w{grid-column:2;font-size:13.5px;color:var(--dim);}
+  .lvr span.w a{color:var(--mustard);}
+  .lvr .tag{grid-row:1/span 2;grid-column:3;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--dim);padding:3px 7px;color:var(--dim);white-space:nowrap;}
+  .lvr .tag.lab{background:var(--mustard);border-color:var(--mustard);color:var(--ink);}
+  .lvr.side{grid-column:1/-1;border-style:dashed;border-color:var(--mustard);}
+  #path .pathbar{position:static;}
 </style>
 </head>
 <body>
@@ -447,12 +504,13 @@
       <p class="hud">Drip the Cup Lab &nbsp;·&nbsp; taught by</p>
       <p class="who">Zain Qurashi</p>
       <h1>Nine levels from zero to <em>AI automation engineer.</em></h1>
-      <p class="sub">I'm an integrations engineer and I build with AI every day. I'll show you what to learn and what to build, in order. The videos are free. The full builds and the live help are in the Lab.</p>
-      <div class="ctas">
-        <a class="btn btn-mustard" href="#unlock">See what I've built</a>
-        <a class="btn btn-ghost" href="/learn/dictation/">Free lab: build a dictation tool</a>
+      <p class="sub">I'm an integrations engineer and I build with AI every day. AI is free; the plan is the hard part. Pick how you want to learn it.</p>
+      <div class="choose" role="tablist" aria-label="Three ways in">
+        <button type="button" role="tab" id="t-free" aria-controls="p-free" aria-selected="false" tabindex="-1"><b>The free path</b><span>start tonight, $0</span></button>
+        <button type="button" role="tab" id="t-lab" aria-controls="p-lab" aria-selected="true"><b>The Lab</b><span>the full builds, $49/mo</span></button>
+        <button type="button" role="tab" id="t-hire" aria-controls="p-hire" aria-selected="false" tabindex="-1"><b>Work with me</b><span>for businesses</span></button>
       </div>
-      <a class="biz" href="#hire">Running a business? I'll set AI up for you &rarr;</a>
+      <p class="choose-note">three ways in. pick one; the details are right below.</p>
     </div>
     <div>
       <div class="stage">
@@ -462,49 +520,20 @@
   </div>
 </section>
 
-<!-- ============ HOW THIS WORKS ============ -->
-<section class="sec" id="why">
-  <div class="wrap">
-    <div class="why">
-      <div>
-        <p class="eyebrow">How this works</p>
-        <h2>AI is free. The plan is the hard part.</h2>
-      </div>
-      <div class="why-copy">
-        <p>Getting in shape has the simplest advice there is: go to the gym. It's the plan that makes it work. What to do each day, in what order, and someone checking in.</p>
-        <p>AI is the same. The tools are free and the tutorials are everywhere. What's missing is the order: what to learn first, what to build next, and someone looking at your work.</p>
-        <p>So the videos and the roadmap stay free. The Lab is where the structure lives: the full builds, a plan for your level, and me. I charge for it so I can give every member real time, and so the people in it show up and build.</p>
-        <p class="sig">Zain</p>
-      </div>
-    </div>
-    <div class="doors">
-      <a class="door" href="#first"><span class="hud">Free</span><b>The free path</b><span>Every video, the nine-level roadmap, the 200+ AI tools directory and the first build. It stands on its own.</span><i>Start free &rarr;</i></a>
-      <a class="door lab" href="#lab"><span class="hud">$49 a month &nbsp;·&nbsp; optional</span><b>The Lab</b><span>The full builds and their code, a plan for your level, two live calls a week and reviews. Small on purpose.</span><i>What's inside &rarr;</i></a>
-      <a class="door" href="#hire"><span class="hud">For businesses</span><b>Work with me</b><span>Ten years of enterprise integrations. I set up AI systems and workflows for your team, in your own accounts, documented so you own them.</span><i>Get a free call &rarr;</i></a>
-    </div>
-  </div>
-</section>
+<!-- ============ THE THREE PATHS ============ -->
+<div id="paths">
 
-<!-- ============ WHAT I'VE BUILT (the glass paywall) ============ -->
-<section class="sec dark" id="unlock">
+<!-- the Lab (default) -->
+<section class="sec dark panel" id="p-lab" role="tabpanel" aria-labelledby="t-lab">
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <p class="eyebrow">What I've built</p>
-        <h2>Built on my own time since June. This is what you unlock.</h2>
+        <p class="eyebrow">The Lab &nbsp;·&nbsp; $49 a month &nbsp;·&nbsp; optional</p>
+        <h2>The full builds, a plan for your level, and me.</h2>
       </div>
     </div>
-    <p class="lede">Real apps I use every day, the agent skills behind them, and the courses they turn into. The free ones are open. The rest you can see through the glass, and they open in the Lab.</p>
-
-    <div class="tabs" role="tablist" aria-label="What you unlock">
-      <button role="tab" id="tab-builds" aria-controls="panel-builds" aria-selected="true">The builds</button>
-      <button role="tab" id="tab-skills" aria-controls="panel-skills" aria-selected="false" tabindex="-1">Agent skills</button>
-      <button role="tab" id="tab-class" aria-controls="panel-class" aria-selected="false" tabindex="-1">Classroom</button>
-    </div>
-
-    <!-- builds -->
-    <div class="tabpanel" id="panel-builds" role="tabpanel" aria-labelledby="tab-builds">
-      <article class="feat locked">
+    <p class="lede">Real apps I use every day, built on my own time since June. You can see them through the glass. In the Lab you get them, and we build them together.</p>
+    <article class="feat locked">
         <div class="shot">
           <div class="mock mb" aria-hidden="true">
             <div class="mb-top"><span>Mission briefing</span><span>07:00</span></div>
@@ -519,33 +548,30 @@
             <div class="mb-input">Talk, type, or drop in a photo...</div>
           </div>
           <span class="tagc sample">Sample preview · demo data</span>
-          <a class="lock-pill unlock-link" href="#lab"><span class="ic-lock"></span>Unlock in the Lab</a>
+          <a class="lock-pill unlock-link" href="#seat"><span class="ic-lock"></span>Unlock in the Lab</a>
         </div>
         <div class="info">
           <span class="badge">In daily use</span>
           <h3>Mission Briefing</h3>
           <p class="one">My own Jarvis. I talk, type or drop in a photo, and my agent Cipher files it into objectives and searchable memory, then runs a briefing for me every morning.</p>
           <p class="inside">In the Lab: <b>Build your Double-O agent</b>, a 20-module course. Desktop and Android, built from a clean copy with demo data.</p>
-          <a class="btn btn-mustard unlock-link" href="#lab"><span class="ic-lock"></span>Unlock in the Lab</a>
+          <a class="btn btn-mustard unlock-link" href="#seat"><span class="ic-lock"></span>Unlock in the Lab</a>
         </div>
       </article>
-
-      <div class="bgrid">
-        <article class="bcard locked">
+    <div class="lgrid">
+      <article class="bcard locked">
           <div class="shot">
             <img src="art/builds/scribe.webp" width="900" height="563" loading="lazy" alt="Scribe's stats screen: 77k words dictated, 160 words a minute, 10.4 hours saved, and a words-per-day chart.">
-            <a class="lock-pill unlock-link" href="#lab"><span class="ic-lock"></span>Unlock in the Lab</a>
+            <a class="lock-pill unlock-link" href="#seat"><span class="ic-lock"></span>Unlock in the Lab</a>
           </div>
           <div class="info">
             <span class="badge">Working</span>
             <h3>Scribe</h3>
             <p class="one">My own private dictation app. Hold a key, talk, and clean text lands wherever your cursor is. It runs on your computer and nothing leaves it.</p>
-            <p class="inside">Inside: the full app, end to end. Speech to text on your GPU, a local model for cleanup, styles per app. <a href="/learn/dictation/">Free tonight: build version 1 &rarr;</a></p>
-            <div class="act"><a class="btn btn-mustard unlock-link" href="#lab"><span class="ic-lock"></span>Unlock</a></div>
+            <div class="act"><a class="btn btn-mustard unlock-link" href="#seat"><span class="ic-lock"></span>Unlock</a></div>
           </div>
         </article>
-
-        <article class="bcard locked">
+      <article class="bcard locked">
           <div class="shot">
             <div class="mock ci" aria-hidden="true">
               <div class="ci-h">Breakouts in your niche <span>vs each channel's normal</span></div>
@@ -555,32 +581,28 @@
               <div class="ci-hooks"><span>hook: a number</span><span>hook: a mistake</span><span>hook: a dare</span></div>
             </div>
             <span class="tagc sample">Sample preview</span>
-            <a class="lock-pill unlock-link" href="#lab"><span class="ic-lock"></span>Unlock in the Lab</a>
+            <a class="lock-pill unlock-link" href="#seat"><span class="ic-lock"></span>Unlock in the Lab</a>
           </div>
           <div class="info">
             <span class="badge">Working</span>
             <h3>Creator Intel</h3>
             <p class="one">Scores every video against its own channel's normal, so you see what actually broke out. Then it writes what worked into skills Claude reads before you brainstorm.</p>
-            <p class="inside">Inside: make Claude read your own analytics.</p>
-            <div class="act"><a class="btn btn-mustard unlock-link" href="#lab"><span class="ic-lock"></span>Unlock</a></div>
+            <div class="act"><a class="btn btn-mustard unlock-link" href="#seat"><span class="ic-lock"></span>Unlock</a></div>
           </div>
         </article>
-
-        <article class="bcard locked">
+      <article class="bcard locked">
           <div class="shot">
             <img src="art/builds/studio.webp" width="629" height="393" loading="lazy" alt="A storyboard frame: Drip at a desk with a laptop while Capp stands beside him with a clipboard.">
-            <a class="lock-pill unlock-link" href="#lab"><span class="ic-lock"></span>Unlock in the Lab</a>
+            <a class="lock-pill unlock-link" href="#seat"><span class="ic-lock"></span>Unlock in the Lab</a>
           </div>
           <div class="info">
             <span class="badge">Used daily</span>
             <h3>The Drip &amp; Capp studio</h3>
             <p class="one">Every Drip episode, short and carousel is rendered from code: AI voices, animation timed to every word, about 160 scenes.</p>
-            <p class="inside">Inside: build an animated explainer channel with code and AI voices.</p>
-            <div class="act"><a class="btn btn-mustard unlock-link" href="#lab"><span class="ic-lock"></span>Unlock</a></div>
+            <div class="act"><a class="btn btn-mustard unlock-link" href="#seat"><span class="ic-lock"></span>Unlock</a></div>
           </div>
         </article>
-
-        <article class="bcard locked">
+      <article class="bcard locked">
           <div class="shot">
             <div class="mock ed" aria-hidden="true">
               <div class="ed-rec"><span><i></i>REC 00:12:41</span><span>screen · face cam · mic</span></div>
@@ -591,268 +613,95 @@
               <div class="ed-out">cut list &rarr; DaVinci Resolve, already trimmed</div>
             </div>
             <span class="tagc sample">Sample preview</span>
-            <a class="lock-pill unlock-link" href="#lab"><span class="ic-lock"></span>Unlock in the Lab</a>
+            <a class="lock-pill unlock-link" href="#seat"><span class="ic-lock"></span>Unlock in the Lab</a>
           </div>
           <div class="info">
             <span class="badge">Working</span>
             <h3>Tutorial Recorder</h3>
             <p class="one">My own screen recorder and editor for YouTube. It records your screen, face cam and mic as separate layers, an AI cut list marks what to keep, and it opens in DaVinci Resolve already trimmed.</p>
-            <p class="inside">Inside: the app itself, yours to use, plus how it's built. The video side quest.</p>
-            <div class="act"><a class="btn btn-mustard unlock-link" href="#lab"><span class="ic-lock"></span>Unlock</a></div>
+            <div class="act"><a class="btn btn-mustard unlock-link" href="#seat"><span class="ic-lock"></span>Unlock</a></div>
           </div>
         </article>
-
-        <article class="bcard">
-          <div class="shot">
-            <img src="art/builds/tools.webp" width="900" height="562" loading="lazy" alt="The Drip AI tools directory: Find the right AI tool, fast, with a search box.">
-            <span class="tagc open">Free</span>
-          </div>
-          <div class="info">
-            <span class="badge">Live on this site</span>
-            <h3>The AI tools directory</h3>
-            <p class="one">201 tools in 24 categories, ranked for whatever task you type in. Level 2 shows you how it's built.</p>
-            <p class="inside">Free, no sign-up.</p>
-            <div class="act"><a class="btn btn-ghost" href="/resources/">Open it, free &rarr;</a></div>
-          </div>
-        </article>
-
-        <article class="bcard">
-          <div class="shot">
-            <img src="art/builds/jev.webp" width="900" height="562" loading="lazy" alt="Title slide: Jev, the AI that won't write you a single sentence.">
-            <span class="tagc open">Free</span>
-          </div>
-          <div class="info">
-            <span class="badge">Posted</span>
-            <h3>Jev: AI that decides</h3>
-            <p class="one">A model that picks an answer instead of writing one. Small Python demos, a 34-slide deck and the video, raced against Claude on cost.</p>
-            <p class="inside">Free: the video now. The demos and the deck are part of the free path.</p>
-            <div class="act"><a class="btn btn-ghost" href="/links/#what-is-jev">Watch it, free &rarr;</a></div>
-          </div>
-        </article>
-      </div>
-
-      <div class="alsofree">
-        <span class="hud">Coming to the free path</span>
-        <span><b>VoiceFlow</b>, dictation in about 300 lines</span>
-        <span><b>The motion graphics ladder</b>, one brief built six ways, every cost measured</span>
-        <span><b>This website</b>, a site and a tiny API for $0</span>
-      </div>
     </div>
-
-    <!-- skills -->
-    <div class="tabpanel" id="panel-skills" role="tabpanel" aria-labelledby="tab-skills" hidden>
-      <div class="win">
-        <div class="tb"><i></i><i></i><i></i><span>~/zain/.claude/skills</span></div>
-        <div class="body">
-          <div class="tree" id="skillTree" aria-label="Skills"><div class="dir">skills/</div></div>
-          <div class="pane locked" id="skillPane" aria-live="polite"></div>
-        </div>
-      </div>
-      <p class="glassnote">These are the agent skills I wrote for Claude. Each one is a folder of instructions it reads before a job, with a dated log it updates after my notes. Names and descriptions are real; the insides are what you unlock.</p>
-    </div>
-
-    <!-- classroom -->
-    <div class="tabpanel" id="panel-class" role="tabpanel" aria-labelledby="tab-class" hidden>
-      <div class="courses">
-        <article class="course open"><div class="cov"><span class="hud">LV 0</span><b>Day one: build your own dictation tool</b></div><div class="meta"><span>Free</span><em>Open</em></div><div class="prog"><i></i></div></article>
-        <article class="course open"><div class="cov"><span class="hud">LV 1</span><b>How AI talks to software</b></div><div class="meta"><span>Free</span><em>Open</em></div><div class="prog"><i></i></div></article>
-        <article class="course open"><div class="cov"><span class="hud">LV 2</span><b>AI that decides</b></div><div class="meta"><span>Free</span><em>Open</em></div><div class="prog"><i></i></div></article>
-        <article class="course lab"><div class="cov"><span class="hud">LV 3</span><span class="ic-lock"></span><b>Your first MCP server</b></div><div class="meta"><span>Lab</span><span>Locked</span></div><div class="prog"><i></i></div></article>
-        <article class="course open"><div class="cov"><span class="hud">LV 4</span><b>Voice to text in 300 lines</b></div><div class="meta"><span>Free</span><em>Open</em></div><div class="prog"><i></i></div></article>
-        <article class="course lab"><div class="cov"><span class="hud">LV 4 &middot; full build</span><span class="ic-lock"></span><b>Build your own Scribe</b></div><div class="meta"><span>Lab</span><span>Locked</span></div><div class="prog"><i></i></div></article>
-        <article class="course lab"><div class="cov"><span class="hud">LV 5</span><span class="ic-lock"></span><b>Build your Double-O agent</b></div><div class="meta"><span>Lab</span><span>20 modules</span></div><div class="prog"><i></i></div></article>
-        <article class="course lab"><div class="cov"><span class="hud">LV 6</span><span class="ic-lock"></span><b>Make Claude read your analytics</b></div><div class="meta"><span>Lab</span><span>Locked</span></div><div class="prog"><i></i></div></article>
-        <article class="course lab"><div class="cov"><span class="hud">LV 7</span><span class="ic-lock"></span><b>Portfolio: four projects</b></div><div class="meta"><span>Lab</span><span>Locked</span></div><div class="prog"><i></i></div></article>
-        <article class="course lab"><div class="cov"><span class="hud">LV 8</span><span class="ic-lock"></span><b>The Drip &amp; Capp studio</b></div><div class="meta"><span>Lab</span><span>Case study</span></div><div class="prog"><i></i></div></article>
-        <article class="course lab"><div class="cov"><span class="hud">LV 9</span><span class="ic-lock"></span><b>The integrations engineer job</b></div><div class="meta"><span>Lab</span><span>Locked</span></div><div class="prog"><i></i></div></article>
-        <article class="course lab"><div class="cov"><span class="hud">Side quest</span><span class="ic-lock"></span><b>Record and edit for YouTube</b></div><div class="meta"><span>Lab</span><span>Locked</span></div><div class="prog"><i></i></div></article>
-      </div>
-      <p class="glassnote">How the classroom is laid out when the Lab opens. Free courses come by email with the free path; Lab courses unlock over time, starting with a build you can finish in your first day.</p>
-    </div>
-
-    <p class="glassnote">Sample previews of real builds. The Lab opens soon, and every lock opens there.</p>
-  </div>
-</section>
-
-<!-- ============ PROOF ============ -->
-<section class="sec" id="zain">
-  <div class="wrap">
-    <div class="proof">
-      <div>
-        <p class="eyebrow">Who's teaching &nbsp;·&nbsp; Zain Qurashi</p>
-        <h2>AI didn't take my job. It got me promoted.</h2>
-        <p>I'm an integrations and automations engineer. For ten years my job has been making systems talk to each other. In the last two, every request that lands on my desk starts the same way: can we put AI on this?</p>
-        <p>So on my own time I built small proofs of concept, showed them, and they became the projects I was asked to focus on. That's the whole method: be curious, build small things that work, show results.</p>
-        <p>It worked for me, and I want you to have the same map. Drip is proof it works outside the day job too: a cup of coffee that explains AI, run by a pipeline I built.</p>
-      </div>
-      <div class="stats">
-        <div class="stat"><b>10 yrs</b><span>in tech, all of it integrations and automations</span></div>
-        <div class="stat"><b>13</b><span>apps and tools built since June, on my own time</span></div>
-        <div class="stat"><b>13</b><span>agent skills that run them</span></div>
-        <div class="stat"><b>$0</b><span>to start. The path is free</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ THE PATH ============ -->
-<section class="sec dark" id="path">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <p class="eyebrow">The path</p>
-        <h2>Nine levels. Zero to AI automation engineer.</h2>
-      </div>
-    </div>
-    <p class="lede">This is the roadmap, start to finish. Every level is a real thing you build, not a quiz. Levels 0, 1, 2 and 4 are free. The Lab adds the full builds and live help.</p>
-    <div class="pathbar">
-      <div class="row hud"><span>Progress</span><span id="pathCount">LV 0 / 9</span></div>
-      <div class="track"><div class="fill" id="pathFill"></div></div>
-    </div>
-    <div class="levels" id="levels">
-      <article class="lv"><div class="num"><small>Level</small>0</div><h3>Start here: build your own dictation tool</h3><span class="tag">Free</span>
-        <div class="two"><p><b>You learn</b>What an API key is and where it lives. How to describe a tool to an AI and get a working one back. How to measure what you built.</p><p><b>You build</b>A dictation tool, tonight, in your browser. Then the same tool again, better, at every level after. <a href="/learn/dictation/">Open the lab &rarr;</a></p></div></article>
-      <article class="lv"><div class="num"><small>Level</small>1</div><h3>Curious: how AI talks to software</h3><span class="tag">Free</span>
-        <div class="two"><p><b>You learn</b>What an API is. A prompt is not a question. Keeping keys safe. Tokens, cost, and model vs effort.</p><p><b>You build</b>A script that calls a model, with every line explained.</p></div></article>
-      <article class="lv"><div class="num"><small>Level</small>2</div><h3>Connected: AI that decides</h3><span class="tag">Free</span>
-        <div class="two"><p><b>You learn</b>Decision models: yes or no, pick one, score it. Why context changes the answer.</p><p><b>You build</b>A tool finder that ranks 200 AI tools for a typed task. It runs this site's directory.</p></div></article>
-      <article class="lv"><div class="num"><small>Level</small>3</div><h3>Builder: connect AI to your apps</h3><span class="tag lab">Lab build</span>
-        <div class="two"><p><b>You learn</b>APIs, MCP and connectors. What an AI can and can't touch once it's plugged in.</p><p><b>You build</b>Your first MCP server, so an AI can use an app of your choosing.</p></div></article>
-      <article class="lv"><div class="num"><small>Level</small>4</div><h3>Integrator: voice and media pipelines</h3><span class="tag">Free</span>
-        <div class="two"><p><b>You learn</b>How voice to text works, end to end, and where it breaks.</p><p><b>You build</b>A push-to-talk dictation app in about 300 lines. The full Scribe app is the Lab build.</p></div></article>
-      <article class="lv"><div class="num"><small>Level</small>5</div><h3>Automator: automations and agents</h3><span class="tag lab">Lab build</span>
-        <div class="two"><p><b>You learn</b>Which AI product for which job. Skills, plugins, schedules and webhooks. When an agent is worth it.</p><p><b>You build</b>Your own agent that sorts what you throw at it and briefs you every morning.</p></div></article>
-      <article class="lv"><div class="num"><small>Level</small>6</div><h3>Shipper: AI at the enterprise level</h3><span class="tag lab">Lab</span>
-        <div class="two"><p><b>You learn</b>Why a chat license is not an AI strategy. Identity and access, logging every agent action, cost limits, reliability, governance.</p><p><b>You build</b>A locked-down integration: the AI sees only what that user is allowed to see.</p></div></article>
-      <article class="lv"><div class="num"><small>Level</small>7</div><h3>Engineer: portfolio projects</h3><span class="tag lab">Lab</span>
-        <div class="two"><p><b>You learn</b>How to scope, ship and write up a project someone else can run.</p><p><b>You build</b>Four projects to show an employer or a client: tool finder, comment triage, transcription service, an MCP server for your own app.</p></div></article>
-      <article class="lv"><div class="num"><small>Level</small>8</div><h3>Architect: automating a character</h3><span class="tag lab">Case study</span>
-        <div class="two"><p><b>You learn</b>The Drip pipeline: script, voice, animation, posting. And the legal side: AI disclosure rules, who owns an AI character, voice and likeness rights, sponsorship rules.</p><p><b>You build</b>The same pipeline, productionized the way a company would run it.</p></div></article>
-      <article class="lv"><div class="num"><small>Level</small>9</div><h3>Legend: the career</h3><span class="tag lab">Lab</span>
-        <div class="two"><p><b>You learn</b>What the job is day to day. Portfolio, resume, interviews. Your first freelance automation client.</p><p><b>You build</b>A plan for your next twelve months, reviewed live.</p></div></article>
-      <article class="lv side"><div class="num"><small>Side</small>+</div><h3>Side quest: record, edit and make videos with AI</h3><span class="tag lab">Lab</span>
-        <div class="two"><p><b>You learn</b>Scripts, AI voices, characters animated in code, and the honest part: disclosure and voice rights.</p><p><b>You build</b>Your recording and edit setup: screen, face cam and mic, a cut list, and DaVinci Resolve already trimmed. Members get my Tutorial Recorder app.</p></div></article>
-    </div>
-    <div class="legend"><span><span class="tag">Free</span>on YouTube and this site</span><span><span class="tag lab">Lab</span>optional, with live help</span></div>
-  </div>
-</section>
-
-<!-- ============ FIRST BUILD (email) ============ -->
-<section class="sec mustard" id="first">
-  <div class="wrap">
-    <div class="quest">
-      <div>
-        <p class="eyebrow">Start here &nbsp;·&nbsp; free &nbsp;·&nbsp; tonight</p>
-        <h2>Build your own dictation tool tonight.</h2>
-        <p>Level 0 is a lab you do right now, not an email you wait for: build the kind of tool people pay $12 to $30 a month for, in about an hour, by describing it to an AI. Then measure it and see where it ends up. <a href="/learn/dictation/">Open the lab &rarr;</a></p>
-        <p>Leave your email and I'll send you version 2 (the one that runs on your own computer) and the full roadmap. Free, no card needed.</p>
-        <form class="form" data-source="learn-hero" novalidate>
-          <p class="err" hidden></p>
-          <label>Your email</label>
-          <input type="email" name="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required>
-          <label>One thing you'd love to automate <span>(optional)</span></label>
-          <textarea name="interest" maxlength="200" placeholder="e.g. sorting my inbox, posting to three platforms at once, a bot that answers our FAQ"></textarea>
-          <input class="hp" name="cream" tabindex="-1" autocomplete="off" aria-hidden="true" placeholder="leave this empty">
-          <button class="btn btn-primary" type="submit">Send me the free path</button>
-          <p class="fine">free. version 2 of the dictation tool and the roadmap, then the odd next step. no spam, and you can leave from any email.</p>
-          <div class="done" hidden>
-            <img src="../assets/drip2-smile.png" alt="" width="64" height="109">
-            <div><h3>you're in.</h3><p>Version 2 and the roadmap are on their way to this address. Until then, <a href="/learn/dictation/">the lab</a> is enough to start tonight.</p></div>
-          </div>
-        </form>
-      </div>
-      <div class="figs">
-        <img class="z" src="art/zain-point.webp" alt="Zain as a 3D character, holding a laptop and pointing at you.">
-        <img class="d" src="../assets/drip2-curious-a.png" alt="Drip, looking curious.">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FREE PATH ============ -->
-<section class="sec" id="free">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <p class="eyebrow">Start free, tonight</p>
-        <h2>The free path is real.</h2>
-      </div>
-    </div>
-    <p class="lede">Everything I've published is free and it stays free. The free levels are built from these videos; the Lab adds the full builds, the projects and the people.</p>
-    <div class="free">
-      <a class="fcard" href="https://www.youtube.com/@dripthecup" target="_blank" rel="noopener">
-        <span class="hud">Drip on YouTube</span><b>The explainers</b>
-        <span>How MCPs work. How voice to text works. What is Jev. One idea per episode, no pipeline tours.</span><i>youtube.com/@dripthecup &rarr;</i>
-      </a>
-      <a class="fcard" href="/links/">
-        <span class="hud">This site</span><b>Every video, every link</b>
-        <span>A summary of each video and every tool, repo and source we mentioned, with install commands.</span><i>/links &rarr;</i>
-      </a>
-      <a class="fcard" href="/resources/">
-        <span class="hud">This site</span><b>The AI tools directory</b>
-        <span>201 tools in 24 categories, ranked for the task you type in. Level 2 shows you how it's built.</span><i>/resources &rarr;</i>
-      </a>
-      <a class="fcard" href="https://www.tiktok.com/@zain_qurashi" target="_blank" rel="noopener">
-        <span class="hud">Zain on camera</span><b>The career videos</b>
-        <span>How AI saved my job. Getting a job in tech in 2026. Why every company needs an AI integrations engineer.</span><i>tiktok.com/@zain_qurashi &rarr;</i>
-      </a>
-      <a class="fcard" href="https://www.instagram.com/dripthecup/" target="_blank" rel="noopener">
-        <span class="hud">Drip on Instagram</span><b>Drip's Notes</b>
-        <span>The notes Drip took while Capp explained: APIs, prompts, secret keys, effort, MCP. Swipe posts.</span><i>instagram.com/dripthecup &rarr;</i>
-      </a>
-      <a class="fcard" href="https://x.com/Zain_qurashi_" target="_blank" rel="noopener">
-        <span class="hud">Zain on X</span><b>What I'm building this week</b>
-        <span>Short posts on what worked, what broke, and which tool just came out.</span><i>x.com/Zain_qurashi_ &rarr;</i>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ THE LAB ============ -->
-<section class="sec dark" id="lab">
-  <div class="wrap">
-    <div class="sec-head">
-      <div>
-        <p class="eyebrow">Paid &nbsp;·&nbsp; optional</p>
-        <h2>The Lab: the plan, the builds, and me.</h2>
-      </div>
-    </div>
-    <p class="lede">The free path teaches you to understand AI and ship small things. The Lab is where we build the big, real tools from this page, with a plan for your level and live help. One small group on Skool.</p>
-    <div class="labgrid">
+    <div class="labgrid" id="seat">
       <div class="get">
         <p class="hud">What you get</p>
         <ul class="checks">
-          <li><b>The full builds.</b> Scribe, Mission Briefing, Creator Intel and the Drip &amp; Capp studio, as step-by-step courses.</li>
-          <li><b>Apps you keep.</b> Tutorial Recorder, my screen recorder and editor for YouTube, yours to use.</li>
-          <li><b>The code and the agent skills.</b> Cleaned-up copies you can run yourself, with demo data.</li>
+          <li><b>The full builds.</b> Scribe, Mission Briefing, Creator Intel and the Drip &amp; Capp studio as step-by-step courses, with the code and the agent skills.</li>
+          <li><b>Apps you keep.</b> Tutorial Recorder and Scribe, yours to use.</li>
           <li><b>A plan for your level.</b> Where you are on the nine levels, and what to build next.</li>
-          <li><b>Two live calls a week.</b> A build-along and a Q&amp;A, plus a guest engineer once a month.</li>
-          <li><b>Reviews.</b> Post a build or your portfolio and get real feedback on it.</li>
-          <li><b>A small group.</b> I'm seeding it with working engineers, so questions get real answers.</li>
+          <li><b>Two live calls a week.</b> A build-along and a Q&amp;A, plus reviews of your builds and your portfolio.</li>
+          <li><b>A small group.</b> Seeded with working engineers, so questions get real answers.</li>
         </ul>
         <p class="hud">What you won't get</p>
         <ul class="nots"><li>Certificates</li><li>A lifetime tier</li><li>Upsells inside</li><li>Income promises</li></ul>
       </div>
       <div class="founding">
         <p class="eyebrow">Founding rate</p>
-        <h3>Only if it helps you.</h3>
-        <div class="price">$49<small>a month, or $490 a year. The first thirty members keep this rate for as long as they stay. Cancel any time.</small></div>
-        <p>If the free path is enough for you, stay on it. I'll still help. The Lab is for when you want the builds, the calls and the people.</p>
-        <span class="seats-label">Founding seats</span>
-        <div class="seats" aria-hidden="true">
-          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-        </div>
-        <a class="btn btn-mustard skool-link" href="#first">Tell me when it opens</a>
-        <span class="seats-label skool-note">Opens on Skool. Everyone on the free list hears first.</span>
+        <div class="price">$49<small>a month, or $490 a year. The first thirty keep this rate for as long as they stay. Cancel any time.</small></div>
+        <form class="form" data-source="learn-founding" novalidate>
+          <p class="err" hidden></p>
+          <label>Your email</label>
+          <input type="email" name="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required>
+          <input class="hp" name="cream" tabindex="-1" autocomplete="off" aria-hidden="true" placeholder="leave this empty">
+          <button class="btn btn-primary" type="submit">Save me a founding seat</button>
+          <p class="fine">no payment now. you hear first when it opens on skool, and you decide then.</p>
+          <div class="done" hidden>
+            <img src="../assets/drip2-smile.png" alt="" width="64" height="109">
+            <div><h3>you're on the list.</h3><p>You'll hear first when the Lab opens. Nothing to pay until you decide. Meanwhile, <a href="/learn/dictation/">the free lab</a> is open tonight.</p></div>
+          </div>
+        </form>
+        <a class="btn btn-mustard skool-link" href="#seat" hidden>Join the Lab</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ WORK WITH ME ============ -->
-<section class="sec hire" id="hire">
+<!-- the free path -->
+<section class="sec panel" id="p-free" role="tabpanel" aria-labelledby="t-free" hidden>
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">The free path &nbsp;·&nbsp; $0</p>
+        <h2>Start tonight. It stays free.</h2>
+      </div>
+    </div>
+    <div class="freegrid">
+      <div>
+        <a class="lablink" href="/learn/dictation/">
+          <div><span class="hud">Level 0 &nbsp;·&nbsp; tonight &nbsp;·&nbsp; about an hour</span><b>Build your own dictation tool</b><span class="d">The kind people pay $15 a month for. Build version 1 tonight, then see what it looks like a month in.</span><i>Open the lab &rarr;</i></div>
+          <img src="art/builds/scribe.webp" width="900" height="563" alt="" loading="lazy">
+        </a>
+        <div class="freeform">
+          <form class="form" data-source="learn-hero" novalidate>
+            <p class="err" hidden></p>
+            <label>Your email</label>
+            <input type="email" name="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required>
+            <input class="hp" name="cream" tabindex="-1" autocomplete="off" aria-hidden="true" placeholder="leave this empty">
+            <button class="btn btn-primary" type="submit">Send me the free path</button>
+            <p class="fine">free. version 2 of the dictation tool and the roadmap, then the odd next step. no spam, leave any time.</p>
+            <div class="done" hidden>
+              <img src="../assets/drip2-smile.png" alt="" width="64" height="109">
+              <div><h3>you're in.</h3><p>Version 2 and the roadmap are on their way. Until then, <a href="/learn/dictation/">the lab</a> is enough to start tonight.</p></div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="freelist">
+        <p class="hud">Also free, no sign-up</p>
+        <a href="/resources/"><b>The AI tools directory</b><span>201 tools in 24 categories, ranked for your task</span><em>&rarr;</em></a>
+        <a href="/links/"><b>Every video, every link</b><span>summaries, repos and install commands</span><em>&rarr;</em></a>
+        <a href="https://www.youtube.com/@dripthecup" target="_blank" rel="noopener"><b>Drip on YouTube</b><span>MCPs, voice to text, Jev: one idea per episode</span><em>&#8599;</em></a>
+        <a href="https://www.tiktok.com/@zain_qurashi" target="_blank" rel="noopener"><b>Zain on TikTok</b><span>the career videos</span><em>&#8599;</em></a>
+        <a href="https://www.instagram.com/dripthecup/" target="_blank" rel="noopener"><b>Drip's Notes on Instagram</b><span>swipe posts: APIs, prompts, keys, MCP</span><em>&#8599;</em></a>
+        <a href="https://x.com/Zain_qurashi_" target="_blank" rel="noopener"><b>Zain on X</b><span>what I'm building this week</span><em>&#8599;</em></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- work with me -->
+<section class="sec panel hire" id="p-hire" role="tabpanel" aria-labelledby="t-hire" hidden>
   <div class="wrap">
     <div class="sec-head">
       <div>
@@ -901,6 +750,59 @@
   </div>
 </section>
 
+</div>
+
+<!-- ============ PROOF ============ -->
+<section class="sec" id="zain">
+  <div class="wrap">
+    <div class="proof">
+      <div>
+        <p class="eyebrow">Who's teaching &nbsp;·&nbsp; Zain Qurashi</p>
+        <h2>AI didn't take my job. It got me promoted.</h2>
+        <p>I'm an integrations and automations engineer. For ten years my job has been making systems talk to each other. In the last two, every request that lands on my desk starts the same way: can we put AI on this?</p>
+        <p>So on my own time I built small proofs of concept, showed them, and they became the projects I was asked to focus on. That's the whole method: be curious, build small things that work, show results.</p>
+        <p>It worked for me, and I want you to have the same map. Drip is proof it works outside the day job too: a cup of coffee that explains AI, run by a pipeline I built.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>10 yrs</b><span>in tech, all of it integrations and automations</span></div>
+        <div class="stat"><b>13</b><span>apps and tools built since June, on my own time</span></div>
+        <div class="stat"><b>13</b><span>agent skills that run them</span></div>
+        <div class="stat"><b>$0</b><span>to start. The path is free</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE PATH ============ -->
+<section class="sec dark" id="path">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">The path</p>
+        <h2>Nine levels. Zero to AI automation engineer.</h2>
+      </div>
+    </div>
+    <p class="lede">Every level is a real thing you build, not a quiz. Levels 0, 1, 2 and 4 are free.</p>
+    <div class="pathbar">
+      <div class="row hud"><span>Progress</span><span id="pathCount">LV 0 / 9</span></div>
+      <div class="track"><div class="fill" id="pathFill"></div></div>
+    </div>
+    <div class="lvl" id="levels">
+      <div class="lvr"><span class="n">0</span><b>Start here: build your own dictation tool</b><span class="w">Tonight, in your browser. <a href="/learn/dictation/">Open the lab &rarr;</a></span><span class="tag">Free</span></div>
+      <div class="lvr"><span class="n">1</span><b>Curious: how AI talks to software</b><span class="w">A script that calls a model, every line explained</span><span class="tag">Free</span></div>
+      <div class="lvr"><span class="n">2</span><b>Connected: AI that decides</b><span class="w">A tool finder that ranks 200 AI tools</span><span class="tag">Free</span></div>
+      <div class="lvr"><span class="n">3</span><b>Builder: connect AI to your apps</b><span class="w">Your first MCP server</span><span class="tag lab">Lab</span></div>
+      <div class="lvr"><span class="n">4</span><b>Integrator: voice and media</b><span class="w">Dictation on your own computer; Scribe in the Lab</span><span class="tag">Free</span></div>
+      <div class="lvr"><span class="n">5</span><b>Automator: automations and agents</b><span class="w">An agent that sorts your day and briefs you every morning</span><span class="tag lab">Lab</span></div>
+      <div class="lvr"><span class="n">6</span><b>Shipper: AI at the enterprise level</b><span class="w">A locked-down integration: roles, logs, cost limits</span><span class="tag lab">Lab</span></div>
+      <div class="lvr"><span class="n">7</span><b>Engineer: portfolio projects</b><span class="w">Four projects to show an employer or a client</span><span class="tag lab">Lab</span></div>
+      <div class="lvr"><span class="n">8</span><b>Architect: automating a character</b><span class="w">The Drip pipeline, the way a company would run it</span><span class="tag lab">Case study</span></div>
+      <div class="lvr"><span class="n">9</span><b>Legend: the career</b><span class="w">Resume, interviews, a twelve-month plan reviewed live</span><span class="tag lab">Lab</span></div>
+      <div class="lvr side"><span class="n">+</span><b>Side quest: record, edit and make videos with AI</b><span class="w">Members get my Tutorial Recorder app</span><span class="tag lab">Lab</span></div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ FAQ ============ -->
 <section class="sec faq" id="faq">
   <div class="wrap">
@@ -911,36 +813,10 @@
     <details><summary>Are there certificates, a lifetime deal, or upsells?</summary><p>No. No certificates, no lifetime tier, no upsells inside the group. One price, monthly or yearly, and you can cancel any time. What you show an employer is what you built.</p></details>
     <details><summary>Is this a course on making Drip videos?</summary><p>No. Drip is one level, taught as a case study, plus a side quest on making and editing videos with AI. The rest is enterprise AI and automation.</p></details>
     <details><summary>Will this get me a job?</summary><p>I can't promise that, and anyone who does is selling something. I genuinely want you to get one. I'll show you what the job actually is, what I built to get ahead in mine, and how to put together a portfolio that proves you can do it.</p></details>
-    <details><summary>Do you work with businesses?</summary><p>Yes. I've spent ten years building enterprise integrations and workflow automations, and I set up AI systems and workflows for businesses. Projects start at $1,000, with a fixed quote after a free 20-minute call. Ask through the form in Work with me.</p></details>
+    <details><summary>Do you work with businesses?</summary><p>Yes. I've spent ten years building enterprise integrations and workflow automations, and I set up AI systems and workflows for businesses. Projects start at $1,000, with a fixed quote after a free 20-minute call. Pick Work with me at the top of this page.</p></details>
     <details><summary>Is any of this from your employer?</summary><p>No. Everything here is built on my own time, with my own tools, on public data and my own projects. Nothing from work is in it and nothing from work ever will be.</p></details>
-    <details><summary>When does the Lab open?</summary><p>Soon. You don't need it to start: sign up above and I'll send you the free path, and tell you when the Lab opens.</p></details>
+    <details><summary>When does the Lab open?</summary><p>Soon. Save a founding seat in the Lab section and you'll hear first. You don't need it to start: the free path is open tonight.</p></details>
     <details><summary>Why Skool?</summary><p>One place for the classroom, the feed and the calendar, with levels built in. You'll get a link when it opens; there's nothing to install.</p></details>
-  </div>
-</section>
-
-<!-- ============ BOTTOM ============ -->
-<section class="mustard bottom" id="join">
-  <div class="wrap">
-    <div class="copy">
-      <p class="eyebrow">No rush</p>
-      <h2>Start at level 0. I'll be there.</h2>
-      <form class="form" data-source="learn-bottom" novalidate>
-        <p class="err" hidden></p>
-        <label>Your email</label>
-        <input type="email" name="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required>
-        <input class="hp" name="cream" tabindex="-1" autocomplete="off" aria-hidden="true" placeholder="leave this empty">
-        <button class="btn btn-primary" type="submit">Send me the free path</button>
-        <p class="fine">free. the first build and the roadmap, then the odd next step. leave any time.</p>
-        <div class="done" hidden>
-          <img src="../assets/drip2-smile.png" alt="" width="64" height="109">
-          <div><h3>you're in.</h3><p>The free path is on its way.</p></div>
-        </div>
-      </form>
-    </div>
-    <div class="figs">
-      <img class="z" src="art/zain-coffee.webp" alt="Zain as a 3D character, holding a coffee, one hand in his pocket.">
-      <div class="drip"><span class="say">i'll be there too. mostly listening.</span><img src="../assets/drip2-smile.png" width="422" height="720" alt="Drip, smiling."></div>
-    </div>
   </div>
 </section>
 
@@ -952,7 +828,7 @@
         <p class="about">a cup of coffee who takes his time. with capp, who explains, and zain qurashi, who built them both.</p>
       </div>
       <div class="col"><h4>Learn</h4>
-        <a href="#unlock">What I've built</a><a href="#path">The nine levels</a><a href="/learn/dictation/">The day one lab</a><a href="#lab">The Lab</a><a href="#faq">Questions</a>
+        <a href="#lab">The Lab</a><a href="#path">The nine levels</a><a href="/learn/dictation/">The day one lab</a><a href="#faq">Questions</a>
       </div>
       <div class="col"><h4>Free</h4>
         <a href="https://www.youtube.com/@dripthecup" target="_blank" rel="noopener">Drip on YouTube</a>
@@ -971,95 +847,57 @@
 </footer>
 
 <script>
-  // ---- Skool: paste the group URL here when it exists. Every "reserve" button
-  // becomes a real join link and every lock opens it. Until then they scroll.
+  // ---- Skool: paste the group URL here when it exists. The founding form gives way to
+  // a "Join the Lab" link and every lock opens it.
   var SKOOL_URL = '';
   if (SKOOL_URL) {
-    document.querySelectorAll('.skool-link').forEach(function (a) {
-      a.href = SKOOL_URL; a.target = '_blank'; a.rel = 'noopener'; a.textContent = 'Join the Lab';
-    });
-    document.querySelectorAll('.skool-note').forEach(function (n) { n.textContent = 'On Skool. Founding rate for the first thirty.'; });
+    document.querySelectorAll('.skool-link').forEach(function (a) { a.href = SKOOL_URL; a.target = '_blank'; a.rel = 'noopener'; a.hidden = false; });
+    document.querySelectorAll('form[data-source="learn-founding"]').forEach(function (f) { f.hidden = true; });
+    document.querySelectorAll('.unlock-link').forEach(function (a) { a.href = SKOOL_URL; a.target = '_blank'; a.rel = 'noopener'; });
   }
-  function wireUnlocks(root) {
-    if (!SKOOL_URL) return;
-    root.querySelectorAll('.unlock-link').forEach(function (a) { a.href = SKOOL_URL; a.target = '_blank'; a.rel = 'noopener'; });
-  }
-  wireUnlocks(document);
 
-  // ---- What I've built: three tabs.
-  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tabs [role=tab]'));
-  function pick(t) {
+  // ---- Three ways in. The Lab is open by default; #free, #lab and #hire open the others.
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.choose [role=tab]'));
+  var HASH = { free: 't-free', lab: 't-lab', hire: 't-hire', seat: 't-lab' };
+  function choose(t, scroll) {
     tabs.forEach(function (x) {
       var on = x === t;
-      x.setAttribute('aria-selected', on ? 'true' : 'false');
-      x.tabIndex = on ? 0 : -1;
+      x.setAttribute('aria-selected', on ? 'true' : 'false'); x.tabIndex = on ? 0 : -1;
       document.getElementById(x.getAttribute('aria-controls')).hidden = !on;
     });
+    if (scroll) document.getElementById(t.getAttribute('aria-controls')).scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
   tabs.forEach(function (t, i) {
-    t.addEventListener('click', function () { pick(t); });
+    t.addEventListener('click', function () {
+      choose(t, true);
+      try { history.replaceState(null, '', '#' + t.id.slice(2)); } catch (e) {}
+    });
     t.addEventListener('keydown', function (e) {
       var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
       if (!d) return;
-      var n = tabs[(i + d + tabs.length) % tabs.length]; pick(n); n.focus(); e.preventDefault();
+      var n = tabs[(i + d + tabs.length) % tabs.length]; choose(n, false); n.focus(); e.preventDefault();
     });
   });
-
-  // ---- Agent skills: real names and descriptions; the steps are what unlocks.
-  var SKILLS = [
-    ['research', 1, 'Frames the question, sweeps sources in parallel, builds a claim ledger, red-teams it and freezes a dossier.',
-      ['Write the question and what would change your mind', 'Sweep six or more sources in parallel', 'Ledger every claim with its source and how sure', 'Red-team the answer', 'Freeze the dossier and a study brief']],
-    ['cutlist', 1, 'Turns a raw recording into a keep-or-cut list for your editor.',
-      ['Transcribe with a time on every word', 'Mark retakes, stumbles and dead air', 'Write the keep or cut list', 'Export a timeline your editor opens']],
-    ['excalidraw-deck', 1, 'Hand-drawn presentation boards for AI explainers, plus an animated HTML deck to present and record.',
-      ['Outline the talk', 'One idea per board', 'Speaker notes and autoplay', 'Present it and record it']],
-    ['x-posts', 1, 'A weekly X post pack with a claims and length checker.',
-      ['Pick the week’s pillars', 'Draft the posts', 'Check every claim and every length', 'Pack them for posting']],
-    ['drip-capp-style', 1, 'A house style written down: what each colour means, type, sound and the QA list.',
-      ['What each colour means', 'Type and layout rules', 'Voices, music bed and effects', 'The checklist before anything ships']],
-    ['carousel', 0, 'Carousels written as data and rendered, with overflow checks and a posting pack.',
-      ['Write the slides as data', 'Render every slide', 'Check every slide for overflow', 'Build the pack: slides, cover, caption']],
-    ['drip-capp-clips', 0, 'An episode becomes reels and a carousel, never a lazy crop.',
-      ['Find the moments that stand alone', 'Rebuild them for vertical', 'Turn the notes into a carousel', 'Check captions against the audio']],
-    ['brainrot', 0, 'Fast two-character shorts: voiced, checked, mastered and posted to the site.',
-      ['Script the back and forth', 'Record each voice, one take per line', 'Check every line before render', 'Master, render, post']],
-    ['cookie-cutter', 0, 'Animated scenario explainers, timed to every word.',
-      ['The scenario in one sentence', 'Script and voices', 'Animation timed to the words', 'Render and QA']],
-    ['drip-capp-film', 0, 'The full episode pipeline, script to YouTube master.',
-      ['Research dossier first', 'Script, then real voices', 'Word timing drives every scene', 'Music bed, mix and master', 'Thumbnail, title, upload']],
-    ['zain-on-camera', 0, 'Phone takes in, a finished talking-head video out.',
-      ['Drop in the phone takes', 'Keep the best take of each line', 'Cuts and captions on the words', 'Export for TikTok, Reels and Shorts']],
-    ['drip-the-cup-playbook', 0, 'What is and isn’t working on the channel, measured from every post and rewritten after each analytics pull.',
-      ['Pull the latest numbers', 'Score each video against your own normal', 'Rewrite what worked as rules', 'Claude reads them before you brainstorm']]
-  ];
-  var tree = document.getElementById('skillTree'), pane = document.getElementById('skillPane');
-  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
-  function show(i) {
-    var s = SKILLS[i], free = !!s[1];
-    tree.querySelectorAll('button').forEach(function (b, j) { b.setAttribute('aria-pressed', j === i ? 'true' : 'false'); });
-    pane.className = 'pane' + (free ? '' : ' locked');
-    pane.innerHTML =
-      '<p class="path">skills/' + esc(s[0]) + '/SKILL.md</p>' +
-      '<p class="fm">---\n<span>name:</span> ' + esc(s[0]) + '\n<span>description:</span> ' + esc(s[2]) + '\n---</p>' +
-      '<ol>' + s[3].map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ol>' +
-      (free ? '<p class="freenote">Free. The download comes with the free path.</p>'
-            : '<div class="gate"><a class="lock-pill unlock-link" href="#lab"><span class="ic-lock"></span>Unlock in the Lab</a></div>');
-    wireUnlocks(pane);
+  function fromHash(scroll) {
+    var h = (location.hash || '').slice(1);
+    if (!HASH[h]) return;
+    choose(document.getElementById(HASH[h]), false);
+    if (scroll) document.getElementById(h === 'seat' ? 'seat' : 'paths').scrollIntoView({ block: 'start' });
   }
-  SKILLS.forEach(function (s, i) {
-    var b = document.createElement('button');
-    b.type = 'button';
-    b.innerHTML = '<span>' + esc(s[0]) + '/</span><span class="t ' + (s[1] ? 'open">Free' : 'lab">Lab') + '</span>';
-    b.addEventListener('click', function () { show(i); });
-    tree.appendChild(b);
+  fromHash(true);
+  window.addEventListener('hashchange', function () { fromHash(true); });
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="#"]');
+    if (!a) return;
+    var h = a.getAttribute('href').slice(1);
+    if (HASH[h] && location.hash === '#' + h) { e.preventDefault(); fromHash(true); }
   });
-  show(9); // open on the film pipeline: the one people ask about
 
   // ---- The path: the XP bar fills as levels scroll into view (steps, no easing).
-  var lvs = document.querySelectorAll('.lv:not(.side)'), fill = document.getElementById('pathFill'), count = document.getElementById('pathCount');
+  var lvs = document.querySelectorAll('.lvr:not(.side)'), fill = document.getElementById('pathFill'), count = document.getElementById('pathCount');
   var seen = 0;
   function paint() {
-    var n = document.querySelectorAll('.lv.seen:not(.side)').length;
+    var n = document.querySelectorAll('.lvr.seen:not(.side)').length;
     if (n === seen) return; seen = n;
     fill.style.width = Math.round(n / lvs.length * 100) + '%';
     count.textContent = 'LV ' + Math.max(0, n - 1) + ' / 9';
@@ -1067,13 +905,13 @@
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('seen'); paint(); } });
-    }, { threshold: 0.4 });
-    document.querySelectorAll('.lv').forEach(function (l) { io.observe(l); });
-  } else { document.querySelectorAll('.lv').forEach(function (l) { l.classList.add('seen'); }); paint(); }
+    }, { threshold: 0.6 });
+    document.querySelectorAll('.lvr').forEach(function (l) { io.observe(l); });
+  } else { document.querySelectorAll('.lvr').forEach(function (l) { l.classList.add('seen'); }); paint(); }
 
   // ---- Forms. Learners POST /api/subscribe; businesses POST /api/inquire.
-  function wire(f, url, label, build) {
-    var err = f.querySelector('.err'), btn = f.querySelector('button[type=submit]'), done = f.querySelector('.done');
+  function wire(f, url, build) {
+    var err = f.querySelector('.err'), btn = f.querySelector('button[type=submit]'), done = f.querySelector('.done'), label = btn.textContent;
     f.addEventListener('submit', function (ev) {
       ev.preventDefault();
       err.hidden = true;
@@ -1096,14 +934,12 @@
     });
   }
   document.querySelectorAll('form.form[data-source]').forEach(function (f) {
-    wire(f, '/api/subscribe', 'Send me the free path', function (f, email) {
-      var body = { email: email, source: f.getAttribute('data-source'), cream: f.elements.cream.value || '' };
-      if (f.elements.interest) body.interest = f.elements.interest.value || '';
-      return body;
+    wire(f, '/api/subscribe', function (f, email) {
+      return { email: email, source: f.getAttribute('data-source'), cream: f.elements.cream.value || '' };
     });
   });
   document.querySelectorAll('form.inq').forEach(function (f) {
-    wire(f, '/api/inquire', 'Request a free call', function (f, email) {
+    wire(f, '/api/inquire', function (f, email) {
       var message = (f.elements.message.value || '').trim();
       if (message.length < 10) return 'tell me a little about what you want automated';
       return { email: email, company: f.elements.company.value || '', message: message, cream: f.elements.cream.value || '' };
