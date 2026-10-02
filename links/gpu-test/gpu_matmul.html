@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>GPU matmul test</title>
+<style>body{font:15px/1.5 monospace;background:#111;color:#eee;padding:20px}pre{white-space:pre-wrap}</style>
+</head>
+<body>
+<h3>GPU side of the CPU vs GPU test (WebGPU, float32)</h3>
+<pre id="out">running...</pre>
+<script>
+// Same job as cpu_matmul.py: C = A x B, N x N float32. A tiled compute shader: each workgroup of 16x16 threads
+// computes a 64x64 block of C, each thread a 4x4 patch, staging 64x16 slices of A and B in shared memory.
+const out = document.getElementById('out');
+const log = (s) => { out.textContent += '\n' + s; console.log(s); };
+const params = new URLSearchParams(location.search);
+const N = +(params.get('n') || 4096), REPS = +(params.get('reps') || 10);
+
+const WGSL = `
+struct Dims { n: u32 }
+@group(0) @binding(0) var<storage, read> A: array<f32>;
+@group(0) @binding(1) var<storage, read> B: array<f32>;
+@group(0) @binding(2) var<storage, read_write> C: array<f32>;
+@group(0) @binding(3) var<uniform> dims: Dims;
+var<workgroup> As: array<f32, 1024>; // 64 rows x 16 k
+var<workgroup> Bs: array<f32, 1024>; // 16 k x 64 cols
+@compute @workgroup_size(16, 16)
+fn main(@builtin(local_invocation_id) lid: vec3<u32>, @builtin(workgroup_id) wid: vec3<u32>) {
+  let n = dims.n;
+  let row0 = wid.y * 64u; let col0 = wid.x * 64u;
+  let t = lid.y * 16u + lid.x;
+  var acc: array<f32, 16>;
+  for (var i = 0u; i < 16u; i++) { acc[i] = 0.0; }
+  for (var k0 = 0u; k0 < n; k0 += 16u) {
+    for (var l = 0u; l < 4u; l++) {
+      let e = t * 4u + l;              // 0..1023
+      let ar = e / 16u; let ak = e % 16u;
+      As[e] = A[(row0 + ar) * n + k0 + ak];
+      let bk = e / 64u; let bc = e % 64u;
+      Bs[e] = B[(k0 + bk) * n + col0 + bc];
+    }
+    workgroupBarrier();
+    for (var kk = 0u; kk < 16u; kk++) {
+      var a: array<f32, 4>; var b: array<f32, 4>;
+      for (var i = 0u; i < 4u; i++) { a[i] = As[(lid.y * 4u + i) * 16u + kk]; b[i] = Bs[kk * 64u + lid.x * 4u + i]; }
+      for (var i = 0u; i < 4u; i++) { for (var j = 0u; j < 4u; j++) { acc[i * 4u + j] += a[i] * b[j]; } }
+    }
+    workgroupBarrier();
+  }
+  for (var i = 0u; i < 4u; i++) { for (var j = 0u; j < 4u; j++) {
+    C[(row0 + lid.y * 4u + i) * n + col0 + lid.x * 4u + j] = acc[i * 4u + j];
+  } }
+}`;
+
+(async () => {
+  out.textContent = `job: ${N}x${N} @ ${N}x${N} float32 (${(N ** 3 / 1e9).toFixed(1)} billion multiply-adds), reps ${REPS}`;
+  if (!navigator.gpu) { log('NO WEBGPU in this browser'); window.RESULT = {error: 'no webgpu'}; return; }
+  const adapter = await navigator.gpu.requestAdapter({powerPreference: 'high-performance'});
+  if (!adapter) { log('no adapter'); window.RESULT = {error: 'no adapter'}; return; }
+  const info = adapter.info || {};
+  log(`adapter: vendor=${info.vendor} architecture=${info.architecture} device=${info.device} description=${info.description}`);
+  const device = await adapter.requestDevice({requiredLimits: {maxStorageBufferBindingSize: adapter.limits.maxStorageBufferBindingSize, maxBufferSize: adapter.limits.maxBufferSize}});
+  // deterministic inputs
+  let seed = 12345; const rnd = () => ((seed = (seed * 1103515245 + 12345) >>> 0) / 4294967296) - 0.5;
+  const a = new Float32Array(N * N), b = new Float32Array(N * N);
+  for (let i = 0; i < N * N; i++) { a[i] = rnd(); b[i] = rnd(); }
+  const mk = (arr, usage) => { const buf = device.createBuffer({size: arr.byteLength, usage, mappedAtCreation: true}); new Float32Array(buf.getMappedRange()).set(arr); buf.unmap(); return buf; };
+  const bufA = mk(a, GPUBufferUsage.STORAGE), bufB = mk(b, GPUBufferUsage.STORAGE);
+  const bufC = device.createBuffer({size: N * N * 4, usage: GPUBufferUsage.STORAGE | GPUBufferUsage.COPY_SRC});
+  const uni = device.createBuffer({size: 16, usage: GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST});
+  device.queue.writeBuffer(uni, 0, new Uint32Array([N, 0, 0, 0]));
+  const pipe = device.createComputePipeline({layout: 'auto', compute: {module: device.createShaderModule({code: WGSL}), entryPoint: 'main'}});
+  const bg = device.createBindGroup({layout: pipe.getBindGroupLayout(0), entries: [bufA, bufB, bufC, uni].map((buffer, binding) => ({binding, resource: {buffer}}))});
+  const runOnce = async () => {
+    const enc = device.createCommandEncoder(); const pass = enc.beginComputePass();
+    pass.setPipeline(pipe); pass.setBindGroup(0, bg); pass.dispatchWorkgroups(N / 64, N / 64); pass.end();
+    const t0 = performance.now(); device.queue.submit([enc.finish()]); await device.queue.onSubmittedWorkDone();
+    return (performance.now() - t0) / 1000;
+  };
+  await runOnce(); await runOnce(); // warm-up (shader compile, clocks up)
+  const ts = []; for (let r = 0; r < REPS; r++) ts.push(await runOnce());
+  ts.sort((x, y) => x - y);
+  const med = ts[Math.floor(ts.length / 2)], best = ts[0];
+  // check a few answers against the CPU
+  const rb = device.createBuffer({size: N * N * 4, usage: GPUBufferUsage.COPY_DST | GPUBufferUsage.MAP_READ});
+  const enc = device.createCommandEncoder(); enc.copyBufferToBuffer(bufC, 0, rb, 0, N * N * 4); device.queue.submit([enc.finish()]);
+  await rb.mapAsync(GPUMapMode.READ); const c = new Float32Array(rb.getMappedRange());
+  let maxErr = 0; const probes = [[0, 0], [N - 1, N - 1], [123, 4000 % N], [N >> 1, 77], [2048 % N, 1024 % N]];
+  for (const [i, j] of probes) { let s = 0; for (let k = 0; k < N; k++) s += a[i * N + k] * b[k * N + j]; maxErr = Math.max(maxErr, Math.abs(s - c[i * N + j]) / (Math.abs(s) + 1)); }
+  const flops = 2 * N ** 3;
+  // the race: 50 multiplies back to back, one submit, wall-clock total
+  const RACE = +(params.get('race') || 50);
+  const encR = device.createCommandEncoder();
+  for (let r = 0; r < RACE; r++) { const p = encR.beginComputePass(); p.setPipeline(pipe); p.setBindGroup(0, bg); p.dispatchWorkgroups(N / 64, N / 64); p.end(); }
+  const tr = performance.now(); device.queue.submit([encR.finish()]); await device.queue.onSubmittedWorkDone();
+  const raceS = (performance.now() - tr) / 1000;
+  window.RESULT = {race_runs: RACE, race_total_s: +raceS.toFixed(3), isFallbackAdapter: adapter.isFallbackAdapter ?? null,
+    adapter_limits_maxComputeInvocationsPerWorkgroup: adapter.limits.maxComputeInvocationsPerWorkgroup,job: `${N}x${N} @ ${N}x${N} float32`, adapter: info, median_s: +med.toFixed(4), best_s: +best.toFixed(4),
+    gflops_median: +(flops / med / 1e9).toFixed(1), checked_answers_max_rel_err: maxErr, all_times_s: ts.map(x => +x.toFixed(4)),
+    userAgent: navigator.userAgent, date: new Date().toISOString()};
+  log(JSON.stringify(window.RESULT, null, 2));
+})().catch(e => { log('ERROR ' + e); window.RESULT = {error: String(e)}; });
+</script>
+</body>
+</html>

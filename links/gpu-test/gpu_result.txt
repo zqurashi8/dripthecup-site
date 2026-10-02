@@ -1,0 +1,8 @@
+{
+  "job": "4096x4096 @ 4096x4096 float32 (68.7 billion multiply-adds)",
+  "where": "WebGPU in the Claude desktop app's built-in browser (Chrome 152), our own tiled compute shader (gpu_matmul.html), on the only GPU in the PC: AMD Radeon RX 9060 XT (driver 32.0.22042.14002). The i7-10700F has no integrated graphics, and 5.7 TFLOPS rules out a software fallback.",
+  "single_job": {"median_s": 0.024, "best_s": 0.0222, "gflops_median": 5726.6, "reps": 10},
+  "checked_answers_max_rel_err": 9.3e-7,
+  "race": {"runs": 50, "total_s": 1.116},
+  "date": "2026-10-01T18:03Z"
+}

@@ -1,0 +1,22 @@
+{
+  "job": "4096x4096 @ 4096x4096 float32",
+  "multiply_adds": 68719476736,
+  "flops": 137438953472,
+  "cpu": "Intel64 Family 6 Model 165 Stepping 5, GenuineIntel",
+  "python": "3.11.0",
+  "threads_1": {
+    "median_s": 1.0547,
+    "best_s": 1.0534,
+    "gflops_median": 130.3
+  },
+  "threads_8": {
+    "median_s": 0.2275,
+    "best_s": 0.2004,
+    "gflops_median": 604.2
+  },
+  "threads_16": {
+    "median_s": 0.1919,
+    "best_s": 0.1874,
+    "gflops_median": 716.2
+  }
+}

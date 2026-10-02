@@ -96,11 +96,12 @@
 
 <div class="wrap">
   <section class="intro">
-    <p class="eyebrow">Videos · 19 so far</p>
+    <p class="eyebrow">Videos · 20 so far</p>
     <h1>Every video, and everything we mentioned in it.</h1>
     <p>A short summary of each one, the video itself, and a link to every tool, repo and source. Newest first.</p>
   </section>
   <nav class="jump" aria-label="Jump to a video">
+    <a href="#how-graphics-cards-work"><img src="videos/how-graphics-cards-work.jpg" alt="" loading="lazy"><span>How graphics cards actually work (and why AI needs them)</span></a>
     <a href="#mcp-explained"><img src="thumbs/mcp-explained.jpg" alt="" loading="lazy"><span>MCP Explained in 5 Minutes (How Your AI Talks to Your Apps)</span></a>
     <a href="#opus-motion-graphics"><img src="carousels/opus-motion/01.jpg" alt="" loading="lazy"><span>Claude can animate now: 12 motion graphics, all code</span></a>
     <a href="#ai-dont-know"><img src="videos/ai-dont-know.jpg" alt="" loading="lazy"><span>Why doesn&#x27;t AI just say &quot;I don&#x27;t know&quot;?</span></a>
@@ -121,6 +122,36 @@
     <a href="#what-is-mcp"><img src="thumbs/what-is-mcp.jpg" alt="" loading="lazy"><span>What is MCP? The one plug between your AI and your apps</span></a>
     <a href="#voice-to-text"><img src="thumbs/voice-to-text.jpg" alt="" loading="lazy"><span>Four words. 25,000 numbers. Zero letters. How voice to text works</span></a>
   </nav>
+  <article class="ep" id="how-graphics-cards-work">
+    <div class="clip"><div class="player short"><video src="videos/how-graphics-cards-work.mp4" poster="videos/how-graphics-cards-work.jpg" controls playsinline preload="none"></video></div><p class="yt soon">On YouTube soon</p><p class="date">Short · Oct 2026 · 2:11</p></div>
+    <div class="body">
+      <p class="eyebrow">How AI works</p>
+      <h2>How graphics cards actually work (and why AI needs them)</h2>
+      <h3 class="sumh">What it covers</h3>
+      <p class="lede">Inside a graphics card are 2,048 tiny workers; the processor next to it has 8 big ones. A chatbot writes by guessing the next word, and every guess is math on numbers it learned in training: printed one per page, a big model&#x27;s numbers would wrap around the Earth. On our own PC, the same chunk of AI math took the processor 10 seconds and the graphics card 1. Capp explains why with a classroom: 8 math professors (each juggling 16 problems) against a stadium of 2,048 students, a teacher calling one step to a whole row (that&#x27;s lockstep), worksheets close by (the card&#x27;s own 16 GB of memory), and the catch: when half a row needs a different step, they take turns. Then why AI&#x27;s demand for chips and memory is a big part of why gaming cards cost more right now.</p>
+      <h3 class="sumh">Everything we mentioned</h3>
+      <ul class="tools">
+        <li class="tool"><div class="tool-top"><h3><a href="https://github.com/zqurashi8/dripthecup-site/tree/main/links/gpu-test" target="_blank" rel="noopener">Our CPU vs GPU test (the code and results)</a></h3><span class="kind">code</span></div>
+          <p>The exact test from the video: numpy on the processor, a WebGPU shader on the graphics card, and the raw times.</p></li>
+        <li class="tool"><div class="tool-top"><h3><a href="https://www.amd.com/en/products/graphics/desktops/radeon/9000-series/amd-radeon-rx-9060xt.html" target="_blank" rel="noopener">AMD Radeon RX 9060 XT specs</a></h3><span class="kind">docs</span></div>
+          <p>The card in the video: 32 compute units, 2,048 stream processors, 16 GB.</p></li>
+        <li class="tool"><div class="tool-top"><h3><a href="https://www.intel.com/content/www/us/en/products/sku/199318/intel-core-i710700f-processor-16m-cache-up-to-4-80-ghz/specifications.html" target="_blank" rel="noopener">Intel Core i7-10700F specs</a></h3><span class="kind">docs</span></div>
+          <p>The processor in the video: 8 cores, up to 4.8 GHz.</p></li>
+        <li class="tool"><div class="tool-top"><h3><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/" target="_blank" rel="noopener">NVIDIA CUDA Programming Guide</a></h3><span class="kind">docs</span></div>
+          <p>Why graphics chips spend their space on math units, and how a group of threads shares one instruction.</p></li>
+        <li class="tool"><div class="tool-top"><h3><a href="https://gfxcourses.stanford.edu/cs149/fall24content/media/multicore/02_basicarch.pdf" target="_blank" rel="noopener">Stanford CS149: A Modern Multi-Core Processor</a></h3><span class="kind">course</span></div>
+          <p>Lockstep (SIMD) and the take-turns catch, explained with slides.</p></li>
+        <li class="tool"><div class="tool-top"><h3><a href="https://arxiv.org/abs/2407.21783" target="_blank" rel="noopener">Meta: The Llama 3 Herd of Models</a></h3><span class="kind">paper</span></div>
+          <p>The 405-billion-number model in the Earth picture.</p></li>
+        <li class="tool"><div class="tool-top"><h3><a href="https://engineering.fb.com/2024/03/12/data-center-engineering/building-metas-genai-infrastructure/" target="_blank" rel="noopener">Meta: Building Meta&#x27;s GenAI Infrastructure</a></h3><span class="kind">post</span></div>
+          <p>Two clusters of 24,576 data-center GPUs each (2024).</p></li>
+        <li class="tool"><div class="tool-top"><h3><a href="https://www.tomshardware.com/pc-components/gpus/nvidias-top-end-rtx-5090-gaming-gpu-now-costs-at-least-usd5-000-blackwell-cards-continue-to-endure-drastic-price-hikes" target="_blank" rel="noopener">Tom&#x27;s Hardware: RTX 5090 now costs at least $5,000 (Sept 2026)</a></h3><span class="kind">article</span></div>
+          <p>The price tag in the video.</p></li>
+        <li class="tool"><div class="tool-top"><h3><a href="https://www.trendforce.com/presscenter/news/20260930-13258.html" target="_blank" rel="noopener">TrendForce: 4Q26 memory price forecast</a></h3><span class="kind">report</span></div>
+          <p>Memory makers prioritising AI and servers, and what that does to prices.</p></li>
+      </ul>
+    </div>
+  </article>
   <article class="ep" id="mcp-explained">
     <div class="clip"><div class="player wide"><iframe src="https://www.youtube-nocookie.com/embed/5H_K8_dgAqQ" title="MCP Explained in 5 Minutes (How Your AI Talks to Your Apps)" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><a class="yt" href="https://www.youtube.com/watch?v=5H_K8_dgAqQ" target="_blank" rel="noopener">Watch on YouTube ↗</a><p class="date">Episode · Oct 2026 · 4:55</p></div>
     <div class="body">

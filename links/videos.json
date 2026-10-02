@@ -1,6 +1,74 @@
 {
  "videos": [
   {
+   "id": "how-graphics-cards-work",
+   "title": "How graphics cards actually work (and why AI needs them)",
+   "kind": "Short",
+   "date": "Oct 2026",
+   "length": "2:11",
+   "topic": "How AI works",
+   "youtube": null,
+   "mp4": "videos/how-graphics-cards-work.mp4",
+   "poster": "videos/how-graphics-cards-work.jpg",
+   "summary": "Inside a graphics card are 2,048 tiny workers; the processor next to it has 8 big ones. A chatbot writes by guessing the next word, and every guess is math on numbers it learned in training: printed one per page, a big model's numbers would wrap around the Earth. On our own PC, the same chunk of AI math took the processor 10 seconds and the graphics card 1. Capp explains why with a classroom: 8 math professors (each juggling 16 problems) against a stadium of 2,048 students, a teacher calling one step to a whole row (that's lockstep), worksheets close by (the card's own 16 GB of memory), and the catch: when half a row needs a different step, they take turns. Then why AI's demand for chips and memory is a big part of why gaming cards cost more right now.",
+   "links": [
+    {
+     "name": "Our CPU vs GPU test (the code and results)",
+     "url": "https://github.com/zqurashi8/dripthecup-site/tree/main/links/gpu-test",
+     "kind": "code",
+     "what": "The exact test from the video: numpy on the processor, a WebGPU shader on the graphics card, and the raw times."
+    },
+    {
+     "name": "AMD Radeon RX 9060 XT specs",
+     "url": "https://www.amd.com/en/products/graphics/desktops/radeon/9000-series/amd-radeon-rx-9060xt.html",
+     "kind": "docs",
+     "what": "The card in the video: 32 compute units, 2,048 stream processors, 16 GB."
+    },
+    {
+     "name": "Intel Core i7-10700F specs",
+     "url": "https://www.intel.com/content/www/us/en/products/sku/199318/intel-core-i710700f-processor-16m-cache-up-to-4-80-ghz/specifications.html",
+     "kind": "docs",
+     "what": "The processor in the video: 8 cores, up to 4.8 GHz."
+    },
+    {
+     "name": "NVIDIA CUDA Programming Guide",
+     "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/",
+     "kind": "docs",
+     "what": "Why graphics chips spend their space on math units, and how a group of threads shares one instruction."
+    },
+    {
+     "name": "Stanford CS149: A Modern Multi-Core Processor",
+     "url": "https://gfxcourses.stanford.edu/cs149/fall24content/media/multicore/02_basicarch.pdf",
+     "kind": "course",
+     "what": "Lockstep (SIMD) and the take-turns catch, explained with slides."
+    },
+    {
+     "name": "Meta: The Llama 3 Herd of Models",
+     "url": "https://arxiv.org/abs/2407.21783",
+     "kind": "paper",
+     "what": "The 405-billion-number model in the Earth picture."
+    },
+    {
+     "name": "Meta: Building Meta's GenAI Infrastructure",
+     "url": "https://engineering.fb.com/2024/03/12/data-center-engineering/building-metas-genai-infrastructure/",
+     "kind": "post",
+     "what": "Two clusters of 24,576 data-center GPUs each (2024)."
+    },
+    {
+     "name": "Tom's Hardware: RTX 5090 now costs at least $5,000 (Sept 2026)",
+     "url": "https://www.tomshardware.com/pc-components/gpus/nvidias-top-end-rtx-5090-gaming-gpu-now-costs-at-least-usd5-000-blackwell-cards-continue-to-endure-drastic-price-hikes",
+     "kind": "article",
+     "what": "The price tag in the video."
+    },
+    {
+     "name": "TrendForce: 4Q26 memory price forecast",
+     "url": "https://www.trendforce.com/presscenter/news/20260930-13258.html",
+     "kind": "report",
+     "what": "Memory makers prioritising AI and servers, and what that does to prices."
+    }
+   ]
+  },
+  {
    "id": "mcp-explained",
    "title": "MCP Explained in 5 Minutes (How Your AI Talks to Your Apps)",
    "kind": "Episode",

@@ -1,0 +1,6 @@
+{
+  "job": "4096x4096 @ 4096x4096 float32, 50 times back to back",
+  "multiply_adds_total": 3435973836800,
+  "threads_16_total_s": 10.16,
+  "threads_1_total_s": 52.8
+}
