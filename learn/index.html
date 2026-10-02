@@ -210,11 +210,13 @@
   .ci-hooks{display:flex;gap:1.5cqw;flex-wrap:wrap;margin-top:2.6cqw;}
   .ci-hooks span{border:1px solid #4a3c2b;padding:.8cqw 1.6cqw;font-size:2cqw;}
   .mock.ed{padding:5cqw;background:#120f0b;}
-  .ed-say{color:var(--paper);font-size:2.9cqw;line-height:1.5;margin:0 0 4cqw;}
+  .ed-rec{display:flex;justify-content:space-between;font-size:2.2cqw;margin:0 0 3cqw;}
+  .ed-rec i{display:inline-block;width:1.8cqw;height:1.8cqw;border-radius:50%;background:var(--red);margin-right:1.2cqw;vertical-align:-.1cqw;}
+  .ed-say{color:var(--paper);font-size:2.9cqw;line-height:1.5;margin:0 0 3cqw;}
   .ed-say s{color:#7d6d58;text-decoration-color:var(--mustard);text-decoration-thickness:.35cqw;}
-  .ed-track{display:grid;grid-template-columns:7cqw 1fr;gap:1.6cqw;align-items:center;margin-top:2cqw;}
+  .ed-track{display:grid;grid-template-columns:9cqw 1fr;gap:1.6cqw;align-items:center;margin-top:1.6cqw;}
   .ed-track span{font-size:2.1cqw;}
-  .ed-track div{display:flex;gap:.7cqw;height:6cqw;}
+  .ed-track div{display:flex;gap:.7cqw;height:5cqw;}
   .ed-track div i{display:block;background:var(--mustard);}
   .ed-track div i.c{background:repeating-linear-gradient(135deg,#3a2f22 0 .9cqw,#1b1611 .9cqw 1.8cqw);}
   .ed-track.v div i{background:#c7b08a;}
@@ -363,6 +365,8 @@
 
   /* ---------- work with me ---------- */
   .hire{background:var(--tile);}
+  .cred{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:-6px 0 28px;max-width:860px;}
+  @media (max-width:640px){.cred{grid-template-columns:1fr;}}
   .offers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
   @media (max-width:860px){.offers{grid-template-columns:1fr;}}
   .offer{border:2px solid var(--ink);background:var(--cup);padding:20px 20px 18px;}
@@ -476,7 +480,7 @@
     <div class="doors">
       <a class="door" href="#first"><span class="hud">Free</span><b>The free path</b><span>Every video, the nine-level roadmap, the 200+ AI tools directory and the first build. It stands on its own.</span><i>Start free &rarr;</i></a>
       <a class="door lab" href="#lab"><span class="hud">$49 a month &nbsp;·&nbsp; optional</span><b>The Lab</b><span>The full builds and their code, a plan for your level, two live calls a week and reviews. Small on purpose.</span><i>What's inside &rarr;</i></a>
-      <a class="door" href="#hire"><span class="hud">For businesses</span><b>Work with me</b><span>I set up AI systems and workflows for your team, in your own accounts, documented so you own them.</span><i>Get a free call &rarr;</i></a>
+      <a class="door" href="#hire"><span class="hud">For businesses</span><b>Work with me</b><span>Ten years of enterprise integrations. I set up AI systems and workflows for your team, in your own accounts, documented so you own them.</span><i>Get a free call &rarr;</i></a>
     </div>
   </div>
 </section>
@@ -554,7 +558,7 @@
             <a class="lock-pill unlock-link" href="#lab"><span class="ic-lock"></span>Unlock in the Lab</a>
           </div>
           <div class="info">
-            <span class="badge">In daily use</span>
+            <span class="badge">Working</span>
             <h3>Creator Intel</h3>
             <p class="one">Scores every video against its own channel's normal, so you see what actually broke out. Then it writes what worked into skills Claude reads before you brainstorm.</p>
             <p class="inside">Inside: make Claude read your own analytics.</p>
@@ -579,9 +583,11 @@
         <article class="bcard locked">
           <div class="shot">
             <div class="mock ed" aria-hidden="true">
+              <div class="ed-rec"><span><i></i>REC 00:12:41</span><span>screen · face cam · mic</span></div>
               <p class="ed-say">okay so the first thing <s>um, wait, let me start that again.</s> the first thing you do is open the terminal.</p>
-              <div class="ed-track v"><span>V1</span><div><i style="flex:3"></i><i class="c" style="flex:2"></i><i style="flex:5"></i><i class="c" style="flex:1"></i><i style="flex:3"></i></div></div>
-              <div class="ed-track"><span>A1</span><div><i style="flex:3"></i><i class="c" style="flex:2"></i><i style="flex:5"></i><i class="c" style="flex:1"></i><i style="flex:3"></i></div></div>
+              <div class="ed-track v"><span>Screen</span><div><i style="flex:3"></i><i class="c" style="flex:2"></i><i style="flex:5"></i><i class="c" style="flex:1"></i><i style="flex:3"></i></div></div>
+              <div class="ed-track v"><span>Face</span><div><i style="flex:3"></i><i class="c" style="flex:2"></i><i style="flex:5"></i><i class="c" style="flex:1"></i><i style="flex:3"></i></div></div>
+              <div class="ed-track"><span>Mic</span><div><i style="flex:3"></i><i class="c" style="flex:2"></i><i style="flex:5"></i><i class="c" style="flex:1"></i><i style="flex:3"></i></div></div>
               <div class="ed-out">cut list &rarr; DaVinci Resolve, already trimmed</div>
             </div>
             <span class="tagc sample">Sample preview</span>
@@ -589,9 +595,9 @@
           </div>
           <div class="info">
             <span class="badge">Working</span>
-            <h3>The edit pipeline</h3>
-            <p class="one">Raw footage in, an edit list out. It reads the transcript, marks what to keep and what to cut, and opens in DaVinci Resolve already trimmed.</p>
-            <p class="inside">Inside: edit your own videos with AI. The video side quest.</p>
+            <h3>Tutorial Recorder</h3>
+            <p class="one">My own screen recorder and editor for YouTube. It records your screen, face cam and mic as separate layers, an AI cut list marks what to keep, and it opens in DaVinci Resolve already trimmed.</p>
+            <p class="inside">Inside: the app itself, yours to use, plus how it's built. The video side quest.</p>
             <div class="act"><a class="btn btn-mustard unlock-link" href="#lab"><span class="ic-lock"></span>Unlock</a></div>
           </div>
         </article>
@@ -627,7 +633,6 @@
 
       <div class="alsofree">
         <span class="hud">Coming to the free path</span>
-        <span><b>Tutorial Recorder</b>, my own Loom</span>
         <span><b>VoiceFlow</b>, dictation in about 300 lines</span>
         <span><b>The motion graphics ladder</b>, one brief built six ways, every cost measured</span>
         <span><b>This website</b>, a site and a tiny API for $0</span>
@@ -660,7 +665,7 @@
         <article class="course lab"><div class="cov"><span class="hud">LV 7</span><span class="ic-lock"></span><b>Portfolio: four projects</b></div><div class="meta"><span>Lab</span><span>Locked</span></div><div class="prog"><i></i></div></article>
         <article class="course lab"><div class="cov"><span class="hud">LV 8</span><span class="ic-lock"></span><b>The Drip &amp; Capp studio</b></div><div class="meta"><span>Lab</span><span>Case study</span></div><div class="prog"><i></i></div></article>
         <article class="course lab"><div class="cov"><span class="hud">LV 9</span><span class="ic-lock"></span><b>The integrations engineer job</b></div><div class="meta"><span>Lab</span><span>Locked</span></div><div class="prog"><i></i></div></article>
-        <article class="course lab"><div class="cov"><span class="hud">Side quest</span><span class="ic-lock"></span><b>Edit your videos with AI</b></div><div class="meta"><span>Lab</span><span>Locked</span></div><div class="prog"><i></i></div></article>
+        <article class="course lab"><div class="cov"><span class="hud">Side quest</span><span class="ic-lock"></span><b>Record and edit for YouTube</b></div><div class="meta"><span>Lab</span><span>Locked</span></div><div class="prog"><i></i></div></article>
       </div>
       <p class="glassnote">How the classroom is laid out when the Lab opens. Free courses come by email with the free path; Lab courses unlock over time, starting with a build you can finish in your first day.</p>
     </div>
@@ -725,8 +730,8 @@
         <div class="two"><p><b>You learn</b>The Drip pipeline: script, voice, animation, posting. And the legal side: AI disclosure rules, who owns an AI character, voice and likeness rights, sponsorship rules.</p><p><b>You build</b>The same pipeline, productionized the way a company would run it.</p></div></article>
       <article class="lv"><div class="num"><small>Level</small>9</div><h3>Legend: the career</h3><span class="tag lab">Lab</span>
         <div class="two"><p><b>You learn</b>What the job is day to day. Portfolio, resume, interviews. Your first freelance automation client.</p><p><b>You build</b>A plan for your next twelve months, reviewed live.</p></div></article>
-      <article class="lv side"><div class="num"><small>Side</small>+</div><h3>Side quest: make and edit videos with AI</h3><span class="tag lab">Lab</span>
-        <div class="two"><p><b>You learn</b>Scripts, AI voices, characters animated in code, and the honest part: disclosure and voice rights.</p><p><b>You build</b>Your own edit pipeline: record, get a cut list, open it in DaVinci Resolve already trimmed.</p></div></article>
+      <article class="lv side"><div class="num"><small>Side</small>+</div><h3>Side quest: record, edit and make videos with AI</h3><span class="tag lab">Lab</span>
+        <div class="two"><p><b>You learn</b>Scripts, AI voices, characters animated in code, and the honest part: disclosure and voice rights.</p><p><b>You build</b>Your recording and edit setup: screen, face cam and mic, a cut list, and DaVinci Resolve already trimmed. Members get my Tutorial Recorder app.</p></div></article>
     </div>
     <div class="legend"><span><span class="tag">Free</span>on YouTube and this site</span><span><span class="tag lab">Lab</span>optional, with live help</span></div>
   </div>
@@ -816,7 +821,8 @@
       <div class="get">
         <p class="hud">What you get</p>
         <ul class="checks">
-          <li><b>The full builds.</b> Scribe, Mission Briefing, Creator Intel, the Drip &amp; Capp studio and the edit pipeline, as step-by-step courses.</li>
+          <li><b>The full builds.</b> Scribe, Mission Briefing, Creator Intel and the Drip &amp; Capp studio, as step-by-step courses.</li>
+          <li><b>Apps you keep.</b> Tutorial Recorder, my screen recorder and editor for YouTube, yours to use.</li>
           <li><b>The code and the agent skills.</b> Cleaned-up copies you can run yourself, with demo data.</li>
           <li><b>A plan for your level.</b> Where you are on the nine levels, and what to build next.</li>
           <li><b>Two live calls a week.</b> A build-along and a Q&amp;A, plus a guest engineer once a month.</li>
@@ -853,7 +859,12 @@
         <h2>Want AI working in your business? I'll set it up.</h2>
       </div>
     </div>
-    <p class="lede">The same work I teach, done for you. I set up AI systems and workflows for small teams, so the repetitive work runs on tools you own, documented so you're never stuck with me.</p>
+    <p class="lede">I've spent ten years in tech building real enterprise integrations and workflow automations, the systems that move work between apps so people don't have to. I've built them for different businesses and teams, and now I build them with AI. The same work I teach, done for you, and documented so you own it.</p>
+    <div class="cred">
+      <div class="stat"><b>10 yrs</b><span>enterprise integrations and automations</span></div>
+      <div class="stat"><b>Real</b><span>workflows built for real businesses, not demos</span></div>
+      <div class="stat"><b>Yours</b><span>built in your accounts, your data stays with you</span></div>
+    </div>
     <div class="offers">
       <div class="offer"><span class="hud">01</span><h3>Workflow audit</h3><p>We walk through how your team works. You get a written plan: what to automate first, what it costs to run each month, and what to leave alone.</p></div>
       <div class="offer"><span class="hud">02</span><h3>Build</h3><p>I set up a workflow end to end in your own accounts: the intake, the AI step, the hand-off to your people. Tested, logged and written up.</p></div>
@@ -861,7 +872,7 @@
     </div>
     <div class="hire-row">
       <div>
-        <p class="price-line"><b>Projects start at $500.</b> Every project is a fixed quote after a free 20-minute call.</p>
+        <p class="price-line"><b>Projects start at $1,000.</b> Every project is a fixed quote after a free 20-minute call.</p>
         <ol class="steps">
           <li><b>Free call.</b> Twenty minutes on what's eating your team's time.</li>
           <li><b>Fixed quote.</b> Scope, price and timeline in writing.</li>
@@ -899,7 +910,7 @@
     <details><summary>Are there certificates, a lifetime deal, or upsells?</summary><p>No. No certificates, no lifetime tier, no upsells inside the group. One price, monthly or yearly, and you can cancel any time. What you show an employer is what you built.</p></details>
     <details><summary>Is this a course on making Drip videos?</summary><p>No. Drip is one level, taught as a case study, plus a side quest on making and editing videos with AI. The rest is enterprise AI and automation.</p></details>
     <details><summary>Will this get me a job?</summary><p>I can't promise that, and anyone who does is selling something. I genuinely want you to get one. I'll show you what the job actually is, what I built to get ahead in mine, and how to put together a portfolio that proves you can do it.</p></details>
-    <details><summary>Do you work with businesses?</summary><p>Yes. I set up AI systems and workflows for small teams. Projects start at $500, with a fixed quote after a free 20-minute call. Ask through the form in Work with me.</p></details>
+    <details><summary>Do you work with businesses?</summary><p>Yes. I've spent ten years building enterprise integrations and workflow automations, and I set up AI systems and workflows for businesses. Projects start at $1,000, with a fixed quote after a free 20-minute call. Ask through the form in Work with me.</p></details>
     <details><summary>Is any of this from your employer?</summary><p>No. Everything here is built on my own time, with my own tools, on public data and my own projects. Nothing from work is in it and nothing from work ever will be.</p></details>
     <details><summary>When does the Lab open?</summary><p>Soon. You don't need it to start: sign up above and I'll send you the free path, and tell you when the Lab opens.</p></details>
     <details><summary>Why Skool?</summary><p>One place for the classroom, the feed and the calendar, with levels built in. You'll get a link when it opens; there's nothing to install.</p></details>
