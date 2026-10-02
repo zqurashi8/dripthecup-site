@@ -3,31 +3,31 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Learn AI with Zain · Drip the Cup</title>
-<meta name="description" content="Learn to build with AI, free. Zain, the engineer behind Drip the Cup, shares the path he would take today: a free course with videos, a nine-level roadmap and a first build, and an optional paid group after.">
+<title>Learn AI with Zain Qurashi · Drip the Cup</title>
+<meta name="description" content="Learn AI with Zain Qurashi, the integrations engineer behind Drip the Cup. Nine levels from zero to AI automation engineer: free videos and a free roadmap, an optional paid Lab with the full builds, and AI setup for businesses.">
 <link rel="canonical" href="https://dripthecup.com/learn/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dripthecup.com/learn/">
-<meta property="og:title" content="Learn AI with Zain · Drip the Cup">
-<meta property="og:description" content="Learn to build with AI, free. A free course first, from the engineer behind Drip. An optional paid group after, if you want more.">
+<meta property="og:title" content="Learn AI with Zain Qurashi · Drip the Cup">
+<meta property="og:description" content="Nine levels from zero to AI automation engineer. A free path first, and an optional paid Lab with the full builds if you want more.">
 <meta property="og:image" content="https://dripthecup.com/learn/og-learn.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Learn AI with Zain · Drip the Cup">
-<meta name="twitter:description" content="Learn to build with AI. Free course first, optional paid group after.">
+<meta name="twitter:title" content="Learn AI with Zain Qurashi · Drip the Cup">
+<meta name="twitter:description" content="Nine levels from zero to AI automation engineer. Free path first, optional paid Lab after.">
 <meta name="twitter:image" content="https://dripthecup.com/learn/og-learn.jpg">
 <meta name="theme-color" content="#100D09">
 <link rel="icon" href="../assets/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Press+Start+2P&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,600;1,9..144,900&family=Press+Start+2P&display=swap">
 <style>
   :root{
     --mustard:#E3AC2A; --paper:#F6EFE0; --cup:#F5F1E8; --tile:#EDE6D8;
     --ink:#1A1A1A; --muted:#6B6155; --red:#D63F2A;
-    --dark:#100D09; --dim:#CFC4B0; --line:#D9CFBC; --line-dark:#33291F; --dark2:#1B1611;
+    --dark:#100D09; --dim:#CFC4B0; --line:#D9CFBC; --line-dark:#33291F; --dark2:#1B1611; --dark3:#221B13;
     --display:'Fraunces', Georgia, 'Times New Roman', serif;
     --body:Georgia, 'Times New Roman', serif;
     --mono:ui-monospace, 'Cascadia Mono', 'Courier New', monospace;
@@ -44,6 +44,7 @@
   img{max-width:100%;}
   :focus-visible{outline:3px solid var(--red);outline-offset:2px;}
   h1,h2,h3{text-wrap:balance;margin:0;}
+  [hidden]{display:none !important;}
   .wrap{max-width:1160px;margin:0 auto;padding-inline:20px;}
   .eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0;}
   .hud{font-family:var(--pixel);font-size:10px;letter-spacing:.04em;line-height:1.8;text-transform:uppercase;}
@@ -57,6 +58,10 @@
   .btn-mustard:hover{background:var(--paper);border-color:var(--paper);}
   .btn-ghost{border-color:var(--dim);color:var(--paper);}
   .btn-ghost:hover{background:var(--paper);color:var(--ink);border-color:var(--paper);}
+  /* the lock glyph, drawn once as a mask so it takes the text colour */
+  .ic-lock{display:inline-block;width:11px;height:12px;background:currentColor;flex:none;vertical-align:-1px;
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 17'%3E%3Cpath d='M4 7V5a4 4 0 0 1 8 0v2h1.5v9.5h-11V7H4zm2 0h4V5a2 2 0 0 0-4 0v2z'/%3E%3C/svg%3E") center/contain no-repeat;
+            mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 17'%3E%3Cpath d='M4 7V5a4 4 0 0 1 8 0v2h1.5v9.5h-11V7H4zm2 0h4V5a2 2 0 0 0-4 0v2z'/%3E%3C/svg%3E") center/contain no-repeat;}
 
   /* ---------- bar + header (site chrome) ---------- */
   .bar{background:var(--dark);color:var(--dim);font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;
@@ -79,52 +84,34 @@
 
   /* ---------- hero: the dark stage ---------- */
   .hero{background:var(--dark);color:var(--dim);border-bottom:1px solid var(--line-dark);overflow:hidden;}
-  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding-block:56px 48px;}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding-block:56px 52px;}
   .hero .hud{color:var(--mustard);}
-  .hero h1{font-family:var(--display);font-weight:900;font-size:clamp(36px,4.6vw,62px);line-height:1.0;letter-spacing:-.025em;
-           color:var(--paper);margin:18px 0 0;}
-  .hero h1 em{font-style:italic;font-weight:600;color:var(--mustard);}
-  .hero p.sub{max-width:50ch;margin:22px 0 0;font-size:17px;}
-  .hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px;}
-  .hero .fine{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--dim);margin:18px 0 0;opacity:.8;}
+  .hero .who{font-family:var(--display);font-weight:900;font-size:clamp(46px,6.2vw,84px);line-height:.95;letter-spacing:-.035em;color:var(--paper);margin:14px 0 0;}
+  .hero .who::after{content:'';display:block;width:88px;height:6px;background:var(--mustard);margin-top:18px;}
+  .hero h1{font-family:var(--display);font-weight:600;font-size:clamp(26px,3vw,40px);line-height:1.1;letter-spacing:-.015em;color:var(--paper);margin:20px 0 0;}
+  .hero h1 em{font-style:italic;color:var(--mustard);}
+  .hero p.sub{max-width:50ch;margin:18px 0 0;font-size:17px;}
+  .hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;}
+  .hero .biz{display:inline-block;margin-top:20px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mustard);text-underline-offset:4px;}
+  .hero .biz:hover{color:var(--paper);}
   .stage{position:relative;background:var(--mustard);border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);
          display:flex;align-items:flex-end;justify-content:center;padding:32px 28px 0;
          background-image:linear-gradient(rgba(26,26,26,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(26,26,26,.09) 1px,transparent 1px);
          background-size:32px 32px;}
   .stage .fig{display:block;width:100%;max-width:560px;height:auto;position:relative;z-index:2;}
-  .stage .buddy{position:absolute;bottom:0;z-index:1;height:auto;}
-  .stage .drip{left:18px;width:78px;}
-  .stage .capp{right:18px;width:92px;}
-  .chip{position:absolute;top:12px;left:12px;background:var(--ink);color:var(--paper);padding:8px 10px;z-index:3;}
-  .chip.r{left:auto;right:12px;background:var(--paper);color:var(--ink);}
-  .bubble{position:absolute;left:96px;bottom:118px;z-index:3;background:var(--paper);border:2.5px solid var(--ink);border-radius:16px;
-          padding:8px 12px 9px;box-shadow:4px 4px 0 var(--ink);font-family:var(--display);font-weight:900;font-size:17px;line-height:1;white-space:nowrap;}
-  .bubble::before,.bubble::after{content:'';position:absolute;left:14px;border-style:solid;border-color:transparent;}
-  .bubble::before{bottom:-14px;border-width:14px 9px 0 9px;border-top-color:var(--ink);}
-  .bubble::after{bottom:-9px;margin-left:2px;border-width:10px 7px 0 7px;border-top-color:var(--paper);}
-  .xp{margin-top:18px;}
-  .xp .row{display:flex;justify-content:space-between;color:var(--dim);}
-  .xp .track{height:14px;border:2px solid var(--dim);margin-top:8px;padding:2px;}
-  .xp .fill{height:100%;width:11%;background:var(--mustard);}
-  .start{display:inline-block;margin-top:14px;color:var(--paper);text-decoration:none;}
-  .start:hover{color:var(--mustard);}
-  .start .cur{display:inline-block;animation:blink 1s steps(2,start) infinite;}
-  @keyframes blink{to{visibility:hidden;}}
   @media (max-width:900px){
-    .hero .wrap{grid-template-columns:1fr;gap:28px;padding-block:32px 40px;}
+    .hero .wrap{grid-template-columns:minmax(0,1fr);gap:28px;padding-block:32px 40px;}
     .stage{order:-1;min-height:0;padding:22px 16px 0;}
-    .stage .fig{height:min(360px,74vw);}
-    .stage .drip{width:58px;left:10px;} .stage .capp{width:68px;right:10px;}
-    .bubble{left:70px;bottom:92px;font-size:15px;}
+    .stage .fig{width:100%;height:auto;}
   }
-  @media (prefers-reduced-motion:reduce){.start .cur{animation:none;} html{scroll-behavior:auto;}}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
 
   /* ---------- sections ---------- */
   .sec{padding-block:72px;border-bottom:1px solid var(--line);}
   .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:28px;}
   .sec-head h2{font-family:var(--display);font-weight:600;font-size:clamp(28px,3.6vw,42px);line-height:1.05;letter-spacing:-.01em;}
   .sec-head .eyebrow{margin-bottom:8px;}
-  .lede{max-width:60ch;color:var(--muted);margin:-8px 0 28px;font-size:17px;}
+  .lede{max-width:62ch;color:var(--muted);margin:-8px 0 28px;font-size:17px;}
   .dark{background:var(--dark);color:var(--dim);border-color:var(--line-dark);}
   .dark .eyebrow{color:var(--mustard);}
   .dark .sec-head h2{color:var(--paper);}
@@ -132,27 +119,162 @@
   .mustard{background:var(--mustard);border-color:var(--mustard);}
   .mustard .eyebrow{color:var(--ink);}
 
-
-
-  /* ---------- why it's free ---------- */
+  /* ---------- how this works: free info, paid structure ---------- */
   .why{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:start;}
   @media (max-width:860px){.why{grid-template-columns:1fr;gap:18px;}}
   .why h2{font-family:var(--display);font-weight:900;font-size:clamp(32px,4.4vw,54px);line-height:1.02;letter-spacing:-.02em;margin-top:10px;}
   .why-copy p{margin:0 0 16px;font-size:18px;max-width:58ch;}
-  .why-copy .free-list{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 20px;padding:0;list-style:none;}
-  .why-copy .free-list li{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;border:1.5px solid var(--ink);background:var(--cup);padding:7px 10px;}
   .why-copy .sig{font-family:var(--display);font-style:italic;font-weight:600;font-size:22px;margin-top:4px;}
-  .proof .stats{grid-template-columns:1fr 1fr;margin-top:0;}
+  .doors{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px;}
+  @media (max-width:860px){.doors{grid-template-columns:1fr;}}
+  .door{border:2px solid var(--ink);background:var(--cup);padding:20px 20px 18px;text-decoration:none;display:flex;flex-direction:column;gap:8px;min-height:200px;}
+  .door .hud{font-size:9px;color:var(--muted);}
+  .door b{font-family:var(--display);font-weight:600;font-size:24px;line-height:1.1;}
+  .door span:not(.hud){font-size:15px;color:var(--muted);line-height:1.5;flex:1;}
+  .door i{font-style:normal;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;}
+  .door.lab{background:var(--ink);color:var(--paper);box-shadow:6px 6px 0 var(--mustard);}
+  .door.lab .hud{color:var(--mustard);}
+  .door.lab span:not(.hud){color:var(--dim);}
+  .door:hover{background:var(--mustard);color:var(--ink);}
+  .door:hover span:not(.hud),.door:hover .hud{color:var(--ink);}
+
+  /* ---------- what I've built: the glass paywall ---------- */
+  .tabs{display:flex;gap:4px;padding:4px;border:1.5px solid var(--line-dark);background:var(--dark2);width:max-content;max-width:100%;overflow-x:auto;margin:0 0 22px;}
+  .tabs button{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);background:none;border:0;padding:11px 16px;white-space:nowrap;}
+  .tabs button:hover{color:var(--paper);}
+  .tabs button[aria-selected="true"]{background:var(--mustard);color:var(--ink);}
+  .shot{position:relative;aspect-ratio:16/10;overflow:hidden;background:#0b0907;border-bottom:2px solid var(--line-dark);container-type:inline-size;}
+  .shot > img{width:100%;height:100%;object-fit:cover;object-position:left top;display:block;}
+  .locked .shot > img,.locked .shot > .mock{filter:blur(2px) saturate(.9);opacity:.8;transform:scale(1.03);transition:filter .3s,opacity .3s;}
+  .locked:hover .shot > img,.locked:hover .shot > .mock{filter:blur(1.2px) saturate(.95);opacity:.9;}
+  @media (prefers-reduced-motion:reduce){.locked .shot > img,.locked .shot > .mock{transition:none;}}
+  .lock-pill{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;display:inline-flex;align-items:center;gap:8px;
+             background:rgba(16,13,9,.9);color:var(--paper);border:1.5px solid var(--mustard);padding:9px 14px;white-space:nowrap;
+             font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;}
+  .lock-pill .ic-lock{color:var(--mustard);}
+  .lock-pill:hover{background:var(--mustard);color:var(--ink);}
+  .lock-pill:hover .ic-lock{color:var(--ink);}
+  .tagc{position:absolute;top:10px;left:10px;z-index:2;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;background:var(--paper);color:var(--ink);}
+  .tagc.sample{background:var(--dark);color:var(--dim);border:1px solid var(--line-dark);}
+  .tagc.open{background:var(--mustard);left:auto;right:10px;}
+  .badge{align-self:flex-start;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--line-dark);padding:3px 8px;color:var(--dim);}
+  .badge::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--mustard);margin-right:7px;vertical-align:1px;}
+
+  .feat{display:grid;grid-template-columns:1.25fr 1fr;border:2px solid var(--line-dark);background:var(--dark2);margin-bottom:14px;}
+  .feat .shot{aspect-ratio:auto;min-height:360px;border-bottom:0;border-right:2px solid var(--line-dark);}
+  .feat .info{padding:26px 26px 24px;display:flex;flex-direction:column;gap:12px;}
+  .feat h3{font-family:var(--display);font-weight:900;font-size:clamp(30px,3.4vw,42px);color:var(--paper);line-height:1;letter-spacing:-.02em;}
+  .feat .one{margin:0;font-size:16.5px;}
+  .feat .inside{margin:0;font-size:14.5px;}
+  .feat .inside b{color:var(--paper);font-weight:400;}
+  .feat .btn{align-self:flex-start;display:inline-flex;align-items:center;gap:10px;margin-top:auto;}
+  @media (max-width:860px){.feat{grid-template-columns:1fr;} .feat .shot{aspect-ratio:16/10;min-height:0;border-right:0;border-bottom:2px solid var(--line-dark);}}
+
+  .bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  @media (max-width:900px){.bgrid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:580px){.bgrid{grid-template-columns:1fr;}}
+  .bcard{border:2px solid var(--line-dark);background:var(--dark2);display:flex;flex-direction:column;}
+  .bcard .info{padding:16px 18px 18px;display:flex;flex-direction:column;gap:9px;flex:1;}
+  .bcard h3{font-family:var(--display);font-weight:600;font-size:22px;color:var(--paper);line-height:1.15;}
+  .bcard .one{margin:0;font-size:14.5px;line-height:1.55;}
+  .bcard .inside{margin:0;font-family:var(--mono);font-size:11px;letter-spacing:.03em;line-height:1.7;color:var(--dim);opacity:.85;}
+  .bcard .act{margin-top:auto;padding-top:6px;}
+  .bcard .act .btn{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;padding:13px 14px;}
+  .alsofree{margin-top:16px;border:1.5px dashed var(--line-dark);padding:14px 16px;display:flex;flex-wrap:wrap;gap:8px 20px;align-items:baseline;font-size:14.5px;}
+  .alsofree .hud{color:var(--mustard);font-size:9px;}
+  .alsofree b{color:var(--paper);font-weight:400;}
+  .glassnote{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--dim);opacity:.75;margin:18px 0 0;}
+
+  /* sample previews drawn in CSS: demo data only, never real accounts */
+  .mock{position:absolute;inset:0;font-family:var(--mono);color:var(--dim);font-size:2.3cqw;line-height:1.35;}
+  .mock.mb{padding:4.5cqw 5cqw;background:radial-gradient(circle at 78% 62%,rgba(227,172,42,.22),transparent 42%),linear-gradient(160deg,#17120c,#0b0907);}
+  .mb-top{display:flex;justify-content:space-between;color:var(--mustard);font-family:var(--pixel);font-size:1.6cqw;}
+  .mb-say{font-family:var(--display);font-weight:600;font-size:4.6cqw;color:var(--paper);margin:3.2cqw 0 0;line-height:1.1;max-width:60%;}
+  .mb-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.6cqw;margin-top:3.6cqw;max-width:56%;}
+  .mb-grid div{border:1px solid #3a2f22;padding:1.6cqw 1.8cqw;background:rgba(27,22,17,.8);}
+  .mb-grid small{display:block;font-size:1.5cqw;letter-spacing:.12em;text-transform:uppercase;}
+  .mb-grid b{display:block;font-family:var(--display);font-weight:900;font-size:4.6cqw;color:var(--paper);line-height:1.1;}
+  .mb-grid em{font-style:normal;font-size:1.6cqw;}
+  .mb-ring{position:absolute;right:9cqw;top:50%;width:26cqw;height:26cqw;transform:translateY(-50%);border-radius:50%;border:.5cqw solid rgba(227,172,42,.75);
+           box-shadow:0 0 4cqw rgba(227,172,42,.35),inset 0 0 3cqw rgba(227,172,42,.25);}
+  .mb-ring::before{content:'';position:absolute;inset:3.4cqw;border-radius:50%;border:.3cqw dashed rgba(227,172,42,.6);}
+  .mb-ring::after{content:'CIPHER';position:absolute;inset:0;display:grid;place-items:center;font-family:var(--pixel);font-size:1.7cqw;color:var(--mustard);}
+  .mb-input{position:absolute;left:5cqw;right:5cqw;bottom:4cqw;border:1px solid #3a2f22;padding:1.6cqw 2cqw;font-size:1.9cqw;background:rgba(16,13,9,.9);}
+  .mock.ci{padding:5cqw;background:#120f0b;}
+  .ci-h{display:flex;justify-content:space-between;align-items:baseline;color:var(--paper);font-size:2.8cqw;margin-bottom:3cqw;}
+  .ci-h span{font-size:2.1cqw;color:var(--dim);}
+  .ci-row{display:grid;grid-template-columns:1fr auto;gap:2cqw;align-items:center;padding:2cqw 0;border-top:1px solid #33291f;}
+  .ci-row p{margin:0;color:var(--paper);font-size:2.8cqw;line-height:1.25;}
+  .ci-row i{display:block;height:1.2cqw;background:var(--mustard);margin-top:1.2cqw;}
+  .ci-row b{font-family:var(--display);font-weight:900;font-size:4.4cqw;color:var(--mustard);}
+  .ci-hooks{display:flex;gap:1.5cqw;flex-wrap:wrap;margin-top:2.6cqw;}
+  .ci-hooks span{border:1px solid #4a3c2b;padding:.8cqw 1.6cqw;font-size:2cqw;}
+  .mock.ed{padding:5cqw;background:#120f0b;}
+  .ed-say{color:var(--paper);font-size:2.9cqw;line-height:1.5;margin:0 0 4cqw;}
+  .ed-say s{color:#7d6d58;text-decoration-color:var(--mustard);text-decoration-thickness:.35cqw;}
+  .ed-track{display:grid;grid-template-columns:7cqw 1fr;gap:1.6cqw;align-items:center;margin-top:2cqw;}
+  .ed-track span{font-size:2.1cqw;}
+  .ed-track div{display:flex;gap:.7cqw;height:6cqw;}
+  .ed-track div i{display:block;background:var(--mustard);}
+  .ed-track div i.c{background:repeating-linear-gradient(135deg,#3a2f22 0 .9cqw,#1b1611 .9cqw 1.8cqw);}
+  .ed-track.v div i{background:#c7b08a;}
+  .ed-out{position:absolute;left:5cqw;bottom:4cqw;font-size:2.2cqw;color:var(--mustard);}
+
+  /* skills: a file tree you can read but not open */
+  .win{border:2px solid var(--line-dark);background:#0c0a07;}
+  .win .tb{display:flex;align-items:center;gap:6px;padding:10px 12px;border-bottom:1px solid var(--line-dark);}
+  .win .tb i{width:10px;height:10px;border-radius:50%;background:#3a3027;}
+  .win .tb span{flex:1;text-align:center;font-family:var(--mono);font-size:11.5px;color:var(--dim);margin-right:36px;}
+  .win .body{display:grid;grid-template-columns:250px 1fr;min-height:420px;}
+  .tree{border-right:1px solid var(--line-dark);padding:10px 6px;font-family:var(--mono);font-size:13px;}
+  .tree .dir{color:var(--dim);opacity:.7;padding:6px 10px;font-size:12px;}
+  .tree button{display:flex;width:100%;align-items:center;justify-content:space-between;gap:8px;background:none;border:0;color:var(--dim);font:inherit;padding:7px 10px 7px 22px;text-align:left;}
+  .tree button:hover{color:var(--paper);}
+  .tree button[aria-pressed="true"]{background:var(--dark3);color:var(--paper);}
+  .tree .t{font-size:9.5px;letter-spacing:.1em;border:1px solid currentColor;padding:1px 5px;flex:none;}
+  .tree .t.open{color:var(--mustard);}
+  .tree .t.lab{color:#8a7b66;}
+  .pane{padding:20px 24px;font-family:var(--mono);font-size:13.5px;line-height:1.8;position:relative;overflow:hidden;color:var(--dim);}
+  .pane .path{font-size:11.5px;opacity:.75;margin:0 0 14px;}
+  .pane .fm{margin:0;color:var(--paper);white-space:pre-wrap;}
+  .pane .fm span{color:var(--mustard);}
+  .pane ol{margin:16px 0 0;padding-left:22px;}
+  .pane ol li{margin:2px 0;}
+  .pane.locked ol{filter:blur(5px);user-select:none;opacity:.8;}
+  .pane .gate{position:absolute;left:50%;top:66%;transform:translate(-50%,-50%);text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;}
+  .pane .gate .lock-pill{position:static;transform:none;}
+  .pane .freenote{margin:16px 0 0;color:var(--mustard);font-size:12px;}
+  @media (max-width:760px){
+    .win .body{grid-template-columns:1fr;}
+    .tree{display:flex;overflow-x:auto;border-right:0;border-bottom:1px solid var(--line-dark);padding:8px;gap:4px;}
+    .tree .dir{display:none;}
+    .tree button{width:auto;white-space:nowrap;padding:7px 10px;}
+    .pane{min-height:340px;padding:18px 16px;}
+  }
+
+  /* classroom: the courses, Skool-style cards */
+  .courses{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;}
+  @media (max-width:1000px){.courses{grid-template-columns:repeat(4,1fr);}}
+  @media (max-width:640px){.courses{grid-template-columns:1fr 1fr;}}
+  .course{border:2px solid var(--line-dark);background:var(--dark2);display:flex;flex-direction:column;}
+  .course .cov{position:relative;aspect-ratio:16/11;display:flex;flex-direction:column;justify-content:space-between;gap:8px;padding:12px;background:var(--paper);color:var(--ink);
+               background-image:linear-gradient(rgba(26,26,26,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(26,26,26,.07) 1px,transparent 1px);background-size:18px 18px;}
+  .course .cov .hud{font-size:9px;}
+  .course .cov b{font-family:var(--display);font-weight:900;font-size:clamp(15px,1.5vw,18px);line-height:1.08;letter-spacing:-.01em;}
+  .course.lab .cov{background-color:var(--dark3);color:var(--paper);background-image:linear-gradient(rgba(227,172,42,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(227,172,42,.08) 1px,transparent 1px);}
+  .course.lab .cov .hud{color:var(--mustard);}
+  .course.lab .cov .ic-lock{position:absolute;top:12px;right:12px;color:var(--mustard);width:13px;height:14px;}
+  .course .meta{padding:10px 12px 8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);display:flex;justify-content:space-between;gap:8px;}
+  .course .meta em{font-style:normal;color:var(--mustard);}
+  .course .prog{height:5px;background:var(--line-dark);margin:0 12px 12px;}
+  .course .prog i{display:block;height:100%;width:0;background:var(--mustard);}
+
   /* ---------- proof ---------- */
   .proof{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
   @media (max-width:860px){.proof{grid-template-columns:1fr;gap:26px;}}
   .proof h2{font-family:var(--display);font-weight:600;font-size:clamp(28px,3.4vw,40px);line-height:1.08;margin:10px 0 18px;}
   .proof p{margin:0 0 16px;max-width:52ch;}
-  .proof .desk{background:var(--mustard);border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);padding:36px 24px 0;display:flex;align-items:flex-end;justify-content:center;
-               background-image:linear-gradient(rgba(26,26,26,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(26,26,26,.09) 1px,transparent 1px);background-size:32px 32px;}
-  .proof .desk img{width:100%;max-width:520px;height:auto;display:block;}
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:28px;}
-  @media (max-width:860px){.stats{grid-template-columns:repeat(2,1fr);}}
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
   .stat{border:2px solid var(--ink);background:var(--cup);padding:14px 14px 12px;}
   .stat b{display:block;font-family:var(--display);font-weight:900;font-size:30px;line-height:1;letter-spacing:-.02em;}
   .stat span{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:8px;line-height:1.5;}
@@ -176,6 +298,7 @@
   .lv p b{color:var(--paper);font-weight:400;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:2px;}
   .lv .two{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
   @media (max-width:520px){.lv .two{grid-template-columns:1fr;}}
+  .lv.side{grid-column:1/-1;border-style:dashed;border-color:var(--mustard);}
   .legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:22px;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:var(--dim);}
   .legend .tag{border:1px solid var(--dim);padding:3px 8px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;margin-right:8px;}
   .legend .tag.lab{background:var(--mustard);border-color:var(--mustard);color:var(--ink);}
@@ -190,6 +313,7 @@
   .quest .figs img.d{height:min(190px,32vw);width:auto;margin-left:-30px;position:relative;z-index:2;}
   .form{background:var(--paper);border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);padding:24px;margin-top:28px;max-width:560px;}
   .form label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 6px;}
+  .form label span{text-transform:none;letter-spacing:0;}
   .form input,.form textarea{width:100%;font:16px/1.4 var(--body);color:var(--ink);background:var(--cup);border:1.5px solid var(--ink);
        border-radius:0;padding:12px;margin-bottom:14px;appearance:none;-webkit-appearance:none;}
   .form textarea{min-height:64px;resize:vertical;}
@@ -197,9 +321,7 @@
   .form .btn[disabled]{opacity:.55;cursor:default;}
   .form .fine{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;line-height:1.8;color:var(--muted);margin:14px 0 0;}
   .form .err{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;color:var(--red);margin:0 0 12px;line-height:1.5;}
-  .form .err[hidden]{display:none;}
   .form .done{display:flex;gap:14px;align-items:flex-start;}
-  .form .done[hidden]{display:none;}
   .form .done img{width:64px;height:auto;flex:none;}
   .form .done h3{font-family:var(--display);font-weight:600;font-size:24px;line-height:1.1;margin:0 0 6px;}
   .form .done p{margin:0;font-size:15px;}
@@ -218,25 +340,45 @@
   .fcard:hover span{color:var(--ink);}
 
   /* ---------- the lab ---------- */
-  .lab{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
-  @media (max-width:820px){.lab{grid-template-columns:1fr;}}
-  .lcard{border:2px solid var(--line-dark);background:var(--dark2);padding:22px 20px 20px;}
-  .lcard .hud{color:var(--mustard);}
-  .lcard h3{font-family:var(--display);font-weight:600;font-size:23px;color:var(--paper);margin:8px 0 12px;line-height:1.15;}
-  .lcard ul{margin:0;padding-left:18px;font-size:15px;line-height:1.6;}
-  .lcard li{margin:4px 0;}
-  .founding{margin-top:18px;border:3px solid var(--mustard);padding:26px 24px;display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;background:var(--dark2);}
-  @media (max-width:820px){.founding{grid-template-columns:1fr;}}
-  .founding h3{font-family:var(--display);font-weight:900;font-size:clamp(28px,3.6vw,44px);color:var(--paper);line-height:1.02;letter-spacing:-.02em;}
-  .founding .price{font-family:var(--display);font-weight:900;font-size:clamp(40px,5vw,64px);color:var(--mustard);line-height:1;letter-spacing:-.03em;margin:12px 0 4px;}
-  .founding .price small{font-family:var(--mono);font-size:13px;letter-spacing:.08em;color:var(--dim);font-weight:400;display:block;margin-top:8px;}
-  .founding p{margin:12px 0 0;max-width:52ch;font-size:15.5px;}
-  .founding .side{display:flex;flex-direction:column;gap:12px;}
+  .labgrid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:start;}
+  @media (max-width:860px){.labgrid{grid-template-columns:1fr;}}
+  .get{border:2px solid var(--line-dark);background:var(--dark2);padding:24px 24px 26px;}
+  .get .hud{color:var(--mustard);}
+  .checks{list-style:none;padding:0;margin:12px 0 24px;}
+  .checks li{position:relative;padding:11px 0 11px 32px;border-top:1px solid var(--line-dark);font-size:15.5px;line-height:1.5;}
+  .checks li::before{content:'';position:absolute;left:3px;top:17px;width:13px;height:7px;border-left:3px solid var(--mustard);border-bottom:3px solid var(--mustard);transform:rotate(-45deg);}
+  .checks b{color:var(--paper);font-family:var(--display);font-weight:600;font-size:17px;}
+  .nots{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:12px 0 0;}
+  .nots li{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;border:1px solid #5a4c3a;padding:5px 9px;
+           text-decoration:line-through;text-decoration-color:var(--mustard);text-decoration-thickness:2px;}
+  .founding{border:3px solid var(--mustard);padding:26px 24px;display:flex;flex-direction:column;gap:14px;background:var(--dark2);}
+  .founding h3{font-family:var(--display);font-weight:900;font-size:clamp(28px,3.2vw,40px);color:var(--paper);line-height:1.02;letter-spacing:-.02em;}
+  .founding .price{font-family:var(--display);font-weight:900;font-size:clamp(44px,5vw,64px);color:var(--mustard);line-height:1;letter-spacing:-.03em;}
+  .founding .price small{font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--dim);font-weight:400;display:block;margin-top:10px;line-height:1.6;}
+  .founding p{margin:0;font-size:15.5px;}
   .founding .seats{display:grid;grid-template-columns:repeat(10,1fr);gap:4px;}
   .founding .seats i{display:block;aspect-ratio:1;border:1.5px solid var(--mustard);}
-  .founding .seats i.on{background:var(--mustard);}
   .founding .seats-label{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);}
   .founding .btn{text-align:center;}
+
+  /* ---------- work with me ---------- */
+  .hire{background:var(--tile);}
+  .offers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  @media (max-width:860px){.offers{grid-template-columns:1fr;}}
+  .offer{border:2px solid var(--ink);background:var(--cup);padding:20px 20px 18px;}
+  .offer .hud{font-size:9px;color:var(--muted);}
+  .offer h3{font-family:var(--display);font-weight:600;font-size:24px;line-height:1.1;margin:8px 0 10px;}
+  .offer p{margin:0;font-size:15px;color:var(--muted);}
+  .hire-row{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:34px;align-items:start;}
+  @media (max-width:860px){.hire-row{grid-template-columns:1fr;gap:20px;}}
+  .price-line{font-size:18px;margin:0 0 18px;max-width:46ch;}
+  .price-line b{font-family:var(--display);font-weight:900;font-size:22px;}
+  .steps{list-style:none;padding:0;margin:0;counter-reset:s;}
+  .steps li{counter-increment:s;position:relative;padding:12px 0 12px 46px;border-top:1px solid var(--line);font-size:15.5px;}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:11px;width:30px;height:30px;display:grid;place-items:center;
+                    font-family:var(--pixel);font-size:12px;background:var(--mustard);border:2px solid var(--ink);}
+  .steps b{font-family:var(--display);font-weight:600;}
+  .hire .form{margin-top:0;}
 
   /* ---------- faq ---------- */
   .faq details{border-top:1px solid var(--line);padding:16px 0;}
@@ -281,7 +423,7 @@
 </head>
 <body>
 
-<div class="bar">Learn AI with Zain &nbsp;·&nbsp; <b>Free course first</b> &nbsp;·&nbsp; Paid group only if you want more</div>
+<div class="bar">Learn AI with Zain Qurashi &nbsp;·&nbsp; <b>Start free</b> &nbsp;·&nbsp; The Lab when you want the full builds</div>
 
 <header class="hdr"><div class="in">
   <a class="brand" href="/">DRIP.</a>
@@ -298,13 +440,15 @@
 <section class="hero" id="top">
   <div class="wrap">
     <div>
-      <p class="hud">Zain Qurashi &nbsp;·&nbsp; integrations engineer</p>
-      <h1>Learn to build with AI. <em>Start free.</em></h1>
-      <p class="sub">I build with AI every day, and I want to show you the path. Start with the free course. If you want more help after that, there's a paid group.</p>
+      <p class="hud">Drip the Cup Lab &nbsp;·&nbsp; taught by</p>
+      <p class="who">Zain Qurashi</p>
+      <h1>Nine levels from zero to <em>AI automation engineer.</em></h1>
+      <p class="sub">I'm an integrations engineer and I build with AI every day. I'll show you what to learn and what to build, in order. The videos are free. The full builds and the live help are in the Lab.</p>
       <div class="ctas">
-        <a class="btn btn-mustard" href="#first">Get the free path</a>
-        <a class="btn btn-ghost" href="#why">Free vs paid</a>
+        <a class="btn btn-mustard" href="#unlock">See what I've built</a>
+        <a class="btn btn-ghost" href="#first">Start free</a>
       </div>
+      <a class="biz" href="#hire">Running a business? I'll set AI up for you &rarr;</a>
     </div>
     <div>
       <div class="stage">
@@ -314,20 +458,214 @@
   </div>
 </section>
 
-<!-- ============ WHY IT'S FREE ============ -->
+<!-- ============ HOW THIS WORKS ============ -->
 <section class="sec" id="why">
-  <div class="wrap why">
-    <div>
-      <p class="eyebrow">How this works</p>
-      <h2>Free first. Paid only if you want more.</h2>
+  <div class="wrap">
+    <div class="why">
+      <div>
+        <p class="eyebrow">How this works</p>
+        <h2>AI is free. The plan is the hard part.</h2>
+      </div>
+      <div class="why-copy">
+        <p>Getting in shape has the simplest advice there is: go to the gym. It's the plan that makes it work. What to do each day, in what order, and someone checking in.</p>
+        <p>AI is the same. The tools are free and the tutorials are everywhere. What's missing is the order: what to learn first, what to build next, and someone looking at your work.</p>
+        <p>So the videos and the roadmap stay free. The Lab is where the structure lives: the full builds, a plan for your level, and me. I charge for it so I can give every member real time, and so the people in it show up and build.</p>
+        <p class="sig">Zain</p>
+      </div>
     </div>
-    <div class="why-copy">
-      <p>There's a free course: the roadmap, the videos, the tools directory and the first build. It stays free, and you can get a long way with it on its own.</p>
-      <ul class="free-list"><li>The 9-level roadmap</li><li>Every video</li><li>160+ AI tools, ranked</li><li>The first build</li></ul>
-      <p>When you sign up, it's so I can actually help: send you the path, point you at the next step, and answer you when you're stuck.</p>
-      <p>If you finish the free path and want more, there's a paid group with live calls, reviews and projects. Join it after, and only if it's worth it to you.</p>
-      <p class="sig">Zain</p>
+    <div class="doors">
+      <a class="door" href="#first"><span class="hud">Free</span><b>The free path</b><span>Every video, the nine-level roadmap, the 200+ AI tools directory and the first build. It stands on its own.</span><i>Start free &rarr;</i></a>
+      <a class="door lab" href="#lab"><span class="hud">$49 a month &nbsp;·&nbsp; optional</span><b>The Lab</b><span>The full builds and their code, a plan for your level, two live calls a week and reviews. Small on purpose.</span><i>What's inside &rarr;</i></a>
+      <a class="door" href="#hire"><span class="hud">For businesses</span><b>Work with me</b><span>I set up AI systems and workflows for your team, in your own accounts, documented so you own them.</span><i>Get a free call &rarr;</i></a>
     </div>
+  </div>
+</section>
+
+<!-- ============ WHAT I'VE BUILT (the glass paywall) ============ -->
+<section class="sec dark" id="unlock">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">What I've built</p>
+        <h2>Built on my own time since June. This is what you unlock.</h2>
+      </div>
+    </div>
+    <p class="lede">Real apps I use every day, the agent skills behind them, and the courses they turn into. The free ones are open. The rest you can see through the glass, and they open in the Lab.</p>
+
+    <div class="tabs" role="tablist" aria-label="What you unlock">
+      <button role="tab" id="tab-builds" aria-controls="panel-builds" aria-selected="true">The builds</button>
+      <button role="tab" id="tab-skills" aria-controls="panel-skills" aria-selected="false" tabindex="-1">Agent skills</button>
+      <button role="tab" id="tab-class" aria-controls="panel-class" aria-selected="false" tabindex="-1">Classroom</button>
+    </div>
+
+    <!-- builds -->
+    <div class="tabpanel" id="panel-builds" role="tabpanel" aria-labelledby="tab-builds">
+      <article class="feat locked">
+        <div class="shot">
+          <div class="mock mb" aria-hidden="true">
+            <div class="mb-top"><span>Mission briefing</span><span>07:00</span></div>
+            <p class="mb-say">Morning. Three things matter today.</p>
+            <div class="mb-grid">
+              <div><small>Objectives</small><b>3</b><em>one due today</em></div>
+              <div><small>Calendar</small><b>2</b><em>first at 10:30</em></div>
+              <div><small>Inbox</small><b>4</b><em>need you</em></div>
+              <div><small>Car</small><b>82%</b><em>charged</em></div>
+            </div>
+            <div class="mb-ring"></div>
+            <div class="mb-input">Talk, type, or drop in a photo...</div>
+          </div>
+          <span class="tagc sample">Sample preview · demo data</span>
+          <a class="lock-pill unlock-link" href="#lab"><span class="ic-lock"></span>Unlock in the Lab</a>
+        </div>
+        <div class="info">
+          <span class="badge">In daily use</span>
+          <h3>Mission Briefing</h3>
+          <p class="one">My own Jarvis. I talk, type or drop in a photo, and my agent Cipher files it into objectives and searchable memory, then runs a briefing for me every morning.</p>
+          <p class="inside">In the Lab: <b>Build your Double-O agent</b>, a 20-module course. Desktop and Android, built from a clean copy with demo data.</p>
+          <a class="btn btn-mustard unlock-link" href="#lab"><span class="ic-lock"></span>Unlock in the Lab</a>
+        </div>
+      </article>
+
+      <div class="bgrid">
+        <article class="bcard locked">
+          <div class="shot">
+            <img src="art/builds/scribe.webp" width="900" height="563" loading="lazy" alt="Scribe's stats screen: 77k words dictated, 160 words a minute, 10.4 hours saved, and a words-per-day chart.">
+            <a class="lock-pill unlock-link" href="#lab"><span class="ic-lock"></span>Unlock in the Lab</a>
+          </div>
+          <div class="info">
+            <span class="badge">Working</span>
+            <h3>Scribe</h3>
+            <p class="one">My own private dictation app. Hold a key, talk, and clean text lands wherever your cursor is. It runs on your computer and nothing leaves it.</p>
+            <p class="inside">Inside: the full app, end to end. Speech to text on your GPU, a local model for cleanup, styles per app.</p>
+            <div class="act"><a class="btn btn-mustard unlock-link" href="#lab"><span class="ic-lock"></span>Unlock</a></div>
+          </div>
+        </article>
+
+        <article class="bcard locked">
+          <div class="shot">
+            <div class="mock ci" aria-hidden="true">
+              <div class="ci-h">Breakouts in your niche <span>vs each channel's normal</span></div>
+              <div class="ci-row"><div><p>I tried every AI note app</p><i style="width:92%"></i></div><b>6.2x</b></div>
+              <div class="ci-row"><div><p>Stop using ChatGPT like this</p><i style="width:70%"></i></div><b>4.8x</b></div>
+              <div class="ci-row"><div><p>The $0 automation stack</p><i style="width:46%"></i></div><b>3.1x</b></div>
+              <div class="ci-hooks"><span>hook: a number</span><span>hook: a mistake</span><span>hook: a dare</span></div>
+            </div>
+            <span class="tagc sample">Sample preview</span>
+            <a class="lock-pill unlock-link" href="#lab"><span class="ic-lock"></span>Unlock in the Lab</a>
+          </div>
+          <div class="info">
+            <span class="badge">In daily use</span>
+            <h3>Creator Intel</h3>
+            <p class="one">Scores every video against its own channel's normal, so you see what actually broke out. Then it writes what worked into skills Claude reads before you brainstorm.</p>
+            <p class="inside">Inside: make Claude read your own analytics.</p>
+            <div class="act"><a class="btn btn-mustard unlock-link" href="#lab"><span class="ic-lock"></span>Unlock</a></div>
+          </div>
+        </article>
+
+        <article class="bcard locked">
+          <div class="shot">
+            <img src="art/builds/studio.webp" width="629" height="393" loading="lazy" alt="A storyboard frame: Drip at a desk with a laptop while Capp stands beside him with a clipboard.">
+            <a class="lock-pill unlock-link" href="#lab"><span class="ic-lock"></span>Unlock in the Lab</a>
+          </div>
+          <div class="info">
+            <span class="badge">Used daily</span>
+            <h3>The Drip &amp; Capp studio</h3>
+            <p class="one">Every Drip episode, short and carousel is rendered from code: AI voices, animation timed to every word, about 160 scenes.</p>
+            <p class="inside">Inside: build an animated explainer channel with code and AI voices.</p>
+            <div class="act"><a class="btn btn-mustard unlock-link" href="#lab"><span class="ic-lock"></span>Unlock</a></div>
+          </div>
+        </article>
+
+        <article class="bcard locked">
+          <div class="shot">
+            <div class="mock ed" aria-hidden="true">
+              <p class="ed-say">okay so the first thing <s>um, wait, let me start that again.</s> the first thing you do is open the terminal.</p>
+              <div class="ed-track v"><span>V1</span><div><i style="flex:3"></i><i class="c" style="flex:2"></i><i style="flex:5"></i><i class="c" style="flex:1"></i><i style="flex:3"></i></div></div>
+              <div class="ed-track"><span>A1</span><div><i style="flex:3"></i><i class="c" style="flex:2"></i><i style="flex:5"></i><i class="c" style="flex:1"></i><i style="flex:3"></i></div></div>
+              <div class="ed-out">cut list &rarr; DaVinci Resolve, already trimmed</div>
+            </div>
+            <span class="tagc sample">Sample preview</span>
+            <a class="lock-pill unlock-link" href="#lab"><span class="ic-lock"></span>Unlock in the Lab</a>
+          </div>
+          <div class="info">
+            <span class="badge">Working</span>
+            <h3>The edit pipeline</h3>
+            <p class="one">Raw footage in, an edit list out. It reads the transcript, marks what to keep and what to cut, and opens in DaVinci Resolve already trimmed.</p>
+            <p class="inside">Inside: edit your own videos with AI. The video side quest.</p>
+            <div class="act"><a class="btn btn-mustard unlock-link" href="#lab"><span class="ic-lock"></span>Unlock</a></div>
+          </div>
+        </article>
+
+        <article class="bcard">
+          <div class="shot">
+            <img src="art/builds/tools.webp" width="900" height="562" loading="lazy" alt="The Drip AI tools directory: Find the right AI tool, fast, with a search box.">
+            <span class="tagc open">Free</span>
+          </div>
+          <div class="info">
+            <span class="badge">Live on this site</span>
+            <h3>The AI tools directory</h3>
+            <p class="one">201 tools in 24 categories, ranked for whatever task you type in. Level 2 shows you how it's built.</p>
+            <p class="inside">Free, no sign-up.</p>
+            <div class="act"><a class="btn btn-ghost" href="/resources/">Open it, free &rarr;</a></div>
+          </div>
+        </article>
+
+        <article class="bcard">
+          <div class="shot">
+            <img src="art/builds/jev.webp" width="900" height="562" loading="lazy" alt="Title slide: Jev, the AI that won't write you a single sentence.">
+            <span class="tagc open">Free</span>
+          </div>
+          <div class="info">
+            <span class="badge">Posted</span>
+            <h3>Jev: AI that decides</h3>
+            <p class="one">A model that picks an answer instead of writing one. Small Python demos, a 34-slide deck and the video, raced against Claude on cost.</p>
+            <p class="inside">Free: the video now. The demos and the deck are part of the free path.</p>
+            <div class="act"><a class="btn btn-ghost" href="/links/#what-is-jev">Watch it, free &rarr;</a></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="alsofree">
+        <span class="hud">Coming to the free path</span>
+        <span><b>Tutorial Recorder</b>, my own Loom</span>
+        <span><b>VoiceFlow</b>, dictation in about 300 lines</span>
+        <span><b>The motion graphics ladder</b>, one brief built six ways, every cost measured</span>
+        <span><b>This website</b>, a site and a tiny API for $0</span>
+      </div>
+    </div>
+
+    <!-- skills -->
+    <div class="tabpanel" id="panel-skills" role="tabpanel" aria-labelledby="tab-skills" hidden>
+      <div class="win">
+        <div class="tb"><i></i><i></i><i></i><span>~/zain/.claude/skills</span></div>
+        <div class="body">
+          <div class="tree" id="skillTree" aria-label="Skills"><div class="dir">skills/</div></div>
+          <div class="pane locked" id="skillPane" aria-live="polite"></div>
+        </div>
+      </div>
+      <p class="glassnote">These are the agent skills I wrote for Claude. Each one is a folder of instructions it reads before a job, with a dated log it updates after my notes. Names and descriptions are real; the insides are what you unlock.</p>
+    </div>
+
+    <!-- classroom -->
+    <div class="tabpanel" id="panel-class" role="tabpanel" aria-labelledby="tab-class" hidden>
+      <div class="courses">
+        <article class="course open"><div class="cov"><span class="hud">LV 0</span><b>Start here: your first automation in 24 hours</b></div><div class="meta"><span>Free</span><em>Open</em></div><div class="prog"><i></i></div></article>
+        <article class="course open"><div class="cov"><span class="hud">LV 1</span><b>How AI talks to software</b></div><div class="meta"><span>Free</span><em>Open</em></div><div class="prog"><i></i></div></article>
+        <article class="course open"><div class="cov"><span class="hud">LV 2</span><b>AI that decides</b></div><div class="meta"><span>Free</span><em>Open</em></div><div class="prog"><i></i></div></article>
+        <article class="course lab"><div class="cov"><span class="hud">LV 3</span><span class="ic-lock"></span><b>Your first MCP server</b></div><div class="meta"><span>Lab</span><span>Locked</span></div><div class="prog"><i></i></div></article>
+        <article class="course open"><div class="cov"><span class="hud">LV 4</span><b>Voice to text in 300 lines</b></div><div class="meta"><span>Free</span><em>Open</em></div><div class="prog"><i></i></div></article>
+        <article class="course lab"><div class="cov"><span class="hud">LV 4 &middot; full build</span><span class="ic-lock"></span><b>Build your own Scribe</b></div><div class="meta"><span>Lab</span><span>Locked</span></div><div class="prog"><i></i></div></article>
+        <article class="course lab"><div class="cov"><span class="hud">LV 5</span><span class="ic-lock"></span><b>Build your Double-O agent</b></div><div class="meta"><span>Lab</span><span>20 modules</span></div><div class="prog"><i></i></div></article>
+        <article class="course lab"><div class="cov"><span class="hud">LV 6</span><span class="ic-lock"></span><b>Make Claude read your analytics</b></div><div class="meta"><span>Lab</span><span>Locked</span></div><div class="prog"><i></i></div></article>
+        <article class="course lab"><div class="cov"><span class="hud">LV 7</span><span class="ic-lock"></span><b>Portfolio: four projects</b></div><div class="meta"><span>Lab</span><span>Locked</span></div><div class="prog"><i></i></div></article>
+        <article class="course lab"><div class="cov"><span class="hud">LV 8</span><span class="ic-lock"></span><b>The Drip &amp; Capp studio</b></div><div class="meta"><span>Lab</span><span>Case study</span></div><div class="prog"><i></i></div></article>
+        <article class="course lab"><div class="cov"><span class="hud">LV 9</span><span class="ic-lock"></span><b>The integrations engineer job</b></div><div class="meta"><span>Lab</span><span>Locked</span></div><div class="prog"><i></i></div></article>
+        <article class="course lab"><div class="cov"><span class="hud">Side quest</span><span class="ic-lock"></span><b>Edit your videos with AI</b></div><div class="meta"><span>Lab</span><span>Locked</span></div><div class="prog"><i></i></div></article>
+      </div>
+      <p class="glassnote">How the classroom is laid out when the Lab opens. Free courses come by email with the free path; Lab courses unlock over time, starting with a build you can finish in your first day.</p>
+    </div>
+
+    <p class="glassnote">Sample previews of real builds. The Lab opens soon, and every lock opens there.</p>
   </div>
 </section>
 
@@ -336,7 +674,7 @@
   <div class="wrap">
     <div class="proof">
       <div>
-        <p class="eyebrow">Who's teaching</p>
+        <p class="eyebrow">Who's teaching &nbsp;·&nbsp; Zain Qurashi</p>
         <h2>AI didn't take my job. It got me promoted.</h2>
         <p>I'm an integrations and automations engineer. For ten years my job has been making systems talk to each other. In the last two, every request that lands on my desk starts the same way: can we put AI on this?</p>
         <p>So on my own time I built small proofs of concept, showed them, and they became the projects I was asked to focus on. That's the whole method: be curious, build small things that work, show results.</p>
@@ -344,8 +682,8 @@
       </div>
       <div class="stats">
         <div class="stat"><b>10 yrs</b><span>in tech, all of it integrations and automations</span></div>
-        <div class="stat"><b>Daily</b><span>still doing the job, not just teaching it</span></div>
-        <div class="stat"><b>160+</b><span>AI tools tested and ranked on this site</span></div>
+        <div class="stat"><b>13</b><span>apps and tools built since June, on my own time</span></div>
+        <div class="stat"><b>13</b><span>agent skills that run them</span></div>
         <div class="stat"><b>$0</b><span>to start. The path is free</span></div>
       </div>
     </div>
@@ -358,17 +696,17 @@
     <div class="sec-head">
       <div>
         <p class="eyebrow">The path</p>
-        <h2>Nine levels. One build at a time.</h2>
+        <h2>Nine levels. Zero to AI automation engineer.</h2>
       </div>
     </div>
-    <p class="lede">This is the roadmap. Every level is a real thing you build, not a quiz. The free levels are enough to get started; the Lab is there if you want live help and projects.</p>
+    <p class="lede">This is the roadmap, start to finish. Every level is a real thing you build, not a quiz. Levels 0, 1, 2 and 4 are free. The Lab adds the full builds and live help.</p>
     <div class="pathbar">
       <div class="row hud"><span>Progress</span><span id="pathCount">LV 0 / 9</span></div>
       <div class="track"><div class="fill" id="pathFill"></div></div>
     </div>
     <div class="levels" id="levels">
       <article class="lv"><div class="num"><small>Level</small>0</div><h3>Start here</h3><span class="tag">Free</span>
-        <div class="two"><p><b>You learn</b>Set up your computer: VS Code, Python, a terminal, keys kept in a .env file.</p><p><b>You build</b>Your first automation, finished within 24 hours of joining.</p></div></article>
+        <div class="two"><p><b>You learn</b>Set up your computer: VS Code, Python, a terminal, keys kept in a .env file.</p><p><b>You build</b>Your first automation, finished within 24 hours of starting.</p></div></article>
       <article class="lv"><div class="num"><small>Level</small>1</div><h3>Curious: how AI talks to software</h3><span class="tag">Free</span>
         <div class="two"><p><b>You learn</b>What an API is. A prompt is not a question. Keeping keys safe. Tokens, cost, and model vs effort.</p><p><b>You build</b>A script that calls a model, with every line explained.</p></div></article>
       <article class="lv"><div class="num"><small>Level</small>2</div><h3>Connected: AI that decides</h3><span class="tag">Free</span>
@@ -376,9 +714,9 @@
       <article class="lv"><div class="num"><small>Level</small>3</div><h3>Builder: connect AI to your apps</h3><span class="tag lab">Lab build</span>
         <div class="two"><p><b>You learn</b>APIs, MCP and connectors. What an AI can and can't touch once it's plugged in.</p><p><b>You build</b>Your first MCP server, so an AI can use an app of your choosing.</p></div></article>
       <article class="lv"><div class="num"><small>Level</small>4</div><h3>Integrator: voice and media pipelines</h3><span class="tag">Free</span>
-        <div class="two"><p><b>You learn</b>How voice to text works, end to end, and where it breaks.</p><p><b>You build</b>Your own transcription service, running on your machine.</p></div></article>
+        <div class="two"><p><b>You learn</b>How voice to text works, end to end, and where it breaks.</p><p><b>You build</b>A push-to-talk dictation app in about 300 lines. The full Scribe app is the Lab build.</p></div></article>
       <article class="lv"><div class="num"><small>Level</small>5</div><h3>Automator: automations and agents</h3><span class="tag lab">Lab build</span>
-        <div class="two"><p><b>You learn</b>Which AI product for which job. Skills, plugins, schedules and webhooks. When an agent is worth it.</p><p><b>You build</b>An automation that sorts and answers a queue while you sleep.</p></div></article>
+        <div class="two"><p><b>You learn</b>Which AI product for which job. Skills, plugins, schedules and webhooks. When an agent is worth it.</p><p><b>You build</b>Your own agent that sorts what you throw at it and briefs you every morning.</p></div></article>
       <article class="lv"><div class="num"><small>Level</small>6</div><h3>Shipper: AI at the enterprise level</h3><span class="tag lab">Lab</span>
         <div class="two"><p><b>You learn</b>Why a chat license is not an AI strategy. Identity and access, logging every agent action, cost limits, reliability, governance.</p><p><b>You build</b>A locked-down integration: the AI sees only what that user is allowed to see.</p></div></article>
       <article class="lv"><div class="num"><small>Level</small>7</div><h3>Engineer: portfolio projects</h3><span class="tag lab">Lab</span>
@@ -387,6 +725,8 @@
         <div class="two"><p><b>You learn</b>The Drip pipeline: script, voice, animation, posting. And the legal side: AI disclosure rules, who owns an AI character, voice and likeness rights, sponsorship rules.</p><p><b>You build</b>The same pipeline, productionized the way a company would run it.</p></div></article>
       <article class="lv"><div class="num"><small>Level</small>9</div><h3>Legend: the career</h3><span class="tag lab">Lab</span>
         <div class="two"><p><b>You learn</b>What the job is day to day. Portfolio, resume, interviews. Your first freelance automation client.</p><p><b>You build</b>A plan for your next twelve months, reviewed live.</p></div></article>
+      <article class="lv side"><div class="num"><small>Side</small>+</div><h3>Side quest: make and edit videos with AI</h3><span class="tag lab">Lab</span>
+        <div class="two"><p><b>You learn</b>Scripts, AI voices, characters animated in code, and the honest part: disclosure and voice rights.</p><p><b>You build</b>Your own edit pipeline: record, get a cut list, open it in DaVinci Resolve already trimmed.</p></div></article>
     </div>
     <div class="legend"><span><span class="tag">Free</span>on YouTube and this site</span><span><span class="tag lab">Lab</span>optional, with live help</span></div>
   </div>
@@ -404,7 +744,7 @@
           <p class="err" hidden></p>
           <label>Your email</label>
           <input type="email" name="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required>
-          <label>One thing you'd love to automate <span style="text-transform:none;letter-spacing:0">(optional)</span></label>
+          <label>One thing you'd love to automate <span>(optional)</span></label>
           <textarea name="interest" maxlength="200" placeholder="e.g. sorting my inbox, posting to three platforms at once, a bot that answers our FAQ"></textarea>
           <input class="hp" name="cream" tabindex="-1" autocomplete="off" aria-hidden="true" placeholder="leave this empty">
           <button class="btn btn-primary" type="submit">Send me the free path</button>
@@ -432,7 +772,7 @@
         <h2>The free path is real.</h2>
       </div>
     </div>
-    <p class="lede">Everything I've published is free and it stays free. Levels 0 to 6 are built from these videos; the Lab adds the builds, the projects and the people.</p>
+    <p class="lede">Everything I've published is free and it stays free. The free levels are built from these videos; the Lab adds the full builds, the projects and the people.</p>
     <div class="free">
       <a class="fcard" href="https://www.youtube.com/@dripthecup" target="_blank" rel="noopener">
         <span class="hud">Drip on YouTube</span><b>The explainers</b>
@@ -444,7 +784,7 @@
       </a>
       <a class="fcard" href="/resources/">
         <span class="hud">This site</span><b>The AI tools directory</b>
-        <span>160+ tools in 24 categories, ranked for the task you type in. Level 2 shows you how it's built.</span><i>/resources &rarr;</i>
+        <span>201 tools in 24 categories, ranked for the task you type in. Level 2 shows you how it's built.</span><i>/resources &rarr;</i>
       </a>
       <a class="fcard" href="https://www.tiktok.com/@zain_qurashi" target="_blank" rel="noopener">
         <span class="hud">Zain on camera</span><b>The career videos</b>
@@ -467,27 +807,30 @@
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <p class="eyebrow">Optional</p>
-        <h2>If you want to go further together: the Lab.</h2>
+        <p class="eyebrow">Paid &nbsp;·&nbsp; optional</p>
+        <h2>The Lab: the plan, the builds, and me.</h2>
       </div>
     </div>
-    <p class="lede">Everything above is free. The Lab is for people who want live help, reviews and projects alongside others. It's one small paid group on Skool, kept small so every question gets a real answer.</p>
-    <div class="lab">
-      <div class="lcard"><span class="hud">Classroom</span><h3>The nine levels, unlocked over time</h3>
-        <ul><li>Your first build within 24 hours of joining</li><li>Then fundamentals, enterprise tools, projects, and the Drip case study</li><li>Every lesson: video, walkthrough, code, a thing to try, a place to post it</li></ul></div>
-      <div class="lcard"><span class="hud">Live</span><h3>Two calls a week, one guest a month</h3>
-        <ul><li>A weekly build-along: we ship something together</li><li>A weekly Q&amp;A: bring the error, we read it out loud</li><li>A monthly guest engineer who does this for a living somewhere else</li></ul></div>
-      <div class="lcard"><span class="hud">Feed</span><h3>Start here, Build help, Portfolio reviews, Wins, Tool news</h3>
-        <ul><li>Post the build, get it reviewed</li><li>I'm seeding the founding cohort with working engineers so questions get real answers</li><li>Levels and points: the more you help, the more unlocks</li></ul></div>
-    </div>
-    <div class="founding">
-      <div>
+    <p class="lede">The free path teaches you to understand AI and ship small things. The Lab is where we build the big, real tools from this page, with a plan for your level and live help. One small group on Skool.</p>
+    <div class="labgrid">
+      <div class="get">
+        <p class="hud">What you get</p>
+        <ul class="checks">
+          <li><b>The full builds.</b> Scribe, Mission Briefing, Creator Intel, the Drip &amp; Capp studio and the edit pipeline, as step-by-step courses.</li>
+          <li><b>The code and the agent skills.</b> Cleaned-up copies you can run yourself, with demo data.</li>
+          <li><b>A plan for your level.</b> Where you are on the nine levels, and what to build next.</li>
+          <li><b>Two live calls a week.</b> A build-along and a Q&amp;A, plus a guest engineer once a month.</li>
+          <li><b>Reviews.</b> Post a build or your portfolio and get real feedback on it.</li>
+          <li><b>A small group.</b> I'm seeding it with working engineers, so questions get real answers.</li>
+        </ul>
+        <p class="hud">What you won't get</p>
+        <ul class="nots"><li>Certificates</li><li>A lifetime tier</li><li>Upsells inside</li><li>Income promises</li></ul>
+      </div>
+      <div class="founding">
         <p class="eyebrow">Founding rate</p>
         <h3>Only if it helps you.</h3>
-        <div class="price">$49<small>a month, or $490 a year. The first thirty members keep this rate for as long as they stay.</small></div>
-        <p>If the free path is enough for you, stay on the free path. I'll still help. The Lab is for when you want the calls, the reviews and the people.</p>
-      </div>
-      <div class="side">
+        <div class="price">$49<small>a month, or $490 a year. The first thirty members keep this rate for as long as they stay. Cancel any time.</small></div>
+        <p>If the free path is enough for you, stay on it. I'll still help. The Lab is for when you want the builds, the calls and the people.</p>
         <span class="seats-label">Founding seats</span>
         <div class="seats" aria-hidden="true">
           <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
@@ -501,17 +844,64 @@
   </div>
 </section>
 
+<!-- ============ WORK WITH ME ============ -->
+<section class="sec hire" id="hire">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">For businesses</p>
+        <h2>Want AI working in your business? I'll set it up.</h2>
+      </div>
+    </div>
+    <p class="lede">The same work I teach, done for you. I set up AI systems and workflows for small teams, so the repetitive work runs on tools you own, documented so you're never stuck with me.</p>
+    <div class="offers">
+      <div class="offer"><span class="hud">01</span><h3>Workflow audit</h3><p>We walk through how your team works. You get a written plan: what to automate first, what it costs to run each month, and what to leave alone.</p></div>
+      <div class="offer"><span class="hud">02</span><h3>Build</h3><p>I set up a workflow end to end in your own accounts: the intake, the AI step, the hand-off to your people. Tested, logged and written up.</p></div>
+      <div class="offer"><span class="hud">03</span><h3>AI video pipeline</h3><p>Your editing workflow with AI in it: transcripts, cut lists, captions and voice, set up to open in the editor you already use.</p></div>
+    </div>
+    <div class="hire-row">
+      <div>
+        <p class="price-line"><b>Projects start at $500.</b> Every project is a fixed quote after a free 20-minute call.</p>
+        <ol class="steps">
+          <li><b>Free call.</b> Twenty minutes on what's eating your team's time.</li>
+          <li><b>Fixed quote.</b> Scope, price and timeline in writing.</li>
+          <li><b>Build.</b> In your accounts. Your data stays with you.</li>
+          <li><b>Handoff.</b> Docs and a walkthrough, so you own it.</li>
+        </ol>
+      </div>
+      <form class="form inq" novalidate>
+        <p class="err" hidden></p>
+        <label>Your email</label>
+        <input type="email" name="email" autocomplete="email" inputmode="email" placeholder="you@company.com" required>
+        <label>Company or website <span>(optional)</span></label>
+        <input type="text" name="company" autocomplete="organization" maxlength="120" placeholder="e.g. Corner Café, cornercafe.com">
+        <label>What would you like automated?</label>
+        <textarea name="message" maxlength="1500" required placeholder="e.g. we answer the same 20 customer emails every day, and our invoices are typed in by hand"></textarea>
+        <input class="hp" name="cream" tabindex="-1" autocomplete="off" aria-hidden="true" placeholder="leave this empty">
+        <button class="btn btn-primary" type="submit">Request a free call</button>
+        <p class="fine">I read every one myself and reply by email to set up the call.</p>
+        <div class="done" hidden>
+          <img src="../assets/drip2-smile.png" alt="" width="64" height="109">
+          <div><h3>got it.</h3><p>I'll reply by email to set up the call.</p></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
 <!-- ============ FAQ ============ -->
 <section class="sec faq" id="faq">
   <div class="wrap">
     <div class="sec-head"><div><p class="eyebrow">Before you ask</p><h2>Straight answers.</h2></div></div>
-    <details><summary>Why is the first part free?</summary><p>Because the fastest way into this field is someone showing you the path, and the free course should stand on its own. The paid group is there for after, if you want live help and projects. I do make money from it, and I want you to make money too. That's the win-win.</p></details>
+    <details><summary>Why is the first part free?</summary><p>Because the information should be free. What I charge for in the Lab is the structure: the full builds, a plan for your level, and live help. The free path stands on its own either way.</p></details>
     <details><summary>Do I need to know how to code?</summary><p>Level 0 assumes nothing. By level 1 you'll be running small Python scripts, with every line explained in plain English. If you already code, skip ahead: the enterprise level and the portfolio projects are where you'll spend your time.</p></details>
-    <details><summary>What's free and what's paid?</summary><p>Free: every video, the roadmap, the tools directory, the first build, and emails from me with the next step. Paid, and optional: the Lab, which adds live calls, reviews, the portfolio projects and the people. Nothing free gets taken away.</p></details>
-    <details><summary>Is this a course on making Drip videos?</summary><p>No. Drip is one level inside the Lab, taught as a case study: how a one-person AI pipeline scripts, voices, animates and posts a character, what the law says about disclosure, ownership, voices and sponsorships, and how a company would run the same thing. The rest of the Lab is enterprise AI and automation.</p></details>
+    <details><summary>What's free and what's paid?</summary><p>Free: every video, the roadmap, the tools directory, the first build, levels 0, 1, 2 and 4, and emails from me with the next step. Paid, and optional: the Lab, with the full builds on this page, their code, live calls and reviews. Nothing free gets taken away.</p></details>
+    <details><summary>Are there certificates, a lifetime deal, or upsells?</summary><p>No. No certificates, no lifetime tier, no upsells inside the group. One price, monthly or yearly, and you can cancel any time. What you show an employer is what you built.</p></details>
+    <details><summary>Is this a course on making Drip videos?</summary><p>No. Drip is one level, taught as a case study, plus a side quest on making and editing videos with AI. The rest is enterprise AI and automation.</p></details>
     <details><summary>Will this get me a job?</summary><p>I can't promise that, and anyone who does is selling something. I genuinely want you to get one. I'll show you what the job actually is, what I built to get ahead in mine, and how to put together a portfolio that proves you can do it.</p></details>
+    <details><summary>Do you work with businesses?</summary><p>Yes. I set up AI systems and workflows for small teams. Projects start at $500, with a fixed quote after a free 20-minute call. Ask through the form in Work with me.</p></details>
     <details><summary>Is any of this from your employer?</summary><p>No. Everything here is built on my own time, with my own tools, on public data and my own projects. Nothing from work is in it and nothing from work ever will be.</p></details>
-    <details><summary>When does the Lab open?</summary><p>Soon. You don't need it to start: sign up above and I'll send you the free path now, and tell you when the Lab opens.</p></details>
+    <details><summary>When does the Lab open?</summary><p>Soon. You don't need it to start: sign up above and I'll send you the free path, and tell you when the Lab opens.</p></details>
     <details><summary>Why Skool?</summary><p>One place for the classroom, the feed and the calendar, with levels built in. You'll get a link when it opens; there's nothing to install.</p></details>
   </div>
 </section>
@@ -547,10 +937,10 @@
     <div class="cols">
       <div>
         <span class="brand">drip the cup</span>
-        <p class="about">a cup of coffee who takes his time. with capp, who explains, and zain, who built them both.</p>
+        <p class="about">a cup of coffee who takes his time. with capp, who explains, and zain qurashi, who built them both.</p>
       </div>
       <div class="col"><h4>Learn</h4>
-        <a href="#path">The nine levels</a><a href="#first">The first build</a><a href="#lab">The Lab</a><a href="#faq">Questions</a>
+        <a href="#unlock">What I've built</a><a href="#path">The nine levels</a><a href="#first">The first build</a><a href="#lab">The Lab</a><a href="#faq">Questions</a>
       </div>
       <div class="col"><h4>Free</h4>
         <a href="https://www.youtube.com/@dripthecup" target="_blank" rel="noopener">Drip on YouTube</a>
@@ -558,8 +948,7 @@
         <a href="https://www.tiktok.com/@zain_qurashi" target="_blank" rel="noopener">Zain on TikTok</a>
       </div>
       <div class="col"><h4>Company</h4>
-        <a href="/#about">About Drip</a><a href="/#book">Book Drip</a><a href="/#shop">Shop</a>
-        <a href="mailto:hello@dripthecup.com">Contact</a>
+        <a href="#hire">Work with me</a><a href="/#about">About Drip</a><a href="/#shop">Shop</a>
       </div>
     </div>
     <div class="legal">
@@ -570,8 +959,8 @@
 </footer>
 
 <script>
-  // ---- Skool: paste the group URL here when it exists and every "reserve" button
-  // becomes a real join link. Until then they scroll to the free sign-up.
+  // ---- Skool: paste the group URL here when it exists. Every "reserve" button
+  // becomes a real join link and every lock opens it. Until then they scroll.
   var SKOOL_URL = '';
   if (SKOOL_URL) {
     document.querySelectorAll('.skool-link').forEach(function (a) {
@@ -579,12 +968,86 @@
     });
     document.querySelectorAll('.skool-note').forEach(function (n) { n.textContent = 'On Skool. Founding rate for the first thirty.'; });
   }
+  function wireUnlocks(root) {
+    if (!SKOOL_URL) return;
+    root.querySelectorAll('.unlock-link').forEach(function (a) { a.href = SKOOL_URL; a.target = '_blank'; a.rel = 'noopener'; });
+  }
+  wireUnlocks(document);
+
+  // ---- What I've built: three tabs.
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tabs [role=tab]'));
+  function pick(t) {
+    tabs.forEach(function (x) {
+      var on = x === t;
+      x.setAttribute('aria-selected', on ? 'true' : 'false');
+      x.tabIndex = on ? 0 : -1;
+      document.getElementById(x.getAttribute('aria-controls')).hidden = !on;
+    });
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { pick(t); });
+    t.addEventListener('keydown', function (e) {
+      var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (!d) return;
+      var n = tabs[(i + d + tabs.length) % tabs.length]; pick(n); n.focus(); e.preventDefault();
+    });
+  });
+
+  // ---- Agent skills: real names and descriptions; the steps are what unlocks.
+  var SKILLS = [
+    ['research', 1, 'Frames the question, sweeps sources in parallel, builds a claim ledger, red-teams it and freezes a dossier.',
+      ['Write the question and what would change your mind', 'Sweep six or more sources in parallel', 'Ledger every claim with its source and how sure', 'Red-team the answer', 'Freeze the dossier and a study brief']],
+    ['cutlist', 1, 'Turns a raw recording into a keep-or-cut list for your editor.',
+      ['Transcribe with a time on every word', 'Mark retakes, stumbles and dead air', 'Write the keep or cut list', 'Export a timeline your editor opens']],
+    ['excalidraw-deck', 1, 'Hand-drawn presentation boards for AI explainers, plus an animated HTML deck to present and record.',
+      ['Outline the talk', 'One idea per board', 'Speaker notes and autoplay', 'Present it and record it']],
+    ['x-posts', 1, 'A weekly X post pack with a claims and length checker.',
+      ['Pick the week’s pillars', 'Draft the posts', 'Check every claim and every length', 'Pack them for posting']],
+    ['drip-capp-style', 1, 'A house style written down: what each colour means, type, sound and the QA list.',
+      ['What each colour means', 'Type and layout rules', 'Voices, music bed and effects', 'The checklist before anything ships']],
+    ['carousel', 0, 'Carousels written as data and rendered, with overflow checks and a posting pack.',
+      ['Write the slides as data', 'Render every slide', 'Check every slide for overflow', 'Build the pack: slides, cover, caption']],
+    ['drip-capp-clips', 0, 'An episode becomes reels and a carousel, never a lazy crop.',
+      ['Find the moments that stand alone', 'Rebuild them for vertical', 'Turn the notes into a carousel', 'Check captions against the audio']],
+    ['brainrot', 0, 'Fast two-character shorts: voiced, checked, mastered and posted to the site.',
+      ['Script the back and forth', 'Record each voice, one take per line', 'Check every line before render', 'Master, render, post']],
+    ['cookie-cutter', 0, 'Animated scenario explainers, timed to every word.',
+      ['The scenario in one sentence', 'Script and voices', 'Animation timed to the words', 'Render and QA']],
+    ['drip-capp-film', 0, 'The full episode pipeline, script to YouTube master.',
+      ['Research dossier first', 'Script, then real voices', 'Word timing drives every scene', 'Music bed, mix and master', 'Thumbnail, title, upload']],
+    ['zain-on-camera', 0, 'Phone takes in, a finished talking-head video out.',
+      ['Drop in the phone takes', 'Keep the best take of each line', 'Cuts and captions on the words', 'Export for TikTok, Reels and Shorts']],
+    ['drip-the-cup-playbook', 0, 'What is and isn’t working on the channel, measured from every post and rewritten after each analytics pull.',
+      ['Pull the latest numbers', 'Score each video against your own normal', 'Rewrite what worked as rules', 'Claude reads them before you brainstorm']]
+  ];
+  var tree = document.getElementById('skillTree'), pane = document.getElementById('skillPane');
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function show(i) {
+    var s = SKILLS[i], free = !!s[1];
+    tree.querySelectorAll('button').forEach(function (b, j) { b.setAttribute('aria-pressed', j === i ? 'true' : 'false'); });
+    pane.className = 'pane' + (free ? '' : ' locked');
+    pane.innerHTML =
+      '<p class="path">skills/' + esc(s[0]) + '/SKILL.md</p>' +
+      '<p class="fm">---\n<span>name:</span> ' + esc(s[0]) + '\n<span>description:</span> ' + esc(s[2]) + '\n---</p>' +
+      '<ol>' + s[3].map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ol>' +
+      (free ? '<p class="freenote">Free. The download comes with the free path.</p>'
+            : '<div class="gate"><a class="lock-pill unlock-link" href="#lab"><span class="ic-lock"></span>Unlock in the Lab</a></div>');
+    wireUnlocks(pane);
+  }
+  SKILLS.forEach(function (s, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.innerHTML = '<span>' + esc(s[0]) + '/</span><span class="t ' + (s[1] ? 'open">Free' : 'lab">Lab') + '</span>';
+    b.addEventListener('click', function () { show(i); });
+    tree.appendChild(b);
+  });
+  show(9); // open on the film pipeline: the one people ask about
 
   // ---- The path: the XP bar fills as levels scroll into view (steps, no easing).
-  var lvs = document.querySelectorAll('.lv'), fill = document.getElementById('pathFill'), count = document.getElementById('pathCount');
+  var lvs = document.querySelectorAll('.lv:not(.side)'), fill = document.getElementById('pathFill'), count = document.getElementById('pathCount');
   var seen = 0;
   function paint() {
-    var n = document.querySelectorAll('.lv.seen').length;
+    var n = document.querySelectorAll('.lv.seen:not(.side)').length;
     if (n === seen) return; seen = n;
     fill.style.width = Math.round(n / lvs.length * 100) + '%';
     count.textContent = 'LV ' + Math.max(0, n - 1) + ' / 9';
@@ -593,21 +1056,21 @@
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('seen'); paint(); } });
     }, { threshold: 0.4 });
-    lvs.forEach(function (l) { io.observe(l); });
-  } else { lvs.forEach(function (l) { l.classList.add('seen'); }); paint(); }
+    document.querySelectorAll('.lv').forEach(function (l) { io.observe(l); });
+  } else { document.querySelectorAll('.lv').forEach(function (l) { l.classList.add('seen'); }); paint(); }
 
-  // ---- The free list. POST /api/subscribe, same desk as the shop's pre-orders.
-  document.querySelectorAll('form.form').forEach(function (f) {
+  // ---- Forms. Learners POST /api/subscribe; businesses POST /api/inquire.
+  function wire(f, url, label, build) {
     var err = f.querySelector('.err'), btn = f.querySelector('button[type=submit]'), done = f.querySelector('.done');
     f.addEventListener('submit', function (ev) {
       ev.preventDefault();
       err.hidden = true;
       var email = (f.elements.email.value || '').trim();
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err.textContent = "that email doesn't look right"; err.hidden = false; return; }
+      var body = build(f, email);
+      if (typeof body === 'string') { err.textContent = body; err.hidden = false; return; }
       btn.disabled = true; btn.textContent = 'one sec';
-      var body = { email: email, source: f.getAttribute('data-source'), cream: f.elements.cream.value || '' };
-      if (f.elements.interest) body.interest = f.elements.interest.value || '';
-      fetch('/api/subscribe', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) })
+      fetch(url, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) })
         .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
         .then(function (x) {
           if (!x.ok || !x.j.ok) throw new Error(x.j.error || 'something went wrong');
@@ -616,8 +1079,22 @@
         })
         .catch(function (e) {
           err.textContent = e.message === 'Failed to fetch' ? 'no connection. try again in a minute.' : e.message;
-          err.hidden = false; btn.disabled = false; btn.textContent = 'Send me the free path';
+          err.hidden = false; btn.disabled = false; btn.textContent = label;
         });
+    });
+  }
+  document.querySelectorAll('form.form[data-source]').forEach(function (f) {
+    wire(f, '/api/subscribe', 'Send me the free path', function (f, email) {
+      var body = { email: email, source: f.getAttribute('data-source'), cream: f.elements.cream.value || '' };
+      if (f.elements.interest) body.interest = f.elements.interest.value || '';
+      return body;
+    });
+  });
+  document.querySelectorAll('form.inq').forEach(function (f) {
+    wire(f, '/api/inquire', 'Request a free call', function (f, email) {
+      var message = (f.elements.message.value || '').trim();
+      if (message.length < 10) return 'tell me a little about what you want automated';
+      return { email: email, company: f.elements.company.value || '', message: message, cream: f.elements.cream.value || '' };
     });
   });
 </script>

@@ -40,3 +40,15 @@ create table if not exists subscribers (
   country  text not null default ''
 );
 create unique index if not exists subscribers_email on subscribers (email);
+
+-- "Work with me" requests from businesses on /learn (added 2026-10-02). Every
+-- message is its own row; kept apart from the learner list on purpose.
+create table if not exists inquiries (
+  id       integer primary key autoincrement,
+  created  text not null,          -- ISO 8601, UTC
+  email    text not null,
+  company  text not null default '',
+  message  text not null default '',
+  country  text not null default ''
+);
+create index if not exists inquiries_created on inquiries (created);

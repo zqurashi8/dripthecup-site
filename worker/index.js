@@ -142,11 +142,54 @@ async function subscribe(request, env) {
   return json({ ok: true });
 }
 
+/**
+ * "Work with me" on /learn: a business asking for a call. Kept apart from the
+ * learner list so a consulting request never lands in the course emails, and
+ * every request is its own row (a second message from the same address is a
+ * new message, not an update).
+ */
+async function inquire(request, env) {
+  if (request.method !== 'POST') return json({ error: 'post only' }, 405);
+
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return json({ error: 'bad request' }, 400);
+  }
+  if (body.cream) return json({ ok: true });
+
+  const email = String(body.email || '').trim().toLowerCase();
+  if (email.length > 254 || !EMAIL.test(email)) {
+    return json({ error: "that email doesn't look right" }, 400);
+  }
+  const company = String(body.company || '').replace(/\s+/g, ' ').trim().slice(0, 120);
+  const message = String(body.message || '').trim().slice(0, 1500);
+  if (message.length < 10) return json({ error: 'tell me a little about what you want automated' }, 400);
+
+  const who = await caller(request);
+  const recent = await env.DB
+    .prepare("select count(*) as n from throttle where who = ?1 and ts > datetime('now', '-1 hour')")
+    .bind(who)
+    .first();
+  if (recent && recent.n >= 40) return json({ error: 'too many for one hour' }, 429);
+
+  await env.DB.batch([
+    env.DB.prepare("insert into throttle (who, ts) values (?1, datetime('now'))").bind(who),
+    env.DB.prepare(
+      'insert into inquiries (created, email, company, message, country) values (?1, ?2, ?3, ?4, ?5)'
+    ).bind(new Date().toISOString(), email, company, message, (request.cf && request.cf.country) || ''),
+  ]);
+
+  return json({ ok: true });
+}
+
 export default {
   async fetch(request, env) {
     const { pathname } = new URL(request.url);
     if (pathname === '/api/reserve') return reserve(request, env);
     if (pathname === '/api/subscribe') return subscribe(request, env);
+    if (pathname === '/api/inquire') return inquire(request, env);
     if (pathname.startsWith('/api/')) return json({ error: 'not found' }, 404);
     return env.ASSETS.fetch(request);
   },
