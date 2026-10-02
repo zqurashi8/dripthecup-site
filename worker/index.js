@@ -102,7 +102,7 @@ async function reserve(request, env) {
  * "source" is which form on the site (learn-hero, learn-bottom, ...), "interest"
  * is the one thing they said they want to build, both optional and short.
  */
-const SOURCES = new Set(['learn-hero', 'learn-founding', 'learn-bottom', 'learn']);
+const SOURCES = new Set(['learn-hero', 'learn-founding', 'learn-bottom', 'learn-lab', 'learn']);
 
 async function subscribe(request, env) {
   if (request.method !== 'POST') return json({ error: 'post only' }, 405);

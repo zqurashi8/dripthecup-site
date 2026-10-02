@@ -1,1596 +1,1604 @@
 {
- "updated": "2026-09-24",
- "categories": [
-  {
-   "id": "chat",
-   "name": "Chat assistants",
-   "icon": "💬",
-   "blurb": "General-purpose AIs you talk to. Most are free to start.",
-   "items": [
+  "updated": "2026-09-24",
+  "categories": [
     {
-     "name": "ChatGPT",
-     "url": "https://chatgpt.com",
-     "by": "OpenAI",
-     "best": "Everyday questions, images and voice chat in one app",
-     "top": true
+      "id": "chat",
+      "name": "Chat assistants",
+      "icon": "💬",
+      "blurb": "General-purpose AIs you talk to. Most are free to start.",
+      "items": [
+        {
+          "name": "ChatGPT",
+          "url": "https://chatgpt.com",
+          "by": "OpenAI",
+          "best": "Everyday questions, images and voice chat in one app",
+          "top": true
+        },
+        {
+          "name": "Claude",
+          "url": "https://claude.ai",
+          "by": "Anthropic",
+          "best": "Careful writing, reasoning and long documents",
+          "top": true
+        },
+        {
+          "name": "Gemini",
+          "url": "https://gemini.google.com",
+          "by": "Google",
+          "best": "Working inside Gmail, Docs, Search and YouTube"
+        },
+        {
+          "name": "Grok",
+          "url": "https://grok.com",
+          "by": "xAI",
+          "best": "What people on X are saying right now"
+        },
+        {
+          "name": "Perplexity",
+          "url": "https://www.perplexity.ai",
+          "by": "Perplexity",
+          "best": "Answers with sources you can click",
+          "top": true
+        },
+        {
+          "name": "Microsoft Copilot",
+          "url": "https://copilot.microsoft.com",
+          "by": "Microsoft",
+          "best": "Windows and Microsoft 365 users"
+        },
+        {
+          "name": "Meta AI",
+          "url": "https://www.meta.ai",
+          "by": "Meta",
+          "best": "Inside WhatsApp, Instagram and Messenger"
+        },
+        {
+          "name": "DeepSeek",
+          "url": "https://chat.deepseek.com",
+          "by": "DeepSeek",
+          "best": "Cheap, capable open-weight models"
+        },
+        {
+          "name": "Le Chat",
+          "url": "https://chat.mistral.ai",
+          "by": "Mistral",
+          "best": "A fast European alternative"
+        },
+        {
+          "name": "Qwen",
+          "url": "https://chat.qwen.ai",
+          "by": "Alibaba",
+          "best": "Strong open models, multilingual"
+        },
+        {
+          "name": "Kimi",
+          "url": "https://www.kimi.com",
+          "by": "Moonshot AI",
+          "best": "Long documents and agent tasks"
+        },
+        {
+          "name": "Poe",
+          "url": "https://poe.com",
+          "by": "Quora",
+          "best": "Many chatbots and models in one app"
+        }
+      ]
     },
     {
-     "name": "Claude",
-     "url": "https://claude.ai",
-     "by": "Anthropic",
-     "best": "Careful writing, reasoning and long documents",
-     "top": true
+      "id": "agents",
+      "name": "AI agents",
+      "icon": "🤖",
+      "blurb": "AIs that do tasks for you, not just answer. Give them access carefully: an agent that can act can also act wrongly.",
+      "items": [
+        {
+          "name": "OpenClaw",
+          "url": "https://github.com/openclaw/openclaw",
+          "by": "open source",
+          "kind": "open source",
+          "stars": "390K",
+          "best": "A personal assistant that works through WhatsApp, Telegram and Discord",
+          "top": true,
+          "note": "Runs with broad access to your computer and accounts. Read its security guidance before connecting real accounts."
+        },
+        {
+          "name": "Hermes Agent",
+          "url": "https://github.com/NousResearch/hermes-agent",
+          "by": "Nous Research",
+          "kind": "open source",
+          "stars": "248K",
+          "best": "An open agent that builds up skills and memory as you use it"
+        },
+        {
+          "name": "Manus",
+          "url": "https://manus.im",
+          "by": "Manus",
+          "best": "Hand off a whole research or build task"
+        },
+        {
+          "name": "Genspark",
+          "url": "https://www.genspark.ai",
+          "by": "Genspark",
+          "best": "Agents that make slides, sheets and reports"
+        },
+        {
+          "name": "Lindy",
+          "url": "https://www.lindy.ai",
+          "by": "Lindy",
+          "best": "Building your own work assistants without code"
+        },
+        {
+          "name": "AutoGPT",
+          "url": "https://github.com/Significant-Gravitas/AutoGPT",
+          "by": "Significant Gravitas",
+          "kind": "open source",
+          "stars": "188K",
+          "best": "A platform for building and running autonomous agents"
+        },
+        {
+          "name": "Agency Agents",
+          "url": "https://github.com/msitarzewski/agency-agents",
+          "by": "msitarzewski",
+          "kind": "open source",
+          "stars": "154K",
+          "best": "A whole team of specialist agents, each with a role and a process"
+        },
+        {
+          "name": "browser-use",
+          "url": "https://github.com/browser-use/browser-use",
+          "by": "Browser Use",
+          "kind": "open source",
+          "stars": "116K",
+          "best": "Lets AI agents use a web browser like a person"
+        }
+      ]
     },
     {
-     "name": "Gemini",
-     "url": "https://gemini.google.com",
-     "by": "Google",
-     "best": "Working inside Gmail, Docs, Search and YouTube"
+      "id": "coding",
+      "name": "Coding with AI",
+      "icon": "⌨️",
+      "blurb": "Tools that write, edit and run code with you.",
+      "items": [
+        {
+          "name": "Claude Code",
+          "url": "https://claude.com/claude-code",
+          "by": "Anthropic",
+          "best": "An agent that builds and edits whole projects",
+          "top": true,
+          "stars": "148K"
+        },
+        {
+          "name": "Cursor",
+          "url": "https://cursor.com",
+          "by": "Anysphere",
+          "best": "Coding inside an AI-first editor"
+        },
+        {
+          "name": "Codex",
+          "url": "https://openai.com/codex",
+          "by": "OpenAI",
+          "best": "Delegating coding tasks to an agent",
+          "stars": "126K"
+        },
+        {
+          "name": "GitHub Copilot",
+          "url": "https://github.com/features/copilot",
+          "by": "GitHub",
+          "best": "Suggestions and an agent inside GitHub and your editor"
+        },
+        {
+          "name": "Devin",
+          "url": "https://devin.ai",
+          "by": "Cognition",
+          "best": "An autonomous coding engineer, plus the editor formerly called Windsurf"
+        },
+        {
+          "name": "OpenCode",
+          "url": "https://opencode.ai",
+          "by": "open source",
+          "best": "An open-source coding agent for the terminal",
+          "stars": "209K"
+        },
+        {
+          "name": "Lovable",
+          "url": "https://lovable.dev",
+          "by": "Lovable",
+          "best": "Describe an app, get a working web app"
+        },
+        {
+          "name": "Bolt",
+          "url": "https://bolt.new",
+          "by": "StackBlitz",
+          "best": "Full-stack apps from a prompt, in the browser"
+        },
+        {
+          "name": "Replit",
+          "url": "https://replit.com",
+          "by": "Replit",
+          "best": "Build and host an app without setting anything up"
+        },
+        {
+          "name": "v0",
+          "url": "https://v0.app",
+          "by": "Vercel",
+          "best": "Web interfaces and sites from a prompt"
+        },
+        {
+          "name": "cc-switch",
+          "url": "https://github.com/farion1231/cc-switch",
+          "by": "farion1231",
+          "kind": "open source",
+          "stars": "135K",
+          "best": "One desktop app to manage Claude Code, Codex, OpenCode, OpenClaw and Hermes"
+        },
+        {
+          "name": "Antigravity",
+          "url": "https://antigravity.google",
+          "by": "Google",
+          "best": "Google's agent-first coding app, CLI and SDK"
+        },
+        {
+          "name": "Kiro",
+          "url": "https://kiro.dev",
+          "by": "AWS",
+          "best": "Spec-driven coding: plan the feature, then let agents build it"
+        },
+        {
+          "name": "Cline",
+          "url": "https://cline.bot",
+          "by": "open source",
+          "kind": "open source",
+          "best": "An open-source coding agent inside VS Code"
+        },
+        {
+          "name": "Warp",
+          "url": "https://www.warp.dev",
+          "by": "Warp",
+          "best": "A terminal with AI agents built into the shell"
+        },
+        {
+          "name": "Zed",
+          "url": "https://zed.dev",
+          "by": "Zed Industries",
+          "best": "A very fast code editor with AI built in"
+        },
+        {
+          "name": "Trae",
+          "url": "https://www.trae.ai",
+          "by": "ByteDance",
+          "best": "A free AI code editor with an agent mode"
+        }
+      ]
     },
     {
-     "name": "Grok",
-     "url": "https://grok.com",
-     "by": "xAI",
-     "best": "What people on X are saying right now"
+      "id": "skills",
+      "name": "Skills & plugins",
+      "icon": "🧩",
+      "blurb": "Add-ons that give an AI agent new abilities. Most follow the open Agent Skills format and work in Claude Code, Codex, Gemini CLI, Cursor and other agents. Install lines shown are for Claude Code; each repo explains the rest. Sorted by GitHub stars.",
+      "items": [
+        {
+          "name": "Superpowers",
+          "url": "https://github.com/obra/superpowers",
+          "by": "obra",
+          "kind": "plugin",
+          "stars": "290K",
+          "best": "Plans and tests before it writes code",
+          "install": "# in Claude Code\n/plugin install superpowers@claude-plugins-official",
+          "seen": "claude-code-repos"
+        },
+        {
+          "name": "Skills for Real Engineers",
+          "url": "https://github.com/mattpocock/skills",
+          "by": "Matt Pocock",
+          "kind": "skill pack",
+          "stars": "268K",
+          "best": "Matt Pocock's engineering skills, straight from his agent setup",
+          "install": "claude plugins install mattpocock-skills"
+        },
+        {
+          "name": "ECC",
+          "url": "https://github.com/affaan-m/ECC",
+          "by": "affaan-m",
+          "kind": "skill pack",
+          "stars": "266K",
+          "best": "Skills, memory, security and research-first habits for coding agents",
+          "install": "/plugin marketplace add https://github.com/affaan-m/ECC\n/plugin install ecc@ecc"
+        },
+        {
+          "name": "Karpathy skills",
+          "url": "https://github.com/multica-ai/andrej-karpathy-skills",
+          "by": "multica-ai",
+          "kind": "skill",
+          "stars": "215K",
+          "best": "One CLAUDE.md that avoids common AI coding mistakes, based on Andrej Karpathy's notes",
+          "install": "/plugin marketplace add forrestchang/andrej-karpathy-skills\n/plugin install andrej-karpathy-skills@karpathy-skills"
+        },
+        {
+          "name": "Anthropic Skills",
+          "url": "https://github.com/anthropics/skills",
+          "by": "Anthropic",
+          "kind": "skill pack",
+          "stars": "178K",
+          "best": "Anthropic's official skills: Word, Excel, PowerPoint, PDF, design and more",
+          "install": "# in Claude Code\n/plugin marketplace add anthropics/skills\n/plugin install document-skills@anthropic-agent-skills"
+        },
+        {
+          "name": "Ponytail",
+          "url": "https://github.com/DietrichGebert/ponytail",
+          "by": "Dietrich Gebert",
+          "kind": "plugin",
+          "stars": "144K",
+          "best": "Less code and fewer tokens (54% and 22% on the author's benchmark)",
+          "install": "# in Claude Code\n/plugin marketplace add DietrichGebert/ponytail\n/plugin install ponytail@ponytail",
+          "seen": "claude-code-repos"
+        },
+        {
+          "name": "gstack",
+          "url": "https://github.com/garrytan/gstack",
+          "by": "Garry Tan",
+          "kind": "skill pack",
+          "stars": "134K",
+          "best": "Garry Tan's Claude Code setup: 23 tools acting as CEO, designer, QA and more",
+          "install": "git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git ~/.claude/skills/gstack && cd ~/.claude/skills/gstack && ./setup"
+        },
+        {
+          "name": "UI UX Pro Max",
+          "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+          "by": "nextlevelbuilder",
+          "kind": "skill",
+          "stars": "130K",
+          "best": "Design know-how for professional UI on any platform",
+          "install": "/plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill\n/plugin install ui-ux-pro-max@ui-ux-pro-max-skill",
+          "seen": "frontend-skills"
+        },
+        {
+          "name": "Taste",
+          "url": "https://github.com/Leonxlnx/taste-skill",
+          "by": "Leonxlnx",
+          "kind": "skill",
+          "stars": "90K",
+          "best": "Stops the AI's default look in UI: bans the usual AI palettes and layouts",
+          "install": "npx skills add https://github.com/Leonxlnx/taste-skill",
+          "seen": "frontend-skills"
+        },
+        {
+          "name": "Impeccable",
+          "url": "https://github.com/pbakaus/impeccable",
+          "by": "pbakaus",
+          "kind": "skill + CLI",
+          "stars": "71K",
+          "best": "Picks a design direction, then flags AI design tells in your page",
+          "install": "npx impeccable install",
+          "seen": "frontend-skills"
+        },
+        {
+          "name": "Open Design",
+          "url": "https://github.com/nexu-io/open-design",
+          "by": "nexu-io",
+          "kind": "desktop app + MCP",
+          "stars": "98K",
+          "best": "Ready-made design systems your coding agent can build from",
+          "seen": "frontend-skills"
+        },
+        {
+          "name": "Web Design Guidelines",
+          "url": "https://github.com/vercel-labs/agent-skills",
+          "by": "Vercel",
+          "kind": "skill",
+          "stars": "31K",
+          "best": "Reviews your UI code against Vercel's web interface guidelines",
+          "install": "npx skills add https://github.com/vercel-labs/agent-skills --skill web-design-guidelines",
+          "seen": "frontend-skills"
+        },
+        {
+          "name": "Playwright MCP",
+          "url": "https://github.com/microsoft/playwright-mcp",
+          "by": "Microsoft",
+          "kind": "MCP",
+          "stars": "38K",
+          "best": "Lets the agent open your site in a real browser and check it",
+          "install": "claude mcp add playwright npx @playwright/mcp@latest",
+          "seen": "frontend-skills"
+        },
+        {
+          "name": "Graphify",
+          "url": "https://github.com/Graphify-Labs/graphify",
+          "by": "Graphify Labs",
+          "kind": "skill + CLI",
+          "stars": "120K",
+          "best": "A map of your codebase so the agent rereads less",
+          "install": "uv tool install graphifyy\ngraphify claude install",
+          "seen": "claude-code-repos"
+        },
+        {
+          "name": "Context7",
+          "url": "https://github.com/upstash/context7",
+          "by": "Upstash",
+          "kind": "plugin · MCP",
+          "stars": "62K",
+          "best": "Current library docs, fewer made-up functions",
+          "install": "# in Claude Code\n/plugin install context7@claude-plugins-official",
+          "seen": "claude-code-repos"
+        },
+        {
+          "name": "Scroll World",
+          "url": "https://github.com/oso95/scroll-world",
+          "by": "oso95",
+          "kind": "skill",
+          "stars": "9.5K",
+          "best": "Turns any brand into a scrollable 3D landing page",
+          "install": "/plugin marketplace add oso95/scroll-world\n/plugin install scroll-world@scroll-world"
+        },
+        {
+          "name": "Video Shotcraft",
+          "url": "https://github.com/Vincentwei1021/video-shotcraft",
+          "by": "Vincent Wei",
+          "kind": "skill",
+          "stars": "9.3K",
+          "best": "Cinematic product videos in Remotion, with 150+ shot recipes",
+          "install": "npx skills add Vincentwei1021/video-shotcraft"
+        },
+        {
+          "name": "Graft",
+          "url": "https://github.com/trailhq/Graft",
+          "by": "Trail",
+          "kind": "skill",
+          "stars": "9.1K",
+          "best": "Codebase-specific context so coding agents work faster and cheaper",
+          "install": "npm install -g @nanonets/graft\ngraft init"
+        },
+        {
+          "name": "Interface skills",
+          "url": "https://github.com/jakubkrehel/skills",
+          "by": "Jakub Krehel",
+          "kind": "skill pack",
+          "stars": "7.1K",
+          "best": "A collection of skills for building great interfaces",
+          "install": "/plugin marketplace add jakubkrehel/skills\n/plugin install interfaces@interfaces"
+        },
+        {
+          "name": "Fast Jev Compaction",
+          "url": "https://github.com/tamaratran/fast-jev-compaction",
+          "by": "Tamara Tran",
+          "kind": "plugin",
+          "stars": "6.5K",
+          "best": "Uses Jev to drop stale context instead of summarizing it",
+          "seen": "jev-vs-chatgpt",
+          "install": "claude plugin marketplace add tamaratran/fast-jev-compaction\nclaude plugin install fast-jev-compaction@fast-jev-compaction"
+        },
+        {
+          "name": "Lieflat Charts",
+          "url": "https://github.com/larashero3-dotcom/lieflat-charts",
+          "by": "larashero3",
+          "kind": "skill",
+          "stars": "5.7K",
+          "best": "Turns data into polished, interactive HTML charts",
+          "install": "npx skills add https://github.com/larashero3-dotcom/lieflat-charts --skill lieflat-charts"
+        },
+        {
+          "name": "IP as Logo",
+          "url": "https://github.com/s1dashu/ip-as-logo-skill",
+          "by": "s1dashu",
+          "kind": "skill",
+          "stars": "5.5K",
+          "best": "Simple, rounded mascot-style logos",
+          "install": "npx skills@latest add s1dashu/ip-as-logo-skill --global"
+        },
+        {
+          "name": "Skill Recorder",
+          "url": "https://github.com/microsoft/skill-recorder",
+          "by": "Microsoft",
+          "kind": "app",
+          "stars": "4.1K",
+          "best": "Records you doing a task on screen and turns it into a reusable skill",
+          "note": "A desktop app, not a skill: install it from the command on its latest GitHub release page."
+        },
+        {
+          "name": "David Ondrej's skills",
+          "url": "https://github.com/davidondrej/skills",
+          "by": "David Ondrej",
+          "kind": "skill pack",
+          "stars": "4.1K",
+          "best": "A popular creator's personal skill set"
+        },
+        {
+          "name": "Simple English",
+          "url": "https://github.com/AminBlg/SimpleEnglish",
+          "by": "AminBlg",
+          "kind": "skill",
+          "stars": "3.5K",
+          "best": "Makes the AI write docs in plain, simplified technical English",
+          "install": "claude plugin marketplace add AminBlg/SimpleEnglish && claude plugin install simple-english@simple-english"
+        },
+        {
+          "name": "Unlazy",
+          "url": "https://github.com/Leonxlnx/unlazy",
+          "by": "Leonxlnx",
+          "kind": "skill",
+          "stars": "3.5K",
+          "best": "Stops agents cutting corners by splitting work into deeper steps",
+          "install": "npx skills add Leonxlnx/unlazy"
+        },
+        {
+          "name": "Sepia",
+          "url": "https://github.com/Nanako0129/sepia",
+          "by": "Nanako0129",
+          "kind": "skill",
+          "stars": "2.8K",
+          "best": "Rewrites text so it stops sounding AI-written",
+          "install": "claude plugin marketplace add Nanako0129/sepia\nclaude plugin install sepia@sepia --scope user"
+        },
+        {
+          "name": "Scroll Craft",
+          "url": "https://github.com/nateherkai/scroll-craft",
+          "by": "Nate Herk",
+          "kind": "skill",
+          "stars": "2.7K",
+          "best": "Premium, scroll-driven websites",
+          "install": "/plugin marketplace add nateherkai/scroll-craft\n/plugin install nateherk-design"
+        },
+        {
+          "name": "Vox Director",
+          "url": "https://github.com/Alisa0808/vox-director",
+          "by": "Alisa0808",
+          "kind": "skill",
+          "stars": "2K",
+          "best": "One topic in, a Vox-style paper-collage explainer out",
+          "install": "git clone https://github.com/Alisa0808/vox-director.git ~/.claude/skills/vox-director"
+        },
+        {
+          "name": "Anything2Explainer",
+          "url": "https://github.com/Vincentwei1021/anything2explainer",
+          "by": "Vincent Wei",
+          "kind": "skill",
+          "stars": "2K",
+          "best": "Topic in, narrated motion-graphics explainer out",
+          "install": "git clone https://github.com/Vincentwei1021/anything2explainer.git\nln -s \"$PWD/anything2explainer\" ~/.claude/skills/anything2explainer"
+        },
+        {
+          "name": "TypeSafe skills",
+          "url": "https://github.com/typesafe-ai/skills",
+          "by": "TypeSafe",
+          "kind": "skill pack",
+          "stars": "2K",
+          "best": "Build apps on Jev with the agent guiding you",
+          "seen": "jev-vs-chatgpt",
+          "install": "claude plugin marketplace add typesafe-ai/skills\nclaude plugin install typesafe@typesafe-ai"
+        },
+        {
+          "name": "Headcount",
+          "url": "https://github.com/cbrock84/headcount",
+          "by": "cbrock84",
+          "kind": "skill pack",
+          "stars": "1.7K",
+          "best": "125+ skills organised like the departments of a company",
+          "install": "/plugin marketplace add cbrock84/headcount\n/plugin install security@headcount"
+        },
+        {
+          "name": "Frontend Design",
+          "url": "https://github.com/anthropics/claude-plugins-official",
+          "by": "Anthropic",
+          "kind": "plugin",
+          "best": "Websites that don't look AI-made",
+          "install": "# in Claude Code\n/plugin install frontend-design@claude-plugins-official"
+        }
+      ]
     },
     {
-     "name": "Perplexity",
-     "url": "https://www.perplexity.ai",
-     "by": "Perplexity",
-     "best": "Answers with sources you can click",
-     "top": true
+      "id": "dictation",
+      "name": "Dictation & voice typing",
+      "icon": "🎙️",
+      "blurb": "Talk instead of type, in any app. For most people speaking is faster than typing.",
+      "items": [
+        {
+          "name": "Wispr Flow",
+          "url": "https://wisprflow.ai",
+          "by": "Wispr",
+          "best": "Dictation in every app, cleaned up as you speak",
+          "top": true
+        },
+        {
+          "name": "Build your own (free lab)",
+          "url": "https://dripthecup.com/learn/dictation/",
+          "by": "Drip the Cup",
+          "kind": "free",
+          "best": "Build your own dictation tool in about an hour, then measure it against the paid ones",
+          "note": "Zain's day-one lab: describe the tool to an AI, save the file, open it, measure it on a 100-word test paragraph. Browser mode needs no key; a free Groq key makes it work in any browser and adds clean-up."
+        },
+        {
+          "name": "Typeless",
+          "url": "https://www.typeless.com",
+          "by": "Typeless",
+          "best": "Voice typing that removes filler words and fixes phrasing"
+        },
+        {
+          "name": "Superwhisper",
+          "url": "https://superwhisper.com",
+          "by": "Superwhisper",
+          "best": "Dictation with custom modes, can run offline"
+        },
+        {
+          "name": "Aqua Voice",
+          "url": "https://aquavoice.com",
+          "by": "Aqua",
+          "best": "Fast dictation with voice editing commands"
+        },
+        {
+          "name": "whisper.cpp",
+          "url": "https://github.com/ggml-org/whisper.cpp",
+          "by": "open source",
+          "kind": "free",
+          "best": "Free, private speech-to-text on your own computer"
+        },
+        {
+          "name": "Willow",
+          "url": "https://willowvoice.com",
+          "by": "Willow",
+          "best": "Polished dictation on Mac, Windows and iPhone"
+        },
+        {
+          "name": "Monologue",
+          "url": "https://www.monologue.to",
+          "by": "Every",
+          "best": "Dictation that adapts to email, notes, chat or code"
+        },
+        {
+          "name": "VoiceInk",
+          "url": "https://tryvoiceink.com",
+          "by": "open source",
+          "kind": "open source",
+          "best": "Dictation that runs fully on your Mac"
+        }
+      ]
     },
     {
-     "name": "Microsoft Copilot",
-     "url": "https://copilot.microsoft.com",
-     "by": "Microsoft",
-     "best": "Windows and Microsoft 365 users"
+      "id": "notetakers",
+      "name": "Meeting note takers",
+      "icon": "📝",
+      "blurb": "Record, transcribe and summarize meetings.",
+      "items": [
+        {
+          "name": "Granola",
+          "url": "https://www.granola.ai",
+          "by": "Granola",
+          "best": "Notes that build on yours, with no bot joining the call",
+          "top": true
+        },
+        {
+          "name": "Otter",
+          "url": "https://otter.ai",
+          "by": "Otter.ai",
+          "best": "Live transcripts for meetings and lectures"
+        },
+        {
+          "name": "Fireflies",
+          "url": "https://fireflies.ai",
+          "by": "Fireflies",
+          "best": "Searchable records of every team call"
+        },
+        {
+          "name": "Fathom",
+          "url": "https://www.fathom.video",
+          "by": "Fathom",
+          "best": "Free call summaries for Zoom, Meet and Teams"
+        },
+        {
+          "name": "tl;dv",
+          "url": "https://tldv.io",
+          "by": "tl;dv",
+          "best": "Clips and summaries from recorded calls"
+        },
+        {
+          "name": "Fellow",
+          "url": "https://fellow.ai",
+          "by": "Fellow",
+          "best": "Agendas, notes and follow-ups for team meetings"
+        },
+        {
+          "name": "Laxis",
+          "url": "https://www.laxis.com",
+          "by": "Laxis",
+          "best": "Bot-free notes that sync to HubSpot and Salesforce"
+        }
+      ]
     },
     {
-     "name": "Meta AI",
-     "url": "https://www.meta.ai",
-     "by": "Meta",
-     "best": "Inside WhatsApp, Instagram and Messenger"
+      "id": "writing",
+      "name": "Writing, notes & research",
+      "icon": "📚",
+      "blurb": "Thinking, studying and writing things down.",
+      "items": [
+        {
+          "name": "NotebookLM",
+          "url": "https://notebooklm.google.com",
+          "by": "Google",
+          "best": "Ask questions of your own documents, even as a podcast",
+          "top": true
+        },
+        {
+          "name": "Notion",
+          "url": "https://www.notion.com",
+          "by": "Notion",
+          "best": "Docs, wikis and databases with AI built in"
+        },
+        {
+          "name": "Obsidian",
+          "url": "https://obsidian.md",
+          "by": "Obsidian",
+          "best": "Private notes stored as files you own"
+        },
+        {
+          "name": "Grammarly",
+          "url": "https://www.grammarly.com",
+          "by": "Grammarly",
+          "best": "Fixing writing everywhere you type"
+        },
+        {
+          "name": "Consensus",
+          "url": "https://consensus.app",
+          "by": "Consensus",
+          "best": "Answers drawn from research papers"
+        },
+        {
+          "name": "Elicit",
+          "url": "https://elicit.com",
+          "by": "Elicit",
+          "best": "Finding and summarizing academic studies"
+        }
+      ]
     },
     {
-     "name": "DeepSeek",
-     "url": "https://chat.deepseek.com",
-     "by": "DeepSeek",
-     "best": "Cheap, capable open-weight models"
+      "id": "email",
+      "name": "Email",
+      "icon": "✉️",
+      "blurb": "Inboxes that sort, draft and follow up for you.",
+      "items": [
+        {
+          "name": "Superhuman",
+          "url": "https://superhuman.com",
+          "by": "Superhuman",
+          "best": "The fastest inbox for people who live in email",
+          "top": true
+        },
+        {
+          "name": "Shortwave",
+          "url": "https://www.shortwave.com",
+          "by": "Shortwave",
+          "best": "An AI assistant on top of Gmail"
+        },
+        {
+          "name": "Fyxer",
+          "url": "https://www.fyxer.com",
+          "by": "Fyxer",
+          "best": "Drafts replies in your voice, inside Gmail or Outlook"
+        },
+        {
+          "name": "Spark",
+          "url": "https://sparkmailapp.com",
+          "by": "Readdle",
+          "best": "A tidy, free email app with AI help"
+        }
+      ]
     },
     {
-     "name": "Le Chat",
-     "url": "https://chat.mistral.ai",
-     "by": "Mistral",
-     "best": "A fast European alternative"
+      "id": "planning",
+      "name": "Calendar & daily planning",
+      "icon": "📅",
+      "blurb": "Let AI fit your tasks into your day.",
+      "items": [
+        {
+          "name": "Motion",
+          "url": "https://www.usemotion.com",
+          "by": "Motion",
+          "best": "Auto-scheduling tasks and projects into your calendar"
+        },
+        {
+          "name": "Reclaim",
+          "url": "https://reclaim.ai",
+          "by": "Reclaim",
+          "best": "Protecting focus time and habits in Google Calendar"
+        },
+        {
+          "name": "Sunsama",
+          "url": "https://www.sunsama.com",
+          "by": "Sunsama",
+          "best": "A calm daily plan from all your task lists"
+        },
+        {
+          "name": "Akiflow",
+          "url": "https://akiflow.com",
+          "by": "Akiflow",
+          "best": "One inbox for tasks from every app"
+        }
+      ]
     },
     {
-     "name": "Qwen",
-     "url": "https://chat.qwen.ai",
-     "by": "Alibaba",
-     "best": "Strong open models, multilingual"
+      "id": "projects",
+      "name": "Project management",
+      "icon": "✅",
+      "blurb": "Tracking work across a team.",
+      "items": [
+        {
+          "name": "Linear",
+          "url": "https://linear.app",
+          "by": "Linear",
+          "best": "Fast issue tracking for product teams"
+        },
+        {
+          "name": "ClickUp",
+          "url": "https://clickup.com",
+          "by": "ClickUp",
+          "best": "Tasks, docs and goals in one place"
+        },
+        {
+          "name": "Asana",
+          "url": "https://asana.com",
+          "by": "Asana",
+          "best": "Cross-team projects and timelines"
+        },
+        {
+          "name": "monday.com",
+          "url": "https://monday.com",
+          "by": "monday.com",
+          "best": "Visual boards for any kind of workflow"
+        }
+      ]
     },
     {
-     "name": "Kimi",
-     "url": "https://www.kimi.com",
-     "by": "Moonshot AI",
-     "best": "Long documents and agent tasks"
+      "id": "crm",
+      "name": "CRM & sales",
+      "icon": "🤝",
+      "blurb": "Keeping track of customers, leads and deals.",
+      "items": [
+        {
+          "name": "Attio",
+          "url": "https://attio.com",
+          "by": "Attio",
+          "best": "A flexible CRM that fills itself in from email and calendar"
+        },
+        {
+          "name": "HubSpot",
+          "url": "https://www.hubspot.com",
+          "by": "HubSpot",
+          "best": "All-in-one marketing, sales and support"
+        },
+        {
+          "name": "folk",
+          "url": "https://www.folk.app",
+          "by": "folk",
+          "best": "A simple CRM for small teams and creators"
+        },
+        {
+          "name": "Clay",
+          "url": "https://www.clay.com",
+          "by": "Clay",
+          "best": "Researching and enriching lead lists with AI"
+        }
+      ]
     },
     {
-     "name": "Poe",
-     "url": "https://poe.com",
-     "by": "Quora",
-     "best": "Many chatbots and models in one app"
+      "id": "money",
+      "name": "Finance, expenses & banking",
+      "icon": "💳",
+      "blurb": "Business banking, spending and bookkeeping.",
+      "items": [
+        {
+          "name": "Ramp",
+          "url": "https://ramp.com",
+          "by": "Ramp",
+          "best": "Company cards with expenses sorted automatically"
+        },
+        {
+          "name": "Brex",
+          "url": "https://www.brex.com",
+          "by": "Brex",
+          "best": "Cards and spend control for startups"
+        },
+        {
+          "name": "Mercury",
+          "url": "https://mercury.com",
+          "by": "Mercury",
+          "best": "Business banking built for startups"
+        },
+        {
+          "name": "Expensify",
+          "url": "https://www.expensify.com",
+          "by": "Expensify",
+          "best": "Snap a receipt, get an expense report"
+        },
+        {
+          "name": "QuickBooks",
+          "url": "https://quickbooks.intuit.com",
+          "by": "Intuit",
+          "best": "Small-business accounting with AI help"
+        },
+        {
+          "name": "Copilot Money",
+          "url": "https://www.copilot.money",
+          "by": "Copilot",
+          "best": "Personal budgeting and spending tracking"
+        },
+        {
+          "name": "Stripe",
+          "url": "https://stripe.com",
+          "by": "Stripe",
+          "best": "Online payments and invoices; its official MCP server lets an AI agent create payment links, invoices and refunds"
+        }
+      ]
+    },
+    {
+      "id": "browsers",
+      "name": "AI browsers",
+      "icon": "🌐",
+      "blurb": "Browsers with an assistant that can read and act on the page.",
+      "items": [
+        {
+          "name": "Comet",
+          "url": "https://www.perplexity.ai/comet",
+          "by": "Perplexity",
+          "best": "A browser that researches and does tasks for you"
+        },
+        {
+          "name": "ChatGPT Atlas",
+          "url": "https://chatgpt.com/atlas",
+          "by": "OpenAI",
+          "best": "ChatGPT built into the browser"
+        },
+        {
+          "name": "Dia",
+          "url": "https://www.diabrowser.com",
+          "by": "The Browser Company",
+          "best": "Chatting with your open tabs"
+        }
+      ]
+    },
+    {
+      "id": "models",
+      "name": "AI models for your apps",
+      "icon": "🔌",
+      "blurb": "Putting AI inside something you're building, or running it yourself.",
+      "items": [
+        {
+          "name": "Claude API",
+          "url": "https://www.anthropic.com/api",
+          "by": "Anthropic",
+          "best": "Writing, agents and long context in your own software"
+        },
+        {
+          "name": "OpenAI API",
+          "url": "https://platform.openai.com",
+          "by": "OpenAI",
+          "best": "General-purpose text, image and voice models"
+        },
+        {
+          "name": "Google AI Studio",
+          "url": "https://aistudio.google.com",
+          "by": "Google",
+          "best": "Trying Gemini models for free, then building"
+        },
+        {
+          "name": "Jev",
+          "url": "https://typesafe.ai",
+          "by": "TypeSafe",
+          "kind": "early access",
+          "best": "Fast yes/no and pick-one decisions, priced on input only",
+          "seen": "jev-vs-chatgpt"
+        },
+        {
+          "name": "OpenRouter",
+          "url": "https://openrouter.ai",
+          "by": "OpenRouter",
+          "best": "One API key for hundreds of models"
+        },
+        {
+          "name": "Hugging Face",
+          "url": "https://huggingface.co",
+          "by": "Hugging Face",
+          "best": "Finding and trying open models"
+        },
+        {
+          "name": "Ollama",
+          "url": "https://ollama.com",
+          "by": "open source",
+          "kind": "free",
+          "best": "Running open models on your own computer",
+          "stars": "182K"
+        },
+        {
+          "name": "LM Studio",
+          "url": "https://lmstudio.ai",
+          "by": "LM Studio",
+          "kind": "free",
+          "best": "Local models with a friendly desktop app"
+        }
+      ]
+    },
+    {
+      "id": "build",
+      "name": "Build with AI",
+      "icon": "🛠️",
+      "blurb": "Open-source building blocks developers use to make AI apps, agents and pipelines.",
+      "items": [
+        {
+          "name": "DeepSeek Harness",
+          "url": "https://github.com/deepseek-ai/deepseek-harness",
+          "by": "DeepSeek",
+          "kind": "open source",
+          "stars": "234K",
+          "best": "DeepSeek's open agent harness, built so everything is a plugin"
+        },
+        {
+          "name": "Firecrawl",
+          "url": "https://github.com/firecrawl/firecrawl",
+          "by": "Firecrawl",
+          "kind": "open source",
+          "stars": "184K",
+          "best": "Turns websites into clean data for AI"
+        },
+        {
+          "name": "Transformers",
+          "url": "https://github.com/huggingface/transformers",
+          "by": "Hugging Face",
+          "kind": "open source",
+          "stars": "167K",
+          "best": "The library for running and training open models"
+        },
+        {
+          "name": "Dify",
+          "url": "https://github.com/langgenius/dify",
+          "by": "LangGenius",
+          "kind": "open source",
+          "stars": "157K",
+          "best": "Build agent workflows and RAG apps visually, cloud or self-hosted"
+        },
+        {
+          "name": "Langflow",
+          "url": "https://github.com/langflow-ai/langflow",
+          "by": "Langflow",
+          "kind": "open source",
+          "stars": "155K",
+          "best": "A drag-and-drop builder for AI agents and workflows"
+        },
+        {
+          "name": "Open WebUI",
+          "url": "https://github.com/open-webui/open-webui",
+          "by": "Open WebUI",
+          "kind": "open source",
+          "stars": "153K",
+          "best": "A ChatGPT-style interface for local or your own models"
+        },
+        {
+          "name": "LangChain",
+          "url": "https://github.com/langchain-ai/langchain",
+          "by": "LangChain",
+          "kind": "open source",
+          "stars": "147K",
+          "best": "The widely used framework for building agents in code"
+        },
+        {
+          "name": "llama.cpp",
+          "url": "https://github.com/ggml-org/llama.cpp",
+          "by": "ggml",
+          "kind": "open source",
+          "stars": "129K",
+          "best": "Runs language models fast on ordinary hardware"
+        },
+        {
+          "name": "Plaid",
+          "url": "https://plaid.com",
+          "by": "Plaid",
+          "kind": "for developers",
+          "best": "Connects your own app to people's bank accounts; its MCP server helps you debug that connection with AI"
+        },
+        {
+          "name": "WhatsApp Cloud API",
+          "url": "https://developers.facebook.com/docs/whatsapp/cloud-api",
+          "by": "Meta",
+          "best": "Meta's official way to send and receive WhatsApp messages from your own code, like an AI agent"
+        },
+        {
+          "name": "Kapso",
+          "url": "https://kapso.com",
+          "by": "Kapso",
+          "best": "Gives an AI agent its own WhatsApp number on the official Cloud API, with Claude Code skills to build it",
+          "install": "npx skills add gokapso/agent-skills",
+          "note": "The skills are labeled alpha. Meta's 24-hour window, opt-in and AI rules still apply."
+        }
+      ]
+    },
+    {
+      "id": "voice",
+      "name": "Voice, music & audio",
+      "icon": "🔊",
+      "blurb": "Voiceover, music and cleaning up recordings.",
+      "items": [
+        {
+          "name": "ElevenLabs",
+          "url": "https://elevenlabs.io",
+          "by": "ElevenLabs",
+          "best": "Realistic voiceover, voice design, dubbing and music",
+          "top": true
+        },
+        {
+          "name": "Suno",
+          "url": "https://suno.com",
+          "by": "Suno",
+          "best": "Full songs with vocals from a prompt"
+        },
+        {
+          "name": "Udio",
+          "url": "https://www.udio.com",
+          "by": "Udio",
+          "best": "Music generation with fine control"
+        },
+        {
+          "name": "Adobe Podcast",
+          "url": "https://podcast.adobe.com",
+          "by": "Adobe",
+          "best": "Making a bad mic recording sound studio-clean"
+        },
+        {
+          "name": "Fish Audio",
+          "url": "https://fish.audio",
+          "by": "Fish Audio",
+          "best": "Expressive voices in 80+ languages with emotion control"
+        },
+        {
+          "name": "Speechify",
+          "url": "https://speechify.com",
+          "by": "Speechify",
+          "best": "Listen to anything read aloud in natural voices"
+        },
+        {
+          "name": "Murf",
+          "url": "https://murf.ai",
+          "by": "Murf",
+          "best": "Studio voiceovers for training and marketing videos"
+        },
+        {
+          "name": "Stable Audio",
+          "url": "https://stableaudio.com",
+          "by": "Stability AI",
+          "best": "Music and sound effects from a prompt"
+        },
+        {
+          "name": "Chatterbox",
+          "url": "https://github.com/resemble-ai/chatterbox",
+          "by": "Resemble AI",
+          "kind": "open source",
+          "best": "Free open-source text-to-speech you can run yourself"
+        }
+      ]
+    },
+    {
+      "id": "image",
+      "name": "Image generation",
+      "icon": "🎨",
+      "blurb": "Pictures from a prompt, or edits to ones you have. The leaders by blind-vote rankings come first.",
+      "items": [
+        {
+          "name": "GPT Image 2",
+          "url": "https://chatgpt.com",
+          "by": "OpenAI",
+          "best": "Top of the blind-vote image leaderboards; great with text in images"
+        },
+        {
+          "name": "Nano Banana Pro",
+          "url": "https://gemini.google.com",
+          "by": "Google",
+          "best": "Keeping a character consistent across edits"
+        },
+        {
+          "name": "Midjourney",
+          "url": "https://www.midjourney.com",
+          "by": "Midjourney",
+          "best": "Striking, artistic images"
+        },
+        {
+          "name": "FLUX.2",
+          "url": "https://bfl.ai",
+          "by": "Black Forest Labs",
+          "best": "Detailed images that follow the prompt closely"
+        },
+        {
+          "name": "Seedream 5.0",
+          "url": "https://seed.bytedance.com/en/seedream5_0_pro",
+          "by": "ByteDance",
+          "best": "Dense, editable images that split into layers for Figma or Photoshop"
+        },
+        {
+          "name": "Grok Imagine",
+          "url": "https://grok.com/imagine",
+          "by": "xAI",
+          "best": "Fast images and short clips inside Grok"
+        },
+        {
+          "name": "Ideogram",
+          "url": "https://ideogram.ai",
+          "by": "Ideogram",
+          "best": "Logos and text-heavy designs"
+        },
+        {
+          "name": "Recraft",
+          "url": "https://www.recraft.ai",
+          "by": "Recraft",
+          "best": "Vector art, icons and on-brand illustrations"
+        },
+        {
+          "name": "Adobe Firefly",
+          "url": "https://firefly.adobe.com",
+          "by": "Adobe",
+          "best": "Commercially safe images inside Adobe apps"
+        },
+        {
+          "name": "Krea",
+          "url": "https://www.krea.ai",
+          "by": "Krea",
+          "best": "Real-time image generation and upscaling"
+        },
+        {
+          "name": "Leonardo",
+          "url": "https://leonardo.ai",
+          "by": "Leonardo",
+          "best": "Game art, characters and product shots"
+        },
+        {
+          "name": "ComfyUI",
+          "url": "https://github.com/Comfy-Org/ComfyUI",
+          "by": "Comfy Org",
+          "kind": "open source",
+          "stars": "135K",
+          "best": "Node-based image and video generation you run yourself"
+        },
+        {
+          "name": "Stable Diffusion web UI",
+          "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+          "by": "AUTOMATIC1111",
+          "kind": "open source",
+          "stars": "165K",
+          "best": "The classic self-hosted Stable Diffusion interface"
+        }
+      ]
+    },
+    {
+      "id": "video",
+      "name": "Video generation",
+      "icon": "🎬",
+      "blurb": "Clips from text or a still image, and AI presenters. Models change fast; these are the ones leading blind-vote leaderboards now.",
+      "items": [
+        {
+          "name": "Higgsfield",
+          "url": "https://higgsfield.ai",
+          "by": "Higgsfield",
+          "best": "One app for the top video and image models (Kling, Veo, Seedance, Nano Banana and more), with camera-move presets",
+          "top": true
+        },
+        {
+          "name": "Kling 3.0",
+          "url": "https://klingai.com",
+          "by": "Kuaishou",
+          "best": "Top of the blind-vote text-to-video leaderboards; realistic motion"
+        },
+        {
+          "name": "Veo",
+          "url": "https://deepmind.google/models/veo/",
+          "by": "Google DeepMind",
+          "best": "Google's cinematic video model, with sound and dialogue"
+        },
+        {
+          "name": "Seedance 2.5",
+          "url": "https://seed.bytedance.com/en/seedance2_5",
+          "by": "ByteDance",
+          "best": "Up to 30-second videos with audio and multi-shot storytelling"
+        },
+        {
+          "name": "Happy Horse",
+          "url": "https://fal.ai/happyhorse-1.0",
+          "by": "Alibaba",
+          "best": "Top-ranked open model for text- and image-to-video, with audio"
+        },
+        {
+          "name": "Gemini Omni Flash",
+          "url": "https://deepmind.google/models/gemini-omni/",
+          "by": "Google",
+          "best": "Fast video generation you can edit by chatting; top for image-to-video"
+        },
+        {
+          "name": "Sora",
+          "url": "https://openai.com/sora",
+          "by": "OpenAI",
+          "best": "Story-driven clips and remixes"
+        },
+        {
+          "name": "Wan",
+          "url": "https://wan.video",
+          "by": "Alibaba",
+          "kind": "open weights",
+          "best": "Open-weight video generation with native audio"
+        },
+        {
+          "name": "Runway",
+          "url": "https://runwayml.com",
+          "by": "Runway",
+          "best": "Video generation, plus editing and extending real footage"
+        },
+        {
+          "name": "Luma",
+          "url": "https://lumalabs.ai",
+          "by": "Luma AI",
+          "best": "Smooth camera moves and 3D-feeling shots"
+        },
+        {
+          "name": "Hailuo",
+          "url": "https://hailuoai.video",
+          "by": "MiniMax",
+          "best": "Expressive character motion"
+        },
+        {
+          "name": "PixVerse",
+          "url": "https://pixverse.ai",
+          "by": "PixVerse",
+          "best": "Quick stylized clips and effects for social"
+        },
+        {
+          "name": "HeyGen",
+          "url": "https://www.heygen.com",
+          "by": "HeyGen",
+          "best": "Talking AI avatars and video translation"
+        },
+        {
+          "name": "Synthesia",
+          "url": "https://www.synthesia.io",
+          "by": "Synthesia",
+          "best": "Training and explainer videos with AI presenters"
+        },
+        {
+          "name": "MoneyPrinterTurbo",
+          "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+          "by": "harry0703",
+          "kind": "open source",
+          "stars": "125K",
+          "best": "Makes a short video from a topic or keyword, end to end"
+        }
+      ]
+    },
+    {
+      "id": "editing",
+      "name": "Video editing & clipping",
+      "icon": "✂️",
+      "blurb": "Putting it together, and cutting long videos into shorts.",
+      "items": [
+        {
+          "name": "Remotion",
+          "url": "https://www.remotion.dev",
+          "by": "open source",
+          "best": "Making videos with code"
+        },
+        {
+          "name": "CapCut",
+          "url": "https://www.capcut.com",
+          "by": "ByteDance",
+          "best": "Quick short-form edits with auto captions"
+        },
+        {
+          "name": "Descript",
+          "url": "https://www.descript.com",
+          "by": "Descript",
+          "best": "Edit a video by editing its transcript"
+        },
+        {
+          "name": "DaVinci Resolve",
+          "url": "https://www.blackmagicdesign.com/products/davinciresolve",
+          "by": "Blackmagic Design",
+          "kind": "free",
+          "best": "Pro editing and color, generous free version"
+        },
+        {
+          "name": "Opus Clip",
+          "url": "https://www.opus.pro",
+          "by": "Opus",
+          "best": "Turning a long video into ready-to-post shorts"
+        },
+        {
+          "name": "Submagic",
+          "url": "https://www.submagic.co",
+          "by": "Submagic",
+          "best": "Animated captions for shorts"
+        },
+        {
+          "name": "Captions",
+          "url": "https://www.captions.ai",
+          "by": "Captions",
+          "best": "Talking-head edits and captions on your phone"
+        }
+      ]
+    },
+    {
+      "id": "screen",
+      "name": "Screen recording",
+      "icon": "🖥️",
+      "blurb": "Demos, tutorials and walkthroughs.",
+      "items": [
+        {
+          "name": "Loom",
+          "url": "https://www.loom.com",
+          "by": "Atlassian",
+          "best": "Quick async video messages for work"
+        },
+        {
+          "name": "Screen Studio",
+          "url": "https://screen.studio",
+          "by": "Screen Studio",
+          "best": "Polished demos with automatic zooms (Mac)"
+        },
+        {
+          "name": "Tella",
+          "url": "https://www.tella.tv",
+          "by": "Tella",
+          "best": "Recording tutorials and courses"
+        },
+        {
+          "name": "OBS Studio",
+          "url": "https://obsproject.com",
+          "by": "open source",
+          "kind": "free",
+          "best": "Free recording and live streaming"
+        }
+      ]
+    },
+    {
+      "id": "design",
+      "name": "Design, slides & sites",
+      "icon": "📐",
+      "blurb": "Thumbnails, decks, diagrams and websites.",
+      "items": [
+        {
+          "name": "Excalidraw",
+          "url": "https://excalidraw.com",
+          "by": "open source",
+          "kind": "free",
+          "best": "Hand-drawn diagrams for explaining things",
+          "stars": "133K"
+        },
+        {
+          "name": "Canva",
+          "url": "https://www.canva.com",
+          "by": "Canva",
+          "best": "Social graphics and thumbnails from templates"
+        },
+        {
+          "name": "Gamma",
+          "url": "https://gamma.app",
+          "by": "Gamma",
+          "best": "Slide decks and docs from a prompt"
+        },
+        {
+          "name": "Figma",
+          "url": "https://www.figma.com",
+          "by": "Figma",
+          "best": "Designing apps and websites"
+        },
+        {
+          "name": "Framer",
+          "url": "https://www.framer.com",
+          "by": "Framer",
+          "best": "Publishing a designed website without code"
+        }
+      ]
+    },
+    {
+      "id": "automation",
+      "name": "Automation",
+      "icon": "⚙️",
+      "blurb": "Connecting apps so work happens on its own.",
+      "items": [
+        {
+          "name": "Zapier",
+          "url": "https://zapier.com",
+          "by": "Zapier",
+          "best": "Connecting thousands of apps, no code"
+        },
+        {
+          "name": "Workato",
+          "url": "https://www.workato.com",
+          "by": "Workato",
+          "kind": "enterprise",
+          "best": "Company-wide automation and integrations with enterprise security"
+        },
+        {
+          "name": "Make",
+          "url": "https://www.make.com",
+          "by": "Make",
+          "best": "Visual automations with branching logic"
+        },
+        {
+          "name": "n8n",
+          "url": "https://n8n.io",
+          "by": "open source",
+          "best": "Self-hostable automations with AI steps",
+          "stars": "206K"
+        }
+      ]
+    },
+    {
+      "id": "posting",
+      "name": "Posting & growth",
+      "icon": "📈",
+      "blurb": "Getting it out there on a schedule.",
+      "items": [
+        {
+          "name": "Buffer",
+          "url": "https://buffer.com",
+          "by": "Buffer",
+          "best": "Scheduling posts across every platform from one queue"
+        },
+        {
+          "name": "Blotato",
+          "url": "https://www.blotato.com",
+          "by": "Blotato",
+          "best": "Posts to 9 platforms from one place; an MCP server lets Claude schedule them, plus n8n and Make nodes"
+        },
+        {
+          "name": "ManyChat",
+          "url": "https://manychat.com",
+          "by": "ManyChat",
+          "best": "Auto-DMs for 'comment LINK and I'll send it' posts"
+        },
+        {
+          "name": "Metricool",
+          "url": "https://metricool.com",
+          "by": "Metricool",
+          "best": "Scheduling plus analytics for creators"
+        }
+      ]
+    },
+    {
+      "id": "learn",
+      "name": "Learn AI",
+      "icon": "🎓",
+      "blurb": "Free courses, prompt libraries, example apps and roadmaps.",
+      "items": [
+        {
+          "name": "prompts.chat",
+          "url": "https://github.com/f/prompts.chat",
+          "by": "f",
+          "kind": "open source",
+          "stars": "171K",
+          "best": "A community prompt library (formerly Awesome ChatGPT Prompts)"
+        },
+        {
+          "name": "Generative AI for Beginners",
+          "url": "https://github.com/microsoft/generative-ai-for-beginners",
+          "by": "Microsoft",
+          "kind": "free course",
+          "stars": "120K",
+          "best": "Microsoft's free 21-lesson course on building with generative AI"
+        },
+        {
+          "name": "Awesome LLM Apps",
+          "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+          "by": "Shubham Saboo",
+          "kind": "open source",
+          "stars": "139K",
+          "best": "100+ open-source agent and RAG app examples to learn from"
+        },
+        {
+          "name": "Developer Roadmap",
+          "url": "https://github.com/nilbuild/developer-roadmap",
+          "by": "roadmap.sh",
+          "kind": "free",
+          "stars": "368K",
+          "best": "Step-by-step roadmaps for developer careers, AI included"
+        }
+      ]
     }
-   ]
-  },
-  {
-   "id": "agents",
-   "name": "AI agents",
-   "icon": "🤖",
-   "blurb": "AIs that do tasks for you, not just answer. Give them access carefully: an agent that can act can also act wrongly.",
-   "items": [
-    {
-     "name": "OpenClaw",
-     "url": "https://github.com/openclaw/openclaw",
-     "by": "open source",
-     "kind": "open source",
-     "stars": "390K",
-     "best": "A personal assistant that works through WhatsApp, Telegram and Discord",
-     "top": true,
-     "note": "Runs with broad access to your computer and accounts. Read its security guidance before connecting real accounts."
-    },
-    {
-     "name": "Hermes Agent",
-     "url": "https://github.com/NousResearch/hermes-agent",
-     "by": "Nous Research",
-     "kind": "open source",
-     "stars": "248K",
-     "best": "An open agent that builds up skills and memory as you use it"
-    },
-    {
-     "name": "Manus",
-     "url": "https://manus.im",
-     "by": "Manus",
-     "best": "Hand off a whole research or build task"
-    },
-    {
-     "name": "Genspark",
-     "url": "https://www.genspark.ai",
-     "by": "Genspark",
-     "best": "Agents that make slides, sheets and reports"
-    },
-    {
-     "name": "Lindy",
-     "url": "https://www.lindy.ai",
-     "by": "Lindy",
-     "best": "Building your own work assistants without code"
-    },
-    {
-     "name": "AutoGPT",
-     "url": "https://github.com/Significant-Gravitas/AutoGPT",
-     "by": "Significant Gravitas",
-     "kind": "open source",
-     "stars": "188K",
-     "best": "A platform for building and running autonomous agents"
-    },
-    {
-     "name": "Agency Agents",
-     "url": "https://github.com/msitarzewski/agency-agents",
-     "by": "msitarzewski",
-     "kind": "open source",
-     "stars": "154K",
-     "best": "A whole team of specialist agents, each with a role and a process"
-    },
-    {
-     "name": "browser-use",
-     "url": "https://github.com/browser-use/browser-use",
-     "by": "Browser Use",
-     "kind": "open source",
-     "stars": "116K",
-     "best": "Lets AI agents use a web browser like a person"
-    }
-   ]
-  },
-  {
-   "id": "coding",
-   "name": "Coding with AI",
-   "icon": "⌨️",
-   "blurb": "Tools that write, edit and run code with you.",
-   "items": [
-    {
-     "name": "Claude Code",
-     "url": "https://claude.com/claude-code",
-     "by": "Anthropic",
-     "best": "An agent that builds and edits whole projects",
-     "top": true,
-     "stars": "148K"
-    },
-    {
-     "name": "Cursor",
-     "url": "https://cursor.com",
-     "by": "Anysphere",
-     "best": "Coding inside an AI-first editor"
-    },
-    {
-     "name": "Codex",
-     "url": "https://openai.com/codex",
-     "by": "OpenAI",
-     "best": "Delegating coding tasks to an agent",
-     "stars": "126K"
-    },
-    {
-     "name": "GitHub Copilot",
-     "url": "https://github.com/features/copilot",
-     "by": "GitHub",
-     "best": "Suggestions and an agent inside GitHub and your editor"
-    },
-    {
-     "name": "Devin",
-     "url": "https://devin.ai",
-     "by": "Cognition",
-     "best": "An autonomous coding engineer, plus the editor formerly called Windsurf"
-    },
-    {
-     "name": "OpenCode",
-     "url": "https://opencode.ai",
-     "by": "open source",
-     "best": "An open-source coding agent for the terminal",
-     "stars": "209K"
-    },
-    {
-     "name": "Lovable",
-     "url": "https://lovable.dev",
-     "by": "Lovable",
-     "best": "Describe an app, get a working web app"
-    },
-    {
-     "name": "Bolt",
-     "url": "https://bolt.new",
-     "by": "StackBlitz",
-     "best": "Full-stack apps from a prompt, in the browser"
-    },
-    {
-     "name": "Replit",
-     "url": "https://replit.com",
-     "by": "Replit",
-     "best": "Build and host an app without setting anything up"
-    },
-    {
-     "name": "v0",
-     "url": "https://v0.app",
-     "by": "Vercel",
-     "best": "Web interfaces and sites from a prompt"
-    },
-    {
-     "name": "cc-switch",
-     "url": "https://github.com/farion1231/cc-switch",
-     "by": "farion1231",
-     "kind": "open source",
-     "stars": "135K",
-     "best": "One desktop app to manage Claude Code, Codex, OpenCode, OpenClaw and Hermes"
-    },
-    {
-     "name": "Antigravity",
-     "url": "https://antigravity.google",
-     "by": "Google",
-     "best": "Google's agent-first coding app, CLI and SDK"
-    },
-    {
-     "name": "Kiro",
-     "url": "https://kiro.dev",
-     "by": "AWS",
-     "best": "Spec-driven coding: plan the feature, then let agents build it"
-    },
-    {
-     "name": "Cline",
-     "url": "https://cline.bot",
-     "by": "open source",
-     "kind": "open source",
-     "best": "An open-source coding agent inside VS Code"
-    },
-    {
-     "name": "Warp",
-     "url": "https://www.warp.dev",
-     "by": "Warp",
-     "best": "A terminal with AI agents built into the shell"
-    },
-    {
-     "name": "Zed",
-     "url": "https://zed.dev",
-     "by": "Zed Industries",
-     "best": "A very fast code editor with AI built in"
-    },
-    {
-     "name": "Trae",
-     "url": "https://www.trae.ai",
-     "by": "ByteDance",
-     "best": "A free AI code editor with an agent mode"
-    }
-   ]
-  },
-  {
-   "id": "skills",
-   "name": "Skills & plugins",
-   "icon": "🧩",
-   "blurb": "Add-ons that give an AI agent new abilities. Most follow the open Agent Skills format and work in Claude Code, Codex, Gemini CLI, Cursor and other agents. Install lines shown are for Claude Code; each repo explains the rest. Sorted by GitHub stars.",
-   "items": [
-    {
-     "name": "Superpowers",
-     "url": "https://github.com/obra/superpowers",
-     "by": "obra",
-     "kind": "plugin",
-     "stars": "290K",
-     "best": "Plans and tests before it writes code",
-     "install": "# in Claude Code\n/plugin install superpowers@claude-plugins-official",
-     "seen": "claude-code-repos"
-    },
-    {
-     "name": "Skills for Real Engineers",
-     "url": "https://github.com/mattpocock/skills",
-     "by": "Matt Pocock",
-     "kind": "skill pack",
-     "stars": "268K",
-     "best": "Matt Pocock's engineering skills, straight from his agent setup",
-     "install": "claude plugins install mattpocock-skills"
-    },
-    {
-     "name": "ECC",
-     "url": "https://github.com/affaan-m/ECC",
-     "by": "affaan-m",
-     "kind": "skill pack",
-     "stars": "266K",
-     "best": "Skills, memory, security and research-first habits for coding agents",
-     "install": "/plugin marketplace add https://github.com/affaan-m/ECC\n/plugin install ecc@ecc"
-    },
-    {
-     "name": "Karpathy skills",
-     "url": "https://github.com/multica-ai/andrej-karpathy-skills",
-     "by": "multica-ai",
-     "kind": "skill",
-     "stars": "215K",
-     "best": "One CLAUDE.md that avoids common AI coding mistakes, based on Andrej Karpathy's notes",
-     "install": "/plugin marketplace add forrestchang/andrej-karpathy-skills\n/plugin install andrej-karpathy-skills@karpathy-skills"
-    },
-    {
-     "name": "Anthropic Skills",
-     "url": "https://github.com/anthropics/skills",
-     "by": "Anthropic",
-     "kind": "skill pack",
-     "stars": "178K",
-     "best": "Anthropic's official skills: Word, Excel, PowerPoint, PDF, design and more",
-     "install": "# in Claude Code\n/plugin marketplace add anthropics/skills\n/plugin install document-skills@anthropic-agent-skills"
-    },
-    {
-     "name": "Ponytail",
-     "url": "https://github.com/DietrichGebert/ponytail",
-     "by": "Dietrich Gebert",
-     "kind": "plugin",
-     "stars": "144K",
-     "best": "Less code and fewer tokens (54% and 22% on the author's benchmark)",
-     "install": "# in Claude Code\n/plugin marketplace add DietrichGebert/ponytail\n/plugin install ponytail@ponytail",
-     "seen": "claude-code-repos"
-    },
-    {
-     "name": "gstack",
-     "url": "https://github.com/garrytan/gstack",
-     "by": "Garry Tan",
-     "kind": "skill pack",
-     "stars": "134K",
-     "best": "Garry Tan's Claude Code setup: 23 tools acting as CEO, designer, QA and more",
-     "install": "git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git ~/.claude/skills/gstack && cd ~/.claude/skills/gstack && ./setup"
-    },
-    {
-     "name": "UI UX Pro Max",
-     "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
-     "by": "nextlevelbuilder",
-     "kind": "skill",
-     "stars": "130K",
-     "best": "Design know-how for professional UI on any platform",
-     "install": "/plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill\n/plugin install ui-ux-pro-max@ui-ux-pro-max-skill",
-     "seen": "frontend-skills"
-    },
-    {
-     "name": "Taste",
-     "url": "https://github.com/Leonxlnx/taste-skill",
-     "by": "Leonxlnx",
-     "kind": "skill",
-     "stars": "90K",
-     "best": "Stops the AI's default look in UI: bans the usual AI palettes and layouts",
-     "install": "npx skills add https://github.com/Leonxlnx/taste-skill",
-     "seen": "frontend-skills"
-    },
-    {
-     "name": "Impeccable",
-     "url": "https://github.com/pbakaus/impeccable",
-     "by": "pbakaus",
-     "kind": "skill + CLI",
-     "stars": "71K",
-     "best": "Picks a design direction, then flags AI design tells in your page",
-     "install": "npx impeccable install",
-     "seen": "frontend-skills"
-    },
-    {
-     "name": "Open Design",
-     "url": "https://github.com/nexu-io/open-design",
-     "by": "nexu-io",
-     "kind": "desktop app + MCP",
-     "stars": "98K",
-     "best": "Ready-made design systems your coding agent can build from",
-     "seen": "frontend-skills"
-    },
-    {
-     "name": "Web Design Guidelines",
-     "url": "https://github.com/vercel-labs/agent-skills",
-     "by": "Vercel",
-     "kind": "skill",
-     "stars": "31K",
-     "best": "Reviews your UI code against Vercel's web interface guidelines",
-     "install": "npx skills add https://github.com/vercel-labs/agent-skills --skill web-design-guidelines",
-     "seen": "frontend-skills"
-    },
-    {
-     "name": "Playwright MCP",
-     "url": "https://github.com/microsoft/playwright-mcp",
-     "by": "Microsoft",
-     "kind": "MCP",
-     "stars": "38K",
-     "best": "Lets the agent open your site in a real browser and check it",
-     "install": "claude mcp add playwright npx @playwright/mcp@latest",
-     "seen": "frontend-skills"
-    },
-    {
-     "name": "Graphify",
-     "url": "https://github.com/Graphify-Labs/graphify",
-     "by": "Graphify Labs",
-     "kind": "skill + CLI",
-     "stars": "120K",
-     "best": "A map of your codebase so the agent rereads less",
-     "install": "uv tool install graphifyy\ngraphify claude install",
-     "seen": "claude-code-repos"
-    },
-    {
-     "name": "Context7",
-     "url": "https://github.com/upstash/context7",
-     "by": "Upstash",
-     "kind": "plugin · MCP",
-     "stars": "62K",
-     "best": "Current library docs, fewer made-up functions",
-     "install": "# in Claude Code\n/plugin install context7@claude-plugins-official",
-     "seen": "claude-code-repos"
-    },
-    {
-     "name": "Scroll World",
-     "url": "https://github.com/oso95/scroll-world",
-     "by": "oso95",
-     "kind": "skill",
-     "stars": "9.5K",
-     "best": "Turns any brand into a scrollable 3D landing page",
-     "install": "/plugin marketplace add oso95/scroll-world\n/plugin install scroll-world@scroll-world"
-    },
-    {
-     "name": "Video Shotcraft",
-     "url": "https://github.com/Vincentwei1021/video-shotcraft",
-     "by": "Vincent Wei",
-     "kind": "skill",
-     "stars": "9.3K",
-     "best": "Cinematic product videos in Remotion, with 150+ shot recipes",
-     "install": "npx skills add Vincentwei1021/video-shotcraft"
-    },
-    {
-     "name": "Graft",
-     "url": "https://github.com/trailhq/Graft",
-     "by": "Trail",
-     "kind": "skill",
-     "stars": "9.1K",
-     "best": "Codebase-specific context so coding agents work faster and cheaper",
-     "install": "npm install -g @nanonets/graft\ngraft init"
-    },
-    {
-     "name": "Interface skills",
-     "url": "https://github.com/jakubkrehel/skills",
-     "by": "Jakub Krehel",
-     "kind": "skill pack",
-     "stars": "7.1K",
-     "best": "A collection of skills for building great interfaces",
-     "install": "/plugin marketplace add jakubkrehel/skills\n/plugin install interfaces@interfaces"
-    },
-    {
-     "name": "Fast Jev Compaction",
-     "url": "https://github.com/tamaratran/fast-jev-compaction",
-     "by": "Tamara Tran",
-     "kind": "plugin",
-     "stars": "6.5K",
-     "best": "Uses Jev to drop stale context instead of summarizing it",
-     "seen": "jev-vs-chatgpt",
-     "install": "claude plugin marketplace add tamaratran/fast-jev-compaction\nclaude plugin install fast-jev-compaction@fast-jev-compaction"
-    },
-    {
-     "name": "Lieflat Charts",
-     "url": "https://github.com/larashero3-dotcom/lieflat-charts",
-     "by": "larashero3",
-     "kind": "skill",
-     "stars": "5.7K",
-     "best": "Turns data into polished, interactive HTML charts",
-     "install": "npx skills add https://github.com/larashero3-dotcom/lieflat-charts --skill lieflat-charts"
-    },
-    {
-     "name": "IP as Logo",
-     "url": "https://github.com/s1dashu/ip-as-logo-skill",
-     "by": "s1dashu",
-     "kind": "skill",
-     "stars": "5.5K",
-     "best": "Simple, rounded mascot-style logos",
-     "install": "npx skills@latest add s1dashu/ip-as-logo-skill --global"
-    },
-    {
-     "name": "Skill Recorder",
-     "url": "https://github.com/microsoft/skill-recorder",
-     "by": "Microsoft",
-     "kind": "app",
-     "stars": "4.1K",
-     "best": "Records you doing a task on screen and turns it into a reusable skill",
-     "note": "A desktop app, not a skill: install it from the command on its latest GitHub release page."
-    },
-    {
-     "name": "David Ondrej's skills",
-     "url": "https://github.com/davidondrej/skills",
-     "by": "David Ondrej",
-     "kind": "skill pack",
-     "stars": "4.1K",
-     "best": "A popular creator's personal skill set"
-    },
-    {
-     "name": "Simple English",
-     "url": "https://github.com/AminBlg/SimpleEnglish",
-     "by": "AminBlg",
-     "kind": "skill",
-     "stars": "3.5K",
-     "best": "Makes the AI write docs in plain, simplified technical English",
-     "install": "claude plugin marketplace add AminBlg/SimpleEnglish && claude plugin install simple-english@simple-english"
-    },
-    {
-     "name": "Unlazy",
-     "url": "https://github.com/Leonxlnx/unlazy",
-     "by": "Leonxlnx",
-     "kind": "skill",
-     "stars": "3.5K",
-     "best": "Stops agents cutting corners by splitting work into deeper steps",
-     "install": "npx skills add Leonxlnx/unlazy"
-    },
-    {
-     "name": "Sepia",
-     "url": "https://github.com/Nanako0129/sepia",
-     "by": "Nanako0129",
-     "kind": "skill",
-     "stars": "2.8K",
-     "best": "Rewrites text so it stops sounding AI-written",
-     "install": "claude plugin marketplace add Nanako0129/sepia\nclaude plugin install sepia@sepia --scope user"
-    },
-    {
-     "name": "Scroll Craft",
-     "url": "https://github.com/nateherkai/scroll-craft",
-     "by": "Nate Herk",
-     "kind": "skill",
-     "stars": "2.7K",
-     "best": "Premium, scroll-driven websites",
-     "install": "/plugin marketplace add nateherkai/scroll-craft\n/plugin install nateherk-design"
-    },
-    {
-     "name": "Vox Director",
-     "url": "https://github.com/Alisa0808/vox-director",
-     "by": "Alisa0808",
-     "kind": "skill",
-     "stars": "2K",
-     "best": "One topic in, a Vox-style paper-collage explainer out",
-     "install": "git clone https://github.com/Alisa0808/vox-director.git ~/.claude/skills/vox-director"
-    },
-    {
-     "name": "Anything2Explainer",
-     "url": "https://github.com/Vincentwei1021/anything2explainer",
-     "by": "Vincent Wei",
-     "kind": "skill",
-     "stars": "2K",
-     "best": "Topic in, narrated motion-graphics explainer out",
-     "install": "git clone https://github.com/Vincentwei1021/anything2explainer.git\nln -s \"$PWD/anything2explainer\" ~/.claude/skills/anything2explainer"
-    },
-    {
-     "name": "TypeSafe skills",
-     "url": "https://github.com/typesafe-ai/skills",
-     "by": "TypeSafe",
-     "kind": "skill pack",
-     "stars": "2K",
-     "best": "Build apps on Jev with the agent guiding you",
-     "seen": "jev-vs-chatgpt",
-     "install": "claude plugin marketplace add typesafe-ai/skills\nclaude plugin install typesafe@typesafe-ai"
-    },
-    {
-     "name": "Headcount",
-     "url": "https://github.com/cbrock84/headcount",
-     "by": "cbrock84",
-     "kind": "skill pack",
-     "stars": "1.7K",
-     "best": "125+ skills organised like the departments of a company",
-     "install": "/plugin marketplace add cbrock84/headcount\n/plugin install security@headcount"
-    },
-    {
-     "name": "Frontend Design",
-     "url": "https://github.com/anthropics/claude-plugins-official",
-     "by": "Anthropic",
-     "kind": "plugin",
-     "best": "Websites that don't look AI-made",
-     "install": "# in Claude Code\n/plugin install frontend-design@claude-plugins-official"
-    }
-   ]
-  },
-  {
-   "id": "dictation",
-   "name": "Dictation & voice typing",
-   "icon": "🎙️",
-   "blurb": "Talk instead of type, in any app. For most people speaking is faster than typing.",
-   "items": [
-    {
-     "name": "Wispr Flow",
-     "url": "https://wisprflow.ai",
-     "by": "Wispr",
-     "best": "Dictation in every app, cleaned up as you speak",
-     "top": true
-    },
-    {
-     "name": "Typeless",
-     "url": "https://www.typeless.com",
-     "by": "Typeless",
-     "best": "Voice typing that removes filler words and fixes phrasing"
-    },
-    {
-     "name": "Superwhisper",
-     "url": "https://superwhisper.com",
-     "by": "Superwhisper",
-     "best": "Dictation with custom modes, can run offline"
-    },
-    {
-     "name": "Aqua Voice",
-     "url": "https://aquavoice.com",
-     "by": "Aqua",
-     "best": "Fast dictation with voice editing commands"
-    },
-    {
-     "name": "whisper.cpp",
-     "url": "https://github.com/ggml-org/whisper.cpp",
-     "by": "open source",
-     "kind": "free",
-     "best": "Free, private speech-to-text on your own computer"
-    },
-    {
-     "name": "Willow",
-     "url": "https://willowvoice.com",
-     "by": "Willow",
-     "best": "Polished dictation on Mac, Windows and iPhone"
-    },
-    {
-     "name": "Monologue",
-     "url": "https://www.monologue.to",
-     "by": "Every",
-     "best": "Dictation that adapts to email, notes, chat or code"
-    },
-    {
-     "name": "VoiceInk",
-     "url": "https://tryvoiceink.com",
-     "by": "open source",
-     "kind": "open source",
-     "best": "Dictation that runs fully on your Mac"
-    }
-   ]
-  },
-  {
-   "id": "notetakers",
-   "name": "Meeting note takers",
-   "icon": "📝",
-   "blurb": "Record, transcribe and summarize meetings.",
-   "items": [
-    {
-     "name": "Granola",
-     "url": "https://www.granola.ai",
-     "by": "Granola",
-     "best": "Notes that build on yours, with no bot joining the call",
-     "top": true
-    },
-    {
-     "name": "Otter",
-     "url": "https://otter.ai",
-     "by": "Otter.ai",
-     "best": "Live transcripts for meetings and lectures"
-    },
-    {
-     "name": "Fireflies",
-     "url": "https://fireflies.ai",
-     "by": "Fireflies",
-     "best": "Searchable records of every team call"
-    },
-    {
-     "name": "Fathom",
-     "url": "https://www.fathom.video",
-     "by": "Fathom",
-     "best": "Free call summaries for Zoom, Meet and Teams"
-    },
-    {
-     "name": "tl;dv",
-     "url": "https://tldv.io",
-     "by": "tl;dv",
-     "best": "Clips and summaries from recorded calls"
-    },
-    {
-     "name": "Fellow",
-     "url": "https://fellow.ai",
-     "by": "Fellow",
-     "best": "Agendas, notes and follow-ups for team meetings"
-    },
-    {
-     "name": "Laxis",
-     "url": "https://www.laxis.com",
-     "by": "Laxis",
-     "best": "Bot-free notes that sync to HubSpot and Salesforce"
-    }
-   ]
-  },
-  {
-   "id": "writing",
-   "name": "Writing, notes & research",
-   "icon": "📚",
-   "blurb": "Thinking, studying and writing things down.",
-   "items": [
-    {
-     "name": "NotebookLM",
-     "url": "https://notebooklm.google.com",
-     "by": "Google",
-     "best": "Ask questions of your own documents, even as a podcast",
-     "top": true
-    },
-    {
-     "name": "Notion",
-     "url": "https://www.notion.com",
-     "by": "Notion",
-     "best": "Docs, wikis and databases with AI built in"
-    },
-    {
-     "name": "Obsidian",
-     "url": "https://obsidian.md",
-     "by": "Obsidian",
-     "best": "Private notes stored as files you own"
-    },
-    {
-     "name": "Grammarly",
-     "url": "https://www.grammarly.com",
-     "by": "Grammarly",
-     "best": "Fixing writing everywhere you type"
-    },
-    {
-     "name": "Consensus",
-     "url": "https://consensus.app",
-     "by": "Consensus",
-     "best": "Answers drawn from research papers"
-    },
-    {
-     "name": "Elicit",
-     "url": "https://elicit.com",
-     "by": "Elicit",
-     "best": "Finding and summarizing academic studies"
-    }
-   ]
-  },
-  {
-   "id": "email",
-   "name": "Email",
-   "icon": "✉️",
-   "blurb": "Inboxes that sort, draft and follow up for you.",
-   "items": [
-    {
-     "name": "Superhuman",
-     "url": "https://superhuman.com",
-     "by": "Superhuman",
-     "best": "The fastest inbox for people who live in email",
-     "top": true
-    },
-    {
-     "name": "Shortwave",
-     "url": "https://www.shortwave.com",
-     "by": "Shortwave",
-     "best": "An AI assistant on top of Gmail"
-    },
-    {
-     "name": "Fyxer",
-     "url": "https://www.fyxer.com",
-     "by": "Fyxer",
-     "best": "Drafts replies in your voice, inside Gmail or Outlook"
-    },
-    {
-     "name": "Spark",
-     "url": "https://sparkmailapp.com",
-     "by": "Readdle",
-     "best": "A tidy, free email app with AI help"
-    }
-   ]
-  },
-  {
-   "id": "planning",
-   "name": "Calendar & daily planning",
-   "icon": "📅",
-   "blurb": "Let AI fit your tasks into your day.",
-   "items": [
-    {
-     "name": "Motion",
-     "url": "https://www.usemotion.com",
-     "by": "Motion",
-     "best": "Auto-scheduling tasks and projects into your calendar"
-    },
-    {
-     "name": "Reclaim",
-     "url": "https://reclaim.ai",
-     "by": "Reclaim",
-     "best": "Protecting focus time and habits in Google Calendar"
-    },
-    {
-     "name": "Sunsama",
-     "url": "https://www.sunsama.com",
-     "by": "Sunsama",
-     "best": "A calm daily plan from all your task lists"
-    },
-    {
-     "name": "Akiflow",
-     "url": "https://akiflow.com",
-     "by": "Akiflow",
-     "best": "One inbox for tasks from every app"
-    }
-   ]
-  },
-  {
-   "id": "projects",
-   "name": "Project management",
-   "icon": "✅",
-   "blurb": "Tracking work across a team.",
-   "items": [
-    {
-     "name": "Linear",
-     "url": "https://linear.app",
-     "by": "Linear",
-     "best": "Fast issue tracking for product teams"
-    },
-    {
-     "name": "ClickUp",
-     "url": "https://clickup.com",
-     "by": "ClickUp",
-     "best": "Tasks, docs and goals in one place"
-    },
-    {
-     "name": "Asana",
-     "url": "https://asana.com",
-     "by": "Asana",
-     "best": "Cross-team projects and timelines"
-    },
-    {
-     "name": "monday.com",
-     "url": "https://monday.com",
-     "by": "monday.com",
-     "best": "Visual boards for any kind of workflow"
-    }
-   ]
-  },
-  {
-   "id": "crm",
-   "name": "CRM & sales",
-   "icon": "🤝",
-   "blurb": "Keeping track of customers, leads and deals.",
-   "items": [
-    {
-     "name": "Attio",
-     "url": "https://attio.com",
-     "by": "Attio",
-     "best": "A flexible CRM that fills itself in from email and calendar"
-    },
-    {
-     "name": "HubSpot",
-     "url": "https://www.hubspot.com",
-     "by": "HubSpot",
-     "best": "All-in-one marketing, sales and support"
-    },
-    {
-     "name": "folk",
-     "url": "https://www.folk.app",
-     "by": "folk",
-     "best": "A simple CRM for small teams and creators"
-    },
-    {
-     "name": "Clay",
-     "url": "https://www.clay.com",
-     "by": "Clay",
-     "best": "Researching and enriching lead lists with AI"
-    }
-   ]
-  },
-  {
-   "id": "money",
-   "name": "Finance, expenses & banking",
-   "icon": "💳",
-   "blurb": "Business banking, spending and bookkeeping.",
-   "items": [
-    {
-     "name": "Ramp",
-     "url": "https://ramp.com",
-     "by": "Ramp",
-     "best": "Company cards with expenses sorted automatically"
-    },
-    {
-     "name": "Brex",
-     "url": "https://www.brex.com",
-     "by": "Brex",
-     "best": "Cards and spend control for startups"
-    },
-    {
-     "name": "Mercury",
-     "url": "https://mercury.com",
-     "by": "Mercury",
-     "best": "Business banking built for startups"
-    },
-    {
-     "name": "Expensify",
-     "url": "https://www.expensify.com",
-     "by": "Expensify",
-     "best": "Snap a receipt, get an expense report"
-    },
-    {
-     "name": "QuickBooks",
-     "url": "https://quickbooks.intuit.com",
-     "by": "Intuit",
-     "best": "Small-business accounting with AI help"
-    },
-    {
-     "name": "Copilot Money",
-     "url": "https://www.copilot.money",
-     "by": "Copilot",
-     "best": "Personal budgeting and spending tracking"
-    },
-    {
-     "name": "Stripe",
-     "url": "https://stripe.com",
-     "by": "Stripe",
-     "best": "Online payments and invoices; its official MCP server lets an AI agent create payment links, invoices and refunds"
-    }
-   ]
-  },
-  {
-   "id": "browsers",
-   "name": "AI browsers",
-   "icon": "🌐",
-   "blurb": "Browsers with an assistant that can read and act on the page.",
-   "items": [
-    {
-     "name": "Comet",
-     "url": "https://www.perplexity.ai/comet",
-     "by": "Perplexity",
-     "best": "A browser that researches and does tasks for you"
-    },
-    {
-     "name": "ChatGPT Atlas",
-     "url": "https://chatgpt.com/atlas",
-     "by": "OpenAI",
-     "best": "ChatGPT built into the browser"
-    },
-    {
-     "name": "Dia",
-     "url": "https://www.diabrowser.com",
-     "by": "The Browser Company",
-     "best": "Chatting with your open tabs"
-    }
-   ]
-  },
-  {
-   "id": "models",
-   "name": "AI models for your apps",
-   "icon": "🔌",
-   "blurb": "Putting AI inside something you're building, or running it yourself.",
-   "items": [
-    {
-     "name": "Claude API",
-     "url": "https://www.anthropic.com/api",
-     "by": "Anthropic",
-     "best": "Writing, agents and long context in your own software"
-    },
-    {
-     "name": "OpenAI API",
-     "url": "https://platform.openai.com",
-     "by": "OpenAI",
-     "best": "General-purpose text, image and voice models"
-    },
-    {
-     "name": "Google AI Studio",
-     "url": "https://aistudio.google.com",
-     "by": "Google",
-     "best": "Trying Gemini models for free, then building"
-    },
-    {
-     "name": "Jev",
-     "url": "https://typesafe.ai",
-     "by": "TypeSafe",
-     "kind": "early access",
-     "best": "Fast yes/no and pick-one decisions, priced on input only",
-     "seen": "jev-vs-chatgpt"
-    },
-    {
-     "name": "OpenRouter",
-     "url": "https://openrouter.ai",
-     "by": "OpenRouter",
-     "best": "One API key for hundreds of models"
-    },
-    {
-     "name": "Hugging Face",
-     "url": "https://huggingface.co",
-     "by": "Hugging Face",
-     "best": "Finding and trying open models"
-    },
-    {
-     "name": "Ollama",
-     "url": "https://ollama.com",
-     "by": "open source",
-     "kind": "free",
-     "best": "Running open models on your own computer",
-     "stars": "182K"
-    },
-    {
-     "name": "LM Studio",
-     "url": "https://lmstudio.ai",
-     "by": "LM Studio",
-     "kind": "free",
-     "best": "Local models with a friendly desktop app"
-    }
-   ]
-  },
-  {
-   "id": "build",
-   "name": "Build with AI",
-   "icon": "🛠️",
-   "blurb": "Open-source building blocks developers use to make AI apps, agents and pipelines.",
-   "items": [
-    {
-     "name": "DeepSeek Harness",
-     "url": "https://github.com/deepseek-ai/deepseek-harness",
-     "by": "DeepSeek",
-     "kind": "open source",
-     "stars": "234K",
-     "best": "DeepSeek's open agent harness, built so everything is a plugin"
-    },
-    {
-     "name": "Firecrawl",
-     "url": "https://github.com/firecrawl/firecrawl",
-     "by": "Firecrawl",
-     "kind": "open source",
-     "stars": "184K",
-     "best": "Turns websites into clean data for AI"
-    },
-    {
-     "name": "Transformers",
-     "url": "https://github.com/huggingface/transformers",
-     "by": "Hugging Face",
-     "kind": "open source",
-     "stars": "167K",
-     "best": "The library for running and training open models"
-    },
-    {
-     "name": "Dify",
-     "url": "https://github.com/langgenius/dify",
-     "by": "LangGenius",
-     "kind": "open source",
-     "stars": "157K",
-     "best": "Build agent workflows and RAG apps visually, cloud or self-hosted"
-    },
-    {
-     "name": "Langflow",
-     "url": "https://github.com/langflow-ai/langflow",
-     "by": "Langflow",
-     "kind": "open source",
-     "stars": "155K",
-     "best": "A drag-and-drop builder for AI agents and workflows"
-    },
-    {
-     "name": "Open WebUI",
-     "url": "https://github.com/open-webui/open-webui",
-     "by": "Open WebUI",
-     "kind": "open source",
-     "stars": "153K",
-     "best": "A ChatGPT-style interface for local or your own models"
-    },
-    {
-     "name": "LangChain",
-     "url": "https://github.com/langchain-ai/langchain",
-     "by": "LangChain",
-     "kind": "open source",
-     "stars": "147K",
-     "best": "The widely used framework for building agents in code"
-    },
-    {
-     "name": "llama.cpp",
-     "url": "https://github.com/ggml-org/llama.cpp",
-     "by": "ggml",
-     "kind": "open source",
-     "stars": "129K",
-     "best": "Runs language models fast on ordinary hardware"
-    },
-    {
-     "name": "Plaid",
-     "url": "https://plaid.com",
-     "by": "Plaid",
-     "kind": "for developers",
-     "best": "Connects your own app to people's bank accounts; its MCP server helps you debug that connection with AI"
-    },
-    {
-     "name": "WhatsApp Cloud API",
-     "url": "https://developers.facebook.com/docs/whatsapp/cloud-api",
-     "by": "Meta",
-     "best": "Meta's official way to send and receive WhatsApp messages from your own code, like an AI agent"
-    },
-    {
-     "name": "Kapso",
-     "url": "https://kapso.com",
-     "by": "Kapso",
-     "best": "Gives an AI agent its own WhatsApp number on the official Cloud API, with Claude Code skills to build it",
-     "install": "npx skills add gokapso/agent-skills",
-     "note": "The skills are labeled alpha. Meta's 24-hour window, opt-in and AI rules still apply."
-    }
-   ]
-  },
-  {
-   "id": "voice",
-   "name": "Voice, music & audio",
-   "icon": "🔊",
-   "blurb": "Voiceover, music and cleaning up recordings.",
-   "items": [
-    {
-     "name": "ElevenLabs",
-     "url": "https://elevenlabs.io",
-     "by": "ElevenLabs",
-     "best": "Realistic voiceover, voice design, dubbing and music",
-     "top": true
-    },
-    {
-     "name": "Suno",
-     "url": "https://suno.com",
-     "by": "Suno",
-     "best": "Full songs with vocals from a prompt"
-    },
-    {
-     "name": "Udio",
-     "url": "https://www.udio.com",
-     "by": "Udio",
-     "best": "Music generation with fine control"
-    },
-    {
-     "name": "Adobe Podcast",
-     "url": "https://podcast.adobe.com",
-     "by": "Adobe",
-     "best": "Making a bad mic recording sound studio-clean"
-    },
-    {
-     "name": "Fish Audio",
-     "url": "https://fish.audio",
-     "by": "Fish Audio",
-     "best": "Expressive voices in 80+ languages with emotion control"
-    },
-    {
-     "name": "Speechify",
-     "url": "https://speechify.com",
-     "by": "Speechify",
-     "best": "Listen to anything read aloud in natural voices"
-    },
-    {
-     "name": "Murf",
-     "url": "https://murf.ai",
-     "by": "Murf",
-     "best": "Studio voiceovers for training and marketing videos"
-    },
-    {
-     "name": "Stable Audio",
-     "url": "https://stableaudio.com",
-     "by": "Stability AI",
-     "best": "Music and sound effects from a prompt"
-    },
-    {
-     "name": "Chatterbox",
-     "url": "https://github.com/resemble-ai/chatterbox",
-     "by": "Resemble AI",
-     "kind": "open source",
-     "best": "Free open-source text-to-speech you can run yourself"
-    }
-   ]
-  },
-  {
-   "id": "image",
-   "name": "Image generation",
-   "icon": "🎨",
-   "blurb": "Pictures from a prompt, or edits to ones you have. The leaders by blind-vote rankings come first.",
-   "items": [
-    {
-     "name": "GPT Image 2",
-     "url": "https://chatgpt.com",
-     "by": "OpenAI",
-     "best": "Top of the blind-vote image leaderboards; great with text in images"
-    },
-    {
-     "name": "Nano Banana Pro",
-     "url": "https://gemini.google.com",
-     "by": "Google",
-     "best": "Keeping a character consistent across edits"
-    },
-    {
-     "name": "Midjourney",
-     "url": "https://www.midjourney.com",
-     "by": "Midjourney",
-     "best": "Striking, artistic images"
-    },
-    {
-     "name": "FLUX.2",
-     "url": "https://bfl.ai",
-     "by": "Black Forest Labs",
-     "best": "Detailed images that follow the prompt closely"
-    },
-    {
-     "name": "Seedream 5.0",
-     "url": "https://seed.bytedance.com/en/seedream5_0_pro",
-     "by": "ByteDance",
-     "best": "Dense, editable images that split into layers for Figma or Photoshop"
-    },
-    {
-     "name": "Grok Imagine",
-     "url": "https://grok.com/imagine",
-     "by": "xAI",
-     "best": "Fast images and short clips inside Grok"
-    },
-    {
-     "name": "Ideogram",
-     "url": "https://ideogram.ai",
-     "by": "Ideogram",
-     "best": "Logos and text-heavy designs"
-    },
-    {
-     "name": "Recraft",
-     "url": "https://www.recraft.ai",
-     "by": "Recraft",
-     "best": "Vector art, icons and on-brand illustrations"
-    },
-    {
-     "name": "Adobe Firefly",
-     "url": "https://firefly.adobe.com",
-     "by": "Adobe",
-     "best": "Commercially safe images inside Adobe apps"
-    },
-    {
-     "name": "Krea",
-     "url": "https://www.krea.ai",
-     "by": "Krea",
-     "best": "Real-time image generation and upscaling"
-    },
-    {
-     "name": "Leonardo",
-     "url": "https://leonardo.ai",
-     "by": "Leonardo",
-     "best": "Game art, characters and product shots"
-    },
-    {
-     "name": "ComfyUI",
-     "url": "https://github.com/Comfy-Org/ComfyUI",
-     "by": "Comfy Org",
-     "kind": "open source",
-     "stars": "135K",
-     "best": "Node-based image and video generation you run yourself"
-    },
-    {
-     "name": "Stable Diffusion web UI",
-     "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
-     "by": "AUTOMATIC1111",
-     "kind": "open source",
-     "stars": "165K",
-     "best": "The classic self-hosted Stable Diffusion interface"
-    }
-   ]
-  },
-  {
-   "id": "video",
-   "name": "Video generation",
-   "icon": "🎬",
-   "blurb": "Clips from text or a still image, and AI presenters. Models change fast; these are the ones leading blind-vote leaderboards now.",
-   "items": [
-    {
-     "name": "Higgsfield",
-     "url": "https://higgsfield.ai",
-     "by": "Higgsfield",
-     "best": "One app for the top video and image models (Kling, Veo, Seedance, Nano Banana and more), with camera-move presets",
-     "top": true
-    },
-    {
-     "name": "Kling 3.0",
-     "url": "https://klingai.com",
-     "by": "Kuaishou",
-     "best": "Top of the blind-vote text-to-video leaderboards; realistic motion"
-    },
-    {
-     "name": "Veo",
-     "url": "https://deepmind.google/models/veo/",
-     "by": "Google DeepMind",
-     "best": "Google's cinematic video model, with sound and dialogue"
-    },
-    {
-     "name": "Seedance 2.5",
-     "url": "https://seed.bytedance.com/en/seedance2_5",
-     "by": "ByteDance",
-     "best": "Up to 30-second videos with audio and multi-shot storytelling"
-    },
-    {
-     "name": "Happy Horse",
-     "url": "https://fal.ai/happyhorse-1.0",
-     "by": "Alibaba",
-     "best": "Top-ranked open model for text- and image-to-video, with audio"
-    },
-    {
-     "name": "Gemini Omni Flash",
-     "url": "https://deepmind.google/models/gemini-omni/",
-     "by": "Google",
-     "best": "Fast video generation you can edit by chatting; top for image-to-video"
-    },
-    {
-     "name": "Sora",
-     "url": "https://openai.com/sora",
-     "by": "OpenAI",
-     "best": "Story-driven clips and remixes"
-    },
-    {
-     "name": "Wan",
-     "url": "https://wan.video",
-     "by": "Alibaba",
-     "kind": "open weights",
-     "best": "Open-weight video generation with native audio"
-    },
-    {
-     "name": "Runway",
-     "url": "https://runwayml.com",
-     "by": "Runway",
-     "best": "Video generation, plus editing and extending real footage"
-    },
-    {
-     "name": "Luma",
-     "url": "https://lumalabs.ai",
-     "by": "Luma AI",
-     "best": "Smooth camera moves and 3D-feeling shots"
-    },
-    {
-     "name": "Hailuo",
-     "url": "https://hailuoai.video",
-     "by": "MiniMax",
-     "best": "Expressive character motion"
-    },
-    {
-     "name": "PixVerse",
-     "url": "https://pixverse.ai",
-     "by": "PixVerse",
-     "best": "Quick stylized clips and effects for social"
-    },
-    {
-     "name": "HeyGen",
-     "url": "https://www.heygen.com",
-     "by": "HeyGen",
-     "best": "Talking AI avatars and video translation"
-    },
-    {
-     "name": "Synthesia",
-     "url": "https://www.synthesia.io",
-     "by": "Synthesia",
-     "best": "Training and explainer videos with AI presenters"
-    },
-    {
-     "name": "MoneyPrinterTurbo",
-     "url": "https://github.com/harry0703/MoneyPrinterTurbo",
-     "by": "harry0703",
-     "kind": "open source",
-     "stars": "125K",
-     "best": "Makes a short video from a topic or keyword, end to end"
-    }
-   ]
-  },
-  {
-   "id": "editing",
-   "name": "Video editing & clipping",
-   "icon": "✂️",
-   "blurb": "Putting it together, and cutting long videos into shorts.",
-   "items": [
-    {
-     "name": "Remotion",
-     "url": "https://www.remotion.dev",
-     "by": "open source",
-     "best": "Making videos with code"
-    },
-    {
-     "name": "CapCut",
-     "url": "https://www.capcut.com",
-     "by": "ByteDance",
-     "best": "Quick short-form edits with auto captions"
-    },
-    {
-     "name": "Descript",
-     "url": "https://www.descript.com",
-     "by": "Descript",
-     "best": "Edit a video by editing its transcript"
-    },
-    {
-     "name": "DaVinci Resolve",
-     "url": "https://www.blackmagicdesign.com/products/davinciresolve",
-     "by": "Blackmagic Design",
-     "kind": "free",
-     "best": "Pro editing and color, generous free version"
-    },
-    {
-     "name": "Opus Clip",
-     "url": "https://www.opus.pro",
-     "by": "Opus",
-     "best": "Turning a long video into ready-to-post shorts"
-    },
-    {
-     "name": "Submagic",
-     "url": "https://www.submagic.co",
-     "by": "Submagic",
-     "best": "Animated captions for shorts"
-    },
-    {
-     "name": "Captions",
-     "url": "https://www.captions.ai",
-     "by": "Captions",
-     "best": "Talking-head edits and captions on your phone"
-    }
-   ]
-  },
-  {
-   "id": "screen",
-   "name": "Screen recording",
-   "icon": "🖥️",
-   "blurb": "Demos, tutorials and walkthroughs.",
-   "items": [
-    {
-     "name": "Loom",
-     "url": "https://www.loom.com",
-     "by": "Atlassian",
-     "best": "Quick async video messages for work"
-    },
-    {
-     "name": "Screen Studio",
-     "url": "https://screen.studio",
-     "by": "Screen Studio",
-     "best": "Polished demos with automatic zooms (Mac)"
-    },
-    {
-     "name": "Tella",
-     "url": "https://www.tella.tv",
-     "by": "Tella",
-     "best": "Recording tutorials and courses"
-    },
-    {
-     "name": "OBS Studio",
-     "url": "https://obsproject.com",
-     "by": "open source",
-     "kind": "free",
-     "best": "Free recording and live streaming"
-    }
-   ]
-  },
-  {
-   "id": "design",
-   "name": "Design, slides & sites",
-   "icon": "📐",
-   "blurb": "Thumbnails, decks, diagrams and websites.",
-   "items": [
-    {
-     "name": "Excalidraw",
-     "url": "https://excalidraw.com",
-     "by": "open source",
-     "kind": "free",
-     "best": "Hand-drawn diagrams for explaining things",
-     "stars": "133K"
-    },
-    {
-     "name": "Canva",
-     "url": "https://www.canva.com",
-     "by": "Canva",
-     "best": "Social graphics and thumbnails from templates"
-    },
-    {
-     "name": "Gamma",
-     "url": "https://gamma.app",
-     "by": "Gamma",
-     "best": "Slide decks and docs from a prompt"
-    },
-    {
-     "name": "Figma",
-     "url": "https://www.figma.com",
-     "by": "Figma",
-     "best": "Designing apps and websites"
-    },
-    {
-     "name": "Framer",
-     "url": "https://www.framer.com",
-     "by": "Framer",
-     "best": "Publishing a designed website without code"
-    }
-   ]
-  },
-  {
-   "id": "automation",
-   "name": "Automation",
-   "icon": "⚙️",
-   "blurb": "Connecting apps so work happens on its own.",
-   "items": [
-    {
-     "name": "Zapier",
-     "url": "https://zapier.com",
-     "by": "Zapier",
-     "best": "Connecting thousands of apps, no code"
-    },
-    {
-     "name": "Workato",
-     "url": "https://www.workato.com",
-     "by": "Workato",
-     "kind": "enterprise",
-     "best": "Company-wide automation and integrations with enterprise security"
-    },
-    {
-     "name": "Make",
-     "url": "https://www.make.com",
-     "by": "Make",
-     "best": "Visual automations with branching logic"
-    },
-    {
-     "name": "n8n",
-     "url": "https://n8n.io",
-     "by": "open source",
-     "best": "Self-hostable automations with AI steps",
-     "stars": "206K"
-    }
-   ]
-  },
-  {
-   "id": "posting",
-   "name": "Posting & growth",
-   "icon": "📈",
-   "blurb": "Getting it out there on a schedule.",
-   "items": [
-    {
-     "name": "Buffer",
-     "url": "https://buffer.com",
-     "by": "Buffer",
-     "best": "Scheduling posts across every platform from one queue"
-    },
-    {
-     "name": "Blotato",
-     "url": "https://www.blotato.com",
-     "by": "Blotato",
-     "best": "Posts to 9 platforms from one place; an MCP server lets Claude schedule them, plus n8n and Make nodes"
-    },
-    {
-     "name": "ManyChat",
-     "url": "https://manychat.com",
-     "by": "ManyChat",
-     "best": "Auto-DMs for 'comment LINK and I'll send it' posts"
-    },
-    {
-     "name": "Metricool",
-     "url": "https://metricool.com",
-     "by": "Metricool",
-     "best": "Scheduling plus analytics for creators"
-    }
-   ]
-  },
-  {
-   "id": "learn",
-   "name": "Learn AI",
-   "icon": "🎓",
-   "blurb": "Free courses, prompt libraries, example apps and roadmaps.",
-   "items": [
-    {
-     "name": "prompts.chat",
-     "url": "https://github.com/f/prompts.chat",
-     "by": "f",
-     "kind": "open source",
-     "stars": "171K",
-     "best": "A community prompt library (formerly Awesome ChatGPT Prompts)"
-    },
-    {
-     "name": "Generative AI for Beginners",
-     "url": "https://github.com/microsoft/generative-ai-for-beginners",
-     "by": "Microsoft",
-     "kind": "free course",
-     "stars": "120K",
-     "best": "Microsoft's free 21-lesson course on building with generative AI"
-    },
-    {
-     "name": "Awesome LLM Apps",
-     "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
-     "by": "Shubham Saboo",
-     "kind": "open source",
-     "stars": "139K",
-     "best": "100+ open-source agent and RAG app examples to learn from"
-    },
-    {
-     "name": "Developer Roadmap",
-     "url": "https://github.com/nilbuild/developer-roadmap",
-     "by": "roadmap.sh",
-     "kind": "free",
-     "stars": "368K",
-     "best": "Step-by-step roadmaps for developer careers, AI included"
-    }
-   ]
-  }
- ],
- "trending": [
-  "Claude",
-  "ChatGPT",
-  "Claude Code",
-  "Gemini",
-  "Jev",
-  "Higgsfield",
-  "ElevenLabs"
- ]
+  ],
+  "trending": [
+    "Claude",
+    "ChatGPT",
+    "Claude Code",
+    "Gemini",
+    "Jev",
+    "Higgsfield",
+    "ElevenLabs"
+  ]
 }
