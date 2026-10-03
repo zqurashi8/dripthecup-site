@@ -52,3 +52,21 @@ create table if not exists inquiries (
   country  text not null default ''
 );
 create index if not exists inquiries_created on inquiries (created);
+
+-- Emails (added 2026-10-03). The welcome goes out at sign-up through Gmail (see
+-- worker/mail.js); "welcomed" is when it went, "unsub" the random token in the
+-- unsubscribe link, "unsubscribed" when they used it. email_log keeps every send.
+alter table subscribers add column welcomed text not null default '';
+alter table subscribers add column unsub text not null default '';
+alter table subscribers add column unsubscribed text not null default '';
+alter table inquiries add column notified text not null default '';
+create table if not exists email_log (
+  id       integer primary key autoincrement,
+  created  text not null default (datetime('now')),
+  email    text not null,
+  template text not null,
+  status   text not null,               -- sent | failed | held
+  error    text not null default ''
+);
+create index if not exists email_log_email on email_log (email, template, status);
+create index if not exists email_log_created on email_log (created);

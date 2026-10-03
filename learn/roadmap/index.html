@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The roadmap · Learn AI with Zain Qurashi</title>
+<meta name="description" content="Nine levels from zero to AI automation engineer, on one page: what you learn and what you build at each level, and which levels are free.">
+<link rel="canonical" href="https://dripthecup.com/learn/roadmap/">
+<meta property="og:title" content="The roadmap: nine levels from zero to AI automation engineer">
+<meta property="og:image" content="https://dripthecup.com/learn/og-learn.jpg">
+<meta name="theme-color" content="#100D09">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,900;1,9..144,600&family=Press+Start+2P&display=swap">
+<style>
+  :root{--mustard:#E3AC2A;--paper:#F6EFE0;--cup:#F5F1E8;--tile:#EDE6D8;--ink:#1A1A1A;--muted:#6B6155;--line:#D9CFBC;--dark:#100D09;--dim:#CFC4B0;--line-dark:#33291F;
+    --display:'Fraunces',Georgia,'Times New Roman',serif;--body:Georgia,'Times New Roman',serif;--mono:ui-monospace,'Cascadia Mono','Courier New',monospace;--pixel:'Press Start 2P',ui-monospace,monospace;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 var(--body);-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  :focus-visible{outline:3px solid #D63F2A;outline-offset:2px;}
+  .wrap{max-width:900px;margin:0 auto;padding-inline:20px;}
+  .hdr{border-bottom:1px solid var(--line);}
+  .hdr .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:12px;max-width:1160px;}
+  .brand{font-family:var(--display);font-weight:900;font-size:22px;text-decoration:none;}
+  .hnav a{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:7px 9px;}
+  .hnav a:hover{background:var(--mustard);}
+  header.top{padding-block:44px 22px;}
+  .hud{font-family:var(--pixel);font-size:10px;letter-spacing:.04em;line-height:1.8;text-transform:uppercase;color:var(--muted);margin:0;}
+  h1{font-family:var(--display);font-weight:900;font-size:clamp(32px,5vw,52px);line-height:1.02;letter-spacing:-.02em;margin:12px 0 0;}
+  h1 em{font-style:italic;font-weight:600;}
+  .lede{font-size:18px;color:var(--muted);max-width:60ch;margin:16px 0 0;}
+  .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;}
+  .btn{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:13px 18px;border:1.5px solid var(--ink);text-decoration:none;display:inline-block;background:transparent;cursor:pointer;}
+  .btn-mustard{background:var(--mustard);border-color:var(--mustard);}
+  .btn:hover{background:var(--ink);color:var(--paper);}
+  ol.levels{list-style:none;padding:0;margin:10px 0 40px;display:grid;gap:12px;}
+  .lv{border:2px solid var(--ink);background:var(--cup);display:grid;grid-template-columns:64px minmax(0,1fr);}
+  .lv .n{background:var(--mustard);border-right:2px solid var(--ink);display:grid;place-items:center;font-family:var(--pixel);font-size:18px;}
+  .lv.lab .n{background:var(--ink);color:var(--mustard);}
+  .lv .b{padding:14px 18px 16px;}
+  .lv h2{font-family:var(--display);font-weight:600;font-size:22px;line-height:1.15;margin:0 0 6px;display:flex;justify-content:space-between;gap:12px;align-items:baseline;}
+  .tag{flex:none;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--ink);padding:2px 7px;font-weight:400;}
+  .lv.lab .tag{background:var(--ink);color:var(--mustard);}
+  .two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
+  @media (max-width:640px){.two{grid-template-columns:minmax(0,1fr);gap:6px;} .lv{grid-template-columns:48px minmax(0,1fr);}}
+  .two p{margin:0;font-size:15px;}
+  .two b{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:400;}
+  .lv.side{border-style:dashed;}
+  .foot{background:var(--dark);color:var(--dim);font-family:var(--mono);font-size:11px;letter-spacing:.06em;}
+  .foot .wrap{padding-block:26px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;max-width:1160px;}
+  .foot a{color:var(--dim);}
+  @media print{.hdr,.actions,.foot{display:none;} body{background:#fff;} .lv{break-inside:avoid;}}
+</style>
+</head>
+<body>
+<div class="hdr"><div class="wrap"><a class="brand" href="/">DRIP.</a><nav class="hnav"><a href="/learn/">Learn</a><a href="/learn/dictation/">Day one lab</a><a href="/resources/">AI tools</a></nav></div></div>
+
+<main class="wrap">
+  <header class="top">
+    <p class="hud">The roadmap &nbsp;·&nbsp; Zain Qurashi</p>
+    <h1>Nine levels from zero to <em>AI automation engineer.</em></h1>
+    <p class="lede">Every level is a real thing you build, not a quiz. Levels 0, 1, 2 and 4 are free. The Lab adds the full builds, a plan for your level and live help. Print it, or keep it open while you work.</p>
+    <div class="actions"><a class="btn btn-mustard" href="/learn/dictation/">Start level 0 tonight</a><button class="btn" type="button" onclick="window.print()">Print it</button></div>
+  </header>
+
+  <ol class="levels">
+    <li class="lv"><span class="n">0</span><div class="b"><h2>Start here: build your own dictation tool <span class="tag">Free</span></h2>
+      <div class="two"><p><b>You learn</b>What an API key is and where it lives. How to describe a tool to an AI and get a working one back. How to measure what you built.</p><p><b>You build</b>A dictation tool, tonight, in your browser. Then the same tool again, better, as you go. <a href="/learn/dictation/">Open the lab</a></p></div></div></li>
+    <li class="lv"><span class="n">1</span><div class="b"><h2>Curious: how AI talks to software <span class="tag">Free</span></h2>
+      <div class="two"><p><b>You learn</b>What an API is. A prompt is not a question. Keeping keys safe. Tokens, cost, and model vs effort.</p><p><b>You build</b>A script that calls a model, with every line explained.</p></div></div></li>
+    <li class="lv"><span class="n">2</span><div class="b"><h2>Connected: AI that decides <span class="tag">Free</span></h2>
+      <div class="two"><p><b>You learn</b>Decision models: yes or no, pick one, score it. Why context changes the answer.</p><p><b>You build</b>A tool finder that ranks 200 AI tools for a typed task. It runs this site's directory.</p></div></div></li>
+    <li class="lv lab"><span class="n">3</span><div class="b"><h2>Builder: connect AI to your apps <span class="tag">Lab</span></h2>
+      <div class="two"><p><b>You learn</b>APIs, MCP and connectors. What an AI can and can't touch once it's plugged in.</p><p><b>You build</b>Your first MCP server, so an AI can use an app of your choosing.</p></div></div></li>
+    <li class="lv"><span class="n">4</span><div class="b"><h2>Integrator: voice and media <span class="tag">Free</span></h2>
+      <div class="two"><p><b>You learn</b>How voice to text works, end to end, and where it breaks.</p><p><b>You build</b>Version 2 of your dictation tool, on your own computer. The full Scribe app is the Lab build.</p></div></div></li>
+    <li class="lv lab"><span class="n">5</span><div class="b"><h2>Automator: automations and agents <span class="tag">Lab</span></h2>
+      <div class="two"><p><b>You learn</b>Which AI product for which job. Skills, plugins, schedules and webhooks. When an agent is worth it.</p><p><b>You build</b>Your own agent that sorts what you throw at it and briefs you every morning.</p></div></div></li>
+    <li class="lv lab"><span class="n">6</span><div class="b"><h2>Shipper: AI at the enterprise level <span class="tag">Lab</span></h2>
+      <div class="two"><p><b>You learn</b>Why a chat license is not an AI strategy. Identity and access, logging every agent action, cost limits, reliability, governance.</p><p><b>You build</b>A locked-down integration: the AI sees only what that user is allowed to see.</p></div></div></li>
+    <li class="lv lab"><span class="n">7</span><div class="b"><h2>Engineer: portfolio projects <span class="tag">Lab</span></h2>
+      <div class="two"><p><b>You learn</b>How to scope, ship and write up a project someone else can run.</p><p><b>You build</b>Four projects to show an employer or a client.</p></div></div></li>
+    <li class="lv lab"><span class="n">8</span><div class="b"><h2>Architect: automating a character <span class="tag">Case study</span></h2>
+      <div class="two"><p><b>You learn</b>The Drip pipeline: script, voice, animation, posting. And the legal side: AI disclosure, who owns an AI character, voice and likeness rights, sponsorship rules.</p><p><b>You build</b>The same pipeline, the way a company would run it.</p></div></div></li>
+    <li class="lv lab"><span class="n">9</span><div class="b"><h2>Legend: the career <span class="tag">Lab</span></h2>
+      <div class="two"><p><b>You learn</b>What the job is day to day. Portfolio, resume, interviews. Your first freelance automation client.</p><p><b>You build</b>A plan for your next twelve months, reviewed live.</p></div></div></li>
+    <li class="lv lab side"><span class="n">+</span><div class="b"><h2>Side quest: record, edit and make videos with AI <span class="tag">Lab</span></h2>
+      <div class="two"><p><b>You learn</b>Scripts, AI voices, characters animated in code, and the honest part: disclosure and voice rights.</p><p><b>You build</b>Your own recording and edit setup. Members get my Tutorial Recorder app.</p></div></div></li>
+  </ol>
+</main>
+
+<footer class="foot"><div class="wrap"><span>&copy; 2026 Drip the Cup &middot; <a href="/learn/">Learn AI with Zain Qurashi</a> &middot; <a href="/privacy/">Privacy</a></span><span>dripthecup.com/learn/roadmap</span></div></footer>
+</body>
+</html>

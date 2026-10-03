@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light only">
+<title>Business request from {{company}}</title>
+</head>
+<!-- Email template. Everything is inline-styled tables on purpose: mail apps drop
+     <style> blocks, flexbox and web fonts. {{site}} and {{unsubscribe}} are filled in
+     by worker/mail.js. The <title> above is the subject line. -->
+<body style="margin:0;padding:0;background:#F6EFE0;">
+<div class="preheader" style="display:none;max-height:0;overflow:hidden;opacity:0;color:#F6EFE0;font-size:1px;line-height:1px;">{{email}} wants something automated.</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#F6EFE0;">
+<tr><td align="center" style="padding:24px 12px;">
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;background:#FFFDF7;border:2px solid #1A1A1A;">
+  <tr><td style="background:#100D09;padding:16px 24px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+      <td style="font-family:Georgia,'Times New Roman',serif;font-weight:900;font-size:26px;letter-spacing:-.5px;color:#F6EFE0;">DRIP.</td>
+      <td align="right" style="font-family:'Courier New',Courier,monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#E3AC2A;">Work with me</td>
+    </tr></table>
+  </td></tr>
+  <tr><td style="padding:28px 28px 10px;">
+    <h1 style="margin:0;font-family:Georgia,'Times New Roman',serif;font-weight:900;font-size:30px;line-height:1.1;color:#1A1A1A;">A business wants to talk.</h1>
+  </td></tr>
+  <tr><td style="padding:4px 28px 18px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:8px 12px 8px 0;font-family:'Courier New',Courier,monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#6B6155;vertical-align:top;white-space:nowrap;">From</td><td style="padding:8px 0;font-family:Georgia,'Times New Roman',serif;font-size:16px;color:#1A1A1A;border-bottom:1px solid #D9CFBC;">{{email}}</td></tr><tr><td style="padding:8px 12px 8px 0;font-family:'Courier New',Courier,monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#6B6155;vertical-align:top;white-space:nowrap;">Company</td><td style="padding:8px 0;font-family:Georgia,'Times New Roman',serif;font-size:16px;color:#1A1A1A;border-bottom:1px solid #D9CFBC;">{{company}}</td></tr><tr><td style="padding:8px 12px 8px 0;font-family:'Courier New',Courier,monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#6B6155;vertical-align:top;white-space:nowrap;">Country</td><td style="padding:8px 0;font-family:Georgia,'Times New Roman',serif;font-size:16px;color:#1A1A1A;border-bottom:1px solid #D9CFBC;">{{country}}</td></tr></table>
+  </td></tr>
+  <tr><td style="padding:0 28px 16px;font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.6;color:#1A1A1A;">
+    <p style="margin:0 0 8px;font-family:'Courier New',Courier,monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#6B6155;">What they want automated</p>
+    <p style="margin:0;white-space:pre-wrap;">{{message}}</p>
+  </td></tr>
+  <tr><td style="padding:0 28px 22px;font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.6;color:#1A1A1A;">
+    <p style="margin:0;font-size:15px;color:#6B6155;">Hit reply to answer them directly. The page told them you reply by email to set up a free 20-minute call.</p>
+  </td></tr>
+
+  <tr><td style="padding:18px 28px 22px;border-top:1px solid #D9CFBC;font-family:'Courier New',Courier,monospace;font-size:11px;line-height:1.7;color:#6B6155;">
+    Sent by dripthecup.com to you only.
+  </td></tr>
+</table>
+</td></tr>
+</table>
+</body>
+</html>

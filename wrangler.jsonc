@@ -12,6 +12,8 @@
     "not_found_handling": "404-page",
     "run_worker_first": ["/api/*"]
   },
+  // Every 15 minutes: send any welcome email that did not go out at sign-up time.
+  "triggers": { "crons": ["*/15 * * * *"] },
   "d1_databases": [
     {
       // Reservations. Schema and the reason each column exists: worker/schema.sql
