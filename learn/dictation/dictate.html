@@ -1,0 +1,216 @@
+<!doctype html>
+<!--
+  dictate.html: version 1 of the day one lab, the finished reference.
+  Built from prompt 1 at https://dripthecup.com/learn/dictation/
+
+  Yours doesn't have to match this line for line. Compare them: if yours
+  works, it works. If it doesn't, look at how this one handles the same step.
+
+  How it works, in one breath: the browser's built-in speech recognition
+  (Chrome and Edge) listens while you hold the button, shows words as they
+  arrive, and keeps the last 20 dictations in this browser's localStorage.
+  No libraries, no server, no key. Your voice goes to the browser maker's
+  speech service, which is the main thing version 2 fixes.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>dictate: version 1</title>
+<link rel="icon" href="data:,">
+<style>
+  /* Dark theme. Everything is plain CSS so you can read it top to bottom. */
+  :root { --bg: #121212; --card: #1d1d1d; --line: #333; --text: #eee; --dim: #999; --accent: #e3ac2a; --bad: #ff8a65; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.5 system-ui, sans-serif; }
+  main { max-width: 680px; margin: 0 auto; padding: 24px 16px 48px; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .sub { color: var(--dim); margin: 0 0 20px; font-size: 14px; }
+  .sub a { color: var(--accent); }
+  .warn { background: #3a2a12; border: 1px solid var(--accent); padding: 10px 12px; margin: 0 0 16px; font-size: 14px; }
+  .warn[hidden] { display: none; }
+
+  /* The big hold-to-talk button. */
+  #talk { width: 100%; padding: 28px 16px; font-size: 20px; font-weight: 700; border: 2px solid var(--accent);
+          background: var(--card); color: var(--text); cursor: pointer; user-select: none; touch-action: none; }
+  #talk.on { background: var(--accent); color: #111; }
+  #talk:disabled { opacity: .4; cursor: not-allowed; }
+  .hint { color: var(--dim); font-size: 13px; margin: 6px 0 18px; text-align: center; }
+
+  #live { min-height: 26px; color: var(--dim); font-style: italic; margin: 0 0 8px; }
+  textarea { width: 100%; min-height: 120px; background: var(--card); color: var(--text); border: 1px solid var(--line); padding: 12px; font: inherit; resize: vertical; }
+  .row { display: flex; gap: 8px; margin: 8px 0 0; flex-wrap: wrap; }
+  button.small { background: var(--card); color: var(--text); border: 1px solid var(--line); padding: 8px 14px; cursor: pointer; font: inherit; font-size: 14px; }
+  button.small:hover { border-color: var(--accent); }
+
+  .stats { display: flex; gap: 10px; margin: 18px 0; }
+  .stat { flex: 1; background: var(--card); border: 1px solid var(--line); padding: 10px 12px; }
+  .stat b { display: block; font-size: 22px; }
+  .stat span { color: var(--dim); font-size: 12px; }
+
+  h2 { font-size: 15px; margin: 24px 0 8px; color: var(--dim); text-transform: uppercase; letter-spacing: .08em; }
+  #history { list-style: none; margin: 0; padding: 0; }
+  #history li { border-bottom: 1px solid var(--line); padding: 8px 0; font-size: 14px; }
+  #history time { color: var(--dim); font-size: 12px; display: block; }
+  .err { color: var(--bad); min-height: 20px; font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>dictate</h1>
+  <p class="sub">Version 1 of the <a href="https://dripthecup.com/learn/dictation/">day one lab</a>. Hold the button (or the space bar), talk, let go.</p>
+
+  <p class="warn" id="fileWarn" hidden>You opened this as a file, so the browser will probably block the microphone. Open it through a real address instead: in VS Code, use Live Server and click Go Live.</p>
+  <p class="warn" id="noSupport" hidden>This browser doesn't have built-in speech recognition. Open this page in Chrome or Edge.</p>
+
+  <button id="talk" type="button">Hold to talk</button>
+  <p class="hint">or hold the space bar</p>
+
+  <p id="live"></p>
+  <textarea id="out" placeholder="Your words land here."></textarea>
+  <div class="row">
+    <button class="small" id="copy" type="button">Copy</button>
+    <button class="small" id="clear" type="button">Clear</button>
+  </div>
+  <p class="err" id="err"></p>
+
+  <div class="stats">
+    <div class="stat"><b id="words">0</b><span>words this session</span></div>
+    <div class="stat"><b id="lag">-</b><span>seconds from release to final text</span></div>
+  </div>
+
+  <h2>Last 20 dictations</h2>
+  <ul id="history"></ul>
+  <div class="row"><button class="small" id="clearHistory" type="button">Clear history</button></div>
+</main>
+
+<script>
+  // ---- Find the pieces of the page we need. ----
+  const $ = id => document.getElementById(id);
+  const talk = $('talk'), live = $('live'), out = $('out'), err = $('err');
+  const HISTORY_KEY = 'dictate-history';
+
+  // Speech recognition only works on a real address (https or localhost), not file://.
+  if (location.protocol === 'file:') $('fileWarn').hidden = false;
+
+  // Chrome and Edge ship it under a "webkit" prefix.
+  const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!Recognition) { $('noSupport').hidden = false; talk.disabled = true; }
+
+  let rec = null;          // the recognizer for the current dictation
+  let finalText = '';      // finished phrases for this dictation
+  let releasedAt = 0;      // when you let go, to measure the lag
+  let holding = false;
+  let sessionWords = 0;
+
+  // ---- Start listening when you press. ----
+  function start() {
+    if (!Recognition || holding) return;
+    holding = true;
+    finalText = '';
+    live.textContent = 'listening...';
+    err.textContent = '';
+    talk.classList.add('on');
+    talk.textContent = 'Listening. Let go to finish.';
+
+    rec = new Recognition();
+    rec.lang = navigator.language || 'en-US';
+    rec.continuous = true;       // keep listening while the button is held
+    rec.interimResults = true;   // show words before they're final
+
+    // Results arrive in pieces. Final pieces are kept; the rest is a live preview.
+    rec.onresult = e => {
+      let interim = '';
+      for (let i = e.resultIndex; i < e.results.length; i++) {
+        const piece = e.results[i][0].transcript;
+        if (e.results[i].isFinal) finalText += piece + ' ';
+        else interim += piece;
+      }
+      live.textContent = (finalText + interim).trim() || 'listening...';
+    };
+
+    rec.onerror = e => {
+      // "no-speech" just means silence; the others are worth explaining.
+      const why = {
+        'not-allowed': 'The microphone was blocked. Allow it in the address bar, and make sure the page is on a real address, not a file.',
+        'audio-capture': 'No microphone found.',
+        'network': 'The speech service could not be reached. Check your connection.',
+      }[e.error];
+      if (why) err.textContent = why;
+    };
+
+    // onend fires after you let go and the last words are final.
+    rec.onend = () => finish();
+    rec.start();
+  }
+
+  // ---- Stop listening when you let go. ----
+  function stop() {
+    if (!holding) return;
+    holding = false;
+    releasedAt = performance.now();
+    talk.classList.remove('on');
+    talk.textContent = 'Hold to talk';
+    if (rec) rec.stop();   // finish() runs from onend
+  }
+
+  // ---- Put the text in the box, count it, save it. ----
+  function finish() {
+    const text = finalText.trim();
+    live.textContent = '';
+    if (releasedAt) $('lag').textContent = ((performance.now() - releasedAt) / 1000).toFixed(1);
+    rec = null;
+    if (!text) return;
+    out.value = out.value ? out.value + ' ' + text : text;
+    sessionWords += text.split(/\s+/).length;
+    $('words').textContent = sessionWords;
+    saveToHistory(text);
+  }
+
+  // ---- History: the last 20 dictations, kept in this browser only. ----
+  function loadHistory() {
+    try { return JSON.parse(localStorage.getItem(HISTORY_KEY)) || []; } catch { return []; }
+  }
+  function saveToHistory(text) {
+    const list = [{ text, at: new Date().toISOString() }, ...loadHistory()].slice(0, 20);
+    try { localStorage.setItem(HISTORY_KEY, JSON.stringify(list)); } catch {}
+    showHistory();
+  }
+  function showHistory() {
+    const ul = $('history');
+    ul.innerHTML = '';
+    for (const item of loadHistory()) {
+      const li = document.createElement('li');
+      const time = document.createElement('time');
+      time.textContent = new Date(item.at).toLocaleString();
+      li.append(time, item.text);   // append as text, never as HTML
+      ul.append(li);
+    }
+  }
+
+  // ---- Wire up the button: mouse, touch and pen all count as "pointer". ----
+  talk.addEventListener('pointerdown', e => { e.preventDefault(); start(); });
+  talk.addEventListener('pointerup', stop);
+  talk.addEventListener('pointerleave', stop);
+  talk.addEventListener('pointercancel', stop);
+
+  // ---- The space bar works too, unless you're typing in the text box. ----
+  const typing = el => el.tagName === 'TEXTAREA' || el.tagName === 'INPUT';
+  document.addEventListener('keydown', e => {
+    if (e.code === 'Space' && !e.repeat && !typing(e.target)) { e.preventDefault(); start(); }
+  });
+  document.addEventListener('keyup', e => {
+    if (e.code === 'Space' && !typing(e.target)) { e.preventDefault(); stop(); }
+  });
+
+  // ---- The small buttons. ----
+  $('copy').onclick = () => navigator.clipboard.writeText(out.value).then(
+    () => { $('copy').textContent = 'Copied'; setTimeout(() => { $('copy').textContent = 'Copy'; }, 1500); },
+    () => { out.select(); });
+  $('clear').onclick = () => { out.value = ''; };
+  $('clearHistory').onclick = () => { try { localStorage.removeItem(HISTORY_KEY); } catch {} showHistory(); };
+
+  showHistory();
+</script>
+</body>
+</html>

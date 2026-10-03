@@ -10,7 +10,7 @@ Drip the Cup address, using two Worker secrets: `GMAIL_USER` and `GMAIL_APP_PASS
 | `welcome-founding.html` | "Save me a founding seat" at /learn | the subscriber |
 | `notify-signup.html` | Every sign-up, after their welcome goes | the Drip the Cup inbox |
 | `notify-inquiry.html` | Every business request; reply goes to them | the Drip the Cup inbox |
-| `day1-did-it-work.html` | 1 day after a lab or free-path sign-up: the 3 things that break version 1 | the subscriber |
+| `day1-did-it-work.html` | 1 day after a lab or free-path sign-up: the 3 things that break version 1, and a link to my finished version 1 (`/learn/dictation/dictate.html`) | the subscriber |
 | `founding-day2-first-week.html` | 2 days after joining the founding list: pick the first build (reply A to D) | the subscriber |
 | `day3-two-models.html` | 3 days after: models that hear vs models that understand | the subscriber |
 | `day6-my-story.html` | 6 days after: AI didn't take my job, the method | the subscriber |
