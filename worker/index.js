@@ -7,8 +7,8 @@
  * nothing is owed and nothing has to ship by a date.
  *
  * Only /api/* reaches this Worker (see run_worker_first in wrangler.jsonc);
- * every other request is served straight off disk. A cron (also in
- * wrangler.jsonc) sends any welcome email that did not go out the first time.
+ * every other request is served straight off disk. Any welcome email that did
+ * not go out the first time is retried on the next sign-up (see catchUp).
  */
 import { welcome, notifyInquiry, catchUp } from './mail.js';
 
@@ -146,7 +146,8 @@ async function subscribe(request, env, ctx) {
     ).bind(new Date().toISOString(), email, source, interest, (request.cf && request.cf.country) || '', crypto.randomUUID()),
   ]);
 
-  ctx.waitUntil(welcome(env, email).catch(() => {})); // the cron retries anything that fails here
+  // Welcome this person, then retry anyone still waiting (no secrets yet, a Gmail hiccup).
+  ctx.waitUntil(welcome(env, email).then(() => catchUp(env)).catch(() => {}));
   return json({ ok: true });
 }
 
@@ -190,7 +191,7 @@ async function inquire(request, env, ctx) {
   ]);
 
   const id = saved && saved.meta && saved.meta.last_row_id;
-  if (id) ctx.waitUntil(notifyInquiry(env, id).catch(() => {}));
+  if (id) ctx.waitUntil(notifyInquiry(env, id).then(() => catchUp(env)).catch(() => {}));
   return json({ ok: true });
 }
 
@@ -231,8 +232,5 @@ export default {
     if (pathname === '/api/unsubscribe') return unsubscribe(request, env);
     if (pathname.startsWith('/api/')) return json({ error: 'not found' }, 404);
     return env.ASSETS.fetch(request);
-  },
-  async scheduled(event, env, ctx) {
-    ctx.waitUntil(catchUp(env));
   },
 };

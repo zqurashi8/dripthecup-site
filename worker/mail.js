@@ -149,11 +149,11 @@ export async function notifyInquiry(env, id) {
   if (ok) await env.DB.prepare('update inquiries set notified = ?2 where id = ?1').bind(id, new Date().toISOString()).run();
 }
 
-/** The cron: anything that did not go out the first time (no secrets yet, Gmail hiccup). */
+/** Anything that did not go out the first time (no secrets yet, a Gmail hiccup). Runs after each sign-up. */
 export async function catchUp(env) {
   if (!env.GMAIL_USER || !env.GMAIL_APP_PASSWORD) return;
   const waiting = await env.DB.prepare(
-    "select email from subscribers where welcomed = '' and unsubscribed = '' and created > ?1 order by created limit 20"
+    "select email from subscribers where welcomed = '' and unsubscribed = '' and created > ?1 order by created limit 10"
   ).bind(new Date(Date.now() - 7 * 864e5).toISOString()).all();
   for (const r of waiting.results || []) await welcome(env, r.email);
   const open = await env.DB.prepare("select id from inquiries where notified = '' order by id limit 10").all();

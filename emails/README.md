@@ -18,5 +18,5 @@ Editing:
   `{{email}}`, `{{source}}`, `{{interest}}`, `{{country}}`, `{{total}}`, `{{company}}`, `{{message}}`.
 - No em dashes. Push to main and the next email uses the new file.
 
-Limits: personal Gmail sends up to 500 a day; the worker stops at 450 and the cron
-(every 15 minutes) catches up later. Every send is in the D1 table `email_log`.
+Limits: personal Gmail sends up to 500 a day; the worker stops at 450. Anything that
+did not go out is retried after the next sign-up. Every send is in the D1 table `email_log`.
