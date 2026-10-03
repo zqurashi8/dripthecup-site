@@ -66,7 +66,8 @@
      "kind": "report",
      "what": "Memory makers prioritising AI and servers, and what that does to prices."
     }
-   ]
+   ],
+   "tiktok": "https://www.tiktok.com/@dripthecup/video/7691977996630101262"
   },
   {
    "id": "mcp-explained",
@@ -103,6 +104,457 @@
      "what": "The kitchen in our restaurant: what a Gmail MCP server calls behind the scenes."
     }
    ]
+  },
+  {
+   "id": "claude-code-superpowers",
+   "title": "4 Claude Code plugins that work like superpowers",
+   "kind": "Short",
+   "date": "Oct 2026",
+   "length": "63s",
+   "topic": "Claude Code",
+   "youtube": "rUL8vL6EJCQ",
+   "mp4": null,
+   "poster": null,
+   "summary": "Capp shows Drip four Claude Code plugins that work like superpowers, all listed in Anthropic's official plugin marketplace. Taste: Frontend Design, by Anthropic, gives Claude an art director's rulebook, so it plans a look on purpose instead of falling back on a generic default. A playbook: Superpowers, by Jesse Vincent, asks what you're really building, writes a plan, writes the tests first and gets the work reviewed. Stamina: Ralph Loop, by Anthropic, hands Claude the same task again every time it tries to stop, until it says your stop word or hits your limit. There's no limit unless you set one, so always set one. X-ray vision: the Chrome DevTools plugin, by Google, lets Claude see the console errors, network calls and a speed trace behind your web page, so it can track down what's broken and fix your code. On October 1, 2026, Frontend Design and Superpowers were the two most installed plugins in the marketplace, by claude.com's own counts. Plugins run code on your computer, so check one before you install it. Not sponsored.",
+   "links": [
+    {
+     "name": "Frontend Design",
+     "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/frontend-design",
+     "kind": "plugin",
+     "what": "Anthropic's design skill: Claude commits to a clear look and picks type and color on purpose, instead of a generic AI default. 1,134,112 installs on claude.com (Oct 2026).",
+     "install": "/plugin install frontend-design@claude-plugins-official",
+     "source": {
+      "label": "See it on claude.com",
+      "url": "https://claude.com/marketplace/plugins/frontend-design"
+     }
+    },
+    {
+     "name": "Superpowers",
+     "url": "https://github.com/obra/superpowers",
+     "kind": "plugin",
+     "stars": "294K",
+     "what": "Asks what you're really building, writes a plan, works test-first and reviews the work between tasks. More steps can mean more tokens. 1,009,371 installs on claude.com (Oct 2026).",
+     "install": "/plugin install superpowers@claude-plugins-official",
+     "source": {
+      "label": "See it on claude.com",
+      "url": "https://claude.com/marketplace/plugins/superpowers"
+     }
+    },
+    {
+     "name": "Ralph Loop",
+     "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/ralph-loop",
+     "kind": "plugin",
+     "what": "A Stop hook hands Claude the same prompt every time it tries to finish, until it prints your completion phrase or hits your limit. There's no limit by default and every lap uses tokens, so always set one: /ralph-loop \"your task\" --completion-promise \"DONE\" --max-iterations 20. Needs bash and jq (on Windows, Git for Windows).",
+     "install": "/plugin install ralph-loop@claude-plugins-official",
+     "source": {
+      "label": "See it on claude.com",
+      "url": "https://claude.com/marketplace/plugins/ralph-loop"
+     }
+    },
+    {
+     "name": "Chrome DevTools",
+     "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+     "kind": "plugin · MCP",
+     "stars": "53K",
+     "what": "Google's DevTools for coding agents: Claude reads console errors, network requests and performance traces from a live Chrome, and takes screenshots. Needs Node.js and Chrome, starts its own Chrome profile by default, and sends Google usage statistics unless you turn that off (its README says how).",
+     "install": "/plugin install chrome-devtools-mcp@claude-plugins-official",
+     "source": {
+      "label": "See it on claude.com",
+      "url": "https://claude.com/marketplace/plugins/chrome-devtools-mcp"
+     }
+    },
+    {
+     "name": "Install and manage plugins",
+     "url": "https://code.claude.com/docs/en/discover-plugins",
+     "kind": "docs",
+     "what": "Anthropic's guide to /plugin: marketplaces, install scopes, updating and removing."
+    },
+    {
+     "name": "Plugin security and trust",
+     "url": "https://code.claude.com/docs/en/plugins/security",
+     "kind": "docs",
+     "what": "What a plugin can do on your computer, and how to review one before you install it."
+    },
+    {
+     "name": "Ralph, by Geoffrey Huntley",
+     "url": "https://ghuntley.com/ralph/",
+     "kind": "post",
+     "what": "Where the loop technique behind Ralph Loop comes from."
+    }
+   ],
+   "more": {
+    "label": "More skills and plugins",
+    "url": "/resources/#skills"
+   }
+  },
+  {
+   "id": "whats-a-prompt",
+   "title": "What's a prompt, really? It's a coffee order",
+   "kind": "Carousel",
+   "date": "Oct 2026",
+   "length": "8 slides",
+   "topic": "Prompting",
+   "youtube": null,
+   "mp4": null,
+   "poster": "carousels/whats-a-prompt/01.jpg",
+   "slides": [
+    "carousels/whats-a-prompt/01.jpg",
+    "carousels/whats-a-prompt/02.jpg",
+    "carousels/whats-a-prompt/03.jpg",
+    "carousels/whats-a-prompt/04.jpg",
+    "carousels/whats-a-prompt/05.jpg",
+    "carousels/whats-a-prompt/06.jpg",
+    "carousels/whats-a-prompt/07.jpg",
+    "carousels/whats-a-prompt/08.jpg"
+   ],
+   "summary": "Capp told Drip his prompts were too short. A prompt is whatever you type to the AI, and it's most of what the AI knows about the job. It's like ordering coffee: say \"a coffee\" and you get a coffee, say \"a large oat latte\" and you get the one you meant. The four things Drip adds now: the task, who it's for, an example (one good one often beats a paragraph) and the shape (a list, three lines, a table). Then a made-up before and after (a text to the boss), a trick for when you're stuck (ask it to ask you three questions first), and fixing one part in the same chat instead of starting over. Anthropic's own prompting guide gives the same core advice: be clear and direct, give context, use examples and say the format you want.",
+   "links": [
+    {
+     "name": "Prompting best practices",
+     "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+     "kind": "docs",
+     "what": "Anthropic's guide: be clear and direct, give context, use examples, and say the format you want."
+    },
+    {
+     "name": "Prompt engineering overview",
+     "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview",
+     "kind": "docs",
+     "what": "Where to start: decide what a good answer looks like, then test your prompt against it."
+    },
+    {
+     "name": "Anthropic's prompt engineering tutorial",
+     "url": "https://github.com/anthropics/prompt-eng-interactive-tutorial",
+     "kind": "course",
+     "what": "Anthropic's free, hands-on prompting course."
+    },
+    {
+     "name": "OpenAI prompt engineering guide",
+     "url": "https://developers.openai.com/api/docs/guides/prompt-engineering",
+     "kind": "docs",
+     "what": "The same ideas from OpenAI: clear instructions, context and examples."
+    }
+   ],
+   "more": {
+    "label": "Free courses and prompt libraries",
+    "url": "/resources/#learn"
+   }
+  },
+  {
+   "id": "vibe-coded-app-legal-risks",
+   "title": "Seven legal and money risks for an app built with AI, and a prompt to check them",
+   "kind": "Short",
+   "date": "Sep 2026",
+   "length": "1:27",
+   "topic": "Vibe coding",
+   "youtube": "TH2GeSchx3w",
+   "mp4": null,
+   "poster": null,
+   "summary": "A receipt prints seven risks an app built with AI can run into before its first sale, each one a real maximum or a real case, because some rules count per violation, per email or per text. In the US: COPPA (once you know a user is under 13, get a parent's OK or delete the data; the FTC can seek up to $53,088 per violation), CAN-SPAM (promo emails need an unsubscribe link and a mailing address; up to $53,088 per email if the government sues and a court sets it) and the TCPA (marketing texts can need written consent, and a person can sue for $500 per text without it). California's wiretap law lets a court award $5,000 per violation, and sites have been sued for recording sessions without asking first (courts are split). Then a Munich court's 100-euro Google Fonts award and the wave of demand letters that followed, about 5,000 US website and app accessibility lawsuits in 2025 by one company's count, and a startup's $72,000 Google Cloud bill despite a $7 budget alert. It ends on a prompt to paste into the AI that built your app (below): a checklist, not a guarantee, and not legal advice.",
+   "links": [
+    {
+     "name": "FTC: COPPA FAQ",
+     "url": "https://www.ftc.gov/business-guidance/resources/complying-coppa-frequently-asked-questions",
+     "kind": "government",
+     "what": "Who COPPA covers (kids under 13), when an app not aimed at kids has to act, and how to ask age neutrally."
+    },
+    {
+     "name": "FTC civil penalty amounts (Federal Register, Jan 2025)",
+     "url": "https://www.federalregister.gov/documents/2025/01/17/2025-01361/adjustments-to-civil-penalty-amounts",
+     "kind": "government",
+     "what": "Where $53,088 comes from: the most a court can set per violation, behind the COPPA and CAN-SPAM numbers."
+    },
+    {
+     "name": "FTC: CAN-SPAM Act guide for business",
+     "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+     "kind": "government",
+     "what": "Promo emails need a working unsubscribe, honored within 10 business days, and a mailing address."
+    },
+    {
+     "name": "TCPA, 47 U.S.C. 227",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title47-section227&num=0&edition=prelim",
+     "kind": "law",
+     "what": "The US law behind $500 per text that breaks the consent rules, and a person's right to sue."
+    },
+    {
+     "name": "California Penal Code 637.2",
+     "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PEN&sectionNum=637.2",
+     "kind": "law",
+     "what": "California's wiretap law: a court can award $5,000 per violation."
+    },
+    {
+     "name": "Mayer Brown: the Ninth Circuit on CIPA section 631 (2025)",
+     "url": "https://www.mayerbrown.com/en/insights/publications/2025/06/the-ninth-circuit-briefly-speaks-on-cipa-section-631",
+     "kind": "article",
+     "what": "Website tracking and session-recording suits: one dismissed, one revived. Courts are split."
+    },
+    {
+     "name": "Munich Regional Court: Google Fonts ruling (3 O 17493/20, 2022)",
+     "url": "https://www.gesetze-bayern.de/Content/Document/Y-300-Z-BECKRS-B-2022-N-612",
+     "kind": "court",
+     "what": "One visitor awarded 100 euros because a site loaded Google Fonts from Google's servers without asking. In German."
+    },
+    {
+     "name": "Berlin police: the Google Fonts letter wave (Dec 2022)",
+     "url": "https://www.berlin.de/polizei/polizeimeldungen/2022/pressemitteilung.1277732.php",
+     "kind": "government",
+     "what": "Searches on suspicion of fraud and extortion over 170-euro demand letters, in at least 2,418 cases. In German."
+    },
+    {
+     "name": "GDPR Article 3",
+     "url": "https://gdpr-info.eu/art-3-gdpr/",
+     "kind": "law",
+     "what": "When EU data rules reach an app based outside the EU: it targets people in the EU or tracks what they do there."
+    },
+    {
+     "name": "UsableNet: 2025 accessibility lawsuit report",
+     "url": "https://info.usablenet.com/hubfs/Remediated%20-%202025_Year-End_Digital_Accessibility_Lawsuit_Report_FINAL.pdf",
+     "kind": "report",
+     "what": "One company's count: 5,114 US website and app accessibility lawsuits in 2025, 70% against online stores and 21% against food businesses."
+    },
+    {
+     "name": "Milkie Way: the $72,000 Google Cloud bill (archived)",
+     "url": "https://web.archive.org/web/20231203163806/https://blog.tomilkieway.com/72k-1/",
+     "kind": "post",
+     "what": "The startup's own story: test code that kept calling itself, a $7 budget, a bill of about $72,000. Their blog is offline, so this is the archived copy."
+    },
+    {
+     "name": "The Register: the $72,000 overnight bill (2020)",
+     "url": "https://www.theregister.com/2020/12/10/google_cloud_over_run/",
+     "kind": "article",
+     "what": "News report on the same bill, which Google waived as a one-time gesture."
+    },
+    {
+     "name": "Google Cloud: budgets and budget alerts",
+     "url": "https://cloud.google.com/billing/docs/how-to/budgets",
+     "kind": "docs",
+     "what": "An alerts-only budget tells you; it doesn't cap spending."
+    },
+    {
+     "name": "Supabase: Row Level Security",
+     "url": "https://supabase.com/docs/guides/database/postgres/row-level-security",
+     "kind": "docs",
+     "what": "The table rules: who can read and change each row."
+    },
+    {
+     "name": "Supabase: API keys",
+     "url": "https://supabase.com/docs/guides/api/api-keys",
+     "kind": "docs",
+     "what": "Why the publishable key is fine to show and secret keys stay on a server."
+    }
+   ],
+   "prompts_title": "The prompt from the video",
+   "prompts": [
+    {
+     "name": "Paste this into the AI that built your app",
+     "prompt": "Audit this app for legal and money risks. List what fails first, and fix only after I say yes. Check that:\n- every table, view and storage bucket is locked by row-level security (or your database's rules), so users only reach their own data unless it's meant to be public\n- no secret keys (service role, AI, payment) are in frontend code or the repo; rotate any that ever were (the Supabase publishable key is fine)\n- promo emails have a working unsubscribe link, honored within 10 business days, and a mailing address\n- marketing texts only go to people who gave written consent (saved with a timestamp), and STOP replies are honored\n- if the app isn't made for kids: sign-up asks a neutral age question (birth date, no hint of the cutoff); under-13s are blocked and nothing they typed is kept. If it is made for kids, stop and flag it for a lawyer\n- session recording is off, or starts only after the visitor agrees, with typed input masked\n- Google Fonts are served from our own server, not Google's\n- every page works with a keyboard, and images have alt text\n- no cloud function or job can trigger itself, and each has a max-instances limit and a timeout\n\nNot in code: turn on a hard spending cap in your host, and Tab through your app yourself."
+    }
+   ],
+   "prompts_note": "Let it list what fails before it changes anything. Not legal advice: a checklist, not a guarantee. For your own app, ask a lawyer.",
+   "more": {
+    "label": "App builders in our AI tools directory",
+    "url": "/resources/#build"
+   }
+  },
+  {
+   "id": "vibe-coded-app-checklist",
+   "title": "The real risks of an app built with AI, and four fixes",
+   "kind": "Short",
+   "date": "Sep 2026",
+   "length": "2:03",
+   "topic": "Vibe coding",
+   "youtube": null,
+   "tiktok": "https://www.tiktok.com/@dripthecup/video/7691233009982262541",
+   "mp4": "videos/vibe-coded-app-checklist.mp4",
+   "poster": "videos/vibe-coded-app-checklist.jpg",
+   "summary": "Capp's point: an app built with AI can cost you money before its first sale, just mostly not the way the scary videos say. The real risks: database rules left off (in March 2025, researchers at Replit, a Lovable rival, found 170 of 1,645 Lovable showcase apps with data anyone could read; Lovable now scans every publish) and runaway bills (a startup's test code kept calling itself and ran up about $72,000 on Google Cloud despite a $7 budget alert; Google forgave it once). Then the US rules that count per message: promo emails need an unsubscribe link and a mailing address, and a person can sue for $500 per marketing text sent without the required consent. Two scary claims corrected: COPPA covers kids under 13, and a kid signing up to an app not aimed at kids isn't automatically a violation (once you know, get a parent's OK or delete their data); the German Google Fonts case was 100 euros to one visitor, followed by thousands of letters demanding 170. It ends on a four-fix checklist (below). Not legal advice: for your own app, ask a lawyer.",
+   "links": [
+    {
+     "name": "Matt Palmer: statement on CVE-2025-48757",
+     "url": "https://mattpalmer.io/posts/statement-on-CVE-2025-48757/",
+     "kind": "post",
+     "what": "March 2025: 170 of 1,645 Lovable showcase apps had data anyone could read. The researchers work at Replit, a Lovable rival."
+    },
+    {
+     "name": "Lovable changelog",
+     "url": "https://docs.lovable.dev/changelog",
+     "kind": "docs",
+     "what": "Lovable now runs a security scan on every publish."
+    },
+    {
+     "name": "Supabase: Row Level Security",
+     "url": "https://supabase.com/docs/guides/database/postgres/row-level-security",
+     "kind": "docs",
+     "what": "The table rules: who can read and change each row."
+    },
+    {
+     "name": "Supabase: API keys",
+     "url": "https://supabase.com/docs/guides/api/api-keys",
+     "kind": "docs",
+     "what": "Why the publishable key is fine to show and secret keys stay on a server."
+    },
+    {
+     "name": "Milkie Way: the $72,000 Google Cloud bill (archived)",
+     "url": "https://web.archive.org/web/20231203163806/https://blog.tomilkieway.com/72k-1/",
+     "kind": "post",
+     "what": "The startup's own story: test code that kept calling itself, a $7 budget, a bill of about $72,000. Their blog is offline, so this is the archived copy."
+    },
+    {
+     "name": "The Register: the $72,000 overnight bill (2020)",
+     "url": "https://www.theregister.com/2020/12/10/google_cloud_over_run/",
+     "kind": "article",
+     "what": "News report on the same bill, which Google waived as a one-time gesture."
+    },
+    {
+     "name": "Google Cloud: budgets and budget alerts",
+     "url": "https://cloud.google.com/billing/docs/how-to/budgets",
+     "kind": "docs",
+     "what": "An alerts-only budget tells you; it doesn't cap spending."
+    },
+    {
+     "name": "Hacker News: Netlify's $104,500 bill (2024)",
+     "url": "https://news.ycombinator.com/item?id=39520776",
+     "kind": "post",
+     "what": "A free site's $104,500 bill after a traffic flood, dropped after it went viral (Netlify's CEO replies in the thread)."
+    },
+    {
+     "name": "Netlify: credit-based plans",
+     "url": "https://docs.netlify.com/manage/accounts-and-billing/billing/billing-for-credit-based-plans/credit-based-pricing-plans/",
+     "kind": "docs",
+     "what": "The free plan now has a hard limit and pauses sites instead of billing."
+    },
+    {
+     "name": "Vercel: spend management",
+     "url": "https://vercel.com/docs/spend-management",
+     "kind": "docs",
+     "what": "A spending stop that pauses your app; an amount on its own doesn't stop usage."
+    },
+    {
+     "name": "FTC: CAN-SPAM Act guide for business",
+     "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+     "kind": "government",
+     "what": "Promo emails need a working unsubscribe, honored within 10 business days, and a mailing address."
+    },
+    {
+     "name": "TCPA, 47 U.S.C. 227",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title47-section227&num=0&edition=prelim",
+     "kind": "law",
+     "what": "The US law behind $500 per text that breaks the consent rules, and a person's right to sue."
+    },
+    {
+     "name": "FTC: COPPA FAQ",
+     "url": "https://www.ftc.gov/business-guidance/resources/complying-coppa-frequently-asked-questions",
+     "kind": "government",
+     "what": "Who COPPA covers (kids under 13), when an app not aimed at kids has to act, and how to ask age neutrally."
+    },
+    {
+     "name": "Munich Regional Court: Google Fonts ruling (3 O 17493/20, 2022)",
+     "url": "https://www.gesetze-bayern.de/Content/Document/Y-300-Z-BECKRS-B-2022-N-612",
+     "kind": "court",
+     "what": "One visitor awarded 100 euros because a site loaded Google Fonts from Google's servers without asking. In German."
+    },
+    {
+     "name": "Berlin police: the Google Fonts letter wave (Dec 2022)",
+     "url": "https://www.berlin.de/polizei/polizeimeldungen/2022/pressemitteilung.1277732.php",
+     "kind": "government",
+     "what": "Searches on suspicion of fraud and extortion over 170-euro demand letters, in at least 2,418 cases. In German."
+    },
+    {
+     "name": "GDPR Article 3",
+     "url": "https://gdpr-info.eu/art-3-gdpr/",
+     "kind": "law",
+     "what": "When EU data rules reach an app based outside the EU: it targets people in the EU or tracks what they do there."
+    }
+   ],
+   "prompts_title": "The checklist from the video",
+   "prompts": [
+    {
+     "name": "Four fixes",
+     "prompt": "1. Table rules on, for every table\n   secret keys on a server, never in the page\n2. A hard spending stop, not just an alert\n   if your host has one\n3. Unsubscribe link + address in promo emails\n   written consent before marketing texts (US)\n4. Self-host your fonts\n   if your app targets or tracks people in the EU"
+    }
+   ],
+   "prompts_note": "The end card, to screenshot. Not legal advice: for your own app, ask a lawyer.",
+   "more": {
+    "label": "App builders in our AI tools directory",
+    "url": "/resources/#build"
+   }
+  },
+  {
+   "id": "elevenlabs-v4-typing-feelings",
+   "title": "How you type a feeling into ElevenLabs v4",
+   "kind": "Short",
+   "date": "Sep 2026",
+   "length": "1:22",
+   "topic": "AI tools",
+   "youtube": "tXun8kZ53N8",
+   "mp4": null,
+   "poster": null,
+   "summary": "It opens on a whispered emergency call, and Capp says nobody said it: it was typed into Eleven v4, ElevenLabs' new voice model, every breath of it. The trick is typing the words and then the feeling in brackets, so one voice says \"I can't believe you did that\" delighted, furious, heartbroken and stunned: the words never change, the shape does (the highs, the lows, the pauses), and ElevenLabs says the model can copy that shape in more than 90 languages. Then the payoff promised at the start: exactly what we typed for that call, tags and all, plus three more scenes made the same way (a nervous confession, a goodbye and a coach's speech), each with its typed text on screen. Not sponsored.",
+   "links": [
+    {
+     "name": "ElevenLabs",
+     "url": "https://elevenlabs.io",
+     "kind": "tool",
+     "what": "The voice app every line was typed into, on its new Eleven v4 model."
+    },
+    {
+     "name": "ElevenLabs: Introducing Eleven v4",
+     "url": "https://elevenlabs.io/blog/eleven-v4",
+     "kind": "announcement",
+     "what": "The launch post (Sep 28, 2026): direction typed in brackets, like [laughs], and more than 90 languages."
+    },
+    {
+     "name": "Eleven v4 page",
+     "url": "https://elevenlabs.io/v4",
+     "kind": "product page",
+     "what": "Where the bracket tag examples on screen come from."
+    }
+   ],
+   "more": {
+    "label": "Voice tools in our AI tools directory",
+    "url": "/resources/#voice"
+   }
+  },
+  {
+   "id": "elevenlabs-v4-typed-voices",
+   "title": "Four movie scenes, every voice typed: ElevenLabs v4",
+   "kind": "Short",
+   "date": "Sep 2026",
+   "length": "1:39",
+   "topic": "AI tools",
+   "youtube": "i2hPLLfst5o",
+   "mp4": null,
+   "poster": null,
+   "summary": "Four short movie-style scenes play back to back: a terrified whispered phone call, a nervous confession, a goodbye and a coach's speech. Drip asks who all these people are, and Capp says nobody said those lines: each was typed into Eleven v4, the voice model ElevenLabs released on Sep 28, 2026, with the feeling written in brackets like [shaky breath] or [voice cracking], and the exact text we typed is on screen (ElevenLabs stock voices, best of 3 takes each). Then one voice says the same six words, \"I can't believe you did that,\" four ways: the words never change, the shape does (the highs, the lows, the pauses), and one study found listeners hear at least 24 kinds of emotion in wordless laughs, sighs and cries. ElevenLabs says the model works in more than 90 languages, shown with one voice in English, Spanish and Japanese. Not sponsored.",
+   "links": [
+    {
+     "name": "ElevenLabs",
+     "url": "https://elevenlabs.io",
+     "kind": "tool",
+     "what": "The voice app every line was typed into, on its new Eleven v4 model."
+    },
+    {
+     "name": "ElevenLabs: Introducing Eleven v4",
+     "url": "https://elevenlabs.io/blog/eleven-v4",
+     "kind": "announcement",
+     "what": "The launch post (Sep 28, 2026): direction typed in brackets, like [laughs], and more than 90 languages."
+    },
+    {
+     "name": "Eleven v4 page",
+     "url": "https://elevenlabs.io/v4",
+     "kind": "product page",
+     "what": "Where the bracket tag examples on screen come from."
+    },
+    {
+     "name": "Cowen et al.: emotions in vocal bursts (2019)",
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6586540",
+     "kind": "paper",
+     "what": "Listeners heard at least 24 kinds of emotion in wordless sounds like laughs, sighs and cries (American Psychologist)."
+    }
+   ],
+   "more": {
+    "label": "Voice tools in our AI tools directory",
+    "url": "/resources/#voice"
+   }
   },
   {
    "id": "opus-motion-graphics",
@@ -214,7 +666,7 @@
    "date": "Sep 2026",
    "length": "1:48",
    "topic": "How AI works",
-   "youtube": null,
+   "youtube": "scNTIb5iIWU",
    "mp4": "videos/ai-dont-know.mp4",
    "poster": "videos/ai-dont-know.jpg",
    "summary": "In 2023 a lawyer asked ChatGPT if a court case it gave him was real. It said yes; it wasn't, and neither were at least five others. In 2025 two big newspapers printed a summer reading list made with AI: 10 of the 15 books don't exist. Why doesn't AI just say \"I don't know\"? It learns by predicting text, and a fact it saw once has no pattern to lean on. Then it gets graded like a multiple-choice test, and 9 of the 10 popular AI tests OpenAI's researchers checked give zero points for \"I don't know\", so guessing wins. Inside a Claude model, \"I can't answer\" is the default, and a familiar-feeling name can switch it off. What helps: tests that take points off for wrong guesses, telling the AI \"I don't know\" is allowed, and handing it the source.",
@@ -356,7 +808,7 @@
    "date": "Sep 2026",
    "length": "2:02",
    "topic": "Claude Code",
-   "youtube": null,
+   "youtube": "EA_qQHg8WvA",
    "mp4": "videos/opus-motion.mp4",
    "poster": "videos/opus-motion.jpg",
    "summary": "It opens on animations people made with Claude Opus 5.5, every one of them code, then explains how. Claude takes in text and images and puts out text, so to get a video it writes a program that draws any frame on demand, a browser draws every frame, and ffmpeg stitches them together. Some really came from one prompt: the orange showreel was one line in Claude Code, and the Steve Jobs film's creator says one prompt made about 8,700 lines of code. The most-watched one we found had a 9,554-character prompt and, its creator says, 12 hours of Claude's work. We make Drip & Capp the same way: this whole video took Claude a little over three hours of working time and 437 model calls, research included. The creators' posts and every source are below.",
@@ -434,13 +886,198 @@
    }
   },
   {
+   "id": "which-claude",
+   "title": "Chat vs Cowork vs Claude Code: which Claude to use",
+   "kind": "Short",
+   "date": "Sep 2026",
+   "length": "2:02",
+   "topic": "Claude",
+   "youtube": null,
+   "mp4": "videos/which-claude.mp4",
+   "poster": "videos/which-claude.jpg",
+   "summary": "It isn't six products. It's one Claude on one account, and three questions. What do you want back: an answer (chat), the finished thing (Cowork), or software (Claude Code)? Where are you: your phone, a browser, or your computer? What does it need to reach: another app (a connector), something on your computer, or a web page (Claude in Chrome)? Plus what each plan includes, and the one usage pool.",
+   "links": [
+    {
+     "name": "Plans and pricing",
+     "url": "https://claude.com/pricing",
+     "kind": "pricing",
+     "what": "What Free, Pro, Max, Team and Enterprise include."
+    },
+    {
+     "name": "Cowork and chat are now one Claude",
+     "url": "https://claude.com/blog/cowork-is-now-claude",
+     "kind": "announcement",
+     "what": "Why you may not have to pick between chat and Cowork."
+    },
+    {
+     "name": "Claude in Chrome",
+     "url": "https://claude.com/claude-in-chrome",
+     "kind": "product page",
+     "what": "Claude in your browser side panel."
+    },
+    {
+     "name": "Download Claude",
+     "url": "https://claude.com/download",
+     "kind": "download",
+     "what": "The desktop and phone apps."
+    }
+   ],
+   "more": {
+    "label": "Claude in our AI tools directory",
+    "url": "/resources/#chat"
+   },
+   "tiktok": "https://www.tiktok.com/@dripthecup/video/7690266848666979597"
+  },
+  {
+   "id": "voice-to-text-short",
+   "title": "How voice to text works: it hears numbers, not words",
+   "kind": "Short",
+   "date": "Sep 2026",
+   "length": "65s",
+   "topic": "Voice to text",
+   "youtube": "Pyb2AtC4Qq0",
+   "mp4": "videos/voice-to-text-short.mp4",
+   "poster": "videos/voice-to-text-short.jpg",
+   "summary": "Drip asks how voice to text knows what he's saying. It doesn't get words: his one question arrives as 45,600 numbers (2.85 seconds at 16,000 a second), gets chopped into slices and stacked into a grid of how loud each note is, and a model guesses the words that most likely made it. Every number and grid in the video is measured from the video's own audio. Then the part newer AI dictation apps add: punctuation, and cutting the slip when you correct yourself.",
+   "links": [
+    {
+     "name": "The full film",
+     "url": "https://youtu.be/ULNCs0t2Obk",
+     "kind": "video",
+     "what": "How voice to text works, the 9:51 episode this short comes from."
+    },
+    {
+     "name": "Whisper paper",
+     "url": "https://arxiv.org/abs/2212.04356",
+     "kind": "paper",
+     "what": "OpenAI, 2022. Source for 680,000 hours of training audio and the 16,000-a-second, 80-band setup."
+    },
+    {
+     "name": "Whisper",
+     "url": "https://github.com/openai/whisper",
+     "kind": "repo",
+     "what": "OpenAI's open speech-recognition model."
+    },
+    {
+     "name": "Wispr Flow",
+     "url": "https://wisprflow.ai",
+     "kind": "app",
+     "what": "An AI dictation app that removes filler words and fixes mid-sentence corrections."
+    }
+   ],
+   "more": {
+    "label": "Dictation apps in our AI tools directory",
+    "url": "/resources/#dictation"
+   }
+  },
+  {
+   "id": "model-vs-effort",
+   "title": "Bigger model or think harder? The two knobs in Claude",
+   "kind": "Carousel",
+   "date": "Sep 2026",
+   "length": "8 slides",
+   "topic": "Claude",
+   "youtube": null,
+   "mp4": null,
+   "poster": "carousels/model-vs-effort/01.jpg",
+   "slides": [
+    "carousels/model-vs-effort/01.jpg",
+    "carousels/model-vs-effort/02.jpg",
+    "carousels/model-vs-effort/03.jpg",
+    "carousels/model-vs-effort/04.jpg",
+    "carousels/model-vs-effort/05.jpg",
+    "carousels/model-vs-effort/06.jpg",
+    "carousels/model-vs-effort/07.jpg",
+    "carousels/model-vs-effort/08.jpg"
+   ],
+   "summary": "Drip thought the model and the effort were the same knob. They're not: the model is which brain answers, and effort is how hard that same model works on this one job. We tested it on September 24 in Claude Code with one puzzle (walks across a 5x5 grid, answer 34), 5 runs per setting, counting the median output tokens. Sonnet 5 used 99 tokens on low effort, 233 on medium, 314 on high and 525 on max, and got all 20 right. On low effort, Haiku 4.5 used 594, Sonnet 5 99 and Opus 5 71, so the smallest model used the most tokens. That's why the cheapest price per token wasn't the cheapest answer: per 1,000 answers (output only, September 2026 prices), Haiku 4.5 came to $2.97, Sonnet 5 $0.99 and Opus 5 $1.78. Capp's rule of thumb: fix depth with effort, fix know-how with a bigger model, judge by cost per finished task, and test it on your own task.",
+   "links": [
+    {
+     "name": "Effort",
+     "url": "https://platform.claude.com/docs/en/build-with-claude/effort",
+     "kind": "docs",
+     "what": "The five levels (low, medium, high, xhigh, max), which models support each, and each model's default."
+    },
+    {
+     "name": "Claude pricing",
+     "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+     "kind": "pricing",
+     "what": "Price per million tokens, in and out, for every Claude model. Prices change; the slides use September 2026."
+    },
+    {
+     "name": "Choosing a model",
+     "url": "https://platform.claude.com/docs/en/about-claude/models/choosing-a-model",
+     "kind": "docs",
+     "what": "Anthropic's guide to picking the right model for a job."
+    },
+    {
+     "name": "Model and effort in Claude Code",
+     "url": "https://code.claude.com/docs/en/model-config",
+     "kind": "docs",
+     "what": "How to switch the model (/model) and the effort level (/effort) in Claude Code."
+    },
+    {
+     "name": "Thinking",
+     "url": "https://platform.claude.com/docs/en/build-with-claude/thinking",
+     "kind": "docs",
+     "what": "What happens when Claude thinks first, and how effort steers how much it thinks."
+    }
+   ],
+   "more": {
+    "label": "Claude in our AI tools directory",
+    "url": "/resources/#chat"
+   }
+  },
+  {
+   "id": "claude-desktop",
+   "title": "Claude Desktop explained: what it does that the website can't",
+   "kind": "Short",
+   "date": "Sep 2026",
+   "length": "1:40",
+   "topic": "Claude",
+   "youtube": "8A_WVpP-z98",
+   "mp4": "videos/claude-desktop.mp4",
+   "poster": "videos/claude-desktop.jpg",
+   "summary": "Your chats are the same on the web, your phone and the desktop app. What the app adds is reach into your computer, and you decide how far: a one-shortcut window on a Mac, your folders, a built-in browser, and on Pro and Max (in beta) your screen itself. It asks before it touches each app. Free to download on Mac and Windows, with Linux in beta.",
+   "links": [
+    {
+     "name": "Download Claude",
+     "url": "https://claude.com/download",
+     "kind": "download",
+     "what": "Mac, Windows and Linux (beta)."
+    },
+    {
+     "name": "Install Claude Desktop",
+     "url": "https://support.claude.com/en/articles/10065433-install-claude-desktop",
+     "kind": "help article",
+     "what": "Requirements and what the app can do."
+    },
+    {
+     "name": "Quick entry on Mac",
+     "url": "https://support.claude.com/en/articles/12626668-use-quick-entry-with-claude-desktop-on-mac",
+     "kind": "help article",
+     "what": "Double-tap Option to open Claude over any app."
+    },
+    {
+     "name": "Let Claude use your computer",
+     "url": "https://support.claude.com/en/articles/14128542-let-claude-use-your-computer-in-cowork",
+     "kind": "help article",
+     "what": "Computer use, and what Anthropic says about keeping it safe."
+    }
+   ],
+   "more": {
+    "label": "Claude in our AI tools directory",
+    "url": "/resources/#chat"
+   }
+  },
+  {
    "id": "claude-connectors",
    "title": "Claude connectors explained: how Claude reaches your apps",
    "kind": "Short",
    "date": "Sep 2026",
    "length": "2:01",
    "topic": "Claude",
-   "youtube": null,
+   "youtube": "soit7zTgqCo",
    "mp4": "videos/claude-connectors.mp4",
    "poster": "videos/claude-connectors.jpg",
    "summary": "Claude can't see inside your calendar or inbox until you connect them. A connector is a key to one app: you sign in yourself, Claude gets the same access your account has, and it asks before it sends, replies or forwards an email. Under the hood connectors run on MCP, an open standard Anthropic created. Every claim in the video comes from Anthropic's own help pages, linked below.",
@@ -482,7 +1119,7 @@
    "date": "Sep 2026",
    "length": "2:02",
    "topic": "Claude",
-   "youtube": null,
+   "youtube": "1x55IczQzwc",
    "mp4": "videos/claude-cowork.mp4",
    "poster": "videos/claude-cowork.jpg",
    "summary": "Chat answers you. Cowork does the work: put your meeting notes in a folder, ask for a ten-slide deck, and it comes back finished. It only touches the folders you connect and asks before permanently deleting anything. Since September 16, 2026, Cowork has been merging into regular chat on Pro and Max, so you might not see a Cowork button at all. All from Anthropic's own pages.",
@@ -518,55 +1155,13 @@
    }
   },
   {
-   "id": "claude-desktop",
-   "title": "Claude Desktop explained: what it does that the website can't",
-   "kind": "Short",
-   "date": "Sep 2026",
-   "length": "1:40",
-   "topic": "Claude",
-   "youtube": null,
-   "mp4": "videos/claude-desktop.mp4",
-   "poster": "videos/claude-desktop.jpg",
-   "summary": "Your chats are the same on the web, your phone and the desktop app. What the app adds is reach into your computer, and you decide how far: a one-shortcut window on a Mac, your folders, a built-in browser, and on Pro and Max (in beta) your screen itself. It asks before it touches each app. Free to download on Mac and Windows, with Linux in beta.",
-   "links": [
-    {
-     "name": "Download Claude",
-     "url": "https://claude.com/download",
-     "kind": "download",
-     "what": "Mac, Windows and Linux (beta)."
-    },
-    {
-     "name": "Install Claude Desktop",
-     "url": "https://support.claude.com/en/articles/10065433-install-claude-desktop",
-     "kind": "help article",
-     "what": "Requirements and what the app can do."
-    },
-    {
-     "name": "Quick entry on Mac",
-     "url": "https://support.claude.com/en/articles/12626668-use-quick-entry-with-claude-desktop-on-mac",
-     "kind": "help article",
-     "what": "Double-tap Option to open Claude over any app."
-    },
-    {
-     "name": "Let Claude use your computer",
-     "url": "https://support.claude.com/en/articles/14128542-let-claude-use-your-computer-in-cowork",
-     "kind": "help article",
-     "what": "Computer use, and what Anthropic says about keeping it safe."
-    }
-   ],
-   "more": {
-    "label": "Claude in our AI tools directory",
-    "url": "/resources/#chat"
-   }
-  },
-  {
    "id": "claude-code",
    "title": "Claude Code explained: it works inside your project",
    "kind": "Short",
    "date": "Sep 2026",
    "length": "2:07",
    "topic": "Claude",
-   "youtube": null,
+   "youtube": "rEWAq2Sb4Mk",
    "mp4": "videos/claude-code.mp4",
    "poster": "videos/claude-code.jpg",
    "summary": "Not copy and paste. Claude Code reads your codebase, edits files, runs commands and tests, and checks its own work: gather context, take action, verify results. It runs in your terminal, VS Code, JetBrains, the desktop app, the browser and even Slack and GitHub. Permission modes decide what it can do without asking, and pressing Escape twice rewinds a change. Included with every paid Claude plan.",
@@ -602,40 +1197,189 @@
    }
   },
   {
-   "id": "which-claude",
-   "title": "Chat vs Cowork vs Claude Code: which Claude to use",
+   "id": "ai-tools-for-video",
+   "title": "AI tools for making videos: voice, clips, thumbnails and music",
    "kind": "Short",
    "date": "Sep 2026",
-   "length": "2:02",
-   "topic": "Claude",
-   "youtube": null,
-   "mp4": "videos/which-claude.mp4",
-   "poster": "videos/which-claude.jpg",
-   "summary": "It isn't six products. It's one Claude on one account, and three questions. What do you want back: an answer (chat), the finished thing (Cowork), or software (Claude Code)? Where are you: your phone, a browser, or your computer? What does it need to reach: another app (a connector), something on your computer, or a web page (Claude in Chrome)? Plus what each plan includes, and the one usage pool.",
+   "length": "44s",
+   "topic": "AI tools",
+   "youtube": "zKuVcl0stdI",
+   "mp4": null,
+   "poster": null,
+   "summary": "Drip wants to start making videos and has no idea which AI tools to use. Capp sends him to the Drip the Cup AI tools directory: tap what you want to do and Jev ranks the best fits. The video shows four tasks as Jev ranked them that day: a voiceover (ElevenLabs, then Murf and Fish Audio), cutting a long video into clips (Opus Clip, then CapCut and DaVinci Resolve), a thumbnail (Canva, Ideogram, Recraft) and music (Udio, Suno, Stable Audio). The directory is free and marks which tools are free or open source; at the time it had 27 tasks and 191 tools.",
    "links": [
     {
-     "name": "Plans and pricing",
-     "url": "https://claude.com/pricing",
-     "kind": "pricing",
-     "what": "What Free, Pro, Max, Team and Enterprise include."
+     "name": "The AI tools directory",
+     "url": "https://dripthecup.com/resources/",
+     "kind": "directory",
+     "what": "Tap a task and Jev ranks the best fits. Free, and it marks which tools are free or open source."
     },
     {
-     "name": "Cowork and chat are now one Claude",
-     "url": "https://claude.com/blog/cowork-is-now-claude",
-     "kind": "announcement",
-     "what": "Why you may not have to pick between chat and Cowork."
+     "name": "ElevenLabs",
+     "url": "https://elevenlabs.io",
+     "kind": "tool",
+     "what": "Realistic voiceover, voice design, dubbing and music. Jev's top pick for a voiceover."
     },
     {
-     "name": "Claude in Chrome",
-     "url": "https://claude.com/claude-in-chrome",
-     "kind": "product page",
-     "what": "Claude in your browser side panel."
+     "name": "Murf",
+     "url": "https://murf.ai",
+     "kind": "tool",
+     "what": "Studio voiceovers for training and marketing videos."
     },
     {
-     "name": "Download Claude",
-     "url": "https://claude.com/download",
-     "kind": "download",
-     "what": "The desktop and phone apps."
+     "name": "Fish Audio",
+     "url": "https://fish.audio",
+     "kind": "tool",
+     "what": "Expressive voices in 80+ languages with emotion control."
+    },
+    {
+     "name": "Opus Clip",
+     "url": "https://www.opus.pro",
+     "kind": "tool",
+     "what": "Turns a long video into ready-to-post shorts. Jev's top pick for clips."
+    },
+    {
+     "name": "CapCut",
+     "url": "https://www.capcut.com",
+     "kind": "tool",
+     "what": "Quick short-form edits with auto captions."
+    },
+    {
+     "name": "DaVinci Resolve",
+     "url": "https://www.blackmagicdesign.com/products/davinciresolve",
+     "kind": "tool",
+     "what": "Pro editing and color, with a generous free version."
+    },
+    {
+     "name": "Canva",
+     "url": "https://www.canva.com",
+     "kind": "tool",
+     "what": "Social graphics and thumbnails from templates. Jev's top pick for a thumbnail."
+    },
+    {
+     "name": "Ideogram",
+     "url": "https://ideogram.ai",
+     "kind": "tool",
+     "what": "Logos and text-heavy designs."
+    },
+    {
+     "name": "Recraft",
+     "url": "https://www.recraft.ai",
+     "kind": "tool",
+     "what": "Vector art, icons and on-brand illustrations."
+    },
+    {
+     "name": "Udio",
+     "url": "https://www.udio.com",
+     "kind": "tool",
+     "what": "Music generation with fine control. Jev's top pick for music."
+    },
+    {
+     "name": "Suno",
+     "url": "https://suno.com",
+     "kind": "tool",
+     "what": "Full songs with vocals from a prompt."
+    },
+    {
+     "name": "Stable Audio",
+     "url": "https://stableaudio.com",
+     "kind": "tool",
+     "what": "Music and sound effects from a prompt."
+    },
+    {
+     "name": "OBS Studio",
+     "url": "https://obsproject.com",
+     "kind": "tool",
+     "what": "Free recording and live streaming."
+    },
+    {
+     "name": "whisper.cpp",
+     "url": "https://github.com/ggml-org/whisper.cpp",
+     "kind": "repo",
+     "what": "Free, private speech-to-text on your own computer."
+    },
+    {
+     "name": "Chatterbox",
+     "url": "https://github.com/resemble-ai/chatterbox",
+     "kind": "repo",
+     "what": "Free open-source text-to-speech you can run yourself."
+    }
+   ],
+   "more": {
+    "label": "Browse all AI tools",
+    "url": "/resources/"
+   }
+  },
+  {
+   "id": "how-claude-works",
+   "title": "How Claude actually works, one piece at a time",
+   "kind": "Carousel",
+   "date": "Sep 2026",
+   "length": "9 slides",
+   "topic": "How AI works",
+   "youtube": null,
+   "mp4": null,
+   "poster": "carousels/how-claude-works/01.jpg",
+   "slides": [
+    "carousels/how-claude-works/01.jpg",
+    "carousels/how-claude-works/02.jpg",
+    "carousels/how-claude-works/03.jpg",
+    "carousels/how-claude-works/04.jpg",
+    "carousels/how-claude-works/05.jpg",
+    "carousels/how-claude-works/06.jpg",
+    "carousels/how-claude-works/07.jpg",
+    "carousels/how-claude-works/08.jpg",
+    "carousels/how-claude-works/09.jpg"
+   ],
+   "summary": "Drip's notes from Capp on how Claude writes: one piece at a time. It reads text in pieces called tokens, scores every possible next piece, picks one, adds it and repeats. It learned by reading a huge amount of text and practising that guess, and later training with feedback on its answers shaped it into a helpful assistant. On hard questions it can think before it answers, which uses more tokens. It only sees what's in its context window: up to 1,000,000 tokens on the biggest Claude models (as of September 2026). A new chat starts fresh unless memory is on, and with tools it can search the web, run code or use your apps (MCP is one way to plug tools in). The token split and the next-word odds on the slides are illustrations, not real tokenizer output.",
+   "links": [
+    {
+     "name": "Anthropic glossary",
+     "url": "https://platform.claude.com/docs/en/about-claude/glossary",
+     "kind": "docs",
+     "what": "Tokens, context window, pretraining and RLHF (training with human feedback), in Anthropic's words."
+    },
+    {
+     "name": "Context windows",
+     "url": "https://platform.claude.com/docs/en/build-with-claude/context-windows",
+     "kind": "docs",
+     "what": "What the window holds (your messages, files and its own replies) and what happens as it fills up."
+    },
+    {
+     "name": "Claude models overview",
+     "url": "https://platform.claude.com/docs/en/models/overview",
+     "kind": "docs",
+     "what": "Window size per model: 1M tokens on the biggest, 200K on Haiku 4.5."
+    },
+    {
+     "name": "Thinking",
+     "url": "https://platform.claude.com/docs/en/build-with-claude/thinking",
+     "kind": "docs",
+     "what": "How Claude works a problem through before it answers, and why that uses more tokens."
+    },
+    {
+     "name": "Chat search and memory",
+     "url": "https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context",
+     "kind": "help article",
+     "what": "What Claude's memory saves between chats, and how to see, edit or turn it off."
+    },
+    {
+     "name": "Tool use",
+     "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview",
+     "kind": "docs",
+     "what": "Claude asks for a tool, the app runs it, and Claude reads the result."
+    },
+    {
+     "name": "Model Context Protocol",
+     "url": "https://modelcontextprotocol.io",
+     "kind": "docs",
+     "what": "The open standard for plugging tools and apps into AI."
+    },
+    {
+     "name": "Our MCP explainer",
+     "url": "https://dripthecup.com/links/#mcp-explained",
+     "kind": "video",
+     "what": "How your AI talks to your apps, in 5 minutes."
     }
    ],
    "more": {
@@ -644,55 +1388,13 @@
    }
   },
   {
-   "id": "voice-to-text-short",
-   "title": "How voice to text works: it hears numbers, not words",
-   "kind": "Short",
-   "date": "Sep 2026",
-   "length": "65s",
-   "topic": "Voice to text",
-   "youtube": null,
-   "mp4": "videos/voice-to-text-short.mp4",
-   "poster": "videos/voice-to-text-short.jpg",
-   "summary": "Drip asks how voice to text knows what he's saying. It doesn't get words: his one question arrives as 45,600 numbers (2.85 seconds at 16,000 a second), gets chopped into slices and stacked into a grid of how loud each note is, and a model guesses the words that most likely made it. Every number and grid in the video is measured from the video's own audio. Then the part newer AI dictation apps add: punctuation, and cutting the slip when you correct yourself.",
-   "links": [
-    {
-     "name": "The full film",
-     "url": "https://youtu.be/ULNCs0t2Obk",
-     "kind": "video",
-     "what": "How voice to text works, the 9:51 episode this short comes from."
-    },
-    {
-     "name": "Whisper paper",
-     "url": "https://arxiv.org/abs/2212.04356",
-     "kind": "paper",
-     "what": "OpenAI, 2022. Source for 680,000 hours of training audio and the 16,000-a-second, 80-band setup."
-    },
-    {
-     "name": "Whisper",
-     "url": "https://github.com/openai/whisper",
-     "kind": "repo",
-     "what": "OpenAI's open speech-recognition model."
-    },
-    {
-     "name": "Wispr Flow",
-     "url": "https://wisprflow.ai",
-     "kind": "app",
-     "what": "An AI dictation app that removes filler words and fixes mid-sentence corrections."
-    }
-   ],
-   "more": {
-    "label": "Dictation apps in our AI tools directory",
-    "url": "/resources/#dictation"
-   }
-  },
-  {
    "id": "frontend-skills",
    "title": "Same request, five websites: design skills for Claude",
    "kind": "Short",
    "date": "Sep 2026",
-   "length": "77s",
+   "length": "67s",
    "topic": "Design",
-   "youtube": null,
+   "youtube": "MkcJZVv8WLg",
    "mp4": "videos/frontend-skills.mp4",
    "poster": "videos/frontend-skills.jpg",
    "summary": "Drip asks Claude for a site for his coffee club and gets a familiar look: cream background, fancy serif, brown cup. So he gives the same request to five copies of Claude, one with no skill and one per design skill: Taste, Impeccable, UI UX Pro Max and Open Design. Every page in the video is a real build of the same brief. Impeccable's checker flagged 9 AI tells on the no-skill page and 0 on its own. Playwright then opened every page in a real browser at phone and laptop sizes: no sideways scroll on any of them.",
@@ -737,6 +1439,72 @@
    "more": {
     "label": "Browse all AI tools",
     "url": "/resources/"
+   }
+  },
+  {
+   "id": "claude-opus-5-5",
+   "title": "Claude Opus 5.5: what's new, and what people built with it",
+   "kind": "Short",
+   "date": "Sep 2026",
+   "length": "58s",
+   "topic": "Claude",
+   "youtube": "aMmGCyTwvgE",
+   "mp4": null,
+   "poster": null,
+   "summary": "Drip asks what Claude Opus 5.5 is. Anthropic says its new model, out September 22, performs at the level of Claude Fable 5.1 on most work and, at default settings on typical work, costs 40% less to run than Opus 5: $4 per million input tokens and $20 per million output tokens (Opus 5 was $5 and $25), with output more than 30% faster. Then four things people built with it, from their own posts: Ryan Sael's interactive lens lab (one shot, 1 hour 26 minutes, $25.66 in API costs), Meng To's boat ride through Japan with rain, lightning, day and night, Techartist's house that grows from a sketch to a finished home in 3D, and Higgsfield's underwater game, built head to head with GPT-6 Sol. On Anthropic's own launch chart it scores 66.4% on Terminal-Bench 4.0, the top score in that table.",
+   "links": [
+    {
+     "name": "Anthropic: Introducing Claude Opus 5.5",
+     "url": "https://www.anthropic.com/claude-opus-5-5",
+     "kind": "announcement",
+     "what": "The launch post: the Fable 5.1 comparison, the 40% cost claim, prices, speed and the Terminal-Bench chart."
+    },
+    {
+     "name": "@claudeai",
+     "url": "https://x.com/claudeai/status/2102435511222890900",
+     "kind": "post",
+     "what": "Claude's launch post on X, shown at the start of the video."
+    },
+    {
+     "name": "@RyanSael",
+     "url": "https://x.com/RyanSael/status/2102591147927654847",
+     "kind": "post",
+     "what": "The lens lab: 1 hour 26 minutes in one shot, $25.66 API cost."
+    },
+    {
+     "name": "The lens lab (live)",
+     "url": "https://lens.lab.sael.net",
+     "kind": "live demo",
+     "what": "Ryan Sael's lens lab. Move the focus ring and watch the sharp plane shift."
+    },
+    {
+     "name": "@MengTo",
+     "url": "https://x.com/MengTo/status/2102760783344189761",
+     "kind": "post",
+     "what": "A playable boat scene through Japanese landscapes with weather and day and night lighting."
+    },
+    {
+     "name": "Sakura River Valley (live)",
+     "url": "https://valley.mengto.here.now",
+     "kind": "live demo",
+     "what": "Meng To's boat scene, playable in your browser."
+    },
+    {
+     "name": "@techartist_",
+     "url": "https://x.com/techartist_/status/2102503719762018434",
+     "kind": "post",
+     "what": "From sketch to home, built in 3D with Three.js."
+    },
+    {
+     "name": "@higgsfield_ai",
+     "url": "https://x.com/higgsfield_ai/status/2102533401110802552",
+     "kind": "post",
+     "what": "Claude Opus 5.5 vs GPT-6 Sol building a 3D game in Unreal Engine."
+    }
+   ],
+   "more": {
+    "label": "Claude in our AI tools directory",
+    "url": "/resources/#chat"
    }
   },
   {
@@ -818,13 +1586,147 @@
    }
   },
   {
+   "id": "claude-3x-faster",
+   "title": "Claude sped up Claude: how claude.ai got about 3x faster",
+   "kind": "Short",
+   "date": "Sep 2026",
+   "length": "58s",
+   "topic": "Claude",
+   "youtube": null,
+   "mp4": "videos/claude-3x-faster.mp4",
+   "poster": "videos/claude-3x-faster.jpg",
+   "summary": "The Claude team says it made claude.ai about 3x faster in a two-week sprint, with an internal research model roughly comparable to Opus 5.5 finding the slow spots, building the benchmarks, shipping the fixes and watching the deploys. Per their post, a fresh page load went from 3,085 ms to 550 ms, and sending a message in Cowork from 928 ms to 48 ms (19x). Two of the tricks: you see a plain copy of the page right away and can start typing while the real app loads underneath, and a single em dash had been making the browser store a whole reply the slow way (UTF-16), so code highlighting took 1.0 s; now it takes 0.35 s. More than 3,000 changes shipped, over 200 on the busiest days, with no customer-facing incident or rollback, and a human approved every change.",
+   "links": [
+    {
+     "name": "How we made claude.ai 3x faster in two weeks",
+     "url": "https://claude.dev/blog/how-we-made-claude-ai-faster/",
+     "kind": "post",
+     "what": "The Claude team's write-up (Raymond Wang, Sam Attard, Issac G.): every number in the video, the plain-copy trick and the em dash fix."
+    },
+    {
+     "name": "Anthropic: Introducing Claude Opus 5.5",
+     "url": "https://www.anthropic.com/claude-opus-5-5",
+     "kind": "background",
+     "what": "The public model the internal one is compared to."
+    }
+   ],
+   "more": {
+    "label": "Claude in our AI tools directory",
+    "url": "/resources/#chat"
+   },
+   "tiktok": "https://www.tiktok.com/@dripthecup/video/7688880143951006989"
+  },
+  {
+   "id": "ai-tools-for-small-business",
+   "title": "AI tools for a small business: meetings, email, expenses and automation",
+   "kind": "Short",
+   "date": "Sep 2026",
+   "length": "45s",
+   "topic": "AI tools",
+   "youtube": null,
+   "mp4": "videos/ai-tools-for-small-business.mp4",
+   "poster": "videos/ai-tools-for-small-business.jpg",
+   "summary": "Drip's small business eats his whole day, and he keeps his receipts in a mug. Capp hands the boring parts to AI through the Drip the Cup tools directory: tap what you want done and Jev ranks the best fits. The video shows four tasks as Jev ranked them that day: meeting notes (Otter, then Fireflies and Fathom), a faster inbox (Superhuman, then Spark and Shortwave), business expenses (Expensify, Ramp, QuickBooks) and automating work between apps (Zapier and Workato tied at the top, then Make and n8n). It won't do your taxes: it finds you the right tool, links every one, and marks which are free.",
+   "links": [
+    {
+     "name": "The AI tools directory",
+     "url": "https://dripthecup.com/resources/",
+     "kind": "directory",
+     "what": "Tap what you want done and Jev ranks the best fits. Every tool is linked and the free ones are marked."
+    },
+    {
+     "name": "Otter",
+     "url": "https://otter.ai",
+     "kind": "tool",
+     "what": "Live transcripts for meetings and lectures. Jev's top pick for meeting notes."
+    },
+    {
+     "name": "Fireflies",
+     "url": "https://fireflies.ai",
+     "kind": "tool",
+     "what": "Searchable records of every team call."
+    },
+    {
+     "name": "Fathom",
+     "url": "https://www.fathom.ai",
+     "kind": "tool",
+     "what": "Free call summaries for Zoom, Meet and Teams."
+    },
+    {
+     "name": "Superhuman",
+     "url": "https://superhuman.com",
+     "kind": "tool",
+     "what": "An email app built for speed. Jev's top pick for clearing an inbox."
+    },
+    {
+     "name": "Spark",
+     "url": "https://sparkmailapp.com",
+     "kind": "tool",
+     "what": "A tidy, free email app with AI help."
+    },
+    {
+     "name": "Shortwave",
+     "url": "https://www.shortwave.com",
+     "kind": "tool",
+     "what": "An AI assistant on top of Gmail."
+    },
+    {
+     "name": "Expensify",
+     "url": "https://www.expensify.com",
+     "kind": "tool",
+     "what": "Snap a receipt, get an expense report. Jev's top pick for business expenses."
+    },
+    {
+     "name": "Ramp",
+     "url": "https://ramp.com",
+     "kind": "tool",
+     "what": "Company cards with expenses sorted automatically."
+    },
+    {
+     "name": "QuickBooks",
+     "url": "https://quickbooks.intuit.com",
+     "kind": "tool",
+     "what": "Small-business accounting with AI help."
+    },
+    {
+     "name": "Zapier",
+     "url": "https://zapier.com",
+     "kind": "tool",
+     "what": "Connects thousands of apps, no code. Tied for Jev's top pick for automation."
+    },
+    {
+     "name": "Workato",
+     "url": "https://www.workato.com",
+     "kind": "tool",
+     "what": "Company-wide automation and integrations with enterprise security."
+    },
+    {
+     "name": "Make",
+     "url": "https://www.make.com",
+     "kind": "tool",
+     "what": "Visual automations with branching logic."
+    },
+    {
+     "name": "n8n",
+     "url": "https://n8n.io",
+     "kind": "tool",
+     "what": "Self-hostable automations with AI steps."
+    }
+   ],
+   "more": {
+    "label": "Browse all AI tools",
+    "url": "/resources/"
+   },
+   "tiktok": "https://www.tiktok.com/@dripthecup/video/7688879228393131277"
+  },
+  {
    "id": "ai-tools-directory",
    "title": "191 AI tools, and Jev picks the right one for you",
    "kind": "Short",
    "date": "Sep 2026",
    "length": "56s",
    "topic": "AI tools",
-   "youtube": null,
+   "youtube": "uwLEvFjSOB8",
    "mp4": "videos/ai-tools-directory.mp4",
    "poster": "videos/ai-tools-directory.jpg",
    "summary": "Drip has too many AI tools and no idea which one to use. Capp walks him through the Drip the Cup AI tools directory: 191 tools in 24 categories, one line on what each is best for. Tap what you want to do and Jev ranks the best fits. The video shows three tasks: saving tokens in a coding agent, generating a video, and typing faster by talking.",
@@ -914,7 +1816,7 @@
    "date": "Sep 2026",
    "length": "65s",
    "topic": "Claude Code",
-   "youtube": null,
+   "youtube": "AIsckIpj7ZA",
    "mp4": "videos/claude-code-repos.mp4",
    "poster": "videos/claude-code-repos.jpg",
    "summary": "Drip's Claude Code keeps forgetting what they were building. Capp shows him four free repos that change how it works: Superpowers plans and tests before it codes, Context7 hands it current docs, Graphify maps the codebase so it rereads less, and Ponytail makes it write less code and spend fewer tokens. Three are plugins; Graphify is a skill with its own command-line tool.",

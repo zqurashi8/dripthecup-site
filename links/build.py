@@ -60,7 +60,10 @@ def player(v):
                 'allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" '
                 'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>'
                 f'<a class="yt" href="https://www.youtube.com/{"shorts/" if v["kind"] == "Short" else "watch?v="}{v["youtube"]}" target="_blank" rel="noopener">Watch on YouTube ↗</a>')
-    return f'<div class="player short"><video src="{v["mp4"]}" poster="{v["poster"]}" controls playsinline preload="none"></video></div><p class="yt soon">On YouTube soon</p>'
+    # posted on TikTok but not YouTube: link the TikTok post instead of promising YouTube
+    after = (f'<a class="yt" href="{e(v["tiktok"])}" target="_blank" rel="noopener">Watch on TikTok ↗</a>' if v.get('tiktok')
+             else '<p class="yt soon">On YouTube soon</p>')
+    return f'<div class="player short"><video src="{v["mp4"]}" poster="{v["poster"]}" controls playsinline preload="none"></video></div>{after}'
 
 
 def link(l):
@@ -71,11 +74,11 @@ def link(l):
           <p>{e(l["what"])}{src}</p>{inst}</li>'''
 
 
-def prompts(v):  # a carousel of motion graphics: the prompt to try for each one
+def prompts(v):  # prompts to copy: one per motion graphic in a carousel, or the prompt/checklist a video ends on
     if not v.get('prompts'):
         return ''
     items = ''.join(f'<li class="tool"><div class="tool-top"><h3>{e(p["name"])}</h3><span class="kind">prompt</span></div><pre class="wrap">{e(p["prompt"])}</pre></li>' for p in v['prompts'])
-    return f'<h3 class="sumh">The prompt for each one</h3><p class="lede">{e(v.get("prompts_note", ""))}</p><ul class="tools">{items}</ul>'
+    return f'<h3 class="sumh">{e(v.get("prompts_title", "The prompt for each one"))}</h3><p class="lede">{e(v.get("prompts_note", ""))}</p><ul class="tools">{items}</ul>'
 
 
 sections = '\n'.join(f'''  <article class="ep" id="{v["id"]}">
