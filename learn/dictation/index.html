@@ -328,7 +328,7 @@
         <a class="btn btn-mustard" href="#month">See it a month in</a>
         <a class="btn btn-ghost" href="#build">Build version 1 tonight</a>
       </div>
-      <p class="fine">version 1 runs in Chrome or Edge. no install, no python.</p>
+      <p class="fine">version 1 runs in Chrome or Edge. no python.</p>
     </div>
     <div class="price">
       <p class="hud">What the shops charge</p>
@@ -460,7 +460,8 @@
     <div class="steps">
       <div class="step"><div class="n">1</div><div class="b">
         <h3>Describe it. Save it. Open it.</h3>
-        <p>Copy this into your AI. Save the reply as a file called <b>dictate.html</b> (in VS Code or Notepad), then double-click it to open it in Chrome or Edge.</p>
+        <p>Copy this into your AI. Save the reply as <b>dictate.html</b> in a new folder. Open that folder in VS Code, install the free <b>Live Server</b> extension, and click <b>Go Live</b> at the bottom right. Your page opens at 127.0.0.1 in your browser; use Chrome or Edge.</p>
+        <p><b>Why not just double-click the file?</b> Browsers only let speech recognition use your microphone on a real web address, and a file you double-clicked isn't one. 127.0.0.1 is a real address that lives on your own computer, so it counts.</p>
         <div class="prompt" id="p1">Make me a single HTML file called dictate.html with no external libraries. A big button I can hold down (mouse, touch, or the space bar) to dictate using the browser's built-in speech recognition (webkitSpeechRecognition). While I hold it, show the words as they arrive. When I let go, put the final text in a text box with a Copy button and a Clear button. Keep a list of my last 20 dictations with timestamps in localStorage, with a button to clear it. Show a counter: words this session, and how many seconds the last dictation took from release to final text. If the browser doesn't support speech recognition, say so and suggest Chrome or Edge. Plain, readable code with comments, dark theme.<button type="button" class="btn btn-small copy" data-copy="p1">Copy</button></div>
         <p>If it doesn't work, paste the error message (or "the button does nothing") back to the AI and try again. Two or three rounds is normal.</p>
       </div></div>

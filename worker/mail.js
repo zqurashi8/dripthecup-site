@@ -159,3 +159,39 @@ export async function catchUp(env) {
   const open = await env.DB.prepare("select id from inquiries where notified = '' order by id limit 10").all();
   for (const r of open.results || []) await notifyInquiry(env, r.id);
 }
+
+/**
+ * The follow-ups after the welcome. Each step goes once, N days after sign-up, to
+ * people who came in through one of its forms, are still subscribed and have had
+ * their welcome. The two-day window means adding a new step later never blasts
+ * everyone who signed up months ago.
+ */
+const LEARNERS = ['learn-lab', 'learn-hero', 'learn-bottom', 'learn'];
+const SEQUENCE = [
+  { template: 'day1-did-it-work', days: 1, sources: LEARNERS },
+  { template: 'founding-day2-first-week', days: 2, sources: ['learn-founding'] },
+  { template: 'day3-two-models', days: 3, sources: LEARNERS },
+  { template: 'day6-my-story', days: 6, sources: LEARNERS },
+];
+
+export async function runSequence(env) {
+  if (!env.GMAIL_USER || !env.GMAIL_APP_PASSWORD) return;
+  for (const step of SEQUENCE) {
+    const due = new Date(Date.now() - step.days * 864e5).toISOString();
+    const floor = new Date(Date.now() - (step.days + 2) * 864e5).toISOString();
+    const marks = step.sources.map((_, i) => `?${i + 4}`).join(', ');
+    const rows = await env.DB.prepare(
+      "select s.email, s.unsub from subscribers s where s.unsubscribed = '' and s.welcomed <> '' " +
+      `and s.created <= ?1 and s.created > ?2 and s.source in (${marks}) ` +
+      "and not exists (select 1 from email_log l where l.email = s.email and l.template = ?3 and l.status = 'sent') " +
+      'order by s.created limit 25'
+    ).bind(due, floor, step.template, ...step.sources).all();
+    for (const r of rows.results || []) {
+      await sendTemplate(env, {
+        template: step.template,
+        to: r.email,
+        unsubscribe: `${SITE}/api/unsubscribe?e=${encodeURIComponent(r.email)}&t=${r.unsub}`,
+      });
+    }
+  }
+}

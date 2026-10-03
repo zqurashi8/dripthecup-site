@@ -15,6 +15,8 @@
   // The address the welcome emails come from. Public anyway (it's on every email);
   // the App Password is a secret set in the dashboard, never in this file.
   "vars": { "GMAIL_USER": "dripthecup@gmail.com" },
+  // Hourly: retry any welcome that did not send, then send follow-ups that are due.
+  "triggers": { "crons": ["0 * * * *"] },
   "d1_databases": [
     {
       // Reservations. Schema and the reason each column exists: worker/schema.sql

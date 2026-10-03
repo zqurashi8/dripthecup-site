@@ -8,9 +8,10 @@
  *
  * Only /api/* reaches this Worker (see run_worker_first in wrangler.jsonc);
  * every other request is served straight off disk. Any welcome email that did
- * not go out the first time is retried on the next sign-up (see catchUp).
+ * not go out the first time is retried on the next sign-up (see catchUp), and an
+ * hourly cron sends the follow-up emails as they come due (see runSequence).
  */
-import { welcome, notifyInquiry, catchUp } from './mail.js';
+import { welcome, notifyInquiry, catchUp, runSequence } from './mail.js';
 
 /**
  * The catalogue, server side, so a forged request cannot invent a product or a
@@ -232,5 +233,8 @@ export default {
     if (pathname === '/api/unsubscribe') return unsubscribe(request, env);
     if (pathname.startsWith('/api/')) return json({ error: 'not found' }, 404);
     return env.ASSETS.fetch(request);
+  },
+  async scheduled(event, env, ctx) {
+    ctx.waitUntil(catchUp(env).then(() => runSequence(env)));
   },
 };
