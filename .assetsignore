@@ -4,3 +4,5 @@
 wrangler.jsonc
 .nojekyll
 worker
+.wrangler
+__pycache__
