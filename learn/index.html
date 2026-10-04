@@ -196,7 +196,10 @@
   /* Mission Briefing: four screens, one at a time */
   /* full width: the screens are the point, the words sit underneath */
   #mb{grid-template-columns:1fr;}
-  #mb .shot.mbview{aspect-ratio:16/10;min-height:0;border-right:0;border-bottom:2px solid var(--line-dark);}
+  #mb .shot.mbview{aspect-ratio:auto;min-height:0;border-right:0;border-bottom:2px solid var(--line-dark);display:flex;flex-direction:column;overflow:visible;}
+  .mbv-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 10px;border-bottom:1px solid var(--line-dark);background:var(--dark2);flex-wrap:wrap;}
+  .mbv-tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);}
+  .mbv-stage{position:relative;aspect-ratio:16/10;overflow:hidden;background:#0c0b0a;}
   #mb .info{display:grid;grid-template-columns:1.1fr 1fr;gap:12px 34px;align-items:start;padding:26px 28px 28px;}
   #mb .info > .badge,#mb .info > h3,#mb .info > .one{grid-column:1;}
   #mb .info > .badge{justify-self:start;}
@@ -207,16 +210,15 @@
   .mbv{position:absolute;inset:0;margin:0;opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s;background:#0b0907;}
   .mbv.on{opacity:1;visibility:visible;}
   .mbv img{width:100%;height:100%;object-fit:cover;object-position:left top;display:block;}
-  .mbv video{width:100%;height:100%;object-fit:contain;display:block;background:#242422;}
-  .mbv.vid.person video{background:#2f2f2f;}
+  .mbv video{width:100%;height:100%;object-fit:contain;display:block;background:#0c0b0a;}
   .mbv figcaption{position:absolute;right:12px;top:12px;max-width:46%;font-family:var(--mono);font-size:11px;letter-spacing:.04em;line-height:1.5;color:var(--dim);text-align:right;background:rgba(16,13,9,.82);padding:6px 9px;border:1px solid var(--line-dark);}
-  .mbv-tabs{position:absolute;left:10px;bottom:10px;z-index:3;display:flex;gap:3px;padding:3px;background:rgba(16,13,9,.9);border:1px solid var(--line-dark);}
+  .mbv-tabs{display:flex;gap:3px;padding:3px;background:rgba(16,13,9,.9);border:1px solid var(--line-dark);}
   .mbv-tabs button{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);background:none;border:0;padding:8px 11px;cursor:pointer;}
   .mbv-tabs button:hover{color:var(--paper);}
   .mbv-tabs button[aria-selected="true"]{background:var(--mustard);color:var(--ink);}
   .mbpoints{margin:0;padding:0 0 0 18px;display:flex;flex-direction:column;gap:7px;font-size:14.5px;line-height:1.5;}
   .mbpoints b{color:var(--paper);font-weight:400;}
-  @media (max-width:520px){.mbv-tabs button{padding:7px 7px;font-size:10px;letter-spacing:.06em;} .mbv figcaption{display:none;}}
+  @media (max-width:520px){.mbv-tabs button{padding:7px 7px;font-size:10px;letter-spacing:.06em;} .mbv-tag{display:none;}}
 
   /* the full-size view */
   .zoom{border:2px solid var(--line-dark);background:#0b0907;padding:0;max-width:min(96vw,1700px);max-height:94vh;overflow:auto;}
@@ -576,35 +578,37 @@
     <p class="lede">Real apps I use every day, built on my own time since June. Click any of them to look closer. In the Lab you get them, and we build them together.</p>
     <article class="feat" id="mb">
         <div class="shot mbview">
+          <div class="mbv-bar">
+            <div class="mbv-tabs" role="tablist" aria-label="Mission Briefing screens">
+              <button type="button" role="tab" aria-selected="true">Dashboard</button>
+              <button type="button" role="tab" aria-selected="false">Tesla</button>
+              <button type="button" role="tab" aria-selected="false">Health</button>
+              <button type="button" role="tab" aria-selected="false">HQ</button>
+            </div>
+            <span class="mbv-tag">Real app · demo data · click to enlarge</span>
+          </div>
+          <div class="mbv-stage">
           <figure class="mbv on" data-zoom="art/builds/mb-home.webp" data-alt="Mission Briefing's home screen">
             <img src="art/builds/mb-home.webp" width="1600" height="1000" alt="Mission Briefing's home screen: a moving body scan with heart rate, steps and sleep, a holographic Tesla with battery and range, a morning briefing and an alerts feed. Demo data.">
           </figure>
-          <figure class="mbv vid" data-zoom="art/builds/mb-vehicle.webp" data-alt="The vehicle screen">
-            <video src="art/builds/mb-car.mp4" poster="art/builds/mb-car-poster.webp" muted loop playsinline preload="none" aria-label="The Tesla as a turning 3D hologram"></video>
-            <figcaption>Click for the whole car screen: commands, tires, and the routines that lock it and charge it for trips</figcaption>
+          <figure class="mbv vid" data-zoom="art/builds/mb-car-poster.webp" data-alt="The vehicle screen">
+            <video src="art/builds/mb-car.mp4" poster="art/builds/mb-car-poster.webp" muted loop playsinline preload="none" aria-label="The vehicle screen: the Tesla turning as a 3D hologram, remote commands, the status board and four car routines"></video>
           </figure>
-          <figure class="mbv vid person" data-zoom="art/builds/mb-health.webp" data-alt="The vitals screen">
-            <video src="art/builds/mb-person.mp4" poster="art/builds/mb-person-poster.webp" muted loop playsinline preload="none" aria-label="A body scan that moves, wired to Google Health"></video>
-            <figcaption>Click for the vitals: sleep stages, 14-day trends and workouts from Google Health</figcaption>
+          <figure class="mbv vid person" data-zoom="art/builds/mb-person-poster.webp" data-alt="The vitals screen">
+            <video src="art/builds/mb-person.mp4" poster="art/builds/mb-person-poster.webp" muted loop playsinline preload="none" aria-label="The vitals screen: a moving body scan, sleep stages, 14-day trends, workouts and Cipher's read on what to do next"></video>
           </figure>
           <figure class="mbv" data-zoom="art/builds/mb-hq.webp" data-alt="HQ, every project in one view">
             <img src="art/builds/mb-hq.webp" width="1600" height="1000" loading="lazy" alt="HQ: what to shoot next, what is waiting on me, this week's numbers per channel, and when each tool last synced. Demo data.">
           </figure>
-          <div class="mbv-tabs" role="tablist" aria-label="Mission Briefing screens">
-            <button type="button" role="tab" aria-selected="true">Dashboard</button>
-            <button type="button" role="tab" aria-selected="false">Tesla</button>
-            <button type="button" role="tab" aria-selected="false">Health</button>
-            <button type="button" role="tab" aria-selected="false">HQ</button>
           </div>
-          <span class="tagc sample">Real app · demo data</span>
         </div>
         <div class="info">
           <span class="badge">In daily use</span>
           <h3>Mission Briefing</h3>
           <p class="one">My own 007-style command center. One screen for what I'd otherwise check in six apps: my Tesla, my health, my calendar and inbox, my money, and every project I'm building. An agent called Cipher briefs me each morning and files whatever I tell it.</p>
           <ul class="mbpoints">
-            <li><b>The Tesla.</b> Battery, range and tires live, a 3D hologram, remote commands, and routines that lock it, guard it overnight and charge it for road trips.</li>
-            <li><b>Health.</b> A body scan wired to Google Health: heart rate, steps, sleep stages and workouts.</li>
+            <li><b>The Tesla.</b> Battery, range and tires live, a 3D hologram, ten remote commands, and routines that lock it, guard it overnight, charge it for road trips and warm it before I leave.</li>
+            <li><b>Health.</b> A body scan wired to Google Health: heart rate, steps, sleep stages, workouts, and Cipher's read on what to do next.</li>
             <li><b>HQ.</b> Every app and work session reports in, so one view shows what's waiting on me and what to shoot next.</li>
           </ul>
           <p class="inside">In the Lab: <b>Build your Double-O agent</b>, a 20-module course. Desktop and Android, built from a clean copy with demo data.</p>
