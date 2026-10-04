@@ -185,6 +185,45 @@
   .alsofree b{color:var(--paper);font-weight:400;}
   .glassnote{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--dim);opacity:.75;margin:18px 0 0;}
 
+  /* real screenshots: clear, and click to look closer */
+  .clear .shot > img{filter:none;opacity:1;transform:none;}
+  .clear:hover .shot > img{filter:none;opacity:1;}
+  .clear .lock-pill,.feat .lock-pill{left:auto;top:auto;right:10px;bottom:10px;transform:none;font-size:10.5px;padding:7px 11px;}
+  .shot[data-zoom],.mbv[data-zoom]{cursor:zoom-in;}
+  .shot.phone{background:radial-gradient(circle at 50% 30%,#2a2116,#0b0907 70%);}
+  .shot.phone > img{object-fit:contain;object-position:center top;padding-top:10px;}
+
+  /* Mission Briefing: four screens, one at a time */
+  /* full width: the screens are the point, the words sit underneath */
+  #mb{grid-template-columns:1fr;}
+  #mb .shot.mbview{aspect-ratio:16/10;min-height:0;border-right:0;border-bottom:2px solid var(--line-dark);}
+  #mb .info{display:grid;grid-template-columns:1.1fr 1fr;gap:12px 34px;align-items:start;padding:26px 28px 28px;}
+  #mb .info > .badge,#mb .info > h3,#mb .info > .one{grid-column:1;}
+  #mb .info > .badge{justify-self:start;}
+  #mb .info > .mbpoints{grid-column:2;grid-row:1 / span 3;align-self:center;}
+  #mb .info > .inside{grid-column:1;}
+  #mb .info > .btn{grid-column:2;justify-self:start;margin-top:0;}
+  @media (max-width:860px){#mb .info{grid-template-columns:1fr;} #mb .info > *{grid-column:1 !important;grid-row:auto !important;}}
+  .mbv{position:absolute;inset:0;margin:0;opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s;background:#0b0907;}
+  .mbv.on{opacity:1;visibility:visible;}
+  .mbv img{width:100%;height:100%;object-fit:cover;object-position:left top;display:block;}
+  .mbv video{width:100%;height:100%;object-fit:contain;display:block;background:#242422;}
+  .mbv.vid.person video{background:#2f2f2f;}
+  .mbv figcaption{position:absolute;right:12px;top:12px;max-width:46%;font-family:var(--mono);font-size:11px;letter-spacing:.04em;line-height:1.5;color:var(--dim);text-align:right;background:rgba(16,13,9,.82);padding:6px 9px;border:1px solid var(--line-dark);}
+  .mbv-tabs{position:absolute;left:10px;bottom:10px;z-index:3;display:flex;gap:3px;padding:3px;background:rgba(16,13,9,.9);border:1px solid var(--line-dark);}
+  .mbv-tabs button{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);background:none;border:0;padding:8px 11px;cursor:pointer;}
+  .mbv-tabs button:hover{color:var(--paper);}
+  .mbv-tabs button[aria-selected="true"]{background:var(--mustard);color:var(--ink);}
+  .mbpoints{margin:0;padding:0 0 0 18px;display:flex;flex-direction:column;gap:7px;font-size:14.5px;line-height:1.5;}
+  .mbpoints b{color:var(--paper);font-weight:400;}
+  @media (max-width:520px){.mbv-tabs button{padding:7px 7px;font-size:10px;letter-spacing:.06em;} .mbv figcaption{display:none;}}
+
+  /* the full-size view */
+  .zoom{border:2px solid var(--line-dark);background:#0b0907;padding:0;max-width:min(96vw,1700px);max-height:94vh;overflow:auto;}
+  .zoom::backdrop{background:rgba(8,6,4,.86);}
+  .zoom img{display:block;width:100%;height:auto;}
+  .zoom-x{position:sticky;top:8px;float:right;margin:8px 8px -48px 0;z-index:2;width:40px;height:40px;border:1.5px solid var(--mustard);background:rgba(16,13,9,.92);color:var(--paper);font-size:22px;line-height:1;cursor:pointer;}
+
   /* sample previews drawn in CSS: demo data only, never real accounts */
   .mock{position:absolute;inset:0;font-family:var(--mono);color:var(--dim);font-size:2.3cqw;line-height:1.35;}
   .mock.mb{padding:4.5cqw 5cqw;background:radial-gradient(circle at 78% 62%,rgba(227,172,42,.22),transparent 42%),linear-gradient(160deg,#17120c,#0b0907);}
@@ -440,7 +479,7 @@
   .panel{border-bottom:1px solid var(--line);}
   .panel.dark{border-color:var(--line-dark);}
   .panel .sec-head{margin-bottom:18px;}
-  .lgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;}
+  .lgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;}
   @media (max-width:1100px){.lgrid{grid-template-columns:repeat(2,minmax(0,1fr));}}
   @media (max-width:580px){.lgrid{grid-template-columns:minmax(0,1fr);}}
   .lgrid .bcard h3{font-size:20px;}
@@ -534,35 +573,47 @@
         <h2>The full builds, a plan for your level, and me.</h2>
       </div>
     </div>
-    <p class="lede">Real apps I use every day, built on my own time since June. You can see them through the glass. In the Lab you get them, and we build them together.</p>
-    <article class="feat locked">
-        <div class="shot">
-          <div class="mock mb" aria-hidden="true">
-            <div class="mb-top"><span>Mission briefing</span><span>07:00</span></div>
-            <p class="mb-say">Morning. Three things matter today.</p>
-            <div class="mb-grid">
-              <div><small>Objectives</small><b>3</b><em>one due today</em></div>
-              <div><small>Calendar</small><b>2</b><em>first at 10:30</em></div>
-              <div><small>Inbox</small><b>4</b><em>need you</em></div>
-              <div><small>Car</small><b>82%</b><em>charged</em></div>
-            </div>
-            <div class="mb-ring"></div>
-            <div class="mb-input">Talk, type, or drop in a photo...</div>
+    <p class="lede">Real apps I use every day, built on my own time since June. Click any of them to look closer. In the Lab you get them, and we build them together.</p>
+    <article class="feat" id="mb">
+        <div class="shot mbview">
+          <figure class="mbv on" data-zoom="art/builds/mb-home.webp" data-alt="Mission Briefing's home screen">
+            <img src="art/builds/mb-home.webp" width="1600" height="1000" alt="Mission Briefing's home screen: a moving body scan with heart rate, steps and sleep, a holographic Tesla with battery and range, a morning briefing and an alerts feed. Demo data.">
+          </figure>
+          <figure class="mbv vid" data-zoom="art/builds/mb-vehicle.webp" data-alt="The vehicle screen">
+            <video src="art/builds/mb-car.mp4" poster="art/builds/mb-car-poster.webp" muted loop playsinline preload="none" aria-label="The Tesla as a turning 3D hologram"></video>
+            <figcaption>Click for the whole car screen: commands, tires, and the routines that lock it and charge it for trips</figcaption>
+          </figure>
+          <figure class="mbv vid person" data-zoom="art/builds/mb-health.webp" data-alt="The vitals screen">
+            <video src="art/builds/mb-person.mp4" poster="art/builds/mb-person-poster.webp" muted loop playsinline preload="none" aria-label="A body scan that moves, wired to Google Health"></video>
+            <figcaption>Click for the vitals: sleep stages, 14-day trends and workouts from Google Health</figcaption>
+          </figure>
+          <figure class="mbv" data-zoom="art/builds/mb-hq.webp" data-alt="HQ, every project in one view">
+            <img src="art/builds/mb-hq.webp" width="1600" height="1000" loading="lazy" alt="HQ: what to shoot next, what is waiting on me, this week's numbers per channel, and when each tool last synced. Demo data.">
+          </figure>
+          <div class="mbv-tabs" role="tablist" aria-label="Mission Briefing screens">
+            <button type="button" role="tab" aria-selected="true">Dashboard</button>
+            <button type="button" role="tab" aria-selected="false">Tesla</button>
+            <button type="button" role="tab" aria-selected="false">Health</button>
+            <button type="button" role="tab" aria-selected="false">HQ</button>
           </div>
-          <span class="tagc sample">Sample preview · demo data</span>
-          <a class="lock-pill unlock-link" href="#seat"><span class="ic-lock"></span>Unlock in the Lab</a>
+          <span class="tagc sample">Real app · demo data</span>
         </div>
         <div class="info">
           <span class="badge">In daily use</span>
           <h3>Mission Briefing</h3>
-          <p class="one">My own Jarvis. I talk, type or drop in a photo, and my agent Cipher files it into objectives and searchable memory, then runs a briefing for me every morning.</p>
+          <p class="one">My own 007-style command center. One screen for what I'd otherwise check in six apps: my Tesla, my health, my calendar and inbox, my money, and every project I'm building. An agent called Cipher briefs me each morning and files whatever I tell it.</p>
+          <ul class="mbpoints">
+            <li><b>The Tesla.</b> Battery, range and tires live, a 3D hologram, remote commands, and routines that lock it, guard it overnight and charge it for road trips.</li>
+            <li><b>Health.</b> A body scan wired to Google Health: heart rate, steps, sleep stages and workouts.</li>
+            <li><b>HQ.</b> Every app and work session reports in, so one view shows what's waiting on me and what to shoot next.</li>
+          </ul>
           <p class="inside">In the Lab: <b>Build your Double-O agent</b>, a 20-module course. Desktop and Android, built from a clean copy with demo data.</p>
           <a class="btn btn-mustard unlock-link" href="#seat"><span class="ic-lock"></span>Unlock in the Lab</a>
         </div>
       </article>
     <div class="lgrid">
-      <article class="bcard locked">
-          <div class="shot">
+      <article class="bcard locked clear">
+          <div class="shot" data-zoom="art/builds/scribe.webp" data-alt="Scribe's stats screen">
             <img src="art/builds/scribe.webp" width="900" height="563" loading="lazy" alt="Scribe's stats screen: 77k words dictated, 160 words a minute, 10.4 hours saved, and a words-per-day chart.">
             <a class="lock-pill unlock-link" href="#seat"><span class="ic-lock"></span>Unlock in the Lab</a>
           </div>
@@ -573,27 +624,60 @@
             <div class="act"><a class="btn btn-mustard unlock-link" href="#seat"><span class="ic-lock"></span>Unlock</a></div>
           </div>
         </article>
-      <article class="bcard locked">
-          <div class="shot">
-            <div class="mock ci" aria-hidden="true">
-              <div class="ci-h">Breakouts in your niche <span>vs each channel's normal</span></div>
-              <div class="ci-row"><div><p>I tried every AI note app</p><i style="width:92%"></i></div><b>6.2x</b></div>
-              <div class="ci-row"><div><p>Stop using ChatGPT like this</p><i style="width:70%"></i></div><b>4.8x</b></div>
-              <div class="ci-row"><div><p>The $0 automation stack</p><i style="width:46%"></i></div><b>3.1x</b></div>
-              <div class="ci-hooks"><span>hook: a number</span><span>hook: a mistake</span><span>hook: a dare</span></div>
-            </div>
-            <span class="tagc sample">Sample preview</span>
+      <article class="bcard locked clear">
+          <div class="shot phone" data-zoom="art/builds/scribe-phone.webp" data-alt="Scribe on the phone: the to-do list">
+            <img src="art/builds/scribe-phone.webp" width="520" height="867" loading="lazy" alt="Scribe's phone app: a to-do list grouped by project, filled from voice notes. Sample data.">
+            <span class="tagc sample">Sample data</span>
+            <a class="lock-pill unlock-link" href="#seat"><span class="ic-lock"></span>Unlock in the Lab</a>
+          </div>
+          <div class="info">
+            <span class="badge">New</span>
+            <h3>Scribe on my phone</h3>
+            <p class="one">I record a thought on a walk. My PC transcribes it, sorts it, and pulls out the to-dos I said, which land on a list I check off from anywhere.</p>
+            <div class="act"><a class="btn btn-mustard unlock-link" href="#seat"><span class="ic-lock"></span>Unlock</a></div>
+          </div>
+        </article>
+      <article class="bcard locked clear">
+          <div class="shot" data-zoom="art/builds/ci-works.webp" data-alt="Creator Intel: what works">
+            <img src="art/builds/ci-works.webp" width="1400" height="653" loading="lazy" alt="Creator Intel's What works page for Drip the Cup: roundups on YouTube at 1.9x the usual views, carousels on TikTok at 1.4x, tutorials on YouTube at 0.3x.">
+            <span class="tagc sample">Real numbers · my channel</span>
             <a class="lock-pill unlock-link" href="#seat"><span class="ic-lock"></span>Unlock in the Lab</a>
           </div>
           <div class="info">
             <span class="badge">Working</span>
             <h3>Creator Intel</h3>
-            <p class="one">Scores every video against its own channel's normal, so you see what actually broke out. Then it writes what worked into skills Claude reads before you brainstorm.</p>
+            <p class="one">Reads every post I make on YouTube and TikTok, compares each one to my own usual, and spells out what's working and what isn't. Then it writes that into a skill Claude reads before we brainstorm.</p>
             <div class="act"><a class="btn btn-mustard unlock-link" href="#seat"><span class="ic-lock"></span>Unlock</a></div>
           </div>
         </article>
-      <article class="bcard locked">
-          <div class="shot">
+      <article class="bcard locked clear">
+          <div class="shot" data-zoom="art/builds/ci-desk.webp" data-alt="The Script Desk">
+            <img src="art/builds/ci-desk.webp" width="1600" height="1000" loading="lazy" alt="The Script Desk on the EP01 script: 9:07 estimated runtime, 1,524 spoken words, who speaks how much, and the script line by line with notes.">
+            <span class="tagc sample">Inside Creator Intel</span>
+            <a class="lock-pill unlock-link" href="#seat"><span class="ic-lock"></span>Unlock in the Lab</a>
+          </div>
+          <div class="info">
+            <span class="badge">Used daily</span>
+            <h3>The Script Desk</h3>
+            <p class="one">Every script, line by line: estimated runtime, who talks how much, revisions side by side, a note on any line, and a table read before anything gets voiced.</p>
+            <div class="act"><a class="btn btn-mustard unlock-link" href="#seat"><span class="ic-lock"></span>Unlock</a></div>
+          </div>
+        </article>
+      <article class="bcard locked clear">
+          <div class="shot" data-zoom="art/builds/take-editor.webp" data-alt="Take's editor">
+            <img src="art/builds/take-editor.webp" width="1440" height="1001" loading="lazy" alt="Take's editor: two takes of an intro flagged as repeated, a note to use the second one, a timeline with the screen and audio, and an export straight to DaVinci Resolve.">
+            <span class="tagc sample">Test recording</span>
+            <a class="lock-pill unlock-link" href="#seat"><span class="ic-lock"></span>Unlock in the Lab</a>
+          </div>
+          <div class="info">
+            <span class="badge">On my desktop</span>
+            <h3>Take</h3>
+            <p class="one">My own screen recorder and editor. Screen, face cam and mic record as separate layers. It flags repeated intros and long pauses, cuts on a timeline, and sends the edit to DaVinci Resolve with every layer on its own track.</p>
+            <div class="act"><a class="btn btn-mustard unlock-link" href="#seat"><span class="ic-lock"></span>Unlock</a></div>
+          </div>
+        </article>
+      <article class="bcard locked clear">
+          <div class="shot" data-zoom="art/builds/studio.webp" data-alt="A Drip and Capp storyboard frame">
             <img src="art/builds/studio.webp" width="629" height="393" loading="lazy" alt="A storyboard frame: Drip at a desk with a laptop while Capp stands beside him with a clipboard.">
             <a class="lock-pill unlock-link" href="#seat"><span class="ic-lock"></span>Unlock in the Lab</a>
           </div>
@@ -604,33 +688,17 @@
             <div class="act"><a class="btn btn-mustard unlock-link" href="#seat"><span class="ic-lock"></span>Unlock</a></div>
           </div>
         </article>
-      <article class="bcard locked">
-          <div class="shot">
-            <div class="mock ed" aria-hidden="true">
-              <div class="ed-rec"><span><i></i>REC 00:12:41</span><span>screen · face cam · mic</span></div>
-              <p class="ed-say">okay so the first thing <s>um, wait, let me start that again.</s> the first thing you do is open the terminal.</p>
-              <div class="ed-track v"><span>Screen</span><div><i style="flex:3"></i><i class="c" style="flex:2"></i><i style="flex:5"></i><i class="c" style="flex:1"></i><i style="flex:3"></i></div></div>
-              <div class="ed-track v"><span>Face</span><div><i style="flex:3"></i><i class="c" style="flex:2"></i><i style="flex:5"></i><i class="c" style="flex:1"></i><i style="flex:3"></i></div></div>
-              <div class="ed-track"><span>Mic</span><div><i style="flex:3"></i><i class="c" style="flex:2"></i><i style="flex:5"></i><i class="c" style="flex:1"></i><i style="flex:3"></i></div></div>
-              <div class="ed-out">cut list &rarr; DaVinci Resolve, already trimmed</div>
-            </div>
-            <span class="tagc sample">Sample preview</span>
-            <a class="lock-pill unlock-link" href="#seat"><span class="ic-lock"></span>Unlock in the Lab</a>
-          </div>
-          <div class="info">
-            <span class="badge">Working</span>
-            <h3>Tutorial Recorder</h3>
-            <p class="one">My own screen recorder and editor for YouTube. It records your screen, face cam and mic as separate layers, an AI cut list marks what to keep, and it opens in DaVinci Resolve already trimmed.</p>
-            <div class="act"><a class="btn btn-mustard unlock-link" href="#seat"><span class="ic-lock"></span>Unlock</a></div>
-          </div>
-        </article>
     </div>
+    <dialog class="zoom" id="zoom" aria-label="Screenshot, full size">
+      <button type="button" class="zoom-x" aria-label="Close">&times;</button>
+      <img alt="">
+    </dialog>
     <div class="labgrid" id="seat">
       <div class="get">
         <p class="hud">What you get</p>
         <ul class="checks">
           <li><b>The full builds.</b> Scribe, Mission Briefing, Creator Intel and the Drip &amp; Capp studio as step-by-step courses, with the code and the agent skills.</li>
-          <li><b>Apps you keep.</b> Tutorial Recorder and Scribe, yours to use.</li>
+          <li><b>Apps you keep.</b> Take and Scribe, yours to use.</li>
           <li><b>A plan for your level.</b> Where you are on the nine levels, and what to build next.</li>
           <li><b>Two live calls a week.</b> A build-along and a Q&amp;A, plus reviews of your builds and your portfolio.</li>
           <li><b>A small group.</b> Seeded with working engineers, so questions get real answers.</li>
@@ -800,7 +868,7 @@
       <div class="lvr"><span class="n">7</span><b>Engineer: portfolio projects</b><span class="w">Four projects to show an employer or a client</span><span class="tag lab">Lab</span></div>
       <div class="lvr"><span class="n">8</span><b>Architect: automating a character</b><span class="w">The Drip pipeline, the way a company would run it</span><span class="tag lab">Case study</span></div>
       <div class="lvr"><span class="n">9</span><b>Legend: the career</b><span class="w">Resume, interviews, a twelve-month plan reviewed live</span><span class="tag lab">Lab</span></div>
-      <div class="lvr side"><span class="n">+</span><b>Side quest: record, edit and make videos with AI</b><span class="w">Members get my Tutorial Recorder app</span><span class="tag lab">Lab</span></div>
+      <div class="lvr side"><span class="n">+</span><b>Side quest: record, edit and make videos with AI</b><span class="w">Members get Take, my screen recorder</span><span class="tag lab">Lab</span></div>
     </div>
   </div>
 </section>
@@ -843,6 +911,44 @@
 </footer>
 
 <script>
+// Mission Briefing viewer: four screens, auto-advancing until someone picks one.
+(function(){
+  var view = document.querySelector('.mbview'); if(!view) return;
+  var figs = view.querySelectorAll('.mbv'), tabs = view.querySelectorAll('.mbv-tabs button'), cur = 0, timer = null;
+  function show(i){
+    cur = i;
+    figs.forEach(function(f,j){
+      f.classList.toggle('on', j===i);
+      var v = f.querySelector('video');
+      if(v){ if(j===i){ var p = v.play(); if(p && p.catch) p.catch(function(){}); } else v.pause(); }
+    });
+    tabs.forEach(function(t,j){ t.setAttribute('aria-selected', j===i ? 'true' : 'false'); });
+  }
+  tabs.forEach(function(t,i){ t.addEventListener('click', function(e){ e.stopPropagation(); clearInterval(timer); show(i); }); });
+  var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!calm && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        clearInterval(timer);
+        if(e.isIntersecting && !view.dataset.picked){ timer = setInterval(function(){ show((cur+1) % figs.length); }, 5000); }
+      });
+    }, {threshold:.4}).observe(view);
+    tabs.forEach(function(t){ t.addEventListener('click', function(){ view.dataset.picked = '1'; }); });
+  }
+})();
+// Click any real screenshot to see it full size.
+(function(){
+  var dlg = document.getElementById('zoom'); if(!dlg || !dlg.showModal) return;
+  var img = dlg.querySelector('img');
+  document.querySelectorAll('[data-zoom]').forEach(function(el){
+    el.addEventListener('click', function(e){
+      if(e.target.closest('a, .mbv-tabs')) return;
+      img.src = el.dataset.zoom; img.alt = el.dataset.alt || '';
+      dlg.showModal();
+    });
+  });
+  dlg.addEventListener('click', function(e){ if(e.target === dlg || e.target.closest('.zoom-x')) dlg.close(); });
+})();
   // ---- Skool: paste the group URL here when it exists. The founding form gives way to
   // a "Join the Lab" link and every lock opens it.
   var SKOOL_URL = '';
