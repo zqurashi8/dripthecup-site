@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Learn AI with Zain Qurashi · Drip the Cup</title>
-<meta name="description" content="Learn AI with Zain Qurashi, the integrations engineer behind Drip the Cup. Nine levels from zero to AI integrations engineer: free videos and a free roadmap, an optional paid Lab with the full builds, and AI setup for businesses.">
+<meta name="description" content="Learn AI with Zain Qurashi, the integrations engineer behind Drip the Cup. Nine levels from zero to AI integrations engineer: free videos and a free roadmap, an optional paid Lab with enterprise labs and the full builds, and AI setup for businesses.">
 <link rel="canonical" href="https://dripthecup.com/learn/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dripthecup.com/learn/">
@@ -523,6 +523,16 @@
   .lvr .tag.lab{background:var(--mustard);border-color:var(--mustard);color:var(--ink);}
   .lvr.side{grid-column:1/-1;border-style:dashed;border-color:var(--mustard);}
   #path .pathbar{position:static;}
+  /* enterprise track */
+  .ent{border:2px solid var(--mustard);background:var(--dark2);padding:24px 24px 20px;margin-bottom:34px;}
+  .ent .hud,.track2{color:var(--mustard);margin:0 0 10px;}
+  .ent h3{font-family:var(--display);font-weight:900;font-size:clamp(24px,2.8vw,34px);color:var(--paper);line-height:1.1;letter-spacing:-.01em;margin:0 0 10px;}
+  .ent .one{margin:0 0 18px;font-size:16px;max-width:62em;}
+  .ent .lvr{background:var(--dark);}
+  .ent .lvr .n{font-size:12px;}
+  .ent .lvr.star{border-color:var(--mustard);}
+  .ent .stack{margin:16px 0 0;font-size:13.5px;color:var(--dim);}
+  .track2{margin-bottom:14px;}
 </style>
 </head>
 <body>
@@ -550,7 +560,7 @@
       <p class="sub">With nothing connected, AI can only talk. Connected to a company's email, files and systems, safely, it does real work. Connecting it is the integrations engineer's job, and it's been mine for ten years.</p>
       <div class="choose" role="tablist" aria-label="Three ways in">
         <button type="button" role="tab" id="t-free" aria-controls="p-free" aria-selected="false" tabindex="-1"><b>The free path</b><span>start tonight, $0</span></button>
-        <button type="button" role="tab" id="t-lab" aria-controls="p-lab" aria-selected="true"><b>The Lab</b><span>the full builds, $49/mo</span></button>
+        <button type="button" role="tab" id="t-lab" aria-controls="p-lab" aria-selected="true"><b>The Lab</b><span>enterprise labs + builds, $49/mo</span></button>
         <button type="button" role="tab" id="t-hire" aria-controls="p-hire" aria-selected="false" tabindex="-1"><b>Work with me</b><span>for businesses</span></button>
       </div>
       <p class="choose-note">three ways in. pick one; the details are right below.</p>
@@ -575,47 +585,42 @@
         <h2>The full builds, a plan for your level, and me.</h2>
       </div>
     </div>
-    <p class="lede">Real apps I use every day, built on my own time since June. Click any of them to look closer. In the Lab you get them, and we build them together.</p>
-    <article class="feat" id="mb">
-        <div class="shot mbview">
-          <div class="mbv-bar">
-            <div class="mbv-tabs" role="tablist" aria-label="Mission Briefing screens">
-              <button type="button" role="tab" aria-selected="true">Dashboard</button>
-              <button type="button" role="tab" aria-selected="false">Tesla</button>
-              <button type="button" role="tab" aria-selected="false">Health</button>
-              <button type="button" role="tab" aria-selected="false">HQ</button>
-            </div>
-            <span class="mbv-tag">Real app · demo data · click to enlarge</span>
-          </div>
-          <div class="mbv-stage">
-          <figure class="mbv on" data-zoom="art/builds/mb-home.webp" data-alt="Mission Briefing's home screen">
-            <img src="art/builds/mb-home.webp" width="1600" height="1000" alt="Mission Briefing's home screen: a moving body scan with heart rate, steps and sleep, a holographic Tesla with battery and range, a morning briefing and an alerts feed. Demo data.">
-          </figure>
-          <figure class="mbv vid" data-zoom="art/builds/mb-car-poster.webp" data-alt="The vehicle screen">
-            <video src="art/builds/mb-car.mp4" poster="art/builds/mb-car-poster.webp" muted loop playsinline preload="none" aria-label="The vehicle screen: the Tesla turning as a 3D hologram, remote commands, the status board and four car routines"></video>
-          </figure>
-          <figure class="mbv vid person" data-zoom="art/builds/mb-person-poster.webp" data-alt="The vitals screen">
-            <video src="art/builds/mb-person.mp4" poster="art/builds/mb-person-poster.webp" muted loop playsinline preload="none" aria-label="The vitals screen: a moving body scan, sleep stages, 14-day trends, workouts and Cipher's read on what to do next"></video>
-          </figure>
-          <figure class="mbv" data-zoom="art/builds/mb-hq.webp" data-alt="HQ, every project in one view">
-            <img src="art/builds/mb-hq.webp" width="1600" height="1000" loading="lazy" alt="HQ: what to shoot next, what is waiting on me, this week's numbers per channel, and when each tool last synced. Demo data.">
-          </figure>
-          </div>
-        </div>
-        <div class="info">
-          <span class="badge">In daily use</span>
-          <h3>Mission Briefing</h3>
-          <p class="one">My own 007-style command center. One screen for what I'd otherwise check in six apps: my Tesla, my health, my calendar and inbox, my money, and every project I'm building. An agent called Cipher briefs me each morning and files whatever I tell it.</p>
-          <ul class="mbpoints">
-            <li><b>The Tesla.</b> Battery, range and tires live, a 3D hologram, ten remote commands, and routines that lock it, guard it overnight, charge it for road trips and warm it before I leave.</li>
-            <li><b>Health.</b> A body scan wired to Google Health: heart rate, steps, sleep stages, workouts, and Cipher's read on what to do next.</li>
-            <li><b>HQ.</b> Every app and work session reports in, so one view shows what's waiting on me and what to shoot next.</li>
-          </ul>
-          <p class="inside">In the Lab: <b>Build your Double-O agent</b>, a 20-module course. Desktop and Android, built from a clean copy with demo data.</p>
-          <a class="btn btn-mustard unlock-link" href="#seat"><span class="ic-lock"></span>Unlock in the Lab</a>
-        </div>
-      </article>
+    <p class="lede">Two tracks. The enterprise labs teach the job: AI connected to a company's systems, safely. The personal builds are real apps I use every day, built on my own time since June. In the Lab you get both, and we build them together.</p>
+    <div class="ent" id="enterprise">
+      <p class="hud">Track 1 &nbsp;·&nbsp; Enterprise labs &nbsp;·&nbsp; the job</p>
+      <h3>Build a company. Then wire AI into it without making the security team nervous.</h3>
+      <p class="one">Every lab happens inside one company you set up yourself, with fake staff, customers and invoices. Each one adds an AI capability the way a real employer would want it: who the agent is, what it can see, what it can change, and proof of what it did. By the end you have one system you can demo end to end.</p>
+      <div class="lvl elabs">
+        <div class="lvr"><span class="n">E1</span><b>Stand up the company</b><span class="w">Users, groups and roles in your own identity provider, plus its customers, tickets and invoices.</span></div>
+        <div class="lvr"><span class="n">E2</span><b>Your first MCP server, read only</b><span class="w">The database role it uses can't write, even if the code tried.</span></div>
+        <div class="lvr"><span class="n">E3</span><b>Read versus write</b><span class="w">Refunds, emails and closed tickets wait for a human to approve, with a preview of what changes.</span></div>
+        <div class="lvr"><span class="n">E4</span><b>Give the agent an identity</b><span class="w">OAuth the way the MCP spec requires. The agent acts on behalf of the person using it, never with more.</span></div>
+        <div class="lvr star"><span class="n">E5</span><b>Build your own MCP proxy</b><span class="w">One front door: tool allowlists per team, no token passthrough, pinned tools, budgets, writes held for approval.</span><span class="tag lab">Signature</span></div>
+        <div class="lvr"><span class="n">E6</span><b>Log everything</b><span class="w">Who asked, which agent, which tool, what changed, who approved. Then answer: what did it do last Tuesday?</span></div>
+        <div class="lvr"><span class="n">E7</span><b>Attack your own agent</b><span class="w">Prompt injection through a ticket, a poisoned tool, a malicious package. Then fix each one.</span></div>
+        <div class="lvr"><span class="n">E8</span><b>Connect Copilot</b><span class="w">A Copilot Studio agent calling your server through your proxy, governed by a data loss policy.</span></div>
+        <div class="lvr"><span class="n">E9</span><b>The same company on AWS</b><span class="w">Bedrock AgentCore with a policy outside the code: refunds under $100 only.</span></div>
+        <div class="lvr"><span class="n">E10</span><b>Cost and the kill switch</b><span class="w">A runaway agent, budgets that stop it, and one switch that stops them all.</span></div>
+        <div class="lvr"><span class="n">E11</span><b>Tests on every change</b><span class="w">Real questions and the attacks from E7, run automatically whenever a prompt, tool or model changes.</span></div>
+        <div class="lvr"><span class="n">E12</span><b>The rollout review</b><span class="w">The packet a security team asks for before saying yes. You present it; the group plays security.</span></div>
+      </div>
+      <p class="stack">Runs on your laptop for free: an identity provider, a database, Python and Docker. Then the stacks companies buy: Copilot Studio and Entra, and AWS Bedrock AgentCore, on free trials.</p>
+    </div>
+    <p class="hud track2">Track 2 &nbsp;·&nbsp; Personal builds &nbsp;·&nbsp; the tools I use every day</p>
     <div class="lgrid">
+      <article class="bcard locked clear">
+          <div class="shot" data-zoom="art/builds/mb-home.webp" data-alt="Mission Briefing's home screen">
+            <img src="art/builds/mb-home.webp" width="1600" height="1000" loading="lazy" alt="Mission Briefing's home screen: a body scan with heart rate, steps and sleep, a holographic Tesla with battery and range, a morning briefing and an alerts feed. Demo data.">
+            <span class="tagc sample">Demo data</span>
+            <a class="lock-pill unlock-link" href="#seat"><span class="ic-lock"></span>Unlock in the Lab</a>
+          </div>
+          <div class="info">
+            <span class="badge">In daily use</span>
+            <h3>Mission Briefing</h3>
+            <p class="one">My own command center. One screen for my car, my health, my calendar and inbox, and every project I'm building. An agent briefs me each morning, and every app and work session reports in.</p>
+            <div class="act"><a class="btn btn-mustard unlock-link" href="#seat"><span class="ic-lock"></span>Unlock</a></div>
+          </div>
+        </article>
       <article class="bcard locked clear">
           <div class="shot" data-zoom="art/builds/scribe.webp" data-alt="Scribe's stats screen">
             <img src="art/builds/scribe.webp" width="900" height="563" loading="lazy" alt="Scribe's stats screen: 77k words dictated, 160 words a minute, 10.4 hours saved, and a words-per-day chart.">
@@ -624,20 +629,7 @@
           <div class="info">
             <span class="badge">Working</span>
             <h3>Scribe</h3>
-            <p class="one">My own private dictation app. Hold a key, talk, and clean text lands wherever your cursor is. It runs on your computer and nothing leaves it.</p>
-            <div class="act"><a class="btn btn-mustard unlock-link" href="#seat"><span class="ic-lock"></span>Unlock</a></div>
-          </div>
-        </article>
-      <article class="bcard locked clear">
-          <div class="shot phone" data-zoom="art/builds/scribe-phone.webp" data-alt="Scribe on the phone: the to-do list">
-            <img src="art/builds/scribe-phone.webp" width="520" height="867" loading="lazy" alt="Scribe's phone app: a to-do list grouped by project, filled from voice notes. Sample data.">
-            <span class="tagc sample">Sample data</span>
-            <a class="lock-pill unlock-link" href="#seat"><span class="ic-lock"></span>Unlock in the Lab</a>
-          </div>
-          <div class="info">
-            <span class="badge">New</span>
-            <h3>Scribe on my phone</h3>
-            <p class="one">I record a thought on a walk. My PC transcribes it, sorts it, and pulls out the to-dos I said, which land on a list I check off from anywhere.</p>
+            <p class="one">My own private dictation app. Hold a key, talk, and clean text lands wherever your cursor is. It runs on your computer, coaches how I speak, and has a phone app that sends voice notes home.</p>
             <div class="act"><a class="btn btn-mustard unlock-link" href="#seat"><span class="ic-lock"></span>Unlock</a></div>
           </div>
         </article>
@@ -701,7 +693,8 @@
       <div class="get">
         <p class="hud">What you get</p>
         <ul class="checks">
-          <li><b>The full builds.</b> Scribe, Mission Briefing, Creator Intel and the Drip &amp; Capp studio as step-by-step courses, with the code and the agent skills.</li>
+          <li><b>Twelve enterprise labs.</b> Identity, read versus write, your own MCP proxy, audit logs, attacks and fixes, Copilot and AWS, and the rollout review.</li>
+          <li><b>The full builds.</b> Mission Briefing, Scribe, Creator Intel and the Drip &amp; Capp studio as step-by-step courses, with the code and the agent skills.</li>
           <li><b>Apps you keep.</b> Take and Scribe, yours to use.</li>
           <li><b>A plan for your level.</b> Where you are on the nine levels, and what to build next.</li>
           <li><b>Two live calls a week.</b> A build-along and a Q&amp;A, plus reviews of your builds and your portfolio.</li>
@@ -868,7 +861,7 @@
       <div class="lvr"><span class="n">3</span><b>Builder: connect AI to your apps</b><span class="w">Your first MCP server</span><span class="tag lab">Lab</span></div>
       <div class="lvr"><span class="n">4</span><b>Integrator: voice and media</b><span class="w">Dictation on your own computer; Scribe in the Lab</span><span class="tag">Free</span></div>
       <div class="lvr"><span class="n">5</span><b>Automator: automations and agents</b><span class="w">An agent that sorts your day and briefs you every morning</span><span class="tag lab">Lab</span></div>
-      <div class="lvr"><span class="n">6</span><b>Shipper: AI at the enterprise level</b><span class="w">A locked-down integration: roles, logs, cost limits</span><span class="tag lab">Lab</span></div>
+      <div class="lvr"><span class="n">6</span><b>Shipper: AI at the enterprise level</b><span class="w">Twelve labs: identity, approvals, your own MCP proxy, audit logs, Copilot and AWS</span><span class="tag lab">Lab</span></div>
       <div class="lvr"><span class="n">7</span><b>Engineer: portfolio projects</b><span class="w">Four projects to show an employer or a client</span><span class="tag lab">Lab</span></div>
       <div class="lvr"><span class="n">8</span><b>Architect: automating a character</b><span class="w">The Drip pipeline, the way a company would run it</span><span class="tag lab">Case study</span></div>
       <div class="lvr"><span class="n">9</span><b>Legend: the career</b><span class="w">Resume, interviews, a twelve-month plan reviewed live</span><span class="tag lab">Lab</span></div>
@@ -1000,10 +993,10 @@
   });
 
   // ---- The path: the XP bar fills as levels scroll into view (steps, no easing).
-  var lvs = document.querySelectorAll('.lvr:not(.side)'), fill = document.getElementById('pathFill'), count = document.getElementById('pathCount');
+  var lvs = document.querySelectorAll('#path .lvr:not(.side)'), fill = document.getElementById('pathFill'), count = document.getElementById('pathCount');
   var seen = 0;
   function paint() {
-    var n = document.querySelectorAll('.lvr.seen:not(.side)').length;
+    var n = document.querySelectorAll('#path .lvr.seen:not(.side)').length;
     if (n === seen) return; seen = n;
     fill.style.width = Math.round(n / lvs.length * 100) + '%';
     count.textContent = 'LV ' + Math.max(0, n - 1) + ' / 9';
@@ -1012,8 +1005,8 @@
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('seen'); paint(); } });
     }, { threshold: 0.6 });
-    document.querySelectorAll('.lvr').forEach(function (l) { io.observe(l); });
-  } else { document.querySelectorAll('.lvr').forEach(function (l) { l.classList.add('seen'); }); paint(); }
+    document.querySelectorAll('#path .lvr').forEach(function (l) { io.observe(l); });
+  } else { document.querySelectorAll('#path .lvr').forEach(function (l) { l.classList.add('seen'); }); paint(); }
 
   // ---- Forms. Learners POST /api/subscribe; businesses POST /api/inquire.
   function wire(f, url, build) {
