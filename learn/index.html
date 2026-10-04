@@ -529,7 +529,8 @@
   .ent h3{font-family:var(--display);font-weight:900;font-size:clamp(24px,2.8vw,34px);color:var(--paper);line-height:1.1;letter-spacing:-.01em;margin:0 0 10px;}
   .ent .one{margin:0 0 18px;font-size:16px;max-width:62em;}
   .ent .lvr{background:var(--dark);}
-  .ent .lvr .n{font-size:12px;}
+  .ent .lvr .n{font-size:14px;}
+  .ent .lvr b small{font-family:var(--mono);font-size:11px;color:var(--mustard);font-weight:400;margin-left:6px;letter-spacing:.04em;}
   .ent .lvr.star{border-color:var(--mustard);}
   .ent .stack{margin:16px 0 0;font-size:13.5px;color:var(--dim);}
   .track2{margin-bottom:14px;}
@@ -588,23 +589,17 @@
     <p class="lede">Two tracks. The enterprise labs teach the job: AI connected to a company's systems, safely. The personal builds are real apps I use every day, built on my own time since June. In the Lab you get both, and we build them together.</p>
     <div class="ent" id="enterprise">
       <p class="hud">Track 1 &nbsp;·&nbsp; Enterprise labs &nbsp;·&nbsp; the job</p>
-      <h3>Build a company. Then wire AI into it without making the security team nervous.</h3>
-      <p class="one">Every lab happens inside one company you set up yourself, with fake staff, customers and invoices. Each one adds an AI capability the way a real employer would want it: who the agent is, what it can see, what it can change, and proof of what it did. By the end you have one system you can demo end to end.</p>
+      <h3>Build a company on real tools. Then wire AI into it without making the security team nervous.</h3>
+      <p class="one">Every episode happens inside one company you set up yourself, on the tools real companies run, using free tiers and sandboxes. Fake staff, customers and invoices; real Okta, Slack, Airtable, HubSpot and QuickBooks. You roll out Claude and ChatGPT, build the automations every company needs, then agents, then the security around them: who the agent is, what it can see, what it can change, and proof of what it did. Thirty-one episodes, one system you can demo end to end.</p>
       <div class="lvl elabs">
-        <div class="lvr"><span class="n">E1</span><b>Stand up the company</b><span class="w">Users, groups and roles in your own identity provider, plus its customers, tickets and invoices.</span></div>
-        <div class="lvr"><span class="n">E2</span><b>Your first MCP server, read only</b><span class="w">The database role it uses can't write, even if the code tried.</span></div>
-        <div class="lvr"><span class="n">E3</span><b>Read versus write</b><span class="w">Refunds, emails and closed tickets wait for a human to approve, with a preview of what changes.</span></div>
-        <div class="lvr"><span class="n">E4</span><b>Give the agent an identity</b><span class="w">OAuth the way the MCP spec requires. The agent acts on behalf of the person using it, never with more.</span></div>
-        <div class="lvr star"><span class="n">E5</span><b>Build your own MCP proxy</b><span class="w">One front door: tool allowlists per team, no token passthrough, pinned tools, budgets, writes held for approval.</span><span class="tag lab">Signature</span></div>
-        <div class="lvr"><span class="n">E6</span><b>Log everything</b><span class="w">Who asked, which agent, which tool, what changed, who approved. Then answer: what did it do last Tuesday?</span></div>
-        <div class="lvr"><span class="n">E7</span><b>Attack your own agent</b><span class="w">Prompt injection through a ticket, a poisoned tool, a malicious package. Then fix each one.</span></div>
-        <div class="lvr"><span class="n">E8</span><b>Connect Copilot</b><span class="w">A Copilot Studio agent calling your server through your proxy, governed by a data loss policy.</span></div>
-        <div class="lvr"><span class="n">E9</span><b>The same company on AWS</b><span class="w">Bedrock AgentCore with a policy outside the code: refunds under $100 only.</span></div>
-        <div class="lvr"><span class="n">E10</span><b>Cost and the kill switch</b><span class="w">A runaway agent, budgets that stop it, and one switch that stops them all.</span></div>
-        <div class="lvr"><span class="n">E11</span><b>Tests on every change</b><span class="w">Real questions and the attacks from E7, run automatically whenever a prompt, tool or model changes.</span></div>
-        <div class="lvr"><span class="n">E12</span><b>The rollout review</b><span class="w">The packet a security team asks for before saying yes. You present it; the group plays security.</span></div>
+        <div class="lvr"><span class="n">A</span><b>The company <small>2 episodes</small></b><span class="w">Sign up for the real tools a normal company runs: Okta, Slack, Airtable, Gmail, HubSpot, QuickBooks, Stripe. Then SSO, with groups as the permissions.</span></div>
+        <div class="lvr"><span class="n">B</span><b>Roll out Claude and ChatGPT <small>4 episodes</small></b><span class="w">Which plan, SSO, company skills and connectors, read allowed and send blocked, the AI policy, and shadow AI.</span></div>
+        <div class="lvr"><span class="n">C</span><b>Automations <small>10 episodes</small></b><span class="w">New hires and leavers provisioned by group, access requests approved in Slack, Airtable to Slack, email into Airtable, payments to the CRM, bill approvals, the Monday report.</span></div>
+        <div class="lvr"><span class="n">D</span><b>Agents <small>4 episodes</small></b><span class="w">The same agent built three ways, from no-code to code. A team agent in Slack. Agents that use your automations as tools. Coding agents, locked down.</span></div>
+        <div class="lvr star"><span class="n">E</span><b>MCP and your own proxy <small>6 episodes</small></b><span class="w">A read-only MCP server, writes that wait for approval, an agent that acts as the user, your own MCP proxy, logs of everything, and attacks you fix.</span><span class="tag lab">Signature</span></div>
+        <div class="lvr"><span class="n">F</span><b>The stacks companies buy, and shipping it <small>5 episodes</small></b><span class="w">Copilot Studio, AWS Bedrock AgentCore, cost limits and a kill switch, tests on every change, and the rollout review a security team asks for.</span></div>
       </div>
-      <p class="stack">Runs on your laptop for free: an identity provider, a database, Python and Docker. Then the stacks companies buy: Copilot Studio and Entra, and AWS Bedrock AgentCore, on free trials.</p>
+      <p class="stack">Almost all free: developer sandboxes and free tiers, with n8n on your own computer for the automations. The paid part is a Claude and a ChatGPT business seat for the rollout episodes. NetSuite has no free login, so finance runs on the QuickBooks sandbox and every step is mapped to NetSuite.</p>
     </div>
     <p class="hud track2">Track 2 &nbsp;·&nbsp; Personal builds &nbsp;·&nbsp; the tools I use every day</p>
     <div class="lgrid">
@@ -693,7 +688,7 @@
       <div class="get">
         <p class="hud">What you get</p>
         <ul class="checks">
-          <li><b>Twelve enterprise labs.</b> Identity, read versus write, your own MCP proxy, audit logs, attacks and fixes, Copilot and AWS, and the rollout review.</li>
+          <li><b>Thirty-one enterprise episodes.</b> A company on real tools, the Claude and ChatGPT rollout, ten automations, agents, your own MCP proxy, Copilot and AWS, and the rollout review.</li>
           <li><b>The full builds.</b> Mission Briefing, Scribe, Creator Intel and the Drip &amp; Capp studio as step-by-step courses, with the code and the agent skills.</li>
           <li><b>Apps you keep.</b> Take and Scribe, yours to use.</li>
           <li><b>A plan for your level.</b> Where you are on the nine levels, and what to build next.</li>
@@ -860,8 +855,8 @@
       <div class="lvr"><span class="n">2</span><b>Connected: AI that decides</b><span class="w">A tool finder that ranks 200 AI tools</span><span class="tag">Free</span></div>
       <div class="lvr"><span class="n">3</span><b>Builder: connect AI to your apps</b><span class="w">Your first MCP server</span><span class="tag lab">Lab</span></div>
       <div class="lvr"><span class="n">4</span><b>Integrator: voice and media</b><span class="w">Dictation on your own computer; Scribe in the Lab</span><span class="tag">Free</span></div>
-      <div class="lvr"><span class="n">5</span><b>Automator: automations and agents</b><span class="w">An agent that sorts your day and briefs you every morning</span><span class="tag lab">Lab</span></div>
-      <div class="lvr"><span class="n">6</span><b>Shipper: AI at the enterprise level</b><span class="w">Twelve labs: identity, approvals, your own MCP proxy, audit logs, Copilot and AWS</span><span class="tag lab">Lab</span></div>
+      <div class="lvr"><span class="n">5</span><b>Automator: automations and agents</b><span class="w">Roll out Claude and ChatGPT, ten company automations, agents from no-code to code</span><span class="tag lab">Lab</span></div>
+      <div class="lvr"><span class="n">6</span><b>Shipper: AI at the enterprise level</b><span class="w">Your own MCP proxy, agent identity, audit logs, attacks, Copilot and AWS, the rollout review</span><span class="tag lab">Lab</span></div>
       <div class="lvr"><span class="n">7</span><b>Engineer: portfolio projects</b><span class="w">Four projects to show an employer or a client</span><span class="tag lab">Lab</span></div>
       <div class="lvr"><span class="n">8</span><b>Architect: automating a character</b><span class="w">The Drip pipeline, the way a company would run it</span><span class="tag lab">Case study</span></div>
       <div class="lvr"><span class="n">9</span><b>Legend: the career</b><span class="w">Resume, interviews, a twelve-month plan reviewed live</span><span class="tag lab">Lab</span></div>
