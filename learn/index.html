@@ -189,42 +189,81 @@
   .clear .shot > img{filter:none;opacity:1;transform:none;}
   .clear:hover .shot > img{filter:none;opacity:1;}
   .clear .lock-pill,.feat .lock-pill{left:auto;top:auto;right:10px;bottom:10px;transform:none;font-size:10.5px;padding:7px 11px;}
-  .shot[data-zoom],.mbv[data-zoom]{cursor:zoom-in;}
   .shot.phone{background:radial-gradient(circle at 50% 30%,#2a2116,#0b0907 70%);}
   .shot.phone > img{object-fit:contain;object-position:center top;padding-top:10px;}
 
-  /* Mission Briefing: four screens, one at a time */
-  /* full width: the screens are the point, the words sit underneath */
-  #mb{grid-template-columns:1fr;}
-  #mb .shot.mbview{aspect-ratio:auto;min-height:0;border-right:0;border-bottom:2px solid var(--line-dark);display:flex;flex-direction:column;overflow:visible;}
-  .mbv-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 10px;border-bottom:1px solid var(--line-dark);background:var(--dark2);flex-wrap:wrap;}
-  .mbv-tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);}
-  .mbv-stage{position:relative;aspect-ratio:16/10;overflow:hidden;background:#0c0b0a;}
-  #mb .info{display:grid;grid-template-columns:1.1fr 1fr;gap:12px 34px;align-items:start;padding:26px 28px 28px;}
-  #mb .info > .badge,#mb .info > h3,#mb .info > .one{grid-column:1;}
-  #mb .info > .badge{justify-self:start;}
-  #mb .info > .mbpoints{grid-column:2;grid-row:1 / span 3;align-self:center;}
-  #mb .info > .inside{grid-column:1;}
-  #mb .info > .btn{grid-column:2;justify-self:start;margin-top:0;}
-  @media (max-width:860px){#mb .info{grid-template-columns:1fr;} #mb .info > *{grid-column:1 !important;grid-row:auto !important;}}
-  .mbv{position:absolute;inset:0;margin:0;opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s;background:#0b0907;}
-  .mbv.on{opacity:1;visibility:visible;}
-  .mbv img{width:100%;height:100%;object-fit:cover;object-position:left top;display:block;}
-  .mbv video{width:100%;height:100%;object-fit:contain;display:block;background:#0c0b0a;}
-  .mbv figcaption{position:absolute;right:12px;top:12px;max-width:46%;font-family:var(--mono);font-size:11px;letter-spacing:.04em;line-height:1.5;color:var(--dim);text-align:right;background:rgba(16,13,9,.82);padding:6px 9px;border:1px solid var(--line-dark);}
-  .mbv-tabs{display:flex;gap:3px;padding:3px;background:rgba(16,13,9,.9);border:1px solid var(--line-dark);}
-  .mbv-tabs button{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);background:none;border:0;padding:8px 11px;cursor:pointer;}
-  .mbv-tabs button:hover{color:var(--paper);}
-  .mbv-tabs button[aria-selected="true"]{background:var(--mustard);color:var(--ink);}
-  .mbpoints{margin:0;padding:0 0 0 18px;display:flex;flex-direction:column;gap:7px;font-size:14.5px;line-height:1.5;}
-  .mbpoints b{color:var(--paper);font-weight:400;}
-  @media (max-width:520px){.mbv-tabs button{padding:7px 7px;font-size:10px;letter-spacing:.06em;} .mbv-tag{display:none;}}
+  /* build cards with more than one screen: arrows, dots, a soft crossfade */
+  .shot[data-gal]{cursor:zoom-in;}
+  .gal > img{transition:opacity .22s ease;}
+  .gal > img.fading{opacity:0 !important;}
+  .gal-nav{position:absolute;top:50%;z-index:3;width:36px;height:36px;margin-top:-18px;display:flex;align-items:center;justify-content:center;padding:0 0 3px;border:1.5px solid var(--line-dark);background:rgba(16,13,9,.86);color:var(--paper);font-size:24px;line-height:1;cursor:pointer;opacity:0;transition:opacity .2s,border-color .2s,color .2s;}
+  .gal-nav.prev{left:8px;} .gal-nav.next{right:8px;}
+  .gal:hover .gal-nav,.gal:focus-within .gal-nav{opacity:1;}
+  @media (hover:none){.gal-nav{opacity:.92;}}
+  .gal-nav:hover,.gal-nav:focus-visible{border-color:var(--mustard);color:var(--mustard);}
+  .gal-dots{position:absolute;left:10px;bottom:10px;z-index:3;display:flex;align-items:center;padding:2px 6px 2px 3px;background:rgba(16,13,9,.86);border:1px solid var(--line-dark);}
+  .gal-dots button{width:16px;height:20px;padding:0;border:0;background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+  .gal-dots button::before{content:"";width:6px;height:6px;border-radius:3px;background:var(--dim);opacity:.6;transition:width .2s,background .2s,opacity .2s;}
+  .gal-dots button[aria-current="true"]::before{width:13px;background:var(--mustard);opacity:1;}
+  .gal-dots span{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-left:5px;white-space:nowrap;}
+  @container (max-width:430px){.gal-dots span{display:none;}}
+  .gal-tour{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);z-index:3;display:flex;align-items:center;gap:9px;padding:11px 16px;border:1.5px solid var(--mustard);background:rgba(16,13,9,.9);color:var(--paper);font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;cursor:pointer;transition:background .2s,color .2s;}
+  .gal-tour[hidden]{display:none;}
+  .gal-tour span{color:var(--mustard);}
+  .gal-tour:hover,.gal-tour:focus-visible{background:var(--mustard);color:var(--ink);}
+  .gal-tour:hover span,.gal-tour:focus-visible span{color:var(--ink);}
 
-  /* the full-size view */
-  .zoom{border:2px solid var(--line-dark);background:#0b0907;padding:0;max-width:min(96vw,1700px);max-height:94vh;overflow:auto;}
-  .zoom::backdrop{background:rgba(8,6,4,.86);}
-  .zoom img{display:block;width:100%;height:auto;}
-  .zoom-x{position:sticky;top:8px;float:right;margin:8px 8px -48px 0;z-index:2;width:40px;height:40px;border:1.5px solid var(--mustard);background:rgba(16,13,9,.92);color:var(--paper);font-size:22px;line-height:1;cursor:pointer;}
+  /* the full-size viewer: one screen at a time, a caption, and a numbered tour where it helps */
+  .zoom{--zvh:calc(96vh - 236px);border:2px solid var(--line-dark);background:#0b0907;color:var(--paper);padding:0;width:min(96vw,1500px);max-width:none;max-height:96vh;overflow:auto;}
+  .zoom[open]{animation:zvIn .3s cubic-bezier(.2,.8,.2,1);}
+  .zoom::backdrop{background:rgba(8,6,4,.88);}
+  .zoom[open]::backdrop{animation:zvFade .3s ease;}
+  @keyframes zvIn{from{opacity:0;transform:translateY(12px) scale(.985);}to{opacity:1;transform:none;}}
+  @keyframes zvFade{from{opacity:0;}to{opacity:1;}}
+  @media (prefers-reduced-motion:reduce){.zoom[open],.zoom[open]::backdrop{animation:none;}}
+  .zv-head{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:14px;padding:8px 8px 8px 16px;background:var(--dark2);border-bottom:1px solid var(--line-dark);}
+  .zv-title{font-family:var(--display);font-weight:600;font-size:20px;color:var(--paper);}
+  .zv-count{flex:1;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);}
+  .zoom-x{flex:0 0 auto;width:40px;height:40px;border:1.5px solid var(--mustard);background:rgba(16,13,9,.92);color:var(--paper);font-size:22px;line-height:1;cursor:pointer;}
+  .zv-stage{position:relative;display:flex;justify-content:center;align-items:center;padding:12px 56px;background:#0c0b0a;min-height:240px;}
+  .zv-media{position:relative;flex:0 0 auto;max-width:100%;transition:opacity .2s ease;}
+  .zv-media.fading{opacity:0;}
+  .zv-media img,.zv-media video{display:block;width:100%;height:auto;}
+  .zv-media img,.zv-media video{cursor:zoom-in;}
+  .zv-media [hidden]{display:none !important;}
+  .zoom.big .zv-media img,.zoom.big .zv-media video{cursor:zoom-out;}
+  .zv-pins{position:absolute;inset:0;pointer-events:none;}
+  .zv-pin{position:absolute;pointer-events:auto;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;border:2px solid var(--mustard);background:rgba(16,13,9,.9);color:var(--mustard);font-family:var(--mono);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;transition:background .25s,color .25s,transform .25s;}
+  .zv-pin.on{background:var(--mustard);color:var(--ink);transform:scale(1.12);}
+  .zv-pin.on::after{content:"";position:absolute;inset:-7px;border-radius:50%;border:2px solid var(--mustard);animation:zvPulse 1.8s ease-out infinite;}
+  @keyframes zvPulse{from{opacity:.85;transform:scale(.75);}to{opacity:0;transform:scale(1.5);}}
+  @media (prefers-reduced-motion:reduce){.zv-pin.on::after{animation:none;opacity:.5;}}
+  .zv-nav{position:absolute;top:50%;z-index:2;width:42px;height:42px;margin-top:-21px;display:flex;align-items:center;justify-content:center;padding:0 0 3px;border:1.5px solid var(--line-dark);background:rgba(16,13,9,.9);color:var(--paper);font-size:28px;line-height:1;cursor:pointer;transition:border-color .2s,color .2s;}
+  .zv-nav.prev{left:8px;} .zv-nav.next{right:8px;}
+  .zv-nav:hover,.zv-nav:focus-visible{border-color:var(--mustard);color:var(--mustard);}
+  .zv-foot{padding:14px 16px 6px;}
+  .zv-cap{margin:0;font-size:15.5px;line-height:1.55;max-width:88ch;}
+  .zv-steps{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:6px;}
+  .zv-steps:empty{display:none;}
+  .zv-steps button{display:flex;gap:10px;align-items:flex-start;width:100%;height:100%;text-align:left;padding:9px 10px;border:1px solid var(--line-dark);background:none;color:var(--dim);font:inherit;font-size:13.5px;line-height:1.45;cursor:pointer;transition:border-color .25s,color .25s,background .25s;}
+  .zv-steps b{flex:0 0 22px;height:22px;border-radius:50%;border:1.5px solid var(--mustard);color:var(--mustard);font-family:var(--mono);font-size:11px;display:flex;align-items:center;justify-content:center;transition:background .25s,color .25s;}
+  .zv-steps button[aria-current="true"]{border-color:var(--mustard);color:var(--paper);background:rgba(227,172,42,.07);}
+  .zv-steps button[aria-current="true"] b{background:var(--mustard);color:var(--ink);}
+  .zv-thumbs{display:flex;gap:8px;padding:8px 16px 12px;overflow-x:auto;border-top:1px solid var(--line-dark);}
+  .zv-thumbs button{flex:0 0 auto;width:96px;padding:0;border:2px solid var(--line-dark);background:#0c0b0a;color:var(--dim);font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;text-align:left;cursor:pointer;opacity:.6;transition:opacity .2s,border-color .2s,color .2s;}
+  .zv-thumbs img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:left top;}
+  .zv-thumbs span{display:block;padding:4px 6px 5px;}
+  .zv-thumbs button:hover{opacity:.9;}
+  .zv-thumbs button[aria-current="true"]{opacity:1;border-color:var(--mustard);color:var(--paper);}
+  .zoom.single .zv-nav,.zoom.single .zv-thumbs{display:none;}
+  .zoom.single{--zvh:calc(96vh - 150px);}
+  @media (min-width:1000px){
+    .zoom.tour{--zvh:calc(96vh - 190px);}
+    .zoom.tour .zv-body{display:grid;grid-template-columns:minmax(0,1fr) 340px;}
+    .zoom.tour .zv-foot{border-left:1px solid var(--line-dark);padding:16px;}
+    .zoom.tour .zv-steps{grid-template-columns:1fr;}
+  }
+  @media (max-width:640px){.zv-stage{padding:8px 6px 52px;} .zv-nav{top:auto;bottom:6px;margin-top:0;} .zv-nav.prev{left:calc(50% - 50px);} .zv-nav.next{right:calc(50% - 50px);} .zv-pin{width:24px;height:24px;margin:-12px 0 0 -12px;font-size:11px;} .zv-title{font-size:17px;}}
 
   /* sample previews drawn in CSS: demo data only, never real accounts */
   .mock{position:absolute;inset:0;font-family:var(--mono);color:var(--dim);font-size:2.3cqw;line-height:1.35;}
@@ -604,46 +643,47 @@
     <p class="hud track2">Track 2 &nbsp;·&nbsp; Personal builds &nbsp;·&nbsp; the tools I use every day</p>
     <div class="lgrid">
       <article class="bcard locked clear">
-          <div class="shot" data-zoom="art/builds/mb-home.webp" data-alt="Mission Briefing's home screen">
-            <img src="art/builds/mb-home.webp" width="1600" height="1000" loading="lazy" alt="Mission Briefing's home screen: a body scan with heart rate, steps and sleep, a holographic Tesla with battery and range, a morning briefing and an alerts feed. Demo data.">
+          <div class="shot gal" data-gal="mb">
+            <img src="art/builds/mb-home.webp" width="1600" height="1000" loading="lazy" alt="Mission Briefing's home screen: a body scan with heart rate, steps and sleep, a holographic Tesla with battery and range, the morning briefing and an alerts feed. Demo data.">
             <span class="tagc sample">Demo data</span>
             <a class="lock-pill unlock-link" href="#seat"><span class="ic-lock"></span>Unlock in the Lab</a>
           </div>
           <div class="info">
             <span class="badge">In daily use</span>
             <h3>Mission Briefing</h3>
-            <p class="one">My own command center. One screen for my car, my health, my calendar and inbox, and every project I'm building. An agent briefs me each morning, and every app and work session reports in.</p>
+            <p class="one">My own 007-style command center. One screen for my Tesla, my health, my calendar and inbox, my money, and every project I'm building. An agent called Cipher briefs me each morning.</p>
+            <p class="inside">Every bank, card and loan connects in, and the data lives on my computer, not in someone else's app.</p>
             <div class="act"><a class="btn btn-mustard unlock-link" href="#seat"><span class="ic-lock"></span>Unlock</a></div>
           </div>
         </article>
       <article class="bcard locked clear">
-          <div class="shot" data-zoom="art/builds/scribe.webp" data-alt="Scribe's stats screen">
-            <img src="art/builds/scribe.webp" width="900" height="563" loading="lazy" alt="Scribe's stats screen: 77k words dictated, 160 words a minute, 10.4 hours saved, and a words-per-day chart.">
+          <div class="shot gal" data-gal="scribe">
+            <img src="art/builds/scribe-phone-1.webp" width="1440" height="900" loading="lazy" alt="Scribe on the phone: recording, a finished note with its to-dos, and the to-do list. Sample data.">
             <a class="lock-pill unlock-link" href="#seat"><span class="ic-lock"></span>Unlock in the Lab</a>
           </div>
           <div class="info">
             <span class="badge">Working</span>
             <h3>Scribe</h3>
-            <p class="one">My own private dictation app. Hold a key, talk, and clean text lands wherever your cursor is. It runs on your computer, coaches how I speak, and has a phone app that sends voice notes home.</p>
+            <p class="one">My own private dictation app, on my computer and my phone. Hold a key and talk, and clean text lands wherever your cursor is. On the phone, talk as long as you like: it comes back as a clean note, with anything I need to do on my to-do list.</p>
             <div class="act"><a class="btn btn-mustard unlock-link" href="#seat"><span class="ic-lock"></span>Unlock</a></div>
           </div>
         </article>
       <article class="bcard locked clear">
-          <div class="shot" data-zoom="art/builds/ci-works.webp" data-alt="Creator Intel: what works">
-            <img src="art/builds/ci-works.webp" width="1400" height="653" loading="lazy" alt="Creator Intel's What works page for Drip the Cup: roundups on YouTube at 1.9x the usual views, carousels on TikTok at 1.4x, tutorials on YouTube at 0.3x.">
+          <div class="shot gal" data-gal="ci">
+            <img src="art/builds/ci-board.webp" width="1600" height="1000" loading="lazy" alt="Creator Intel's board for Drip the Cup: ideas, writing, making, ready to post and posted.">
             <span class="tagc sample">Real numbers · my channel</span>
             <a class="lock-pill unlock-link" href="#seat"><span class="ic-lock"></span>Unlock in the Lab</a>
           </div>
           <div class="info">
             <span class="badge">Working</span>
             <h3>Creator Intel</h3>
-            <p class="one">Reads every post I make on YouTube and TikTok, compares each one to my own usual, and spells out what's working and what isn't. Then it writes that into a skill Claude reads before we brainstorm.</p>
+            <p class="one">Reads every post I make on YouTube and TikTok, compares each one to my own usual, and spells out what's working and what isn't. Then it writes that into a skill Claude reads before we brainstorm. Every idea sits on one board, and a plan from a chat drops straight onto it.</p>
             <div class="act"><a class="btn btn-mustard unlock-link" href="#seat"><span class="ic-lock"></span>Unlock</a></div>
           </div>
         </article>
       <article class="bcard locked clear">
-          <div class="shot" data-zoom="art/builds/ci-desk.webp" data-alt="The Script Desk">
-            <img src="art/builds/ci-desk.webp" width="1600" height="1000" loading="lazy" alt="The Script Desk on the EP01 script: 9:07 estimated runtime, 1,524 spoken words, who speaks how much, and the script line by line with notes.">
+          <div class="shot gal" data-gal="desk">
+            <img src="art/builds/ci-desk.webp" width="1600" height="942" loading="lazy" alt="The Script Desk on the EP01 script: 9:07 estimated runtime, 1,524 spoken words, who speaks how much, and the script line by line with notes.">
             <span class="tagc sample">Inside Creator Intel</span>
             <a class="lock-pill unlock-link" href="#seat"><span class="ic-lock"></span>Unlock in the Lab</a>
           </div>
@@ -655,20 +695,20 @@
           </div>
         </article>
       <article class="bcard locked clear">
-          <div class="shot" data-zoom="art/builds/take-editor.webp" data-alt="Take's editor">
-            <img src="art/builds/take-editor.webp" width="1440" height="1001" loading="lazy" alt="Take's editor: two takes of an intro flagged as repeated, a note to use the second one, a timeline with the screen and audio, and an export straight to DaVinci Resolve.">
+          <div class="shot gal" data-gal="take">
+            <img src="art/builds/take-editor.webp" width="1600" height="1000" loading="lazy" alt="Take's editor: a recording of the Mission Briefing demo with Drip as the face cam, the timeline with screen, face cam and audio tracks, and export to DaVinci Resolve.">
             <span class="tagc sample">Test recording</span>
             <a class="lock-pill unlock-link" href="#seat"><span class="ic-lock"></span>Unlock in the Lab</a>
           </div>
           <div class="info">
             <span class="badge">On my desktop</span>
             <h3>Take</h3>
-            <p class="one">My own screen recorder and editor. Screen, face cam and mic record as separate layers. It flags repeated intros and long pauses, cuts on a timeline, and sends the edit to DaVinci Resolve with every layer on its own track.</p>
+            <p class="one">My own screen recorder and editor. Screen, face cam and mic record as separate layers, and anything private gets covered or blurred in the export. It flags repeated intros and long pauses, cuts on a timeline, and hands the edit to DaVinci Resolve with every layer on its own track, or to CapCut and Premiere.</p>
             <div class="act"><a class="btn btn-mustard unlock-link" href="#seat"><span class="ic-lock"></span>Unlock</a></div>
           </div>
         </article>
       <article class="bcard locked clear">
-          <div class="shot" data-zoom="art/builds/studio.webp" data-alt="A Drip and Capp storyboard frame">
+          <div class="shot gal" data-gal="studio">
             <img src="art/builds/studio.webp" width="629" height="393" loading="lazy" alt="A storyboard frame: Drip at a desk with a laptop while Capp stands beside him with a clipboard.">
             <a class="lock-pill unlock-link" href="#seat"><span class="ic-lock"></span>Unlock in the Lab</a>
           </div>
@@ -680,9 +720,17 @@
           </div>
         </article>
     </div>
-    <dialog class="zoom" id="zoom" aria-label="Screenshot, full size">
-      <button type="button" class="zoom-x" aria-label="Close">&times;</button>
-      <img alt="">
+    <dialog class="zoom" id="zoom" aria-label="Screens, full size">
+      <div class="zv-head"><b class="zv-title"></b><span class="zv-count"></span><button type="button" class="zoom-x" aria-label="Close">&times;</button></div>
+      <div class="zv-body">
+        <div class="zv-stage">
+          <div class="zv-media"><img alt=""><video muted loop playsinline preload="metadata" hidden></video><div class="zv-pins"></div></div>
+          <button type="button" class="zv-nav prev" aria-label="Previous screen">&#8249;</button>
+          <button type="button" class="zv-nav next" aria-label="Next screen">&#8250;</button>
+        </div>
+        <div class="zv-foot"><p class="zv-cap"></p><ol class="zv-steps"></ol></div>
+      </div>
+      <div class="zv-thumbs"></div>
     </dialog>
     <div class="labgrid" id="seat">
       <div class="get">
@@ -903,43 +951,150 @@
 </footer>
 
 <script>
-// Mission Briefing viewer: four screens, auto-advancing until someone picks one.
+// Screens on each build card: arrows and dots on the card, and a full-size viewer with a caption,
+// thumbnails and, for the car and health screens, a numbered tour over the clip.
 (function(){
-  var view = document.querySelector('.mbview'); if(!view) return;
-  var figs = view.querySelectorAll('.mbv'), tabs = view.querySelectorAll('.mbv-tabs button'), cur = 0, timer = null;
-  function show(i){
-    cur = i;
-    figs.forEach(function(f,j){
-      f.classList.toggle('on', j===i);
-      var v = f.querySelector('video');
-      if(v){ if(j===i){ var p = v.play(); if(p && p.catch) p.catch(function(){}); } else v.pause(); }
-    });
-    tabs.forEach(function(t,j){ t.setAttribute('aria-selected', j===i ? 'true' : 'false'); });
-  }
-  tabs.forEach(function(t,i){ t.addEventListener('click', function(e){ e.stopPropagation(); clearInterval(timer); show(i); }); });
+  var B = 'art/builds/';
+  var GAL = {"mb": {"title": "Mission Briefing", "items": [{"label": "Home", "src": "mb-home.webp", "w": 1600, "h": 1000, "alt": "Mission Briefing's home screen: a body scan with heart rate, steps and sleep, a holographic Tesla with battery and range, the morning briefing and an alerts feed. Demo data.", "cap": "Home. My health, my Tesla, the morning briefing and today's missions on one screen, with alerts and messages running down the right. Demo data, like every screen here."}, {"label": "Tesla", "src": "mb-car-poster.webp", "video": "mb-car.mp4", "w": 1544, "h": 1100, "alt": "The vehicle screen: the Tesla as a slowly turning 3D hologram, ten remote commands, the status board and four car routines.", "cap": "Tap the car on the home screen and this opens. Here is what each part does.", "tour": [{"x": 0.25, "y": 0.22, "t": "A 3D hologram of the car, turning slowly. One tap on MAP shows where it is parked."}, {"x": 0.175, "y": 0.497, "t": "Ten remote commands: climate, charging, the charge port, flash, honk, frunk, lock and unlock."}, {"x": 0.825, "y": 0.071, "t": "The status board: battery, range, charging, cabin temperature and the locks, synced from the car."}, {"x": 0.15, "y": 0.708, "t": "Four routines that run on their own: lock it, guard it overnight, charge up before a road trip on my calendar, warm it before I leave."}, {"x": 0.31, "y": 0.925, "t": "Everything the routines did, logged in plain words."}]}, {"label": "Health", "src": "mb-person-poster.webp", "video": "mb-person.mp4", "w": 1576, "h": 1704, "alt": "The vitals screen: a body scan, last night's sleep, today's vitals, two weeks of trends, recent workouts and Cipher's read.", "cap": "Tap the body scan and this opens. Here is what each part does.", "tour": [{"x": 0.06, "y": 0.14, "t": "A body scan with a live heart-rate marker."}, {"x": 0.274, "y": 0.343, "t": "Last night's sleep, split into deep, light and REM."}, {"x": 0.477, "y": 0.045, "t": "Today's vitals: resting heart rate, steps, sleep, active minutes and water."}, {"x": 0.584, "y": 0.162, "t": "Two weeks of trends for steps, sleep, activity and heart rate."}, {"x": 0.497, "y": 0.44, "t": "Recent workouts with time, calories and effort."}, {"x": 0.482, "y": 0.627, "t": "Cipher's read: what is going well, what to watch, and what to do next today."}, {"x": 0.843, "y": 0.93, "t": "It syncs from Google Health on my phone."}]}, {"label": "HQ", "src": "mb-hq.webp", "w": 1600, "h": 1000, "alt": "HQ: this week's intel, what to shoot next, what's waiting on me, each channel's week and when each tool last checked in. Demo data.", "cap": "HQ, for everything I'm building: each channel's week, what to shoot next, what's waiting on me, and when each tool last checked in."}, {"label": "Money", "src": "mb-finance.webp", "w": 1600, "h": 1000, "alt": "Finance: a month of spending by category against budgets. Demo data.", "cap": "Money. Every bank, card and loan syncs in through Plaid and SimpleFIN, and the data stays on my computer. Where it went this month, against the budget I set."}, {"label": "Money", "src": "mb-finance-2.webp", "w": 1600, "h": 1000, "alt": "Finance: debts with rates and minimums, an advisor with a debt-free date, and net worth. Demo data.", "cap": "It reads the rate on every debt and says what to do with spare cash, when you would be debt free, and what you are worth today."}]}, "scribe": {"title": "Scribe", "items": [{"label": "Phone", "src": "scribe-phone-1.webp", "w": 1440, "h": 900, "alt": "Scribe on the phone: recording, a finished note with its to-dos, and the to-do list. Sample data.", "cap": "On the phone it is a voice recorder. Talk as long as you like and it comes back as a clean note; say \"I need to\" and it lands on the to-do list. Sample data."}, {"label": "Phone", "src": "scribe-phone-2.webp", "w": 1440, "h": 900, "alt": "Scribe on the phone: notes sorted by topic, everything dictated on the computer, and stats. Sample data.", "cap": "Every note sorted by topic and searchable, plus everything you dictated on the computer, and your stats. Sample data."}, {"label": "Dictate", "src": "scribe-dictate.webp", "w": 1600, "h": 842, "alt": "Scribe's dictate screen: hold Ctrl and Caps Lock to talk, writing styles, today's words, all-time words and pace. Recent dictations blurred.", "cap": "Hold a key and talk; clean text lands wherever the cursor is. My recent dictations are blurred."}, {"label": "Stats", "src": "scribe-stats.webp", "w": 1600, "h": 842, "alt": "Scribe's stats: 77k words, 160 words a minute, 10.4 hours saved, words per day and which apps the words went to.", "cap": "77k words at 160 words a minute, about ten hours saved, and which apps the words went to."}, {"label": "Voice", "src": "scribe-voice.webp", "w": 1600, "h": 842, "alt": "Scribe's voice page: filler rate, vocabulary range, grade level, sentence length, the words I reach for and phrases I repeat.", "cap": "How I actually talk, measured from the raw transcript: filler rate, the words I lean on, the phrases I repeat."}, {"label": "Commands", "src": "scribe-commands.webp", "w": 1600, "h": 842, "alt": "Scribe's commands: editing commands, opening things by voice after a wake word, and drafting by voice.", "cap": "Voice commands: say \"computer, open Chrome\" and it opens, or ask it to write an email and a draft appears."}, {"label": "Styles", "src": "scribe-styles.webp", "w": 1600, "h": 842, "alt": "Scribe's writing styles: professional, personal, verbatim and code, with a style per app.", "cap": "A writing style per app: as-said in chat apps, professional in email and LinkedIn, code left intact in editors."}]}, "ci": {"title": "Creator Intel", "items": [{"label": "Board", "src": "ci-board.webp", "w": 1600, "h": 1000, "alt": "Creator Intel's board for Drip the Cup: ideas, writing, making, ready to post and posted.", "cap": "The board: every Drip the Cup piece from idea to posted. A plan written in a chat drops straight onto it."}, {"label": "Audience", "src": "ci-audience.webp", "w": 1600, "h": 840, "alt": "Creator Intel's audience page: 39,079 followers across six accounts, with each account's followers, posts and views.", "cap": "Every account in one place, read every day: followers, views, and what went out from here."}, {"label": "What works", "src": "ci-works.webp", "w": 1400, "h": 653, "alt": "Creator Intel's What works page for Drip the Cup: roundups on YouTube at 1.9x the usual views, carousels on TikTok at 1.4x, tutorials on YouTube at 0.3x.", "cap": "What works: each post against my own usual, by format and platform. Claude reads this before we brainstorm."}]}, "desk": {"title": "The Script Desk", "items": [{"label": "Script", "src": "ci-desk.webp", "w": 1600, "h": 942, "alt": "The Script Desk on the EP01 script: 9:07 estimated runtime, 1,524 spoken words, who speaks how much, and the script line by line with notes.", "cap": "Every script line by line: estimated runtime, who talks how much, revisions side by side and a note on any line."}]}, "take": {"title": "Take", "items": [{"label": "Edit", "src": "take-editor.webp", "w": 1600, "h": 1000, "alt": "Take's editor: a recording of the Mission Briefing demo with Drip as the face cam, the timeline with screen, face cam and audio tracks, and export to DaVinci Resolve.", "cap": "The editor: screen, face cam and audio on their own tracks. Split, trim, mark moments, then send it to DaVinci Resolve. Test recording."}, {"label": "Record", "src": "take-record.webp", "w": 1600, "h": 1000, "alt": "Take's record screen: choose a screen, window or tab, optional camera and microphone, camera backgrounds, and privacy covers.", "cap": "Pick a screen, window or tab. Camera and mic are optional, the camera gets a background, and anything private gets covered or blurred in the export."}, {"label": "Finish", "src": "take-connections.webp", "w": 1600, "h": 680, "alt": "Take's connections: DaVinci Resolve, CapCut, Adobe Premiere Pro and plain MP4 files.", "cap": "Finish in whichever editor you use: DaVinci Resolve gets every layer on its own track; CapCut and Premiere get an edit folder; or just MP4s."}]}, "studio": {"title": "The Drip & Capp studio", "items": [{"label": "Storyboard", "src": "studio.webp", "w": 629, "h": 393, "alt": "A storyboard frame: Drip at a desk with a laptop while Capp stands beside him with a clipboard.", "cap": "Every Drip episode, short and carousel is rendered from code: AI voices and animation timed to every word."}]}};
   var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(!calm && 'IntersectionObserver' in window){
-    new IntersectionObserver(function(es){
-      es.forEach(function(e){
-        clearInterval(timer);
-        if(e.isIntersecting && !view.dataset.picked){ timer = setInterval(function(){ show((cur+1) % figs.length); }, 5000); }
-      });
-    }, {threshold:.4}).observe(view);
-    tabs.forEach(function(t){ t.addEventListener('click', function(){ view.dataset.picked = '1'; }); });
+  var dlg = document.getElementById('zoom');
+
+  function swap(img, it){
+    var src = B + it.src; if(img.getAttribute('src') === src) return;
+    var tok = img._tok = (img._tok || 0) + 1, t0 = Date.now(), pre = new Image();
+    img.classList.add('fading');
+    pre.onload = pre.onerror = function(){
+      setTimeout(function(){
+        if(img._tok !== tok) return;
+        img.src = src; img.alt = it.alt || ''; img.width = it.w; img.height = it.h;
+        img.classList.remove('fading');
+      }, Math.max(0, 220 - (Date.now() - t0)));
+    };
+    pre.src = src;
   }
-})();
-// Click any real screenshot to see it full size.
-(function(){
-  var dlg = document.getElementById('zoom'); if(!dlg || !dlg.showModal) return;
-  var img = dlg.querySelector('img');
-  document.querySelectorAll('[data-zoom]').forEach(function(el){
-    el.addEventListener('click', function(e){
-      if(e.target.closest('a, .mbv-tabs')) return;
-      img.src = el.dataset.zoom; img.alt = el.dataset.alt || '';
-      dlg.showModal();
+  function swipe(el, fn){
+    var x0 = null;
+    el.addEventListener('touchstart', function(e){ x0 = e.touches[0].clientX; }, {passive:true});
+    el.addEventListener('touchend', function(e){
+      if(x0 === null) return; var dx = e.changedTouches[0].clientX - x0; x0 = null;
+      if(Math.abs(dx) > 45) fn(dx < 0 ? 1 : -1);
     });
+  }
+
+  document.querySelectorAll('.shot[data-gal]').forEach(function(shot){
+    var g = GAL[shot.dataset.gal]; if(!g) return;
+    var img = shot.querySelector('img'), n = g.items.length, cur = 0, dots = null, label = null, tour = null;
+    if(n > 1){
+      shot.insertAdjacentHTML('beforeend', '<button type="button" class="gal-nav prev" aria-label="Previous screen">&#8249;</button><button type="button" class="gal-nav next" aria-label="Next screen">&#8250;</button><div class="gal-dots"></div>');
+      dots = shot.querySelector('.gal-dots');
+      g.items.forEach(function(it, i){
+        var b = document.createElement('button'); b.type = 'button';
+        b.setAttribute('aria-label', 'Screen ' + (i + 1) + ': ' + it.label);
+        b.addEventListener('click', function(e){ e.stopPropagation(); go(i); });
+        dots.appendChild(b);
+      });
+      label = document.createElement('span'); dots.appendChild(label);
+      shot.querySelector('.gal-nav.prev').addEventListener('click', function(e){ e.stopPropagation(); go(cur - 1); });
+      shot.querySelector('.gal-nav.next').addEventListener('click', function(e){ e.stopPropagation(); go(cur + 1); });
+      swipe(shot, function(d){ go(cur + d); });
+      shot.addEventListener('mouseenter', function(){ g.items.forEach(function(it){ (new Image()).src = B + it.src; }); }, {once:true});
+    }
+    if(g.items.some(function(it){ return it.tour; })){
+      shot.insertAdjacentHTML('beforeend', '<button type="button" class="gal-tour" hidden></button>');
+      tour = shot.querySelector('.gal-tour');
+      tour.addEventListener('click', function(e){ e.stopPropagation(); open(g, cur); });
+    }
+    function go(i){
+      cur = (i + n) % n; var it = g.items[cur];
+      swap(img, it);
+      if(dots){
+        dots.querySelectorAll('button').forEach(function(b, j){ b.setAttribute('aria-current', j === cur ? 'true' : 'false'); });
+        label.textContent = (cur + 1) + '/' + n + ' · ' + it.label;
+      }
+      if(tour){ tour.hidden = !it.tour; tour.innerHTML = '<span>&#9654;</span> Tour the ' + it.label + ' screen'; }
+    }
+    go(0);
+    shot.addEventListener('click', function(e){ if(e.target.closest('a, button')) return; open(g, cur); });
+  });
+
+  if(!dlg || !dlg.showModal) return;
+  var title = dlg.querySelector('.zv-title'), count = dlg.querySelector('.zv-count'), media = dlg.querySelector('.zv-media');
+  var vimg = media.querySelector('img'), vid = media.querySelector('video'), pins = media.querySelector('.zv-pins');
+  var cap = dlg.querySelector('.zv-cap'), steps = dlg.querySelector('.zv-steps'), thumbs = dlg.querySelector('.zv-thumbs');
+  var V = {g:null, i:0, k:0, timer:null, tok:0};
+
+  function open(g, i){
+    V.g = g; title.textContent = g.title; dlg.setAttribute('aria-label', g.title + ', full size');
+    dlg.classList.toggle('single', g.items.length < 2); dlg.classList.remove('big');
+    thumbs.innerHTML = '';
+    if(g.items.length > 1) g.items.forEach(function(it, j){
+      var b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', 'Screen ' + (j + 1) + ': ' + it.label);
+      b.innerHTML = '<img alt="" loading="lazy"><span></span>'; b.querySelector('img').src = B + it.src; b.querySelector('span').textContent = it.label;
+      b.addEventListener('click', function(){ show(j); }); thumbs.appendChild(b);
+    });
+    if(!dlg.open) dlg.showModal();
+    show(i, true);
+  }
+  function stepTo(k){
+    V.k = k;
+    pins.querySelectorAll('.zv-pin').forEach(function(p, j){ p.classList.toggle('on', j === k); });
+    steps.querySelectorAll('button').forEach(function(b, j){ b.setAttribute('aria-current', j === k ? 'true' : 'false'); });
+  }
+  function hold(){ clearInterval(V.timer); V.timer = null; }
+  function size(it){
+    media.style.width = dlg.classList.contains('big') ? 'min(100%, ' + it.w + 'px)'
+      : 'min(100%, ' + it.w + 'px, calc(var(--zvh) * ' + (it.w / it.h).toFixed(4) + '))';
+  }
+  function show(i, first){
+    var g = V.g, n = g.items.length; V.i = (i + n) % n; var it = g.items[V.i], tok = ++V.tok;
+    hold(); dlg.classList.remove('big');
+    count.textContent = n > 1 ? (V.i + 1) + ' / ' + n + ' · ' + it.label : '';
+    thumbs.querySelectorAll('button').forEach(function(b, j){ b.setAttribute('aria-current', j === V.i ? 'true' : 'false'); });
+    var cur = thumbs.children[V.i]; if(cur && cur.scrollIntoView) cur.scrollIntoView({block:'nearest', inline:'nearest'});
+    media.classList.add('fading');
+    function paint(){
+      if(tok !== V.tok) return;
+      if(it.video){
+        vimg.hidden = true; vid.hidden = false;
+        vid.style.aspectRatio = it.w + ' / ' + it.h;
+        if(vid.dataset.src !== it.video){ vid.poster = B + it.src; vid.src = B + it.video; vid.dataset.src = it.video; }
+        vid.setAttribute('aria-label', it.alt || '');
+        if(calm){ vid.controls = true; } else { var p = vid.play(); if(p && p.catch) p.catch(function(){}); }
+      } else {
+        vid.pause(); vid.hidden = true; vimg.hidden = false; vimg.src = B + it.src; vimg.alt = it.alt || '';
+      }
+      dlg.classList.toggle('tour', !!it.tour); size(it);
+      cap.textContent = it.cap || '';
+      pins.innerHTML = ''; steps.innerHTML = '';
+      (it.tour || []).forEach(function(s, k){
+        var p = document.createElement('button'); p.type = 'button'; p.className = 'zv-pin'; p.textContent = k + 1;
+        p.style.left = (s.x * 100) + '%'; p.style.top = (s.y * 100) + '%'; p.setAttribute('aria-label', 'Step ' + (k + 1) + ': ' + s.t);
+        p.addEventListener('click', function(e){ e.stopPropagation(); hold(); stepTo(k); });
+        pins.appendChild(p);
+        var li = document.createElement('li'); li.innerHTML = '<button type="button"><b></b><span></span></button>';
+        li.querySelector('b').textContent = k + 1; li.querySelector('span').textContent = s.t;
+        li.firstChild.addEventListener('click', function(){ hold(); stepTo(k); });
+        steps.appendChild(li);
+      });
+      if(it.tour){ stepTo(0); if(!calm) V.timer = setInterval(function(){ stepTo((V.k + 1) % it.tour.length); }, 4200); }
+      media.classList.remove('fading');
+    }
+    if(it.video) setTimeout(paint, first ? 0 : 180);
+    else { var pre = new Image(), t0 = Date.now(); pre.onload = pre.onerror = function(){ setTimeout(paint, first ? 0 : Math.max(0, 180 - (Date.now() - t0))); }; pre.src = B + it.src; }
+  }
+  dlg.querySelector('.zv-nav.prev').addEventListener('click', function(){ show(V.i - 1); });
+  dlg.querySelector('.zv-nav.next').addEventListener('click', function(){ show(V.i + 1); });
+  swipe(dlg.querySelector('.zv-stage'), function(d){ if(V.g && V.g.items.length > 1) show(V.i + d); });
+  function bigger(){ dlg.classList.toggle('big'); size(V.g.items[V.i]); }
+  vimg.addEventListener('click', bigger);
+  if(!calm) vid.addEventListener('click', bigger);
+  dlg.addEventListener('keydown', function(e){
+    if(!V.g || V.g.items.length < 2) return;
+    if(e.key === 'ArrowRight'){ e.preventDefault(); show(V.i + 1); }
+    if(e.key === 'ArrowLeft'){ e.preventDefault(); show(V.i - 1); }
   });
   dlg.addEventListener('click', function(e){ if(e.target === dlg || e.target.closest('.zoom-x')) dlg.close(); });
+  dlg.addEventListener('close', function(){ hold(); vid.pause(); });
 })();
   // ---- Skool: paste the group URL here when it exists. The founding form gives way to
   // a "Join the Lab" link and every lock opens it.
