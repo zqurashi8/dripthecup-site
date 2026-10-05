@@ -1,6 +1,73 @@
 {
  "videos": [
   {
+   "id": "replica-clone-app-skill",
+   "title": "Replica: free Claude Code skills that rebuild an app you pay for, and what our test found",
+   "kind": "Short",
+   "date": "Oct 2026",
+   "length": "1:41",
+   "topic": "Vibe coding",
+   "youtube": null,
+   "mp4": "videos/replica-clone-app-skill.mp4",
+   "poster": "videos/replica-clone-app-skill.jpg",
+   "summary": "Replica is 11 free Claude Code skills (MIT) by Jake Schincariol. Recon maps an app from its public pages and your own account (screens, flows, the data behind them); the others plan it, rebuild it screen by screen, add logins and payments, test it, score it against the original, read what its users hate in public reviews, rebrand it, write the launch page and deploy it. It rebuilds what an app does, never its code, logo or words, and its deploy step stops until the original's name and colours are gone. Our test, public pages only, on a popular scheduling app: in about 13 minutes Recon mapped 23 screens (13 of them inferred from help pages) and 10 flows, and estimated the full rebuild at about a quarter of a year, or a first slice in a weekend to a week. The Entrepreneur read 555 public reviews from 4 sources (App Store 500, Capterra 20, Hacker News 20, Trustpilot 15; G2 and Reddit couldn't be read) and ranked bugs and crashes first, then price and paywalls, with every quote linked. Good to know: the skills are free, but Claude Code needs a paid Claude plan, and the build and deploy steps use services you set up yourself (a database, payments, email, a host, a domain). The Python checks need Python 3.8 or newer. Start with one slice, the one flow people pay for. Features usually aren't protected the way code, text, images, logos and names are, but this isn't legal advice: run the trademark checks /replica-brand lists, read the terms of anything you used (including the original's, if you study it through your account), keep the original's name out of your app, ads and store listing, and talk to a lawyer before you sell if real money is involved. Reviews are research, never testimonials.",
+   "links": [
+    {
+     "name": "Jakeschincariol/replica-skill",
+     "url": "https://github.com/Jakeschincariol/replica-skill",
+     "kind": "skill pack",
+     "what": "11 skills: recon, architect, design, build, backend, test, diff, entrepreneur, brand, launch, deploy. MIT.",
+     "install": "# paste into Claude Code\nhttps://github.com/Jakeschincariol/replica-skill\ninstall skill"
+    },
+    {
+     "name": "Claude Code",
+     "url": "https://claude.com/product/claude-code",
+     "kind": "product",
+     "what": "Anthropic's coding AI, where the skills run. It needs a paid Claude plan."
+    },
+    {
+     "name": "Claude Code plugins",
+     "url": "https://code.claude.com/docs/en/plugins",
+     "kind": "docs",
+     "what": "How /plugin marketplace add and /plugin install work, the other way to install Replica."
+    },
+    {
+     "name": "Python",
+     "url": "https://www.python.org/downloads/",
+     "kind": "tool",
+     "what": "Replica's checks (parity score, review ranking, the rebrand sweep) are small Python scripts. Python 3.8 or newer."
+    }
+   ],
+   "prompts_title": "Run it in 3 steps",
+   "prompts": [
+    {
+     "name": "1. Open Claude Code in a new, empty folder",
+     "prompt": "mkdir my-app\ncd my-app\nclaude"
+    },
+    {
+     "name": "2. Paste this into Claude Code",
+     "prompt": "https://github.com/Jakeschincariol/replica-skill\ninstall skill"
+    },
+    {
+     "name": "Or install it as a plugin (type these in Claude Code, pick \"Install for you\")",
+     "prompt": "/plugin marketplace add Jakeschincariol/replica-skill\n/plugin install replica-skill@replica-skill"
+    },
+    {
+     "name": "3. Restart Claude Code, then type",
+     "prompt": "/replica-recon https://the-app.com"
+    },
+    {
+     "name": "Then run the rest in order, one at a time",
+     "prompt": "recon > architect > design > build > backend > test > diff > entrepreneur > brand > launch > deploy"
+    }
+   ],
+   "prompts_note": "Recon asks which app, which part, and who it is for, so answer those first. Good-to-know notes are in the summary above.",
+   "more": {
+    "label": "More skills in our AI tools directory",
+    "url": "/resources/#skills"
+   }
+  },
+  {
    "id": "cloudflare-security-audit-skill",
    "title": "Cloudflare's free security-audit skill: what it does, how to run it in 3 steps, and our test",
    "kind": "Short",

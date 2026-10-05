@@ -629,6 +629,16 @@
      "install": "/plugin marketplace add cbrock84/headcount\n/plugin install security@headcount"
     },
     {
+     "name": "Replica",
+     "url": "https://github.com/Jakeschincariol/replica-skill",
+     "by": "Jakeschincariol",
+     "kind": "skill pack",
+     "stars": "0.4K",
+     "best": "Rebuilds the features of an app as your own, reads what its users hate, then rebrands it",
+     "install": "# paste into Claude Code\nhttps://github.com/Jakeschincariol/replica-skill\ninstall skill",
+     "seen": "replica-clone-app-skill"
+    },
+    {
      "name": "Frontend Design",
      "url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/frontend-design",
      "by": "Anthropic",

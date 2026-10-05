@@ -96,11 +96,12 @@
 
 <div class="wrap">
   <section class="intro">
-    <p class="eyebrow">Videos · 35 so far</p>
+    <p class="eyebrow">Videos · 36 so far</p>
     <h1>Every video, and everything we mentioned in it.</h1>
     <p>A short summary of each one, the video itself, and a link to every tool, repo and source. Newest first.</p>
   </section>
   <nav class="jump" aria-label="Jump to a video">
+    <a href="#replica-clone-app-skill"><img src="videos/replica-clone-app-skill.jpg" alt="" loading="lazy"><span>Replica: free Claude Code skills that rebuild an app you pay for, and what our test found</span></a>
     <a href="#cloudflare-security-audit-skill"><img src="videos/cloudflare-security-audit-skill.jpg" alt="" loading="lazy"><span>Cloudflare&#x27;s free security-audit skill: what it does, how to run it in 3 steps, and our test</span></a>
     <a href="#ai-tools-hype-vs-reality"><img src="carousels/ai-tools-hype-vs-reality/01.jpg" alt="" loading="lazy"><span>AI tools: hype vs reality (Seedance, Claude Code, GPT Image vs Nano Banana, ElevenLabs, Whisper, Jev)</span></a>
     <a href="#free-local-ai-apps"><img src="carousels/free-local-ai-apps/01.jpg" alt="" loading="lazy"><span>5 free AI apps that run on your own computer</span></a>
@@ -137,6 +138,32 @@
     <a href="#what-is-mcp"><img src="thumbs/what-is-mcp.jpg" alt="" loading="lazy"><span>What is MCP? The one plug between your AI and your apps</span></a>
     <a href="#voice-to-text"><img src="thumbs/voice-to-text.jpg" alt="" loading="lazy"><span>Four words. 25,000 numbers. Zero letters. How voice to text works</span></a>
   </nav>
+  <article class="ep" id="replica-clone-app-skill">
+    <div class="clip"><div class="player short"><video src="videos/replica-clone-app-skill.mp4" poster="videos/replica-clone-app-skill.jpg" controls playsinline preload="none"></video></div><p class="yt soon">On YouTube soon</p><p class="date">Short · Oct 2026 · 1:41</p></div>
+    <div class="body">
+      <p class="eyebrow">Vibe coding</p>
+      <h2>Replica: free Claude Code skills that rebuild an app you pay for, and what our test found</h2>
+      <h3 class="sumh">What it covers</h3>
+      <p class="lede">Replica is 11 free Claude Code skills (MIT) by Jake Schincariol. Recon maps an app from its public pages and your own account (screens, flows, the data behind them); the others plan it, rebuild it screen by screen, add logins and payments, test it, score it against the original, read what its users hate in public reviews, rebrand it, write the launch page and deploy it. It rebuilds what an app does, never its code, logo or words, and its deploy step stops until the original&#x27;s name and colours are gone. Our test, public pages only, on a popular scheduling app: in about 13 minutes Recon mapped 23 screens (13 of them inferred from help pages) and 10 flows, and estimated the full rebuild at about a quarter of a year, or a first slice in a weekend to a week. The Entrepreneur read 555 public reviews from 4 sources (App Store 500, Capterra 20, Hacker News 20, Trustpilot 15; G2 and Reddit couldn&#x27;t be read) and ranked bugs and crashes first, then price and paywalls, with every quote linked. Good to know: the skills are free, but Claude Code needs a paid Claude plan, and the build and deploy steps use services you set up yourself (a database, payments, email, a host, a domain). The Python checks need Python 3.8 or newer. Start with one slice, the one flow people pay for. Features usually aren&#x27;t protected the way code, text, images, logos and names are, but this isn&#x27;t legal advice: run the trademark checks /replica-brand lists, read the terms of anything you used (including the original&#x27;s, if you study it through your account), keep the original&#x27;s name out of your app, ads and store listing, and talk to a lawyer before you sell if real money is involved. Reviews are research, never testimonials.</p>
+      <h3 class="sumh">Everything we mentioned</h3>
+      <ul class="tools">
+        <li class="tool"><div class="tool-top"><h3><a href="https://github.com/Jakeschincariol/replica-skill" target="_blank" rel="noopener">Jakeschincariol/replica-skill</a></h3><span class="kind">skill pack</span></div>
+          <p>11 skills: recon, architect, design, build, backend, test, diff, entrepreneur, brand, launch, deploy. MIT.</p><pre># paste into Claude Code
+https://github.com/Jakeschincariol/replica-skill
+install skill</pre></li>
+        <li class="tool"><div class="tool-top"><h3><a href="https://claude.com/product/claude-code" target="_blank" rel="noopener">Claude Code</a></h3><span class="kind">product</span></div>
+          <p>Anthropic&#x27;s coding AI, where the skills run. It needs a paid Claude plan.</p></li>
+        <li class="tool"><div class="tool-top"><h3><a href="https://code.claude.com/docs/en/plugins" target="_blank" rel="noopener">Claude Code plugins</a></h3><span class="kind">docs</span></div>
+          <p>How /plugin marketplace add and /plugin install work, the other way to install Replica.</p></li>
+        <li class="tool"><div class="tool-top"><h3><a href="https://www.python.org/downloads/" target="_blank" rel="noopener">Python</a></h3><span class="kind">tool</span></div>
+          <p>Replica&#x27;s checks (parity score, review ranking, the rebrand sweep) are small Python scripts. Python 3.8 or newer.</p></li>
+      </ul><h3 class="sumh">Run it in 3 steps</h3><p class="lede">Recon asks which app, which part, and who it is for, so answer those first. Good-to-know notes are in the summary above.</p><ul class="tools"><li class="tool"><div class="tool-top"><h3>1. Open Claude Code in a new, empty folder</h3><span class="kind">prompt</span></div><pre class="wrap">mkdir my-app
+cd my-app
+claude</pre></li><li class="tool"><div class="tool-top"><h3>2. Paste this into Claude Code</h3><span class="kind">prompt</span></div><pre class="wrap">https://github.com/Jakeschincariol/replica-skill
+install skill</pre></li><li class="tool"><div class="tool-top"><h3>Or install it as a plugin (type these in Claude Code, pick &quot;Install for you&quot;)</h3><span class="kind">prompt</span></div><pre class="wrap">/plugin marketplace add Jakeschincariol/replica-skill
+/plugin install replica-skill@replica-skill</pre></li><li class="tool"><div class="tool-top"><h3>3. Restart Claude Code, then type</h3><span class="kind">prompt</span></div><pre class="wrap">/replica-recon https://the-app.com</pre></li><li class="tool"><div class="tool-top"><h3>Then run the rest in order, one at a time</h3><span class="kind">prompt</span></div><pre class="wrap">recon &gt; architect &gt; design &gt; build &gt; backend &gt; test &gt; diff &gt; entrepreneur &gt; brand &gt; launch &gt; deploy</pre></li></ul><a class="more" href="/resources/#skills">More skills in our AI tools directory →</a>
+    </div>
+  </article>
   <article class="ep" id="cloudflare-security-audit-skill">
     <div class="clip"><div class="player short"><video src="videos/cloudflare-security-audit-skill.mp4" poster="videos/cloudflare-security-audit-skill.jpg" controls playsinline preload="none"></video></div><p class="yt soon">On YouTube soon</p><p class="date">Short · Oct 2026 · 1:30</p></div>
     <div class="body">
