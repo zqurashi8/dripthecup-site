@@ -2,10 +2,10 @@
  "videos": [
   {
    "id": "replica-clone-app-skill",
-   "title": "Replica: free Claude Code skills that rebuild an app you pay for, and what our test found",
+   "title": "Replica: a new Claude skill that reverse-engineers an app and rebuilds it as your own, and what our test found",
    "kind": "Short",
    "date": "Oct 2026",
-   "length": "1:41",
+   "length": "1:39",
    "topic": "Vibe coding",
    "youtube": null,
    "mp4": "videos/replica-clone-app-skill.mp4",
