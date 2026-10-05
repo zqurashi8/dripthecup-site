@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-02",
+ "updated": "2026-10-03",
  "categories": [
   {
    "id": "chat",
@@ -88,6 +88,15 @@
      "url": "https://poe.com",
      "by": "Quora",
      "best": "Many chatbots and models in one app"
+    },
+    {
+     "name": "Jan",
+     "url": "https://github.com/janhq/jan",
+     "by": "open source",
+     "kind": "open source",
+     "stars": "45K",
+     "best": "A ChatGPT-style chat that runs on your own computer, even offline",
+     "seen": "free-local-ai-apps"
     }
    ]
   },
@@ -692,6 +701,24 @@
      "by": "open source",
      "kind": "open source",
      "best": "Dictation that runs fully on your Mac"
+    },
+    {
+     "name": "Handy",
+     "url": "https://github.com/cjpais/Handy",
+     "by": "open source",
+     "kind": "open source",
+     "stars": "33K",
+     "best": "Free push-to-talk typing into any app, fully offline",
+     "seen": "free-local-ai-apps"
+    },
+    {
+     "name": "Buzz",
+     "url": "https://github.com/chidiwilliams/buzz",
+     "by": "open source",
+     "kind": "open source",
+     "stars": "22K",
+     "best": "Turn recordings and videos into text and subtitles, offline",
+     "seen": "free-local-ai-apps"
     }
    ]
   },
@@ -1247,7 +1274,8 @@
      "name": "Nano Banana Pro",
      "url": "https://gemini.google.com",
      "by": "Google",
-     "best": "Keeping a character consistent across edits"
+     "best": "Keeping a character consistent across edits",
+     "seen": "ai-tools-hype-vs-reality"
     },
     {
      "name": "Midjourney",
@@ -1308,8 +1336,9 @@
      "url": "https://github.com/Comfy-Org/ComfyUI",
      "by": "Comfy Org",
      "kind": "open source",
-     "stars": "135K",
-     "best": "Node-based image and video generation you run yourself"
+     "stars": "136K",
+     "best": "Node-based image and video generation you run yourself",
+     "seen": "free-local-ai-apps"
     },
     {
      "name": "Stable Diffusion web UI",
@@ -1318,6 +1347,15 @@
      "kind": "open source",
      "stars": "165K",
      "best": "The classic self-hosted Stable Diffusion interface"
+    },
+    {
+     "name": "Upscayl",
+     "url": "https://github.com/upscayl/upscayl",
+     "by": "open source",
+     "kind": "open source",
+     "stars": "50K",
+     "best": "Make small, blurry photos bigger and sharper on your own computer",
+     "seen": "free-local-ai-apps"
     }
    ]
   },
@@ -1350,7 +1388,8 @@
      "name": "Seedance 2.5",
      "url": "https://seed.bytedance.com/en/seedance2_5",
      "by": "ByteDance",
-     "best": "Up to 30-second videos with audio and multi-shot storytelling"
+     "best": "Up to 30-second videos with audio and multi-shot storytelling",
+     "seen": "ai-tools-hype-vs-reality"
     },
     {
      "name": "Happy Horse",

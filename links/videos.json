@@ -1,6 +1,140 @@
 {
  "videos": [
   {
+   "id": "ai-tools-hype-vs-reality",
+   "title": "AI tools: hype vs reality (Seedance, Claude Code, GPT Image vs Nano Banana, ElevenLabs, Whisper, Jev)",
+   "kind": "Carousel",
+   "date": "Oct 2026",
+   "length": "9 slides",
+   "topic": "AI tools",
+   "youtube": null,
+   "mp4": null,
+   "poster": "carousels/ai-tools-hype-vs-reality/01.jpg",
+   "slides": [
+    "carousels/ai-tools-hype-vs-reality/01.jpg",
+    "carousels/ai-tools-hype-vs-reality/02.jpg",
+    "carousels/ai-tools-hype-vs-reality/03.jpg",
+    "carousels/ai-tools-hype-vs-reality/04.jpg",
+    "carousels/ai-tools-hype-vs-reality/05.jpg",
+    "carousels/ai-tools-hype-vs-reality/06.jpg",
+    "carousels/ai-tools-hype-vs-reality/07.jpg",
+    "carousels/ai-tools-hype-vs-reality/08.jpg",
+    "carousels/ai-tools-hype-vs-reality/09.jpg"
+   ],
+   "summary": "Drip is a cartoon made with AI, so he rated the tools by how they hold up for us. Hype is how loud the internet is; reality is our take, not a lab test. Seedance 2.5 (ByteDance's video model): a video model once gave Drip no legs, AI video has got much better since, and Capp says Seedance earns the hype. Claude Code builds every video Drip is in, over rounds of fixes, not one prompt. GPT Image 2.5 vs Nano Banana Pro, same prompt and the same reference picture: GPT Image drew every picture in the post (2 of 32 came back off-model) at 8x fewer credits on Higgsfield; Nano Banana Pro got one of two takes right and gave Drip eyebrows in the other. ElevenLabs makes both voices; its newest model (Eleven v4) made Drip squeaky, so he stays on the older one. Whisper is free, runs on our computer and checks every word we record, and it also hears words in a coffee grinder. Jev ranks the 201 tools on our site for 27 jobs in about 12 seconds for under 2 cents.",
+   "links": [
+    {
+     "name": "Seedance 2.5",
+     "url": "https://seed.bytedance.com/en/seedance2_5",
+     "kind": "product",
+     "what": "ByteDance's AI video model. Seedance 2.5 is on Higgsfield."
+    },
+    {
+     "name": "Claude Code",
+     "url": "https://claude.com/product/claude-code",
+     "kind": "product",
+     "what": "Anthropic's coding AI. We build every Drip video with it, as code."
+    },
+    {
+     "name": "GPT Image 2.5 on Higgsfield",
+     "url": "https://higgsfield.ai",
+     "kind": "product",
+     "what": "OpenAI's image model. It drew every picture in this post, with a picture of Drip attached."
+    },
+    {
+     "name": "Nano Banana Pro",
+     "url": "https://blog.google/innovation-and-ai/products/nano-banana-pro/",
+     "kind": "docs",
+     "what": "Google's image model (Gemini 3 Pro Image). Same prompt as GPT Image in our test."
+    },
+    {
+     "name": "ElevenLabs",
+     "url": "https://elevenlabs.io",
+     "kind": "product",
+     "what": "Drip's and Capp's voices."
+    },
+    {
+     "name": "Eleven v4 announcement",
+     "url": "https://elevenlabs.io/blog/eleven-v4",
+     "kind": "docs",
+     "what": "The newest ElevenLabs model (Sept 28, 2026). Drip stays on the older one."
+    },
+    {
+     "name": "Whisper",
+     "url": "https://github.com/openai/whisper",
+     "kind": "code",
+     "what": "OpenAI's free, open-source speech-to-text (MIT license). We run it locally with whisper.cpp."
+    },
+    {
+     "name": "Jev by TypeSafe",
+     "url": "https://docs.typesafe.ai/introduction",
+     "kind": "docs",
+     "what": "A decision model that returns typed answers. It ranks the tools on our site."
+    }
+   ],
+   "more": {
+    "label": "Every AI tool we use and rate",
+    "url": "/resources/"
+   }
+  },
+  {
+   "id": "free-local-ai-apps",
+   "title": "5 free AI apps that run on your own computer",
+   "kind": "Carousel",
+   "date": "Oct 2026",
+   "length": "7 slides",
+   "topic": "Free AI tools",
+   "youtube": null,
+   "mp4": null,
+   "poster": "carousels/free-local-ai-apps/01.jpg",
+   "slides": [
+    "carousels/free-local-ai-apps/01.jpg",
+    "carousels/free-local-ai-apps/02.jpg",
+    "carousels/free-local-ai-apps/03.jpg",
+    "carousels/free-local-ai-apps/04.jpg",
+    "carousels/free-local-ai-apps/05.jpg",
+    "carousels/free-local-ai-apps/06.jpg",
+    "carousels/free-local-ai-apps/07.jpg"
+   ],
+   "summary": "Five free, open-source apps that run AI on your own computer instead of in the cloud, with no monthly bill. Jan is a ChatGPT-style chat that works with no internet (smaller models than ChatGPT; about 8 GB of memory runs the small ones). Handy types what you say into any app, offline, and is fast on most laptops. ComfyUI makes images on your computer; it looks scary at first because it's a board of wires, and it's best with a graphics card. Upscayl makes small, blurry photos bigger and sharper; it needs a graphics card, and the new detail is the AI's best guess. Buzz turns recordings and videos into text and subtitles using Whisper, the same speech model we use. Checked on each project's own GitHub page and docs, Oct 3 2026.",
+   "links": [
+    {
+     "name": "Jan",
+     "url": "https://github.com/janhq/jan",
+     "kind": "code",
+     "what": "Chat with an AI on your own computer, offline. Apache 2.0. Windows, Mac, Linux."
+    },
+    {
+     "name": "Handy",
+     "url": "https://github.com/cjpais/Handy",
+     "kind": "code",
+     "what": "Press a key, talk, and it types into any app. MIT. Windows, Mac, Linux."
+    },
+    {
+     "name": "ComfyUI",
+     "url": "https://github.com/Comfy-Org/ComfyUI",
+     "kind": "code",
+     "what": "Make images on your own computer. GPL-3.0. Best with a graphics card."
+    },
+    {
+     "name": "Upscayl",
+     "url": "https://github.com/upscayl/upscayl",
+     "kind": "code",
+     "what": "Upscale and sharpen photos. AGPL-3.0. Needs a Vulkan-capable graphics card."
+    },
+    {
+     "name": "Buzz",
+     "url": "https://github.com/chidiwilliams/buzz",
+     "kind": "code",
+     "what": "Transcribe recordings and videos into text and subtitles, offline. MIT."
+    }
+   ],
+   "more": {
+    "label": "More free and open-source AI tools",
+    "url": "/resources/"
+   }
+  },
+  {
    "id": "how-graphics-cards-work",
    "title": "How graphics cards actually work (and why AI needs them)",
    "kind": "Short",
