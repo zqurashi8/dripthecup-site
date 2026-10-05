@@ -96,11 +96,12 @@
 
 <div class="wrap">
   <section class="intro">
-    <p class="eyebrow">Videos · 34 so far</p>
+    <p class="eyebrow">Videos · 35 so far</p>
     <h1>Every video, and everything we mentioned in it.</h1>
     <p>A short summary of each one, the video itself, and a link to every tool, repo and source. Newest first.</p>
   </section>
   <nav class="jump" aria-label="Jump to a video">
+    <a href="#cloudflare-security-audit-skill"><img src="videos/cloudflare-security-audit-skill.jpg" alt="" loading="lazy"><span>Cloudflare&#x27;s free security-audit skill: what it does, how to run it in 3 steps, and our test</span></a>
     <a href="#ai-tools-hype-vs-reality"><img src="carousels/ai-tools-hype-vs-reality/01.jpg" alt="" loading="lazy"><span>AI tools: hype vs reality (Seedance, Claude Code, GPT Image vs Nano Banana, ElevenLabs, Whisper, Jev)</span></a>
     <a href="#free-local-ai-apps"><img src="carousels/free-local-ai-apps/01.jpg" alt="" loading="lazy"><span>5 free AI apps that run on your own computer</span></a>
     <a href="#how-graphics-cards-work"><img src="videos/how-graphics-cards-work.jpg" alt="" loading="lazy"><span>How graphics cards actually work (and why AI needs them)</span></a>
@@ -136,6 +137,30 @@
     <a href="#what-is-mcp"><img src="thumbs/what-is-mcp.jpg" alt="" loading="lazy"><span>What is MCP? The one plug between your AI and your apps</span></a>
     <a href="#voice-to-text"><img src="thumbs/voice-to-text.jpg" alt="" loading="lazy"><span>Four words. 25,000 numbers. Zero letters. How voice to text works</span></a>
   </nav>
+  <article class="ep" id="cloudflare-security-audit-skill">
+    <div class="clip"><div class="player short"><video src="videos/cloudflare-security-audit-skill.mp4" poster="videos/cloudflare-security-audit-skill.jpg" controls playsinline preload="none"></video></div><p class="yt soon">On YouTube soon</p><p class="date">Short · Oct 2026 · 1:29</p></div>
+    <div class="body">
+      <p class="eyebrow">Vibe coding</p>
+      <h2>Cloudflare&#x27;s free security-audit skill: what it does, how to run it in 3 steps, and our test</h2>
+      <h3 class="sumh">What it covers</h3>
+      <p class="lede">Cloudflare released, for free (MIT license), the skill it started with to hunt security holes in its own code. It maps your app, sends AI agents to hunt by area and attack type, and hands every flagged hole to a fresh agent whose job is to prove it wrong. False alarms are thrown out, holes it can prove come with a fix, and the rest go on a needs-checking list. The bigger system Cloudflare grew from it, with one more scanner feeding it, left 7,245 findings for its engineers across 145 repos. We tested it on Brew Notes, a tiny app we broke on purpose with 8 holes: in about 30 minutes it confirmed 6 of them, found a crash we didn&#x27;t plant, threw out our cross-site scripting plant with a good reason (it could only hit your own account) and missed one (unlimited password guesses). Without &quot;use subagents&quot; in the request, our run did the whole audit alone, so step 3 includes it. Good to know: On Windows, use Command Prompt if PowerShell says scripts are disabled. If Claude Code was already open, restart it after installing. The skill reads your code: it doesn&#x27;t touch your live site or edit your files. It uses a lot of your Claude usage (our 3-file test took about 30 minutes), so start with the quick profile. Without a sandbox (for example on Windows) it can&#x27;t run your app, so holes it can&#x27;t prove go in NEEDS-VALIDATION.md; in our Windows test its two checker scripts also needed a workaround, which Claude handled. A quick run is partial: a clean report doesn&#x27;t mean your app is safe, and Cloudflare says one run found about half of what repeat runs found.</p>
+      <h3 class="sumh">Everything we mentioned</h3>
+      <ul class="tools">
+        <li class="tool"><div class="tool-top"><h3><a href="https://github.com/cloudflare/security-audit-skill" target="_blank" rel="noopener">cloudflare/security-audit-skill</a></h3><span class="kind">skill</span><span class="stars">★ 24K</span></div>
+          <p>The skill itself, free (MIT). Recon, hunting, a skeptic that tries to disprove every finding, then a report with fixes.</p><pre>npx skills add https://github.com/cloudflare/security-audit-skill --skill security-audit -g -a claude-code -y</pre></li>
+        <li class="tool"><div class="tool-top"><h3><a href="https://blog.cloudflare.com/build-your-own-vulnerability-harness" target="_blank" rel="noopener">Build your own vulnerability harness (Cloudflare blog, June 2026)</a></h3><span class="kind">article</span></div>
+          <p>How Cloudflare grew this skill into a fleet-wide system, and where the 7,245 findings come from.</p></li>
+        <li class="tool"><div class="tool-top"><h3><a href="https://github.com/vercel-labs/skills" target="_blank" rel="noopener">Skills CLI (npx skills)</a></h3><span class="kind">tool</span></div>
+          <p>Vercel&#x27;s open installer for agent skills. The install line uses it; it needs Node.js.</p></li>
+        <li class="tool"><div class="tool-top"><h3><a href="https://nodejs.org/en/download" target="_blank" rel="noopener">Node.js</a></h3><span class="kind">tool</span></div>
+          <p>Install the LTS version first if you don&#x27;t have it. The install line runs with npx, which comes with Node.js.</p></li>
+        <li class="tool"><div class="tool-top"><h3><a href="https://claude.com/product/claude-code" target="_blank" rel="noopener">Claude Code</a></h3><span class="kind">product</span></div>
+          <p>Anthropic&#x27;s coding AI, where the skill runs. It needs a paid Claude plan.</p></li>
+      </ul><h3 class="sumh">Run it in 3 steps</h3><p class="lede">You need Node.js and Claude Code (a paid Claude plan). Good-to-know notes are in the summary above.</p><ul class="tools"><li class="tool"><div class="tool-top"><h3>1. Install it (in your terminal)</h3><span class="kind">prompt</span></div><pre class="wrap">npx skills add https://github.com/cloudflare/security-audit-skill --skill security-audit -g -a claude-code -y</pre></li><li class="tool"><div class="tool-top"><h3>2. Open your app in Claude Code</h3><span class="kind">prompt</span></div><pre class="wrap">cd your-app-folder
+claude</pre></li><li class="tool"><div class="tool-top"><h3>3. Type this</h3><span class="kind">prompt</span></div><pre class="wrap">security audit this codebase, quick profile, use subagents</pre></li><li class="tool"><div class="tool-top"><h3>Where the report lands</h3><span class="kind">prompt</span></div><pre class="wrap">~/security-audit-skill/&lt;your-app&gt;/run-1/REPORT.md
+(plus FINDINGS-DETAIL.md and NEEDS-VALIDATION.md)</pre></li></ul><a class="more" href="/resources/#skills">More skills in our AI tools directory →</a>
+    </div>
+  </article>
   <article class="ep" id="ai-tools-hype-vs-reality">
     <div class="clip"><div class="slides"><img src="carousels/ai-tools-hype-vs-reality/01.jpg" alt="slide 1 of 9" loading="lazy" width="720" height="900"><img src="carousels/ai-tools-hype-vs-reality/02.jpg" alt="slide 2 of 9" loading="lazy" width="720" height="900"><img src="carousels/ai-tools-hype-vs-reality/03.jpg" alt="slide 3 of 9" loading="lazy" width="720" height="900"><img src="carousels/ai-tools-hype-vs-reality/04.jpg" alt="slide 4 of 9" loading="lazy" width="720" height="900"><img src="carousels/ai-tools-hype-vs-reality/05.jpg" alt="slide 5 of 9" loading="lazy" width="720" height="900"><img src="carousels/ai-tools-hype-vs-reality/06.jpg" alt="slide 6 of 9" loading="lazy" width="720" height="900"><img src="carousels/ai-tools-hype-vs-reality/07.jpg" alt="slide 7 of 9" loading="lazy" width="720" height="900"><img src="carousels/ai-tools-hype-vs-reality/08.jpg" alt="slide 8 of 9" loading="lazy" width="720" height="900"><img src="carousels/ai-tools-hype-vs-reality/09.jpg" alt="slide 9 of 9" loading="lazy" width="720" height="900"></div><p class="yt soon">Swipe through the slides →</p><p class="date">Carousel · Oct 2026 · 9 slides</p></div>
     <div class="body">

@@ -455,6 +455,26 @@
      "seen": "claude-code-superpowers"
     },
     {
+     "name": "Skills CLI",
+     "url": "https://github.com/vercel-labs/skills",
+     "by": "vercel-labs",
+     "kind": "tool",
+     "stars": "33K",
+     "best": "Installs agent skills into Claude Code, Codex, Cursor and more with one line",
+     "install": "# in your terminal (needs Node.js)\nnpx skills add <owner/repo>",
+     "seen": "cloudflare-security-audit-skill"
+    },
+    {
+     "name": "Cloudflare Security Audit",
+     "url": "https://github.com/cloudflare/security-audit-skill",
+     "by": "cloudflare",
+     "kind": "skill",
+     "stars": "24K",
+     "best": "A full security audit of your app, with a skeptic agent that tries to disprove every finding",
+     "install": "# in your terminal (needs Node.js)\nnpx skills add https://github.com/cloudflare/security-audit-skill --skill security-audit -g -a claude-code -y",
+     "seen": "cloudflare-security-audit-skill"
+    },
+    {
      "name": "Scroll World",
      "url": "https://github.com/oso95/scroll-world",
      "by": "oso95",
