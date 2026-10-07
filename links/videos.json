@@ -1,6 +1,71 @@
 {
  "videos": [
   {
+   "id": "hairline-line-animations-skill",
+   "title": "Hairline: a free Claude Code skill that draws line animations that react to your mouse, plus 27 ready-made ones",
+   "kind": "Short",
+   "date": "Oct 2026",
+   "length": "1:39",
+   "topic": "Web design",
+   "youtube": null,
+   "mp4": "videos/hairline-line-animations-skill.mp4",
+   "poster": "videos/hairline-line-animations-skill.jpg",
+   "summary": "Hairline (lucasmarkes/hairline, MIT, by Lucas Marques, about 1,000 GitHub stars as of Oct 7 2026) is two things. A library of 27 isometric line figures that answer the pointer (a vault you crack by turning its dial, a keyboard whose keys sink, a laptop whose lid follows your mouse), with no dependencies, for React 18+ or any web page. And hairline-create, a skill for coding agents: give it an idea and it offers two or three concepts, draws the one you pick to Hairline's ten rules on the same engine, checks it with a script and in a browser, and hands over one HTML file that opens from disk. Every figure on a page shares one animation loop, and a figure off screen does no work. Our test (Oct 7 2026, Claude Code with Opus 5, run hands-free so it picked the concept itself): \"a coffee cup\" gave three concepts and a carrier where the cup under your mouse rides up, passed its checks, one 37.7 KB file, in about 10 minutes. \"A mailbox for a contact form\" gave five mailboxes on a rail whose doors swing open and flags go up, in about 17 minutes. The library and the skill are free; Claude Code needs a paid Claude plan or API credits.",
+   "links": [
+    {
+     "name": "lucasmarkes/hairline",
+     "url": "https://github.com/lucasmarkes/hairline",
+     "kind": "repo",
+     "what": "The library and the hairline-create skill (MIT)"
+    },
+    {
+     "name": "hairline.lucasmarkes.com",
+     "url": "https://hairline.lucasmarkes.com",
+     "kind": "site",
+     "what": "Every figure live, with an inspector that writes the snippet for you"
+    },
+    {
+     "name": "Figures the skill drew",
+     "url": "https://hairline.lucasmarkes.com/skill",
+     "kind": "site",
+     "what": "The maker's own examples, each beside its prompt"
+    },
+    {
+     "name": "skills CLI",
+     "url": "https://github.com/vercel-labs/skills",
+     "kind": "tool",
+     "what": "npx skills add: installs a skill into your project for Claude Code, Cursor, Codex and others"
+    }
+   ],
+   "prompts": [
+    {
+     "name": "1. In your project folder (a terminal)",
+     "prompt": "npx skills add lucasmarkes/hairline -a claude-code -y"
+    },
+    {
+     "name": "2. Open Claude Code in that folder",
+     "prompt": "claude"
+    },
+    {
+     "name": "3. Type the command and your idea",
+     "prompt": "/hairline-create a coffee cup"
+    },
+    {
+     "name": "Tip: name the object and what the mouse does, and it skips the concept step",
+     "prompt": "/hairline-create a mailbox; under the mouse its door swings open and its flag goes up"
+    },
+    {
+     "name": "The ready-made 27 (in your web project)",
+     "prompt": "npm i @lucasmarkes/hairline"
+    },
+    {
+     "name": "Then, in React",
+     "prompt": "import { Vault } from \"@lucasmarkes/hairline/react\";\n\nexport function Hero() {\n  return <Vault />;\n}"
+    }
+   ],
+   "prompts_note": "Without the -y flag, npx skills add asks which agents and where to install (your project's .claude/skills/ by default). The skill runs node scripts to check its work, and its browser check installs playwright-core once and uses Chrome. The figures need a DOM: on a page that isn't white or near-black, set --hairline-plate to your background, because the plate colour fills every surface. The npm package is ESM only. MIT: keep the licence notice."
+  },
+  {
    "id": "four-addons-before-vibe-coding",
    "title": "4 free Claude Code add-ons to switch on before you vibe code, and what two of them did in our tests",
    "kind": "Short",

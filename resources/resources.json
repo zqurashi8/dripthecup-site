@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-03",
+ "updated": "2026-10-07",
  "categories": [
   {
    "id": "chat",
@@ -299,6 +299,16 @@
    "icon": "🧩",
    "blurb": "Add-ons that give an AI agent new abilities. Most follow the open Agent Skills format and work in Claude Code, Codex, Gemini CLI, Cursor and other agents. Install lines shown are for Claude Code; each repo explains the rest. Sorted by GitHub stars.",
    "items": [
+    {
+     "name": "Hairline",
+     "url": "https://github.com/lucasmarkes/hairline",
+     "by": "lucasmarkes",
+     "kind": "skill + library",
+     "stars": "1K",
+     "best": "27 line animations that react to the mouse, and a skill that draws new ones from one sentence",
+     "install": "npx skills add lucasmarkes/hairline",
+     "seen": "hairline-line-animations-skill"
+    },
     {
      "name": "Superpowers",
      "url": "https://github.com/obra/superpowers",

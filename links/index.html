@@ -96,11 +96,12 @@
 
 <div class="wrap">
   <section class="intro">
-    <p class="eyebrow">Videos · 38 so far</p>
+    <p class="eyebrow">Videos · 39 so far</p>
     <h1>Every video, and everything we mentioned in it.</h1>
     <p>A short summary of each one, the video itself, and a link to every tool, repo and source. Newest first.</p>
   </section>
   <nav class="jump" aria-label="Jump to a video">
+    <a href="#hairline-line-animations-skill"><img src="videos/hairline-line-animations-skill.jpg" alt="" loading="lazy"><span>Hairline: a free Claude Code skill that draws line animations that react to your mouse, plus 27 ready-made ones</span></a>
     <a href="#four-addons-before-vibe-coding"><img src="videos/four-addons-before-vibe-coding.jpg" alt="" loading="lazy"><span>4 free Claude Code add-ons to switch on before you vibe code, and what two of them did in our tests</span></a>
     <a href="#voicestudio-local-voice-cloning"><img src="videos/voicestudio-local-voice-cloning.jpg" alt="" loading="lazy"><span>VoiceStudio: a free, open-source voice cloner that runs on your own computer</span></a>
     <a href="#replica-clone-app-skill"><img src="videos/replica-clone-app-skill.jpg" alt="" loading="lazy"><span>Replica: a new Claude skill that reverse-engineers an app and rebuilds it as your own, and what our test found</span></a>
@@ -140,6 +141,30 @@
     <a href="#what-is-mcp"><img src="thumbs/what-is-mcp.jpg" alt="" loading="lazy"><span>What is MCP? The one plug between your AI and your apps</span></a>
     <a href="#voice-to-text"><img src="thumbs/voice-to-text.jpg" alt="" loading="lazy"><span>Four words. 25,000 numbers. Zero letters. How voice to text works</span></a>
   </nav>
+  <article class="ep" id="hairline-line-animations-skill">
+    <div class="clip"><div class="player short"><video src="videos/hairline-line-animations-skill.mp4" poster="videos/hairline-line-animations-skill.jpg" controls playsinline preload="none"></video></div><p class="yt soon">On YouTube soon</p><p class="date">Short · Oct 2026 · 1:39</p></div>
+    <div class="body">
+      <p class="eyebrow">Web design</p>
+      <h2>Hairline: a free Claude Code skill that draws line animations that react to your mouse, plus 27 ready-made ones</h2>
+      <h3 class="sumh">What it covers</h3>
+      <p class="lede">Hairline (lucasmarkes/hairline, MIT, by Lucas Marques, about 1,000 GitHub stars as of Oct 7 2026) is two things. A library of 27 isometric line figures that answer the pointer (a vault you crack by turning its dial, a keyboard whose keys sink, a laptop whose lid follows your mouse), with no dependencies, for React 18+ or any web page. And hairline-create, a skill for coding agents: give it an idea and it offers two or three concepts, draws the one you pick to Hairline&#x27;s ten rules on the same engine, checks it with a script and in a browser, and hands over one HTML file that opens from disk. Every figure on a page shares one animation loop, and a figure off screen does no work. Our test (Oct 7 2026, Claude Code with Opus 5, run hands-free so it picked the concept itself): &quot;a coffee cup&quot; gave three concepts and a carrier where the cup under your mouse rides up, passed its checks, one 37.7 KB file, in about 10 minutes. &quot;A mailbox for a contact form&quot; gave five mailboxes on a rail whose doors swing open and flags go up, in about 17 minutes. The library and the skill are free; Claude Code needs a paid Claude plan or API credits.</p>
+      <h3 class="sumh">Everything we mentioned</h3>
+      <ul class="tools">
+        <li class="tool"><div class="tool-top"><h3><a href="https://github.com/lucasmarkes/hairline" target="_blank" rel="noopener">lucasmarkes/hairline</a></h3><span class="kind">repo</span></div>
+          <p>The library and the hairline-create skill (MIT)</p></li>
+        <li class="tool"><div class="tool-top"><h3><a href="https://hairline.lucasmarkes.com" target="_blank" rel="noopener">hairline.lucasmarkes.com</a></h3><span class="kind">site</span></div>
+          <p>Every figure live, with an inspector that writes the snippet for you</p></li>
+        <li class="tool"><div class="tool-top"><h3><a href="https://hairline.lucasmarkes.com/skill" target="_blank" rel="noopener">Figures the skill drew</a></h3><span class="kind">site</span></div>
+          <p>The maker&#x27;s own examples, each beside its prompt</p></li>
+        <li class="tool"><div class="tool-top"><h3><a href="https://github.com/vercel-labs/skills" target="_blank" rel="noopener">skills CLI</a></h3><span class="kind">tool</span></div>
+          <p>npx skills add: installs a skill into your project for Claude Code, Cursor, Codex and others</p></li>
+      </ul><h3 class="sumh">The prompt for each one</h3><p class="lede">Without the -y flag, npx skills add asks which agents and where to install (your project&#x27;s .claude/skills/ by default). The skill runs node scripts to check its work, and its browser check installs playwright-core once and uses Chrome. The figures need a DOM: on a page that isn&#x27;t white or near-black, set --hairline-plate to your background, because the plate colour fills every surface. The npm package is ESM only. MIT: keep the licence notice.</p><ul class="tools"><li class="tool"><div class="tool-top"><h3>1. In your project folder (a terminal)</h3><span class="kind">prompt</span></div><pre class="wrap">npx skills add lucasmarkes/hairline -a claude-code -y</pre></li><li class="tool"><div class="tool-top"><h3>2. Open Claude Code in that folder</h3><span class="kind">prompt</span></div><pre class="wrap">claude</pre></li><li class="tool"><div class="tool-top"><h3>3. Type the command and your idea</h3><span class="kind">prompt</span></div><pre class="wrap">/hairline-create a coffee cup</pre></li><li class="tool"><div class="tool-top"><h3>Tip: name the object and what the mouse does, and it skips the concept step</h3><span class="kind">prompt</span></div><pre class="wrap">/hairline-create a mailbox; under the mouse its door swings open and its flag goes up</pre></li><li class="tool"><div class="tool-top"><h3>The ready-made 27 (in your web project)</h3><span class="kind">prompt</span></div><pre class="wrap">npm i @lucasmarkes/hairline</pre></li><li class="tool"><div class="tool-top"><h3>Then, in React</h3><span class="kind">prompt</span></div><pre class="wrap">import { Vault } from &quot;@lucasmarkes/hairline/react&quot;;
+
+export function Hero() {
+  return &lt;Vault /&gt;;
+}</pre></li></ul>
+    </div>
+  </article>
   <article class="ep" id="four-addons-before-vibe-coding">
     <div class="clip"><div class="player short"><video src="videos/four-addons-before-vibe-coding.mp4" poster="videos/four-addons-before-vibe-coding.jpg" controls playsinline preload="none"></video></div><p class="yt soon">On YouTube soon</p><p class="date">Short · Oct 2026 · 1:40</p></div>
     <div class="body">
