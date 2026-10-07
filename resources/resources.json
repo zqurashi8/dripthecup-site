@@ -1238,6 +1238,13 @@
      "top": true
     },
     {
+     "name": "VoiceStudio",
+     "url": "https://github.com/debpalash/VoiceStudio",
+     "by": "open source",
+     "best": "Cloning a voice and reading a script in it, entirely on your own computer, free",
+     "seen": "voicestudio-local-voice-cloning"
+    },
+    {
      "name": "Suno",
      "url": "https://suno.com",
      "by": "Suno",

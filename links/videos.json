@@ -1,6 +1,80 @@
 {
  "videos": [
   {
+   "id": "voicestudio-local-voice-cloning",
+   "title": "VoiceStudio: a free, open-source voice cloner that runs on your own computer",
+   "kind": "Short",
+   "date": "Oct 2026",
+   "length": "1:40",
+   "topic": "AI tools",
+   "youtube": null,
+   "mp4": "videos/voicestudio-local-voice-cloning.mp4",
+   "poster": "videos/voicestudio-local-voice-cloning.jpg",
+   "summary": "The voice at the start of our video was made by VoiceStudio on our own desktop, on the processor alone, from one line of description (voice design: nobody recorded it). VoiceStudio is a free, open-source app (AGPL-3.0), built mostly by one developer, debpalash, with about 54,000 GitHub stars as of Oct 6 2026 and 3,124 commits since April. Give it 5 to 15 seconds of clean speech and it builds a voice you can reuse, then reads anything you type in it, turns a book into an audiobook or dubs a video into another language. It also goes the other way: talk, and it types for you. It has its own MCP server, so while the app is open Claude Code can make audio files in a voice you pick, with no API key and no account for VoiceStudio. What it makes carries an invisible AudioSeal watermark by default. Clone only your own voice, or one you have permission to use. Our test: their default engine, run from source on a Windows desktop (i7-10700F with an AMD Radeon RX 9060 XT, which PyTorch on Windows can't use, so processor only). It designed the voice in our video in 22 seconds and spoke a 6-second line in a cloned voice in 2 minutes 18. The voice model is k2-fsa/OmniVoice: the app is free to use for paid work, but that default model's weights are CC-BY-NC (non-commercial), so check the model's licence before you sell anything.",
+   "links": [
+    {
+     "name": "debpalash/VoiceStudio",
+     "url": "https://github.com/debpalash/VoiceStudio",
+     "kind": "app",
+     "what": "The app. AGPL-3.0, free. Windows, macOS and Linux installers on the Releases page; about 10 GB of free disk, and it installs its own Python runtime and model weights on first launch."
+    },
+    {
+     "name": "voicestudio.sh",
+     "url": "https://voicestudio.sh",
+     "kind": "site",
+     "what": "The project's own site and one-line installer."
+    },
+    {
+     "name": "k2-fsa/OmniVoice",
+     "url": "https://huggingface.co/k2-fsa/OmniVoice",
+     "kind": "model",
+     "what": "The default voice model, by Han Zhu. 3.3 GB. Its code is Apache-2.0 but its pretrained weights are CC-BY-NC: non-commercial. Check this before you sell anything you make."
+    },
+    {
+     "name": "Their language catalogue",
+     "url": "https://github.com/debpalash/VoiceStudio/blob/main/docs/languages.md",
+     "kind": "docs",
+     "what": "All 646 languages with the hours of speech behind each one. This is the table we added up."
+    },
+    {
+     "name": "Their MCP docs",
+     "url": "https://github.com/debpalash/VoiceStudio/blob/main/docs/mcp.md",
+     "kind": "docs",
+     "what": "The local MCP server: generate_speech, clone_voice, transcribe and the rest, for Claude Code and Cursor."
+    },
+    {
+     "name": "Their benchmarks page",
+     "url": "https://github.com/debpalash/VoiceStudio/blob/main/docs/benchmarks.md",
+     "kind": "docs",
+     "what": "Still says \"No verified rows yet\", which is why we measured it ourselves."
+    }
+   ],
+   "prompts_title": "Set it up in 3 steps",
+   "prompts": [
+    {
+     "name": "1. Download the installer for your computer",
+     "prompt": "https://github.com/debpalash/VoiceStudio/releases/latest"
+    },
+    {
+     "name": "Or, in a normal (non-admin) PowerShell on Windows",
+     "prompt": "irm https://voicestudio.sh/install | iex"
+    },
+    {
+     "name": "2. Open Voice cloning, drop in 5 to 15 seconds of clean speech",
+     "prompt": "one speaker, no music, no background noise. it writes down what the clip says for you, so leave the transcript box alone unless it stays empty."
+    },
+    {
+     "name": "3. On Windows with no NVIDIA card? Switch the engine before you judge the speed",
+     "prompt": "Settings > Model Catalogue > OmniVoice GGUF"
+    },
+    {
+     "name": "4. Let your coding agent use it (optional)",
+     "prompt": "keep VoiceStudio open, then point Claude Code or Cursor at the local MCP server it exposes at /mcp"
+    }
+   ],
+   "prompts_note": "Fine print worth knowing before you start. It wants about 10 GB of free disk on Windows and installs its own Python runtime on first launch, and your first generate downloads a few gigabytes of model, so a slow first run is almost always the download, not a crash. Judge the speed from the second run: the first one loads the model. Every clip gets an invisible AudioSeal watermark unless you turn it off in Settings > Privacy. The who-said-what transcripts need a free Hugging Face account and a one-time licence acceptance. The app is free to use commercially; the default model's weights are not. And clone your own voice, or one you have the person's permission to clone."
+  },
+  {
    "id": "replica-clone-app-skill",
    "title": "Replica: a new Claude skill that reverse-engineers an app and rebuilds it as your own, and what our test found",
    "kind": "Short",

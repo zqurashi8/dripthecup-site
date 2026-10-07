@@ -96,11 +96,12 @@
 
 <div class="wrap">
   <section class="intro">
-    <p class="eyebrow">Videos · 36 so far</p>
+    <p class="eyebrow">Videos · 37 so far</p>
     <h1>Every video, and everything we mentioned in it.</h1>
     <p>A short summary of each one, the video itself, and a link to every tool, repo and source. Newest first.</p>
   </section>
   <nav class="jump" aria-label="Jump to a video">
+    <a href="#voicestudio-local-voice-cloning"><img src="videos/voicestudio-local-voice-cloning.jpg" alt="" loading="lazy"><span>VoiceStudio: a free, open-source voice cloner that runs on your own computer</span></a>
     <a href="#replica-clone-app-skill"><img src="videos/replica-clone-app-skill.jpg" alt="" loading="lazy"><span>Replica: a new Claude skill that reverse-engineers an app and rebuilds it as your own, and what our test found</span></a>
     <a href="#cloudflare-security-audit-skill"><img src="videos/cloudflare-security-audit-skill.jpg" alt="" loading="lazy"><span>Cloudflare&#x27;s free security-audit skill: what it does, how to run it in 3 steps, and our test</span></a>
     <a href="#ai-tools-hype-vs-reality"><img src="carousels/ai-tools-hype-vs-reality/01.jpg" alt="" loading="lazy"><span>AI tools: hype vs reality (Seedance, Claude Code, GPT Image vs Nano Banana, ElevenLabs, Whisper, Jev)</span></a>
@@ -138,6 +139,30 @@
     <a href="#what-is-mcp"><img src="thumbs/what-is-mcp.jpg" alt="" loading="lazy"><span>What is MCP? The one plug between your AI and your apps</span></a>
     <a href="#voice-to-text"><img src="thumbs/voice-to-text.jpg" alt="" loading="lazy"><span>Four words. 25,000 numbers. Zero letters. How voice to text works</span></a>
   </nav>
+  <article class="ep" id="voicestudio-local-voice-cloning">
+    <div class="clip"><div class="player short"><video src="videos/voicestudio-local-voice-cloning.mp4" poster="videos/voicestudio-local-voice-cloning.jpg" controls playsinline preload="none"></video></div><p class="yt soon">On YouTube soon</p><p class="date">Short · Oct 2026 · 1:40</p></div>
+    <div class="body">
+      <p class="eyebrow">AI tools</p>
+      <h2>VoiceStudio: a free, open-source voice cloner that runs on your own computer</h2>
+      <h3 class="sumh">What it covers</h3>
+      <p class="lede">The voice at the start of our video was made by VoiceStudio on our own desktop, on the processor alone, from one line of description (voice design: nobody recorded it). VoiceStudio is a free, open-source app (AGPL-3.0), built mostly by one developer, debpalash, with about 54,000 GitHub stars as of Oct 6 2026 and 3,124 commits since April. Give it 5 to 15 seconds of clean speech and it builds a voice you can reuse, then reads anything you type in it, turns a book into an audiobook or dubs a video into another language. It also goes the other way: talk, and it types for you. It has its own MCP server, so while the app is open Claude Code can make audio files in a voice you pick, with no API key and no account for VoiceStudio. What it makes carries an invisible AudioSeal watermark by default. Clone only your own voice, or one you have permission to use. Our test: their default engine, run from source on a Windows desktop (i7-10700F with an AMD Radeon RX 9060 XT, which PyTorch on Windows can&#x27;t use, so processor only). It designed the voice in our video in 22 seconds and spoke a 6-second line in a cloned voice in 2 minutes 18. The voice model is k2-fsa/OmniVoice: the app is free to use for paid work, but that default model&#x27;s weights are CC-BY-NC (non-commercial), so check the model&#x27;s licence before you sell anything.</p>
+      <h3 class="sumh">Everything we mentioned</h3>
+      <ul class="tools">
+        <li class="tool"><div class="tool-top"><h3><a href="https://github.com/debpalash/VoiceStudio" target="_blank" rel="noopener">debpalash/VoiceStudio</a></h3><span class="kind">app</span></div>
+          <p>The app. AGPL-3.0, free. Windows, macOS and Linux installers on the Releases page; about 10 GB of free disk, and it installs its own Python runtime and model weights on first launch.</p></li>
+        <li class="tool"><div class="tool-top"><h3><a href="https://voicestudio.sh" target="_blank" rel="noopener">voicestudio.sh</a></h3><span class="kind">site</span></div>
+          <p>The project&#x27;s own site and one-line installer.</p></li>
+        <li class="tool"><div class="tool-top"><h3><a href="https://huggingface.co/k2-fsa/OmniVoice" target="_blank" rel="noopener">k2-fsa/OmniVoice</a></h3><span class="kind">model</span></div>
+          <p>The default voice model, by Han Zhu. 3.3 GB. Its code is Apache-2.0 but its pretrained weights are CC-BY-NC: non-commercial. Check this before you sell anything you make.</p></li>
+        <li class="tool"><div class="tool-top"><h3><a href="https://github.com/debpalash/VoiceStudio/blob/main/docs/languages.md" target="_blank" rel="noopener">Their language catalogue</a></h3><span class="kind">docs</span></div>
+          <p>All 646 languages with the hours of speech behind each one. This is the table we added up.</p></li>
+        <li class="tool"><div class="tool-top"><h3><a href="https://github.com/debpalash/VoiceStudio/blob/main/docs/mcp.md" target="_blank" rel="noopener">Their MCP docs</a></h3><span class="kind">docs</span></div>
+          <p>The local MCP server: generate_speech, clone_voice, transcribe and the rest, for Claude Code and Cursor.</p></li>
+        <li class="tool"><div class="tool-top"><h3><a href="https://github.com/debpalash/VoiceStudio/blob/main/docs/benchmarks.md" target="_blank" rel="noopener">Their benchmarks page</a></h3><span class="kind">docs</span></div>
+          <p>Still says &quot;No verified rows yet&quot;, which is why we measured it ourselves.</p></li>
+      </ul><h3 class="sumh">Set it up in 3 steps</h3><p class="lede">Fine print worth knowing before you start. It wants about 10 GB of free disk on Windows and installs its own Python runtime on first launch, and your first generate downloads a few gigabytes of model, so a slow first run is almost always the download, not a crash. Judge the speed from the second run: the first one loads the model. Every clip gets an invisible AudioSeal watermark unless you turn it off in Settings &gt; Privacy. The who-said-what transcripts need a free Hugging Face account and a one-time licence acceptance. The app is free to use commercially; the default model&#x27;s weights are not. And clone your own voice, or one you have the person&#x27;s permission to clone.</p><ul class="tools"><li class="tool"><div class="tool-top"><h3>1. Download the installer for your computer</h3><span class="kind">prompt</span></div><pre class="wrap">https://github.com/debpalash/VoiceStudio/releases/latest</pre></li><li class="tool"><div class="tool-top"><h3>Or, in a normal (non-admin) PowerShell on Windows</h3><span class="kind">prompt</span></div><pre class="wrap">irm https://voicestudio.sh/install | iex</pre></li><li class="tool"><div class="tool-top"><h3>2. Open Voice cloning, drop in 5 to 15 seconds of clean speech</h3><span class="kind">prompt</span></div><pre class="wrap">one speaker, no music, no background noise. it writes down what the clip says for you, so leave the transcript box alone unless it stays empty.</pre></li><li class="tool"><div class="tool-top"><h3>3. On Windows with no NVIDIA card? Switch the engine before you judge the speed</h3><span class="kind">prompt</span></div><pre class="wrap">Settings &gt; Model Catalogue &gt; OmniVoice GGUF</pre></li><li class="tool"><div class="tool-top"><h3>4. Let your coding agent use it (optional)</h3><span class="kind">prompt</span></div><pre class="wrap">keep VoiceStudio open, then point Claude Code or Cursor at the local MCP server it exposes at /mcp</pre></li></ul>
+    </div>
+  </article>
   <article class="ep" id="replica-clone-app-skill">
     <div class="clip"><div class="player short"><video src="videos/replica-clone-app-skill.mp4" poster="videos/replica-clone-app-skill.jpg" controls playsinline preload="none"></video></div><p class="yt soon">On YouTube soon</p><p class="date">Short · Oct 2026 · 1:39</p></div>
     <div class="body">
