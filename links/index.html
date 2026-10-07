@@ -96,11 +96,12 @@
 
 <div class="wrap">
   <section class="intro">
-    <p class="eyebrow">Videos · 37 so far</p>
+    <p class="eyebrow">Videos · 38 so far</p>
     <h1>Every video, and everything we mentioned in it.</h1>
     <p>A short summary of each one, the video itself, and a link to every tool, repo and source. Newest first.</p>
   </section>
   <nav class="jump" aria-label="Jump to a video">
+    <a href="#four-addons-before-vibe-coding"><img src="videos/four-addons-before-vibe-coding.jpg" alt="" loading="lazy"><span>4 free Claude Code add-ons to switch on before you vibe code, and what two of them did in our tests</span></a>
     <a href="#voicestudio-local-voice-cloning"><img src="videos/voicestudio-local-voice-cloning.jpg" alt="" loading="lazy"><span>VoiceStudio: a free, open-source voice cloner that runs on your own computer</span></a>
     <a href="#replica-clone-app-skill"><img src="videos/replica-clone-app-skill.jpg" alt="" loading="lazy"><span>Replica: a new Claude skill that reverse-engineers an app and rebuilds it as your own, and what our test found</span></a>
     <a href="#cloudflare-security-audit-skill"><img src="videos/cloudflare-security-audit-skill.jpg" alt="" loading="lazy"><span>Cloudflare&#x27;s free security-audit skill: what it does, how to run it in 3 steps, and our test</span></a>
@@ -139,6 +140,30 @@
     <a href="#what-is-mcp"><img src="thumbs/what-is-mcp.jpg" alt="" loading="lazy"><span>What is MCP? The one plug between your AI and your apps</span></a>
     <a href="#voice-to-text"><img src="thumbs/voice-to-text.jpg" alt="" loading="lazy"><span>Four words. 25,000 numbers. Zero letters. How voice to text works</span></a>
   </nav>
+  <article class="ep" id="four-addons-before-vibe-coding">
+    <div class="clip"><div class="player short"><video src="videos/four-addons-before-vibe-coding.mp4" poster="videos/four-addons-before-vibe-coding.jpg" controls playsinline preload="none"></video></div><p class="yt soon">On YouTube soon</p><p class="date">Short · Oct 2026 · 1:40</p></div>
+    <div class="body">
+      <p class="eyebrow">Vibe coding</p>
+      <h2>4 free Claude Code add-ons to switch on before you vibe code, and what two of them did in our tests</h2>
+      <h3 class="sumh">What it covers</h3>
+      <p class="lede">Four free add-ons for Claude Code. Superpowers (obra/superpowers, MIT, about 296,000 GitHub stars as of Oct 6 2026) stops Claude jumping straight into code: it asks what you&#x27;re building, writes a plan you approve, then works through small tasks, tests first. It&#x27;s in Anthropic&#x27;s official plugin marketplace. The Karpathy-inspired CLAUDE.md (multica-ai/andrej-karpathy-skills, by Forrest Chang, about 217,000 stars) is one file with four rules derived from Andrej Karpathy&#x27;s post on how AI models overcomplicate code: think before coding, simplicity first, surgical changes, goal-driven execution. In our small test (the same job, add discount codes to a made-up order module, 2 runs each, Claude Code on our PC) Claude added 64 and 77 lines and a new file both times without it, and 54 and 47 lines with no new file with it. The counts include tests, and every test passed. I Have ADHD (ayghri/i-have-adhd, MIT, about 54,000 stars; its README says no diagnosis is needed) stops Claude burying the answer: the next action first, no preamble, no recap. It stays off until you type /i-have-adhd and on until you say &quot;stop adhd mode&quot;. Asked the same Netlify question once each, the answer went from 375 words to 184, with the same four fixes. Claude Octopus (nyldn/claude-octopus, MIT, about 4,000 stars) does nothing until you type /octo. Then it sends one task to other AI tools, like Codex or Copilot, and flags where they disagree. It uses those tools&#x27; own accounts or keys, or free local models through Ollama, and on Windows it needs Claude Code running inside WSL. The add-ons are free; Claude Code itself needs a paid Claude plan.</p>
+      <h3 class="sumh">Everything we mentioned</h3>
+      <ul class="tools">
+        <li class="tool"><div class="tool-top"><h3><a href="https://github.com/obra/superpowers" target="_blank" rel="noopener">obra/superpowers</a></h3><span class="kind">plugin</span></div>
+          <p>Superpowers: brainstorm, plan, then small test-first tasks. MIT.</p></li>
+        <li class="tool"><div class="tool-top"><h3><a href="https://github.com/multica-ai/andrej-karpathy-skills" target="_blank" rel="noopener">multica-ai/andrej-karpathy-skills</a></h3><span class="kind">file</span></div>
+          <p>The Karpathy-inspired CLAUDE.md, four rules in one file. Also installs as a plugin (then it loads as a skill when Claude judges it relevant).</p></li>
+        <li class="tool"><div class="tool-top"><h3><a href="https://github.com/ayghri/i-have-adhd" target="_blank" rel="noopener">ayghri/i-have-adhd</a></h3><span class="kind">plugin</span></div>
+          <p>I Have ADHD: action first, numbered steps, no preamble or recap. Off until /i-have-adhd. MIT.</p></li>
+        <li class="tool"><div class="tool-top"><h3><a href="https://github.com/nyldn/claude-octopus" target="_blank" rel="noopener">nyldn/claude-octopus</a></h3><span class="kind">plugin</span></div>
+          <p>Claude Octopus: one task to several AI tools, disagreements flagged. 12 providers, each with its own account or key; Ollama runs locally. WSL on Windows. MIT.</p></li>
+      </ul><h3 class="sumh">Install all four</h3><p class="lede">Start a new Claude Code session after installing so the plugins load. We tested every install line on Oct 6 2026 with Claude Code 2.1.220. If you already have a CLAUDE.md, paste Karpathy&#x27;s rules into it instead of overwriting it. Octopus sends your prompt to each provider you set up, under that provider&#x27;s own terms and costs.</p><ul class="tools"><li class="tool"><div class="tool-top"><h3>1. Superpowers (type this inside Claude Code)</h3><span class="kind">prompt</span></div><pre class="wrap">/plugin install superpowers@claude-plugins-official</pre></li><li class="tool"><div class="tool-top"><h3>If it says not found, add the author&#x27;s marketplace first</h3><span class="kind">prompt</span></div><pre class="wrap">/plugin marketplace add obra/superpowers-marketplace
+/plugin install superpowers@superpowers-marketplace</pre></li><li class="tool"><div class="tool-top"><h3>2. Karpathy-inspired CLAUDE.md (in your project folder, Windows PowerShell)</h3><span class="kind">prompt</span></div><pre class="wrap">curl.exe -o CLAUDE.md https://raw.githubusercontent.com/multica-ai/andrej-karpathy-skills/main/CLAUDE.md</pre></li><li class="tool"><div class="tool-top"><h3>On a Mac or Linux</h3><span class="kind">prompt</span></div><pre class="wrap">curl -o CLAUDE.md https://raw.githubusercontent.com/multica-ai/andrej-karpathy-skills/main/CLAUDE.md</pre></li><li class="tool"><div class="tool-top"><h3>3. I Have ADHD (in a terminal)</h3><span class="kind">prompt</span></div><pre class="wrap">claude plugin marketplace add ayghri/i-have-adhd
+claude plugin install i-have-adhd@i-have-adhd</pre></li><li class="tool"><div class="tool-top"><h3>Then, inside Claude Code: on, and later off</h3><span class="kind">prompt</span></div><pre class="wrap">/i-have-adhd
+stop adhd mode</pre></li><li class="tool"><div class="tool-top"><h3>4. Claude Octopus (in a terminal; on Windows, inside WSL)</h3><span class="kind">prompt</span></div><pre class="wrap">claude plugin marketplace add https://github.com/nyldn/plugins.git
+claude plugin install octo@nyldn-plugins</pre></li><li class="tool"><div class="tool-top"><h3>Then, inside Claude Code</h3><span class="kind">prompt</span></div><pre class="wrap">/octo:setup</pre></li></ul>
+    </div>
+  </article>
   <article class="ep" id="voicestudio-local-voice-cloning">
     <div class="clip"><div class="player short"><video src="videos/voicestudio-local-voice-cloning.mp4" poster="videos/voicestudio-local-voice-cloning.jpg" controls playsinline preload="none"></video></div><p class="yt soon">On YouTube soon</p><p class="date">Short · Oct 2026 · 1:40</p></div>
     <div class="body">

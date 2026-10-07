@@ -304,7 +304,7 @@
      "url": "https://github.com/obra/superpowers",
      "by": "obra",
      "kind": "plugin",
-     "stars": "290K",
+     "stars": "296K",
      "best": "Plans and tests before it writes code",
      "install": "# in Claude Code\n/plugin install superpowers@claude-plugins-official",
      "seen": "claude-code-repos"
@@ -332,9 +332,10 @@
      "url": "https://github.com/multica-ai/andrej-karpathy-skills",
      "by": "multica-ai",
      "kind": "skill",
-     "stars": "215K",
+     "stars": "217K",
      "best": "One CLAUDE.md that avoids common AI coding mistakes, based on Andrej Karpathy's notes",
-     "install": "/plugin marketplace add forrestchang/andrej-karpathy-skills\n/plugin install andrej-karpathy-skills@karpathy-skills"
+     "install": "# the file, in your project folder (PowerShell)\ncurl.exe -o CLAUDE.md https://raw.githubusercontent.com/multica-ai/andrej-karpathy-skills/main/CLAUDE.md\n# or as a plugin, in Claude Code\n/plugin marketplace add forrestchang/andrej-karpathy-skills\n/plugin install andrej-karpathy-skills@karpathy-skills",
+     "seen": "four-addons-before-vibe-coding"
     },
     {
      "name": "Anthropic Skills",
@@ -656,6 +657,28 @@
      "install": "# in a terminal\nclaude plugin install ralph-loop@claude-plugins-official",
      "note": "There's no limit unless you set one, and every lap uses tokens: always set one, like --max-iterations 20. Needs bash and jq (on Windows, Git for Windows).",
      "seen": "claude-code-superpowers"
+    },
+    {
+     "name": "I Have ADHD",
+     "url": "https://github.com/ayghri/i-have-adhd",
+     "by": "ayghri",
+     "kind": "plugin",
+     "stars": "54K",
+     "best": "Makes Claude lead with the next step: numbered, no preamble, no recap",
+     "install": "# in a terminal\nclaude plugin marketplace add ayghri/i-have-adhd\nclaude plugin install i-have-adhd@i-have-adhd\n# then in Claude Code\n/i-have-adhd",
+     "note": "Off until you type /i-have-adhd; say \"stop adhd mode\" to turn it off. No diagnosis needed, says its README.",
+     "seen": "four-addons-before-vibe-coding"
+    },
+    {
+     "name": "Claude Octopus",
+     "url": "https://github.com/nyldn/claude-octopus",
+     "by": "nyldn",
+     "kind": "plugin",
+     "stars": "4K",
+     "best": "Sends one task to other AI tools (Codex, Copilot, Grok, local Ollama...) and flags where they disagree",
+     "install": "# in a terminal\nclaude plugin marketplace add https://github.com/nyldn/plugins.git\nclaude plugin install octo@nyldn-plugins\n# then in Claude Code\n/octo:setup",
+     "note": "Each provider needs its own account or key (Ollama runs locally, free). Windows: run Claude Code inside WSL.",
+     "seen": "four-addons-before-vibe-coding"
     }
    ]
   },
