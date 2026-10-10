@@ -1,0 +1,60 @@
+PhotoCraft + Claude Code: easier setup
+
+1. Open Claude Code in a folder with a copy of your photo.
+Claude Code must already be installed and signed in.
+
+2. Paste this setup request:
+
+Set up PhotoCraft for this photo folder on my computer. Use only the official GitHub releases at https://github.com/storytold/photocraft/releases. Choose the matching portable build for my operating system and architecture that includes photocraft-cli; on macOS use the separate CLI ZIP. Download and extract it into a tools folder without admin installation. Verify its checksum against the release SHA256SUMS.txt. Connect photocraft-cli to Claude Code as a project-scoped stdio MCP server named photocraft. Pass --automation-read-root and --automation-write-root with the absolute path of this photo folder. Preserve existing MCP entries and my original photos. Check the connection. Tell me to restart Claude Code and use /mcp to confirm PhotoCraft is connected before editing.
+
+3. Approve the setup, restart Claude Code, and check /mcp.
+Approve the project-scoped MCP server if prompted. Then ask:
+
+Use PhotoCraft to brighten this photo. Add Weekend Mode as an editable text layer. Save an editable PSD and a PNG.
+
+Windows v0.5.0 setup tested; official download/checksum and independent MCP connection verified.
+PhotoCraft software is free. Claude Code uses your plan allowance or API usage.
+
+MANUAL ALTERNATIVE
+
+PhotoCraft + Claude Code
+Official PhotoCraft v0.5.0: https://github.com/storytold/photocraft/releases/tag/v0.5.0
+Independent early project. PhotoCraft is free; Claude Code usage is billed through your plan or API account.
+
+WINDOWS
+1. Unzip the official Windows x64 portable ZIP. Find photocraft-cli.exe.
+2. Put a copy of a photo in a project folder. Open PowerShell there.
+3. Replace the executable path below, register MCP, and open Claude Code:
+
+$cli = 'C:\PhotoCraft\photocraft-cli.exe'
+$project = (Get-Location).Path
+
+claude mcp add --transport stdio `
+  photocraft -- "$cli" mcp `
+  --automation-read-root "$project" `
+  --automation-write-root "$project"
+
+claude
+
+MACOS / ZSH OR BASH
+Download the separate macOS CLI ZIP for your architecture (not just the app DMG).
+Open Terminal in your photo project folder. Replace the CLI path:
+
+cli="/full/path/to/photocraft-cli"
+project="$PWD"
+claude mcp add --transport stdio photocraft -- "$cli" mcp   --automation-read-root "$project"   --automation-write-root "$project"
+claude
+
+IN CLAUDE CODE
+Type /mcp and confirm photocraft is connected. Allow the editing tools for this task.
+Ask:
+Use PhotoCraft to brighten this photo. Add Weekend Mode as an editable text layer. Save an editable PSD and a PNG.
+
+CHECK
+Confirm PSD and PNG outputs exist. Reopen the PSD and check its Type layer.
+Keep the original. These roots allow access only to your chosen project folder.
+This example operates the editing engine headlessly; it does not claim a visible GUI session.
+
+OUR REAL RUN
+1800 x 1425 PSD + PNG created. PSD has Weekend Mode (Type), Shadow Lift (Adjustment), and Background (Pixel).
+Reopened through PhotoCraft CLI. Original photo SHA-256 unchanged.

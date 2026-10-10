@@ -1653,6 +1653,55 @@
      "url": "https://www.framer.com",
      "by": "Framer",
      "best": "Publishing a designed website without code"
+    },
+    {
+     "name": "PhotoCraft",
+     "url": "https://github.com/storytold/photocraft",
+     "by": "ArtCraft / storytold",
+     "best": "Photoshop-style image editing; open source, actively developing",
+     "top": false
+    },
+    {
+     "name": "VectorCraft",
+     "url": "https://github.com/storytold/vectorcraft",
+     "by": "ArtCraft / storytold",
+     "best": "Illustrator-style vector illustration; open source, actively developing",
+     "top": false
+    },
+    {
+     "name": "FilmCraft",
+     "url": "https://github.com/storytold/filmcraft",
+     "by": "ArtCraft / storytold",
+     "best": "Premiere-style video editing; open source, actively developing",
+     "top": false
+    },
+    {
+     "name": "LightCraft",
+     "url": "https://github.com/storytold/lightcraft",
+     "by": "ArtCraft / storytold",
+     "best": "Lightroom-style photo libraries and RAW development; open source, actively developing",
+     "top": false
+    },
+    {
+     "name": "PdfCraft",
+     "url": "https://github.com/storytold/pdfcraft",
+     "by": "ArtCraft / storytold",
+     "best": "Acrobat-style PDF tools; open source, actively developing",
+     "top": false
+    },
+    {
+     "name": "EffectCraft",
+     "url": "https://github.com/storytold/effectcraft",
+     "by": "ArtCraft / storytold",
+     "best": "After Effects-style motion graphics; open source, actively developing",
+     "top": false
+    },
+    {
+     "name": "DesignCraft",
+     "url": "https://github.com/storytold/designcraft",
+     "by": "ArtCraft / storytold",
+     "best": "InDesign-style page layout; open source, actively developing",
+     "top": false
     }
    ]
   },

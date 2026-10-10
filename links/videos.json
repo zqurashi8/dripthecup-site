@@ -1,6 +1,114 @@
 {
  "videos": [
   {
+   "id": "seven-open-source-creative-tools",
+   "title": "7 free open-source Adobe-style creative tools",
+   "kind": "Short",
+   "date": "Oct 2026",
+   "length": "1:34",
+   "topic": "Open-source creative tools",
+   "youtube": null,
+   "mp4": "videos/seven-open-source-creative-tools.mp4",
+   "poster": "videos/seven-open-source-creative-tools.jpg",
+   "summary": "Seven independent open-source ArtCraft recreations, not Adobe source code. PhotoCraft supports layers, masks, editable type and PSD, and exposes CLI/MCP automation. Our PhotoCraft v0.5.0 + Claude Code run created an editable PSD and PNG with a Type layer and adjustment, then reopened the PSD; the original image was preserved. Other editor footage is credited official project demos. These are early projects, not a professional-parity test. PrintCraft now redirects to PdfCraft. Source checked Oct 9, 2026. Updated Oct 10: simpler Claude-assisted setup independently verified; opening COSMIC PSD Type layer created in PhotoCraft over the credited NASA/ESA/CSA/STScI Pillars of Creation photograph. Neon Drive is an official VectorCraft example.",
+   "links": [
+    {
+     "name": "PhotoCraft",
+     "url": "https://github.com/storytold/photocraft",
+     "kind": "repo",
+     "what": "Photoshop-style image editing"
+    },
+    {
+     "name": "VectorCraft",
+     "url": "https://github.com/storytold/vectorcraft",
+     "kind": "repo",
+     "what": "Illustrator-style vector illustration"
+    },
+    {
+     "name": "FilmCraft",
+     "url": "https://github.com/storytold/filmcraft",
+     "kind": "repo",
+     "what": "Premiere-style video editing"
+    },
+    {
+     "name": "LightCraft",
+     "url": "https://github.com/storytold/lightcraft",
+     "kind": "repo",
+     "what": "Lightroom-style photo libraries and RAW development"
+    },
+    {
+     "name": "PdfCraft",
+     "url": "https://github.com/storytold/pdfcraft",
+     "kind": "repo",
+     "what": "Acrobat-style PDF tools"
+    },
+    {
+     "name": "EffectCraft",
+     "url": "https://github.com/storytold/effectcraft",
+     "kind": "repo",
+     "what": "After Effects-style motion graphics"
+    },
+    {
+     "name": "DesignCraft",
+     "url": "https://github.com/storytold/designcraft",
+     "kind": "repo",
+     "what": "InDesign-style page layout"
+    },
+    {
+     "name": "Windows portable build",
+     "url": "https://github.com/storytold/photocraft/releases/tag/v0.5.0",
+     "kind": "download",
+     "what": "Choose your operating-system build; Windows portable includes the CLI"
+    },
+    {
+     "name": "PhotoCraft MCP setup",
+     "url": "https://github.com/storytold/photocraft/blob/v0.5.0/book/src/automation/mcp.md",
+     "kind": "docs",
+     "what": "Headless CLI, file-access roots and desktop bridge mode"
+    },
+    {
+     "name": "Claude Code MCP guide",
+     "url": "https://code.claude.com/docs/en/mcp",
+     "kind": "docs",
+     "what": "Install/sign in to Claude Code, stdio registration and /mcp"
+    },
+    {
+     "name": "Claude Code costs",
+     "url": "https://code.claude.com/docs/en/costs",
+     "kind": "docs",
+     "what": "Plan allowance versus API billing"
+    },
+    {
+     "name": "Copyable Windows + macOS walkthrough",
+     "url": "creative-tools-setup.txt",
+     "kind": "guide",
+     "what": "Commands, editing prompt and output checks"
+    },
+    {
+     "name": "Copy the AI setup request",
+     "url": "photocraft-ai-setup-prompt.txt",
+     "kind": "guide",
+     "what": "Ask Claude Code to download and register PhotoCraft for this photo project"
+    }
+   ],
+   "prompts_title": "Let Claude Code set up PhotoCraft in three steps",
+   "prompts": [
+    {
+     "name": "1 · Open Claude Code in your photo folder",
+     "prompt": "Claude Code must be installed and signed in on your computer. Put a copy of photo.jpg in a project folder and open Claude Code there. This local setup uses its shell and file tools; ordinary Claude/ChatGPT web chat does not install a desktop CLI."
+    },
+    {
+     "name": "2 · Ask Claude Code to download and connect PhotoCraft",
+     "prompt": "Set up PhotoCraft for this photo folder on my computer. Use only the official GitHub releases at https://github.com/storytold/photocraft/releases. Choose the matching portable build for my operating system and architecture that includes photocraft-cli; on macOS use the separate CLI ZIP. Download and extract it into a tools folder without admin installation. Verify its checksum against the release SHA256SUMS.txt. Connect photocraft-cli to Claude Code as a project-scoped stdio MCP server named photocraft. Pass --automation-read-root and --automation-write-root with the absolute path of this photo folder. Preserve existing MCP entries and my original photos. Check the connection. Tell me to restart Claude Code and use /mcp to confirm PhotoCraft is connected before editing."
+    },
+    {
+     "name": "3 · Approve, restart, check /mcp, then edit",
+     "prompt": "Approve the download/connection actions within your photo project. Restart Claude Code after registration. If prompted, approve the project-scoped MCP server. Type /mcp and confirm photocraft is connected. Allow the relevant editing tools for the task. Then paste:\n\nUse PhotoCraft to brighten this photo. Add Weekend Mode as an editable text layer. Save an editable PSD and a PNG.\n\nOpen the exported PNG and reopen the PSD to check its editable text. Keep the original photo."
+    }
+   ],
+   "prompts_note": "The Windows v0.5.0 setup was tested in an isolated folder: Claude downloaded the official 67,717,284-byte portable ZIP, verified the release checksum, and registered project-scoped MCP. Independent CLI and MCP handshake checks passed. PhotoCraft is free; Claude Code uses your plan allowance or API billing. Setup permissions and a restart may be required. Manual Windows/macOS commands are available below."
+  },
+  {
    "id": "hairline-line-animations-skill",
    "title": "Hairline: a free Claude Code skill that draws line animations that react to your mouse, plus 27 ready-made ones",
    "kind": "Short",
